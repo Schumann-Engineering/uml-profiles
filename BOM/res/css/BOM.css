@@ -1,0 +1,11 @@
+/* ====================
+ * STEREOTYPES
+ * ==================== */
+/* hide stereotype names */
+Label[stereotype="BOM::Scope"],
+Compartment[stereotype="BOM::Scope"],
+Label[stereotype="BOM::ConstraintedScope"],
+Compartment[stereotype="BOM::ConstraintedScope"] {
+	visible:			false;
+	displayHeader:		false;	
+}
