@@ -1,0 +1,20 @@
+{
+  "file-explorer:open": [
+    {
+      "modifiers": [
+        "Meta",
+        "Shift"
+      ],
+      "key": "E"
+    }
+  ],
+  "number-headings-obsidian:number-headings-with-options": [
+    {
+      "modifiers": [
+        "Meta",
+        "Shift"
+      ],
+      "key": "H"
+    }
+  ]
+}

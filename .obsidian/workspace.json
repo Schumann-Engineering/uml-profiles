@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "7bbeeb64ce294dca",
+    "type": "split",
+    "children": [
+      {
+        "id": "3bbc1caf8c9a894e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4c81bde52a052148",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "development/Papyrus.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab4e4aa0d87dc679",
+    "type": "split",
+    "children": [
+      {
+        "id": "88ca32b998e4b8df",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "149501cca3a10e8c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "49471af50af69681",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "papy",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "499218b061e6735c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 285.5
+  },
+  "right": {
+    "id": "a957322c18841bd2",
+    "type": "split",
+    "children": [
+      {
+        "id": "64d140877b1bcfaa",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3398646c068794eb",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "development/Papyrus.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "5d0d23019ff2dba2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "development/Papyrus.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0f89f6e95372427f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4309d2ddeebf6e69",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "development/Papyrus.md"
+              }
+            }
+          },
+          {
+            "id": "aabd151e82540ff2",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
+          },
+          {
+            "id": "28b683ce65b35c6d",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_nodes",
+              "state": {}
+            }
+          },
+          {
+            "id": "f7d320efea421d20",
+            "type": "leaf",
+            "state": {
+              "type": "juggl_style",
+              "state": {}
+            }
+          },
+          {
+            "id": "61505d0106e24481",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 7
+      }
+    ],
+    "direction": "horizontal",
+    "width": 303.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "publish:Publish changes...": false,
+      "juggl:Juggl global graph": false,
+      "omnisearch:Omnisearch": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "4c81bde52a052148",
+  "lastOpenFiles": [
+    "QM System/Processes/Cybersecurity/STRIDE.md",
+    "QM System/Processes/Cybersecurity/Taxonomy Cybersecurity.md",
+    "QM System/Processes/Cybersecurity/STRIDE.png",
+    "QM System/Processes/Cybersecurity/STRIDE.png.crdownload",
+    "QM System/Processes/Cybersecurity/Threat Agents and Tiers.md",
+    "QM System/Processes/Cybersecurity/Threat Agents.jpg",
+    "QM System/Processes/Cybersecurity/Threat Agents.jpg.crdownload",
+    "QM System/Processes/Cybersecurity/Structure Cybersecurity Process.md",
+    "QM System/Processes/Cybersecurity/Becoming a CNA (CVE Number Authority).md",
+    "development/Papyrus.md",
+    "development",
+    "Hamilton Medical AG/UDI-DI.md",
+    "Hamilton Medical AG/HAM-C6 - SW 1.1.x vs 1.2.x.md",
+    "Task Lists/Janek.md",
+    "QM System/QM Data Model - Jira.md",
+    "Hamilton Medical AG/Subversion (SVN).md",
+    "QM System",
+    "Hamilton Medical AG/Ziele Product Security 2024.md",
+    "Random notes/Common Vulnerability Enumeration (CVE).md",
+    "Random notes/Common Platform Enumeration (CPE).md",
+    "QM System/Processes/Cybersecurity",
+    "QM System/Processes",
+    "Hamilton Medical AG/SOUP Manager for SBOM.md",
+    "Ortelli Systems/2023-11 Workshop Cybersecurity.md",
+    "Hamilton Medical AG/Port for Octopus interface (US DoD).md",
+    "Ortelli Systems",
+    "Random notes/FTA & FMEA.md",
+    "Random notes/User Authentication Excemption.md",
+    "Random notes/Risk Management.md",
+    "Hamilton Medical AG/How to find a proof aka document.md",
+    "Hamilton Medical AG/QMS.md",
+    "Hamilton Medical AG",
+    "Task Lists",
+    "IEC 62443-4-5 (2019).md",
+    "_config/SDO list.md",
+    "test draw.io.svg",
+    "Untitled.canvas",
+    "IEC 62443-3-3 (2020).md",
+    "_config"
+  ]
+}
