@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BOM="http:///schemas/BOM/_u0ne0KlcEe6AHfxDNhiNlQ/12" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/BOM/_u0ne0KlcEe6AHfxDNhiNlQ/12 /schumann-engineering.uml-profiles/BOM/src/BOM.profile.uml#_u0pUAKlcEe6AHfxDNhiNlQ">
+  <uml:Model xmi:id="_UrW7IKlVEe60VoSxubav5A" name="BOM">
+    <ownedComment xmi:type="uml:Comment" xmi:id="_fOuMMKlVEe60VoSxubav5A">
+      <body>NOTE:&#xD;
+BOM stereotype can be applied to any NamedElement. This example shows a deployment diagram with Nodes only.</body>
+    </ownedComment>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_Urp2EKlVEe60VoSxubav5A">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Device" xmi:id="_l7tooKlVEe60VoSxubav5A" name="Device">
+      <nestedClassifier xmi:type="uml:Device" xmi:id="_3o0uIKlWEe6lTp7Ifjntmw" name="added Component"/>
+      <nestedNode xmi:type="uml:Device" xmi:id="_opnxoKlbEe6lTp7Ifjntmw" name="removed Component"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_UrfeAKlVEe60VoSxubav5A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3aaP8KlcEe6AHfxDNhiNlQ" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3aaP8alcEe6AHfxDNhiNlQ" key="Version" value="0.0.13"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3aaP8qlcEe6AHfxDNhiNlQ" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3aaP86lcEe6AHfxDNhiNlQ" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3aaP9KlcEe6AHfxDNhiNlQ" key="Date" value="2024-01-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3aaP9alcEe6AHfxDNhiNlQ" key="Author" value="Janek Schumann"/>
+      </eAnnotations>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UrfeAalVEe60VoSxubav5A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="/schumann-engineering.uml-profiles/BOM/src/BOM.profile.uml#_u0pUAKlcEe6AHfxDNhiNlQ"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="/schumann-engineering.uml-profiles/BOM/src/BOM.profile.uml#_mruuYKY2Ee6ULIx8cDHqqA"/>
+    </profileApplication>
+  </uml:Model>
+  <BOM:Scope xmi:id="_oR5c4KlVEe60VoSxubav5A" base_NamedElement="_l7tooKlVEe60VoSxubav5A"/>
+  <BOM:ScopeConstraint xmi:id="_7cDvMKlWEe6lTp7Ifjntmw" base_NamedElement="_3o0uIKlWEe6lTp7Ifjntmw"/>
+  <BOM:ScopeConstraint xmi:id="_sMUcUKlbEe6lTp7Ifjntmw" base_NamedElement="_opnxoKlbEe6lTp7Ifjntmw" ConstraintType="Removed"/>
+</xmi:XMI>

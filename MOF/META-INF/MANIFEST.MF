@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Acceleo Database Module Runtime Plug-in
-Bundle-SymbolicName: profile.Database
+Bundle-SymbolicName: MOF
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: profile.Database.Activator
 Bundle-Vendor: Eclipse Modeling Project

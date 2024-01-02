@@ -1,11 +1,48 @@
+* {
+	shapeDirection:	2; /* 0 = top-left, 1 = top, 2 = top-right, 3 = left, 4 = center, 5 = right, 6 = bottom-left, 7 = bottom, 8 = bottom-right. */
+}
+
+
 /* ====================
  * STEREOTYPES
  * ==================== */
 /* hide stereotype names */
 Label[stereotype="BOM::Scope"],
 Compartment[stereotype="BOM::Scope"],
-Label[stereotype="BOM::ConstraintedScope"],
-Compartment[stereotype="BOM::ConstraintedScope"] {
+Label[stereotype="BOM::ScopeConstraint"],
+Compartment[stereotype="BOM::ScopeConstraint"] {
 	visible:			false;
 	displayHeader:		false;	
+}
+
+
+/* ====================
+ * ICONS & SYMBOLS
+ * ==================== */
+Port[appliedStereotypes~="BOM::ScopeConstraint"] {
+	shapeDirection:		4;
+}
+ 
+*[appliedStereotypes~="BOM::Scope"],
+Component[appliedStereotypes~="BOM::Scope"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/BOM/res/assets/package-variant-closed.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
+}
+
+Package[appliedStereotypes~="BOM::Scope"] {
+	shapeVisibility:	false;
+	elementIcon:		true;
+}
+
+*[appliedStereotypes~="BOM::ScopeConstraint"][ConstraintType="Added"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/BOM/res/assets/puzzle-plus-outline.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
+}
+
+*[appliedStereotypes~="BOM::ScopeConstraint"][ConstraintType="Removed"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/BOM/res/assets/puzzle-remove-outline.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
 }

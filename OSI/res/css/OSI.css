@@ -18,35 +18,5 @@ Dependency[appliedStereotypes~="OSI::OSI-Layers"] > Label[kind=Stereotype] {
 
 /* hide text label of connection */
 Dependency[appliedStereotypes~="OSI::OSI-Layers"] > Label[kind=Name] {
-	visible: 		false;
-}
-
-
-/* ====================
- * RELATIONSHIPS
- * ==================== */
-Dependency[appliedStereotypes~="OSI::OSI-Layers"] {
-	/* line style */
-	lineColor:			#000000;
-	lineWidth:			2;
-	lineDashLength:		5;
-	lineStyle:			dashed;
-	lineDashGap:		5;
-	targetDecoration:	none;
-	sourceDecoration:	none;
-}
-
-Dependency[appliedStereotypes~="OSI::OSI-Layers"] > StereotypeComment {
-	visible:			true;
-}
-
-Shape[type=StereotypeComment] {
-	visible:			true;
-}
-
-* > [Application="Hamilton"] > Label {
-	lineColor:			#00FF00;
-	lineWidth:			15;
-	bold:				true;
-	textColor:			#FF0000;
+	visible: 		true;
 }

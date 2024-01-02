@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CONSENS="http:///schemas/CONSENS/_TXKyoKiVEe6lqe1aTV646Q/39" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/CONSENS/_TXKyoKiVEe6lqe1aTV646Q/39 ../src/CONSENS.profile.uml#_TXMAwKiVEe6lqe1aTV646Q">
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:CONSENS="http:///schemas/CONSENS/_ZZ_p8KlUEe60VoSxubav5A/40" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/CONSENS/_ZZ_p8KlUEe60VoSxubav5A/40 ../src/CONSENS.profile.uml#_ZaBfIKlUEe60VoSxubav5A">
   <uml:Model xmi:id="_5cVvwGEAEe6UtsJT0h6qXQ" name="CONSENS">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_5oMacGEAEe6UtsJT0h6qXQ">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
@@ -119,15 +119,15 @@
       <appliedProfile xmi:type="uml:Profile" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#ActionLanguage"/>
     </profileApplication>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_HXdpQKTNEe6ULIx8cDHqqA">
-      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IUTnYKe_Ee6BVJBy46MLKQ" source="PapyrusVersion">
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IUTnYae_Ee6BVJBy46MLKQ" key="Version" value="0.0.39"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IUTnYqe_Ee6BVJBy46MLKQ" key="Comment" value="fixed user::operator icon to be outline"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IUTnY6e_Ee6BVJBy46MLKQ" key="Copyright" value=""/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IUTnZKe_Ee6BVJBy46MLKQ" key="Date" value="2023-12-31"/>
-        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IUTnZae_Ee6BVJBy46MLKQ" key="Author" value="Janek.Schumann"/>
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4BnTgKlUEe60VoSxubav5A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BnTgalUEe60VoSxubav5A" key="Version" value="0.0.41"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BnTgqlUEe60VoSxubav5A" key="Comment" value="modified icon for system-element and added icon for box"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BnTg6lUEe60VoSxubav5A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BnThKlUEe60VoSxubav5A" key="Date" value="2024-01-02"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4BnThalUEe60VoSxubav5A" key="Author" value="Janek Schumann"/>
       </eAnnotations>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HXeQUKTNEe6ULIx8cDHqqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <references xmi:type="ecore:EPackage" href="../src/CONSENS.profile.uml#_TXMAwKiVEe6lqe1aTV646Q"/>
+        <references xmi:type="ecore:EPackage" href="../src/CONSENS.profile.uml#_ZaBfIKlUEe60VoSxubav5A"/>
       </eAnnotations>
       <appliedProfile xmi:type="uml:Profile" href="../src/CONSENS.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"/>
     </profileApplication>
