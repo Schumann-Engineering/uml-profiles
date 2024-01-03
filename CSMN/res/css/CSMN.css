@@ -1,0 +1,742 @@
+/* ============================================================
+ * ============================================================
+ * ALL ELEMENTS
+ * ============================================================
+ * ============================================================ */
+* {
+	/* put symbols at uniform position 
+	 *
+	 * NOTE: we take top-right because it is out of the way
+	 *       more often than not
+	 */
+	shapeDirection:	2; /* 0 = top-left, 1 = top, 2 = top-right, 3 = left, 4 = center, 5 = right, 6 = bottom-left, 7 = bottom, 8 = bottom-right. */
+}
+
+
+/* ============================================================
+ * ============================================================
+ * DIAGRAM CONFIGURATION
+ * ============================================================
+ * ============================================================ */
+/* --------------------
+ * --------------------
+ * UML Component Diagram
+ * --------------------
+ * -------------------- */
+/* close all compartments of a component */
+ComponentDiagram Compartment {
+	visible: 					false;
+	showTitle:					false;
+}
+
+/* make component stand out visually */
+ComponentDiagram Component {
+	bold:						true;
+	/*
+	topMarginLabel:				10;
+	*/
+}
+
+/* only show name of port */
+ComponentDiagram Port {
+	maskLabel:					name visibility;
+	portPosition:				"onLine"; /*inside, onLine, outside*/
+	
+	italic:						true;
+	
+	/* Forced the label to one position, by default(for port) it will placed according to the parent position.
+	 * 
+	 * type:	Boolean
+	 * default:	false
+	 */
+	labelConstrained: 			true;	
+}
+
+/* highlight relationship labels */
+ComponentDiagram Dependency > Label {
+	underline:					true;
+}
+
+/* wrap labels in general */
+ComponentDiagram Label {
+	isNameWrap:					true;
+}
+
+/* hide label for connectors */
+ComponentDiagram Connector > Label {
+	visible:					false;
+}
+
+/* hide stereotype compartment by default */
+ComponentDiagram Compartment[type=StereotypeCompartment] {
+	visible:					false;
+}
+
+/* hide stereotype braced compartment by default */
+ComponentDiagram Compartment[type=StereotypeBrace] {
+	visible:					false;
+}
+
+/* Display the properties in Comment > Compartment*/
+ComponentDiagram StereotypeComment Compartment[type=StereotypeCompartment] {
+	visible:					true;
+}
+
+/* hide stereotype labels by default */
+ComponentDiagram Label[type=StereotypeLabel] {
+	visible:					false;
+}
+
+ComponentDiagram Port > Label[kind="FloatingLabel"],
+ComponentDiagram Port {
+	/* Set to true if the floating label is constrained on eight position, you can move it manually.
+	 * 
+	 * type:	Boolean
+	 * default:	false
+	 */
+	isFloatingLabelConstrained:	true;
+	
+	/* Forced the label to one position, by default(for port) it will placed according to the parent position.
+	 * 
+	 * type:	Boolean
+	 * default:	false
+	 */
+	labelConstrained: 			true;
+}
+
+
+/* ============================================================
+ * ============================================================
+ * ELEMENTS
+ * ============================================================
+ * ============================================================ */
+ 
+/* --------------------
+ * --------------------
+ * Security Zone (Part 1/2)
+ * 
+ * NOTE: Security Zone is done first here because System Element
+ * might override some settings later on. This allows for a
+ * component to be a Zone as well as System Element
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype compartment, BUT NOT name */
+Compartment[stereotype="CSMN::Elements::SecurityZone"] {
+	visible:					false;
+	displayHeader:				false;	
+}
+
+/* show stereotype name */
+Label[stereotype="CSMN::Elements::SecurityZone"] {
+	visible:					true;
+	displayHeader:				false;
+	bold:						true;
+}
+
+/* no compartments by default */
+Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] > Compartment {
+	visible:					false;
+}
+
+/* default style */
+Component[appliedStereotypes~="CSMN::Elements::SecurityZone"],
+Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+	/* fill */
+	fillColor:					#FFFFFF;
+	transparency:				50;
+	gradient:					#FFFFFF vertical;
+	
+	/* border */
+	lineColor:					#FF0000;
+	lineWidth:					2;
+	borderStyle:				dash;
+
+	/* decorator */
+	/* specialized in rules below */
+	
+	/* FQN */
+	qualifiedNameDepth:			none;
+}
+
+/* show packaged element compartment */
+Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					true;
+}
+
+/* === ICONS === */
+/* Zone = always show symbol, not icon */
+Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+	shapeVisibility:			true;
+	elementIcon:				false;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/security.svg';
+}
+
+/* SystemElement, which is a Zone = show symbol and icon, prefer symbol of Zone */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"][appliedStereotypes~="CSMN::Elements::SecurityZone"],
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"][appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+	shapeVisibility:			true;
+	elementIcon:				true;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/security.svg';
+}
+
+/* Zone as package = always show icon, not symbol */
+Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+	shapeVisibility:			false;
+	elementIcon:				true;
+} 
+ 
+ 
+/* --------------------
+ * --------------------
+ * System Element
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Elements::SystemElement"],
+Compartment[stereotype="CSMN::Elements::SystemElement"] {
+	visible:					false;
+	displayHeader:				false;	
+}
+
+/* no compartments by default */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"] > Compartment {
+	visible:					false;
+}
+
+/* default style */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
+	/* fill */
+	fillColor:					#DAE8FC !important;
+	transparency:				0;
+	gradient:					#FFFFFF vertical;
+
+	/* border */
+	lineColor:					#000000;
+	lineWidth:					2;
+	borderstyle:				solid;
+	
+	/* decorator */
+	/*
+	shapeVisibility:			true;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/package-variant.svg';
+	*/
+	elementIcon:				true;
+	
+	/* FQN */
+	qualifiedNameDepth:			none;
+}
+
+/* handling of container property */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"][showContainer=true] > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					true;
+}
+
+/* handling of container property */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"][showContainer=false] > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					false;
+}
+
+/* === ICONS === */
+/* SystemElement = symbol only */
+Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
+	shapeVisibility:			true;
+	elementIcon:				false;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-outline.svg';
+}
+
+
+ 
+/* --------------------
+ * --------------------
+ * Environment Element
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Elements::EnvironmentElement"],
+Compartment[stereotype="CSMN::Elements::EnvironmentElement"] {
+	visible:					false;
+	displayHeader:				false;	
+}
+
+/* no compartments by default */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] > Compartment {
+	visible:					false;
+}
+
+/* default style */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+	/* fill */
+	fillColor:					#FFFFFF !important;
+	transparency:				0;
+
+	/* border */
+	lineColor:					#000000;
+	lineWidth:					2;
+	borderstyle:				solid;	
+
+	/* decorator */
+	shapeVisibility:			true;
+	elementIcon:				false;
+		
+	/* FQN */
+	qualifiedNameDepth:			none;
+}
+
+/* handle container property */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"][showContainer=true] > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					true;
+}
+
+/* handle container property */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"][showContainer=false] > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					false;
+}
+
+/* === ICONS === */
+/* Environment = always show symbol, not icon */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+	shapeVisibility:			true;
+	elementIcon:				false;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/earth.svg';
+}
+
+
+/* Environment = symbol only */
+Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+	shapeVisibility:			true;
+	elementIcon:				false;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/earth.svg';
+}
+
+ 
+/* --------------------
+ * --------------------
+ * User
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Elements::User"],
+Compartment[stereotype="CSMN::Elements::User"] {
+	visible:					false;
+	displayHeader:				false;	
+}
+
+/* no compartments by default */
+Component[appliedStereotypes~="CSMN::Elements::User"] > Compartment {
+	visible:					false;
+}
+
+/* default style */
+ Component[appliedStereotypes~="CSMN::Elements::User"] {
+	/* fill */
+	fillColor:					#D5E8D4 !important;
+	transparency:				0;
+	gradient:					#FFFFFF vertical;
+
+	/* border */
+	lineColor:					#000000;
+	lineWidth:					2;
+	
+	/* icon */
+	elementIcon:				false;
+	shapeVisibility:			true;	
+	
+	/* FQN */
+	qualifiedNameDepth:			none;
+}
+
+/* === ICONS === */
+/* User.Generic (DEFAULT) */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Generic"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-circle.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Generic"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-circle-outline.svg';
+}
+
+/* User.Administrator */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Administrator"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-cog.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Administrator"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-cog-outline.svg';
+}
+
+/* User.Attacker */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Attacker"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/emoticon-devil.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Attacker"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/emoticon-devil-outline.svg';
+}
+
+/* User.Auditor */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Auditor"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-eye.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Auditor"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-eye-outline.svg';
+}
+
+/* User.Authority */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Authority"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-tie-hat.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Authority"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-tie-hat-outline.svg';
+}
+
+/* User.EthicalHacker */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="EthicalHacker"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-cowboy-hat.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="EthicalHacker"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-cowboy-hat-outline.svg';
+}
+
+/* User.Operator */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Operator"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Operator"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-outline.svg';
+}
+
+/* User.OperatorEducated */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="OperatorEducated"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-school.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="OperatorEducated"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-school-outline.svg';
+}
+
+/* User.Owner */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Owner"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-tie.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Owner"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-tie-outline.svg';
+}
+
+/* User.Patient */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Patient"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-injury.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Patient"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-injury-outline.svg';
+}
+
+/* User.Service */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Service"][useFilledIcon=true] {	
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-wrench.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Service"][useFilledIcon=false] {	
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-wrench-outline.svg';
+}
+
+/* User.UNKNOWN */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="UNKNOWN"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-question.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="UNKNOWN"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/account-question-outline.svg';
+}
+
+/* User.Vendor */
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Vendor"][useFilledIcon=true] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/factory.svg';
+}
+Component[appliedStereotypes~="CSMN::Elements::User"][userType="Vendor"][useFilledIcon=false] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/factory.svg';
+}
+
+
+/* --------------------
+ * --------------------
+ * Box
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Elements::Box"],
+Compartment[stereotype="CSMN::Elements::Box"] {
+	visible:					false;
+	displayHeader:				false;	
+}
+
+/* no compartments by default */
+Comment[appliedStereotypes~="CSMN::Elements::Box"] > Compartment {
+	visible:					false;
+}
+
+/* default style */
+ComponentDiagram Comment[appliedStereotypes~="CSMN::Elements::Box"],
+ComponentDiagram Package[appliedStereotypes~="CSMN::Elements::Box"] {
+	/* fill */
+	fillColor:					#F5F5F5;
+	gradient:					none;
+
+	/* text */
+	textAlignment:				center;
+	fontColor:					#000000;
+	bold:						true;
+	
+	/* border */
+	lineColor:					#000000;
+	lineWidth:					2;
+	borderStyle:				solid;
+	
+	/* decorator */
+	shapeVisibility:			true;
+	elementIcon:				false;
+	
+	/* FQN */
+	qualifiedNameDepth:			none;
+}
+
+/* show compartment for packaged elements */
+ComponentDiagram Package > Compartment[kind=packagedelements] {
+	collapsed:					false;
+	visible:					true;	
+}
+
+/* === ICONS === */
+ComponentDiagram Comment[appliedStereotypes~="CSMN::Elements::Box"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/information-outline.svg';
+	shapeDirection:				2;
+	shapeVisibility:			true;
+	elementIcon:				false;
+}
+ComponentDiagram Package[appliedStereotypes~="CSMN::Elements::Box"] {
+	shapeVisibility:			false;
+	elementIcon:				true;
+}
+
+
+/* --------------------
+ * --------------------
+ * Security ZoneE (Part 2/2)
+ * 
+ * NOTE: this overrides the border
+ * --------------------
+ * -------------------- */
+ 
+/* override border for  */ 
+Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+	/* border */
+	lineColor:					#FF0000;
+	lineWidth:					2;
+	
+	/* decorator */
+	shapeVisibility:			true;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/security.svg';
+	
+	maxNumberOfSymbol:			2;
+}
+
+
+/* ============================================================
+ * ============================================================
+ * CONNECTIONS
+ * ============================================================
+ * ============================================================ */
+ 
+/* --------------------
+ * --------------------
+ * Connection
+ * --------------------
+ * -------------------- */
+ 
+/* hide stereotype names */
+Label[stereotype="CSMN::Connections::Connection"],
+Compartment[stereotype="CSMN::Connections::Connection"],
+Dependency[stereotype="CSMN::Connections::Connection"] > Label[type="Sterotype"] {
+	visible:					false;
+	displayHeader:				false;
+}
+
+
+/* hide stereotype label of connection */
+Dependency[appliedStereotypes~="CSMN::Connections::Connection"] > Label[kind=Stereotype] {
+	visible: 		false;
+}
+
+/* hide text label of connection */
+Dependency[appliedStereotypes~="CSMN::Connections::Connection"] > Label[kind=Name] {
+	visible: 		true;
+}
+ 
+/* show one arrow on uni-directional connections */
+*[appliedStereotypes~="CSMN::Connections::Connection"][direction="uni_directional"] {
+	sourceDecoration:			none;
+	targetDecoration:			open_arrow;
+}
+
+/* show two arrows on bi-directional connections */
+*[appliedStereotypes~="CSMN::Connections::Connection"][direction="bi_directional"] {
+	sourceDecoration:			open_arrow;
+	targetDecoration:			open_arrow;
+}
+ 
+/* default style for a connection 
+ * NOTE: will be specialized later
+ */
+*[appliedStereotypes~="CSMN::Connections::Connection"] {
+	/* line style */
+	lineColor:					#000000;
+	lineStyle:					solid;
+	lineWidth:					2;
+}
+
+/*
+Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Energy"] {
+}
+*/
+
+/* Disturbance */
+*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Disturbance"] {
+	lineColor:					#FF0000;
+	lineStyle:					solid;
+}
+
+/* Information */
+*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Information"] {
+	lineStyle:					dashed;
+	lineDashLength:				5;
+	lineDashGap:				5;
+}
+
+/* Material */
+*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Material"] {
+	lineWidth:					5;
+}
+
+/* Mechanical */
+*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Mechanical"] {
+	lineColor:					#CCCCCC;
+	lineWidth:					5;
+	targetDecoration:			none;
+	sourceDecoration:			none;
+}
+
+
+/* ============================================================
+ * ============================================================
+ * CHARACTERISTICS (Flow)
+ * ============================================================
+ * ============================================================ */
+
+/* --------------------
+ * --------------------
+ * OsiCharacteristic
+ * --------------------
+ * -------------------- */
+ 
+/* == STEREOTYPE == */
+/* hide stereotype names */
+Label[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"],
+Compartment[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"] {
+	visible:			false;
+}
+
+/* == LABEL == */
+/* hide stereotype label of connection */
+Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Stereotype] {
+	visible: 		false;
+}
+
+/* == LABEL == */
+/* hide text label of connection */
+Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Name] {
+	visible: 		true;
+}
+
+
+/* ============================================================
+ * ============================================================
+ * CHARACTERISTICS (Interface)
+ * ============================================================
+ * ============================================================ */
+
+
+/* ============================================================
+ * ============================================================
+ * CHARACTERISTICS (Storage)
+ * ============================================================
+ * ============================================================ */
+
+
+
+/* ============================================================
+ * ============================================================
+ * LIFE CYCLE
+ * ============================================================
+ * ============================================================ */
+
+/* --------------------
+ * --------------------
+ * Scope
+ * --------------------
+ * -------------------- */
+
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Lifecycle::Scope"],
+Compartment[stereotype="CSMN::Lifecycle::Scope"] {
+	visible:			false;
+	displayHeader:		false;	
+}
+
+Package[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
+	shapeVisibility:	false;
+	elementIcon:		true;
+}
+
+/* === ICONS === */
+*[appliedStereotypes~="CSMN::Lifecycle::Scope"],
+Component[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/package-variant-closed.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
+}
+
+
+
+/* --------------------
+ * --------------------
+ * ScopeConstraint
+ * --------------------
+ * -------------------- */
+
+/* hide stereotype compartment and name */
+Label[stereotype="CSMN::Lifecycle::ScopeConstraint"],
+Compartment[stereotype="CSMN::Lifecycle::ScopeConstraint"] {
+	visible:			false;
+	displayHeader:		false;	
+}
+
+
+/* === ICONS === */
+Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"] {
+	shapeDirection:		4;
+}
+
+*[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-plus-outline.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
+}
+
+*[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
+	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-remove-outline.svg';
+	shapeVisibility:	true;
+	elementIcon:		false;
+}
