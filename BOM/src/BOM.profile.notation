@@ -134,13 +134,13 @@
     <element xmi:type="uml:Enumeration" href="BOM.profile.uml#_uprFAKlaEe6lTp7Ifjntmw"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_upsTIalaEe6lTp7Ifjntmw" x="1040" y="200"/>
   </children>
-  <children xmi:type="notation:Shape" xmi:id="_hZyRY6lcEe6AHfxDNhiNlQ" type="StereotypeComment">
-    <styles xmi:type="notation:TitleStyle" xmi:id="_hZyRZKlcEe6AHfxDNhiNlQ"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_hZy4cKlcEe6AHfxDNhiNlQ" name="BASE_ELEMENT">
+  <children xmi:type="notation:Shape" xmi:id="_sAyMw6pCEe6Gq7xaYvprpg" type="StereotypeComment">
+    <styles xmi:type="notation:TitleStyle" xmi:id="_sAyMxKpCEe6Gq7xaYvprpg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_sAyMxqpCEe6Gq7xaYvprpg" name="BASE_ELEMENT">
       <eObjectValue xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
     </styles>
     <element xsi:nil="true"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hZyRZalcEe6AHfxDNhiNlQ" x="400" y="60"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sAyMxapCEe6Gq7xaYvprpg" x="400" y="60"/>
   </children>
   <styles xmi:type="notation:StringValueStyle" xmi:id="_oB4pAaY2Ee6ULIx8cDHqqA" name="diagram_compatibility_version" stringValue="1.4.0"/>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_oB4pAqY2Ee6ULIx8cDHqqA"/>
@@ -224,16 +224,6 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hxwnYKY5Ee6ULIx8cDHqqA" id="(0.4984423676012461,1.0)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hxwnYaY5Ee6ULIx8cDHqqA" id="(0.4984423676012461,0.0)"/>
   </edges>
-  <edges xmi:type="notation:Connector" xmi:id="_hZy4calcEe6AHfxDNhiNlQ" type="StereotypeCommentLink" source="_qYzdEKY2Ee6ULIx8cDHqqA" target="_hZyRY6lcEe6AHfxDNhiNlQ">
-    <styles xmi:type="notation:FontStyle" xmi:id="_hZy4cqlcEe6AHfxDNhiNlQ"/>
-    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_hZy4dqlcEe6AHfxDNhiNlQ" name="BASE_ELEMENT">
-      <eObjectValue xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
-    </styles>
-    <element xsi:nil="true"/>
-    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_hZy4c6lcEe6AHfxDNhiNlQ" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hZy4dKlcEe6AHfxDNhiNlQ"/>
-    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hZy4dalcEe6AHfxDNhiNlQ"/>
-  </edges>
   <edges xmi:type="notation:Connector" xmi:id="_i70E0KlcEe6AHfxDNhiNlQ" type="Association_Edge" source="_tvpAkKY3Ee6ULIx8cDHqqA" target="_upsTIKlaEe6lTp7Ifjntmw">
     <children xmi:type="notation:DecorationNode" xmi:id="_i70r4KlcEe6AHfxDNhiNlQ" type="Association_StereotypeLabel">
       <styles xmi:type="notation:BooleanValueStyle" xmi:id="_jM7C8KlcEe6AHfxDNhiNlQ" name="IS_UPDATED_POSITION" booleanValue="true"/>
@@ -264,5 +254,15 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i70E0qlcEe6AHfxDNhiNlQ" points="[881, 240, -643984, -643984]$[960, 240, -643984, -643984]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i8LRMKlcEe6AHfxDNhiNlQ" id="(1.0,0.39603960396039606)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i8LRMalcEe6AHfxDNhiNlQ" id="(0.0,0.4)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_sAyMx6pCEe6Gq7xaYvprpg" type="StereotypeCommentLink" source="_qYzdEKY2Ee6ULIx8cDHqqA" target="_sAyMw6pCEe6Gq7xaYvprpg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_sAyMyKpCEe6Gq7xaYvprpg"/>
+    <styles xmi:type="notation:EObjectValueStyle" xmi:id="_sAyMzKpCEe6Gq7xaYvprpg" name="BASE_ELEMENT">
+      <eObjectValue xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
+    </styles>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_sAyMyapCEe6Gq7xaYvprpg" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sAyMyqpCEe6Gq7xaYvprpg"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_sAyMy6pCEe6Gq7xaYvprpg"/>
   </edges>
 </notation:Diagram>

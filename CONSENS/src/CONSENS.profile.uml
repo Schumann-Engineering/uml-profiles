@@ -3244,26 +3244,34 @@
     <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_64aAEKZXEe6ULIx8cDHqqA" name="extension_Box" type="_yEAQoKWmEe6ULIx8cDHqqA" aggregation="composite" association="_64Yx8KZXEe6ULIx8cDHqqA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Stereotype" xmi:id="_PO5lwKmSEe6AHfxDNhiNlQ" name="Connection">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fBQrQqmSEe6AHfxDNhiNlQ" name="connectionType" type="_SAim8KmSEe6AHfxDNhiNlQ" association="_fBQEMKmSEe6AHfxDNhiNlQ">
-      <defaultValue xmi:type="uml:InstanceValue" xmi:id="_3C2CsKmXEe6AHfxDNhiNlQ" name="Default Value" type="_SAim8KmSEe6AHfxDNhiNlQ" instance="_bDDJQKmSEe6AHfxDNhiNlQ"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mgqcEamSEe6AHfxDNhiNlQ" name="base_Relationship" association="_mgom4KmSEe6AHfxDNhiNlQ">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Relationship"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mgqcEqmSEe6AHfxDNhiNlQ"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="__QbkoKmWEe6AHfxDNhiNlQ" name="Flow_2_Source">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fBQrQqmSEe6AHfxDNhiNlQ" name="connectionType" type="_SAim8KmSEe6AHfxDNhiNlQ" association="_fBQEMKmSEe6AHfxDNhiNlQ">
+      <defaultValue xmi:type="uml:InstanceValue" xmi:id="_3C2CsKmXEe6AHfxDNhiNlQ" name="Default Value" type="_SAim8KmSEe6AHfxDNhiNlQ" instance="_bDDJQKmSEe6AHfxDNhiNlQ"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BKyjEqmYEe6AHfxDNhiNlQ" name="direction" type="_vp3C8KmXEe6AHfxDNhiNlQ" association="_BKx8AKmYEe6AHfxDNhiNlQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="__QbkoKmWEe6AHfxDNhiNlQ" name="flowToSource">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Tf2rUKmXEe6AHfxDNhiNlQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_TgBDYKmXEe6AHfxDNhiNlQ" value="*"/>
       <defaultValue xmi:type="uml:LiteralNull" xmi:id="_VEXLAKmXEe6AHfxDNhiNlQ" name="Default Value"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Hx1lAKmXEe6AHfxDNhiNlQ" name="Flow_2_Target">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Hx1lAKmXEe6AHfxDNhiNlQ" name="flowToTarget">
       <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_WSej8KmXEe6AHfxDNhiNlQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_WSo8AKmXEe6AHfxDNhiNlQ" value="*"/>
       <defaultValue xmi:type="uml:LiteralNull" xmi:id="_XE6tgKmXEe6AHfxDNhiNlQ" name="Default Value"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_BKyjEqmYEe6AHfxDNhiNlQ" name="direction" type="_vp3C8KmXEe6AHfxDNhiNlQ" association="_BKx8AKmYEe6AHfxDNhiNlQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_BLOc8KoREe6OkogQwQEbJw" name="isRealTime">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_EXztsKoREe6OkogQwQEbJw" name="Default Value"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_GcqhYKoREe6OkogQwQEbJw" name="purpose">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <defaultValue xmi:type="uml:LiteralNull" xmi:id="_JY4a4KoREe6OkogQwQEbJw" name="Default Value"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_SAim8KmSEe6AHfxDNhiNlQ" name="ConnectionType">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_UQhskKmSEe6AHfxDNhiNlQ" name="Energy"/>
