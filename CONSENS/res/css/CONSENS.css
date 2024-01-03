@@ -73,13 +73,14 @@ ComponentDiagram Connector > Label {
 
 *[appliedStereotypes~="CONSENS::Connection"][direction="uni_directional"] {
 	sourceDecoration:			none;
+	targetDecoration:			open_arrow;
 }
 
 *[appliedStereotypes~="CONSENS::Connection"][direction="bi_directional"] {
-	sourceDecoration:			none;
-	targetDecoration:			none;
+	sourceDecoration:			open_arrow;
+	targetDecoration:			open_arrow;
 }
-
+ 
 *[appliedStereotypes~="CONSENS::Connection"] {
 	/* line style */
 	lineColor:					#000000;
