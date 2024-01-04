@@ -12,6 +12,10 @@
 	shapeDirection:	2; /* 0 = top-left, 1 = top, 2 = top-right, 3 = left, 4 = center, 5 = right, 6 = bottom-left, 7 = bottom, 8 = bottom-right. */
 }
 
+Port {
+	shapeDirection:	4;
+}
+
 
 /* ============================================================
  * ============================================================
@@ -79,6 +83,12 @@ ComponentDiagram Compartment[type=StereotypeBrace] {
 
 /* Display the properties in Comment > Compartment*/
 ComponentDiagram StereotypeComment Compartment[type=StereotypeCompartment] {
+	visible:					true;
+}
+
+/* for ports, show symbol compartment. This scales the symbols / 
+ * icons down nicely, instead of a nasty overlay */
+ComponentDiagram Port > Compartment[kind=symbol] {
 	visible:					true;
 }
 
@@ -583,8 +593,8 @@ Dependency[appliedStereotypes~="CSMN::Connections::Connection"] > Label[kind=Nam
 
 /* show two arrows on bi-directional connections */
 *[appliedStereotypes~="CSMN::Connections::Connection"][direction="bi_directional"] {
-	sourceDecoration:			open_arrow;
-	targetDecoration:			open_arrow;
+	sourceDecoration:			solid_arrow_empty;
+	targetDecoration:			solid_arrow_filled;
 }
  
 /* default style for a connection 
@@ -631,6 +641,78 @@ Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType
 
 /* ============================================================
  * ============================================================
+ * CHARACTERISTICS (Asset)
+ * ============================================================
+ * ============================================================ */
+
+/* --------------------
+ * --------------------
+ * Asset
+ * --------------------
+ * -------------------- */
+/* Default style */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"] {
+	shapeVisibility:			true;
+	elementIcon:				false;
+} 
+
+/* === ICONS === */
+/* === AssetType.Unspecified === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Unspecified"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/help-circle-outline.svg';
+} 
+
+/* === AssetType.Energy === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Energy"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/lightning-bolt.svg';
+} 
+
+/* === AssetType.Data === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Data"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/database-outline.svg';
+} 
+
+/* === AssetType.Disturbance === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Disturbance"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/leak.svg';
+} 
+
+/* === AssetType.Information === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Information"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/information-box-outline.svg';
+} 
+
+/* === AssetType.Material === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Material"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/palette-swatch.svg';
+} 
+
+/* === AssetType.Mechanical === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Mechanical"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/connection.svg';
+} 
+
+/* === AssetType.Signal === */
+*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Signal"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/waveform.svg';
+} 
+
+
+/* --------------------
+ * --------------------
+ * AssetLibrary
+ * --------------------
+ * -------------------- */
+/* Default style */
+Package[appliedStereotypes~="CSMN::Characteristics::Asset::AssetLibrary"] {
+	shapeVisibility:			false;
+	elementIcon:				true;
+} 
+
+
+
+/* ============================================================
+ * ============================================================
  * CHARACTERISTICS (Flow)
  * ============================================================
  * ============================================================ */
@@ -645,19 +727,19 @@ Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType
 /* hide stereotype names */
 Label[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"],
 Compartment[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"] {
-	visible:			false;
+	visible:					false;
 }
 
 /* == LABEL == */
 /* hide stereotype label of connection */
 Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Stereotype] {
-	visible: 		false;
+	visible: 					false;
 }
 
 /* == LABEL == */
 /* hide text label of connection */
 Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Name] {
-	visible: 		true;
+	visible: 					true;
 }
 
 
@@ -666,6 +748,133 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
  * CHARACTERISTICS (Interface)
  * ============================================================
  * ============================================================ */
+
+/* --------------------
+ * --------------------
+ * InterfaceCharacteristic
+ * --------------------
+ * -------------------- */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"] {
+	shapeVisibility:			false;
+	elementIcon:				false;
+}
+
+
+
+/* === InterfaceType.Unspecified === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Unspecified"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/help-circle-outline.svg';
+}
+
+/* === InterfaceType.AirByFan === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="AirByFan"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/fan.svg';
+}
+
+/* === InterfaceType.AirByTurbine === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="AirByTurbine"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/turbine.svg';
+}
+
+/* === InterfaceType.Alarm === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Alarm"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/alarm-light.svg';
+}
+
+/* === InterfaceType.Bluetooth === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Bluetooth"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/bluetooth.svg';
+}
+
+/* === InterfaceType.Display === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Display"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/monitor.svg';
+}
+
+/* === InterfaceType.DisplaySmall === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="DisplaySmall"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/monitor-small.svg';
+}
+
+/* === InterfaceType.Ethernet === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Ethernet"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/ethernet.svg';
+}
+
+/* === InterfaceType.Hardwired === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Hardwired"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/link-variant.svg';
+}
+
+/* === InterfaceType.Hdmi === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Hdmi"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/hdmi-port.svg';
+}
+
+/* === InterfaceType.Knob === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Knob"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/knob.svg';
+}
+
+/* === InterfaceType.Nfc === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Nfc"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/nfc.svg';
+}
+
+/* === InterfaceType.Optical === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Optical"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/toslink.svg';
+}
+
+/* === InterfaceType.Proprietary === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Proprietary"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/midi-port.svg';
+}
+
+/* === InterfaceType.Serial === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Serial"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/serial-port.svg';
+}
+
+/* === InterfaceType.Speaker === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Speaker"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/speaker.svg';
+}
+
+/* === InterfaceType.Touch === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Touch"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/gesture-tap.svg';
+}
+
+/* === InterfaceType.Usb === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Usb"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/usb.svg';
+}
+
+/* === InterfaceType.UsbA === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbA"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/usb-port.svg';
+}
+
+/* === InterfaceType.UsbC === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbC"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/usb-c-port.svg';
+}
+
+/* === InterfaceType.UsbFlash === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbFlash"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/usb-flash-drive.svg';
+}
+
+/* === InterfaceType.WifiAccessPoint === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="WifiAccessPoint"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/access-point.svg';
+}
+
+/* === InterfaceType.WifiClient === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="WifiClient"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/wifi.svg';
+}
 
 
 /* ============================================================
@@ -691,21 +900,21 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
 /* hide stereotype compartment and name */
 Label[stereotype="CSMN::Lifecycle::Scope"],
 Compartment[stereotype="CSMN::Lifecycle::Scope"] {
-	visible:			false;
-	displayHeader:		false;	
+	visible:					false;
+	displayHeader:				false;	
 }
 
 Package[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
-	shapeVisibility:	false;
-	elementIcon:		true;
+	shapeVisibility:			false;
+	elementIcon:				true;
 }
 
 /* === ICONS === */
 *[appliedStereotypes~="CSMN::Lifecycle::Scope"],
 Component[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
-	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/package-variant-closed.svg';
-	shapeVisibility:	true;
-	elementIcon:		false;
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/package-variant-closed.svg';
+	shapeVisibility:			true;
+	elementIcon:				false;
 }
 
 
@@ -719,24 +928,32 @@ Component[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
 /* hide stereotype compartment and name */
 Label[stereotype="CSMN::Lifecycle::ScopeConstraint"],
 Compartment[stereotype="CSMN::Lifecycle::ScopeConstraint"] {
-	visible:			false;
-	displayHeader:		false;	
+	visible:					false;
+	displayHeader:				false;	
 }
 
 
 /* === ICONS === */
 Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"] {
-	shapeDirection:		4;
+	shapeDirection:				4;
 }
 
-*[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
-	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-plus-outline.svg';
-	shapeVisibility:	true;
-	elementIcon:		false;
+Component[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-plus-outline.svg';
+	shapeVisibility:			true;
+	elementIcon:				false;
+}
+/* expect for ports */
+Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
+	shapeVisibility:			false;
 }
 
-*[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
+Component[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
 	svgFile:			'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/puzzle-remove-outline.svg';
 	shapeVisibility:	true;
 	elementIcon:		false;
+}
+/* expect for ports */
+Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
+	shapeVisibility:			false;
 }
