@@ -885,6 +885,21 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
 	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/toslink.svg';
 }
 
+/* === InterfaceType.PowerBattery === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerBattery"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/battery.svg';
+}
+
+/* === InterfaceType.PowerPlug === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerPlug"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/power-plug.svg';
+}
+
+/* === InterfaceType.PowerSocket === */
+*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerSocket"] {
+	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/power-socket.svg';
+}
+
 /* === InterfaceType.Proprietary === */
 *[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Proprietary"] {
 	svgFile:					'platform:/resource/schumann-engineering.uml-profiles/CSMN/res/assets/midi-port.svg';
