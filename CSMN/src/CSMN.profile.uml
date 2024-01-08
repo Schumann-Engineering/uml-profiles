@@ -8,6 +8,490 @@
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KbFD5aTQEe6ULIx8cDHqqA" key="Date" value=""/>
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_KbFD5qTQEe6ULIx8cDHqqA" key="Author" value="&lt;undefined>"/>
     </eAnnotations>
+    <contents xmi:type="ecore:EPackage" xmi:id="_NyPE0K4DEe6jqeB5njcjPA" name="CSMN" nsURI="http:///schemas/CSMN/_NyOdwK4DEe6jqeB5njcjPA/89" nsPrefix="CSMN">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyQS8K4DEe6jqeB5njcjPA" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NyQS8a4DEe6jqeB5njcjPA" key="Version" value="0.0.90"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NyQS8q4DEe6jqeB5njcjPA" key="Comment" value="added material characteristic"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NyQS864DEe6jqeB5njcjPA" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NyQS9K4DEe6jqeB5njcjPA" key="Date" value="2024-01-08"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_NyQS9a4DEe6jqeB5njcjPA" key="Author" value="Janek Schumann"/>
+      </eAnnotations>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPE0a4DEe6jqeB5njcjPA" name="Elements" nsURI="http:///CSMN/Elements.ecore" nsPrefix="CSMN.Elements">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE0q4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_9SeX0KoSEe6OkogQwQEbJw"/>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPE064DEe6jqeB5njcjPA" name="SystemElement">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE1K4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_KbFD4KTQEe6ULIx8cDHqqA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE1a4DEe6jqeB5njcjPA" name="base_Component" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPE164DEe6jqeB5njcjPA" name="User">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE2K4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_PC6KoKTQEe6ULIx8cDHqqA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE2a4DEe6jqeB5njcjPA" name="base_Component" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPE264DEe6jqeB5njcjPA" name="userType" ordered="false" lowerBound="1" eType="_NyPE4a4DEe6jqeB5njcjPA" defaultValueLiteral="Generic"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPE3a4DEe6jqeB5njcjPA" name="useFilledIcon" ordered="false" lowerBound="1" defaultValueLiteral="false">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Boolean"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE364DEe6jqeB5njcjPA" name="base_Actor" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Actor"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPE4a4DEe6jqeB5njcjPA" name="userType">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE4q4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_fukq4KV5Ee6ULIx8cDHqqA"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE464DEe6jqeB5njcjPA" name="Generic"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE5K4DEe6jqeB5njcjPA" name="Administrator" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE5a4DEe6jqeB5njcjPA" name="Attacker" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE5q4DEe6jqeB5njcjPA" name="Auditor" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE564DEe6jqeB5njcjPA" name="Authority" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE6K4DEe6jqeB5njcjPA" name="EthicalHacker" value="5"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE6a4DEe6jqeB5njcjPA" name="Operator" value="6"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE6q4DEe6jqeB5njcjPA" name="OperatorEducated" value="7"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE664DEe6jqeB5njcjPA" name="Owner" value="8"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE7K4DEe6jqeB5njcjPA" name="Patient" value="9"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE7a4DEe6jqeB5njcjPA" name="Service" value="10"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE7q4DEe6jqeB5njcjPA" name="UNKNOWN" value="11"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPE764DEe6jqeB5njcjPA" name="Vendor" value="12"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPE8K4DEe6jqeB5njcjPA" name="EnvironmentElement">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE8a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_RJT2cKTQEe6ULIx8cDHqqA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE8q4DEe6jqeB5njcjPA" name="base_Component" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPE9K4DEe6jqeB5njcjPA" name="SecurityZone">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE9a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VtxgIKTQEe6ULIx8cDHqqA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE9q4DEe6jqeB5njcjPA" name="base_Package" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE-K4DEe6jqeB5njcjPA" name="base_Component" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPE-q4DEe6jqeB5njcjPA" name="Box">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPE-64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yEAQoKWmEe6ULIx8cDHqqA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE_K4DEe6jqeB5njcjPA" name="base_Comment" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Comment"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPE_q4DEe6jqeB5njcjPA" name="base_Package" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFAK4DEe6jqeB5njcjPA" name="EnvironmentLibrary">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFAa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_1BOeIKvlEe6TAdQAjsdzBw"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFAq4DEe6jqeB5njcjPA" name="base_Package" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFBK4DEe6jqeB5njcjPA" name="Connections" nsURI="http:///CSMN/Connections.ecore" nsPrefix="CSMN.Connections">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFBa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="__v9t8KoSEe6OkogQwQEbJw"/>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFBq4DEe6jqeB5njcjPA" name="Connection">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFB64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_PO5lwKmSEe6AHfxDNhiNlQ"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFCK4DEe6jqeB5njcjPA" name="connectionType" ordered="false" lowerBound="1" eType="_NyPFGK4DEe6jqeB5njcjPA" defaultValueLiteral="Information"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFCq4DEe6jqeB5njcjPA" name="directionPrimary" ordered="false" lowerBound="1" eType="_NyPFIK4DEe6jqeB5njcjPA" defaultValueLiteral="Client"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFDK4DEe6jqeB5njcjPA" name="directionType" ordered="false" lowerBound="1" eType="_NyPFJa4DEe6jqeB5njcjPA"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFDq4DEe6jqeB5njcjPA" name="flowToClient" ordered="false" upperBound="-1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFEK4DEe6jqeB5njcjPA" name="flowToSupplier" ordered="false" upperBound="-1">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFEq4DEe6jqeB5njcjPA" name="isRealTime" ordered="false" lowerBound="1" defaultValueLiteral="false">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Boolean"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFFK4DEe6jqeB5njcjPA" name="purpose" ordered="false">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFFq4DEe6jqeB5njcjPA" name="base_DirectedRelationship" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DirectedRelationship"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFGK4DEe6jqeB5njcjPA" name="ConnectionType">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFGa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_SAim8KmSEe6AHfxDNhiNlQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFGq4DEe6jqeB5njcjPA" name="Energy"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFG64DEe6jqeB5njcjPA" name="Disturbance" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFHK4DEe6jqeB5njcjPA" name="Information" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFHa4DEe6jqeB5njcjPA" name="Material" value="3"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFHq4DEe6jqeB5njcjPA" name="Mechanical" value="4"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFH64DEe6jqeB5njcjPA" name="Unspecified" value="5"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFIK4DEe6jqeB5njcjPA" name="DirectionOfPrimaryFlow">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFIa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_MWbyMKuzEe6RfcRsipOt9Q"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFIq4DEe6jqeB5njcjPA" name="Client"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFI64DEe6jqeB5njcjPA" name="Equal" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFJK4DEe6jqeB5njcjPA" name="Supplier" value="2"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFJa4DEe6jqeB5njcjPA" name="DirectionType">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFJq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_vp3C8KmXEe6AHfxDNhiNlQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFJ64DEe6jqeB5njcjPA" name="UniDirectional"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFKK4DEe6jqeB5njcjPA" name="BiDirectional" value="1"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFKa4DEe6jqeB5njcjPA" name="Characteristics" nsURI="http:///CSMN/Characteristics.ecore" nsPrefix="CSMN.Characteristics">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFKq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_e4yxsKoUEe6OkogQwQEbJw"/>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFK64DEe6jqeB5njcjPA" name="Asset" nsURI="http:///CSMN/Characteristics/Asset.ecore" nsPrefix="CSMN.Characteristics.Asset">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFLK4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_MxCkQKrnEe648K459CFmzA"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFLa4DEe6jqeB5njcjPA" name="Asset">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFLq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Y4rrgKrnEe648K459CFmzA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFL64DEe6jqeB5njcjPA" name="base_DataType" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//DataType"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFMa4DEe6jqeB5njcjPA" name="assetType" ordered="false" lowerBound="1" eType="_NyPFNa4DEe6jqeB5njcjPA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFM64DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFNa4DEe6jqeB5njcjPA" name="AssetType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFNq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_yP4kUKrnEe648K459CFmzA"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFN64DEe6jqeB5njcjPA" name="Unspecified"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFOK4DEe6jqeB5njcjPA" name="Credentials" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFOa4DEe6jqeB5njcjPA" name="Energy" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFOq4DEe6jqeB5njcjPA" name="Data" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFO64DEe6jqeB5njcjPA" name="Disturbance" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFPK4DEe6jqeB5njcjPA" name="Information" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFPa4DEe6jqeB5njcjPA" name="Material" value="6"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFPq4DEe6jqeB5njcjPA" name="Mechanical" value="7"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFP64DEe6jqeB5njcjPA" name="Signal" value="8"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFQK4DEe6jqeB5njcjPA" name="Interface" value="9"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFQa4DEe6jqeB5njcjPA" name="AssetLibrary">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFQq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_YrfHkKroEe648K459CFmzA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFQ64DEe6jqeB5njcjPA" name="base_Package" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFRa4DEe6jqeB5njcjPA" name="assetType" ordered="false" lowerBound="1" eType="_NyPFNa4DEe6jqeB5njcjPA"/>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFR64DEe6jqeB5njcjPA" name="Energy" nsURI="http:///CSMN/Characteristics/Energy.ecore" nsPrefix="CSMN.Characteristics.Energy">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFSK4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_snS_YK4BEe6jqeB5njcjPA"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFSa4DEe6jqeB5njcjPA" name="EnergyCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFSq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_VdX2cK4BEe6jqeB5njcjPA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFS64DEe6jqeB5njcjPA" name="base_Relationship" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Relationship"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFTa4DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFT64DEe6jqeB5njcjPA" name="energyType" ordered="false" lowerBound="1" eType="_NyPFUa4DEe6jqeB5njcjPA" defaultValueLiteral="Unspecified"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFUa4DEe6jqeB5njcjPA" name="EnergyType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFUq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_a57lwK4BEe6jqeB5njcjPA"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFU64DEe6jqeB5njcjPA" name="Unspecified"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFVK4DEe6jqeB5njcjPA" name="Force" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFVa4DEe6jqeB5njcjPA" name="Kinetic" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFVq4DEe6jqeB5njcjPA" name="Light" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFV64DEe6jqeB5njcjPA" name="Power" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFWK4DEe6jqeB5njcjPA" name="Sound" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFWa4DEe6jqeB5njcjPA" name="Vibration" value="6"/>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFWq4DEe6jqeB5njcjPA" name="Flow" nsURI="http:///CSMN/Characteristics/Flow.ecore" nsPrefix="CSMN.Characteristics.Flow">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFW64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_srRk8KomEe6Gq7xaYvprpg"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFXK4DEe6jqeB5njcjPA" name="OsiCharacteristic" eSuperTypes="_NyPFba4DEe6jqeB5njcjPA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFXa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_f0YQMKoUEe6OkogQwQEbJw"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFXq4DEe6jqeB5njcjPA" name="application" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFYK4DEe6jqeB5njcjPA" name="presentation" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFYq4DEe6jqeB5njcjPA" name="session" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFZK4DEe6jqeB5njcjPA" name="transport" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFZq4DEe6jqeB5njcjPA" name="network" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFaK4DEe6jqeB5njcjPA" name="dataLink" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFaq4DEe6jqeB5njcjPA" name="physical" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFba4DEe6jqeB5njcjPA" name="FlowCharacteristic" abstract="true">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFbq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_blW1kKoVEe6OkogQwQEbJw"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFb64DEe6jqeB5njcjPA" name="base_Relationship" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Relationship"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFca4DEe6jqeB5njcjPA" name="TcpCharacteristic" eSuperTypes="_NyPFba4DEe6jqeB5njcjPA">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFcq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_4nAm4KoVEe6OkogQwQEbJw"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFc64DEe6jqeB5njcjPA" name="application" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFda4DEe6jqeB5njcjPA" name="transport" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFd64DEe6jqeB5njcjPA" name="network" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFea4DEe6jqeB5njcjPA" name="dataLink" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFe64DEe6jqeB5njcjPA" name="physical" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFfa4DEe6jqeB5njcjPA" name="mechanical" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFgK4DEe6jqeB5njcjPA" name="Interface" nsURI="http:///CSMN/Characteristics/Interface.ecore" nsPrefix="CSMN.Characteristics.Interface">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFga4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_zy-AYKomEe6Gq7xaYvprpg"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFgq4DEe6jqeB5njcjPA" name="InterfaceCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFg64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_6MMMQKomEe6Gq7xaYvprpg"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFhK4DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFhq4DEe6jqeB5njcjPA" name="interfaceType" ordered="false" lowerBound="1" eType="_NyPFiq4DEe6jqeB5njcjPA" defaultValueLiteral="Unspecified"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFiK4DEe6jqeB5njcjPA" name="purpose" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFiq4DEe6jqeB5njcjPA" name="InterfaceType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFi64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="__UDd8KomEe6Gq7xaYvprpg"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFjK4DEe6jqeB5njcjPA" name="Unspecified"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFja4DEe6jqeB5njcjPA" name="AirByFan" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFjq4DEe6jqeB5njcjPA" name="AirByTurbine" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFj64DEe6jqeB5njcjPA" name="Alarm" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFkK4DEe6jqeB5njcjPA" name="Bluetooth" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFka4DEe6jqeB5njcjPA" name="Cellular" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFkq4DEe6jqeB5njcjPA" name="Cellular2G" value="6"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFk64DEe6jqeB5njcjPA" name="Cellular3G" value="7"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFlK4DEe6jqeB5njcjPA" name="Cellular4G" value="8"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFla4DEe6jqeB5njcjPA" name="Cellular5G" value="9"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFlq4DEe6jqeB5njcjPA" name="Display" value="10"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFl64DEe6jqeB5njcjPA" name="DisplaySmall" value="11"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFmK4DEe6jqeB5njcjPA" name="Ethernet" value="12"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFma4DEe6jqeB5njcjPA" name="Hardwired" value="13"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFmq4DEe6jqeB5njcjPA" name="Hdmi" value="14"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFm64DEe6jqeB5njcjPA" name="Knob" value="15"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFnK4DEe6jqeB5njcjPA" name="Nfc" value="16"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFna4DEe6jqeB5njcjPA" name="Optical" value="17"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFnq4DEe6jqeB5njcjPA" name="Proprietary" value="18"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFn64DEe6jqeB5njcjPA" name="PowerBattery" value="19"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFoK4DEe6jqeB5njcjPA" name="PowerPlug" value="20"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFoa4DEe6jqeB5njcjPA" name="PowerSocket" value="21"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFoq4DEe6jqeB5njcjPA" name="SdCard" value="22"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFo64DEe6jqeB5njcjPA" name="Serial" value="23"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFpK4DEe6jqeB5njcjPA" name="Speaker" value="24"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFpa4DEe6jqeB5njcjPA" name="Touch" value="25"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFpq4DEe6jqeB5njcjPA" name="Usb" value="26"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFp64DEe6jqeB5njcjPA" name="UsbA" value="27"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFqK4DEe6jqeB5njcjPA" name="UsbC" value="28"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFqa4DEe6jqeB5njcjPA" name="UsbFlash" value="29"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFqq4DEe6jqeB5njcjPA" name="WifiAccessPoint" value="30"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFq64DEe6jqeB5njcjPA" name="WifiClient" value="31"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFrK4DEe6jqeB5njcjPA" name="Zigbee" value="32"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFra4DEe6jqeB5njcjPA" name="BandwidthCharacteristics">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFrq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_W5ekUKsdEe64MIO5prd8KQ"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFr64DEe6jqeB5njcjPA" name="base_Relationship" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Relationship"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFsa4DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFs64DEe6jqeB5njcjPA" name="bandwidth" ordered="false" lowerBound="1" eType="_NyPr-K4DEe6jqeB5njcjPA" containment="true"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFta4DEe6jqeB5njcjPA" name="FirewallCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFtq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_L08nMKveEe6TAdQAjsdzBw"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFt64DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFua4DEe6jqeB5njcjPA" name="Material" nsURI="http:///CSMN/Characteristics/Material.ecore" nsPrefix="CSMN.Characteristics.Material">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFuq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_m-pfYK4CEe6jqeB5njcjPA"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPFu64DEe6jqeB5njcjPA" name="MaterialCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFvK4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_wAFqsK4CEe6jqeB5njcjPA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFva4DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPFv64DEe6jqeB5njcjPA" name="base_Relationship" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Relationship"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFwa4DEe6jqeB5njcjPA" name="materialType" ordered="false" lowerBound="1" eType="_NyPFxa4DEe6jqeB5njcjPA" defaultValueLiteral="Unspecified"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPFw64DEe6jqeB5njcjPA" name="otherMaterialType" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFxa4DEe6jqeB5njcjPA" name="MaterialType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFxq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_0YQk0K4CEe6jqeB5njcjPA"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFx64DEe6jqeB5njcjPA" name="Unspecified"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFyK4DEe6jqeB5njcjPA" name="Air" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFya4DEe6jqeB5njcjPA" name="Drugs" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFyq4DEe6jqeB5njcjPA" name="Other" value="3"/>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPFy64DEe6jqeB5njcjPA" name="Security" nsURI="http:///CSMN/Characteristics/Security.ecore" nsPrefix="CSMN.Characteristics.Security">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFzK4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_lSgGEKsiEe64MIO5prd8KQ"/>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPFza4DEe6jqeB5njcjPA" name="Iec62443SecurityLevel">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPFzq4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_84-oIKsiEe64MIO5prd8KQ"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPFz64DEe6jqeB5njcjPA" name="Unknown"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF0K4DEe6jqeB5njcjPA" name="NotApplicable" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF0a4DEe6jqeB5njcjPA" name="Level0" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF0q4DEe6jqeB5njcjPA" name="Level1" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF064DEe6jqeB5njcjPA" name="Level2" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF1K4DEe6jqeB5njcjPA" name="Level3" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF1a4DEe6jqeB5njcjPA" name="Level4" value="6"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPF1q4DEe6jqeB5njcjPA" name="Iec62443SecurityLevelCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF164DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_tclyoKsiEe64MIO5prd8KQ"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPF2K4DEe6jqeB5njcjPA" name="base_NamedElement" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPF2q4DEe6jqeB5njcjPA" name="securitylevel" ordered="false" upperBound="-1" eType="_NyPF3K4DEe6jqeB5njcjPA" containment="true"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPF3K4DEe6jqeB5njcjPA" name="SecurityLevel">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF3a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9BtQ4KsjEe64MIO5prd8KQ"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPF3q4DEe6jqeB5njcjPA" name="foundationalRequirement" ordered="false" lowerBound="1" eType="_NyPF6K4DEe6jqeB5njcjPA"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPF4K4DEe6jqeB5njcjPA" name="level" ordered="false" lowerBound="1" eType="_NyPF3K4DEe6jqeB5njcjPA" containment="true"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPF4q4DEe6jqeB5njcjPA" name="rational" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPF5K4DEe6jqeB5njcjPA" name="type" ordered="false" lowerBound="1" eType="_NyPF8a4DEe6jqeB5njcjPA"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPF5q4DEe6jqeB5njcjPA" name="vector" ordered="false" lowerBound="1">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPF6K4DEe6jqeB5njcjPA" name="Iec62443FoundationalRequirementType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF6a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_Kz2VoKslEe64MIO5prd8KQ"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF6q4DEe6jqeB5njcjPA" name="IAC"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF664DEe6jqeB5njcjPA" name="UC" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF7K4DEe6jqeB5njcjPA" name="SI" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF7a4DEe6jqeB5njcjPA" name="DC" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF7q4DEe6jqeB5njcjPA" name="RDF" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF764DEe6jqeB5njcjPA" name="TRE" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF8K4DEe6jqeB5njcjPA" name="RA" value="6"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPF8a4DEe6jqeB5njcjPA" name="Iec62443SecurityLevelType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF8q4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_MQS68KskEe64MIO5prd8KQ"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF864DEe6jqeB5njcjPA" name="Capability"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF9K4DEe6jqeB5njcjPA" name="Target" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPF9a4DEe6jqeB5njcjPA" name="Achieved" value="2"/>
+          </eClassifiers>
+        </eSubpackages>
+        <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPF9q4DEe6jqeB5njcjPA" name="Storage" nsURI="http:///CSMN/Characteristics/Storage.ecore" nsPrefix="CSMN.Characteristics.Storage">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF964DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_pFwPwKomEe6Gq7xaYvprpg"/>
+          <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPF-K4DEe6jqeB5njcjPA" name="StorageCharacteristic">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPF-a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_9Wgb4KoVEe6OkogQwQEbJw"/>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPF-q4DEe6jqeB5njcjPA" name="base_Component" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Component"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPF_K4DEe6jqeB5njcjPA" name="base_Port" ordered="false">
+              <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Port"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPF_q4DEe6jqeB5njcjPA" name="encryption" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPGAK4DEe6jqeB5njcjPA" name="storageFormat" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPGAq4DEe6jqeB5njcjPA" name="storageType" ordered="false" lowerBound="1" eType="_NyPGCK4DEe6jqeB5njcjPA" defaultValueLiteral="Unknown"/>
+            <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPGBK4DEe6jqeB5njcjPA" name="storageName" ordered="false">
+              <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+            </eStructuralFeatures>
+            <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPGBq4DEe6jqeB5njcjPA" name="totalSize" ordered="false" lowerBound="1" eType="_NyPr5q4DEe6jqeB5njcjPA" containment="true"/>
+          </eClassifiers>
+          <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPGCK4DEe6jqeB5njcjPA" name="StorageType">
+            <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPGCa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_OdYRsKogEe6Gq7xaYvprpg"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPGCq4DEe6jqeB5njcjPA" name="Unknown"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPGC64DEe6jqeB5njcjPA" name="RemovableByOperator" value="1"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPGDK4DEe6jqeB5njcjPA" name="RemovableByTechnician" value="2"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr4K4DEe6jqeB5njcjPA" name="Fixed" value="3"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr4a4DEe6jqeB5njcjPA" name="Network" value="4"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr4q4DEe6jqeB5njcjPA" name="CdRom" value="5"/>
+            <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr464DEe6jqeB5njcjPA" name="Ram" value="6"/>
+          </eClassifiers>
+        </eSubpackages>
+      </eSubpackages>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPr5K4DEe6jqeB5njcjPA" name="PrimitiveTypes" nsURI="http:///CSMN/PrimitiveTypes.ecore" nsPrefix="CSMN.PrimitiveTypes">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr5a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_MLzZUKsgEe64MIO5prd8KQ"/>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPr5q4DEe6jqeB5njcjPA" name="Size_T">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr564DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_8-dh4KseEe64MIO5prd8KQ"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPr6K4DEe6jqeB5njcjPA" name="size" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPr6q4DEe6jqeB5njcjPA" name="unit" ordered="false" lowerBound="1" eType="_NyPr7K4DEe6jqeB5njcjPA" defaultValueLiteral="Megabyte"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPr7K4DEe6jqeB5njcjPA" name="SizeUnitOfMeasure">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr7a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_TXE_IKseEe64MIO5prd8KQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr7q4DEe6jqeB5njcjPA" name="Gigabyte"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr764DEe6jqeB5njcjPA" name="Megabyte" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr8K4DEe6jqeB5njcjPA" name="Kilobyte" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr8a4DEe6jqeB5njcjPA" name="Byte" value="3"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPr8q4DEe6jqeB5njcjPA" name="SpeedUnitOfMeasurement">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr864DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_xfR24KsgEe64MIO5prd8KQ"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr9K4DEe6jqeB5njcjPA" name="Gigabit"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr9a4DEe6jqeB5njcjPA" name="Megabit" value="1"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr9q4DEe6jqeB5njcjPA" name="Kilobit" value="2"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPr964DEe6jqeB5njcjPA" name="Baud" value="3"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPr-K4DEe6jqeB5njcjPA" name="Bandwidth">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr-a4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_jo3gsKsgEe64MIO5prd8KQ"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPr-q4DEe6jqeB5njcjPA" name="size" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//Integer"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPr_K4DEe6jqeB5njcjPA" name="unit" ordered="false" lowerBound="1" eType="_NyPr8q4DEe6jqeB5njcjPA" defaultValueLiteral="Baud"/>
+        </eClassifiers>
+      </eSubpackages>
+      <eSubpackages xmi:type="ecore:EPackage" xmi:id="_NyPr_q4DEe6jqeB5njcjPA" name="Lifecycle" nsURI="http:///CSMN/Lifecycle.ecore" nsPrefix="CSMN.Lifecycle">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPr_64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/4.0.0/UML" references="_vESaAKpCEe6Gq7xaYvprpg"/>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPsAK4DEe6jqeB5njcjPA" name="Scope">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPsAa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_t_zeMKpCEe6Gq7xaYvprpg"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPsAq4DEe6jqeB5njcjPA" name="base_NamedElement" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPsBK4DEe6jqeB5njcjPA" name="product" ordered="false" lowerBound="1" upperBound="-1" eType="_NyPsBq4DEe6jqeB5njcjPA" containment="true"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPsBq4DEe6jqeB5njcjPA" name="Product">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPsB64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_t_0sVapCEe6Gq7xaYvprpg"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsCK4DEe6jqeB5njcjPA" name="name" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsCq4DEe6jqeB5njcjPA" name="model" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsDK4DEe6jqeB5njcjPA" name="udiDi" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsDq4DEe6jqeB5njcjPA" name="udiDiBase" ordered="false">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsEK4DEe6jqeB5njcjPA" name="softwareVersion" ordered="false" upperBound="-1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPsEq4DEe6jqeB5njcjPA" name="ScopeConstraint">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPsE64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_t_0FQKpCEe6Gq7xaYvprpg"/>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPsFK4DEe6jqeB5njcjPA" name="base_NamedElement" ordered="false">
+            <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_NyPsFq4DEe6jqeB5njcjPA" name="constraint" ordered="false" lowerBound="1" upperBound="-1" eType="_NyPsGq4DEe6jqeB5njcjPA" containment="true"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsGK4DEe6jqeB5njcjPA" name="constraintType" ordered="false" lowerBound="1" eType="_NyPsIK4DEe6jqeB5njcjPA" defaultValueLiteral="Added"/>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EClass" xmi:id="_NyPsGq4DEe6jqeB5njcjPA" name="ProductConstraint">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPsG64DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_t_0FU6pCEe6Gq7xaYvprpg"/>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsHK4DEe6jqeB5njcjPA" name="model" ordered="false" lowerBound="1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+          <eStructuralFeatures xmi:type="ecore:EAttribute" xmi:id="_NyPsHq4DEe6jqeB5njcjPA" name="softwareVersion" ordered="false" upperBound="-1">
+            <eType xmi:type="ecore:EDataType" href="http://www.eclipse.org/uml2/5.0.0/Types#//String"/>
+          </eStructuralFeatures>
+        </eClassifiers>
+        <eClassifiers xmi:type="ecore:EEnum" xmi:id="_NyPsIK4DEe6jqeB5njcjPA" name="ScopeConstraintType">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_NyPsIa4DEe6jqeB5njcjPA" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_t_1TYKpCEe6Gq7xaYvprpg"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPsIq4DEe6jqeB5njcjPA" name="Added"/>
+          <eLiterals xmi:type="ecore:EEnumLiteral" xmi:id="_NyPsI64DEe6jqeB5njcjPA" name="Removed" value="1"/>
+        </eClassifiers>
+      </eSubpackages>
+    </contents>
     <contents xmi:type="ecore:EPackage" xmi:id="_V9WhkK4CEe6jqeB5njcjPA" name="CSMN" nsURI="http:///schemas/CSMN/_V9V6gK4CEe6jqeB5njcjPA/88" nsPrefix="CSMN">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V9XvsK4CEe6jqeB5njcjPA" source="PapyrusVersion">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V9Xvsa4CEe6jqeB5njcjPA" key="Version" value="0.0.89"/>
@@ -17995,140 +18479,234 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_e4yxsKoUEe6OkogQwQEbJw" name="Characteristics">
-    <packagedElement xmi:type="uml:Package" xmi:id="_pFwPwKomEe6Gq7xaYvprpg" name="Storage">
-      <packagedElement xmi:type="uml:Stereotype" xmi:id="_9Wgb4KoVEe6OkogQwQEbJw" name="StorageCharacteristic">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_VymWUaohEe6Gq7xaYvprpg" name="base_Component" association="_VylvQKohEe6Gq7xaYvprpg">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Component"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VymWUqohEe6Gq7xaYvprpg"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_MxCkQKrnEe648K459CFmzA" name="Asset">
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_Y4rrgKrnEe648K459CFmzA" name="Asset">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bU7EcKrnEe648K459CFmzA" name="base_DataType" association="_bU52UKrnEe648K459CFmzA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bU7EcarnEe648K459CFmzA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_UC9PkaofEe6OkogQwQEbJw" name="base_Port" association="_UC8ogKofEe6OkogQwQEbJw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FgqRcKroEe648K459CFmzA" name="assetType" type="_yP4kUKrnEe648K459CFmzA" association="_FgpDUKroEe648K459CFmzA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_4aFb4KvbEe6TAdQAjsdzBw" name="base_Port" association="_4aDmsKvbEe6TAdQAjsdzBw">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Port"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UC9PkqofEe6OkogQwQEbJw"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4aFb4avbEe6TAdQAjsdzBw"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_bbobYKohEe6Gq7xaYvprpg" name="encryption">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gtxDYKohEe6Gq7xaYvprpg"/>
-          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_dGxukKohEe6Gq7xaYvprpg" name="Default Value"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_0oZ3wKofEe6OkogQwQEbJw" name="storageFormat">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-jEKEKofEe6Gq7xaYvprpg"/>
-          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_98sGkKofEe6Gq7xaYvprpg" name="Default Value"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_LHhJIKogEe6Gq7xaYvprpg" name="storageType" type="_OdYRsKogEe6Gq7xaYvprpg">
-          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_hu0GIKogEe6Gq7xaYvprpg" name="Default Value" type="_OdYRsKogEe6Gq7xaYvprpg" instance="_YUBmsKogEe6Gq7xaYvprpg"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_F_0koKoiEe6Gq7xaYvprpg" name="storageName">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H48CYKoiEe6Gq7xaYvprpg"/>
-          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_I5NMkKoiEe6Gq7xaYvprpg" name="Default Value"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Gu5hMqsfEe64MIO5prd8KQ" name="totalSize" type="_8-dh4KseEe64MIO5prd8KQ" association="_Gu46IKsfEe64MIO5prd8KQ"/>
-        <icon xmi:type="uml:Image" xmi:id="_Dj5p4KokEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-18%73%68%65%84%56%79%-91%-46%-67%43%-57%81%20%-57%-15%-41%47%-27%-33%16%-77%-55%98%-15%80%24%76%38%79%-101%29%-77%50%42%118%-117%-78%90%-28%105%81%70%36%-110%-59%-88%100%52%-56%-97%-63%-9%-44%87%93%-73%-101%-17%-3%-27%108%-9%-100%-49%121%-97%123%30%122%-2%105%-67%36%127%16%-121%24%41%48%-97%-80%93%-86%-107%2%22%112%89%16%61%99%24%39%-40%-52%-29%41%96%9%103%5%64%-8%118%-15%-128%99%-84%-89%-102%90%-64%10%-58%112%-101%67%-6%1%68%-31%113%-36%96%21%87%-31%72%1%-53%56%-83%92%74%104%-49%115%64%62%-125%23%28%-76%-64%13%-116%38%-16%-48%94%116%1%-90%49%-41%38%-59%-73%-17%-6%5%-36%55%67%-101%-62%43%102%-16%-39%5%88%-4%-23%43%17%126%52%-21%-101%-59%62%-26%-69%0%-91%59%-120%-61%122%-61%86%54%-36%-86%25%68%-50%81%-101%-72%86%3%-104%108%122%-115%-66%83%123%111%31%67%-103%127%2%-113%-7%22%6%-102%-69%-40%65%4%-1%-78%107%-20%-31%43%7%84%-34%-48%111%-39%55%45%123%49%17%-29%15%23%32%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Dj5p4aokEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p4qokEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Unknown"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p46okEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p5KokEe6Gq7xaYvprpg" key="image_name_key" value="Unknown"/>
+        <icon xmi:type="uml:Image" xmi:id="_V63koKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%-123%73%68%65%84%56%79%-91%-45%-53%-117%-49%81%24%-57%-15%-41%68%105%92%-54%-62%98%-110%38%53%11%25%74%-55%-83%44%-52%-98%20%-47%-108%-35%40%89%77%33%83%-125%-91%44%-124%-115%-102%-92%108%-40%-120%-91%-110%41%11%98%-95%113%-53%-122%105%-4%5%19%-62%-62%101%22%83%-100%-89%-98%83%-57%-73%-33%-84%-100%-51%-71%62%-17%-13%124%-98%-13%57%125%-2%-77%-11%45%17%-65%11%35%-40%-114%63%120%-117%39%120%-35%61%-33%5%-84%-62%53%-100%-60%23%-68%-49%-128%45%88%-121%41%-100%-59%66%5%-75%-128%126%-68%-62%32%46%-31%58%126%-25%-63%-107%-104%-64%121%124%-60%-50%10%105%1%17%112%8%123%49%-113%43%24%77%-64%-19%12%30%-62%11%-60%-4%76%-20%85%-64%26%124%43%26%15%96%58%55%47%-90%-108%-27%-72%-123%113%-36%-64%113%-36%-60%-38%-110%-43%-49%10%-40%-97%-6%54%-26%-115%-109%24%-64%-87%-100%63%-61%28%78%96%69%89%-1%94%10%123%-80%100%-5%-72%2%-82%34%-46%11%9%-35%-74%9%51%56%-105%25%-60%126%0%-97%-29%66%5%-124%-2%0%68%38%109%-37%-116%-105%120%-108%-11%-120%39%-115%22%50%103%113%-70%2%-58%-78%-14%-21%59%-128%-53%56%-126%-56%98%49%-9%34%-26%115%-42%-23%78%5%108%-61%-69%44%-30%-61%6%50%-100%-29%15%-51%-38%81%-36%-57%-42%-16%73%5%68%-1%0%1%-38%-127%79%25%112%47%-5%-6%-100%-31%-111%-88%71%60%-27%-31%-10%25%99%-68%58%-11%46%43%102%57%-122%55%29%57%-5%-118%-108%-69%-8%90%106%-80%-89%56%-14%71%23%16%-13%-42%-54%81%-92%-102%-55%-122%44%114%-8%32%-84%-4%-85%-105%-107%-37%11%119%-105%-49%19%55%-74%-97%-23%105%90%-3%-97%-60%-106%-6%-115%61%-20%-48%123%-23%47%28%104%74%17%-60%92%-82%25%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V63koarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63koqrpEe648K459CFmzA" key="image_name_key" value="Unspecified"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63ko6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63kpKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Unspecified"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_skQeUKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-91%73%68%65%84%56%79%-19%-45%61%14%65%81%16%5%-32%79%-20%-58%10%20%-124%13%40%-39%-127%-62%50%20%18%27%96%15%126%42%-75%-122%-60%22%-76%22%96%11%18%-34%4%-119%-36%-25%-67%60%81%104%76%51%-71%57%119%78%-50%-71%103%110%-51%-105%85%43%-103%-97%-94%-7%6%63%97%-120%75%96%69%4%51%-12%113%68%35%-23%29%116%-79%43%34%-104%99%-124%85%54%56%-56%8%-106%73%-65%62%-50%-127%-25%20%60%-121%3%-5%-104%-96%-121%-51%-117%-25%115%-119%-123%-80%-73%78%21%-124%-36%69%-59%80%-30%110%-50%-62%-97%-32%-98%-7%111%31%-79%-115%125%-59%24%91%56%-92%123%80%-49%54%115%-116%0%-53%106%-117%9%98%-91%11%63%83%69%33%-36%0%33%-77%45%17%-100%92%-102%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_skQeUaojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeUqojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = RemovableByTechnician"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeU6ojEe6Gq7xaYvprpg" key="image_name_key" value="RemovableByTechnician"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeVKojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+        <icon xmi:type="uml:Image" xmi:id="_q6WJEKsGEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%90%73%68%65%84%56%79%-123%-45%63%72%-106%81%20%6%-16%-33%55%-74%56%90%-115%46%66%-71%72%-125%-124%32%78%-118%107%80%66%14%-110%8%-42%-94%-117%34%56%8%-2%-119%-56%41%112%17%-101%18%92%-76%64%7%65%16%4%29%29%29%20%113%80%92%-77%-96%45%-85%-63%-34%35%-9%-123%-113%-49%-9%-14%-35%-23%114%-50%-71%-49%57%-9%121%-98%83%83%125%30%-96%3%87%-72%-50%-44%-36%-123%107%21%-55%-41%120%-122%67%60%68%59%102%-15%-73%10%-88%17%-96%27%61%88%-86%43%-18%69%31%62%-31%103%35%72%35%-64%50%22%-21%-58%126%-114%109%-4%-58%2%-122%-48%-113%-37%18%-88%17%-32%37%90%48%-127%41%-84%-89%111%92%-32%35%62%-29%13%-42%114%0%49%-22%94%74%-66%-64%22%126%-32%75%-47%-3%60%1%4%-56%-37%28%64%124%97%28%-17%83%-9%-77%84%56%-118%73%60%-59%76%-102%-90%82%-123%21%-68%43%-44%-103%47%-78%115%-119%-52%-23%58%-30%66%-42%46%124%-49%77%16%-116%31%-92%-28%63%12%23%29%-1%96%12%3%-8%-123%-57%-72%-55%1%68%124%4%31%-16%-88%-112%116%63%49%31%29%79%-15%-92%25%-119%37%-16%70%-15%96%16%-81%-16%45%5%67%-58%48%-44%17%66%-34%-84%19%35%-79%-103%30%7%-64%78%-102%36%76%86%-98%78%28%87%89%-71%-20%92%22%-106%19%-20%38%5%46%17%60%-83%38%-78%-17%-19%66%14%-96%53%-7%-95%45%121%32%-44%10%-80%-54%101%-118%-8%87%-124%43%-125%-121%-72%103%79%-43%54%70%113%24%38%-70%-98%52%91%-25%-1%0%97%68%17%95%10%-53%41%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q6WJEasGEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJEqsGEe648K459CFmzA" key="image_name_key" value="Credentials"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJE6sGEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJFKsGEe648K459CFmzA" key="image_expr_key" value="assetType = Credentials"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_0OxS8KojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%120%73%68%65%84%56%79%-115%-46%-65%75%87%97%20%6%-16%-113%-23%-96%66%-28%32%34%56%-91%-124%81%8%-2%64%80%-63%-52%36%73%112%40%104%-88%69%-121%-2%-110%-122%114%112%114%113%113%113%8%-38%92%92%92%-84%32%-45%-106%66%-45%-87%66%40%-9%-126%-108%-126%-122%-16%61%-14%94%-71%-22%-9%-85%29%120%-71%-9%-66%-9%-100%-25%60%-25%121%78%-115%-1%-117%107%-88%-63%-25%-45%-23%113%121%81%-12%-29%13%46%-31%46%-42%-54%5%23%1%92%79%69%-17%-16%30%-75%24%78%-17%-9%-16%-74%0%-87%6%-48%-127%69%92%-59%7%-68%64%11%-18%99%48%-125%28%49%-87%4%112%35%117%90%69%107%-18%114%7%-63%-92%13%-49%-80%-116%1%-116%-89%-77%126%26%-96%23%-81%112%-91%52%-25%-97%68%121%12%27%-104%-59%-73%-52%36%64%122%-54%0%67%9%121%5%-105%43%-88%122%-112%5%124%-128%-17%120%-120%-18%56%5%64%124%-124%88%-115%-25%88%-78%-113%0%120%-118%-101%-119%-23%45%108%7%64%-100%45%116%-27%-30%-65%-8%-110%-109%42%-31%-3%-64%72%98%-79%83%-120%24%-44%-93%123%68%60%39%16%-35%-62%-1%-80%47%-4%47%-57%87%116%-30%95%1%16%-76%-106%114%-58%-109%36%-48%102%82%124%33%-87%-35%-105%-35%8%23%-118%-120%-18%-93%-8%84%-34%-125%-37%-119%-46%-21%124%49%-125%-25%8%43%-61%-1%88%-35%-10%-4%47%-118%3%44%-58%61%-114%-104%-65%30%123%104%-58%111%-52%-31%35%-90%49%-103%51%127%-26%-50%39%-118%-53%-117%-12%40%-51%-11%-78%-118%3%-65%114%113%-128%-98%-119%-14%30%60%78%-21%58%-113%-90%82%86%-120%58%-107%-50%110%21%-16%51%-85%-36%-112%-59%-85%67%-52%124%44%86%53%-128%67%-26%-107%64%85%-66%125%-30%-84%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0OxS8aojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS8qojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = RemovableByOperator"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS86ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS9KojEe6Gq7xaYvprpg" key="image_name_key" value="RemovableByOperator"/>
+        <icon xmi:type="uml:Image" xmi:id="_fhBmkKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-94%73%68%65%84%56%79%-99%-45%77%14%1%65%16%-122%-31%103%-62%-46%125%-40%33%68%98%47%-42%-18%-32%12%-18%97%-17%4%-30%119%-55%-50%85%-20%73%76%39%36%-46%-38%-52%-92%107%89%-87%122%-65%-6%45%-44%91%27%-113%127%97%69%125%-66%5%-42%-71%-128%46%-106%-104%-25%2%-74%-72%-25%2%-126%-6%5%-101%92%-64%30%-93%92%-64%71%61%110%-3%-116%-31%-73%-13%-33%22%-114%113%-32%59%-87%-121%107%29%-96%-113%-96%20%-37%1%-29%-40%-103%-86%-32%84%2%6%9%-64%-113%122%-120%-87%59%-92%-80%-127%25%118%-104%-92%110%-95%41%32%-87%-34%-76%-126%78%57%-72%105%-18%37%-122%22%86%-72%-27%2%42%31%-87%73%11%45%60%-85%62%-10%5%92%12%26%17%-127%-47%47%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fhBmkarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmkqrpEe648K459CFmzA" key="image_name_key" value="Energy"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmk6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmlKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Energy"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_fCtk4KojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%47%73%68%65%84%56%79%-91%-45%61%40%-121%81%20%-57%-15%-113%-105%-63%91%70%19%11%-123%1%-125%-78%17%-91%100%50%97%-76%89%76%66%-78%-119%24%20%37%54%-93%-51%-53%108%66%81%-54%40%38%25%-52%12%-108%1%69%120%110%-35%-89%30%-1%60%-2%-59%-35%110%-9%-100%-17%61%-65%-33%57%-89%-60%63%79%73%38%-65%10%91%-88%47%-62%-68%-59%56%-34%67%92%22%-48%-113%-61%76%-14%43%-82%-29%-67%5%21%-103%-73%62%-100%20%2%70%-80%27%-55%-77%-40%76%127%65%57%38%-79%-126%82%-124%-40%-3%66%-64%40%118%-80%-122%-103%28%25%-85%-104%70%-120%-35%-53%3%116%-32%42%7%-48%-114%-53%60%64%42%33%-104%-7%18%1%75%120%75%-68%90%-120%-9%74%60%-25%73%72%1%-51%-72%-119%9%77%104%-59%1%62%81%-121%-69%60%-64%112%-44%53%-97%24%-75%24%1%99%24%-62%41%54%48%21%61%-6%-47%-60%20%16%74%30%-60%49%38%-16%-128%46%60%98%14%-43%-59%36%-124%-49%63%-80%30%-91%-124%-33%6%112%-124%-34%88%-39%-113%21%-92%30%20%54%32%104%111%76%-54%127%-62%5%26%-118%117%-95%45%73%-40%70%103%-122%20%6%-24%62%49%50%-8%83%-101%39%-95%39%-102%117%-98%76%89%-128%-44%-4%-78%19%-35%56%43%28%-92%-78%-40%-17%-16%-8%-37%9%-5%-78%28%-37%-6%109%-103%-2%-76%-40%95%32%67%68%17%-25%7%-10%-51%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fCtk4aojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk4qojEe6Gq7xaYvprpg" key="image_name_key" value="Fixed"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk46ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk5KojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Fixed"/>
+        <icon xmi:type="uml:Image" xmi:id="_hdcP8KrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-53%42%-122%81%20%-58%-15%-33%87%46%64%-103%58%-108%-111%28%-109%-120%-28%22%36%66%74%97%98%38%-73%-64%21%-104%83%98%96%-32%-112%72%-82%-128%24%16%-55%105%98%34%-26%50%-106%-40%-69%-10%91%-81%-81%-17%-112%-66%61%-37%123%-81%-11%95%107%-19%-25%-39%5%53%-82%66%-115%-7%74%1%-58%48%-127%30%-76%-92%2%-81%-72%-59%1%78%-14%69%-117%1%-101%-104%-58%105%74%120%78%-63%-19%-24%-59%40%-42%-79%-108%65%-14%-128%33%92%-124%10%125%33%-16%-90%-52%104%-125%-72%12%5%-6%113%29%99%-14%-128%41%-20%-30%33%92%-84%-32%8%-33%9%84%-121%-15%16%-65%-118%54%76%-90%113%-2%0%-30%-31%94%-126%-60%55%-120%73%-7%-11%-107%-110%102%-86%1%98%87%-51%104%45%2%-68%-32%29%63%-43%0%-53%-40%-58%103%17%-96%30%-13%88%-85%6%120%67%99%-112%-14%30%31%9%-46%16%-38%-17%68%-68%107%-86%6%-120%35%116%96%4%-61%9%112%-114%51%60%85%26%33%-109%104%22%59%101%100%-100%-61%22%6%112%85%44%99%-36%71%35%45%-32%46%116%-79%31%90%125%76%-96%-82%80%61%-54%28%-57%-40%-64%98%41%35%101%103%81%-17%40%99%119%-78%114%124%-11%-52%-54%-121%-63%-111%-57%-107%-84%-4%-17%-65%85%-13%111%-4%5%57%-39%60%17%-39%74%73%-55%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hdcP8arpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP8qrpEe648K459CFmzA" key="image_name_key" value="Data"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP86rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP9KrpEe648K459CFmzA" key="image_expr_key" value="assetType = Data"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_iqYPIKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-50%73%68%65%84%56%79%-59%-46%49%78%66%65%16%-58%-15%31%22%94%66%106%76%-68%-123%7%-80%20%15%64%-96%-48%-34%86%45%-71%-128%-122%-106%78%-80%-13%0%92%-126%104%69%69%97%-31%13%44%-124%55%100%54%121%-58%-62%71%30%-119%-109%76%54%-69%-39%-7%-49%-73%-33%108%71%-53%-24%-76%-84%119%48%-64%41%-98%112%-44%80%-47%55%-122%88%21%5%83%92%-80%83%-12%-123%-73%63%64%103%120%-59%-96%0%-98%-79%-60%49%122%9%56%-57%93%5%125%72%-40%125%-75%70%46%16%-128%-120%-85%58%-96%-97%-121%-77%92%-33%19%122%-109%-5%-57%44%44%-59%63%0%81%116%89%3%4%56%-10%-111%-13%60%-113%6%113%47%50%-68%-38%84%74%-5%69%-63%-1%3%-62%-60%-70%7%49%-123%-67%76%-100%96%-108%111%-3%108%56%-58%23%92%23%15%-70%24%-29%-92%-31%71%90%-29%22%31%7%-5%-54%13%27%-1%-66%-42%90%-63%22%-96%-2%49%17%106%-37%-18%-97%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iqYPIaojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPIqojEe6Gq7xaYvprpg" key="image_name_key" value="Network"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPI6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPJKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Network"/>
+        <icon xmi:type="uml:Image" xmi:id="_9NAuUKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%54%73%68%65%84%56%79%-91%-45%-67%43%-82%97%28%7%-16%-49%-109%76%103%17%41%-117%-94%44%94%50%48%25%-114%-120%-62%34%74%98%-112%-63%102%80%22%-125%-31%12%-78%88%108%54%-55%96%36%-17%-125%-63%-96%-120%-127%-55%75%-22%116%-106%-109%78%70%47%127%0%-41%125%-70%-98%122%-98%59%-36%-22%-71%-21%-102%-18%-21%-5%-3%125%95%126%87%78%-119%95%-82%68%-68%66%-126%55%-36%-95%25%-57%-72%-58%18%-2%-95%31%71%31%13%43%36%72%-64%-65%-80%-113%7%-52%-32%25%-121%104%-64%-97%44%-126%-28%127%37%-106%-47%24%38%118%96%15%117%104%-7%-52%106%-95%-126%-101%8%-68%-64%88%0%-73%97%7%35%-40%-6%14%-63%58%-74%-93%-123%-98%32%123%3%-25%24%74%-127%-53%-30%-96%100%96%81%-120%53%33%-68%-97%24%-58%120%-108%63%-119%-89%72%48%-118%57%-76%-94%60%-113%77%-73%-112%-36%-3%-115%-7%-32%123%51%2%-85%-80%-122%-63%-88%106%23%-89%120%76%43%-24%-62%43%-82%82%-110%15%-126%-83%-10%-48%-62%4%46%-93%-118%-90%-68%-75%-84%69%-102%-62%42%-70%-15%55%-18%66%125%8%-7%62%-33%76%22%-63%45%-50%48%29%3%77%-126%-101%45%-56%-91%40%-60%116%83%63%-16%-126%1%84%-121%-77%-126%-38%64%-44%-121%5%36%54%-66%36%-24%12%-46%79%80%-127%-59%88%93%111%12%57%-39%-52%-1%-22%-77%44%100%-66%-75%-110%9%-34%1%1%-70%54%17%33%72%111%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9NAuUarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuUqrpEe648K459CFmzA" key="image_name_key" value="Disturbance"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuU6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuVKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Disturbance"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_oBdBgKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-9%73%68%65%84%56%79%-91%-45%61%74%3%65%24%-58%-15%95%-70%72%12%-126%-99%-123%8%-94%104%-91%-123%96%-93%-34%-63%35%-120%65%60%-126%-105%72%107%-89%-32%17%-68%-125%-38%-6%-123%96%16%65%59%75%17%20%-79%17%119%96%34%-29%100%55%11%-18%118%-13%126%-4%-33%-9%121%118%-90%-91%-31%-41%106%-40%-81%14%-80%16%7%60%86%13%42%3%-76%113%-128%125%-52%-60%-58%23%28%-94%-113%-81%20%-106%3%58%-72%-62%98%-59%-60%7%-84%-31%125%-104%-49%1%71%-24%-43%-8%18%106%-10%-54%0%19%-8%-32%-113%47%-125%88%-72%-100%64%-65%11%41%-109%-123%-52%-49%16%75%55%-40%-64%121%82%120%-121%-11%88%115%-119%-91%36%-73%-119%-117%28%16%-126%103%73%-47%45%86%-29%-7%30%-23%22%91%-61%97%-23%6%-63%-64%95%115%98%-29%13%-90%49%-101%-7%18%36%4%-71%35%-9%-32%24%-69%-1%53%49%-12%117%113%-115%-7%10%-56%19%86%-58%-3%-58%-48%55%-123%-109%2%-76%-99%65%78%-79%-125%-73%113%23%41%-51%5%-19%115%49%-16%-116%-41%-78%-83%-22%-34%66%-19%91%107%12%-8%1%-121%-54%35%17%24%49%-105%-4%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oBdBgaojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBgqojEe6Gq7xaYvprpg" key="image_name_key" value="CdRom"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBg6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBhKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = CdRom"/>
+        <icon xmi:type="uml:Image" xmi:id="_Ap32wKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-93%73%68%65%84%56%79%-67%-45%-69%13%2%49%16%69%-47%-77%64%53%84%65%19%16%-110%81%2%33%32%18%36%122%32%33%-28%-45%4%77%80%12%1%31%75%107%-55%-69%66%-84%87%-106%-104%104%60%122%-66%-10%-116%-97%43%-123%81%21%-18%-105%2%-114%-104%103%2%15%88%4%109%10%120%126%-42%91%-36%58%32%19%-84%48%108%3%94%-104%-30%-102%0%-58%117%126%79%106%65%115%-114%-121%-89%55%8%-128%25%46%-119%56%-28%-79%30%-53%65%115%-54%5%124%-21%-26%39%-96%-35%-62%-90%38%-124%-39%-60%-8%111%11%-59%51%-24%13%40%122%-58%62%70%90%99%-48%54%-46%14%75%-116%58%-100%-8%-64%30%1%-46%-80%114%-26%55%104%-54%-118%127%-29%27%-105%73%46%17%-54%21%-8%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ap32warqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32wqrqEe648K459CFmzA" key="image_name_key" value="Information"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32w6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32xKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Information"/>
           </eAnnotations>
         </icon>
-        <icon xmi:type="uml:Image" xmi:id="_4u8SgKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-52%73%68%65%84%56%79%-83%-45%61%110%2%49%16%-122%-31%7%14%-111%6%-119%22%41%-105%72%74%14%16%17%106%-92%-12%-108%116%-124%-118%62%77%-6%20%72%17%45%7%-128%75%-48%81%-95%52%57%4%-80%94%-39%-110%-75%-80%65%97%113%-29%-65%-7%-34%-15%-52%120%90%26%-114%86%67%-67%-65%0%71%12%40%109%-66%-29%124%-26%-81%10%-24%-31%19%109%60%21%-128%109%84%60%98%-125%3%-34%-80%75%-92%42%-32%11%-3%76%88%-11%24%64%43%-116%-22%0%75%-92%-89%95%74%-49%-39%125%-2%-126%32%12%35%24%-123%-40%-45%62%119%22%-18%94%-30%65%-87%-51%1%-49%-123%104%-118%95%-68%70%-64%123%-76%9%-25%41%-103%15%-59%122%-122%-11%-35%1%-115%67%72%-15%-33%-100%-60%0%-8%-64%-16%74%25%23%24%-41%-107%-79%-117%57%58%53%31%-23%7%19%-20%-21%0%121%-19%111%-6%-54%-1%-18%-83%-58%-35%120%2%62%67%48%17%115%62%-32%98%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4u8SgaojEe6Gq7xaYvprpg" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8SgqojEe6Gq7xaYvprpg" key="image_name_key" value="Ram"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8Sg6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8ShKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Ram"/>
+        <icon xmi:type="uml:Image" xmi:id="_w2ZA8KvbEe6TAdQAjsdzBw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%70%73%68%65%84%56%79%-91%-45%-79%75%-42%81%20%-58%-15%-113%34%-123%-122%-24%31%16%-118%-88%83%-110%33%82%-125%40%34%-44%-46%36%68%-32%-110%-32%-108%67%67%13%-22%-20%38%-126%45%13%-126%32%-72%-119%14%-18%-118%4%-126%74%-94%5%-118%-127%52%-123%107%-101%5%38%-126%-34%11%-9%-62%15%95%-34%-9%85%-68%-45%-71%-36%115%-66%60%-25%57%-25%-42%-72%-25%-87%-71%99%-3%107%124%-60%38%-66%-32%-20%38%-32%49%58%-54%64%-101%-79%-122%-33%104%-59%56%-26%51%-96%1%95%-15%-4%22%-118%-70%-79%-108%-14%63%101%-64%20%-34%7%105%-3%56%45%3%-87%-57%17%-38%-15%15%67%-40%-53%-128%101%-44%-30%109%21%5%77%120%-118%111%-72%-120%-71%25%48%-121%1%-12%22%0%47%-79%-102%-18%-61%73%114%9%63%3%-98%97%7%-121%56%79%89%17%-10%40%-59%103%-8%-98%-30%95%88%-63%70%81%65%-116%59%49%89%-104%66%17%-16%23%7%9%-48%18%76%108%67%15%126%84%-38%-125%119%88%72%69%-93%-120%62%-59%83%-121%125%-84%99%-94%8%120%-128%23%-40%-59%101%21%51%-93%55%49%103%36%3%98%97%-36%-82%-40%-13%86%-16%-29%21%-2%-105%-127%60%12%-123%39%88%12%-109%-101%-50%-128%-49%-63%-108%62%-116%-91%89%87%-37%-89%99%12%-30%79%6%-60%-75%-100%9%123%-16%51%-116%-18%9%-34%84%80%112%-123%-19%-36%102%6%52%-30%3%-70%66%27%-77%-47%-35%106%18%-14%-5%93%127%99%9%-9%26%8%-48%56%17%-109%48%14%119%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w2ZA8avbEe6TAdQAjsdzBw" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA8qvbEe6TAdQAjsdzBw" key="image_name_key" value="Interface"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA86vbEe6TAdQAjsdzBw" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA9KvbEe6TAdQAjsdzBw" key="image_expr_key" value="assetType = Interface"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_Jbh5oKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%63%40%-122%81%20%-57%-15%-49%-101%8%-59%-62%98%48%72%54%-85%82%6%41%-108%-28%79%41%51%-117%-116%12%102%50%88%20%25%-52%38%-91%72%100%80%44%118%3%3%82%-56%66%-108%-78%24%41%-98%91%-9%-83%-89%-41%-5%62%-113%114%-58%123%-49%-7%-34%-33%-7%-35%115%10%-2%25%-123%63%-42%55%-94%9%-113%-91%-7%121%-128%54%-52%98%58%2%-70%113%-98%-122%-108%3%84%97%36%22%14%34%-99%115%-120%-15%60%-64%30%106%-109%-105%-122%-53%-76%-9%-115%86%60%23%-17%74%21%-44%99%31%59%-40%-86%-32%-49%50%22%43%1%-62%-7%1%-58%50%-52%125%-115%42%-66%66%78%90%65%3%62%48%-128%-109%-100%-33%-103%-60%110%26%16%64%-13%88%-117%-48%59%-76%103%64%-50%-48%-105%6%12%69%-45%-106%80%-121%9%-84%-25%-88%-24%-64%125%-79%-123%99%60%36%5%1%-80%-128%21%-68%68%88%37%-50%6%-26%2%-96%25%111%-40%-116%-128%32%-65%5%33%97%38%67%-59%17%70%3%-96%26%87%56%-115%-128%0%11%-109%119%-111%12%-51%101%25%64%80%-74%26%77%124%42%-74%80%-125%78%92%-29%29%55%-24%66%48%-85%55%66%-62%89%40%-36%-58%103%-42%28%-12%39%106%122%-30%-113%-124%-119%-100%-62%45%-126%-28%95%-111%-73%76%-71%-53%-6%3%45%-23%51%17%-25%-103%38%-80%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jbh5oarqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5oqrqEe648K459CFmzA" key="image_name_key" value="Material"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5o6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5pKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Material"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_LxfEYKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%56%73%68%65%84%56%79%-99%-45%-49%43%103%97%20%-57%-15%23%89%72%52%-1%-126%-83%49%75%63%70%88%-53%-122%50%11%81%-60%78%89%32%22%34%59%-91%76%-119%-107%-123%40%74%-88%89%76%89%40%74%97%105%65%-10%-14%39%40%43%97%50%-49%-93%71%93%-41%-105%91%78%-35%-70%-9%-98%-13%-68%-49%-7%124%-18%-71%101%-66%22%101%-88%-63%93%-68%41%-118%10%-84%34%-42%-114%-32%31%-42%80%-121%-42%34%64%37%-2%-94%35%117%57%-61%53%6%-47%-117%63%69%-128%-33%-104%42%49%-30%16%54%-29%-5%34%64%21%-114%-47%-100%-125%-100%-90%-87%-18%63%3%68%-109%106%113%-125%67%-76%-28%32%-13%-63%-113%-71%60%32%26%-42%-128%-85%96%-48%17%-66%5%-99%63%80%-99%-98%127%102%32%19%88%-50%2%-54%-125%-77%123%-24%14%-41%5%-66%-93%29%-105%-23%80%-124%68%57%-115%88%-63%120%-34%-125%101%-116%101%58%76%98%9%-11%-40%-62%-81%-112%-65%-59%40%22%-16%-100%7%60%34%74%120%-115%39%-52%98%6%39%65%86%79%-38%-127%55%86%100%37%12%99%-93%-60%39%59%71%91%0%61%-108%-38%-72%-68%-119%-37%-24%-49%21%-58%-55%-102%50%94%124%56%-63%64%-46%122%-128%-50%76%-43%110%-40%-66%-104%-117%-110%-34%-59%-21%4%125%-120%-35%-89%-79%-120%-82%-28%-12%78%-14%-31%-59%-80%-49%0%-5%105%-25%-41%-117%-2%-84%124%-66%104%-107%11%121%-1%1%5%-98%53%17%80%-81%-43%-127%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LxfEYarqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEYqrqEe648K459CFmzA" key="image_name_key" value="Mechanical"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEY6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEZKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Mechanical"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_Yi4hAKrvEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%-51%42%69%97%20%-58%-15%-33%49%-111%-92%12%-120%-119%12%-108%-104%113%23%-52%-104%-71%5%102%82%-18%66%102%-54%45%48%-14%-103%41%38%20%73%-26%-60%64%73%-108%-81%-14%-51%89%-75%-74%116%114%-40%-27%-83%-73%-67%-33%-42%-69%-2%107%61%-49%-38%-69%-30%-97%-85%82%39%-65%17%31%120%-2%-117%95%15%-48%-109%-128%-29%4%-76%-26%-7%-90%22%-8%19%-96%3%125%120%-57%118%38%12%-32%13%71%101%0%-29%-72%-51%-118%11%120%-59%72%2%86%-54%0%86%-79%-113%-5%4%-51%99%50%65%91%56%-4%14%-87%-107%-48%-119%29%-100%-29%26%-19%-40%64%-56%106%65%-60%-57%112%89%64%10%64%23%102%-85%-55%67%104%78%-3%49%-123%34%30%50%26%-14%28%-17%75%-104%-58%105%113%-95%-69%90%97%6%-61%104%74%64%20%-119%120%-104%25%59%0%-79%-97%-80%-122%41%-100%-43%74%-120%86%119%113%-127%-85%-108%-80%-98%-83%-121%-124%-120%-1%40%-31%-69%47%65%-33%-61%67%26%57%-105%38%-122%-92%77%28%-4%102%98%-60%38%-86%-19%-35%-91%-21%-117%-7%28%-51%49%46%-105%25%99%56%-35%-97%-119%-59%-121%52%-104%-25%82%31%82%20%-23%-59%11%78%-78%98%91%-54%121%44%-45%65%-36%-119%81%-122%-37%49%-78%95%87%-67%-97%-23%-81%-68%-81%-8%39%85%-125%70%17%-28%25%-126%-33%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Yi4hAarvEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hAqrvEe648K459CFmzA" key="image_name_key" value="Signal"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hA6rvEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hBKrvEe648K459CFmzA" key="image_expr_key" value="assetType = Signal"/>
           </eAnnotations>
         </icon>
       </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_UC8ogKofEe6OkogQwQEbJw" name="E_StorageCharacteristic_Port" memberEnd="_UC9PkKofEe6OkogQwQEbJw _UC9PkaofEe6OkogQwQEbJw">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_UC9PkKofEe6OkogQwQEbJw" name="extension_StorageCharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" aggregation="composite" association="_UC8ogKofEe6OkogQwQEbJw"/>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_bU52UKrnEe648K459CFmzA" name="E_Asset_DataType1" memberEnd="_bU6dYKrnEe648K459CFmzA _bU7EcKrnEe648K459CFmzA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_bU6dYKrnEe648K459CFmzA" name="extension_Asset" type="_Y4rrgKrnEe648K459CFmzA" aggregation="composite" association="_bU52UKrnEe648K459CFmzA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_OdYRsKogEe6Gq7xaYvprpg" name="StorageType">
-        <ownedComment xmi:type="uml:Comment" xmi:id="_SQD5IKogEe6Gq7xaYvprpg" annotatedElement="_OdYRsKogEe6Gq7xaYvprpg">
-          <body>Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, and Unknown.</body>
-        </ownedComment>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YUBmsKogEe6Gq7xaYvprpg" name="Unknown">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_boXFQKogEe6Gq7xaYvprpg" annotatedElement="_YUBmsKogEe6Gq7xaYvprpg">
-            <body>The type of storage is unknown.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YfdaoKogEe6Gq7xaYvprpg" name="RemovableByOperator">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_d0floKogEe6Gq7xaYvprpg" annotatedElement="_YfdaoKogEe6Gq7xaYvprpg">
-            <body>The storage is a removable storage device, such as a USB flash drive.&#xD;
-The storage can be removed by an operator, either tool less or with simple tools.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wPgS8KohEe6Gq7xaYvprpg" name="RemovableByTechnician">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_BplkMKoiEe6Gq7xaYvprpg" annotatedElement="_wPgS8KohEe6Gq7xaYvprpg">
-            <body>The storage is a removable storage device, such as a USB flash drive.&#xD;
-The storage can not be removed by an operator. A technician has to open up the device using tools to access the storage.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_msMmIKogEe6Gq7xaYvprpg" name="Fixed">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_1xkCwKogEe6Gq7xaYvprpg" annotatedElement="_msMmIKogEe6Gq7xaYvprpg">
-            <body>The storage is a fixed disk.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6ZepEKogEe6Gq7xaYvprpg" name="Network">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_7wjwwKogEe6Gq7xaYvprpg" annotatedElement="_6ZepEKogEe6Gq7xaYvprpg">
-            <body>The storage is a network drive.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3K2J4KogEe6Gq7xaYvprpg" name="CdRom">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_5BgwkKogEe6Gq7xaYvprpg" annotatedElement="_3K2J4KogEe6Gq7xaYvprpg">
-            <body>The storage is an optical disc device, such as a CD or DVD-ROM.</body>
-          </ownedComment>
-        </ownedLiteral>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YuRSsKogEe6Gq7xaYvprpg" name="Ram">
-          <ownedComment xmi:type="uml:Comment" xmi:id="_jo1i0KogEe6Gq7xaYvprpg" annotatedElement="_YuRSsKogEe6Gq7xaYvprpg">
-            <body>The drive is a RAM disk.</body>
-          </ownedComment>
-        </ownedLiteral>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_yP4kUKrnEe648K459CFmzA" name="AssetType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_RJFQoKrpEe648K459CFmzA" name="Unspecified"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lfjUUKsGEe648K459CFmzA" name="Credentials"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KGcJwKroEe648K459CFmzA" name="Energy"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OfdYcKroEe648K459CFmzA" name="Data"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PRVhUKroEe648K459CFmzA" name="Disturbance"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_QvzDYKroEe648K459CFmzA" name="Information"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_RT7EIKroEe648K459CFmzA" name="Material"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_S1MpoKroEe648K459CFmzA" name="Mechanical"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VYx8gKrvEe648K459CFmzA" name="Signal"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ipNwkKvbEe6TAdQAjsdzBw" name="Interface"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_VylvQKohEe6Gq7xaYvprpg" name="E_StorageCharacteristic_Component" memberEnd="_VymWUKohEe6Gq7xaYvprpg _VymWUaohEe6Gq7xaYvprpg">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_VymWUKohEe6Gq7xaYvprpg" name="extension_StorageCharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" aggregation="composite" association="_VylvQKohEe6Gq7xaYvprpg"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_Gu46IKsfEe64MIO5prd8KQ" memberEnd="_Gu5hMqsfEe64MIO5prd8KQ _Gu6IQKsfEe64MIO5prd8KQ">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gu5hMKsfEe64MIO5prd8KQ" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gu5hMasfEe64MIO5prd8KQ" key="nature" value="UML_Nature"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_FgpDUKroEe648K459CFmzA" memberEnd="_FgqRcKroEe648K459CFmzA _FgqRcaroEe648K459CFmzA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FgpqYKroEe648K459CFmzA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FgpqYaroEe648K459CFmzA" key="nature" value="UML_Nature"/>
         </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_Gu6IQKsfEe64MIO5prd8KQ" name="storagecharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" association="_Gu46IKsfEe64MIO5prd8KQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JsLKoKsfEe64MIO5prd8KQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JsVisKsfEe64MIO5prd8KQ" value="*"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_FgqRcaroEe648K459CFmzA" name="asset" type="_Y4rrgKrnEe648K459CFmzA" association="_FgpDUKroEe648K459CFmzA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jax9oKroEe648K459CFmzA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JbE4kKroEe648K459CFmzA" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_YrfHkKroEe648K459CFmzA" name="AssetLibrary">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bTRpMqroEe648K459CFmzA" name="base_Package" association="_bTRpMKroEe648K459CFmzA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bTRpM6roEe648K459CFmzA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_b1Ofs6roEe648K459CFmzA" name="assetType" type="_yP4kUKrnEe648K459CFmzA" association="_b1OfsKroEe648K459CFmzA"/>
+        <icon xmi:type="uml:Image" xmi:id="_Y_ArEKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-67%43%-122%97%20%-57%-15%-113%-68%44%-108%73%41%-109%9%49%-40%44%74%-54%63%32%97%65%-54%-60%98%98%32%101%-94%-108%44%6%-125%98%49%120%-103%-56%38%6%22%-101%69%22%82%38%35%-85%-68%-35%-105%-114%122%-46%-13%-30%-31%-82%-69%-5%-70%59%-25%-9%-67%-50%117%-82%-33%-87%-16%-49%-89%-94%-120%-66%30%75%120%-53%-34%5%60%-25%-53%45%6%56%68%123%-120%-82%48%80%46%-32%41%19%44%-94%26%-77%104%40%23%-80%-126%-103%16%45%99%-82%20%-32%4%-89%-72%-60%25%-34%-47%29%-94%11%84%-94%23%93%-15%-19%75%-79%-36%30%124%-32%17%-115%120%-64%20%-114%3%48%-116%85%52%-27%-28%124%105%127%2%6%113%29%103%30%-49%96%27%-88%-61%8%-74%-111%-114%-43%-127%-67%111%109%62%-64%65%-20%-38%-113%-83%88%-113%-30%40%-42%105%-109%95%1%82%126%43%94%-77%10%110%115%26%56%-124%-35%66%21%-92%-32%126%9%115%22%5%108%-122%-5%-18%11%64%-102%49%-113%-119%124%21%36%-73%-75%101%-128%26%-36%96%61%26%-105%88%73%48%25%-15%-105%-120%119%-2%-68%-123%-12%-97%-18%-70%7%-87%105%99%72%110%-84%66%109%52%116%7%-25%49%31%95%69%22%-101%-123%22%-84%-123%-95%-90%51%-24%93%41%39%-2%105%-80%63%1%-71%-93%58%17%-123%35%66%-22%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y_ArEarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArEqrpEe648K459CFmzA" key="image_name_key" value="Unspecified"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArE6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArFKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Unspecified"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_uSPR8KsGEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%90%73%68%65%84%56%79%-123%-45%63%72%-106%81%20%6%-16%-33%55%-74%56%90%-115%46%66%-71%72%-125%-124%32%78%-118%107%80%66%14%-110%8%-42%-94%-117%34%56%8%-2%-119%-56%41%112%17%-101%18%92%-76%64%7%65%16%4%29%29%29%20%113%80%92%-77%-96%45%-85%-63%-34%35%-9%-123%-113%-49%-9%-14%-35%-23%114%-50%-71%-49%57%-9%121%-98%83%83%125%30%-96%3%87%-72%-50%-44%-36%-123%107%21%-55%-41%120%-122%67%60%68%59%102%-15%-73%10%-88%17%-96%27%61%88%-86%43%-18%69%31%62%-31%103%35%72%35%-64%50%22%-21%-58%126%-114%109%-4%-58%2%-122%-48%-113%-37%18%-88%17%-32%37%90%48%-127%41%-84%-89%111%92%-32%35%62%-29%13%-42%114%0%49%-22%94%74%-66%-64%22%126%-32%75%-47%-3%60%1%4%-56%-37%28%64%124%97%28%-17%83%-9%-77%84%56%-118%73%60%-59%76%-102%-90%82%-123%21%-68%43%-44%-103%47%-78%115%-119%-52%-23%58%-30%66%-42%46%124%-49%77%16%-116%31%-92%-28%63%12%23%29%-1%96%12%3%-8%-123%-57%-72%-55%1%68%124%4%31%-16%-88%-112%116%63%49%31%29%79%-15%-92%25%-119%37%-16%70%-15%96%16%-81%-16%45%5%67%-58%48%-44%17%66%-34%-84%19%35%-79%-103%30%7%-64%78%-102%36%76%86%-98%78%28%87%89%-71%-20%92%22%-106%19%-20%38%5%46%17%60%-83%38%-78%-17%-19%66%14%-96%53%-7%-95%45%121%32%-44%10%-80%-54%101%-118%-8%87%-124%43%-125%-121%-72%103%79%-43%54%70%113%24%38%-70%-98%52%91%-25%-1%0%97%68%17%95%10%-53%41%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uSPR8asGEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR8qsGEe648K459CFmzA" key="image_expr_key" value="assetType = Credentials"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR86sGEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR9KsGEe648K459CFmzA" key="image_name_key" value="Credentials"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_dXDCUKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-94%73%68%65%84%56%79%-99%-45%77%14%1%65%16%-122%-31%103%-62%-46%125%-40%33%68%98%47%-42%-18%-32%12%-18%97%-17%4%-30%119%-55%-50%85%-20%73%76%39%36%-46%-38%-52%-92%107%89%-87%122%-65%-6%45%-44%91%27%-113%127%97%69%125%-66%5%-42%-71%-128%46%-106%-104%-25%2%-74%-72%-25%2%-126%-6%5%-101%92%-64%30%-93%92%-64%71%61%110%-3%-116%-31%-73%-13%-33%22%-114%113%-32%59%-87%-121%107%29%-96%-113%-96%20%-37%1%-29%-40%-103%-86%-32%84%2%6%9%-64%-113%122%-120%-87%59%-92%-80%-127%25%118%-104%-92%110%-95%41%32%-87%-34%-76%-126%78%57%-72%105%-18%37%-122%22%86%-72%-27%2%42%31%-87%73%11%45%60%-85%62%-10%5%92%12%26%17%-127%-47%47%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dXDCUarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCUqrpEe648K459CFmzA" key="image_name_key" value="Energy"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCU6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCVKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Energy"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_jNFBkKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-53%42%-122%81%20%-58%-15%-33%87%46%64%-103%58%-108%-111%28%-109%-120%-28%22%36%66%74%97%98%38%-73%-64%21%-104%83%98%96%-32%-112%72%-82%-128%24%16%-55%105%98%34%-26%50%-106%-40%-69%-10%91%-81%-81%-17%-112%-66%61%-37%123%-81%-11%95%107%-19%-25%-39%5%53%-82%66%-115%-7%74%1%-58%48%-127%30%-76%-92%2%-81%-72%-59%1%78%-14%69%-117%1%-101%-104%-58%105%74%120%78%-63%-19%-24%-59%40%-42%-79%-108%65%-14%-128%33%92%-124%10%125%33%-16%-90%-52%104%-125%-72%12%5%-6%113%29%99%-14%-128%41%-20%-30%33%92%-84%-32%8%-33%9%84%-121%-15%16%-65%-118%54%76%-90%113%-2%0%-30%-31%94%-126%-60%55%-120%73%-7%-11%-107%-110%102%-86%1%98%87%-51%104%45%2%-68%-32%29%63%-43%0%-53%-40%-58%103%17%-96%30%-13%88%-85%6%120%67%99%-112%-14%30%31%9%-46%16%-38%-17%68%-68%107%-86%6%-120%35%116%96%4%-61%9%112%-114%51%60%85%26%33%-109%104%22%59%101%100%-100%-61%22%6%112%85%44%99%-36%71%35%45%-32%46%116%-79%31%90%125%76%-96%-82%80%61%-54%28%-57%-40%-64%98%41%35%101%103%81%-17%40%99%119%-78%114%124%-11%-52%-54%-121%-63%-111%-57%-107%-84%-4%-17%-65%85%-13%111%-4%5%57%-39%60%17%-39%74%73%-55%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jNFBkarpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBkqrpEe648K459CFmzA" key="image_name_key" value="Data"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBk6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBlKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Data"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_6e134KrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%54%73%68%65%84%56%79%-91%-45%-67%43%-82%97%28%7%-16%-49%-109%76%103%17%41%-117%-94%44%94%50%48%25%-114%-120%-62%34%74%98%-112%-63%102%80%22%-125%-31%12%-78%88%108%54%-55%96%36%-17%-125%-63%-96%-120%-127%-55%75%-22%116%-106%-109%78%70%47%127%0%-41%125%-70%-98%122%-98%59%-36%-22%-71%-21%-102%-18%-21%-5%-3%125%95%126%87%78%-119%95%-82%68%-68%66%-126%55%-36%-95%25%-57%-72%-58%18%-2%-95%31%71%31%13%43%36%72%-64%-65%-80%-113%7%-52%-32%25%-121%104%-64%-97%44%-126%-28%127%37%-106%-47%24%38%118%96%15%117%104%-7%-52%106%-95%-126%-101%8%-68%-64%88%0%-73%97%7%35%-40%-6%14%-63%58%-74%-93%-123%-98%32%123%3%-25%24%74%-127%-53%-30%-96%100%96%81%-120%53%33%-68%-97%24%-58%120%-108%63%-119%-89%72%48%-118%57%-76%-94%60%-113%77%-73%-112%-36%-3%-115%-7%-32%123%51%2%-85%-80%-122%-63%-88%106%23%-89%120%76%43%-24%-62%43%-82%82%-110%15%-126%-83%-10%-48%-62%4%46%-93%-118%-90%-68%-75%-84%69%-102%-62%42%-70%-15%55%-18%66%125%8%-7%62%-33%76%22%-63%45%-50%48%29%3%77%-126%-101%45%-56%-91%40%-60%116%83%63%-16%-126%1%84%-121%-77%-126%-38%64%-44%-121%5%36%54%-66%36%-24%12%-46%79%80%-127%-59%88%93%111%12%57%-39%-52%-1%-22%-77%44%100%-66%-75%-110%9%-34%1%1%-70%54%17%33%72%111%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6e134arpEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e134qrpEe648K459CFmzA" key="image_name_key" value="Disturbance"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e1346rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e135KrpEe648K459CFmzA" key="image_expr_key" value="assetType = Disturbance"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_DJ8m0KrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-93%73%68%65%84%56%79%-67%-45%-69%13%2%49%16%69%-47%-77%64%53%84%65%19%16%-110%81%2%33%32%18%36%122%32%33%-28%-45%4%77%80%12%1%31%75%107%-55%-69%66%-84%87%-106%-104%104%60%122%-66%-10%-116%-97%43%-123%81%21%-18%-105%2%-114%-104%103%2%15%88%4%109%10%120%126%-42%91%-36%58%32%19%-84%48%108%3%94%-104%-30%-102%0%-58%117%126%79%106%65%115%-114%-121%-89%55%8%-128%25%46%-119%56%-28%-79%30%-53%65%115%-54%5%124%-21%-26%39%-96%-35%-62%-90%38%-124%-39%-60%-8%111%11%-59%51%-24%13%40%122%-58%62%70%90%99%-48%54%-46%14%75%-116%58%-100%-8%-64%30%1%-46%-80%114%-26%55%104%-54%-118%127%-29%27%-105%73%46%17%-54%21%-8%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DJ8m0arqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m0qrqEe648K459CFmzA" key="image_name_key" value="Information"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m06rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m1KrqEe648K459CFmzA" key="image_expr_key" value="assetType = Information"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_HHk6AKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%63%40%-122%81%20%-57%-15%-49%-101%8%-59%-62%98%48%72%54%-85%82%6%41%-108%-28%79%41%51%-117%-116%12%102%50%88%20%25%-52%38%-91%72%100%80%44%118%3%3%82%-56%66%-108%-78%24%41%-98%91%-9%-83%-89%-41%-5%62%-113%114%-58%123%-49%-7%-34%-33%-7%-35%115%10%-2%25%-123%63%-42%55%-94%9%-113%-91%-7%121%-128%54%-52%98%58%2%-70%113%-98%-122%-108%3%84%97%36%22%14%34%-99%115%-120%-15%60%-64%30%106%-109%-105%-122%-53%-76%-9%-115%86%60%23%-17%74%21%-44%99%31%59%-40%-86%-32%-49%50%22%43%1%-62%-7%1%-58%50%-52%125%-115%42%-66%66%78%90%65%3%62%48%-128%-109%-100%-33%-103%-60%110%26%16%64%-13%88%-117%-48%59%-76%103%64%-50%-48%-105%6%12%69%-45%-106%80%-121%9%-84%-25%-88%-24%-64%125%-79%-123%99%60%36%5%1%-80%-128%21%-68%68%88%37%-50%6%-26%2%-96%25%111%-40%-116%-128%32%-65%5%33%97%38%67%-59%17%70%3%-96%26%87%56%-115%-128%0%11%-109%119%-111%12%-51%101%25%64%80%-74%26%77%124%42%-74%80%-125%78%92%-29%29%55%-24%66%48%-85%55%66%-62%89%40%-36%-58%103%-42%28%-12%39%106%122%-30%-113%-124%-119%-100%-62%45%-126%-28%95%-111%-73%76%-71%-53%-6%3%45%-23%51%17%-25%-103%38%-80%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HHk6AarqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6AqrqEe648K459CFmzA" key="image_name_key" value="Material"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6A6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6BKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Material"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_O5eJAKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%56%73%68%65%84%56%79%-99%-45%-49%43%103%97%20%-57%-15%23%89%72%52%-1%-126%-83%49%75%63%70%88%-53%-122%50%11%81%-60%78%89%32%22%34%59%-91%76%-119%-107%-123%40%74%-88%89%76%89%40%74%97%105%65%-10%-14%39%40%43%97%50%-49%-93%71%93%-41%-105%91%78%-35%-70%-9%-98%-13%-68%-49%-7%124%-18%-71%101%-66%22%101%-88%-63%93%-68%41%-118%10%-84%34%-42%-114%-32%31%-42%80%-121%-42%34%64%37%-2%-94%35%117%57%-61%53%6%-47%-117%63%69%-128%-33%-104%42%49%-30%16%54%-29%-5%34%64%21%-114%-47%-100%-125%-100%-90%-87%-18%63%3%68%-109%106%113%-125%67%-76%-28%32%-13%-63%-113%-71%60%32%26%-42%-128%-85%96%-48%17%-66%5%-99%63%80%-99%-98%127%102%32%19%88%-50%2%-54%-125%-77%123%-24%14%-41%5%-66%-93%29%-105%-23%80%-124%68%57%-115%88%-63%120%-34%-125%101%-116%101%58%76%98%9%-11%-40%-62%-81%-112%-65%-59%40%22%-16%-100%7%60%34%74%120%-115%39%-52%98%6%39%65%86%79%-38%-127%55%86%100%37%12%99%-93%-60%39%59%71%91%0%61%-108%-38%-72%-68%-119%-37%-24%-49%21%-58%-55%-102%50%94%124%56%-63%64%-46%122%-128%-50%76%-43%110%-40%-66%-104%-117%-110%-34%-59%-21%4%125%-120%-35%-89%-79%-120%-82%-28%-12%78%-14%-31%-59%-80%-49%0%-5%105%-25%-41%-117%-2%-84%124%-66%104%-107%11%121%-1%1%5%-98%53%17%80%-81%-43%-127%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O5eJAarqEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJAqrqEe648K459CFmzA" key="image_expr_key" value="assetType = Mechanical"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJA6rqEe648K459CFmzA" key="image_name_key" value="Mechanical"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJBKrqEe648K459CFmzA" key="image_kind_key" value="icon"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_aQAKIKrvEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%-51%42%69%97%20%-58%-15%-33%49%-111%-92%12%-120%-119%12%-108%-104%113%23%-52%-104%-71%5%102%82%-18%66%102%-54%45%48%-14%-103%41%38%20%73%-26%-60%64%73%-108%-81%-14%-51%89%-75%-74%116%114%-40%-27%-83%-73%-67%-33%-42%-69%-2%107%61%-49%-38%-69%-30%-97%-85%82%39%-65%17%31%120%-2%-117%95%15%-48%-109%-128%-29%4%-76%-26%-7%-90%22%-8%19%-96%3%125%120%-57%118%38%12%-32%13%71%101%0%-29%-72%-51%-118%11%120%-59%72%2%86%-54%0%86%-79%-113%-5%4%-51%99%50%65%91%56%-4%14%-87%-107%-48%-119%29%-100%-29%26%-19%-40%64%-56%106%65%-60%-57%112%89%64%10%64%23%102%-85%-55%67%104%78%-3%49%-123%34%30%50%26%-14%28%-17%75%-104%-58%105%113%-95%-69%90%97%6%-61%104%74%64%20%-119%120%-104%25%59%0%-79%-97%-80%-122%41%-100%-43%74%-120%86%119%113%-127%-85%-108%-80%-98%-83%-121%-124%-120%-1%40%-31%-69%47%65%-33%-61%67%26%57%-105%38%-122%-92%77%28%-4%102%98%-60%38%-86%-19%-35%-91%-21%-117%-7%28%-51%49%46%-105%25%99%56%-35%-97%-119%-59%-121%52%-104%-25%82%31%82%20%-23%-59%11%78%-78%98%91%-54%121%44%-45%65%-36%-119%81%-122%-37%49%-78%95%87%-67%-97%-23%-81%-68%-81%-8%39%85%-125%70%17%-28%25%-126%-33%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aQAKIarvEe648K459CFmzA" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKIqrvEe648K459CFmzA" key="image_expr_key" value="assetType = Signal"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKI6rvEe648K459CFmzA" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKJKrvEe648K459CFmzA" key="image_name_key" value="Signal"/>
+          </eAnnotations>
+        </icon>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_bTRpMKroEe648K459CFmzA" name="E_AssetLibrary_Package6" memberEnd="_bTRpMaroEe648K459CFmzA _bTRpMqroEe648K459CFmzA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_bTRpMaroEe648K459CFmzA" name="extension_AssetLibrary" type="_YrfHkKroEe648K459CFmzA" aggregation="composite" association="_bTRpMKroEe648K459CFmzA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_b1OfsKroEe648K459CFmzA" memberEnd="_b1Ofs6roEe648K459CFmzA _b1PGwKroEe648K459CFmzA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b1OfsaroEe648K459CFmzA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b1OfsqroEe648K459CFmzA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_b1PGwKroEe648K459CFmzA" name="assetlibrary" type="_YrfHkKroEe648K459CFmzA" association="_b1OfsKroEe648K459CFmzA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fpD9sKroEe648K459CFmzA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fpO80KroEe648K459CFmzA" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_4aDmsKvbEe6TAdQAjsdzBw" name="E_Asset_Port8" memberEnd="_4aE00KvbEe6TAdQAjsdzBw _4aFb4KvbEe6TAdQAjsdzBw">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_4aE00KvbEe6TAdQAjsdzBw" name="extension_Asset" type="_Y4rrgKrnEe648K459CFmzA" aggregation="composite" association="_4aDmsKvbEe6TAdQAjsdzBw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_snS_YK4BEe6jqeB5njcjPA" name="Energy">
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_VdX2cK4BEe6jqeB5njcjPA" name="EnergyCharacteristic">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Y4pqga4BEe6jqeB5njcjPA" name="base_Relationship" association="_Y4pDcK4BEe6jqeB5njcjPA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Relationship"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y4pqgq4BEe6jqeB5njcjPA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZPzmQq4BEe6jqeB5njcjPA" name="base_Port" association="_ZPzmQK4BEe6jqeB5njcjPA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Port"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZPzmQ64BEe6jqeB5njcjPA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_jeF_MK4BEe6jqeB5njcjPA" name="energyType" type="_a57lwK4BEe6jqeB5njcjPA" association="_jeC74K4BEe6jqeB5njcjPA">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_7YshsK4CEe6jqeB5njcjPA" name="Default Value" type="_a57lwK4BEe6jqeB5njcjPA" instance="_ci_OQK4BEe6jqeB5njcjPA"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_Y4pDcK4BEe6jqeB5njcjPA" name="E_EnergyCharacteristic_Relationship20" memberEnd="_Y4pqgK4BEe6jqeB5njcjPA _Y4pqga4BEe6jqeB5njcjPA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Y4pqgK4BEe6jqeB5njcjPA" name="extension_EnergyCharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" aggregation="composite" association="_Y4pDcK4BEe6jqeB5njcjPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_ZPzmQK4BEe6jqeB5njcjPA" name="E_EnergyCharacteristic_Port21" memberEnd="_ZPzmQa4BEe6jqeB5njcjPA _ZPzmQq4BEe6jqeB5njcjPA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ZPzmQa4BEe6jqeB5njcjPA" name="extension_EnergyCharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" aggregation="composite" association="_ZPzmQK4BEe6jqeB5njcjPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_a57lwK4BEe6jqeB5njcjPA" name="EnergyType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ci_OQK4BEe6jqeB5njcjPA" name="Unspecified"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9egNEK4BEe6jqeB5njcjPA" name="Force"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OXPEwK4CEe6jqeB5njcjPA" name="Kinetic"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_d_khAK4BEe6jqeB5njcjPA" name="Light"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eO_dEK4BEe6jqeB5njcjPA" name="Power"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ee8koK4BEe6jqeB5njcjPA" name="Sound"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hfchMK4BEe6jqeB5njcjPA" name="Vibration"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_jeC74K4BEe6jqeB5njcjPA" memberEnd="_jeF_MK4BEe6jqeB5njcjPA _jeGmQK4BEe6jqeB5njcjPA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jeFYIK4BEe6jqeB5njcjPA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jeFYIa4BEe6jqeB5njcjPA" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_jeGmQK4BEe6jqeB5njcjPA" name="energycharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" association="_jeC74K4BEe6jqeB5njcjPA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nMhYwK4BEe6jqeB5njcjPA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nMj1AK4BEe6jqeB5njcjPA" value="*"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
@@ -18528,196 +19106,45 @@ The storage can not be removed by an operator. A technician has to open up the d
         <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_OojXQaveEe6TAdQAjsdzBw" name="extension_FirewallCharacteristic" type="_L08nMKveEe6TAdQAjsdzBw" aggregation="composite" association="_OojXQKveEe6TAdQAjsdzBw"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_MxCkQKrnEe648K459CFmzA" name="Asset">
-      <packagedElement xmi:type="uml:Stereotype" xmi:id="_Y4rrgKrnEe648K459CFmzA" name="Asset">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_bU7EcKrnEe648K459CFmzA" name="base_DataType" association="_bU52UKrnEe648K459CFmzA">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DataType"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bU7EcarnEe648K459CFmzA"/>
-        </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_FgqRcKroEe648K459CFmzA" name="assetType" type="_yP4kUKrnEe648K459CFmzA" association="_FgpDUKroEe648K459CFmzA"/>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_4aFb4KvbEe6TAdQAjsdzBw" name="base_Port" association="_4aDmsKvbEe6TAdQAjsdzBw">
+    <packagedElement xmi:type="uml:Package" xmi:id="_m-pfYK4CEe6jqeB5njcjPA" name="Material">
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_wAFqsK4CEe6jqeB5njcjPA" name="MaterialCharacteristic">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_zYUx0a4CEe6jqeB5njcjPA" name="base_Port" association="_zYUKwK4CEe6jqeB5njcjPA">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Port"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4aFb4avbEe6TAdQAjsdzBw"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zYUx0q4CEe6jqeB5njcjPA"/>
         </ownedAttribute>
-        <icon xmi:type="uml:Image" xmi:id="_V63koKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%-123%73%68%65%84%56%79%-91%-45%-53%-117%-49%81%24%-57%-15%-41%68%105%92%-54%-62%98%-110%38%53%11%25%74%-55%-83%44%-52%-98%20%-47%-108%-35%40%89%77%33%83%-125%-91%44%-124%-115%-102%-92%108%-40%-120%-91%-110%41%11%98%-95%113%-53%-122%105%-4%5%19%-62%-62%101%22%83%-100%-89%-98%83%-57%-73%-33%-84%-100%-51%-71%62%-17%-13%124%-98%-13%57%125%-2%-77%-11%45%17%-65%11%35%-40%-114%63%120%-117%39%120%-35%61%-33%5%-84%-62%53%-100%-60%23%-68%-49%-128%45%88%-121%41%-100%-59%66%5%-75%-128%126%-68%-62%32%46%-31%58%126%-25%-63%-107%-104%-64%121%124%-60%-50%10%105%1%17%112%8%123%49%-113%43%24%77%-64%-19%12%30%-62%11%-60%-4%76%-20%85%-64%26%124%43%26%15%96%58%55%47%-90%-108%-27%-72%-123%113%-36%-64%113%-36%-60%-38%-110%-43%-49%10%-40%-97%-6%54%-26%-115%-109%24%-64%-87%-100%63%-61%28%78%96%69%89%-1%94%10%123%-80%100%-5%-72%2%-82%34%-46%11%9%-35%-74%9%51%56%-105%25%-60%126%0%-97%-29%66%5%-124%-2%0%68%38%109%-37%-116%-105%120%-108%-11%-120%39%-115%22%50%103%113%-70%2%-58%-78%-14%-21%59%-128%-53%56%-126%-56%98%49%-9%34%-26%115%-42%-23%78%5%108%-61%-69%44%-30%-61%6%50%-100%-29%15%-51%-38%81%-36%-57%-42%-16%73%5%68%-1%0%1%-38%-127%79%25%112%47%-5%-6%-100%-31%-111%-88%71%60%-27%-31%-10%25%99%-68%58%-11%46%43%102%57%-122%55%29%57%-5%-118%-108%-69%-8%90%106%-80%-89%56%-14%71%23%16%-13%-42%-54%81%-92%-102%-55%-122%44%114%-8%32%-84%-4%-85%-105%-107%-37%11%119%-105%-49%19%55%-74%-97%-23%105%90%-3%-97%-60%-106%-6%-115%61%-20%-48%123%-23%47%28%104%74%17%-60%92%-82%25%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_V63koarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63koqrpEe648K459CFmzA" key="image_name_key" value="Unspecified"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63ko6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_V63kpKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Unspecified"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_q6WJEKsGEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%90%73%68%65%84%56%79%-123%-45%63%72%-106%81%20%6%-16%-33%55%-74%56%90%-115%46%66%-71%72%-125%-124%32%78%-118%107%80%66%14%-110%8%-42%-94%-117%34%56%8%-2%-119%-56%41%112%17%-101%18%92%-76%64%7%65%16%4%29%29%29%20%113%80%92%-77%-96%45%-85%-63%-34%35%-9%-123%-113%-49%-9%-14%-35%-23%114%-50%-71%-49%57%-9%121%-98%83%83%125%30%-96%3%87%-72%-50%-44%-36%-123%107%21%-55%-41%120%-122%67%60%68%59%102%-15%-73%10%-88%17%-96%27%61%88%-86%43%-18%69%31%62%-31%103%35%72%35%-64%50%22%-21%-58%126%-114%109%-4%-58%2%-122%-48%-113%-37%18%-88%17%-32%37%90%48%-127%41%-84%-89%111%92%-32%35%62%-29%13%-42%114%0%49%-22%94%74%-66%-64%22%126%-32%75%-47%-3%60%1%4%-56%-37%28%64%124%97%28%-17%83%-9%-77%84%56%-118%73%60%-59%76%-102%-90%82%-123%21%-68%43%-44%-103%47%-78%115%-119%-52%-23%58%-30%66%-42%46%124%-49%77%16%-116%31%-92%-28%63%12%23%29%-1%96%12%3%-8%-123%-57%-72%-55%1%68%124%4%31%-16%-88%-112%116%63%49%31%29%79%-15%-92%25%-119%37%-16%70%-15%96%16%-81%-16%45%5%67%-58%48%-44%17%66%-34%-84%19%35%-79%-103%30%7%-64%78%-102%36%76%86%-98%78%28%87%89%-71%-20%92%22%-106%19%-20%38%5%46%17%60%-83%38%-78%-17%-19%66%14%-96%53%-7%-95%45%121%32%-44%10%-80%-54%101%-118%-8%87%-124%43%-125%-121%-72%103%79%-43%54%70%113%24%38%-70%-98%52%91%-25%-1%0%97%68%17%95%10%-53%41%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_q6WJEasGEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJEqsGEe648K459CFmzA" key="image_name_key" value="Credentials"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJE6sGEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_q6WJFKsGEe648K459CFmzA" key="image_expr_key" value="assetType = Credentials"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_fhBmkKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-94%73%68%65%84%56%79%-99%-45%77%14%1%65%16%-122%-31%103%-62%-46%125%-40%33%68%98%47%-42%-18%-32%12%-18%97%-17%4%-30%119%-55%-50%85%-20%73%76%39%36%-46%-38%-52%-92%107%89%-87%122%-65%-6%45%-44%91%27%-113%127%97%69%125%-66%5%-42%-71%-128%46%-106%-104%-25%2%-74%-72%-25%2%-126%-6%5%-101%92%-64%30%-93%92%-64%71%61%110%-3%-116%-31%-73%-13%-33%22%-114%113%-32%59%-87%-121%107%29%-96%-113%-96%20%-37%1%-29%-40%-103%-86%-32%84%2%6%9%-64%-113%122%-120%-87%59%-92%-80%-127%25%118%-104%-92%110%-95%41%32%-87%-34%-76%-126%78%57%-72%105%-18%37%-122%22%86%-72%-27%2%42%31%-87%73%11%45%60%-85%62%-10%5%92%12%26%17%-127%-47%47%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fhBmkarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmkqrpEe648K459CFmzA" key="image_name_key" value="Energy"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmk6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fhBmlKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Energy"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_hdcP8KrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-53%42%-122%81%20%-58%-15%-33%87%46%64%-103%58%-108%-111%28%-109%-120%-28%22%36%66%74%97%98%38%-73%-64%21%-104%83%98%96%-32%-112%72%-82%-128%24%16%-55%105%98%34%-26%50%-106%-40%-69%-10%91%-81%-81%-17%-112%-66%61%-37%123%-81%-11%95%107%-19%-25%-39%5%53%-82%66%-115%-7%74%1%-58%48%-127%30%-76%-92%2%-81%-72%-59%1%78%-14%69%-117%1%-101%-104%-58%105%74%120%78%-63%-19%-24%-59%40%-42%-79%-108%65%-14%-128%33%92%-124%10%125%33%-16%-90%-52%104%-125%-72%12%5%-6%113%29%99%-14%-128%41%-20%-30%33%92%-84%-32%8%-33%9%84%-121%-15%16%-65%-118%54%76%-90%113%-2%0%-30%-31%94%-126%-60%55%-120%73%-7%-11%-107%-110%102%-86%1%98%87%-51%104%45%2%-68%-32%29%63%-43%0%-53%-40%-58%103%17%-96%30%-13%88%-85%6%120%67%99%-112%-14%30%31%9%-46%16%-38%-17%68%-68%107%-86%6%-120%35%116%96%4%-61%9%112%-114%51%60%85%26%33%-109%104%22%59%101%100%-100%-61%22%6%112%85%44%99%-36%71%35%45%-32%46%116%-79%31%90%125%76%-96%-82%80%61%-54%28%-57%-40%-64%98%41%35%101%103%81%-17%40%99%119%-78%114%124%-11%-52%-54%-121%-63%-111%-57%-107%-84%-4%-17%-65%85%-13%111%-4%5%57%-39%60%17%-39%74%73%-55%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_hdcP8arpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP8qrpEe648K459CFmzA" key="image_name_key" value="Data"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP86rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_hdcP9KrpEe648K459CFmzA" key="image_expr_key" value="assetType = Data"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_9NAuUKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%54%73%68%65%84%56%79%-91%-45%-67%43%-82%97%28%7%-16%-49%-109%76%103%17%41%-117%-94%44%94%50%48%25%-114%-120%-62%34%74%98%-112%-63%102%80%22%-125%-31%12%-78%88%108%54%-55%96%36%-17%-125%-63%-96%-120%-127%-55%75%-22%116%-106%-109%78%70%47%127%0%-41%125%-70%-98%122%-98%59%-36%-22%-71%-21%-102%-18%-21%-5%-3%125%95%126%87%78%-119%95%-82%68%-68%66%-126%55%-36%-95%25%-57%-72%-58%18%-2%-95%31%71%31%13%43%36%72%-64%-65%-80%-113%7%-52%-32%25%-121%104%-64%-97%44%-126%-28%127%37%-106%-47%24%38%118%96%15%117%104%-7%-52%106%-95%-126%-101%8%-68%-64%88%0%-73%97%7%35%-40%-6%14%-63%58%-74%-93%-123%-98%32%123%3%-25%24%74%-127%-53%-30%-96%100%96%81%-120%53%33%-68%-97%24%-58%120%-108%63%-119%-89%72%48%-118%57%-76%-94%60%-113%77%-73%-112%-36%-3%-115%-7%-32%123%51%2%-85%-80%-122%-63%-88%106%23%-89%120%76%43%-24%-62%43%-82%82%-110%15%-126%-83%-10%-48%-62%4%46%-93%-118%-90%-68%-75%-84%69%-102%-62%42%-70%-15%55%-18%66%125%8%-7%62%-33%76%22%-63%45%-50%48%29%3%77%-126%-101%45%-56%-91%40%-60%116%83%63%-16%-126%1%84%-121%-77%-126%-38%64%-44%-121%5%36%54%-66%36%-24%12%-46%79%80%-127%-59%88%93%111%12%57%-39%-52%-1%-22%-77%44%100%-66%-75%-110%9%-34%1%1%-70%54%17%33%72%111%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_9NAuUarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuUqrpEe648K459CFmzA" key="image_name_key" value="Disturbance"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuU6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9NAuVKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Disturbance"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_Ap32wKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-93%73%68%65%84%56%79%-67%-45%-69%13%2%49%16%69%-47%-77%64%53%84%65%19%16%-110%81%2%33%32%18%36%122%32%33%-28%-45%4%77%80%12%1%31%75%107%-55%-69%66%-84%87%-106%-104%104%60%122%-66%-10%-116%-97%43%-123%81%21%-18%-105%2%-114%-104%103%2%15%88%4%109%10%120%126%-42%91%-36%58%32%19%-84%48%108%3%94%-104%-30%-102%0%-58%117%126%79%106%65%115%-114%-121%-89%55%8%-128%25%46%-119%56%-28%-79%30%-53%65%115%-54%5%124%-21%-26%39%-96%-35%-62%-90%38%-124%-39%-60%-8%111%11%-59%51%-24%13%40%122%-58%62%70%90%99%-48%54%-46%14%75%-116%58%-100%-8%-64%30%1%-46%-80%114%-26%55%104%-54%-118%127%-29%27%-105%73%46%17%-54%21%-8%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Ap32warqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32wqrqEe648K459CFmzA" key="image_name_key" value="Information"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32w6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Ap32xKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Information"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_w2ZA8KvbEe6TAdQAjsdzBw" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%70%73%68%65%84%56%79%-91%-45%-79%75%-42%81%20%-58%-15%-113%34%-123%-122%-24%31%16%-118%-88%83%-110%33%82%-125%40%34%-44%-46%36%68%-32%-110%-32%-108%67%67%13%-22%-20%38%-126%45%13%-126%32%-72%-119%14%-18%-118%4%-126%74%-94%5%-118%-127%52%-123%107%-101%5%38%-126%-34%11%-9%-62%15%95%-34%-9%85%-68%-45%-71%-36%115%-66%60%-25%57%-25%-42%-72%-25%-87%-71%99%-3%107%124%-60%38%-66%-32%-20%38%-32%49%58%-54%64%-101%-79%-122%-33%104%-59%56%-26%51%-96%1%95%-15%-4%22%-118%-70%-79%-108%-14%63%101%-64%20%-34%7%105%-3%56%45%3%-87%-57%17%-38%-15%15%67%-40%-53%-128%101%-44%-30%109%21%5%77%120%-118%111%-72%-120%-71%25%48%-121%1%-12%22%0%47%-79%-102%-18%-61%73%114%9%63%3%-98%97%7%-121%56%79%89%17%-10%40%-59%103%-8%-98%-30%95%88%-63%70%81%65%-116%59%49%89%-104%66%17%-16%23%7%9%-48%18%76%108%67%15%126%84%-38%-125%119%88%72%69%-93%-120%62%-59%83%-121%125%-84%99%-94%8%120%-128%23%-40%-59%101%21%51%-93%55%49%103%36%3%98%97%-36%-82%-40%-13%86%-16%-29%21%-2%-105%-127%60%12%-123%39%88%12%-109%-101%-50%-128%-49%-63%-108%62%-116%-91%89%87%-37%-89%99%12%-30%79%6%-60%-75%-100%9%123%-16%51%-116%-18%9%-34%84%80%112%-123%-19%-36%102%6%52%-30%3%-70%66%27%-77%-47%-35%106%18%-14%-5%93%127%99%9%-9%26%8%-48%56%17%-109%48%14%119%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_w2ZA8avbEe6TAdQAjsdzBw" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA8qvbEe6TAdQAjsdzBw" key="image_name_key" value="Interface"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA86vbEe6TAdQAjsdzBw" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_w2ZA9KvbEe6TAdQAjsdzBw" key="image_expr_key" value="assetType = Interface"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_Jbh5oKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%63%40%-122%81%20%-57%-15%-49%-101%8%-59%-62%98%48%72%54%-85%82%6%41%-108%-28%79%41%51%-117%-116%12%102%50%88%20%25%-52%38%-91%72%100%80%44%118%3%3%82%-56%66%-108%-78%24%41%-98%91%-9%-83%-89%-41%-5%62%-113%114%-58%123%-49%-7%-34%-33%-7%-35%115%10%-2%25%-123%63%-42%55%-94%9%-113%-91%-7%121%-128%54%-52%98%58%2%-70%113%-98%-122%-108%3%84%97%36%22%14%34%-99%115%-120%-15%60%-64%30%106%-109%-105%-122%-53%-76%-9%-115%86%60%23%-17%74%21%-44%99%31%59%-40%-86%-32%-49%50%22%43%1%-62%-7%1%-58%50%-52%125%-115%42%-66%66%78%90%65%3%62%48%-128%-109%-100%-33%-103%-60%110%26%16%64%-13%88%-117%-48%59%-76%103%64%-50%-48%-105%6%12%69%-45%-106%80%-121%9%-84%-25%-88%-24%-64%125%-79%-123%99%60%36%5%1%-80%-128%21%-68%68%88%37%-50%6%-26%2%-96%25%111%-40%-116%-128%32%-65%5%33%97%38%67%-59%17%70%3%-96%26%87%56%-115%-128%0%11%-109%119%-111%12%-51%101%25%64%80%-74%26%77%124%42%-74%80%-125%78%92%-29%29%55%-24%66%48%-85%55%66%-62%89%40%-36%-58%103%-42%28%-12%39%106%122%-30%-113%-124%-119%-100%-62%45%-126%-28%95%-111%-73%76%-71%-53%-6%3%45%-23%51%17%-25%-103%38%-80%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Jbh5oarqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5oqrqEe648K459CFmzA" key="image_name_key" value="Material"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5o6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Jbh5pKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Material"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_LxfEYKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%56%73%68%65%84%56%79%-99%-45%-49%43%103%97%20%-57%-15%23%89%72%52%-1%-126%-83%49%75%63%70%88%-53%-122%50%11%81%-60%78%89%32%22%34%59%-91%76%-119%-107%-123%40%74%-88%89%76%89%40%74%97%105%65%-10%-14%39%40%43%97%50%-49%-93%71%93%-41%-105%91%78%-35%-70%-9%-98%-13%-68%-49%-7%124%-18%-71%101%-66%22%101%-88%-63%93%-68%41%-118%10%-84%34%-42%-114%-32%31%-42%80%-121%-42%34%64%37%-2%-94%35%117%57%-61%53%6%-47%-117%63%69%-128%-33%-104%42%49%-30%16%54%-29%-5%34%64%21%-114%-47%-100%-125%-100%-90%-87%-18%63%3%68%-109%106%113%-125%67%-76%-28%32%-13%-63%-113%-71%60%32%26%-42%-128%-85%96%-48%17%-66%5%-99%63%80%-99%-98%127%102%32%19%88%-50%2%-54%-125%-77%123%-24%14%-41%5%-66%-93%29%-105%-23%80%-124%68%57%-115%88%-63%120%-34%-125%101%-116%101%58%76%98%9%-11%-40%-62%-81%-112%-65%-59%40%22%-16%-100%7%60%34%74%120%-115%39%-52%98%6%39%65%86%79%-38%-127%55%86%100%37%12%99%-93%-60%39%59%71%91%0%61%-108%-38%-72%-68%-119%-37%-24%-49%21%-58%-55%-102%50%94%124%56%-63%64%-46%122%-128%-50%76%-43%110%-40%-66%-104%-117%-110%-34%-59%-21%4%125%-120%-35%-89%-79%-120%-82%-28%-12%78%-14%-31%-59%-80%-49%0%-5%105%-25%-41%-117%-2%-84%124%-66%104%-107%11%121%-1%1%5%-98%53%17%80%-81%-43%-127%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_LxfEYarqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEYqrqEe648K459CFmzA" key="image_name_key" value="Mechanical"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEY6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_LxfEZKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Mechanical"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_Yi4hAKrvEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%-51%42%69%97%20%-58%-15%-33%49%-111%-92%12%-120%-119%12%-108%-104%113%23%-52%-104%-71%5%102%82%-18%66%102%-54%45%48%-14%-103%41%38%20%73%-26%-60%64%73%-108%-81%-14%-51%89%-75%-74%116%114%-40%-27%-83%-73%-67%-33%-42%-69%-2%107%61%-49%-38%-69%-30%-97%-85%82%39%-65%17%31%120%-2%-117%95%15%-48%-109%-128%-29%4%-76%-26%-7%-90%22%-8%19%-96%3%125%120%-57%118%38%12%-32%13%71%101%0%-29%-72%-51%-118%11%120%-59%72%2%86%-54%0%86%-79%-113%-5%4%-51%99%50%65%91%56%-4%14%-87%-107%-48%-119%29%-100%-29%26%-19%-40%64%-56%106%65%-60%-57%112%89%64%10%64%23%102%-85%-55%67%104%78%-3%49%-123%34%30%50%26%-14%28%-17%75%-104%-58%105%113%-95%-69%90%97%6%-61%104%74%64%20%-119%120%-104%25%59%0%-79%-97%-80%-122%41%-100%-43%74%-120%86%119%113%-127%-85%-108%-80%-98%-83%-121%-124%-120%-1%40%-31%-69%47%65%-33%-61%67%26%57%-105%38%-122%-92%77%28%-4%102%98%-60%38%-86%-19%-35%-91%-21%-117%-7%28%-51%49%46%-105%25%99%56%-35%-97%-119%-59%-121%52%-104%-25%82%31%82%20%-23%-59%11%78%-78%98%91%-54%121%44%-45%65%-36%-119%81%-122%-37%49%-78%95%87%-67%-97%-23%-81%-68%-81%-8%39%85%-125%70%17%-28%25%-126%-33%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Yi4hAarvEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hAqrvEe648K459CFmzA" key="image_name_key" value="Signal"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hA6rvEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Yi4hBKrvEe648K459CFmzA" key="image_expr_key" value="assetType = Signal"/>
-          </eAnnotations>
-        </icon>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_bU52UKrnEe648K459CFmzA" name="E_Asset_DataType1" memberEnd="_bU6dYKrnEe648K459CFmzA _bU7EcKrnEe648K459CFmzA">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_bU6dYKrnEe648K459CFmzA" name="extension_Asset" type="_Y4rrgKrnEe648K459CFmzA" aggregation="composite" association="_bU52UKrnEe648K459CFmzA"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_yP4kUKrnEe648K459CFmzA" name="AssetType">
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_RJFQoKrpEe648K459CFmzA" name="Unspecified"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lfjUUKsGEe648K459CFmzA" name="Credentials"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KGcJwKroEe648K459CFmzA" name="Energy"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OfdYcKroEe648K459CFmzA" name="Data"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_PRVhUKroEe648K459CFmzA" name="Disturbance"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_QvzDYKroEe648K459CFmzA" name="Information"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_RT7EIKroEe648K459CFmzA" name="Material"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_S1MpoKroEe648K459CFmzA" name="Mechanical"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_VYx8gKrvEe648K459CFmzA" name="Signal"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ipNwkKvbEe6TAdQAjsdzBw" name="Interface"/>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_FgpDUKroEe648K459CFmzA" memberEnd="_FgqRcKroEe648K459CFmzA _FgqRcaroEe648K459CFmzA">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_FgpqYKroEe648K459CFmzA" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_FgpqYaroEe648K459CFmzA" key="nature" value="UML_Nature"/>
-        </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_FgqRcaroEe648K459CFmzA" name="asset" type="_Y4rrgKrnEe648K459CFmzA" association="_FgpDUKroEe648K459CFmzA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Jax9oKroEe648K459CFmzA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JbE4kKroEe648K459CFmzA" value="*"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Stereotype" xmi:id="_YrfHkKroEe648K459CFmzA" name="AssetLibrary">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_bTRpMqroEe648K459CFmzA" name="base_Package" association="_bTRpMKroEe648K459CFmzA">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Package"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bTRpM6roEe648K459CFmzA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_zwXeYa4CEe6jqeB5njcjPA" name="base_Relationship" association="_zwT0AK4CEe6jqeB5njcjPA">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Relationship"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zwXeYq4CEe6jqeB5njcjPA"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_b1Ofs6roEe648K459CFmzA" name="assetType" type="_yP4kUKrnEe648K459CFmzA" association="_b1OfsKroEe648K459CFmzA"/>
-        <icon xmi:type="uml:Image" xmi:id="_Y_ArEKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-67%43%-122%97%20%-57%-15%-113%-68%44%-108%73%41%-109%9%49%-40%44%74%-54%63%32%97%65%-54%-60%98%98%32%101%-94%-108%44%6%-125%98%49%120%-103%-56%38%6%22%-101%69%22%82%38%35%-85%-68%-35%-105%-114%122%-46%-13%-30%-31%-82%-69%-5%-70%59%-25%-9%-67%-50%117%-82%-33%-87%-16%-49%-89%-94%-120%-66%30%75%120%-53%-34%5%60%-25%-53%45%6%56%68%123%-120%-82%48%80%46%-32%41%19%44%-94%26%-77%104%40%23%-80%-126%-103%16%45%99%-82%20%-32%4%-89%-72%-60%25%-34%-47%29%-94%11%84%-94%23%93%-15%-19%75%-79%-36%30%124%-32%17%-115%120%-64%20%-114%3%48%-116%85%52%-27%-28%124%105%127%2%6%113%29%103%30%-49%96%27%-88%-61%8%-74%-111%-114%-43%-127%-67%111%109%62%-64%65%-20%-38%-113%-83%88%-113%-30%40%-42%105%-109%95%1%82%126%43%94%-77%10%110%115%26%56%-124%-35%66%21%-92%-32%126%9%115%22%5%108%-122%-5%-18%11%64%-102%49%-113%-119%124%21%36%-73%-75%101%-128%26%-36%96%61%26%-105%88%73%48%25%-15%-105%-120%119%-2%-68%-123%-12%-97%-18%-70%7%-87%105%99%72%110%-84%66%109%52%116%7%-25%49%31%95%69%22%-101%-123%22%-84%-123%-95%-90%51%-24%93%41%39%-2%105%-80%63%1%-71%-93%58%17%-123%35%66%-22%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Y_ArEarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArEqrpEe648K459CFmzA" key="image_name_key" value="Unspecified"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArE6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Y_ArFKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Unspecified"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_uSPR8KsGEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%90%73%68%65%84%56%79%-123%-45%63%72%-106%81%20%6%-16%-33%55%-74%56%90%-115%46%66%-71%72%-125%-124%32%78%-118%107%80%66%14%-110%8%-42%-94%-117%34%56%8%-2%-119%-56%41%112%17%-101%18%92%-76%64%7%65%16%4%29%29%29%20%113%80%92%-77%-96%45%-85%-63%-34%35%-9%-123%-113%-49%-9%-14%-35%-23%114%-50%-71%-49%57%-9%121%-98%83%83%125%30%-96%3%87%-72%-50%-44%-36%-123%107%21%-55%-41%120%-122%67%60%68%59%102%-15%-73%10%-88%17%-96%27%61%88%-86%43%-18%69%31%62%-31%103%35%72%35%-64%50%22%-21%-58%126%-114%109%-4%-58%2%-122%-48%-113%-37%18%-88%17%-32%37%90%48%-127%41%-84%-89%111%92%-32%35%62%-29%13%-42%114%0%49%-22%94%74%-66%-64%22%126%-32%75%-47%-3%60%1%4%-56%-37%28%64%124%97%28%-17%83%-9%-77%84%56%-118%73%60%-59%76%-102%-90%82%-123%21%-68%43%-44%-103%47%-78%115%-119%-52%-23%58%-30%66%-42%46%124%-49%77%16%-116%31%-92%-28%63%12%23%29%-1%96%12%3%-8%-123%-57%-72%-55%1%68%124%4%31%-16%-88%-112%116%63%49%31%29%79%-15%-92%25%-119%37%-16%70%-15%96%16%-81%-16%45%5%67%-58%48%-44%17%66%-34%-84%19%35%-79%-103%30%7%-64%78%-102%36%76%86%-98%78%28%87%89%-71%-20%92%22%-106%19%-20%38%5%46%17%60%-83%38%-78%-17%-19%66%14%-96%53%-7%-95%45%121%32%-44%10%-80%-54%101%-118%-8%87%-124%43%-125%-121%-72%103%79%-43%54%70%113%24%38%-70%-98%52%91%-25%-1%0%97%68%17%95%10%-53%41%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uSPR8asGEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR8qsGEe648K459CFmzA" key="image_expr_key" value="assetType = Credentials"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR86sGEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uSPR9KsGEe648K459CFmzA" key="image_name_key" value="Credentials"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_dXDCUKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-94%73%68%65%84%56%79%-99%-45%77%14%1%65%16%-122%-31%103%-62%-46%125%-40%33%68%98%47%-42%-18%-32%12%-18%97%-17%4%-30%119%-55%-50%85%-20%73%76%39%36%-46%-38%-52%-92%107%89%-87%122%-65%-6%45%-44%91%27%-113%127%97%69%125%-66%5%-42%-71%-128%46%-106%-104%-25%2%-74%-72%-25%2%-126%-6%5%-101%92%-64%30%-93%92%-64%71%61%110%-3%-116%-31%-73%-13%-33%22%-114%113%-32%59%-87%-121%107%29%-96%-113%-96%20%-37%1%-29%-40%-103%-86%-32%84%2%6%9%-64%-113%122%-120%-87%59%-92%-80%-127%25%118%-104%-92%110%-95%41%32%-87%-34%-76%-126%78%57%-72%105%-18%37%-122%22%86%-72%-27%2%42%31%-87%73%11%45%60%-85%62%-10%5%92%12%26%17%-127%-47%47%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_dXDCUarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCUqrpEe648K459CFmzA" key="image_name_key" value="Energy"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCU6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_dXDCVKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Energy"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_jNFBkKrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%36%73%68%65%84%56%79%-91%-45%-53%42%-122%81%20%-58%-15%-33%87%46%64%-103%58%-108%-111%28%-109%-120%-28%22%36%66%74%97%98%38%-73%-64%21%-104%83%98%96%-32%-112%72%-82%-128%24%16%-55%105%98%34%-26%50%-106%-40%-69%-10%91%-81%-81%-17%-112%-66%61%-37%123%-81%-11%95%107%-19%-25%-39%5%53%-82%66%-115%-7%74%1%-58%48%-127%30%-76%-92%2%-81%-72%-59%1%78%-14%69%-117%1%-101%-104%-58%105%74%120%78%-63%-19%-24%-59%40%-42%-79%-108%65%-14%-128%33%92%-124%10%125%33%-16%-90%-52%104%-125%-72%12%5%-6%113%29%99%-14%-128%41%-20%-30%33%92%-84%-32%8%-33%9%84%-121%-15%16%-65%-118%54%76%-90%113%-2%0%-30%-31%94%-126%-60%55%-120%73%-7%-11%-107%-110%102%-86%1%98%87%-51%104%45%2%-68%-32%29%63%-43%0%-53%-40%-58%103%17%-96%30%-13%88%-85%6%120%67%99%-112%-14%30%31%9%-46%16%-38%-17%68%-68%107%-86%6%-120%35%116%96%4%-61%9%112%-114%51%60%85%26%33%-109%104%22%59%101%100%-100%-61%22%6%112%85%44%99%-36%71%35%45%-32%46%116%-79%31%90%125%76%-96%-82%80%61%-54%28%-57%-40%-64%98%41%35%101%103%81%-17%40%99%119%-78%114%124%-11%-52%-54%-121%-63%-111%-57%-107%-84%-4%-17%-65%85%-13%111%-4%5%57%-39%60%17%-39%74%73%-55%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jNFBkarpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBkqrpEe648K459CFmzA" key="image_name_key" value="Data"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBk6rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jNFBlKrpEe648K459CFmzA" key="image_expr_key" value="assetType = Data"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_6e134KrpEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%54%73%68%65%84%56%79%-91%-45%-67%43%-82%97%28%7%-16%-49%-109%76%103%17%41%-117%-94%44%94%50%48%25%-114%-120%-62%34%74%98%-112%-63%102%80%22%-125%-31%12%-78%88%108%54%-55%96%36%-17%-125%-63%-96%-120%-127%-55%75%-22%116%-106%-109%78%70%47%127%0%-41%125%-70%-98%122%-98%59%-36%-22%-71%-21%-102%-18%-21%-5%-3%125%95%126%87%78%-119%95%-82%68%-68%66%-126%55%-36%-95%25%-57%-72%-58%18%-2%-95%31%71%31%13%43%36%72%-64%-65%-80%-113%7%-52%-32%25%-121%104%-64%-97%44%-126%-28%127%37%-106%-47%24%38%118%96%15%117%104%-7%-52%106%-95%-126%-101%8%-68%-64%88%0%-73%97%7%35%-40%-6%14%-63%58%-74%-93%-123%-98%32%123%3%-25%24%74%-127%-53%-30%-96%100%96%81%-120%53%33%-68%-97%24%-58%120%-108%63%-119%-89%72%48%-118%57%-76%-94%60%-113%77%-73%-112%-36%-3%-115%-7%-32%123%51%2%-85%-80%-122%-63%-88%106%23%-89%120%76%43%-24%-62%43%-82%82%-110%15%-126%-83%-10%-48%-62%4%46%-93%-118%-90%-68%-75%-84%69%-102%-62%42%-70%-15%55%-18%66%125%8%-7%62%-33%76%22%-63%45%-50%48%29%3%77%-126%-101%45%-56%-91%40%-60%116%83%63%-16%-126%1%84%-121%-77%-126%-38%64%-44%-121%5%36%54%-66%36%-24%12%-46%79%80%-127%-59%88%93%111%12%57%-39%-52%-1%-22%-77%44%100%-66%-75%-110%9%-34%1%1%-70%54%17%33%72%111%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6e134arpEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e134qrpEe648K459CFmzA" key="image_name_key" value="Disturbance"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e1346rpEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6e135KrpEe648K459CFmzA" key="image_expr_key" value="assetType = Disturbance"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_DJ8m0KrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-93%73%68%65%84%56%79%-67%-45%-69%13%2%49%16%69%-47%-77%64%53%84%65%19%16%-110%81%2%33%32%18%36%122%32%33%-28%-45%4%77%80%12%1%31%75%107%-55%-69%66%-84%87%-106%-104%104%60%122%-66%-10%-116%-97%43%-123%81%21%-18%-105%2%-114%-104%103%2%15%88%4%109%10%120%126%-42%91%-36%58%32%19%-84%48%108%3%94%-104%-30%-102%0%-58%117%126%79%106%65%115%-114%-121%-89%55%8%-128%25%46%-119%56%-28%-79%30%-53%65%115%-54%5%124%-21%-26%39%-96%-35%-62%-90%38%-124%-39%-60%-8%111%11%-59%51%-24%13%40%122%-58%62%70%90%99%-48%54%-46%14%75%-116%58%-100%-8%-64%30%1%-46%-80%114%-26%55%104%-54%-118%127%-29%27%-105%73%46%17%-54%21%-8%-65%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_DJ8m0arqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m0qrqEe648K459CFmzA" key="image_name_key" value="Information"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m06rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_DJ8m1KrqEe648K459CFmzA" key="image_expr_key" value="assetType = Information"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_HHk6AKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%63%40%-122%81%20%-57%-15%-49%-101%8%-59%-62%98%48%72%54%-85%82%6%41%-108%-28%79%41%51%-117%-116%12%102%50%88%20%25%-52%38%-91%72%100%80%44%118%3%3%82%-56%66%-108%-78%24%41%-98%91%-9%-83%-89%-41%-5%62%-113%114%-58%123%-49%-7%-34%-33%-7%-35%115%10%-2%25%-123%63%-42%55%-94%9%-113%-91%-7%121%-128%54%-52%98%58%2%-70%113%-98%-122%-108%3%84%97%36%22%14%34%-99%115%-120%-15%60%-64%30%106%-109%-105%-122%-53%-76%-9%-115%86%60%23%-17%74%21%-44%99%31%59%-40%-86%-32%-49%50%22%43%1%-62%-7%1%-58%50%-52%125%-115%42%-66%66%78%90%65%3%62%48%-128%-109%-100%-33%-103%-60%110%26%16%64%-13%88%-117%-48%59%-76%103%64%-50%-48%-105%6%12%69%-45%-106%80%-121%9%-84%-25%-88%-24%-64%125%-79%-123%99%60%36%5%1%-80%-128%21%-68%68%88%37%-50%6%-26%2%-96%25%111%-40%-116%-128%32%-65%5%33%97%38%67%-59%17%70%3%-96%26%87%56%-115%-128%0%11%-109%119%-111%12%-51%101%25%64%80%-74%26%77%124%42%-74%80%-125%78%92%-29%29%55%-24%66%48%-85%55%66%-62%89%40%-36%-58%103%-42%28%-12%39%106%122%-30%-113%-124%-119%-100%-62%45%-126%-28%95%-111%-73%76%-71%-53%-6%3%45%-23%51%17%-25%-103%38%-80%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HHk6AarqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6AqrqEe648K459CFmzA" key="image_name_key" value="Material"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6A6rqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HHk6BKrqEe648K459CFmzA" key="image_expr_key" value="assetType = Material"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_O5eJAKrqEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%56%73%68%65%84%56%79%-99%-45%-49%43%103%97%20%-57%-15%23%89%72%52%-1%-126%-83%49%75%63%70%88%-53%-122%50%11%81%-60%78%89%32%22%34%59%-91%76%-119%-107%-123%40%74%-88%89%76%89%40%74%97%105%65%-10%-14%39%40%43%97%50%-49%-93%71%93%-41%-105%91%78%-35%-70%-9%-98%-13%-68%-49%-7%124%-18%-71%101%-66%22%101%-88%-63%93%-68%41%-118%10%-84%34%-42%-114%-32%31%-42%80%-121%-42%34%64%37%-2%-94%35%117%57%-61%53%6%-47%-117%63%69%-128%-33%-104%42%49%-30%16%54%-29%-5%34%64%21%-114%-47%-100%-125%-100%-90%-87%-18%63%3%68%-109%106%113%-125%67%-76%-28%32%-13%-63%-113%-71%60%32%26%-42%-128%-85%96%-48%17%-66%5%-99%63%80%-99%-98%127%102%32%19%88%-50%2%-54%-125%-77%123%-24%14%-41%5%-66%-93%29%-105%-23%80%-124%68%57%-115%88%-63%120%-34%-125%101%-116%101%58%76%98%9%-11%-40%-62%-81%-112%-65%-59%40%22%-16%-100%7%60%34%74%120%-115%39%-52%98%6%39%65%86%79%-38%-127%55%86%100%37%12%99%-93%-60%39%59%71%91%0%61%-108%-38%-72%-68%-119%-37%-24%-49%21%-58%-55%-102%50%94%124%56%-63%64%-46%122%-128%-50%76%-43%110%-40%-66%-104%-117%-110%-34%-59%-21%4%125%-120%-35%-89%-79%-120%-82%-28%-12%78%-14%-31%-59%-80%-49%0%-5%105%-25%-41%-117%-2%-84%124%-66%104%-107%11%121%-1%1%5%-98%53%17%80%-81%-43%-127%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_O5eJAarqEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJAqrqEe648K459CFmzA" key="image_expr_key" value="assetType = Mechanical"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJA6rqEe648K459CFmzA" key="image_name_key" value="Mechanical"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_O5eJBKrqEe648K459CFmzA" key="image_kind_key" value="icon"/>
-          </eAnnotations>
-        </icon>
-        <icon xmi:type="uml:Image" xmi:id="_aQAKIKrvEe648K459CFmzA" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%37%73%68%65%84%56%79%-91%-45%-51%42%69%97%20%-58%-15%-33%49%-111%-92%12%-120%-119%12%-108%-104%113%23%-52%-104%-71%5%102%82%-18%66%102%-54%45%48%-14%-103%41%38%20%73%-26%-60%64%73%-108%-81%-14%-51%89%-75%-74%116%114%-40%-27%-83%-73%-67%-33%-42%-69%-2%107%61%-49%-38%-69%-30%-97%-85%82%39%-65%17%31%120%-2%-117%95%15%-48%-109%-128%-29%4%-76%-26%-7%-90%22%-8%19%-96%3%125%120%-57%118%38%12%-32%13%71%101%0%-29%-72%-51%-118%11%120%-59%72%2%86%-54%0%86%-79%-113%-5%4%-51%99%50%65%91%56%-4%14%-87%-107%-48%-119%29%-100%-29%26%-19%-40%64%-56%106%65%-60%-57%112%89%64%10%64%23%102%-85%-55%67%104%78%-3%49%-123%34%30%50%26%-14%28%-17%75%-104%-58%105%113%-95%-69%90%97%6%-61%104%74%64%20%-119%120%-104%25%59%0%-79%-97%-80%-122%41%-100%-43%74%-120%86%119%113%-127%-85%-108%-80%-98%-83%-121%-124%-120%-1%40%-31%-69%47%65%-33%-61%67%26%57%-105%38%-122%-92%77%28%-4%102%98%-60%38%-86%-19%-35%-91%-21%-117%-7%28%-51%49%46%-105%25%99%56%-35%-97%-119%-59%-121%52%-104%-25%82%31%82%20%-23%-59%11%78%-78%98%91%-54%121%44%-45%65%-36%-119%81%-122%-37%49%-78%95%87%-67%-97%-23%-81%-68%-81%-8%39%85%-125%70%17%-28%25%-126%-33%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
-          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_aQAKIarvEe648K459CFmzA" source="image_papyrus">
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKIqrvEe648K459CFmzA" key="image_expr_key" value="assetType = Signal"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKI6rvEe648K459CFmzA" key="image_kind_key" value="icon"/>
-            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_aQAKJKrvEe648K459CFmzA" key="image_name_key" value="Signal"/>
-          </eAnnotations>
-        </icon>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_8LCko64CEe6jqeB5njcjPA" name="materialType" type="_0YQk0K4CEe6jqeB5njcjPA" association="_8LCkoK4CEe6jqeB5njcjPA">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_MKMwAK4DEe6jqeB5njcjPA" name="Default Value" type="_0YQk0K4CEe6jqeB5njcjPA" instance="_1yFegK4CEe6jqeB5njcjPA"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_FW7scK4DEe6jqeB5njcjPA" name="otherMaterialType">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_G2urQK4DEe6jqeB5njcjPA"/>
+          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_H6vF8K4DEe6jqeB5njcjPA" name="Default Value"/>
+        </ownedAttribute>
       </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_bTRpMKroEe648K459CFmzA" name="E_AssetLibrary_Package6" memberEnd="_bTRpMaroEe648K459CFmzA _bTRpMqroEe648K459CFmzA">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_bTRpMaroEe648K459CFmzA" name="extension_AssetLibrary" type="_YrfHkKroEe648K459CFmzA" aggregation="composite" association="_bTRpMKroEe648K459CFmzA"/>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_zYUKwK4CEe6jqeB5njcjPA" name="E_MaterialCharacteristic_Port2" memberEnd="_zYUx0K4CEe6jqeB5njcjPA _zYUx0a4CEe6jqeB5njcjPA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_zYUx0K4CEe6jqeB5njcjPA" name="extension_MaterialCharacteristic" type="_wAFqsK4CEe6jqeB5njcjPA" aggregation="composite" association="_zYUKwK4CEe6jqeB5njcjPA"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_b1OfsKroEe648K459CFmzA" memberEnd="_b1Ofs6roEe648K459CFmzA _b1PGwKroEe648K459CFmzA">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_b1OfsaroEe648K459CFmzA" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_b1OfsqroEe648K459CFmzA" key="nature" value="UML_Nature"/>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_zwT0AK4CEe6jqeB5njcjPA" name="E_MaterialCharacteristic_Relationship3" memberEnd="_zwXeYK4CEe6jqeB5njcjPA _zwXeYa4CEe6jqeB5njcjPA">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_zwXeYK4CEe6jqeB5njcjPA" name="extension_MaterialCharacteristic" type="_wAFqsK4CEe6jqeB5njcjPA" aggregation="composite" association="_zwT0AK4CEe6jqeB5njcjPA"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_0YQk0K4CEe6jqeB5njcjPA" name="MaterialType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_1yFegK4CEe6jqeB5njcjPA" name="Unspecified"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AMtDQK4DEe6jqeB5njcjPA" name="Air"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BVzZUK4DEe6jqeB5njcjPA" name="Drugs"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DiRQ4K4DEe6jqeB5njcjPA" name="Other"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_8LCkoK4CEe6jqeB5njcjPA" memberEnd="_8LCko64CEe6jqeB5njcjPA _8LCkpK4CEe6jqeB5njcjPA">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8LCkoa4CEe6jqeB5njcjPA" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8LCkoq4CEe6jqeB5njcjPA" key="nature" value="UML_Nature"/>
         </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_b1PGwKroEe648K459CFmzA" name="assetlibrary" type="_YrfHkKroEe648K459CFmzA" association="_b1OfsKroEe648K459CFmzA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fpD9sKroEe648K459CFmzA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fpO80KroEe648K459CFmzA" value="*"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_8LCkpK4CEe6jqeB5njcjPA" name="materialcharacteristic" type="_wAFqsK4CEe6jqeB5njcjPA" association="_8LCkoK4CEe6jqeB5njcjPA">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-6XRoK4CEe6jqeB5njcjPA"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-6iQwK4CEe6jqeB5njcjPA" value="*"/>
         </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_4aDmsKvbEe6TAdQAjsdzBw" name="E_Asset_Port8" memberEnd="_4aE00KvbEe6TAdQAjsdzBw _4aFb4KvbEe6TAdQAjsdzBw">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_4aE00KvbEe6TAdQAjsdzBw" name="extension_Asset" type="_Y4rrgKrnEe648K459CFmzA" aggregation="composite" association="_4aDmsKvbEe6TAdQAjsdzBw"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_lSgGEKsiEe64MIO5prd8KQ" name="Security">
@@ -18811,40 +19238,140 @@ The storage can not be removed by an operator. A technician has to open up the d
         </ownedLiteral>
       </packagedElement>
     </packagedElement>
-    <packagedElement xmi:type="uml:Package" xmi:id="_snS_YK4BEe6jqeB5njcjPA" name="Energy">
-      <packagedElement xmi:type="uml:Stereotype" xmi:id="_VdX2cK4BEe6jqeB5njcjPA" name="EnergyCharacteristic">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Y4pqga4BEe6jqeB5njcjPA" name="base_Relationship" association="_Y4pDcK4BEe6jqeB5njcjPA">
-          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Relationship"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Y4pqgq4BEe6jqeB5njcjPA"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_pFwPwKomEe6Gq7xaYvprpg" name="Storage">
+      <packagedElement xmi:type="uml:Stereotype" xmi:id="_9Wgb4KoVEe6OkogQwQEbJw" name="StorageCharacteristic">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_VymWUaohEe6Gq7xaYvprpg" name="base_Component" association="_VylvQKohEe6Gq7xaYvprpg">
+          <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Component"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VymWUqohEe6Gq7xaYvprpg"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_ZPzmQq4BEe6jqeB5njcjPA" name="base_Port" association="_ZPzmQK4BEe6jqeB5njcjPA">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_UC9PkaofEe6OkogQwQEbJw" name="base_Port" association="_UC8ogKofEe6OkogQwQEbJw">
           <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Port"/>
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZPzmQ64BEe6jqeB5njcjPA"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UC9PkqofEe6OkogQwQEbJw"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jeF_MK4BEe6jqeB5njcjPA" name="energyType" type="_a57lwK4BEe6jqeB5njcjPA" association="_jeC74K4BEe6jqeB5njcjPA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_bbobYKohEe6Gq7xaYvprpg" name="encryption">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_gtxDYKohEe6Gq7xaYvprpg"/>
+          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_dGxukKohEe6Gq7xaYvprpg" name="Default Value"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_0oZ3wKofEe6OkogQwQEbJw" name="storageFormat">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-jEKEKofEe6Gq7xaYvprpg"/>
+          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_98sGkKofEe6Gq7xaYvprpg" name="Default Value"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_LHhJIKogEe6Gq7xaYvprpg" name="storageType" type="_OdYRsKogEe6Gq7xaYvprpg">
+          <defaultValue xmi:type="uml:InstanceValue" xmi:id="_hu0GIKogEe6Gq7xaYvprpg" name="Default Value" type="_OdYRsKogEe6Gq7xaYvprpg" instance="_YUBmsKogEe6Gq7xaYvprpg"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_F_0koKoiEe6Gq7xaYvprpg" name="storageName">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H48CYKoiEe6Gq7xaYvprpg"/>
+          <defaultValue xmi:type="uml:LiteralNull" xmi:id="_I5NMkKoiEe6Gq7xaYvprpg" name="Default Value"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Gu5hMqsfEe64MIO5prd8KQ" name="totalSize" type="_8-dh4KseEe64MIO5prd8KQ" association="_Gu46IKsfEe64MIO5prd8KQ"/>
+        <icon xmi:type="uml:Image" xmi:id="_Dj5p4KokEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-18%73%68%65%84%56%79%-91%-46%-67%43%-57%81%20%-57%-15%-41%47%-27%-33%16%-77%-55%98%-15%80%24%76%38%79%-101%29%-77%50%42%118%-117%-78%90%-28%105%81%70%36%-110%-59%-88%100%52%-56%-97%-63%-9%-44%87%93%-73%-101%-17%-3%-27%108%-9%-100%-49%121%-97%123%30%122%-2%105%-67%36%127%16%-121%24%41%48%-97%-80%93%-86%-107%2%22%112%89%16%61%99%24%39%-40%-52%-29%41%96%9%103%5%64%-8%118%-15%-128%99%-84%-89%-102%90%-64%10%-58%112%-101%67%-6%1%68%-31%113%-36%96%21%87%-31%72%1%-53%56%-83%92%74%104%-49%115%64%62%-125%23%28%-76%-64%13%-116%38%-16%-48%94%116%1%-90%49%-41%38%-59%-73%-17%-6%5%-36%55%67%-101%-62%43%102%-16%-39%5%88%-4%-23%43%17%126%52%-21%-101%-59%62%-26%-69%0%-91%59%-120%-61%122%-61%86%54%-36%-86%25%68%-50%81%-101%-72%86%3%-104%108%122%-115%-66%83%123%111%31%67%-103%127%2%-113%-7%22%6%-102%-69%-40%65%4%-1%-78%107%-20%-31%43%7%84%-34%-48%111%-39%55%45%123%49%17%-29%15%23%32%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Dj5p4aokEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p4qokEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Unknown"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p46okEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Dj5p5KokEe6Gq7xaYvprpg" key="image_name_key" value="Unknown"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_skQeUKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-91%73%68%65%84%56%79%-19%-45%61%14%65%81%16%5%-32%79%-20%-58%10%20%-124%13%40%-39%-127%-62%50%20%18%27%96%15%126%42%-75%-122%-60%22%-76%22%96%11%18%-34%4%-119%-36%-25%-67%60%81%104%76%51%-71%57%119%78%-50%-71%103%110%-51%-105%85%43%-103%-97%-94%-7%6%63%97%-120%75%96%69%4%51%-12%113%68%35%-23%29%116%-79%43%34%-104%99%-124%85%54%56%-56%8%-106%73%-65%62%-50%-127%-25%20%60%-121%3%-5%-104%-96%-121%-51%-117%-25%115%-119%-123%-80%-73%78%21%-124%-36%69%-59%80%-30%110%-50%-62%-97%-32%-98%-7%111%31%-79%-115%125%-59%24%91%56%-92%123%80%-49%54%115%-116%0%-53%106%-117%9%98%-91%11%63%83%69%33%-36%0%33%-77%45%17%-100%92%-102%-23%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_skQeUaojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeUqojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = RemovableByTechnician"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeU6ojEe6Gq7xaYvprpg" key="image_name_key" value="RemovableByTechnician"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_skQeVKojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_0OxS8KojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%120%73%68%65%84%56%79%-115%-46%-65%75%87%97%20%6%-16%-113%-23%-96%66%-28%32%34%56%-91%-124%81%8%-2%64%80%-63%-52%36%73%112%40%104%-88%69%-121%-2%-110%-122%114%112%114%113%113%113%8%-38%92%92%92%-84%32%-45%-106%66%-45%-87%66%40%-9%-126%-108%-126%-122%-16%61%-14%94%-71%-22%-9%-85%29%120%-71%-9%-66%-9%-100%-25%60%-25%121%78%-115%-1%-117%107%-88%-63%-25%-45%-23%113%121%81%-12%-29%13%46%-31%46%-42%-54%5%23%1%92%79%69%-17%-16%30%-75%24%78%-17%-9%-16%-74%0%-87%6%-48%-127%69%92%-59%7%-68%64%11%-18%99%48%-125%28%49%-87%4%112%35%117%90%69%107%-18%114%7%-63%-92%13%-49%-80%-116%1%-116%-89%-77%126%26%-96%23%-81%112%-91%52%-25%-97%68%121%12%27%-104%-59%-73%-52%36%64%122%-54%0%67%9%121%5%-105%43%-88%122%-112%5%124%-128%-17%120%-120%-18%56%5%64%124%-124%88%-115%-25%88%-78%-113%0%120%-118%-101%-119%-23%45%108%7%64%-100%45%116%-27%-30%-65%-8%-110%-109%42%-31%-3%-64%72%98%-79%83%-120%24%-44%-93%123%68%60%39%16%-35%-62%-1%-80%47%-4%47%-57%87%116%-30%95%1%16%-76%-106%114%-58%-109%36%-48%102%82%124%33%-87%-35%-105%-35%8%23%-118%-120%-18%-93%-8%84%-34%-125%-37%-119%-46%-21%124%49%-125%-25%8%43%-61%-1%88%-35%-10%-4%47%-118%3%44%-58%61%-114%-104%-65%30%123%104%-58%111%-52%-31%35%-90%49%-103%51%127%-26%-50%39%-118%-53%-117%-12%40%-51%-11%-78%-118%3%-65%114%113%-128%-98%-119%-14%30%60%78%-21%58%-113%-90%82%86%-120%58%-107%-50%110%21%-16%51%-85%-36%-112%-59%-85%67%-52%124%44%86%53%-128%67%-26%-107%64%85%-66%125%-30%-84%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0OxS8aojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS8qojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = RemovableByOperator"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS86ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0OxS9KojEe6Gq7xaYvprpg" key="image_name_key" value="RemovableByOperator"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_fCtk4KojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%1%47%73%68%65%84%56%79%-91%-45%61%40%-121%81%20%-57%-15%-113%-105%-63%91%70%19%11%-123%1%-125%-78%17%-91%100%50%97%-76%89%76%66%-78%-119%24%20%37%54%-93%-51%-53%108%66%81%-54%40%38%25%-52%12%-108%1%69%120%110%-35%-89%30%-1%60%-2%-59%-35%110%-9%-100%-17%61%-65%-33%57%-89%-60%63%79%73%38%-65%10%91%-88%47%-62%-68%-59%56%-34%67%92%22%-48%-113%-61%76%-14%43%-82%-29%-67%5%21%-103%-73%62%-100%20%2%70%-80%27%-55%-77%-40%76%127%65%57%38%-79%-126%82%-124%-40%-3%66%-64%40%118%-80%-122%-103%28%25%-85%-104%70%-120%-35%-53%3%116%-32%42%7%-48%-114%-53%60%64%42%33%-104%-7%18%1%75%120%75%-68%90%-120%-9%74%60%-25%73%72%1%-51%-72%-119%9%77%104%-59%1%62%81%-121%-69%60%-64%112%-44%53%-97%24%-75%24%1%99%24%-62%41%54%48%21%61%-6%-47%-60%20%16%74%30%-60%49%38%-16%-128%46%60%98%14%-43%-59%36%-124%-49%63%-80%30%-91%-124%-33%6%112%-124%-34%88%-39%-113%21%-92%30%20%54%32%104%111%76%-54%127%-62%5%26%-118%117%-95%45%73%-40%70%103%-122%20%6%-24%62%49%50%-8%83%-101%39%-95%39%-102%117%-98%76%89%-128%-44%-4%-78%19%-35%56%43%28%-92%-78%-40%-17%-16%-8%-37%9%-5%-78%28%-37%-6%109%-103%-2%-76%-40%95%32%67%68%17%-25%7%-10%-51%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_fCtk4aojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk4qojEe6Gq7xaYvprpg" key="image_name_key" value="Fixed"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk46ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_fCtk5KojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Fixed"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_iqYPIKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-50%73%68%65%84%56%79%-59%-46%49%78%66%65%16%-58%-15%31%22%94%66%106%76%-68%-123%7%-80%20%15%64%-96%-48%-34%86%45%-71%-128%-122%-106%78%-80%-13%0%92%-126%104%69%69%97%-31%13%44%-124%55%100%54%121%-58%-62%71%30%-119%-109%76%54%-69%-39%-7%-49%-73%-33%108%71%-53%-24%-76%-84%119%48%-64%41%-98%112%-44%80%-47%55%-122%88%21%5%83%92%-80%83%-12%-123%-73%63%64%103%120%-59%-96%0%-98%-79%-60%49%122%9%56%-57%93%5%125%72%-40%125%-75%70%46%16%-128%-120%-85%58%-96%-97%-121%-77%92%-33%19%122%-109%-5%-57%44%44%-59%63%0%81%116%89%3%4%56%-10%-111%-13%60%-113%6%113%47%50%-68%-38%84%74%-5%69%-63%-1%3%-62%-60%-70%7%49%-123%-67%76%-100%96%-108%111%-3%108%56%-58%23%92%23%15%-70%24%-29%-92%-31%71%90%-29%22%31%7%-5%-54%13%27%-1%-66%-42%90%-63%22%-96%-2%49%17%106%-37%-18%-97%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iqYPIaojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPIqojEe6Gq7xaYvprpg" key="image_name_key" value="Network"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPI6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iqYPJKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Network"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_oBdBgKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-9%73%68%65%84%56%79%-91%-45%61%74%3%65%24%-58%-15%95%-70%72%12%-126%-99%-123%8%-94%104%-91%-123%96%-93%-34%-63%35%-120%65%60%-126%-105%72%107%-89%-32%17%-68%-125%-38%-6%-123%96%16%65%59%75%17%20%-79%17%119%96%34%-29%100%55%11%-18%118%-13%126%-4%-33%-9%121%118%-90%-91%-31%-41%106%-40%-81%14%-80%16%7%60%86%13%42%3%-76%113%-128%125%-52%-60%-58%23%28%-94%-113%-81%20%-106%3%58%-72%-62%98%-59%-60%7%-84%-31%125%-104%-49%1%71%-24%-43%-8%18%106%-10%-54%0%19%-8%-32%-113%47%-125%88%-72%-100%64%-65%11%41%-109%-123%-52%-49%16%75%55%-40%-64%121%82%120%-121%-11%88%115%-119%-91%36%-73%-119%-117%28%16%-126%103%73%-47%45%86%-29%-7%30%-23%22%91%-61%97%-23%6%-63%-64%95%115%98%-29%13%-90%49%-101%-7%18%36%4%-71%35%-9%-32%24%-69%-1%53%49%-12%117%113%-115%-7%10%-56%19%86%-58%-3%-58%-48%55%-123%-109%2%-76%-99%65%78%-79%-125%-73%113%23%41%-51%5%-19%115%49%-16%-116%-41%-78%-83%-22%-34%66%-19%91%107%12%-8%1%-121%-54%35%17%24%49%-105%-4%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oBdBgaojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBgqojEe6Gq7xaYvprpg" key="image_name_key" value="CdRom"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBg6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oBdBhKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = CdRom"/>
+          </eAnnotations>
+        </icon>
+        <icon xmi:type="uml:Image" xmi:id="_4u8SgKojEe6Gq7xaYvprpg" content="-119%80%78%71%13%10%26%10%0%0%0%13%73%72%68%82%0%0%0%16%0%0%0%16%8%6%0%0%0%31%-13%-1%97%0%0%0%1%115%82%71%66%0%-82%-50%28%-23%0%0%0%-52%73%68%65%84%56%79%-83%-45%61%110%2%49%16%-122%-31%7%14%-111%6%-119%22%41%-105%72%74%14%16%17%106%-92%-12%-108%116%-124%-118%62%77%-6%20%72%17%45%7%-128%75%-48%81%-95%52%57%4%-80%94%-39%-110%-75%-80%65%97%113%-29%-65%-7%-34%-15%-52%120%90%26%-114%86%67%-67%-65%0%71%12%40%109%-66%-29%124%-26%-81%10%-24%-31%19%109%60%21%-128%109%84%60%98%-125%3%-34%-80%75%-92%42%-32%11%-3%76%88%-11%24%64%43%-116%-22%0%75%-92%-89%95%74%-49%-39%125%-2%-126%32%12%35%24%-123%-40%-45%62%119%22%-18%94%-30%65%-87%-51%1%-49%-123%104%-118%95%-68%70%-64%123%-76%9%-25%41%-103%15%-59%122%-122%-11%-35%1%-115%67%72%-15%-33%-100%-60%0%-8%-64%-16%74%25%23%24%-41%-107%-79%-117%57%58%53%31%-23%7%19%-20%-21%0%121%-19%111%-6%-54%-1%-18%-83%-58%-35%120%2%62%67%48%17%115%62%-32%98%0%0%0%0%73%69%78%68%-82%66%96%-126%" format="Papyrus">
+          <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_4u8SgaojEe6Gq7xaYvprpg" source="image_papyrus">
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8SgqojEe6Gq7xaYvprpg" key="image_name_key" value="Ram"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8Sg6ojEe6Gq7xaYvprpg" key="image_kind_key" value="icon"/>
+            <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_4u8ShKojEe6Gq7xaYvprpg" key="image_expr_key" value="storageType = Ram"/>
+          </eAnnotations>
+        </icon>
       </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_Y4pDcK4BEe6jqeB5njcjPA" name="E_EnergyCharacteristic_Relationship20" memberEnd="_Y4pqgK4BEe6jqeB5njcjPA _Y4pqga4BEe6jqeB5njcjPA">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_Y4pqgK4BEe6jqeB5njcjPA" name="extension_EnergyCharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" aggregation="composite" association="_Y4pDcK4BEe6jqeB5njcjPA"/>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_UC8ogKofEe6OkogQwQEbJw" name="E_StorageCharacteristic_Port" memberEnd="_UC9PkKofEe6OkogQwQEbJw _UC9PkaofEe6OkogQwQEbJw">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_UC9PkKofEe6OkogQwQEbJw" name="extension_StorageCharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" aggregation="composite" association="_UC8ogKofEe6OkogQwQEbJw"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Extension" xmi:id="_ZPzmQK4BEe6jqeB5njcjPA" name="E_EnergyCharacteristic_Port21" memberEnd="_ZPzmQa4BEe6jqeB5njcjPA _ZPzmQq4BEe6jqeB5njcjPA">
-        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_ZPzmQa4BEe6jqeB5njcjPA" name="extension_EnergyCharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" aggregation="composite" association="_ZPzmQK4BEe6jqeB5njcjPA"/>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_OdYRsKogEe6Gq7xaYvprpg" name="StorageType">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_SQD5IKogEe6Gq7xaYvprpg" annotatedElement="_OdYRsKogEe6Gq7xaYvprpg">
+          <body>Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, and Unknown.</body>
+        </ownedComment>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YUBmsKogEe6Gq7xaYvprpg" name="Unknown">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_boXFQKogEe6Gq7xaYvprpg" annotatedElement="_YUBmsKogEe6Gq7xaYvprpg">
+            <body>The type of storage is unknown.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YfdaoKogEe6Gq7xaYvprpg" name="RemovableByOperator">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_d0floKogEe6Gq7xaYvprpg" annotatedElement="_YfdaoKogEe6Gq7xaYvprpg">
+            <body>The storage is a removable storage device, such as a USB flash drive.&#xD;
+The storage can be removed by an operator, either tool less or with simple tools.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_wPgS8KohEe6Gq7xaYvprpg" name="RemovableByTechnician">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_BplkMKoiEe6Gq7xaYvprpg" annotatedElement="_wPgS8KohEe6Gq7xaYvprpg">
+            <body>The storage is a removable storage device, such as a USB flash drive.&#xD;
+The storage can not be removed by an operator. A technician has to open up the device using tools to access the storage.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_msMmIKogEe6Gq7xaYvprpg" name="Fixed">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_1xkCwKogEe6Gq7xaYvprpg" annotatedElement="_msMmIKogEe6Gq7xaYvprpg">
+            <body>The storage is a fixed disk.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6ZepEKogEe6Gq7xaYvprpg" name="Network">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_7wjwwKogEe6Gq7xaYvprpg" annotatedElement="_6ZepEKogEe6Gq7xaYvprpg">
+            <body>The storage is a network drive.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3K2J4KogEe6Gq7xaYvprpg" name="CdRom">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_5BgwkKogEe6Gq7xaYvprpg" annotatedElement="_3K2J4KogEe6Gq7xaYvprpg">
+            <body>The storage is an optical disc device, such as a CD or DVD-ROM.</body>
+          </ownedComment>
+        </ownedLiteral>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_YuRSsKogEe6Gq7xaYvprpg" name="Ram">
+          <ownedComment xmi:type="uml:Comment" xmi:id="_jo1i0KogEe6Gq7xaYvprpg" annotatedElement="_YuRSsKogEe6Gq7xaYvprpg">
+            <body>The drive is a RAM disk.</body>
+          </ownedComment>
+        </ownedLiteral>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_a57lwK4BEe6jqeB5njcjPA" name="EnergyType">
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ci_OQK4BEe6jqeB5njcjPA" name="Unspecified"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_9egNEK4BEe6jqeB5njcjPA" name="Force"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_OXPEwK4CEe6jqeB5njcjPA" name="Kinetic"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_d_khAK4BEe6jqeB5njcjPA" name="Light"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eO_dEK4BEe6jqeB5njcjPA" name="Power"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ee8koK4BEe6jqeB5njcjPA" name="Sound"/>
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hfchMK4BEe6jqeB5njcjPA" name="Vibration"/>
+      <packagedElement xmi:type="uml:Extension" xmi:id="_VylvQKohEe6Gq7xaYvprpg" name="E_StorageCharacteristic_Component" memberEnd="_VymWUKohEe6Gq7xaYvprpg _VymWUaohEe6Gq7xaYvprpg">
+        <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_VymWUKohEe6Gq7xaYvprpg" name="extension_StorageCharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" aggregation="composite" association="_VylvQKohEe6Gq7xaYvprpg"/>
       </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_jeC74K4BEe6jqeB5njcjPA" memberEnd="_jeF_MK4BEe6jqeB5njcjPA _jeGmQK4BEe6jqeB5njcjPA">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jeFYIK4BEe6jqeB5njcjPA" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jeFYIa4BEe6jqeB5njcjPA" key="nature" value="UML_Nature"/>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Gu46IKsfEe64MIO5prd8KQ" memberEnd="_Gu5hMqsfEe64MIO5prd8KQ _Gu6IQKsfEe64MIO5prd8KQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Gu5hMKsfEe64MIO5prd8KQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Gu5hMasfEe64MIO5prd8KQ" key="nature" value="UML_Nature"/>
         </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_jeGmQK4BEe6jqeB5njcjPA" name="energycharacteristic" type="_VdX2cK4BEe6jqeB5njcjPA" association="_jeC74K4BEe6jqeB5njcjPA">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nMhYwK4BEe6jqeB5njcjPA"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nMj1AK4BEe6jqeB5njcjPA" value="*"/>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_Gu6IQKsfEe64MIO5prd8KQ" name="storagecharacteristic" type="_9Wgb4KoVEe6OkogQwQEbJw" association="_Gu46IKsfEe64MIO5prd8KQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JsLKoKsfEe64MIO5prd8KQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JsVisKsfEe64MIO5prd8KQ" value="*"/>
         </ownedEnd>
       </packagedElement>
     </packagedElement>
