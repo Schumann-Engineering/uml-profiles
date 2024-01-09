@@ -1,0 +1,84 @@
+[comment encoding = UTF-8 /]
+[module main('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import engineering::schumann::uml::m2t::services::environment/]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
+
+
+[query public getFileName(
+	this : Model
+) : String =
+	'model - ' + this.name + '.md'
+/]
+
+
+[query public getFileName(
+	this : Package
+) : String =
+	'package - ' + this.name + '.md'
+/]
+
+
+[**
+ * ====================
+ * MAIN
+ * ====================
+*/]
+[template public main(
+	this : Model
+)]
+	[comment @main/]
+
+	[comment
+		====================
+		SETUP
+		====================
+
+		Configure environment by loading properties file passed as argument to template.
+
+		NOTE: this is done by passing a list of properties files to the execution engine.
+	/]
+	# Environment
+	[getProperty('COMMENT_ONE_LINE') /]
+
+
+	[comment 
+		====================
+		GO!
+		====================
+	/]
+	[this.generateMarkdown() /]
+[/template]
+
+
+
+[**
+ * ====================
+ * TEMPLATES
+ * ====================
+*/]
+[**
+ * Generates markdown files for a model
+ */]
+[template private generateMarkdown(
+	this : Model
+)]
+	[file (this.getFileName(), false, 'UTF-8')]
+		# Scope
+
+		[this.printScope() /]
+
+		# [this.name/]
+	[/file]
+[/template]
+
+[**
+ * Generates markdown files for a package
+ */]
+[template private generateMarkdown(
+	this : Package
+)]
+	[file (this.getFileName(), false, 'UTF-8')]
+		# [this.name/]
+	[/file]
+[/template]

@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann-engineering/csmn/1/Lifecycle'
+)]
+
+[import engineering::schumann::uml::m2t::Model /]
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_getAllScopeElements(
+	this : Model
+) : Set(Element) =
+	this._getAllStereotypedElements('CSMN::Lifecycle::Scope')
+/]
+
+
+[query public csmn_getScopeProduct(
+	this : Element
+) : Product =
+	this
+	._getTaggedValue('CSMN::Lifecycle::Scope', 'product')
+	.oclAsType(Product)
+/]
