@@ -1,10 +1,11 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-SymbolicName: CSMN;singleton:=true
+Bundle-Name: Cybersecurity Modelling Notation
+Bundle-SymbolicName: engineering.schumann.uml.profile.csmn;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-ClassPath: .
-Bundle-Vendor: %providerName
+Bundle-Activator: engineering.schumann.uml.m2t.csmn.Activator
+Bundle-Vendor: Schumann.Engineering
 Bundle-Localization: plugin
 Automatic-Module-Name: CSMN
 Bundle-RequiredExecutionEnvironment: JavaSE-17
@@ -40,10 +41,24 @@ Export-Package: CSMN.Characteristics.Asset,
  CSMN.Lifecycle.util,
  CSMN.PrimitiveTypes,
  CSMN.PrimitiveTypes.impl,
- CSMN.PrimitiveTypes.util
+ CSMN.PrimitiveTypes.util,
+ engineering.schumann.uml.m2t.csmn.markdown
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.core.runtime,
+ org.eclipse.uml2.uml,
+ org.eclipse.uml2.uml.profile.standard,
+ org.eclipse.uml2.uml.resources,
  org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.uml2.uml;visibility:=reexport,
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="2.0.0"
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.3.0",
+ org.eclipse.acceleo.model;bundle-version="3.3.0",
+ org.eclipse.acceleo.profiler;bundle-version="3.3.0",
+ org.eclipse.acceleo.engine;bundle-version="3.3.0",
+ com.google.guava,
+ org.eclipse.papyrus.uml.extensionpoints,
+ engineering.schumann.uml;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
