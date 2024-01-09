@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module TypedElement('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import engineering::schumann::uml::m2t::NamedElement /]
+[import engineering::schumann::uml::m2t::Type /]
+
+
+[comment Returns true if type is a class, false otherwise /]
+[query public _typeIsClass( typedElement : TypedElement ) : Boolean =
+	if typedElement.type = null then false else typedElement.type._isClass() endif
+/]
+
+
+[comment Returns true if type is an enumeration, false otherwise /]
+[query public _typeIsEnumeration( typedElement : TypedElement ) : Boolean =
+	if typedElement.type = null then false else typedElement.type._isEnumeration() endif
+/]
+
+
+[comment Returns true if type is a primitive type, false otherwise /]
+[query public _typeIsPrimitiveType( typedElement : TypedElement ) : Boolean =
+	if typedElement.type = null then false else typedElement.type._isPrimitiveType() endif
+/]
+
+
+[comment Returns the name of the type /]
+[query public _typeName( typedElement : TypedElement ) : String =
+	if typedElement.type = null then '<N/A>' else typedElement.type._name() endif
+/]

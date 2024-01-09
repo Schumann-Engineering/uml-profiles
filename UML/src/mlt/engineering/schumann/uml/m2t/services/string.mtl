@@ -1,0 +1,14 @@
+[module string('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[query public trim(arg0 : String, arg1 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringService', 'trim(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]
+
+[query public escape(arg0 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringService', 'escape(java.lang.String)', Sequence{arg0}) /]
+
+[query public comment(arg0 : String, arg1 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringService', 'comment(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]
+
+[query public getUChars(arg0 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringService', 'getUChars(java.lang.String)', Sequence{arg0}) /]
+

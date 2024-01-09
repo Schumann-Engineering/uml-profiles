@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module Interface('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[comment Returns the name of an element of type Interface /]
+[template public _name(element : Interface) post(trim())]
+	I[name.toUpperFirst()/]
+[/template]

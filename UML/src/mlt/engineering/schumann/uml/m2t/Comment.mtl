@@ -1,0 +1,107 @@
+[comment encoding = UTF-8 /]
+[module Comment('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import engineering::schumann::uml::m2t::services::environment /]
+[import engineering::schumann::uml::m2t::services::comment /]
+
+[comment returns true if a comment is empty, false otherwise /]
+[query public _isEmpty(aComment : Comment) : Boolean =
+	aComment._body = null
+/]
+
+
+[comment Creates a single-line comment out of a given string /]
+[template public _comment()]
+[env('COMMENT_ONE_LINE')/]
+[/template]
+
+
+[comment Starts a multi-line comment /]
+[template public _startMultiLineComment()]
+[env('COMMENT_MULTI_LINE_START')/]
+[/template]
+
+
+[comment Generates a partial multi-line comment /]
+[template public _partial_multi_line_comment()]
+[env('COMMENT_MULTI_LINE')/]
+[/template]
+
+
+[comment Closes a multi-line comment /]
+[template public _endMultiLineComment()]
+ [env('COMMENT_MULTI_LINE_END')/]
+[/template]
+
+
+[comment Creates a multi-line comment out of a given string /]
+[template public _multi_line_comment(aComment : String)]
+[_startMultiLineComment()/]
+[for (str : String | aComment.stripComment()) ]
+ [_partial_multi_line_comment() /] [str/]
+[/for]
+[_endMultiLineComment()/]
+[/template]
+
+
+[comment Starts a "big" region (which might be collapsable depending on the language / editor) /]
+[template public _startRegion(regionName : String) post(trim())]
+[_startMultiLineComment()/] +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+ [env('COMMENT_MULTI_LINE')/] [regionName.toUpper()/]
+[_endMultiLineComment()/]
+[env('REGION_START')/]
+[/template]
+
+
+[comment Closes a "big" region (which might be collapsable depending on the language / editor) /]
+[template public _endRegion(regionName : String) post(trim())]
+[env('REGION_END')/]
+[_startMultiLineComment()/]
+ [env('COMMENT_MULTI_LINE')/] End of [regionName.toUpper()/]
+ [env('COMMENT_MULTI_LINE')/] +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+= [env('COMMENT_MULTI_LINE_END')/]
+[/template]
+
+[comment Starts a "small" region (which don't have a special marker for beeing collapsable depending on the language / editor) /]
+[template public _startSmallRegion(regionName : String)]
+[_startMultiLineComment()/] ==========================================================
+ [env('COMMENT_MULTI_LINE')/] [regionName/]
+[_endMultiLineComment()/]
+[/template]
+
+
+[comment Closes a "small" region (which don't have a special marker for beeing collapsable depending on the language / editor) /]
+[template public _endSmallRegion(regionName : String)]
+[_startMultiLineComment()/]
+ [env('COMMENT_MULTI_LINE')/]
+ [env('COMMENT_MULTI_LINE')/] ========================================================== [env('COMMENT_MULTI_LINE_END')/]
+[/template]
+
+
+[template public asComment(element : Element)]
+[for (element.toString().tokenize('\n'))]
+[env('COMMENT_ONE_LINE')/] [element/]
+[/for]
+[/template]
+
+ 
+[template public asMultilineComment(element : Element)]
+[for (element.toString().tokenize('\n'))]
+[env('asMultilineComment')/] [element/]
+[/for]
+[/template]
+
+
+[comment Creates a partial multi-line comment from Comment elements /]
+[template public _model_documentation(element : Element)]
+[if (element.ownedComment->size() = 0)]
+[env('COMMENT_MULTI_LINE')/] == No documentation provided ==
+[else]
+[for (eComment : Comment | element.ownedComment)]
+[if (eComment._isEmpty())]
+[for (eComment.stripComment()) separator ('\n')][env('COMMENT_MULTI_LINE')/] [self/][/for]
+[/if]
+[/for]
+[/if]
+[env('COMMENT_MULTI_LINE')/]
+[env('COMMENT_MULTI_LINE')/] 
+[/template]

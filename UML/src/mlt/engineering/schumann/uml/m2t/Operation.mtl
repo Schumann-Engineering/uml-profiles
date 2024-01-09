@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module Operation('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+
+[query public _isImplementingOperation(element : Operation) : Boolean =
+	element.class.ownedAttribute->select( name = element.name and type = element.type )->size() > 0
+/]

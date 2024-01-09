@@ -1,0 +1,4 @@
+[module stereotype('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[query public getStereotypeValue(element : Element, stereotype : Stereotype, valueName : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StereotypeService', 'getStereotypeValue(org.eclipse.uml2.uml.Element, org.eclipse.uml2.uml.Stereotype, java.lang.String)', Sequence{element, stereotype, valueName}) /]

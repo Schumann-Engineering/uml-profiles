@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module Element('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+
+[query public _getTaggedValue(
+	stereotypedElement : Element, 
+	stereotypeName : String, 
+	propertyName : String
+) : OclAny = 
+   let stereotype : Stereotype = stereotypedElement.getAppliedStereotype(stereotypeName) in
+     if not stereotype.oclIsUndefined() then
+       stereotypedElement.getValue(stereotype, propertyName)
+     else 
+       null
+     endif
+/]
+
+[query public _hasStereotype(element : Element, stereotypeName : String) : Boolean = 
+	element.getAppliedStereotypes()->select(name = stereotypeName)->size() > 0
+/]
+
+[query public _getStereotype(element : Element, stereotypeName : String) : Stereotype = 
+	element.getAppliedStereotypes()->select(name = stereotypeName)->asSequence()->first()
+/]
+
+[query public _hasStereotypes(element : Element) : Boolean = 
+	element._listStereotypes()->size() > 0
+/]
+
+[query public _listStereotypes(element : Element) : Set(Stereotype) =
+	element.getAppliedStereotypes() 
+/]

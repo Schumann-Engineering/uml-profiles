@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module Type('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[comment Returns true if type is an enumeration, false otherwise /]
+[query public _isEnumeration( type : Type ) : Boolean =
+	oclIsKindOf( Enumeration )
+/]
+
+
+[comment Returns true if type is a primitive type, false otherwise /]
+[query public _isPrimitiveType( type : Type ) : Boolean =
+	oclIsKindOf( PrimitiveType )
+/]
+
+
+[comment Returns true if type is a class, false otherwise /]
+[query public _isClass( type : Type ) : Boolean =
+	oclIsKindOf( Class )
+/]

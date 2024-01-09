@@ -1,0 +1,62 @@
+[comment encoding = UTF-8 /]
+[module Class('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import engineering::schumann::uml::m2t::Operation /]
+[import engineering::schumann::uml::m2t::Property /]
+
+
+[comment @TODO is this working at all?!?!?! /]
+[query public _getInheritances(element : Class) : Set(Classifier) =
+	element.superClass->filter( Classifier )->union(element.interfaceRealization->filter( Classifier ))->sortedBy(name)
+/]
+
+
+[query public _hasInterface(element : Class) : Boolean =
+	interfaceRealization->size() > 0
+/]
+
+
+[query public _hasSubclass(element : Class) : Boolean =
+	element._subClasses()->size() > 0
+/]
+
+
+[query public _hasSuperclass(element : Class) : Boolean =
+	element.superClass->size() > 0
+/]
+
+
+[comment
+[query public _includes(element : Class) : =
+<%( 
+	ownedOperation.ownedParameter.type( !_isPrimitiveType )
+  + ownedAttribute.type( !_isPrimitiveType )
+  + ownedAttribute.subsettedProperty.type
+  + interfaceRealization.contract
+  ).nMinimize()%>
+/]
+
+
+[query public _isNestedClass(element : Class) : Boolean =
+	element.owner->filter(Class)->size() > 0
+/]
+
+
+[query public _leafSubClasses(element : Class) : Set(Class) =
+	element._subClasses()->select( _subClasses()->size() = 0 )
+/]
+
+
+[query public _properties(element : Class) : Set(Property) =
+	attribute->select( _isNormal() and _hasType() )
+/]
+
+
+[query public _queries(element : Class) : Set(Operation) =
+	element.ownedOperation->select( isQuery = true and not _isImplementingOperation() )
+/]
+
+
+[query public _subClasses(element : Class) : Set(Class) =
+	element.getModel().allOwnedElements()->filter(Class)->select( allParents()->includes(element) )
+/]

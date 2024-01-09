@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module Enumeration('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[comment Returns the name of an element of type Enumeration /]
+[template public _name(element : Enumeration) post(trim())]
+	E[name.toUpperFirst()/]
+[/template]

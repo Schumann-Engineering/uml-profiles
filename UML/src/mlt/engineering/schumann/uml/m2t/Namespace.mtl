@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module Namespace('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+
+[comment
+	Returns the sequence of parent packages, starting if the top most element 
+/]
+[query public _owningPackages(element : Namespace) : Sequence(NamedElement) =
+	if element.namespace <> null then element.namespace._owningPackages()->append( element ) else Sequence{element} endif
+/]
+ 

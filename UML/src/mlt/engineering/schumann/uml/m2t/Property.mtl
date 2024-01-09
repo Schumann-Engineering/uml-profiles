@@ -1,0 +1,69 @@
+[comment encoding = UTF-8 /]
+[module Property('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[import engineering::schumann::uml::m2t::services::environment /]
+[import engineering::schumann::uml::m2t::Comment /]
+[import engineering::schumann::uml::m2t::Element /]
+[import engineering::schumann::uml::m2t::MultiplicityElement /]
+[import engineering::schumann::uml::m2t::PackageableElement /]
+
+[query public _fqnName(element : Property) : String =
+	element.class._fqn() + env('PROPERTY_DIVIDER') + element.name
+/]
+
+
+[query public _hasType(element : Property) : Boolean =
+	element.type <> null and element.type.name <> null
+/]
+
+
+[query public _isNormal(element : Property) : Boolean =
+	element.isComposite or not element._isSubsetted() and not element.isDerivedUnion
+/]
+
+
+[query public _isRedefinition(element : Property) : Boolean =
+	element.redefinedElement->size() > 0
+/]
+
+
+[query public _isSubsetted(element : Property) : Boolean =
+	element.class.attribute->select( subsettedProperty->includes( element ) )->size() > 0
+/]
+
+
+[query public _isSubsetting(element : Property) : Boolean =
+	element.subsettedProperty->size() > 0
+/]
+
+
+[template public propertyDocumentation(element : Property) post(trim())]
+[element._model_documentation()/]
+[env('COMMENT_MULTI_LINE')/] @name:           [element.name/]
+[comment [env('COMMENT_MULTI_LINE')/ @type:           [element._typeName/]
+[env('COMMENT_MULTI_LINE')/] @cardinality:    [element.strCardinality()/]
+[comment [env('COMMENT_MULTI_LINE')/ @isAggregate:    [element.aggregation = #shared/]
+[env('COMMENT_MULTI_LINE')/] @isComposite:    [element.isComposite/]
+[env('COMMENT_MULTI_LINE')/] @isDerived:      [element.isDerived/]
+[env('COMMENT_MULTI_LINE')/] @isDerivedUnion: [element.isDerivedUnion/]
+[env('COMMENT_MULTI_LINE')/] @isLeaf:         [element.isLeaf/]
+[env('COMMENT_MULTI_LINE')/] @isReadOnly:     [element.isReadOnly/]
+[env('COMMENT_MULTI_LINE')/] @isStatic:       [element.isStatic/]
+[env('COMMENT_MULTI_LINE')/] @visibility:     [element.visibility/]
+[env('COMMENT_MULTI_LINE')/] @isUnique:       [element.isUnique/]
+[env('COMMENT_MULTI_LINE')/] @redefining:     [element._isRedefinition()/]
+[env('COMMENT_MULTI_LINE')/] @subsetting:     [element._isSubsetting()/]
+[env('COMMENT_MULTI_LINE')/] @isArray:        [element._isArray()/]
+[env('COMMENT_MULTI_LINE')/] @isList:         [element._isList()/]
+[env('COMMENT_MULTI_LINE')/] @isSet:          [element._isSet()/] 
+[if element.redefinedProperty->size() > 0]
+[for (element.redefinedProperty) ]
+[env('COMMENT_MULTI_LINE')/] @redefines:    [element._fqnName()/]
+[/for]
+[/if]
+[if element.subsettedProperty->size() > 0]
+[for (element.subsettedProperty)]
+[env('COMMENT_MULTI_LINE')/] @subsets:      [element._fqnName()/]
+[/for]
+[/if]
+[/template]

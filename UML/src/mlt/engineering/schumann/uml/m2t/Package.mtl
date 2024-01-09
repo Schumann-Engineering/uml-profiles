@@ -1,0 +1,7 @@
+[comment encoding = UTF-8 /]
+[module Package('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[comment Returns the name of an element of type Package /]
+[template public _name(element : Package) post(trim())]
+	[name.toUpperFirst()/]
+[/template]

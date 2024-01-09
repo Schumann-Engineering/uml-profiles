@@ -1,0 +1,31 @@
+[comment encoding = UTF-8 /]
+[module environment('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+
+[query public loadEnvironment(fileName : String) : OclVoid
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'loadEnvironment(java.lang.String)', Sequence{fileName}) /]
+
+
+[query public env(key : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'getEnvironmentVariable(java.lang.String)', Sequence{key}) /]
+
+
+[query public isTrue(key : String) : Boolean 
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'isTrue(java.lang.String)', Sequence{key}) /]
+
+
+[query public isFalse(key : String) : Boolean 
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'isFalse(java.lang.String)', Sequence{key}) /]
+
+
+[query public exists(key : String) : Boolean 
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'exists(java.lang.String)', Sequence{key}) /]
+
+
+[query public hasError() : Boolean 
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'hasError()', Sequence{}) /]
+
+
+[query public lastError() : String
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'lastError()', Sequence{}) /]
+	
