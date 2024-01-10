@@ -107,8 +107,18 @@
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping
-            source="pathmap://CSMN/"
-            target="platform:/plugin/engineering.schumann.uml.profile.csmn/">
+            source="pathmap://CSMN/profile/"
+            target="platform:/plugin/engineering.schumann.uml.profile.csmn/src/uml/">
+      </mapping>
+      
+      <mapping
+            source="pathmap://CSMN/css/"
+            target="platform:/plugin/engineering.schumann.uml.profile.csmn/res/css/">
+      </mapping>
+      
+      <mapping
+            source="pathmap://CSMN/assets/"
+            target="platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/">
       </mapping>
    </extension>
    
@@ -117,69 +127,79 @@
          point="org.eclipse.uml2.uml.generated_package">
          <profile
          	uri="http://schumann-engineering/csmn/1"
-         	location="pathmap://CSMN/src/uml/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"
+         	location="pathmap://CSMN/profile/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"
          /> 
                
          <package
                uri="http://schumann-engineering/csmn/1/Asset"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCO64DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCO64DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Energy"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCV64DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCV64DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Flow"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCaq4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCaq4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Interface" 
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCkK4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCkK4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Material" 
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCya4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCya4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Storage" 
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWDCK4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDCK4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Connections"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWCFK4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCFK4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Elements"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWB4a4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWB4a4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/Lifecycle"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWDPa4DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDPa4DEe6jqeB5njcjPA"
          /> 
 		 
 		 <package
                uri="http://schumann-engineering/csmn/1/PrimitiveTypes"
-		 		location="pathmap://CSMN/src/uml/CSMN.profile.uml#_doWDI64DEe6jqeB5njcjPA"
+		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDI64DEe6jqeB5njcjPA"
          />
    </extension>
    
-   <extension
-         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
-      <profile
-            description="Cybersecurity Modelling Notation"
+	<extension
+   		point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
+   		<!-- -->
+   		<themeContribution
+            id="org.eclipse.papyrus.css.papyrus_theme"
+        >
+        	<stylesheet stylesheetPath="res/css/CSMN.css" />
+		</themeContribution>
+   	</extension>
+   
+   	<extension
+    	point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      	<profile
+        	description="Cybersecurity Modelling Notation"
             iconpath="res/assets/security-16.png"
             name="CSMN"
-            path="pathmap://CSMN/src/uml/CSMN.profile.uml"
-            provider="Schumann.Engineering">
-      </profile>
-   </extension>
+            path="pathmap://CSMN/profile/CSMN.profile.uml"
+            provider="Schumann.Engineering"
+        />
+   	</extension>
 
 </plugin>
