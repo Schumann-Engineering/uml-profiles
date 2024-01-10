@@ -2,6 +2,8 @@
  */
 package CSMN.Characteristics.Asset.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.Asset;
 import CSMN.Characteristics.Asset.AssetFactory;
 import CSMN.Characteristics.Asset.AssetLibrary;
@@ -47,6 +49,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -141,7 +145,9 @@ public class AssetPackageImpl extends EPackageImpl implements AssetPackage {
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -164,6 +170,7 @@ public class AssetPackageImpl extends EPackageImpl implements AssetPackage {
 
 		// Create package meta-data objects
 		theAssetPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theEnergyPackage.createPackageContents();
@@ -177,6 +184,7 @@ public class AssetPackageImpl extends EPackageImpl implements AssetPackage {
 
 		// Initialize created meta-data
 		theAssetPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theEnergyPackage.initializePackageContents();
@@ -372,9 +380,6 @@ public class AssetPackageImpl extends EPackageImpl implements AssetPackage {
 		addEEnumLiteral(assetTypeEEnum, AssetType.MECHANICAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.SIGNAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.INTERFACE);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //AssetPackageImpl

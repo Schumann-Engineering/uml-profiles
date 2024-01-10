@@ -39,7 +39,7 @@ public interface LifecyclePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Lifecycle";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Lifecycle";
 
 	/**
 	 * The package namespace name.

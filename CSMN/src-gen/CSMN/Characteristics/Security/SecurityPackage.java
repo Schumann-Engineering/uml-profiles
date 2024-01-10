@@ -39,7 +39,7 @@ public interface SecurityPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Security";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Security";
 
 	/**
 	 * The package namespace name.

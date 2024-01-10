@@ -2,6 +2,8 @@
  */
 package CSMN.Characteristics.Flow.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -47,6 +49,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -140,7 +144,9 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage {
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -163,6 +169,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage {
 
 		// Create package meta-data objects
 		theFlowPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
@@ -176,6 +183,7 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage {
 
 		// Initialize created meta-data
 		theFlowPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
@@ -470,9 +478,6 @@ public class FlowPackageImpl extends EPackageImpl implements FlowPackage {
 		initEAttribute(getTcpCharacteristic_DataLink(), theTypesPackage.getString(), "dataLink", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTcpCharacteristic_Physical(), theTypesPackage.getString(), "physical", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTcpCharacteristic_Mechanical(), theTypesPackage.getString(), "mechanical", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //FlowPackageImpl

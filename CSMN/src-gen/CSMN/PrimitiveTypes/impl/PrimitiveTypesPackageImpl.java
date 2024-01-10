@@ -2,6 +2,8 @@
  */
 package CSMN.PrimitiveTypes.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -48,6 +50,8 @@ import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 import CSMN.PrimitiveTypes.SizeUnitOfMeasure;
 import CSMN.PrimitiveTypes.Size_T;
 import CSMN.PrimitiveTypes.SpeedUnitOfMeasurement;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -148,7 +152,9 @@ public class PrimitiveTypesPackageImpl extends EPackageImpl implements Primitive
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -171,6 +177,7 @@ public class PrimitiveTypesPackageImpl extends EPackageImpl implements Primitive
 
 		// Create package meta-data objects
 		thePrimitiveTypesPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
@@ -184,6 +191,7 @@ public class PrimitiveTypesPackageImpl extends EPackageImpl implements Primitive
 
 		// Initialize created meta-data
 		thePrimitiveTypesPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
@@ -378,9 +386,6 @@ public class PrimitiveTypesPackageImpl extends EPackageImpl implements Primitive
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.MEGABIT);
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.KILOBIT);
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.BAUD);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //PrimitiveTypesPackageImpl

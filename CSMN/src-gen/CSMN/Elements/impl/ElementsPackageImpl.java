@@ -2,6 +2,8 @@
  */
 package CSMN.Elements.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -51,6 +53,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -173,7 +177,9 @@ public class ElementsPackageImpl extends EPackageImpl implements ElementsPackage
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AssetPackage.eNS_URI);
 		AssetPackageImpl theAssetPackage = (AssetPackageImpl)(registeredPackage instanceof AssetPackageImpl ? registeredPackage : AssetPackage.eINSTANCE);
@@ -196,6 +202,7 @@ public class ElementsPackageImpl extends EPackageImpl implements ElementsPackage
 
 		// Create package meta-data objects
 		theElementsPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
 		theEnergyPackage.createPackageContents();
@@ -209,6 +216,7 @@ public class ElementsPackageImpl extends EPackageImpl implements ElementsPackage
 
 		// Initialize created meta-data
 		theElementsPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
 		theEnergyPackage.initializePackageContents();
@@ -536,9 +544,6 @@ public class ElementsPackageImpl extends EPackageImpl implements ElementsPackage
 		addEEnumLiteral(userTypeEEnum, UserType.SERVICE);
 		addEEnumLiteral(userTypeEEnum, UserType.UNKNOWN);
 		addEEnumLiteral(userTypeEEnum, UserType.VENDOR);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //ElementsPackageImpl

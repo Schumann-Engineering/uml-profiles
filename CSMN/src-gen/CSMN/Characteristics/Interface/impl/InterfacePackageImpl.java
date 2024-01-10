@@ -2,6 +2,8 @@
  */
 package CSMN.Characteristics.Interface.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -48,6 +50,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -149,7 +153,9 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -172,6 +178,7 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 
 		// Create package meta-data objects
 		theInterfacePackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
@@ -185,6 +192,7 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 
 		// Initialize created meta-data
 		theInterfacePackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
@@ -443,9 +451,6 @@ public class InterfacePackageImpl extends EPackageImpl implements InterfacePacka
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_ACCESS_POINT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_CLIENT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ZIGBEE);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //InterfacePackageImpl

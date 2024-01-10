@@ -39,7 +39,7 @@ public interface EnergyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Energy";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Energy";
 
 	/**
 	 * The package namespace name.

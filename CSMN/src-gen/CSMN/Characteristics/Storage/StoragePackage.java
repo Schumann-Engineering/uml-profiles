@@ -39,7 +39,7 @@ public interface StoragePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Storage";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Storage";
 
 	/**
 	 * The package namespace name.

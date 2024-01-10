@@ -39,7 +39,7 @@ public interface MaterialPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Material";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Material";
 
 	/**
 	 * The package namespace name.

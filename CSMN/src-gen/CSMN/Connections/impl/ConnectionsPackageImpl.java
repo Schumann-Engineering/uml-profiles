@@ -2,6 +2,8 @@
  */
 package CSMN.Connections.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -48,6 +50,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -149,7 +153,9 @@ public class ConnectionsPackageImpl extends EPackageImpl implements ConnectionsP
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AssetPackage.eNS_URI);
 		AssetPackageImpl theAssetPackage = (AssetPackageImpl)(registeredPackage instanceof AssetPackageImpl ? registeredPackage : AssetPackage.eINSTANCE);
@@ -172,6 +178,7 @@ public class ConnectionsPackageImpl extends EPackageImpl implements ConnectionsP
 
 		// Create package meta-data objects
 		theConnectionsPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
 		theEnergyPackage.createPackageContents();
@@ -185,6 +192,7 @@ public class ConnectionsPackageImpl extends EPackageImpl implements ConnectionsP
 
 		// Initialize created meta-data
 		theConnectionsPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
 		theEnergyPackage.initializePackageContents();
@@ -430,9 +438,6 @@ public class ConnectionsPackageImpl extends EPackageImpl implements ConnectionsP
 		initEEnum(directionTypeEEnum, DirectionType.class, "DirectionType");
 		addEEnumLiteral(directionTypeEEnum, DirectionType.UNI_DIRECTIONAL);
 		addEEnumLiteral(directionTypeEEnum, DirectionType.BI_DIRECTIONAL);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //ConnectionsPackageImpl

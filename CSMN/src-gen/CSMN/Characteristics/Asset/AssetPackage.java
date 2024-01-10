@@ -39,7 +39,7 @@ public interface AssetPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Asset";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Asset";
 
 	/**
 	 * The package namespace name.

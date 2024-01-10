@@ -2,6 +2,8 @@
  */
 package CSMN.Characteristics.Energy.impl;
 
+import CSMN.CSMNPackage;
+
 import CSMN.Characteristics.Asset.AssetPackage;
 
 import CSMN.Characteristics.Asset.impl.AssetPackageImpl;
@@ -46,6 +48,8 @@ import CSMN.Lifecycle.impl.LifecyclePackageImpl;
 import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
+
+import CSMN.impl.CSMNPackageImpl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -133,7 +137,9 @@ public class EnergyPackageImpl extends EPackageImpl implements EnergyPackage {
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -156,6 +162,7 @@ public class EnergyPackageImpl extends EPackageImpl implements EnergyPackage {
 
 		// Create package meta-data objects
 		theEnergyPackage.createPackageContents();
+		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
 		theAssetPackage.createPackageContents();
@@ -169,6 +176,7 @@ public class EnergyPackageImpl extends EPackageImpl implements EnergyPackage {
 
 		// Initialize created meta-data
 		theEnergyPackage.initializePackageContents();
+		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
 		theAssetPackage.initializePackageContents();
@@ -323,9 +331,6 @@ public class EnergyPackageImpl extends EPackageImpl implements EnergyPackage {
 		addEEnumLiteral(energyTypeEEnum, EnergyType.POWER);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.SOUND);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.VIBRATION);
-
-		// Create resource
-		createResource(eNS_URI);
 	}
 
 } //EnergyPackageImpl

@@ -39,7 +39,7 @@ public interface ConnectionsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Connections";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Connections";
 
 	/**
 	 * The package namespace name.

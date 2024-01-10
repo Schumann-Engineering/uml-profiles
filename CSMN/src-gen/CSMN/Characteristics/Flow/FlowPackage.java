@@ -38,7 +38,7 @@ public interface FlowPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Characteristics/Flow";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Characteristics/Flow";
 
 	/**
 	 * The package namespace name.

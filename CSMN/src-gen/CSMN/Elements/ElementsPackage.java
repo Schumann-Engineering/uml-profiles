@@ -39,7 +39,7 @@ public interface ElementsPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/Elements";
+	String eNS_URI = "http://schumann.engineering/csmn/1/Elements";
 
 	/**
 	 * The package namespace name.

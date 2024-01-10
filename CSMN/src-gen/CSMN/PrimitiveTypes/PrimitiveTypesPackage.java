@@ -38,7 +38,7 @@ public interface PrimitiveTypesPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://schumann-engineering/csmn/1/PrimitiveTypes";
+	String eNS_URI = "http://schumann.engineering/csmn/1/PrimitiveTypes";
 
 	/**
 	 * The package namespace name.

@@ -1,7 +1,8 @@
 /**
  */
-package CSMN.Characteristics.Material.impl;
+package CSMN.impl;
 
+import CSMN.CSMNFactory;
 import CSMN.CSMNPackage;
 
 import CSMN.Characteristics.Asset.AssetPackage;
@@ -20,10 +21,9 @@ import CSMN.Characteristics.Interface.InterfacePackage;
 
 import CSMN.Characteristics.Interface.impl.InterfacePackageImpl;
 
-import CSMN.Characteristics.Material.MaterialCharacteristic;
-import CSMN.Characteristics.Material.MaterialFactory;
 import CSMN.Characteristics.Material.MaterialPackage;
-import CSMN.Characteristics.Material.MaterialType;
+
+import CSMN.Characteristics.Material.impl.MaterialPackageImpl;
 
 import CSMN.Characteristics.Security.SecurityPackage;
 
@@ -49,13 +49,10 @@ import CSMN.PrimitiveTypes.PrimitiveTypesPackage;
 
 import CSMN.PrimitiveTypes.impl.PrimitiveTypesPackageImpl;
 
-import CSMN.impl.CSMNPackageImpl;
+import CSMN.PseudoElement;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -70,20 +67,13 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage {
+public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass materialCharacteristicEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum materialTypeEEnum = null;
+	private EClass pseudoElementEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -96,12 +86,12 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see CSMN.Characteristics.Material.MaterialPackage#eNS_URI
+	 * @see CSMN.CSMNPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private MaterialPackageImpl() {
-		super(eNS_URI, MaterialFactory.eINSTANCE);
+	private CSMNPackageImpl() {
+		super(eNS_URI, CSMNFactory.eINSTANCE);
 	}
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,7 +103,7 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link MaterialPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link CSMNPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,12 +112,12 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static MaterialPackage init() {
-		if (isInited) return (MaterialPackage)EPackage.Registry.INSTANCE.getEPackage(MaterialPackage.eNS_URI);
+	public static CSMNPackage init() {
+		if (isInited) return (CSMNPackage)EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredMaterialPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		MaterialPackageImpl theMaterialPackage = registeredMaterialPackage instanceof MaterialPackageImpl ? (MaterialPackageImpl)registeredMaterialPackage : new MaterialPackageImpl();
+		Object registeredCSMNPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		CSMNPackageImpl theCSMNPackage = registeredCSMNPackage instanceof CSMNPackageImpl ? (CSMNPackageImpl)registeredCSMNPackage : new CSMNPackageImpl();
 
 		isInited = true;
 
@@ -137,9 +127,7 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
-		CSMNPackageImpl theCSMNPackage = (CSMNPackageImpl)(registeredPackage instanceof CSMNPackageImpl ? registeredPackage : CSMNPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
 		ElementsPackageImpl theElementsPackage = (ElementsPackageImpl)(registeredPackage instanceof ElementsPackageImpl ? registeredPackage : ElementsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
 		ConnectionsPackageImpl theConnectionsPackage = (ConnectionsPackageImpl)(registeredPackage instanceof ConnectionsPackageImpl ? registeredPackage : ConnectionsPackage.eINSTANCE);
@@ -151,6 +139,8 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		FlowPackageImpl theFlowPackage = (FlowPackageImpl)(registeredPackage instanceof FlowPackageImpl ? registeredPackage : FlowPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI);
 		InterfacePackageImpl theInterfacePackage = (InterfacePackageImpl)(registeredPackage instanceof InterfacePackageImpl ? registeredPackage : InterfacePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(MaterialPackage.eNS_URI);
+		MaterialPackageImpl theMaterialPackage = (MaterialPackageImpl)(registeredPackage instanceof MaterialPackageImpl ? registeredPackage : MaterialPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
 		SecurityPackageImpl theSecurityPackage = (SecurityPackageImpl)(registeredPackage instanceof SecurityPackageImpl ? registeredPackage : SecurityPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(StoragePackage.eNS_URI);
@@ -161,7 +151,6 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		LifecyclePackageImpl theLifecyclePackage = (LifecyclePackageImpl)(registeredPackage instanceof LifecyclePackageImpl ? registeredPackage : LifecyclePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theMaterialPackage.createPackageContents();
 		theCSMNPackage.createPackageContents();
 		theElementsPackage.createPackageContents();
 		theConnectionsPackage.createPackageContents();
@@ -169,13 +158,13 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		theEnergyPackage.createPackageContents();
 		theFlowPackage.createPackageContents();
 		theInterfacePackage.createPackageContents();
+		theMaterialPackage.createPackageContents();
 		theSecurityPackage.createPackageContents();
 		theStoragePackage.createPackageContents();
 		thePrimitiveTypesPackage.createPackageContents();
 		theLifecyclePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theMaterialPackage.initializePackageContents();
 		theCSMNPackage.initializePackageContents();
 		theElementsPackage.initializePackageContents();
 		theConnectionsPackage.initializePackageContents();
@@ -183,17 +172,18 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		theEnergyPackage.initializePackageContents();
 		theFlowPackage.initializePackageContents();
 		theInterfacePackage.initializePackageContents();
+		theMaterialPackage.initializePackageContents();
 		theSecurityPackage.initializePackageContents();
 		theStoragePackage.initializePackageContents();
 		thePrimitiveTypesPackage.initializePackageContents();
 		theLifecyclePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theMaterialPackage.freeze();
+		theCSMNPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(MaterialPackage.eNS_URI, theMaterialPackage);
-		return theMaterialPackage;
+		EPackage.Registry.INSTANCE.put(CSMNPackage.eNS_URI, theCSMNPackage);
+		return theCSMNPackage;
 	}
 
 	/**
@@ -202,8 +192,8 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getMaterialCharacteristic() {
-		return materialCharacteristicEClass;
+	public EClass getPseudoElement() {
+		return pseudoElementEClass;
 	}
 
 	/**
@@ -212,58 +202,8 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getMaterialCharacteristic_Base_Port() {
-		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMaterialCharacteristic_Base_Relationship() {
-		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMaterialCharacteristic_MaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMaterialCharacteristic_OtherMaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getMaterialType() {
-		return materialTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public MaterialFactory getMaterialFactory() {
-		return (MaterialFactory)getEFactoryInstance();
+	public CSMNFactory getCSMNFactory() {
+		return (CSMNFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -285,14 +225,7 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		isCreated = true;
 
 		// Create classes and their features
-		materialCharacteristicEClass = createEClass(MATERIAL_CHARACTERISTIC);
-		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_PORT);
-		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_RELATIONSHIP);
-		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
-		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE);
-
-		// Create enums
-		materialTypeEEnum = createEEnum(MATERIAL_TYPE);
+		pseudoElementEClass = createEClass(PSEUDO_ELEMENT);
 	}
 
 	/**
@@ -319,8 +252,30 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
-		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		ElementsPackage theElementsPackage = (ElementsPackage)EPackage.Registry.INSTANCE.getEPackage(ElementsPackage.eNS_URI);
+		ConnectionsPackage theConnectionsPackage = (ConnectionsPackage)EPackage.Registry.INSTANCE.getEPackage(ConnectionsPackage.eNS_URI);
+		AssetPackage theAssetPackage = (AssetPackage)EPackage.Registry.INSTANCE.getEPackage(AssetPackage.eNS_URI);
+		EnergyPackage theEnergyPackage = (EnergyPackage)EPackage.Registry.INSTANCE.getEPackage(EnergyPackage.eNS_URI);
+		FlowPackage theFlowPackage = (FlowPackage)EPackage.Registry.INSTANCE.getEPackage(FlowPackage.eNS_URI);
+		InterfacePackage theInterfacePackage = (InterfacePackage)EPackage.Registry.INSTANCE.getEPackage(InterfacePackage.eNS_URI);
+		MaterialPackage theMaterialPackage = (MaterialPackage)EPackage.Registry.INSTANCE.getEPackage(MaterialPackage.eNS_URI);
+		SecurityPackage theSecurityPackage = (SecurityPackage)EPackage.Registry.INSTANCE.getEPackage(SecurityPackage.eNS_URI);
+		StoragePackage theStoragePackage = (StoragePackage)EPackage.Registry.INSTANCE.getEPackage(StoragePackage.eNS_URI);
+		PrimitiveTypesPackage thePrimitiveTypesPackage = (PrimitiveTypesPackage)EPackage.Registry.INSTANCE.getEPackage(PrimitiveTypesPackage.eNS_URI);
+		LifecyclePackage theLifecyclePackage = (LifecyclePackage)EPackage.Registry.INSTANCE.getEPackage(LifecyclePackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theElementsPackage);
+		getESubpackages().add(theConnectionsPackage);
+		getESubpackages().add(theAssetPackage);
+		getESubpackages().add(theEnergyPackage);
+		getESubpackages().add(theFlowPackage);
+		getESubpackages().add(theInterfacePackage);
+		getESubpackages().add(theMaterialPackage);
+		getESubpackages().add(theSecurityPackage);
+		getESubpackages().add(theStoragePackage);
+		getESubpackages().add(thePrimitiveTypesPackage);
+		getESubpackages().add(theLifecyclePackage);
 
 		// Create type parameters
 
@@ -329,20 +284,10 @@ public class MaterialPackageImpl extends EPackageImpl implements MaterialPackage
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(materialCharacteristicEClass, MaterialCharacteristic.class, "MaterialCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMaterialCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMaterialCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMaterialCharacteristic_MaterialType(), this.getMaterialType(), "materialType", "Unspecified", 1, -1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMaterialCharacteristic_OtherMaterialType(), theTypesPackage.getString(), "otherMaterialType", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(pseudoElementEClass, PseudoElement.class, "PseudoElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		// Initialize enums and add enum literals
-		initEEnum(materialTypeEEnum, MaterialType.class, "MaterialType");
-		addEEnumLiteral(materialTypeEEnum, MaterialType.UNSPECIFIED);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR_HUMIDITY);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR_PRESSURE);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.DRUGS);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.OTHER);
+		// Create resource
+		createResource(eNS_URI);
 	}
 
-} //MaterialPackageImpl
+} //CSMNPackageImpl
