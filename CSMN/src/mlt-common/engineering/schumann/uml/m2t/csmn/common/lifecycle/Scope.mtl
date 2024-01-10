@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module Scope(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann-engineering/csmn/1/Lifecycle'
+	'http://schumann.engineering/csmn/1/Lifecycle'
 )]
 
 [import engineering::schumann::uml::m2t::Model /]

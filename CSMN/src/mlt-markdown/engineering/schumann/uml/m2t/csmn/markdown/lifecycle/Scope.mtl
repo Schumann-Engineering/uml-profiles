@@ -1,19 +1,30 @@
 [comment encoding = UTF-8 /]
 [module Scope(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann-engineering/csmn/1/Lifecycle'
+	'http://schumann.engineering/csmn/1/Lifecycle'
 )]
 
+[import engineering::schumann::uml::m2t::Model /]
+[import engineering::schumann::uml::m2t::Element /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 
 
 [template public printScope(
-	this : Model
+	model : Model
 )]
-	| Trade name | Model or version number | UDI-DI / GTIN | Base-UDI-DI / GMN | Software release |
-	| :--------: | :---------------------: | :-----------: | :---------------: | :--------------: |
+| Trade name | Model or version number | UDI-DI / GTIN | Base-UDI-DI / GMN | Software release |
+| :--------: | :---------------------: | :-----------: | :---------------: | :--------------: |
 
-[for (scopedElement : Element | this.csmn_getAllScopeElements())]
-	[scopedElement /]
+# stereotyped elements
+[for (model._getAllStereotypedElements())]
+[self/]
 [/for]
+
+
+# all owned elements
+[for (model.allOwnedElements())]
+[self.getApplicableStereotypes() /] = [self/]
+[/for]
+
+
 [/template]

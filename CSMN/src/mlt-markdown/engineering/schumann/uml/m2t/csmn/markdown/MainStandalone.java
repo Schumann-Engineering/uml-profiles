@@ -14,15 +14,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-import org.eclipse.acceleo.engine.utils.AcceleoEngineUtils;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
-import engineering.schumann.uml.m2t.csmn.Activator;
+import CSMN.CSMNPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -147,83 +147,35 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
 
-        // UML 2.5.0
-        if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
-        }
-        
-        
-		// http:///CSMN/Characteristics/Asset.ecore 
-        if (!isInWorkspace(CSMN.Characteristics.Asset.AssetPackage.class))
-        resourceSet.getPackageRegistry().put(
-        		CSMN.Characteristics.Asset.AssetPackage.eNS_URI,
-        		CSMN.Characteristics.Asset.AssetPackage.eINSTANCE        		
-		);
-		
-		// http:///CSMN/Characteristics/Energy.ecore 
-        if (!isInWorkspace(CSMN.Characteristics.Energy.EnergyPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Characteristics.Energy.EnergyPackage.eNS_URI,
-        		CSMN.Characteristics.Energy.EnergyPackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Characteristics/Flow.ecore
-        if (!isInWorkspace(CSMN.Characteristics.Flow.FlowPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Characteristics.Flow.FlowPackage.eNS_URI,
-        		CSMN.Characteristics.Flow.FlowPackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Characteristics/Interface.ecore
-        if (!isInWorkspace(CSMN.Characteristics.Interface.InterfacePackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Characteristics.Interface.InterfacePackage.eNS_URI,
-				CSMN.Characteristics.Interface.InterfacePackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Characteristics/Material.ecore
-        if (!isInWorkspace(CSMN.Characteristics.Material.MaterialPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Characteristics.Material.MaterialPackage.eNS_URI,
-        		CSMN.Characteristics.Material.MaterialPackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Characteristics/Storage.ecore
-        if (!isInWorkspace(CSMN.Characteristics.Storage.StoragePackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Characteristics.Storage.StoragePackage.eNS_URI,
-        		CSMN.Characteristics.Storage.StoragePackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Connections.ecore		
-        if (!isInWorkspace(CSMN.Connections.ConnectionsPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Connections.ConnectionsPackage.eNS_URI,
-        		CSMN.Connections.ConnectionsPackage.eINSTANCE
-		);
-		
-		// http:///CSMN/Elements.ecore
-        if (!isInWorkspace(CSMN.Elements.ElementsPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Elements.ElementsPackage.eNS_URI,
-        		CSMN.Elements.ElementsPackage.eINSTANCE
-		);
 		
 		// http:///CSMN/Lifecycle.ecore
-        if (!isInWorkspace(CSMN.Lifecycle.LifecyclePackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.Lifecycle.LifecyclePackage.eNS_URI,
-				CSMN.Lifecycle.LifecyclePackage.eINSTANCE
-		);
-		
-		// http:///CSMN/PrimitiveTypes.ecore
-        if (!isInWorkspace(CSMN.PrimitiveTypes.PrimitiveTypesPackage.class))
-		resourceSet.getPackageRegistry().put(
-				CSMN.PrimitiveTypes.PrimitiveTypesPackage.eNS_URI,
-				CSMN.PrimitiveTypes.PrimitiveTypesPackage.eINSTANCE
-		);
-    }
-
+        if (!isInWorkspace(CSMNPackage.class))
+        {
+        	// PROFILE
+        	// URI: pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA
+			resourceSet.getPackageRegistry().put(
+					"pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA",
+					CSMNPackage.eINSTANCE
+			);
+        	
+        	
+			resourceSet.getPackageRegistry().put(
+					CSMNPackage.eNS_URI,
+					CSMNPackage.eINSTANCE
+			);
+			
+        }
+        
+        Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
+        uriMap.put(
+        		URI.createURI("pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"),
+        		URI.createURI("http://schumann.engineering/csmn/1#CSMN")
+        );
+        uriMap.put(
+        		URI.createURI("pathmap://CSMN/CSMN.profile.uml"),
+        		URI.createURI("http://schumann.engineering/csmn/1")
+        );
+   }    
     
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
@@ -235,5 +187,4 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
          */
         UMLResourcesUtil.init(resourceSet);
     }
-    
 }
