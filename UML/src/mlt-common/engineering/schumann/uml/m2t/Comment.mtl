@@ -1,8 +1,8 @@
 [comment encoding = UTF-8 /]
 [module Comment('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
-[import engineering::schumann::uml::m2t::services::environment /]
-[import engineering::schumann::uml::m2t::services::comment /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::services::CommentService /]
 
 [comment returns true if a comment is empty, false otherwise /]
 [query public _isEmpty(aComment : Comment) : Boolean =

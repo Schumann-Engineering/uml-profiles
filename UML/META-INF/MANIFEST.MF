@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Automatic-Module-Name: engineering.schumann.uml
 Bundle-Name: UML profiles and M2T
 Bundle-SymbolicName: engineering.schumann.uml
 Bundle-Version: 0.1.0

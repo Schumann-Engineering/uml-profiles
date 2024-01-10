@@ -3,6 +3,7 @@
 
 [import engineering::schumann::uml::m2t::Element /]
 
+
 [query public _getAllStereotypedElements(
 	model : Model,
 	stereotypeName : String
@@ -10,4 +11,13 @@
 	model
 	.allOwnedElements()
 	->select( element : Element | element._hasStereotype(stereotypeName))
+/]
+
+
+[query public _getAllStereotypedElements(
+	model : Model
+) : Set(Element) =
+	model
+	.allOwnedElements()
+	->select( element : Element | element._hasStereotypes() )
 /]

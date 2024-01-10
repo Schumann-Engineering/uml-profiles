@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module Property('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
-[import engineering::schumann::uml::m2t::services::environment /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
 [import engineering::schumann::uml::m2t::Comment /]
 [import engineering::schumann::uml::m2t::Element /]
 [import engineering::schumann::uml::m2t::MultiplicityElement /]
