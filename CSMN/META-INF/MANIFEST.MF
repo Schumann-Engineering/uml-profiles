@@ -1,15 +1,16 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Cybersecurity Modelling Notation
+Automatic-Module-Name: engineering.schumann.uml.profile.csmn
+Bundle-Name: CyberSecurity Modelling Notation
 Bundle-SymbolicName: engineering.schumann.uml.profile.csmn;singleton:=true
 Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Activator: engineering.schumann.uml.m2t.csmn.Activator
 Bundle-Vendor: Schumann.Engineering
 Bundle-Localization: plugin
-Automatic-Module-Name: CSMN
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: CSMN.Characteristics.Asset,
+Export-Package: CSMN,
+ CSMN.Characteristics.Asset,
  CSMN.Characteristics.Asset.impl,
  CSMN.Characteristics.Asset.util,
  CSMN.Characteristics.Energy,
@@ -42,14 +43,16 @@ Export-Package: CSMN.Characteristics.Asset,
  CSMN.PrimitiveTypes,
  CSMN.PrimitiveTypes.impl,
  CSMN.PrimitiveTypes.util,
+ CSMN.impl,
+ CSMN.util,
  engineering.schumann.uml.m2t.csmn.markdown
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.runtime,
- org.eclipse.uml2.uml,
+ org.eclipse.uml2.uml;visibility:=reexport,
  org.eclipse.uml2.uml.profile.standard,
  org.eclipse.uml2.uml.resources,
  org.eclipse.uml2.types;visibility:=reexport,
- org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.ocl,
  org.eclipse.ocl.ecore,
