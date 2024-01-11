@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_c5-08LBREe6ljv7G7L6WLw" type="PapyrusUMLComponentDiagram" name="Sample Component Diagram" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_dU85sLBREe6ljv7G7L6WLw" type="Component_PackagedElementShape">
+      <children xmi:type="notation:DecorationNode" xmi:id="_dVBLILBREe6ljv7G7L6WLw" type="Component_NameLabel"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_dVByMLBREe6ljv7G7L6WLw" type="Component_FloatingNameLabel">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_dVByMbBREe6ljv7G7L6WLw" y="15"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_dVByMrBREe6ljv7G7L6WLw" type="Component_StructureCompartment">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_dVByM7BREe6ljv7G7L6WLw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dVByNLBREe6ljv7G7L6WLw"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_tt8aALBUEe6-JtvRtv1IdA" type="compartment_shape_display">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_tt8aAbBUEe6-JtvRtv1IdA"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_tt8aArBUEe6-JtvRtv1IdA"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_u4xOYLBUEe6-JtvRtv1IdA" type="Port_Shape">
+        <children xmi:type="notation:DecorationNode" xmi:id="_u4xOYrBUEe6-JtvRtv1IdA" type="Port_NameLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_u4xOY7BUEe6-JtvRtv1IdA" x="-91"/>
+        </children>
+        <children xmi:type="notation:DecorationNode" xmi:id="_u4xOZLBUEe6-JtvRtv1IdA" type="Port_StereotypeLabel">
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_u4xOZbBUEe6-JtvRtv1IdA" x="25" y="-10"/>
+        </children>
+        <element xmi:type="uml:Port" href="sample-fileref.uml#_AiEHIK_jEe68z-OVHUtwMw"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_u4xOYbBUEe6-JtvRtv1IdA" x="251" y="80"/>
+      </children>
+      <element xmi:type="uml:Component" href="sample-fileref.uml#_-ZyMAK_iEe68z-OVHUtwMw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dU85sbBREe6ljv7G7L6WLw" x="40" y="20" width="261" height="121"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_mPu00LB8Ee6LsqMswAop3g" type="StereotypeComment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_mPu00bB8Ee6LsqMswAop3g"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mPu007B8Ee6LsqMswAop3g" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Component" href="sample-fileref.uml#_-ZyMAK_iEe68z-OVHUtwMw"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mPu00rB8Ee6LsqMswAop3g" x="240" y="20"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_mSfN4LB8Ee6LsqMswAop3g" type="StereotypeComment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_mSfN4bB8Ee6LsqMswAop3g"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mSfN47B8Ee6LsqMswAop3g" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Port" href="sample-fileref.uml#_AiEHIK_jEe68z-OVHUtwMw"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mSfN4rB8Ee6LsqMswAop3g" x="451" y="80"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_c5-08bBREe6ljv7G7L6WLw" name="diagram_compatibility_version" stringValue="1.4.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_c5-08rBREe6ljv7G7L6WLw"/>
+    <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_c5-087BREe6ljv7G7L6WLw" diagramKindId="org.eclipse.papyrus.uml.diagram.component.root.package">
+      <owner xmi:type="uml:Model" href="sample-fileref.uml#_7f6b4K_iEe68z-OVHUtwMw"/>
+    </styles>
+    <element xmi:type="uml:Model" href="sample-fileref.uml#_7f6b4K_iEe68z-OVHUtwMw"/>
+    <edges xmi:type="notation:Connector" xmi:id="_mPu01LB8Ee6LsqMswAop3g" type="StereotypeCommentLink" source="_dU85sLBREe6ljv7G7L6WLw" target="_mPu00LB8Ee6LsqMswAop3g">
+      <styles xmi:type="notation:FontStyle" xmi:id="_mPu01bB8Ee6LsqMswAop3g"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mPvb4bB8Ee6LsqMswAop3g" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Component" href="sample-fileref.uml#_-ZyMAK_iEe68z-OVHUtwMw"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mPu01rB8Ee6LsqMswAop3g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mPu017B8Ee6LsqMswAop3g"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mPvb4LB8Ee6LsqMswAop3g"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_mSfN5LB8Ee6LsqMswAop3g" type="StereotypeCommentLink" source="_u4xOYLBUEe6-JtvRtv1IdA" target="_mSfN4LB8Ee6LsqMswAop3g">
+      <styles xmi:type="notation:FontStyle" xmi:id="_mSfN5bB8Ee6LsqMswAop3g"/>
+      <styles xmi:type="notation:EObjectValueStyle" xmi:id="_mSf08LB8Ee6LsqMswAop3g" name="BASE_ELEMENT">
+        <eObjectValue xmi:type="uml:Port" href="sample-fileref.uml#_AiEHIK_jEe68z-OVHUtwMw"/>
+      </styles>
+      <element xsi:nil="true"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mSfN5rB8Ee6LsqMswAop3g" points="[0, 0, 0, 0]$[0, 0, 0, 0]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mSfN57B8Ee6LsqMswAop3g"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mSfN6LB8Ee6LsqMswAop3g"/>
+    </edges>
+  </notation:Diagram>
+  <css:ModelStyleSheets xmi:id="_ggSNQLBREe6ljv7G7L6WLw">
+    <stylesheets xmi:type="css:StyleSheetReference" xmi:id="_ggS0UbBREe6ljv7G7L6WLw" path="/CSMN/res/css/dummy.css"/>
+    <stylesheets xmi:type="css:StyleSheetReference" xmi:id="_ggS0ULBREe6ljv7G7L6WLw" path="/CSMN/res/css/CSMN.css"/>
+  </css:ModelStyleSheets>
+</xmi:XMI>
