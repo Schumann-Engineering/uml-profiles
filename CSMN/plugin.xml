@@ -6,104 +6,6 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1"
-            class="CSMN.CSMNPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Elements"
-            class="CSMN.Elements.ElementsPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Connections"
-            class="CSMN.Connections.ConnectionsPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Asset"
-            class="CSMN.Characteristics.Asset.AssetPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Energy"
-            class="CSMN.Characteristics.Energy.EnergyPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Flow"
-            class="CSMN.Characteristics.Flow.FlowPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Interface"
-            class="CSMN.Characteristics.Interface.InterfacePackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Material"
-            class="CSMN.Characteristics.Material.MaterialPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Security"
-            class="CSMN.Characteristics.Security.SecurityPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Characteristics/Storage"
-            class="CSMN.Characteristics.Storage.StoragePackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/PrimitiveTypes"
-            class="CSMN.PrimitiveTypes.PrimitiveTypesPackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated CSMN -->
-      <package
-            uri="http://schumann.engineering/csmn/1/Lifecycle"
-            class="CSMN.Lifecycle.LifecyclePackage"
-            genModel="src/ecore/CSMN.genmodel"/>
-   </extension>
-
-
-
    <extension
          point="org.eclipse.emf.ecore.uri_mapping">
       <mapping
@@ -126,59 +28,9 @@
    <extension
          point="org.eclipse.uml2.uml.generated_package">
          <profile
-         	uri="http://schumann-engineering/csmn/1"
+         	uri="http://schumann-engineering/csmn/1/"
          	location="pathmap://CSMN/profile/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"
          /> 
-               
-         <package
-               uri="http://schumann-engineering/csmn/1/Asset"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCO64DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Energy"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCV64DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Flow"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCaq4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Interface" 
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCkK4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Material" 
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCya4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Storage" 
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDCK4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Connections"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWCFK4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Elements"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWB4a4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/Lifecycle"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDPa4DEe6jqeB5njcjPA"
-         /> 
-		 
-		 <package
-               uri="http://schumann-engineering/csmn/1/PrimitiveTypes"
-		 		location="pathmap://CSMN/profile/CSMN.profile.uml#_doWDI64DEe6jqeB5njcjPA"
-         />
    </extension>
    
 	<extension
@@ -191,15 +43,24 @@
 		</themeContribution>
    	</extension>
    
-   	<extension
-    	point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
-      	<profile
-        	description="Cybersecurity Modelling Notation"
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CSMN -->
+      <package
+            uri="http://schumann.engineering/csmn/1"
+            class="engineering.schumann.uml.profile.csmn.CSMNPackage"
+            genModel="src/ecore/CSMN.genmodel"/>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="CyberSecurity Modelling Notation (CSMN)"
             iconpath="res/assets/security-16.png"
             name="CSMN"
             path="pathmap://CSMN/profile/CSMN.profile.uml"
-            provider="Schumann.Engineering"
-        />
-   	</extension>
+            provider="Schumann.Engineering">
+      </profile>
+   </extension>
 
 </plugin>
