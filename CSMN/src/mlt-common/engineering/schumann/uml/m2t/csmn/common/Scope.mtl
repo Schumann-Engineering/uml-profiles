@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module Scope(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1/Lifecycle'
+	'http://schumann.engineering/csmn/1'
 )]
 
 [import engineering::schumann::uml::m2t::Model /]
@@ -11,14 +11,21 @@
 [query public csmn_getAllScopeElements(
 	this : Model
 ) : Set(Element) =
-	this._getAllStereotypedElements('CSMN::Lifecycle::Scope')
+	this._getAllStereotypedElements('CSMN::Scope')
 /]
 
 
-[query public csmn_getScopeProduct(
+[query public csmn_getScopeProducts(
 	this : Element
-) : Product =
+) : Set(Product) =
 	this
-	._getTaggedValue('CSMN::Lifecycle::Scope', 'product')
-	.oclAsType(Product)
+	._getTaggedValue('CSMN::Scope', 'product')
+/]
+
+
+[query public csmn_isScoped(
+	this : Element
+) : Boolean =
+	this
+	._hasStereotype('CSMN::Scope')
 /]

@@ -16,11 +16,11 @@
 /]
 
 [query public _hasStereotype(element : Element, stereotypeName : String) : Boolean = 
-	element.getAppliedStereotypes()->select(name = stereotypeName)->size() > 0
+	element.getAppliedStereotypes()->select(name = stereotypeName or qualifiedName = stereotypeName)->size() > 0
 /]
 
 [query public _getStereotype(element : Element, stereotypeName : String) : Stereotype = 
-	element.getAppliedStereotypes()->select(name = stereotypeName)->asSequence()->first()
+	element.getAppliedStereotypes()->select(name = stereotypeName or qualifiedName = stereotypeName)->asSequence()->first()
 /]
 
 [query public _hasStereotypes(element : Element) : Boolean = 
