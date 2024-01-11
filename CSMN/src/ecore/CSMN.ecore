@@ -1,492 +1,451 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CSMN" nsURI="http://schumann.engineering/csmn/1" nsPrefix="CSMN">
-  <eClassifiers xsi:type="ecore:EClass" name="PseudoElement"/>
-  <eSubpackages name="Elements" nsURI="http://schumann.engineering/csmn/1/Elements"
-      nsPrefix="CSMN.Elements">
-    <eClassifiers xsi:type="ecore:EClass" name="SystemElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="User">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="userType" ordered="false"
-          lowerBound="1" eType="#//Elements/UserType" defaultValueLiteral="Generic"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useFilledIcon" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
-          defaultValueLiteral="false"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Actor" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Actor"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="UserType">
-      <eLiterals name="Generic"/>
-      <eLiterals name="Administrator" value="1"/>
-      <eLiterals name="Attacker" value="2"/>
-      <eLiterals name="Auditor" value="3"/>
-      <eLiterals name="Authority" value="4"/>
-      <eLiterals name="EthicalHacker" value="5"/>
-      <eLiterals name="Operator" value="6"/>
-      <eLiterals name="OperatorEducated" value="7"/>
-      <eLiterals name="Owner" value="8"/>
-      <eLiterals name="Patient" value="9"/>
-      <eLiterals name="Service" value="10"/>
-      <eLiterals name="UNKNOWN" value="11"/>
-      <eLiterals name="Vendor" value="12"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EnvironmentElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SecurityZone">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Box">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Comment" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="EnvironmentLibrary">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="Connections" nsURI="http://schumann.engineering/csmn/1/Connections"
-      nsPrefix="CSMN.Connections">
-    <eClassifiers xsi:type="ecore:EClass" name="Connection">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionType" ordered="false"
-          lowerBound="1" eType="#//Connections/ConnectionType" defaultValueLiteral="Information"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="directionPrimary" ordered="false"
-          lowerBound="1" eType="#//Connections/DirectionOfPrimaryFlow" defaultValueLiteral="Client"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="directionType" ordered="false"
-          lowerBound="1" eType="#//Connections/DirectionType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="flowToClient" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="flowToSupplier" ordered="false"
-          upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRealTime" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
-          defaultValueLiteral="false"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_DirectedRelationship"
-          ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ConnectionType">
-      <eLiterals name="Energy"/>
-      <eLiterals name="Disturbance" value="1"/>
-      <eLiterals name="Information" value="2"/>
-      <eLiterals name="Material" value="3"/>
-      <eLiterals name="Mechanical" value="4"/>
-      <eLiterals name="Unspecified" value="5"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="DirectionOfPrimaryFlow">
-      <eLiterals name="Client"/>
-      <eLiterals name="Equal" value="1"/>
-      <eLiterals name="Supplier" value="2"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="DirectionType">
-      <eLiterals name="UniDirectional"/>
-      <eLiterals name="BiDirectional" value="1"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="Characteristics" nsURI="http://schumann.engineering/csmn/1/Characteristics"
-      nsPrefix="CSMN.Characteristics">
-    <eSubpackages name="Asset" nsURI="http://schumann.engineering/csmn/1/Characteristics/Asset"
-        nsPrefix="CSMN.Characteristics.Asset">
-      <eClassifiers xsi:type="ecore:EClass" name="Asset">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Asset/AssetType"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
-        <eLiterals name="Unspecified"/>
-        <eLiterals name="Credentials" value="1"/>
-        <eLiterals name="Energy" value="2"/>
-        <eLiterals name="Data" value="3"/>
-        <eLiterals name="Disturbance" value="4"/>
-        <eLiterals name="Information" value="5"/>
-        <eLiterals name="Material" value="6"/>
-        <eLiterals name="Mechanical" value="7"/>
-        <eLiterals name="Signal" value="8"/>
-        <eLiterals name="Interface" value="9"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="AssetLibrary">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Asset/AssetType"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Energy" nsURI="http://schumann.engineering/csmn/1/Characteristics/Energy"
-        nsPrefix="CSMN.Characteristics.Energy">
-      <eClassifiers xsi:type="ecore:EClass" name="EnergyCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship"
-            ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="energyType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Energy/EnergyType" defaultValueLiteral="Unspecified"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="EnergyType">
-        <eLiterals name="Unspecified"/>
-        <eLiterals name="Force" value="1"/>
-        <eLiterals name="Kinetic" value="2"/>
-        <eLiterals name="Light" value="3"/>
-        <eLiterals name="Power" value="4"/>
-        <eLiterals name="Sound" value="5"/>
-        <eLiterals name="Vibration" value="6"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Flow" nsURI="http://schumann.engineering/csmn/1/Characteristics/Flow"
-        nsPrefix="CSMN.Characteristics.Flow">
-      <eClassifiers xsi:type="ecore:EClass" name="OsiCharacteristic" eSuperTypes="#//Characteristics/Flow/FlowCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="session" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="transport" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="network" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLink" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="physical" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FlowCharacteristic" abstract="true">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship"
-            ordered="false" lowerBound="1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="TcpCharacteristic" eSuperTypes="#//Characteristics/Flow/FlowCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="transport" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="network" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLink" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="physical" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanical" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Interface" nsURI="http://schumann.engineering/csmn/1/Characteristics/Interface"
-        nsPrefix="CSMN.Characteristics.Interface">
-      <eClassifiers xsi:type="ecore:EClass" name="InterfaceCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Interface/InterfaceType" defaultValueLiteral="Unspecified"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
-        <eLiterals name="Unspecified"/>
-        <eLiterals name="AirByFan" value="1"/>
-        <eLiterals name="AirByTurbine" value="2"/>
-        <eLiterals name="Alarm" value="3"/>
-        <eLiterals name="Bluetooth" value="4"/>
-        <eLiterals name="Cellular" value="5"/>
-        <eLiterals name="Cellular2G" value="6"/>
-        <eLiterals name="Cellular3G" value="7"/>
-        <eLiterals name="Cellular4G" value="8"/>
-        <eLiterals name="Cellular5G" value="9"/>
-        <eLiterals name="Display" value="10"/>
-        <eLiterals name="DisplaySmall" value="11"/>
-        <eLiterals name="Ethernet" value="12"/>
-        <eLiterals name="Hardwired" value="13"/>
-        <eLiterals name="Hdmi" value="14"/>
-        <eLiterals name="Knob" value="15"/>
-        <eLiterals name="Nfc" value="16"/>
-        <eLiterals name="Optical" value="17"/>
-        <eLiterals name="Proprietary" value="18"/>
-        <eLiterals name="PowerBattery" value="19"/>
-        <eLiterals name="PowerPlug" value="20"/>
-        <eLiterals name="PowerSocket" value="21"/>
-        <eLiterals name="SdCard" value="22"/>
-        <eLiterals name="Serial" value="23"/>
-        <eLiterals name="Speaker" value="24"/>
-        <eLiterals name="Touch" value="25"/>
-        <eLiterals name="Usb" value="26"/>
-        <eLiterals name="UsbA" value="27"/>
-        <eLiterals name="UsbC" value="28"/>
-        <eLiterals name="UsbFlash" value="29"/>
-        <eLiterals name="WifiAccessPoint" value="30"/>
-        <eLiterals name="WifiClient" value="31"/>
-        <eLiterals name="Zigbee" value="32"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristics">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship"
-            ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" ordered="false"
-            lowerBound="1" eType="#//PrimitiveTypes/Bandwidth" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="FirewallCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Material" nsURI="http://schumann.engineering/csmn/1/Characteristics/Material"
-        nsPrefix="CSMN.Characteristics.Material">
-      <eClassifiers xsi:type="ecore:EClass" name="MaterialCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship"
-            ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="materialType" ordered="false"
-            lowerBound="1" upperBound="-1" eType="#//Characteristics/Material/MaterialType"
-            defaultValueLiteral="Unspecified"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherMaterialType"
-            ordered="false" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="MaterialType">
-        <eLiterals name="Unspecified"/>
-        <eLiterals name="Air" value="1"/>
-        <eLiterals name="AirHumidity" value="2"/>
-        <eLiterals name="AirPressure" value="3"/>
-        <eLiterals name="Drugs" value="4"/>
-        <eLiterals name="Other" value="5"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Security" nsURI="http://schumann.engineering/csmn/1/Characteristics/Security"
-        nsPrefix="CSMN.Characteristics.Security">
-      <eClassifiers xsi:type="ecore:EEnum" name="Iec62443SecurityLevel">
-        <eLiterals name="Unknown"/>
-        <eLiterals name="NotApplicable" value="1"/>
-        <eLiterals name="Level0" value="2"/>
-        <eLiterals name="Level1" value="3"/>
-        <eLiterals name="Level2" value="4"/>
-        <eLiterals name="Level3" value="5"/>
-        <eLiterals name="Level4" value="6"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="Iec62443SecurityLevelCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement"
-            ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="securitylevel" ordered="false"
-            upperBound="-1" eType="#//Characteristics/Security/SecurityLevel" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="SecurityLevel">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="foundationalRequirement"
-            ordered="false" lowerBound="1" eType="#//Characteristics/Security/Iec62443FoundationalRequirementType"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="level" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Security/SecurityLevel" containment="true"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="rational" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Security/Iec62443SecurityLevelType"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="vector" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="Iec62443FoundationalRequirementType">
-        <eLiterals name="IAC">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Identification and AUTHENTICATION control (IAC)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="UC" value="1">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Use control (UC)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="SI" value="2">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="System integrity (SI)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="DC" value="3">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Data confidentiality (DC)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="RDF" value="4">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Restricted data flow (RDF)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="TRE" value="5">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Timely response to events (TRE)"/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="RA" value="6">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="Resource availability (RA)"/>
-          </eAnnotations>
-        </eLiterals>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="Iec62443SecurityLevelType">
-        <eLiterals name="Capability"/>
-        <eLiterals name="Target" value="1"/>
-        <eLiterals name="Achieved" value="2"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CpeCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement"
-            ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="cpe" ordered="false"
-            lowerBound="1" upperBound="-1" eType="#//Characteristics/Security/CommonPlatformEnumeration"
-            containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CommonPlatformEnumeration">
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="cpeType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Security/CommonPlatformEnumerationType"
-            defaultValueLiteral="Unspecified"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendorName" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="productName" ordered="false"
-            lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="CommonPlatformEnumerationType">
-        <eLiterals name="Unspecified"/>
-        <eLiterals name="Application" value="1"/>
-        <eLiterals name="Firmware" value="2"/>
-        <eLiterals name="Hardware" value="3"/>
-        <eLiterals name="OperatingSystem" value="4"/>
-      </eClassifiers>
-    </eSubpackages>
-    <eSubpackages name="Storage" nsURI="http://schumann.engineering/csmn/1/Characteristics/Storage"
-        nsPrefix="CSMN.Characteristics.Storage">
-      <eClassifiers xsi:type="ecore:EClass" name="StorageCharacteristic">
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-            eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="encryption" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageFormat" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageType" ordered="false"
-            lowerBound="1" eType="#//Characteristics/Storage/StorageType" defaultValueLiteral="Unknown"/>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageName" ordered="false"
-            eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-        <eStructuralFeatures xsi:type="ecore:EReference" name="totalSize" ordered="false"
-            lowerBound="1" eType="#//PrimitiveTypes/Size_T" containment="true"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EEnum" name="StorageType">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, and Unknown."/>
-        </eAnnotations>
-        <eLiterals name="Unknown">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The type of storage is unknown."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="RemovableByOperator" value="1">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The storage is a removable storage device, such as a USB flash drive.&#xD;&#xA;The storage can be removed by an operator, either tool less or with simple tools."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="RemovableByTechnician" value="2">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The storage is a removable storage device, such as a USB flash drive.&#xD;&#xA;The storage can not be removed by an operator. A technician has to open up the device using tools to access the storage."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="Fixed" value="3">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The storage is a fixed disk."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="Network" value="4">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The storage is a network drive."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="CdRom" value="5">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The storage is an optical disc device, such as a CD or DVD-ROM."/>
-          </eAnnotations>
-        </eLiterals>
-        <eLiterals name="Ram" value="6">
-          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-            <details key="documentation" value="The drive is a RAM disk."/>
-          </eAnnotations>
-        </eLiterals>
-      </eClassifiers>
-    </eSubpackages>
-  </eSubpackages>
-  <eSubpackages name="PrimitiveTypes" nsURI="http://schumann.engineering/csmn/1/PrimitiveTypes"
-      nsPrefix="CSMN.PrimitiveTypes">
-    <eClassifiers xsi:type="ecore:EClass" name="Size_T">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="The total size of the drive. See unit of measurement for more"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false"
-          lowerBound="1" eType="#//PrimitiveTypes/SizeUnitOfMeasure" defaultValueLiteral="Megabyte"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="SizeUnitOfMeasure">
-      <eLiterals name="Gigabyte"/>
-      <eLiterals name="Megabyte" value="1"/>
-      <eLiterals name="Kilobyte" value="2"/>
-      <eLiterals name="Byte" value="3"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="SpeedUnitOfMeasurement">
-      <eLiterals name="Gigabit"/>
-      <eLiterals name="Megabit" value="1"/>
-      <eLiterals name="Kilobit" value="2"/>
-      <eLiterals name="Baud" value="3"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Bandwidth">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false"
-          lowerBound="1" eType="#//PrimitiveTypes/SpeedUnitOfMeasurement" defaultValueLiteral="Baud"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="Lifecycle" nsURI="http://schumann.engineering/csmn/1/Lifecycle"
-      nsPrefix="CSMN.Lifecycle">
-    <eClassifiers xsi:type="ecore:EClass" name="Scope">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="product" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Lifecycle/Product" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Product">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="udiDi" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="udiDiBase" ordered="false"
-          eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ScopeConstraint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
-          eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Lifecycle/ProductConstraint" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" ordered="false"
-          lowerBound="1" eType="#//Lifecycle/ScopeConstraintType" defaultValueLiteral="Added"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProductConstraint">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
-          upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ScopeConstraintType">
-      <eLiterals name="Added"/>
-      <eLiterals name="Removed" value="1"/>
-    </eClassifiers>
-  </eSubpackages>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="csmn" nsURI="http://schumann.engineering/csmn/1" nsPrefix="csmn">
+  <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <details key="originalName" value="CSMN"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="SystemElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userType" ordered="false"
+        lowerBound="1" eType="#//UserType" defaultValueLiteral="Generic"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useFilledIcon" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Actor" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Actor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UserType">
+    <eLiterals name="Generic"/>
+    <eLiterals name="Administrator" value="1"/>
+    <eLiterals name="Attacker" value="2"/>
+    <eLiterals name="Auditor" value="3"/>
+    <eLiterals name="Authority" value="4"/>
+    <eLiterals name="EthicalHacker" value="5"/>
+    <eLiterals name="Operator" value="6"/>
+    <eLiterals name="OperatorEducated" value="7"/>
+    <eLiterals name="Owner" value="8"/>
+    <eLiterals name="Patient" value="9"/>
+    <eLiterals name="Service" value="10"/>
+    <eLiterals name="UNKNOWN" value="11"/>
+    <eLiterals name="Vendor" value="12"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityZone">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Box">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Comment" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvironmentLibrary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Connection">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="connectionType" ordered="false"
+        lowerBound="1" eType="#//ConnectionType" defaultValueLiteral="Information"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directionPrimary" ordered="false"
+        lowerBound="1" eType="#//DirectionOfPrimaryFlow" defaultValueLiteral="Client"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directionType" ordered="false"
+        lowerBound="1" eType="#//DirectionType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowToClient" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="flowToSupplier" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRealTime" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Boolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_DirectedRelationship"
+        ordered="false" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConnectionType">
+    <eLiterals name="Energy"/>
+    <eLiterals name="Disturbance" value="1"/>
+    <eLiterals name="Information" value="2"/>
+    <eLiterals name="Material" value="3"/>
+    <eLiterals name="Mechanical" value="4"/>
+    <eLiterals name="Unspecified" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DirectionOfPrimaryFlow">
+    <eLiterals name="Client"/>
+    <eLiterals name="Equal" value="1"/>
+    <eLiterals name="Supplier" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DirectionType">
+    <eLiterals name="UniDirectional"/>
+    <eLiterals name="BiDirectional" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Size_T">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The total size of the drive. See unit of measurement for more"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" lowerBound="1"
+        eType="#//SizeUnitOfMeasure" defaultValueLiteral="Megabyte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SizeUnitOfMeasure">
+    <eLiterals name="Gigabyte"/>
+    <eLiterals name="Megabyte" value="1"/>
+    <eLiterals name="Kilobyte" value="2"/>
+    <eLiterals name="Byte" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bandwidth">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" ordered="false" lowerBound="1"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//Integer"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" ordered="false" lowerBound="1"
+        eType="#//SpeedUnitOfMeasurement" defaultValueLiteral="Baud"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SpeedUnitOfMeasurement">
+    <eLiterals name="Gigabit"/>
+    <eLiterals name="Megabit" value="1"/>
+    <eLiterals name="Kilobit" value="2"/>
+    <eLiterals name="Baud" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scope">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="product" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Product" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Product" eSuperTypes="#//CommonPlatformEnumeration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="udiDi" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="udiDiBase" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
+        upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CommonPlatformEnumeration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformType" ordered="false"
+        lowerBound="1" eType="#//CommonPlatformEnumerationType" defaultValueLiteral="Unspecified"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendorName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="productName" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CommonPlatformEnumerationType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Application" value="1"/>
+    <eLiterals name="Firmware" value="2"/>
+    <eLiterals name="Hardware" value="3"/>
+    <eLiterals name="OperatingSystem" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopeConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//ProductConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" ordered="false"
+        lowerBound="1" eType="#//ScopeConstraintType" defaultValueLiteral="Added"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
+        upperBound="-1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScopeConstraintType">
+    <eLiterals name="Added"/>
+    <eLiterals name="Removed" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Asset">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
+        lowerBound="1" eType="#//AssetType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Credentials" value="1"/>
+    <eLiterals name="Energy" value="2"/>
+    <eLiterals name="Data" value="3"/>
+    <eLiterals name="Disturbance" value="4"/>
+    <eLiterals name="Information" value="5"/>
+    <eLiterals name="Material" value="6"/>
+    <eLiterals name="Mechanical" value="7"/>
+    <eLiterals name="Signal" value="8"/>
+    <eLiterals name="Interface" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssetLibrary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
+        lowerBound="1" eType="#//AssetType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnergyCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="energyType" ordered="false"
+        lowerBound="1" eType="#//EnergyType" defaultValueLiteral="Unspecified"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnergyType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Force" value="1"/>
+    <eLiterals name="Kinetic" value="2"/>
+    <eLiterals name="Light" value="3"/>
+    <eLiterals name="Power" value="4"/>
+    <eLiterals name="Sound" value="5"/>
+    <eLiterals name="Vibration" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OsiCharacteristic" eSuperTypes="#//FlowCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="presentation" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="session" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transport" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="network" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLink" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="physical" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FlowCharacteristic" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TcpCharacteristic" eSuperTypes="#//FlowCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="transport" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="network" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataLink" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="physical" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanical" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InterfaceCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceType" ordered="false"
+        lowerBound="1" eType="#//InterfaceType" defaultValueLiteral="Unspecified"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="AirByFan" value="1"/>
+    <eLiterals name="AirByTurbine" value="2"/>
+    <eLiterals name="Alarm" value="3"/>
+    <eLiterals name="Bluetooth" value="4"/>
+    <eLiterals name="Cellular" value="5"/>
+    <eLiterals name="Cellular2G" value="6"/>
+    <eLiterals name="Cellular3G" value="7"/>
+    <eLiterals name="Cellular4G" value="8"/>
+    <eLiterals name="Cellular5G" value="9"/>
+    <eLiterals name="Display" value="10"/>
+    <eLiterals name="DisplaySmall" value="11"/>
+    <eLiterals name="Ethernet" value="12"/>
+    <eLiterals name="Hardwired" value="13"/>
+    <eLiterals name="Hdmi" value="14"/>
+    <eLiterals name="Knob" value="15"/>
+    <eLiterals name="Nfc" value="16"/>
+    <eLiterals name="Optical" value="17"/>
+    <eLiterals name="Proprietary" value="18"/>
+    <eLiterals name="PowerBattery" value="19"/>
+    <eLiterals name="PowerPlug" value="20"/>
+    <eLiterals name="PowerSocket" value="21"/>
+    <eLiterals name="SdCard" value="22"/>
+    <eLiterals name="Serial" value="23"/>
+    <eLiterals name="Speaker" value="24"/>
+    <eLiterals name="Touch" value="25"/>
+    <eLiterals name="Usb" value="26"/>
+    <eLiterals name="UsbA" value="27"/>
+    <eLiterals name="UsbC" value="28"/>
+    <eLiterals name="UsbFlash" value="29"/>
+    <eLiterals name="WifiAccessPoint" value="30"/>
+    <eLiterals name="WifiClient" value="31"/>
+    <eLiterals name="Zigbee" value="32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristics">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bandwidth" ordered="false"
+        lowerBound="1" eType="#//Bandwidth" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FirewallCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MaterialCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="materialType" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//MaterialType" defaultValueLiteral="Unspecified"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherMaterialType" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MaterialType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Air" value="1"/>
+    <eLiterals name="AirHumidity" value="2"/>
+    <eLiterals name="AirPressure" value="3"/>
+    <eLiterals name="Drugs" value="4"/>
+    <eLiterals name="Other" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Iec62443SecurityLevel">
+    <eLiterals name="Unknown"/>
+    <eLiterals name="NotApplicable" value="1"/>
+    <eLiterals name="Level0" value="2"/>
+    <eLiterals name="Level1" value="3"/>
+    <eLiterals name="Level2" value="4"/>
+    <eLiterals name="Level3" value="5"/>
+    <eLiterals name="Level4" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Iec62443SecurityLevelCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="securitylevel" ordered="false"
+        upperBound="-1" eType="#//SecurityLevel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityLevel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="foundationalRequirement"
+        ordered="false" lowerBound="1" eType="#//Iec62443FoundationalRequirementType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="level" ordered="false"
+        lowerBound="1" eType="#//SecurityLevel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rational" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="#//Iec62443SecurityLevelType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vector" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Iec62443FoundationalRequirementType">
+    <eLiterals name="IAC">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Identification and AUTHENTICATION control (IAC)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="UC" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Use control (UC)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SI" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="System integrity (SI)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DC" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Data confidentiality (DC)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RDF" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Restricted data flow (RDF)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="TRE" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Timely response to events (TRE)"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RA" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Resource availability (RA)"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Iec62443SecurityLevelType">
+    <eLiterals name="Capability"/>
+    <eLiterals name="Target" value="1"/>
+    <eLiterals name="Achieved" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CpeCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cpe" ordered="false" lowerBound="1"
+        upperBound="-1" eType="#//CommonPlatformEnumeration" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StorageCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="encryption" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageFormat" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageType" ordered="false"
+        lowerBound="1" eType="#//StorageType" defaultValueLiteral="Unknown"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="storageName" ordered="false"
+        eType="ecore:EDataType ../../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="totalSize" ordered="false"
+        lowerBound="1" eType="#//Size_T" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StorageType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines constants for drive types, including CDRom, Fixed, Network, NoRootDirectory, Ram, Removable, and Unknown."/>
+    </eAnnotations>
+    <eLiterals name="Unknown">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of storage is unknown."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RemovableByOperator" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The storage is a removable storage device, such as a USB flash drive.&#xD;&#xA;The storage can be removed by an operator, either tool less or with simple tools."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RemovableByTechnician" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The storage is a removable storage device, such as a USB flash drive.&#xD;&#xA;The storage can not be removed by an operator. A technician has to open up the device using tools to access the storage."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Fixed" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The storage is a fixed disk."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Network" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The storage is a network drive."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CdRom" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The storage is an optical disc device, such as a CD or DVD-ROM."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Ram" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The drive is a RAM disk."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
 </ecore:EPackage>

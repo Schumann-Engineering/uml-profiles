@@ -144,26 +144,26 @@ ComponentDiagram Port {
  * -------------------- */
  
 /* hide stereotype compartment, BUT NOT name */
-Compartment[stereotype="CSMN::Elements::SecurityZone"] {
+Compartment[stereotype="CSMN::SecurityZone"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 /* show stereotype name */
-Label[stereotype="CSMN::Elements::SecurityZone"] {
+Label[stereotype="CSMN::SecurityZone"] {
 	visible:					true;
 	displayHeader:				false;
 	bold:						true;
 }
 
 /* no compartments by default */
-Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] > Compartment {
+Component[appliedStereotypes~="CSMN::SecurityZone"] > Compartment {
 	visible:					false;
 }
 
 /* default style */
-Component[appliedStereotypes~="CSMN::Elements::SecurityZone"],
-Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+Component[appliedStereotypes~="CSMN::SecurityZone"],
+Package[appliedStereotypes~="CSMN::SecurityZone"] {
 	/* fill */
 	fillColor:					#FFFFFF;
 	transparency:				50;
@@ -182,14 +182,14 @@ Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
 }
 
 /* show packaged element compartment */
-Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] > Compartment[kind=packagedelements] {
+Component[appliedStereotypes~="CSMN::SecurityZone"] > Compartment[kind=packagedelements] {
 	collapsed:					false;
 	visible:					true;
 }
 
 /* === ICONS === */
 /* Zone = always show symbol, not icon */
-Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+Component[appliedStereotypes~="CSMN::SecurityZone"] {
 	shapeVisibility:			true;
 	elementIcon:				false;
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/security.svg';
@@ -197,8 +197,8 @@ Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
 
 /* SystemElement, which is a Zone = show symbol and icon, prefer symbol of Zone */
 /*
-Component[appliedStereotypes~="CSMN::Elements::SystemElement"][appliedStereotypes~="CSMN::Elements::SecurityZone"],
-Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"][appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+Component[appliedStereotypes~="CSMN::SystemElement"][appliedStereotypes~="CSMN::SecurityZone"],
+Component[appliedStereotypes~="CSMN::EnvironmentElement"][appliedStereotypes~="CSMN::SecurityZone"] {
 	shapeVisibility:			true;
 	elementIcon:				true;
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/security.svg';
@@ -206,7 +206,7 @@ Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"][appliedStere
 */
 
 /* Zone as package = always show icon, not symbol */
-Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+Package[appliedStereotypes~="CSMN::SecurityZone"] {
 	shapeVisibility:			false;
 	elementIcon:				true;
 } 
@@ -219,19 +219,19 @@ Package[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
  * -------------------- */
  
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Elements::SystemElement"],
-Compartment[stereotype="CSMN::Elements::SystemElement"] {
+Label[stereotype="CSMN::SystemElement"],
+Compartment[stereotype="CSMN::SystemElement"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 /* no compartments by default */
-Component[appliedStereotypes~="CSMN::Elements::SystemElement"] > Compartment {
+Component[appliedStereotypes~="CSMN::SystemElement"] > Compartment {
 	visible:					false;
 }
 
 /* default style */
-Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
+Component[appliedStereotypes~="CSMN::SystemElement"] {
 	/* fill */
 	fillColor:					#DAE8FC !important;
 	transparency:				0;
@@ -255,7 +255,7 @@ Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
 
 /* === ICONS === */
 /* SystemElement = symbol only */
-Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
+Component[appliedStereotypes~="CSMN::SystemElement"] {
 	shapeVisibility:			true;
 	elementIcon:				false;
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/puzzle-outline.svg';
@@ -270,19 +270,19 @@ Component[appliedStereotypes~="CSMN::Elements::SystemElement"] {
  * -------------------- */
  
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Elements::EnvironmentElement"],
-Compartment[stereotype="CSMN::Elements::EnvironmentElement"] {
+Label[stereotype="CSMN::EnvironmentElement"],
+Compartment[stereotype="CSMN::EnvironmentElement"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 /* no compartments by default */
-Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] > Compartment {
+Component[appliedStereotypes~="CSMN::EnvironmentElement"] > Compartment {
 	visible:					false;
 }
 
 /* default style */
-Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+Component[appliedStereotypes~="CSMN::EnvironmentElement"] {
 	/* fill */
 	fillColor:					#FFFFFF !important;
 	transparency:				0;
@@ -303,7 +303,7 @@ Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
 
 /* === ICONS === */
 /* Environment = always show symbol, not icon */
-Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+Component[appliedStereotypes~="CSMN::EnvironmentElement"] {
 	shapeVisibility:			true;
 	elementIcon:				false;
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/earth.svg';
@@ -311,7 +311,7 @@ Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
 
 
 /* Environment = symbol only */
-Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
+Component[appliedStereotypes~="CSMN::EnvironmentElement"] {
 	shapeVisibility:			true;
 	elementIcon:				false;
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/earth.svg';
@@ -325,19 +325,19 @@ Component[appliedStereotypes~="CSMN::Elements::EnvironmentElement"] {
  * -------------------- */
  
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Elements::User"],
-Compartment[stereotype="CSMN::Elements::User"] {
+Label[stereotype="CSMN::User"],
+Compartment[stereotype="CSMN::User"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 /* no compartments by default */
-*[appliedStereotypes~="CSMN::Elements::User"] > Compartment {
+*[appliedStereotypes~="CSMN::User"] > Compartment {
 	visible:					false;
 }
 
 /* default style */
-*[appliedStereotypes~="CSMN::Elements::User"] {
+*[appliedStereotypes~="CSMN::User"] {
 	/* fill */
 	fillColor:					#D5E8D4 !important;
 	transparency:				0;
@@ -357,115 +357,115 @@ Compartment[stereotype="CSMN::Elements::User"] {
 
 /* === ICONS === */
 /* User.Generic (DEFAULT) */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Generic"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Generic"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-circle.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Generic"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Generic"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-circle-outline.svg';
 }
 
 /* User.Administrator */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Administrator"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Administrator"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-cog.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Administrator"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Administrator"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-cog-outline.svg';
 }
 
 /* User.Attacker */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Attacker"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Attacker"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/emoticon-devil.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Attacker"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Attacker"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/emoticon-devil-outline.svg';
 }
 
 /* User.Auditor */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Auditor"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Auditor"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-eye.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Auditor"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Auditor"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-eye-outline.svg';
 }
 
 /* User.Authority */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Authority"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Authority"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-tie-hat.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Authority"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Authority"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-tie-hat-outline.svg';
 }
 
 /* User.EthicalHacker */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="EthicalHacker"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="EthicalHacker"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-cowboy-hat.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="EthicalHacker"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="EthicalHacker"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-cowboy-hat-outline.svg';
 }
 
 /* User.Operator */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Operator"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Operator"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Operator"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Operator"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-outline.svg';
 }
 
 /* User.OperatorEducated */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="OperatorEducated"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="OperatorEducated"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-school.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="OperatorEducated"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="OperatorEducated"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-school-outline.svg';
 }
 
 /* User.Owner */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Owner"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Owner"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-tie.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Owner"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Owner"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-tie-outline.svg';
 }
 
 /* User.Patient */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Patient"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Patient"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-injury.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Patient"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Patient"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-injury-outline.svg';
 }
 
 /* User.Service */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Service"][useFilledIcon=true] {	
+*[appliedStereotypes~="CSMN::User"][userType="Service"][useFilledIcon=true] {	
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-wrench.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Service"][useFilledIcon=false] {	
+*[appliedStereotypes~="CSMN::User"][userType="Service"][useFilledIcon=false] {	
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-wrench-outline.svg';
 }
 
 /* User.UNKNOWN */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="UNKNOWN"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="UNKNOWN"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-question.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="UNKNOWN"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="UNKNOWN"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/account-question-outline.svg';
 }
 
 /* User.Vendor */
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Vendor"][useFilledIcon=true] {
+*[appliedStereotypes~="CSMN::User"][userType="Vendor"][useFilledIcon=true] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/factory.svg';
 }
-*[appliedStereotypes~="CSMN::Elements::User"][userType="Vendor"][useFilledIcon=false] {
+*[appliedStereotypes~="CSMN::User"][userType="Vendor"][useFilledIcon=false] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/factory.svg';
 }
 
 /* show symbol compartment for Actor instead of symbol */
-Actor[appliedStereotypes~="CSMN::Elements::User"] {
+Actor[appliedStereotypes~="CSMN::User"] {
 	shapeVisibility:			false;
 	elementIcon:				true;
 }
-Actor[appliedStereotypes~="CSMN::Elements::User"] > Compartment[kind=symbol] {
+Actor[appliedStereotypes~="CSMN::User"] > Compartment[kind=symbol] {
 	visible:					true;
 }
 
@@ -477,20 +477,20 @@ Actor[appliedStereotypes~="CSMN::Elements::User"] > Compartment[kind=symbol] {
  * -------------------- */
  
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Elements::Box"],
-Compartment[stereotype="CSMN::Elements::Box"] {
+Label[stereotype="CSMN::Box"],
+Compartment[stereotype="CSMN::Box"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 /* no compartments by default */
-Comment[appliedStereotypes~="CSMN::Elements::Box"] > Compartment {
+Comment[appliedStereotypes~="CSMN::Box"] > Compartment {
 	visible:					false;
 }
 
 /* default style */
-ComponentDiagram Comment[appliedStereotypes~="CSMN::Elements::Box"],
-ComponentDiagram Package[appliedStereotypes~="CSMN::Elements::Box"] {
+ComponentDiagram Comment[appliedStereotypes~="CSMN::Box"],
+ComponentDiagram Package[appliedStereotypes~="CSMN::Box"] {
 	/* fill */
 	fillColor:					#F5F5F5;
 	gradient:					none;
@@ -520,13 +520,13 @@ ComponentDiagram Package > Compartment[kind=packagedelements] {
 }
 
 /* === ICONS === */
-ComponentDiagram Comment[appliedStereotypes~="CSMN::Elements::Box"] {
+ComponentDiagram Comment[appliedStereotypes~="CSMN::Box"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/information-outline.svg';
 	shapeDirection:				2;
 	shapeVisibility:			true;
 	elementIcon:				false;
 }
-ComponentDiagram Package[appliedStereotypes~="CSMN::Elements::Box"] {
+ComponentDiagram Package[appliedStereotypes~="CSMN::Box"] {
 	shapeVisibility:			false;
 	elementIcon:				true;
 }
@@ -541,7 +541,7 @@ ComponentDiagram Package[appliedStereotypes~="CSMN::Elements::Box"] {
  * -------------------- */
  
 /* override border for  */ 
-Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
+Component[appliedStereotypes~="CSMN::SecurityZone"] {
 	/* border */
 	lineColor:					#FF0000;
 	lineWidth:					2;
@@ -569,67 +569,67 @@ Component[appliedStereotypes~="CSMN::Elements::SecurityZone"] {
  * -------------------- */
  
 /* hide stereotype names */
-Label[stereotype="CSMN::Connections::Connection"],
-Compartment[stereotype="CSMN::Connections::Connection"],
-Dependency[stereotype="CSMN::Connections::Connection"] > Label[type="Sterotype"] {
+Label[stereotype="CSMN::Connection"],
+Compartment[stereotype="CSMN::Connection"],
+Dependency[stereotype="CSMN::Connection"] > Label[type="Sterotype"] {
 	visible:					false;
 	displayHeader:				false;
 }
 
 
 /* hide stereotype label of connection */
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"] > Label[kind=Stereotype] {
+Dependency[appliedStereotypes~="CSMN::Connection"] > Label[kind=Stereotype] {
 	visible: 		false;
 }
 
 /* hide text label of connection */
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"] > Label[kind=Name] {
+Dependency[appliedStereotypes~="CSMN::Connection"] > Label[kind=Name] {
 	visible: 		true;
 }
  
 /* show one arrow on uni-directional connections */
-*[appliedStereotypes~="CSMN::Connections::Connection"][directionType="UniDirectional"] {
+*[appliedStereotypes~="CSMN::Connection"][directionType="UniDirectional"] {
 	sourceDecoration:			none;
 	targetDecoration:			open_arrow;
 }
-*[appliedStereotypes~="CSMN::Connections::Connection"][directionType="UniDirectional"][directionType="Supplier"] {
+*[appliedStereotypes~="CSMN::Connection"][directionType="UniDirectional"][directionType="Supplier"] {
 	sourceDecoration:			open_arrow;
 	targetDecoration:			none;
 }
 /* reverse arrow for dependency to show flow instead of dependency */
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="UniDirectional"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][directionType="UniDirectional"] {
 	sourceDecoration:			open_arrow;
 	targetDecoration:			none;
 }
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="UniDirectional"][directionPrimary="Supplier"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][directionType="UniDirectional"][directionPrimary="Supplier"] {
 	sourceDecoration:			none;
 	targetDecoration:			open_arrow;
 }
 
 
 /* show two arrows on bi-directional connections */
-*[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Client"] {
+*[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Client"] {
 	sourceDecoration:			solid_arrow_empty;
 	targetDecoration:			solid_arrow_filled;
 }
-*[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Supplier"] {
+*[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Supplier"] {
 	sourceDecoration:			solid_arrow_filled;
 	targetDecoration:			solid_arrow_empty;
 }
-*[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Equal"] {
+*[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Equal"] {
 	sourceDecoration:			solid_arrow_empty;
 	targetDecoration:			solid_arrow_empty;
 }
 /* reverse arrow for dependency to show flow instead of dependency */
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Client"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Client"] {
 	sourceDecoration:			solid_arrow_filled;
 	targetDecoration:			solid_arrow_empty;
 }
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Supplier"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Supplier"] {
 	sourceDecoration:			solid_arrow_empty;
 	targetDecoration:			solid_arrow_filled;
 }
-Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="BiDirectional"][directionPrimary="Equal"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"][directionPrimary="Equal"] {
 	sourceDecoration:			solid_arrow_empty;
 	targetDecoration:			solid_arrow_empty;
 }
@@ -637,7 +637,7 @@ Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="B
 /* default style for a connection 
  * NOTE: will be specialized later
  */
-*[appliedStereotypes~="CSMN::Connections::Connection"] {
+*[appliedStereotypes~="CSMN::Connection"] {
 	/* line style */
 	lineColor:					#000000;
 	lineStyle:					solid;
@@ -645,7 +645,7 @@ Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="B
 }
 
 /* Unspecified */
-*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Unspecified"] {
+*[appliedStereotypes~="CSMN::Connection"][connectionType="Unspecified"] {
 	lineStyle:					dashed;
 	lineDashLength:				3;
 	lineDashGap:				10;
@@ -653,30 +653,30 @@ Dependency[appliedStereotypes~="CSMN::Connections::Connection"][directionType="B
 
 
 /*
-Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Energy"] {
+Relationship[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 }
 */
 
 /* Disturbance */
-*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Disturbance"] {
+*[appliedStereotypes~="CSMN::Connection"][connectionType="Disturbance"] {
 	lineColor:					#FF0000;
 	lineStyle:					solid;
 }
 
 /* Information */
-*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Information"] {
+*[appliedStereotypes~="CSMN::Connection"][connectionType="Information"] {
 	lineStyle:					dashed;
 	lineDashLength:				5;
 	lineDashGap:				5;
 }
 
 /* Material */
-*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Material"] {
+*[appliedStereotypes~="CSMN::Connection"][connectionType="Material"] {
 	lineWidth:					5;
 }
 
 /* Mechanical */
-*[appliedStereotypes~="CSMN::Connections::Connection"][connectionType="Mechanical"] {
+*[appliedStereotypes~="CSMN::Connection"][connectionType="Mechanical"] {
 	lineColor:					#CCCCCC;
 	lineWidth:					5;
 	targetDecoration:			none;
@@ -696,49 +696,49 @@ Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType
  * --------------------
  * -------------------- */
 /* Default style */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"] {
+*[appliedStereotypes~="CSMN::Asset"] {
 	shapeVisibility:			true;
 	elementIcon:				false;
 } 
 
 /* === ICONS === */
 /* === AssetType.Unspecified === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Unspecified"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Unspecified"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
 } 
 
 /* === AssetType.Energy === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Energy"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Energy"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/lightning-bolt.svg';
 } 
 
 /* === AssetType.Data === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Data"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Data"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/database-outline.svg';
 } 
 
 /* === AssetType.Disturbance === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Disturbance"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Disturbance"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/leak.svg';
 } 
 
 /* === AssetType.Information === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Information"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Information"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/information-box-outline.svg';
 } 
 
 /* === AssetType.Material === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Material"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Material"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/palette-swatch.svg';
 } 
 
 /* === AssetType.Mechanical === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Mechanical"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Mechanical"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/connection.svg';
 } 
 
 /* === AssetType.Signal === */
-*[appliedStereotypes~="CSMN::Characteristics::Asset::Asset"][assetType="Signal"] {
+*[appliedStereotypes~="CSMN::Asset"][assetType="Signal"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/waveform.svg';
 } 
 
@@ -749,7 +749,7 @@ Relationship[appliedStereotypes~="CSMN::Connections::Connection"][connectionType
  * --------------------
  * -------------------- */
 /* Default style */
-Package[appliedStereotypes~="CSMN::Characteristics::Asset::AssetLibrary"] {
+Package[appliedStereotypes~="CSMN::AssetLibrary"] {
 	shapeVisibility:			false;
 	elementIcon:				true;
 } 
@@ -770,20 +770,20 @@ Package[appliedStereotypes~="CSMN::Characteristics::Asset::AssetLibrary"] {
  
 /* == STEREOTYPE == */
 /* hide stereotype names */
-Label[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"],
-Compartment[stereotype="CSMN::Characteristics::Flow::OsiCharacteristic"] {
+Label[stereotype="CSMN::OsiCharacteristic"],
+Compartment[stereotype="CSMN::OsiCharacteristic"] {
 	visible:					false;
 }
 
 /* == LABEL == */
 /* hide stereotype label of connection */
-Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Stereotype] {
+Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Stereotype] {
 	visible: 					false;
 }
 
 /* == LABEL == */
 /* hide text label of connection */
-Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"] > Label[kind=Name] {
+Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	visible: 					true;
 }
 
@@ -799,7 +799,7 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
  * InterfaceCharacteristic
  * --------------------
  * -------------------- */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"] {
 	shapeVisibility:			false;
 	elementIcon:				false;
 }
@@ -807,167 +807,167 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
 
 
 /* === InterfaceType.Unspecified === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Unspecified"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Unspecified"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
 }
 
 /* === InterfaceType.AirByFan === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="AirByFan"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByFan"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
 }
 
 /* === InterfaceType.AirByTurbine === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="AirByTurbine"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByTurbine"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/turbine.svg';
 }
 
 /* === InterfaceType.Alarm === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Alarm"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Alarm"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/alarm-light.svg';
 }
 
 /* === InterfaceType.Bluetooth === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Bluetooth"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Bluetooth"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/bluetooth.svg';
 }
 
 /* === InterfaceType.Cellular === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Cellular"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-cellular-3.svg';
 }
 
 /* === InterfaceType.Cellular2G === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Cellular2G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular2G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-2g.svg';
 }
 
 /* === InterfaceType.Cellular3G === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Cellular3G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular3G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-3g.svg';
 }
 
 /* === InterfaceType.Cellular4G === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Cellular4G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular4G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-4g.svg';
 }
 
 /* === InterfaceType.Cellular5G === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Cellular5G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular5G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-5g.svg';
 }
 
 /* === InterfaceType.Display === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Display"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Display"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/monitor.svg';
 }
 
 /* === InterfaceType.DisplaySmall === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="DisplaySmall"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="DisplaySmall"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/monitor-small.svg';
 }
 
 /* === InterfaceType.Ethernet === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Ethernet"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Ethernet"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/ethernet.svg';
 }
 
 /* === InterfaceType.Hardwired === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Hardwired"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Hardwired"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/link-variant.svg';
 }
 
 /* === InterfaceType.Hdmi === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Hdmi"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Hdmi"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/hdmi-port.svg';
 }
 
 /* === InterfaceType.Knob === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Knob"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Knob"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/knob.svg';
 }
 
 /* === InterfaceType.Nfc === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Nfc"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Nfc"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/nfc.svg';
 }
 
 /* === InterfaceType.Optical === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Optical"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Optical"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/toslink.svg';
 }
 
 /* === InterfaceType.PowerBattery === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerBattery"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="PowerBattery"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/battery.svg';
 }
 
 /* === InterfaceType.PowerPlug === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerPlug"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="PowerPlug"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-plug.svg';
 }
 
 /* === InterfaceType.PowerSocket === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="PowerSocket"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="PowerSocket"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-socket.svg';
 }
 
 /* === InterfaceType.Proprietary === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Proprietary"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Proprietary"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/midi-port.svg';
 }
 
 /* === InterfaceType.SdCard === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="SdCard"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="SdCard"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/sd.svg';
 }
 
 /* === InterfaceType.Serial === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Serial"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Serial"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/serial-port.svg';
 }
 
 /* === InterfaceType.Speaker === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Speaker"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Speaker"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/speaker.svg';
 }
 
 /* === InterfaceType.Touch === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Touch"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Touch"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/gesture-tap.svg';
 }
 
 /* === InterfaceType.Usb === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Usb"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Usb"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb.svg';
 }
 
 /* === InterfaceType.UsbA === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbA"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbA"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-port.svg';
 }
 
 /* === InterfaceType.UsbC === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbC"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbC"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-c-port.svg';
 }
 
 /* === InterfaceType.UsbFlash === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="UsbFlash"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbFlash"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-flash-drive.svg';
 }
 
 /* === InterfaceType.WifiAccessPoint === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="WifiAccessPoint"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="WifiAccessPoint"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/access-point.svg';
 }
 
 /* === InterfaceType.WifiClient === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="WifiClient"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="WifiClient"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/wifi.svg';
 }
 
 /* === InterfaceType.Zigbee === */
-*[appliedStereotypes~="CSMN::Characteristics::Interface::InterfaceCharacteristic"][interfaceType="Zigbee"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Zigbee"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/zigbee.svg';
 }
 
@@ -993,20 +993,20 @@ Dependency[appliedStereotypes~="CSMN::Characteristics::Flow::OsiCharacteristic"]
  * -------------------- */
 
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Lifecycle::Scope"],
-Compartment[stereotype="CSMN::Lifecycle::Scope"] {
+Label[stereotype="CSMN::Scope"],
+Compartment[stereotype="CSMN::Scope"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
-Package[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
+Package[appliedStereotypes~="CSMN::Scope"] {
 	shapeVisibility:			false;
 	elementIcon:				true;
 }
 
 /* === ICONS === */
-*[appliedStereotypes~="CSMN::Lifecycle::Scope"],
-Component[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
+*[appliedStereotypes~="CSMN::Scope"],
+Component[appliedStereotypes~="CSMN::Scope"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/package-variant-closed.svg';
 	shapeVisibility:			true;
 	elementIcon:				false;
@@ -1021,34 +1021,34 @@ Component[appliedStereotypes~="CSMN::Lifecycle::Scope"] {
  * -------------------- */
 
 /* hide stereotype compartment and name */
-Label[stereotype="CSMN::Lifecycle::ScopeConstraint"],
-Compartment[stereotype="CSMN::Lifecycle::ScopeConstraint"] {
+Label[stereotype="CSMN::ScopeConstraint"],
+Compartment[stereotype="CSMN::ScopeConstraint"] {
 	visible:					false;
 	displayHeader:				false;	
 }
 
 
 /* === ICONS === */
-Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"] {
+Port[appliedStereotypes~="CSMN::ScopeConstraint"] {
 	shapeDirection:				4;
 }
 
-Component[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
+Component[appliedStereotypes~="CSMN::ScopeConstraint"][constraintType="Added"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/puzzle-plus-outline.svg';
 	shapeVisibility:			true;
 	elementIcon:				false;
 }
 /* expect for ports */
-Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Added"] {
+Port[appliedStereotypes~="CSMN::ScopeConstraint"][constraintType="Added"] {
 	shapeVisibility:			false;
 }
 
-Component[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
+Component[appliedStereotypes~="CSMN::ScopeConstraint"][constraintType="Removed"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/puzzle-remove-outline.svg';
 	shapeVisibility:			true;
 	elementIcon:				false;
 }
 /* expect for ports */
-Port[appliedStereotypes~="CSMN::Lifecycle::ScopeConstraint"][constraintType="Removed"] {
+Port[appliedStereotypes~="CSMN::ScopeConstraint"][constraintType="Removed"] {
 	shapeVisibility:			false;
 }
