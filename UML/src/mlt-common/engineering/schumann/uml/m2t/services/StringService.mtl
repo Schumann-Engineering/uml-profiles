@@ -1,14 +1,30 @@
 [module StringService('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
-[query public trim(arg0 : String, arg1 : String) : String
-	= invoke('engineering.schumann.uml.m2t.services.StringService', 'trim(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]
 
-[query public escape(arg0 : String) : String
-	= invoke('engineering.schumann.uml.m2t.services.StringService', 'escape(java.lang.String)', Sequence{arg0}) /]
-
+[comment creates a comment block out of a string /]
 [query public comment(arg0 : String, arg1 : String) : String
-	= invoke('engineering.schumann.uml.m2t.services.StringService', 'comment(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'comment(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]
 
+[comment Escapes characters if needed /]
+[query public escape(arg0 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'escape(java.lang.String)', Sequence{arg0}) /]
+
+[comment returns just the upper case characters from a string /]
 [query public getUChars(arg0 : String) : String
-	= invoke('engineering.schumann.uml.m2t.services.StringService', 'getUChars(java.lang.String)', Sequence{arg0}) /]
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'getUChars(java.lang.String)', Sequence{arg0}) /]
 
+[comment pads a string to the left /]
+[query public padLeft(str : String, length : Integer, padding : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padLeft(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
+
+[comment pads a string to the right /]
+[query public padRight(str : String, length : Integer) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, ' '}) /]
+
+[comment pads a string to the right /]
+[query public padRight(str : String, length : Integer, padding : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
+
+[comment trims a string by looking for a certain string /]
+[query public trim(arg0 : String, arg1 : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'trim(java.lang.String, java.lang.String)', Sequence{arg0, arg1}) /]

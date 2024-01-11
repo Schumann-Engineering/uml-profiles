@@ -268,7 +268,7 @@ import java.util.List;
 import org.eclipse.uml2.uml.Comment;
 
 
-public class CommentService {
+public class CommentServiceImpl {
 	/**
 	 * Constant "Maximum characters per line" (defines where to wrap the line)
 	 */

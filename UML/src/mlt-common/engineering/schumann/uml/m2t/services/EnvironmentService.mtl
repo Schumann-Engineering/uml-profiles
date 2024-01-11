@@ -3,29 +3,29 @@
 
 
 [query public loadEnvironment(fileName : String) : OclVoid
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'loadEnvironment(java.lang.String)', Sequence{fileName}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'loadEnvironment(java.lang.String)', Sequence{fileName}) /]
 
 
 [query public env(key : String) : String
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'getEnvironmentVariable(java.lang.String)', Sequence{key}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'getEnvironmentVariable(java.lang.String)', Sequence{key}) /]
 
 
 [query public isTrue(key : String) : Boolean 
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'isTrue(java.lang.String)', Sequence{key}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'isTrue(java.lang.String)', Sequence{key}) /]
 
 
 [query public isFalse(key : String) : Boolean 
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'isFalse(java.lang.String)', Sequence{key}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'isFalse(java.lang.String)', Sequence{key}) /]
 
 
 [query public exists(key : String) : Boolean 
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'exists(java.lang.String)', Sequence{key}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'exists(java.lang.String)', Sequence{key}) /]
 
 
 [query public hasError() : Boolean 
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'hasError()', Sequence{}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'hasError()', Sequence{}) /]
 
 
 [query public lastError() : String
-	= invoke('engineering.schumann.uml.m2t.services.EnvironmentService', 'lastError()', Sequence{}) /]
+	= invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'lastError()', Sequence{}) /]
 	

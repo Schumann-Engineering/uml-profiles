@@ -10,7 +10,7 @@ import java.io.FileInputStream;
  * @author Janek Schumann
  * 
  */
-public class EnvironmentService {
+public class EnvironmentServiceImpl {
 	/**
 	 * Constant "Last Error Key" (key in properties map which stores last error which occured)
 	 */

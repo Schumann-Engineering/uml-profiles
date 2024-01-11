@@ -1,6 +1,8 @@
 package engineering.schumann.uml.m2t.services;
 
-public class StringService {
+import org.apache.commons.lang.StringUtils;
+
+public class StringServiceImpl {
 	/**
 	 * ================================================
 	 * escape 
@@ -124,4 +126,43 @@ public class StringService {
 		 
 		 return result;	 
 	 }
+	 
+	 
+	/**
+	 * padding
+	 */
+	/**
+	 * pads a string to the left
+	 * 
+	 * @param input
+	 * @param length
+	 * @param paddingChar
+	 * @return
+	 */
+	public String padLeft(
+			String input,
+			Integer length,
+			String paddingChar
+	)
+	{
+		return StringUtils.leftPad(input, length, paddingChar);
+	}
+
+	/**
+	 * pads a string to the right
+	 * 
+	 * @param input
+	 * @param length
+	 * @param paddingChar
+	 * @return
+	 */
+	public String padRight(
+			String input,
+			Integer length,
+			String paddingChar
+	)
+	{
+		return StringUtils.rightPad(input, length, paddingChar);
+	}
+
 }
