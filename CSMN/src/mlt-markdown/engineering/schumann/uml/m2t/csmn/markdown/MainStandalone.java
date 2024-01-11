@@ -14,15 +14,16 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
-import CSMN.CSMNPackage;
+import engineering.schumann.uml.profile.csmn.CSMNFactory;
+import engineering.schumann.uml.profile.csmn.CSMNPackage;
 
 /**
  * Entry point of the 'Generate' generation module.
@@ -148,38 +149,66 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
         super.registerPackages(resourceSet);
 
 		
-		// http:///CSMN/Lifecycle.ecore
-        if (!isInWorkspace(CSMNPackage.class))
-        {
-        	// PROFILE
-        	// URI: pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA
-			resourceSet.getPackageRegistry().put(
-					"pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA",
-					CSMNPackage.eINSTANCE
-			);
-        	
-        	
-			resourceSet.getPackageRegistry().put(
-					CSMNPackage.eNS_URI,
-					CSMNPackage.eINSTANCE
-			);
-			
-        }
+		resourceSet.getPackageRegistry().putIfAbsent(
+				CSMNPackage.eINSTANCE.getNsURI(),
+				CSMNPackage.eINSTANCE
+		);			
+
+		// pathmap://CSMN/profile/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA
+		URIConverter.URI_MAP.put(
+	    		URI.createURI("pathmap://CSMN/profile/CSMN.profile.uml"), 
+	    		URI.createFileURI("C:\\_repos\\schumann.engineering\\uml-profiles\\CSMN\\src\\uml\\CSMN.profile.uml")
+	    );
+
+		URIConverter.URI_MAP.put(
+	    		URI.createURI("platform:/plugin/engineering.schumann.uml.profile.csmn/src/uml/CSMN.profile.uml"), 
+	    		URI.createFileURI("C:\\_repos\\schumann.engineering\\uml-profiles\\CSMN\\src\\uml\\CSMN.profile.uml")
+	    );
+
+		
+/*
+		URI uri = URI.createURI("file:///anonymous.uml");
+	    URIConverter.URI_MAP.put(
+	    		URI.createURI(UMLResource.LIBRARIES_PATHMAP), 
+	    		uri.appendSegment("libraries").appendSegment("")
+	    );
+	    _Sv9oAKTMEe6ULIx8cDHqqA
+	    URIConverter.URI_MAP.put(URI.createURI(UMLResource.METAMODELS_PATHMAP), uri.appendSegment("metamodels").appendSegment(""));
+	    URIConverter.URI_MAP.put(URI.createURI(UMLResource.PROFILES_PATHMAP), uri.appendSegment("profiles").appendSegment(""));
+	    URIConverter.URI_MAP.put(URI.createURI(UMLResource.ECORE_PRIMITIVE_TYPES_LIBRARY_URI), uri.appendSegment("ecore_primitive_types").appendSegment(""));
+	    URIConverter.URI_MAP.put(URI.createURI(UMLResource.LIBRARIES_PATHMAP),  URI.createFileURI(library));
+*/		
+        // platform:/plugin/engineering.schumann.uml.profile.csmn/src/uml/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA
+
+		/*
+        UMLResourcesUtil.init(resourceSet);
+
+        URI profileURI  = URI.createURI("platform:/plugin/engineering.schumann.uml.profile.csmn/src/uml/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"); // URI.createFileURI(*** your profile file location *** );
+        Resource profileResource = resourceSet.getResource(profileURI, true);
+        EList<EObject> profileContent = profileResource.getContents();
+        Profile profile = (Profile)EcoreUtil.getObjectByType(profileContent, UMLPackage.Literals.PROFILE);
+
+        EPackage definitionPackage = (EPackage) profile.getDefinition();
+        resourceSet.getPackageRegistry().put(definitionPackage.getNsURI(), definitionPackage);
         
-        Map<URI, URI> uriMap = resourceSet.getURIConverter().getURIMap();
-        uriMap.put(
-        		URI.createURI("pathmap://CSMN/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"),
-        		URI.createURI("http://schumann.engineering/csmn/1#CSMN")
+        UMLPlugin.getEPackageNsURIToProfileLocationMap().putIfAbsent(
+        		CSMNPackage.eINSTANCE.getNsURI(),
+        		EcoreUtil.getURI(profile)
         );
-        uriMap.put(
-        		URI.createURI("pathmap://CSMN/CSMN.profile.uml"),
-        		URI.createURI("http://schumann.engineering/csmn/1")
-        );
+        */
+		
+        UMLResourcesUtil.init(resourceSet);
    }    
     
     @Override
     public void registerResourceFactories(ResourceSet resourceSet) {
         super.registerResourceFactories(resourceSet);
+        
+        resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().putIfAbsent(
+        		"csmn",
+        		CSMNFactory.eINSTANCE
+        );
+        
         
         /*
          * Some metamodels require a very complex setup for standalone usage. For example, if you want to use a generator

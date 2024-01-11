@@ -1,25 +1,20 @@
 [comment encoding = UTF-8 /]
 [module main(
-	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://www.eclipse.org/uml2/5.0.0/UML'
 )]
 
-[import engineering::schumann::uml::m2t::services::EnvironmentService/]
-[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::Profile /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::csmn::common::Scope /]
+[import engineering::schumann::uml::m2t::csmn::markdown::Scope /]
 
 
 [query public getFileName(
-	model : Model
+	element : NamedElement
 ) : String =
-	'model - ' + model.name + '.md'
+	element.eClass().name + '/' + element.name + '.md'
 /]
 
-
-[query public getFileName(
-	aPackage : Package
-) : String =
-	'package - ' + aPackage.name + '.md'
-/]
 
 
 [**
@@ -27,28 +22,6 @@
  * MAIN
  * ====================
 */]
-[template public mainComponent(
-	component : Component
-)]
-	[comment @main/]
-
-	[file ('components/component ' + component.name + '.md', false, 'UTF-8')]
-Test 1 of [component.name /]
-	[/file]
-[/template]
-
-
-[template public mainScope(
-	scope : SecurityZone
-)]
-	[comment @main/]
-
-	[file ('scopes/scope.md', true, 'UTF-8')]
-[self/] = [self.base_Component/]
-	[/file]
-[/template]
-
-
 [template public mainModel(
 	model : Model
 )]
@@ -67,14 +40,19 @@ Test 1 of [component.name /]
 		this isn't necessary since Acceleo 3.1. Load properties by passing them as argument
 	/]
 
+	[comment WORKAROUND: pre-load profiles /]
+	[model._loadProfiles() /]
+
+
 	[comment 
 		====================
 		GO!
 		====================
 	/]
-	[model.generateMarkdown() /]
+	[for (pkg : Package | model.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
+[pkg.generateMarkdown() /]
+	[/for]
 [/template]
-
 
 
 [**
@@ -83,23 +61,37 @@ Test 1 of [component.name /]
  * ====================
 */]
 [**
- * Generates markdown files for a model
+ * Generates markdown files for packages
  */]
 [template private generateMarkdown(
-	model : Model
+	pkg : Package
 )]
-	[file (model.getFileName(), false, 'UTF-8')]
-# Profiles
+	[file (pkg.getFileName(), false, 'UTF-8')]
+# Introduction
 
-[for (profile : ProfileApplication | model.profileApplication)]
-	[profile/]
-	[profile.appliedProfile /]
-	[profile.appliedProfile.URI /]
-	[profile.appliedProfile.eIsProxy() /]
-[/for]
+## Purpose
+This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
 
-# Scope
+(info) It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).
 
-[model.printScope() /]
+## Scope
+
+[pkg.printScope(true, false) /]
+
+## Abbreviations
+| Abbreviation | Name                                 |
+| :----------: | :----------------------------------: |
+| CPE          | Common Platform Enumeration          |
+| CVE          | Common Vulnerabilities and Exposures |
+| HDO          | Health Delivering Organization       |
+
+# Basic information
+
+## Hardware
+
+### Hardware versions
+
+[pkg.printScope(false, true) /]
+
 	[/file]
 [/template]

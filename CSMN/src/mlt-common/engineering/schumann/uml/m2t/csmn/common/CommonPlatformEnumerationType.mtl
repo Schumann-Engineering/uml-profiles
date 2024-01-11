@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module CommonPlatformEnumerationType(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[query public csmn_toCpeTypePart(
+	this : CommonPlatformEnumerationType
+) : String =
+	     if (this = CommonPlatformEnumerationType::Hardware) then
+		'h'
+	else if (this = CommonPlatformEnumerationType::Firmware) then
+		'o'
+	else if (this = CommonPlatformEnumerationType::OperatingSystem) then
+		'o'
+	else if (this = CommonPlatformEnumerationType::Application) then
+		'a'
+	else
+		'?'
+	endif
+	endif
+	endif
+	endif
+/]
