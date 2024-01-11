@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module Profile('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[comment runs through the profile applications and "pre-loads" them /]
+[template public _loadProfiles( model : Model) post(trim())]
+[for (profile : ProfileApplication | model.profileApplication)]
+	[if (profile.appliedProfile.eIsProxy())]
+ERROR: COULD NOT LOAD PROFILE '[profile/]'!
+	[/if]
+[/for][/template]
