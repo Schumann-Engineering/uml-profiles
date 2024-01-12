@@ -1,0 +1,26 @@
+[comment encoding = UTF-8 /]
+[module Link(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[query public markdown_getLink(
+	href : String
+) : String =
+	'[' +
+		href +
+	']'
+/]
+
+
+[query public markdown_getLink(
+	text : String,
+	href : String
+) : String =
+	'[' +
+		text +
+	']' +
+	'(' +
+		href +
+	')'
+/]
