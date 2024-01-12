@@ -35,7 +35,7 @@ public interface ProductConstraint extends EObject {
 	 * @return the value of the '<em>Model</em>' attribute.
 	 * @see #setModel(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProductConstraint_Model()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getModel();
@@ -61,7 +61,7 @@ public interface ProductConstraint extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Software Version</em>' attribute list.
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProductConstraint_SoftwareVersion()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getSoftwareVersion();

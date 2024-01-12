@@ -110,7 +110,7 @@ public interface MaterialCharacteristic extends EObject {
 	 * @return the value of the '<em>Other Material Type</em>' attribute.
 	 * @see #setOtherMaterialType(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_OtherMaterialType()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getOtherMaterialType();

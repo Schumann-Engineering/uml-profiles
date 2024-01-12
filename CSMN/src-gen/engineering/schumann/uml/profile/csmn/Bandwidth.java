@@ -33,7 +33,7 @@ public interface Bandwidth extends EObject {
 	 * @return the value of the '<em>Size</em>' attribute.
 	 * @see #setSize(int)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidth_Size()
-	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	int getSize();

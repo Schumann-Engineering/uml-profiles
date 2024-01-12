@@ -215,7 +215,7 @@ public interface Connection extends EObject {
 	 * @return the value of the '<em>Is Real Time</em>' attribute.
 	 * @see #setIsRealTime(boolean)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getConnection_IsRealTime()
-	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model default="false" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isRealTime();
@@ -241,7 +241,7 @@ public interface Connection extends EObject {
 	 * @return the value of the '<em>Purpose</em>' attribute.
 	 * @see #setPurpose(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getConnection_Purpose()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPurpose();

@@ -95,7 +95,7 @@ public interface User extends EObject {
 	 * @return the value of the '<em>Use Filled Icon</em>' attribute.
 	 * @see #setUseFilledIcon(boolean)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getUser_UseFilledIcon()
-	 * @model default="false" dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
+	 * @model default="false" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isUseFilledIcon();

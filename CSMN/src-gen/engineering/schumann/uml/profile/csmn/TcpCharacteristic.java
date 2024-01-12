@@ -36,7 +36,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Application</em>' attribute.
 	 * @see #setApplication(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Application()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getApplication();
@@ -62,7 +62,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Transport</em>' attribute.
 	 * @see #setTransport(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Transport()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getTransport();
@@ -88,7 +88,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Network</em>' attribute.
 	 * @see #setNetwork(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Network()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getNetwork();
@@ -114,7 +114,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Data Link</em>' attribute.
 	 * @see #setDataLink(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_DataLink()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getDataLink();
@@ -140,7 +140,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Physical</em>' attribute.
 	 * @see #setPhysical(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Physical()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getPhysical();
@@ -166,7 +166,7 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Mechanical</em>' attribute.
 	 * @see #setMechanical(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Mechanical()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getMechanical();

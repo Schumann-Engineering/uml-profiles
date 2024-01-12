@@ -34,7 +34,7 @@ public interface Product extends CommonPlatformEnumeration {
 	 * @return the value of the '<em>Udi Di</em>' attribute.
 	 * @see #setUdiDi(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProduct_UdiDi()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getUdiDi();
@@ -60,7 +60,7 @@ public interface Product extends CommonPlatformEnumeration {
 	 * @return the value of the '<em>Udi Di Base</em>' attribute.
 	 * @see #setUdiDiBase(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProduct_UdiDiBase()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getUdiDiBase();
@@ -86,7 +86,7 @@ public interface Product extends CommonPlatformEnumeration {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Software Version</em>' attribute list.
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProduct_SoftwareVersion()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<String> getSoftwareVersion();

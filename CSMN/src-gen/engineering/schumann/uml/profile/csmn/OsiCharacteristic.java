@@ -37,7 +37,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Application</em>' attribute.
 	 * @see #setApplication(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Application()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getApplication();
@@ -63,7 +63,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Presentation</em>' attribute.
 	 * @see #setPresentation(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Presentation()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getPresentation();
@@ -89,7 +89,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Session</em>' attribute.
 	 * @see #setSession(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Session()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getSession();
@@ -115,7 +115,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Transport</em>' attribute.
 	 * @see #setTransport(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Transport()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getTransport();
@@ -141,7 +141,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Network</em>' attribute.
 	 * @see #setNetwork(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Network()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getNetwork();
@@ -167,7 +167,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Data Link</em>' attribute.
 	 * @see #setDataLink(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_DataLink()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getDataLink();
@@ -193,7 +193,7 @@ public interface OsiCharacteristic extends FlowCharacteristic {
 	 * @return the value of the '<em>Physical</em>' attribute.
 	 * @see #setPhysical(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getOsiCharacteristic_Physical()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getPhysical();

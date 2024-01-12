@@ -91,7 +91,7 @@ public interface SecurityLevel extends EObject {
 	 * @return the value of the '<em>Rational</em>' attribute.
 	 * @see #setRational(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getSecurityLevel_Rational()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getRational();
@@ -146,7 +146,7 @@ public interface SecurityLevel extends EObject {
 	 * @return the value of the '<em>Vector</em>' attribute.
 	 * @see #setVector(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getSecurityLevel_Vector()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getVector();

@@ -93,7 +93,7 @@ public interface StorageCharacteristic extends EObject {
 	 * @return the value of the '<em>Encryption</em>' attribute.
 	 * @see #setEncryption(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getStorageCharacteristic_Encryption()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getEncryption();
@@ -119,7 +119,7 @@ public interface StorageCharacteristic extends EObject {
 	 * @return the value of the '<em>Storage Format</em>' attribute.
 	 * @see #setStorageFormat(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getStorageCharacteristic_StorageFormat()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStorageFormat();
@@ -175,7 +175,7 @@ public interface StorageCharacteristic extends EObject {
 	 * @return the value of the '<em>Storage Name</em>' attribute.
 	 * @see #setStorageName(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getStorageCharacteristic_StorageName()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getStorageName();

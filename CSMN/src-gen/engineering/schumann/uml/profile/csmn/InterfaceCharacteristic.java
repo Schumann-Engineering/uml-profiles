@@ -92,7 +92,7 @@ public interface InterfaceCharacteristic extends EObject {
 	 * @return the value of the '<em>Purpose</em>' attribute.
 	 * @see #setPurpose(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic_Purpose()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getPurpose();

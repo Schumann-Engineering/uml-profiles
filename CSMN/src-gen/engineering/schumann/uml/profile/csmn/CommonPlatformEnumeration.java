@@ -65,7 +65,7 @@ public interface CommonPlatformEnumeration extends EObject {
 	 * @return the value of the '<em>Vendor Name</em>' attribute.
 	 * @see #setVendorName(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getCommonPlatformEnumeration_VendorName()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getVendorName();
@@ -91,7 +91,7 @@ public interface CommonPlatformEnumeration extends EObject {
 	 * @return the value of the '<em>Product Name</em>' attribute.
 	 * @see #setProductName(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getCommonPlatformEnumeration_ProductName()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getProductName();
@@ -117,7 +117,7 @@ public interface CommonPlatformEnumeration extends EObject {
 	 * @return the value of the '<em>Model</em>' attribute.
 	 * @see #setModel(String)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getCommonPlatformEnumeration_Model()
-	 * @model dataType="org.eclipse.uml2.types.String" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	String getModel();
