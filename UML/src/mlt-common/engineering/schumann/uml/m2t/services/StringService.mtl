@@ -14,15 +14,35 @@
 	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'getUChars(java.lang.String)', Sequence{arg0}) /]
 
 [comment pads a string to the left /]
+[query public padLeft(str : String, length : Integer) : String
+	= str.padLeft(length, ' ') /]
+
+[comment pads a string to the left (UNSAFE) /]
+[query public padLeftUnsafe(str : OclAny, length : Integer) : String
+	= str.padLeftUnsafe(length, ' ') /]
+
+[comment pads a string to the left /]
 [query public padLeft(str : String, length : Integer, padding : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padLeft(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
+
+[comment pads a string to the left (UNSAFE) /]
+[query public padLeftUnsafe(str : OclAny, length : Integer, padding : String) : String
 	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padLeft(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
 
 [comment pads a string to the right /]
 [query public padRight(str : String, length : Integer) : String
-	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, ' '}) /]
+	= str.padRight(length, ' ') /]
+
+[comment pads a string to the right (UNSAFE) /]
+[query public padRightUnsafe(str : OclAny, length : Integer) : String
+	= str.padRightUnsafe(length, ' ') /]
 
 [comment pads a string to the right /]
 [query public padRight(str : String, length : Integer, padding : String) : String
+	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
+
+[comment pads a string to the right (UNSAFE) /]
+[query public padRightUnsafe(str : OclAny, length : Integer, padding : String) : String
 	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
 
 [comment trims a string by looking for a certain string /]
