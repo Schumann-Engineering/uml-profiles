@@ -10,6 +10,7 @@
 [import engineering::schumann::uml::m2t::services::StereotypeService/]
 [import engineering::schumann::uml::m2t::csmn::common::CpeCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::Product /]
+[import engineering::schumann::uml::m2t::csmn::markdown::Product /]
 [import engineering::schumann::uml::m2t::csmn::common::Scope /]
 [import engineering::schumann::uml::m2t::services::StringService /]
 
@@ -21,10 +22,10 @@
 )
 ? ( this.csmn_isScoped() )
 ]
-| Trade name      | Model or version number   | UDI-DI / GTIN | Base-UDI-DI / GMN | [if (printSoftware)]Software release |[/if] [if (printCpe)]CPE |[/if]
-| :-------------: | :-----------------------: | :-----------: | :---------------: | [if (printSoftware)]:--------------: |[/if] [if (printCpe)]:-: |[/if]
+| Trade name      | Model or version number   | UDI-DI / GTIN   | Base-UDI-DI / GMN    |[if (printSoftware)] Software release |[/if][if (printCpe)] CPE                                                |[/if]
+| :-------------: | :-----------------------: | :-------------: | :------------------: |[if (printSoftware)] :--------------: |[/if][if (printCpe)] :------------------------------------------------: |[/if]
 [for (product : Product | this.csmn_getScopeProducts())]
-| [product.productName /] | [product.model /] | [product.udiDi/] | [product.udiDiBase/] |[if (printSoftware)][for (product.softwareVersion) separator (', ')] [self/][/for] |[/if][if (printCpe)] [product.csmn_getCpe()/] |[/if]
+| [product.productName.padRightUnsafe(15, ' ') /] | [product.model.padRightUnsafe(25, ' ') /] | [product.udiDi.padRightUnsafe(15, ' ') /] | [product.udiDiBase.padRightUnsafe(20, ' ')/] |[if (printSoftware)][for (product.softwareVersion) separator ('<br/>')] [self/][/for] |[/if][if (printCpe)] [product.csmn_markdown_getCpeLink().padRightUnsafe(55, ' ')/]<br/>old: [product.csmn_markdown_getCpeLinkOld().padRightUnsafe(55, ' ')/] |[/if]
 [/for]
 [/template]
 

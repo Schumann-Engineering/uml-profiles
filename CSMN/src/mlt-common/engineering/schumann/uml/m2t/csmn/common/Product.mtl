@@ -4,10 +4,23 @@
 	'http://schumann.engineering/csmn/1'
 )]
 
-[import engineering::schumann::uml::m2t::csmn::common::CommonPlatformEnumerationType /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+
+
+[query private csmn_getCpeBasis(
+	this : Product
+) : String =
+	nist_getCpe(this.platformType, this.vendorName, this.productName) + ':'
+/]
 
 [query public csmn_getCpe(
 	this : Product
 ) : String =
-	'cpe:2.3:' + this.platformType.csmn_toCpeTypePart() + ':' + this.vendorName + ':' + this.productName + ':' + this.model
+	this.csmn_getCpeBasis() + this.model
+/]
+
+[query public csmn_getCpeOld(
+	this : Product
+) : String =
+	this.csmn_getCpeBasis() + '-'
 /]
