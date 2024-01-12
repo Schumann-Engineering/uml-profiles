@@ -1,0 +1,25 @@
+[comment encoding = UTF-8 /]
+[module CommonPlatformEnumeration(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::csmn::common::CommonPlatformEnumerationType /]
+
+
+[query public nist_getCpe(
+	type : CommonPlatformEnumerationType,
+	vendor : String,
+	product : String
+) : String =
+	'cpe:2.3:' + type.csmn_toCpeTypePart() + ':' + vendor + ':' + product
+/]
+
+[query public nist_getCpe(
+	type : CommonPlatformEnumerationType,
+	vendor : String,
+	product : String,
+	model : String
+) : String =
+	nist_getCpe(type, vendor, product) + ':' + model
+/]
