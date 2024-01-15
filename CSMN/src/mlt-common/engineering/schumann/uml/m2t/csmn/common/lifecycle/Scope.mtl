@@ -1,0 +1,65 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import org::eclipse::acceleo::m2t::services::PropertyFileService /]
+
+
+[query public csmn_allScopeElements(
+	this : Namespace
+) : Set(Element) =
+	this._allStereotypedElements('CSMN::Scope')
+/]
+
+
+[query public csmn_hasScope(
+	this : NamedElement
+) : Boolean =
+	this._hasStereotype('CSMN::Scope')
+/]
+
+
+[query public csmn_hasProductInScope(
+	this : Scope
+) : Boolean =
+	this
+	.csmn_productInScope()
+	->size() > 0
+/]
+
+
+[query public csmn_hasValidScope(
+	this : NamedElement
+) : Boolean =
+	let scope : Scope = this.csmn_scope() in
+	if scope <> null then
+		scope
+		.product
+		->csmn_filterInScope()
+		->size() > 0
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_scope(
+	this : NamedElement
+) : Scope =
+	this
+	._getStereotypeInstance('CSMN::Scope')
+/]
+
+
+[query public csmn_productInScope(
+	this : Scope
+) : Set(Product) =
+	this
+	.product
+	->csmn_filterInScope()
+/]

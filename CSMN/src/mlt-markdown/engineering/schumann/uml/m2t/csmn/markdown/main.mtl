@@ -1,18 +1,38 @@
 [comment encoding = UTF-8 /]
 [module main(
-	'http://www.eclipse.org/uml2/5.0.0/UML'
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
 )]
 
-[import engineering::schumann::uml::m2t::Profile /]
+[import engineering::schumann::uml::m2t::Element /]
 [import engineering::schumann::uml::m2t::services::EnvironmentService /]
-[import engineering::schumann::uml::m2t::csmn::common::Scope /]
-[import engineering::schumann::uml::m2t::csmn::markdown::Scope /]
+[import engineering::schumann::uml::m2t::services::StereotypeService /]
+[import engineering::schumann::uml::m2t::test::Profile /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::interfaces::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::Port /]
+[import engineering::schumann::uml::m2t::csmn::markdown::uml::VisibilityKind /]
+[import net::daringfireball::markdown::Table /]
 
 
 [query public getFileName(
 	element : NamedElement
 ) : String =
-	element.eClass().name + '/' + element.name + '.md'
+	element.getFileName('')
+/]
+
+
+[query public getFileName(
+	element : NamedElement,
+	suffix  : String
+) : String =
+	element.eClass().name + '/' + element.name + suffix + '.md'
 /]
 
 
@@ -23,7 +43,7 @@
  * ====================
 */]
 [template public mainModel(
-	model : Model
+	this : Model
 )]
 	[comment @main/]
 
@@ -39,9 +59,17 @@
 	[comment
 		this isn't necessary since Acceleo 3.1. Load properties by passing them as argument
 	/]
+	[file (this.getFileName(' (test-report)'), false, 'UTF-8')]
+# Self-test
 
-	[comment WORKAROUND: pre-load profiles /]
-	[model._loadProfiles() /]
+## Profiles
+
+[this.testProfiles() /]
+
+## Stereotypes
+
+[this.testStereotypes() /]
+	[/file]
 
 
 	[comment 
@@ -49,7 +77,7 @@
 		GO!
 		====================
 	/]
-	[for (pkg : Package | model.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
+	[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
 [pkg.generateMarkdown() /]
 	[/for]
 [/template]
@@ -64,9 +92,14 @@
  * Generates markdown files for packages
  */]
 [template private generateMarkdown(
-	pkg : Package
+	this : Package
 )]
-	[file (pkg.getFileName(), false, 'UTF-8')]
+	[file (this.getFileName(), false, 'UTF-8')]
+[comment
+	====================
+	INTRODUCTION
+	====================
+/]
 # Introduction
 
 ## Purpose
@@ -76,7 +109,7 @@ This documents describe the security characteristics of the product(s) in scope.
 
 ## Scope
 
-[pkg.printScope(true, false) /]
+[this.printScope(true, false) /]
 
 ## Abbreviations
 | Abbreviation | Name                                 |
@@ -85,13 +118,189 @@ This documents describe the security characteristics of the product(s) in scope.
 | CVE          | Common Vulnerabilities and Exposures |
 | HDO          | Health Delivering Organization       |
 
+[comment
+	====================
+	BASIC INFORMATION
+	====================
+/]
 # Basic information
 
-## Hardware
+[comment
+	--------------------
+	HARDWARE
+	--------------------
+/]
+## Hardware versions
 
-### Hardware versions
+[this.printScope(false, true) /]
 
-[pkg.printScope(false, true) /]
+[comment
+	--------------------
+	SOFTWARE
+	--------------------
+/]
+## Software versions
 
+As of writing the following software versions have been released:
+
+**TBD**
+
+[comment
+	====================
+	PRODUCT ARCHITECTURE
+	====================
+/]
+# Product Architecture
+
+This section describes the boundary of the product and how its interfaces with the environment and different user groups. 
+
+[comment
+	--------------------
+	DIAGRAM
+	--------------------
+/]
+[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
+## Overview [product.productName/] (model [product.model/])
+
+!['[['/][product.productName/]-Product_Architecture_Diagram_([product.model/]).svg[']]'/]
+
+[/for]
+
+[comment
+	--------------------
+	PRODUCT INTERFACES
+	--------------------
+/]
+## Product interfaces
+
+### Definition
+
+A PRODUCT INTERFACE
+- can be directly used by an operator of the product
+- is a technical interface which is being exposed by the top-most level of system components in the system architecture
+
+There are different types of PRODUCT INTERFACE:
+
+1. **NETWORK INTERFACE**
+    is an interface to directly connect to a networked infrastructure
+    
+    *Examples*: Bluetooth, ZigBee, Ethernet, WLAN
+2. **NON-NETWORK INTERFACE**
+    is an electronic data interchange interface
+    
+    *Examples*: touch screen, USB port, RS-232 port
+3. **STORAGE MEDIA**
+    is used for writing or retrieving data from a (mostly) non-volatile data storage.
+    
+    *Examples*: SD card, USB mass storage device, CF card
+4. **MATERIAL INTERFACE**
+    provides or receives physical material.
+    
+    *Examples*: flow of air
+5. **ENERGY INTERFACE**
+    provides or receives any form of energy like electricity, light or sound.
+    
+    *Examples*: power plugs, alarm light, speaker
+
+### List of PRODUCT INTERFACE
+
+#### Network interface
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
+[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasNetworkPort() )->sortedBy(name))]
+[for (port : Port | component.csmn_networkPort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+
+
+#### Non-Network interface
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
+[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasNonNetworkPort() )->sortedBy(name))]
+[for (port : Port | component.csmn_nonNetworkPort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+
+
+#### Storage Media
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
+[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasStoragePort() )->sortedBy(name))]
+[for (port : Port | component.csmn_storagePort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+
+
+#### Material interface
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
+[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasMaterialPort() )->sortedBy(name))]
+[for (port : Port | component.csmn_materialPort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+
+
+#### Energy interface
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
+[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasEnergyPort() )->sortedBy(name))]
+[for (port : Port | component.csmn_energyPort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+
+[comment
+	--------------------
+	CONNECTIONS
+	--------------------
+/]
+
+## Interface connections
+
+### Definition
+
+An INTERFACE CONNECTION
+- is a link from one interface to another
+- describes use-case specific characteristics between those interfaces, e.g. which protocol is used
+
+### List of INTERFACE CONNECTION
+
+[comment
+	--------------------
+	SOFTWARE
+	--------------------
+/]
+## Software
+
+**TBD**
 	[/file]
+[/template]
+
+
+[template private printComponentPortAsTableCell(
+	component : Component,
+	port      : Port
+)
+post(trim())]
+[comment System Element /]
+<td>[component.name /]</td>
+[comment Security Zone /]
+<td>[if (component.csmn_hasSecurityZone())][component.csmn_securityZoneElement().name/][else]./.[/if]</td>
+[comment PRODUCT INTERFACE /]
+<td>[port.name/]</td>
+[comment Purpose /]
+<td>[port.csmn_interfaceCharacteristic().purpose /]</td>
+[comment Accessibility /]
+<td>[port.visibility.printVisibilityAsTableCell().toMarkdownTableCell() /]</td>
+[comment PRODUCT INTERFACE Characteristics /]
+<td>[port.printCharacteristicsAsTableCell().toMarkdownTableCell()/]</td> 
 [/template]

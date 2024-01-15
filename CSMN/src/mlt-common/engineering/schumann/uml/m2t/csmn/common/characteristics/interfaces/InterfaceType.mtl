@@ -1,0 +1,114 @@
+[comment encoding = UTF-8 /]
+[module InterfaceType(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_interfaceTypeCategory(
+	this : InterfaceType
+) : String =
+	     if (this = InterfaceType::Unspecified) 	then '?'
+	else if (this = InterfaceType::AirByFan) 		then 'material'
+	else if (this = InterfaceType::AirByTurbine)	then 'material'
+	else if (this = InterfaceType::Alarmlight)		then 'energy'
+	else if (this = InterfaceType::Bluetooth)		then 'network'
+	else if (this = InterfaceType::Cellular)		then 'network'
+	else if (this = InterfaceType::Cellular2G)		then 'network'
+	else if (this = InterfaceType::Cellular3G)		then 'network'
+	else if (this = InterfaceType::Cellular4G)		then 'network'
+	else if (this = InterfaceType::Cellular5G)		then 'network'
+	else if (this = InterfaceType::Display)			then 'energy'
+	else if (this = InterfaceType::DisplaySmall)	then 'energy'
+	else if (this = InterfaceType::Ethernet)		then 'network'
+	else if (this = InterfaceType::Hdmi)			then 'energy'
+	else if (this = InterfaceType::Knob)			then 'energy'
+	else if (this = InterfaceType::Nfc)				then 'non-network'
+	else if (this = InterfaceType::Optical)			then 'non-network'
+	else if (this = InterfaceType::Power)			then 'energy'
+	else if (this = InterfaceType::Proprietary)		then '?'
+	else if (this = InterfaceType::SdCard)			then 'storage'
+	else if (this = InterfaceType::Serial)			then 'non-medical'
+	else if (this = InterfaceType::Speaker)			then 'energy'
+	else if (this = InterfaceType::Touch)			then 'energy'
+	else if (this = InterfaceType::Usb)				then 'non-network'
+	else if (this = InterfaceType::UsbA)			then 'non-network'
+	else if (this = InterfaceType::UsbC)			then 'non-network'
+	else if (this = InterfaceType::UsbFlash)		then 'storage'
+	else if (this = InterfaceType::WifiAccessPoint)	then 'network'
+	else if (this = InterfaceType::WifiClient)		then 'network'
+	else if (this = InterfaceType::Zigbee)			then 'network'
+	else '?'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public csmn_isEnergyInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = 'energy'
+/]
+
+
+[query public csmn_isNetworkInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = 'network'
+/]
+
+
+[query public csmn_isNonNetworkInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = 'non-network'
+/]
+
+
+[query public csmn_isMaterialInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = 'material'
+/]
+
+
+[query public csmn_isStorageInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = 'storage'
+/]
+
+
+[query public csmn_isOtherInterface(
+	this : InterfaceType
+) : Boolean =
+	this.csmn_interfaceTypeCategory() = '?'
+/]

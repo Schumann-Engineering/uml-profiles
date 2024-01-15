@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Operation;
@@ -177,6 +180,39 @@ public class StereotypeServiceImpl {
 		
 		return false;
 	}
+	
+	
+	public static EObject getStereotypeInstance(
+			Element element,
+			Stereotype stereotype
+	)
+	{		
+		// === GUARDS ===
+		if (element == null)
+			return null;
+		if (stereotype == null)
+			return null;
+		
+		
+		// === BODY ===
+		// we only look in the same resource as the element itself
+		// = same model file
+		Resource resource = element.eResource();
+		
+		// search for elements
+		TreeIterator<EObject> elements = resource.getAllContents();
+		while (elements.hasNext())
+		{
+			EObject candidate = elements.next();
+			
+			if (isMatch(element, stereotype, candidate))
+				// === SUCCESS ===
+				return candidate;
+		}
+		
+		// === FAILURE ===
+		return null;
+	}
 
 
 	
@@ -191,10 +227,60 @@ public class StereotypeServiceImpl {
 			Element element,
 			Stereotype stereotype)
 	{
+		// === BODY ===
 		for (Stereotype st : element.getAppliedStereotypes())
 			if (st.equals(stereotype))
+				// === SUCCESS ===
 				return true;
 		
+		// === FAILURE ===
 		return false;		
 	}
+	
+	
+	protected static Boolean isMatch(
+			Element element,
+			Stereotype stereotype,
+			EObject candidate
+	)
+	{
+		// === GUARDS ===
+		if (element == null)
+			return false;
+		if (stereotype == null)
+			return false;
+		if (candidate == null)
+			return false;
+		
+		// === BODY ===
+		var metaClass = candidate.eClass();
+		
+		// CHECK 1: name has to match
+		var candidateName = metaClass.getName();
+		var stereotypeName = stereotype.getName();
+
+// FIXME this should look for the EPackage Annotation and match FQNs, not only name.
+		if (!candidateName.equals(stereotypeName))
+			// === FAILURE ===
+			return false;
+
+		// CHECK 2: candidate needs a "base_*" property matching element
+		for (var attribute : metaClass.getEStructuralFeatures())
+		{
+			// GUARD: has to start with "base_"
+			if (!attribute.getName().startsWith("base_"))
+				continue;
+			
+			// try it!
+			var value = candidate.eGet(attribute);
+			if (value == element)
+				// === SUCCESS ===
+				return true;
+		}
+
+		
+		// === FAILURE ===
+		return false;
+	}
+	
 }

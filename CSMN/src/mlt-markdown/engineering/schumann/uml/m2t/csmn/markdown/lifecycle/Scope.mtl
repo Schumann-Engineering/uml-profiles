@@ -1,0 +1,58 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://www.eclipse.org/uml2/5.0.0/Types',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::Element /]
+[import engineering::schumann::uml::m2t::services::StereotypeService/]
+[import engineering::schumann::uml::m2t::services::StringService /]
+[import engineering::schumann::uml::m2t::csmn::common::CpeCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Product /]
+[import net::daringfireball::markdown::Table /]
+
+
+[template public printScope(
+	this : Package,
+	printSoftware : Boolean,
+	printCpe : Boolean
+)
+? ( this.csmn_isScoped() )
+post(trim())
+]
+| Trade name      | Model or version number   | UDI-DI / GTIN   | Base-UDI-DI / GMN    |[if (printSoftware)] Software release |[/if][if (printCpe)] CPE                                                |[/if]
+| :-------------: | :-----------------------: | :-------------: | :------------------: |[if (printSoftware)] :--------------: |[/if][if (printCpe)] :------------------------------------------------: |[/if]
+[for (product : Product | this.csmn_scope().csmn_productInScope())]
+[printScope(product, printSoftware, printCpe).toMarkdownTableRow() /]
+[/for]
+[/template]
+
+
+[template private printScope(
+	product : Product,
+	printSoftware : Boolean,
+	printCpe : Boolean
+)
+post(trim())]
+[comment Trade name /]
+<td>[product.productName.padRightUnsafe(15, ' ') /]</td>
+[comment Model or version number /]
+<td>[product.model.padRightUnsafe(25, ' ') /]</td>
+[comment UDI-DI / GTIN /]
+<td>[product.udiDi.padRightUnsafe(15, ' ') /]</td>
+[comment Base-UDI-DI / GMN /]
+<td>[product.udiDiBase.padRightUnsafe(20, ' ')/]</td>
+[comment Software release /]
+[if (printSoftware)]
+<td>[for (product.csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
+[/if]
+[comment CPE /]
+[if (printCpe)]
+<td>[product.csmn_markdown_getCpeLink().padRightUnsafe(55, ' ')/]<br/>
+old: [product.csmn_markdown_getCpeLinkOld().padRightUnsafe(55, ' ')/]</td>
+[/if]
+[/template]

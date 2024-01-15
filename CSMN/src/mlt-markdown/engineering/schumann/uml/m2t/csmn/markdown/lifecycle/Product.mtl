@@ -4,7 +4,7 @@
 	'http://schumann.engineering/csmn/1'
 )]
 
-[import engineering::schumann::uml::m2t::csmn::common::Product /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import gov::nist::nvd::vuln::CommonVulnerabilitiesExposures /]
 [import net::daringfireball::markdown::Link /]
 
@@ -12,7 +12,7 @@
 [query public csmn_markdown_getCpeLink(
 	this : Product
 ) : String =
-	let cpeString : String = this.csmn_getCpe()
+	let cpeString : String = this.csmn_cpe()
 	in
 		markdown_getLink( cpeString, cpeString.nist_getCpeLink() )
 /]
@@ -21,7 +21,7 @@
 [query public csmn_markdown_getCpeLinkOld(
 	this : Product
 ) : String =
-	let cpeString : String = this.csmn_getCpeOld()
+	let cpeString : String = this.csmn_cpeOld()
 	in
 		markdown_getLink( cpeString, cpeString.nist_getCpeLink() )
 /]

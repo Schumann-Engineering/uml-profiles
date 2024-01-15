@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module SystemElement(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_allSystemElement(
+	this : Element
+) : Set(Component) =
+	this
+	._allStereotypedElements('CSMN::SystemElement')
+	->filter(Component)
+/]
+
+
+[query public csmn_isSystemElement(
+	this : Component
+) : Boolean =
+	this
+	._hasStereotype('CSMN::SystemElement')
+/]

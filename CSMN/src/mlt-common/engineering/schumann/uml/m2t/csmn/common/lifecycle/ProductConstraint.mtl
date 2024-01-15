@@ -1,0 +1,44 @@
+[comment encoding = UTF-8 /]
+[module ProductConstraint(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_Model /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
+[import org::eclipse::acceleo::m2t::services::PropertyFileService /]
+
+
+[query public csmn_filterInScope(
+	this : Set(ProductConstraint)
+) : Set(ProductConstraint) =
+	this
+	->select( productConstraint : ProductConstraint | productConstraint.csmn_hasValidScope() )
+	->sortedBy( model )
+/]
+
+
+[query public csmn_hasValidScope(
+	this : Set(ProductConstraint)
+) : Boolean =
+	if (this <> null) then
+		this
+		->csmn_filterInScope()
+		->size() > 0
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this : ProductConstraint
+) : Boolean =
+	if (this <> null) then
+		this.model.csmn_hasValidScopeAsModel() and
+		this.softwareVersion->csmn_hasValidScopeAsSoftwareVersion()
+	else
+		true
+	endif
+/]

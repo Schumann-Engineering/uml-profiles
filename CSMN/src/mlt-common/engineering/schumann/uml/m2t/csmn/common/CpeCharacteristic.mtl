@@ -4,18 +4,17 @@
 	'http://schumann.engineering/csmn/1'
 )]
 
-[import engineering::schumann::uml::m2t::Model /]
 [import engineering::schumann::uml::m2t::Element /]
 
 
-[query public csmn_getAllCpe(
+[query public csmn_allCpe(
 	this : Model
 ) : Set(Element) =
-	this._getAllStereotypedElements('CSMN::CpeCharacteristic')
+	this._allStereotypedElements('CSMN::CpeCharacteristic')
 /]
 
 
-[query public csmn_getCpes(
+[query public csmn_cpes(
 	this : NamedElement
 ) : Set(CommonPlatformEnumeration) =
 	this

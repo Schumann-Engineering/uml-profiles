@@ -1,0 +1,66 @@
+[comment encoding = UTF-8 /]
+[module PropertyFileService('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+
+[query public isContainedInEnvironmentProperty(
+	needle : OclAny,
+	propertyKey : String
+) : Boolean =
+	invoke(
+		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
+		'isContainedInEnvironmentProperty(java.lang.String, java.lang.String)', 
+		Sequence{
+			needle,
+			getProperty(propertyKey)
+		}
+	)
+/]
+
+
+[query public isContainedInEnvironmentProperty(
+	needle : OclAny,
+	propertyKey : String,
+	delimiter : String
+) : Boolean =
+	invoke(
+		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
+		'isContainedInEnvironmentProperty(java.lang.String, java.lang.String, java.lang.String)', 
+		Sequence{
+			needle,
+			getProperty(propertyKey),
+			delimiter
+		}
+	)
+/]
+
+
+[query public isContainedInEnvironmentPropertyAsVersion(
+	needleAsVersion : OclAny,
+	propertyKey : String
+) : Boolean =
+	invoke(
+		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
+		'isContainedInEnvironmentPropertyAsVersion(java.lang.String, java.lang.String)', 
+		Sequence{
+			needleAsVersion,
+			getProperty(propertyKey)
+		}
+	)
+/]
+
+
+[query public isContainedInEnvironmentPropertyAsVersion(
+	needleAsVersion : OclAny,
+	propertyKey : String,
+	delimiter : String
+) : Boolean =
+	invoke(
+		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
+		'isContainedInEnvironmentPropertyAsVersion(java.lang.String, java.lang.String, java.lang.String)', 
+		Sequence{
+			needleAsVersion,
+			getProperty(propertyKey),
+			delimiter
+		}
+	)
+/]

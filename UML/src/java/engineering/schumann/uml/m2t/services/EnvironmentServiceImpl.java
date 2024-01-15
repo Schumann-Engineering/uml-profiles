@@ -1,8 +1,8 @@
 package engineering.schumann.uml.m2t.services;
 
-import java.util.Properties;
-import java.io.IOException;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 /**
  * The Environment class is used to export environment variables to Acceleo templates
@@ -20,7 +20,7 @@ public class EnvironmentServiceImpl {
 	 * Constant "True Values" (strings which are used to represent boolean true)
 	 */
 	private static final String[] TRUE_VALUES = { "1", "on" ,"yes" , "true" };
-	
+
 	
 	/**
 	 * Property "Properties" which hold a key-value index of key to property

@@ -7,7 +7,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::CommonPlatformEnumerationType /]
 
 
-[query public nist_getCpe(
+[query public nist_cpe(
 	type : CommonPlatformEnumerationType,
 	vendor : String,
 	product : String
@@ -15,11 +15,12 @@
 	'cpe:2.3:' + type.csmn_toCpeTypePart() + ':' + vendor + ':' + product
 /]
 
-[query public nist_getCpe(
+
+[query public nist_cpe(
 	type : CommonPlatformEnumerationType,
 	vendor : String,
 	product : String,
 	model : String
 ) : String =
-	nist_getCpe(type, vendor, product) + ':' + model
+	nist_cpe(type, vendor, product) + ':' + model
 /]

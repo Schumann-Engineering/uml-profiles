@@ -8,5 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="lib/maven-artifact/4.0.0-alpha-10/maven-artifact-4.0.0-alpha-10.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

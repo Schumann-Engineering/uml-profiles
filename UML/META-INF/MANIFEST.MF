@@ -1,15 +1,14 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: %pluginName
-Bundle-Vendor: %vendorName
-Bundle-SymbolicName: UML
-Bundle-Version: 0.1.0
-COMMENT_1: we do the duplication because Eclipse likes to be "intelligent" and rename this if the project is renamed.
+Bundle-Name: UML profiles and M2T
+Bundle-Vendor: Schumann.Engineering
 Bundle-SymbolicName: engineering.schumann.uml;singleton:=true
+Bundle-Version: 0.1.0
 Automatic-Module-Name: engineering.schumann.uml
 Bundle-Activator: engineering.schumann.uml.Activator
 Export-Package: engineering.schumann.uml,
- engineering.schumann.uml.m2t.services
+ engineering.schumann.uml.m2t.services,
+ org.eclipse.acceleo.m2t.services
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml,
  org.eclipse.emf.ecore,
