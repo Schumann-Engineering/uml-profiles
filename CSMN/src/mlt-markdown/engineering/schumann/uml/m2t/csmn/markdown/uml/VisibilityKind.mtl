@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module VisibilityKind(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public printVisibilityAsTableCell(
+	this : VisibilityKind
+)
+post(trim())]
+***physicial access***:
+[if (this = VisibilityKind::public)]anyone
+[elseif (this = VisibilityKind::protected)]anyone
+[elseif (this = VisibilityKind::_package)]anyone
+[elseif (this = VisibilityKind::private)]vendor, technician (opening up of device required)[/if]
+
+***functionality***:
+[if (this = VisibilityKind::public)]anyone
+[elseif (this = VisibilityKind::protected)]vendor
+[elseif (this = VisibilityKind::_package)]vendor, technican (special tools required)
+[elseif (this = VisibilityKind::private)]vendor[/if]
+[/template]

@@ -903,6 +903,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/toslink.svg';
 }
 
+/* === InterfaceType.Power === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Power"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/lightning-bolt.svg';
+}
+
 /* === InterfaceType.Proprietary === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Proprietary"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/midi-port.svg';
@@ -970,7 +975,7 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
 }
 
-/* === InterfaceType.Alarmlight === */
+/* === InterfaceConnector.Alarmlight === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Alarmlight"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/alarm-light.svg';
 }
