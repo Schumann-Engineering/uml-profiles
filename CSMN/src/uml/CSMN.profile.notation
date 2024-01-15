@@ -1272,6 +1272,10 @@
     <children xmi:type="notation:Shape" xmi:id="_ad39ALPBEe66FbT5ne0sGQ" type="Enumeration_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_ad4kELPBEe66FbT5ne0sGQ" type="Enumeration_NameLabel"/>
       <children xmi:type="notation:BasicCompartment" xmi:id="_ad4kEbPBEe66FbT5ne0sGQ" type="Enumeration_LiteralCompartment">
+        <children xmi:type="notation:Shape" xmi:id="_4CCkgLPMEe66FbT5ne0sGQ" type="EnumerationLiteral_LiteralLabel">
+          <element xmi:type="uml:EnumerationLiteral" href="CSMN.profile.uml#_4B9E8LPMEe66FbT5ne0sGQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_4CCkgbPMEe66FbT5ne0sGQ"/>
+        </children>
         <children xmi:type="notation:Shape" xmi:id="_fo5QYLPBEe66FbT5ne0sGQ" type="EnumerationLiteral_LiteralLabel">
           <element xmi:type="uml:EnumerationLiteral" href="CSMN.profile.uml#_ebK5A7PBEe66FbT5ne0sGQ"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_fo5QYbPBEe66FbT5ne0sGQ"/>

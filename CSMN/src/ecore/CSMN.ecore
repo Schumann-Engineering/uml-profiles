@@ -252,7 +252,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceConnector" ordered="false"
-        eType="#//InterfaceConnector" defaultValueLiteral="None"/>
+        eType="#//InterfaceConnector" defaultValueLiteral="Unspecified"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
     <eLiterals name="Unspecified"/>
@@ -287,22 +287,23 @@
     <eLiterals name="Zigbee" value="29"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InterfaceConnector">
-    <eLiterals name="None"/>
-    <eLiterals name="Hardwired" value="1"/>
-    <eLiterals name="Hdmi" value="2"/>
-    <eLiterals name="Knob" value="3"/>
-    <eLiterals name="Luer" value="4"/>
-    <eLiterals name="RJ45" value="5"/>
-    <eLiterals name="IecPlugC" value="6"/>
-    <eLiterals name="IecPlugC13" value="7"/>
-    <eLiterals name="IecSocketC14" value="8"/>
-    <eLiterals name="Proprietary" value="9"/>
-    <eLiterals name="SdCard" value="10"/>
-    <eLiterals name="SubD" value="11"/>
-    <eLiterals name="Toslink" value="12"/>
-    <eLiterals name="UsbA" value="13"/>
-    <eLiterals name="UsbC" value="14"/>
-    <eLiterals name="Wireless" value="15"/>
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="None" value="1"/>
+    <eLiterals name="Hardwired" value="2"/>
+    <eLiterals name="Hdmi" value="3"/>
+    <eLiterals name="Knob" value="4"/>
+    <eLiterals name="Luer" value="5"/>
+    <eLiterals name="RJ45" value="6"/>
+    <eLiterals name="IecPlugC" value="7"/>
+    <eLiterals name="IecPlugC13" value="8"/>
+    <eLiterals name="IecSocketC14" value="9"/>
+    <eLiterals name="Proprietary" value="10"/>
+    <eLiterals name="SdCard" value="11"/>
+    <eLiterals name="SubD" value="12"/>
+    <eLiterals name="Toslink" value="13"/>
+    <eLiterals name="UsbA" value="14"/>
+    <eLiterals name="UsbC" value="15"/>
+    <eLiterals name="Wireless" value="16"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristics">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"

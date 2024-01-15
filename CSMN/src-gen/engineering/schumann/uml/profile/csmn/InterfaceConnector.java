@@ -19,6 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum InterfaceConnector implements Enumerator {
 	/**
+	 * The '<em><b>Unspecified</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNSPECIFIED(0, "Unspecified", "Unspecified"), /**
 	 * The '<em><b>None</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26,7 +34,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NONE(0, "None", "None"), /**
+	NONE(1, "None", "None"), /**
 	 * The '<em><b>Hardwired</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,7 +42,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HARDWIRED(1, "Hardwired", "Hardwired"), /**
+	HARDWIRED(2, "Hardwired", "Hardwired"), /**
 	 * The '<em><b>Hdmi</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -42,7 +50,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HDMI(2, "Hdmi", "Hdmi"), /**
+	HDMI(3, "Hdmi", "Hdmi"), /**
 	 * The '<em><b>Knob</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -50,7 +58,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	KNOB(3, "Knob", "Knob"), /**
+	KNOB(4, "Knob", "Knob"), /**
 	 * The '<em><b>Luer</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +66,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LUER(4, "Luer", "Luer"), /**
+	LUER(5, "Luer", "Luer"), /**
 	 * The '<em><b>RJ45</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -66,7 +74,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RJ45(5, "RJ45", "RJ45"), /**
+	RJ45(6, "RJ45", "RJ45"), /**
 	 * The '<em><b>Iec Plug C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,7 +82,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IEC_PLUG_C(6, "IecPlugC", "IecPlugC"), /**
+	IEC_PLUG_C(7, "IecPlugC", "IecPlugC"), /**
 	 * The '<em><b>Iec Plug C13</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,7 +90,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IEC_PLUG_C13(7, "IecPlugC13", "IecPlugC13"), /**
+	IEC_PLUG_C13(8, "IecPlugC13", "IecPlugC13"), /**
 	 * The '<em><b>Iec Socket C14</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,7 +98,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IEC_SOCKET_C14(8, "IecSocketC14", "IecSocketC14"), /**
+	IEC_SOCKET_C14(9, "IecSocketC14", "IecSocketC14"), /**
 	 * The '<em><b>Proprietary</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,7 +106,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROPRIETARY(9, "Proprietary", "Proprietary"), /**
+	PROPRIETARY(10, "Proprietary", "Proprietary"), /**
 	 * The '<em><b>Sd Card</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,7 +114,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SD_CARD(10, "SdCard", "SdCard"), /**
+	SD_CARD(11, "SdCard", "SdCard"), /**
 	 * The '<em><b>Sub D</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,7 +122,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUB_D(11, "SubD", "SubD"), /**
+	SUB_D(12, "SubD", "SubD"), /**
 	 * The '<em><b>Toslink</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -122,7 +130,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TOSLINK(12, "Toslink", "Toslink"), /**
+	TOSLINK(13, "Toslink", "Toslink"), /**
 	 * The '<em><b>Usb A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +138,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_A(13, "UsbA", "UsbA"), /**
+	USB_A(14, "UsbA", "UsbA"), /**
 	 * The '<em><b>Usb C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,7 +146,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_C(14, "UsbC", "UsbC"), /**
+	USB_C(15, "UsbC", "UsbC"), /**
 	 * The '<em><b>Wireless</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -146,7 +154,18 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WIRELESS(15, "Wireless", "Wireless");
+	WIRELESS(16, "Wireless", "Wireless");
+
+	/**
+	 * The '<em><b>Unspecified</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED
+	 * @model name="Unspecified"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSPECIFIED_VALUE = 0;
 
 	/**
 	 * The '<em><b>None</b></em>' literal value.
@@ -157,7 +176,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NONE_VALUE = 0;
+	public static final int NONE_VALUE = 1;
 
 	/**
 	 * The '<em><b>Hardwired</b></em>' literal value.
@@ -168,7 +187,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HARDWIRED_VALUE = 1;
+	public static final int HARDWIRED_VALUE = 2;
 
 	/**
 	 * The '<em><b>Hdmi</b></em>' literal value.
@@ -179,7 +198,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HDMI_VALUE = 2;
+	public static final int HDMI_VALUE = 3;
 
 	/**
 	 * The '<em><b>Knob</b></em>' literal value.
@@ -190,7 +209,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int KNOB_VALUE = 3;
+	public static final int KNOB_VALUE = 4;
 
 	/**
 	 * The '<em><b>Luer</b></em>' literal value.
@@ -201,7 +220,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LUER_VALUE = 4;
+	public static final int LUER_VALUE = 5;
 
 	/**
 	 * The '<em><b>RJ45</b></em>' literal value.
@@ -212,7 +231,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RJ45_VALUE = 5;
+	public static final int RJ45_VALUE = 6;
 
 	/**
 	 * The '<em><b>Iec Plug C</b></em>' literal value.
@@ -223,7 +242,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IEC_PLUG_C_VALUE = 6;
+	public static final int IEC_PLUG_C_VALUE = 7;
 
 	/**
 	 * The '<em><b>Iec Plug C13</b></em>' literal value.
@@ -234,7 +253,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IEC_PLUG_C13_VALUE = 7;
+	public static final int IEC_PLUG_C13_VALUE = 8;
 
 	/**
 	 * The '<em><b>Iec Socket C14</b></em>' literal value.
@@ -245,7 +264,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int IEC_SOCKET_C14_VALUE = 8;
+	public static final int IEC_SOCKET_C14_VALUE = 9;
 
 	/**
 	 * The '<em><b>Proprietary</b></em>' literal value.
@@ -256,7 +275,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROPRIETARY_VALUE = 9;
+	public static final int PROPRIETARY_VALUE = 10;
 
 	/**
 	 * The '<em><b>Sd Card</b></em>' literal value.
@@ -267,7 +286,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SD_CARD_VALUE = 10;
+	public static final int SD_CARD_VALUE = 11;
 
 	/**
 	 * The '<em><b>Sub D</b></em>' literal value.
@@ -278,7 +297,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUB_D_VALUE = 11;
+	public static final int SUB_D_VALUE = 12;
 
 	/**
 	 * The '<em><b>Toslink</b></em>' literal value.
@@ -289,7 +308,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TOSLINK_VALUE = 12;
+	public static final int TOSLINK_VALUE = 13;
 
 	/**
 	 * The '<em><b>Usb A</b></em>' literal value.
@@ -300,7 +319,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_A_VALUE = 13;
+	public static final int USB_A_VALUE = 14;
 
 	/**
 	 * The '<em><b>Usb C</b></em>' literal value.
@@ -311,7 +330,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_C_VALUE = 14;
+	public static final int USB_C_VALUE = 15;
 
 	/**
 	 * The '<em><b>Wireless</b></em>' literal value.
@@ -322,7 +341,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WIRELESS_VALUE = 15;
+	public static final int WIRELESS_VALUE = 16;
 
 	/**
 	 * An array of all the '<em><b>Interface Connector</b></em>' enumerators.
@@ -332,6 +351,7 @@ public enum InterfaceConnector implements Enumerator {
 	 */
 	private static final InterfaceConnector[] VALUES_ARRAY =
 		new InterfaceConnector[] {
+			UNSPECIFIED,
 			NONE,
 			HARDWIRED,
 			HDMI,
@@ -404,6 +424,7 @@ public enum InterfaceConnector implements Enumerator {
 	 */
 	public static InterfaceConnector get(int value) {
 		switch (value) {
+			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case NONE_VALUE: return NONE;
 			case HARDWIRED_VALUE: return HARDWIRED;
 			case HDMI_VALUE: return HDMI;

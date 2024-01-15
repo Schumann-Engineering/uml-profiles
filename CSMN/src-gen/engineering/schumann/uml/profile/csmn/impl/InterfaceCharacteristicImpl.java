@@ -92,7 +92,7 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 * @ordered
 	 */
-	protected static final InterfaceConnector INTERFACE_CONNECTOR_EDEFAULT = InterfaceConnector.NONE;
+	protected static final InterfaceConnector INTERFACE_CONNECTOR_EDEFAULT = InterfaceConnector.UNSPECIFIED;
 
 	/**
 	 * The cached value of the '{@link #getInterfaceConnector() <em>Interface Connector</em>}' attribute.

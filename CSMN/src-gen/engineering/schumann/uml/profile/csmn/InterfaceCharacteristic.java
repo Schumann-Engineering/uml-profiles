@@ -110,7 +110,7 @@ public interface InterfaceCharacteristic extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Interface Connector</b></em>' attribute.
-	 * The default value is <code>"None"</code>.
+	 * The default value is <code>"Unspecified"</code>.
 	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.InterfaceConnector}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -122,7 +122,7 @@ public interface InterfaceCharacteristic extends EObject {
 	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
 	 * @see #setInterfaceConnector(InterfaceConnector)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic_InterfaceConnector()
-	 * @model default="None" ordered="false"
+	 * @model default="Unspecified" ordered="false"
 	 * @generated
 	 */
 	InterfaceConnector getInterfaceConnector();
