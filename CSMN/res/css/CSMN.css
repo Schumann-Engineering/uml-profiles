@@ -805,6 +805,18 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 }
 
 
+/* === InterfaceConnector.Wireless === */
+/* lower priority -> moved before InterfaceType */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Wireless"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/wifi.svg';
+}
+
+/* === InterfaceConnector.Unspecified === */
+/* lower priority -> moved before InterfaceType */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Unspecified"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
+}
+
 
 /* === InterfaceType.Unspecified === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Unspecified"] {
@@ -822,7 +834,7 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 }
 
 /* === InterfaceType.Alarm === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Alarm"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Alarmlight"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/alarm-light.svg';
 }
 
@@ -978,13 +990,6 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/knob.svg';
 }
 
-/* === InterfaceConnector.Luer === */
-/*
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Luer"] {
-	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/???.svg';
-}
-*/
-
 /* === InterfaceConnector.IecPlugC === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="IecPlugC"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-plug.svg';
@@ -999,6 +1004,16 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="IecSocketC14"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-socket.svg';
 }
+
+/* === InterfaceConnector.Luer === */
+/*
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Luer"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/???.svg';
+}
+*/
+
+/* === InterfaceConnector.None === */
+/* no icon */
 
 /* === InterfaceConnector.Proprietary === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Proprietary"] {
@@ -1025,6 +1040,9 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/toslink.svg';
 }
 
+/* === InterfaceConnector.Unspecified === */
+/* lower priority -> moved before InterfaceType */
+
 /* === InterfaceConnector.UsbA === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="UsbA"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-port.svg';
@@ -1036,9 +1054,7 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 }
 
 /* === InterfaceConnector.Wireless === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Wireless"] {
-	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/wifi.svg';
-}
+/* lower priority -> moved before InterfaceType */
 
 
 
