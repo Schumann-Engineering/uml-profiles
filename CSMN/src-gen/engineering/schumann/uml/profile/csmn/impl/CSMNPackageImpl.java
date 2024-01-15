@@ -2102,7 +2102,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getInterfaceCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_InterfaceType(), this.getInterfaceType(), "interfaceType", "Unspecified", 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_Purpose(), ecorePackage.getEString(), "purpose", null, 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getInterfaceCharacteristic_InterfaceConnector(), this.getInterfaceConnector(), "interfaceConnector", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInterfaceCharacteristic_InterfaceConnector(), this.getInterfaceConnector(), "interfaceConnector", "None", 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bandwidthCharacteristicsEClass, BandwidthCharacteristics.class, "BandwidthCharacteristics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBandwidthCharacteristics_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2252,22 +2252,22 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ZIGBEE);
 
 		initEEnum(interfaceConnectorEEnum, InterfaceConnector.class, "InterfaceConnector");
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.LUER);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.RJ45);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.NONE);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HARDWIRED);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HDMI);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.KNOB);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.TOSLINK);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.LUER);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.RJ45);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C13);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.PROPRIETARY);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SD_CARD);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SUB_D);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.NONE);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.TOSLINK);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_A);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_C);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.WIRELESS);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
 
 		initEEnum(materialTypeEEnum, MaterialType.class, "MaterialType");
 		addEEnumLiteral(materialTypeEEnum, MaterialType.UNSPECIFIED);
