@@ -1301,13 +1301,22 @@ public interface CSMNPackage extends EPackage {
 	int INTERFACE_CHARACTERISTIC__PURPOSE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Interface Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = 3;
+
+	/**
 	 * The number of structural features of the '<em>Interface Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_CHARACTERISTIC_FEATURE_COUNT = 3;
+	int INTERFACE_CHARACTERISTIC_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Interface Characteristic</em>' class.
@@ -1771,6 +1780,16 @@ public interface CSMNPackage extends EPackage {
 	int INTERFACE_TYPE = 38;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceConnector()
+	 * @generated
+	 */
+	int INTERFACE_CONNECTOR = 39;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1778,7 +1797,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialType()
 	 * @generated
 	 */
-	int MATERIAL_TYPE = 39;
+	int MATERIAL_TYPE = 40;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}' enum.
@@ -1788,7 +1807,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevel()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL = 40;
+	int IEC62443_SECURITY_LEVEL = 41;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443FoundationalRequirementType <em>Iec62443 Foundational Requirement Type</em>}' enum.
@@ -1798,7 +1817,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443FoundationalRequirementType()
 	 * @generated
 	 */
-	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 41;
+	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 42;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelType <em>Iec62443 Security Level Type</em>}' enum.
@@ -1808,7 +1827,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelType()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL_TYPE = 42;
+	int IEC62443_SECURITY_LEVEL_TYPE = 43;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
@@ -1828,7 +1847,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getStorageType()
 	 * @generated
 	 */
-	int STORAGE_TYPE = 43;
+	int STORAGE_TYPE = 44;
 
 
 	/**
@@ -2670,6 +2689,17 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getInterfaceCharacteristic_Purpose();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Connector</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector()
+	 * @see #getInterfaceCharacteristic()
+	 * @generated
+	 */
+	EAttribute getInterfaceCharacteristic_InterfaceConnector();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics <em>Bandwidth Characteristics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3156,6 +3186,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getInterfaceType();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Interface Connector</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @generated
+	 */
+	EEnum getInterfaceConnector();
 
 	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}'.
@@ -3905,6 +3945,14 @@ public interface CSMNPackage extends EPackage {
 		EAttribute INTERFACE_CHARACTERISTIC__PURPOSE = eINSTANCE.getInterfaceCharacteristic_Purpose();
 
 		/**
+		 * The meta object literal for the '<em><b>Interface Connector</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = eINSTANCE.getInterfaceCharacteristic_InterfaceConnector();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl <em>Bandwidth Characteristics</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4307,6 +4355,16 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INTERFACE_TYPE = eINSTANCE.getInterfaceType();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceConnector()
+		 * @generated
+		 */
+		EEnum INTERFACE_CONNECTOR = eINSTANCE.getInterfaceConnector();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.

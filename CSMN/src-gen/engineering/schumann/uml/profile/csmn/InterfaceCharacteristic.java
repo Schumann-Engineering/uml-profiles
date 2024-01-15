@@ -18,6 +18,7 @@ import org.eclipse.uml2.uml.Port;
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getBase_Port <em>Base Port</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getPurpose <em>Purpose</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic()
@@ -106,5 +107,34 @@ public interface InterfaceCharacteristic extends EObject {
 	 * @generated
 	 */
 	void setPurpose(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Interface Connector</b></em>' attribute.
+	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.InterfaceConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Connector</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Connector</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @see #setInterfaceConnector(InterfaceConnector)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic_InterfaceConnector()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	InterfaceConnector getInterfaceConnector();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Connector</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @see #getInterfaceConnector()
+	 * @generated
+	 */
+	void setInterfaceConnector(InterfaceConnector value);
 
 } // InterfaceCharacteristic

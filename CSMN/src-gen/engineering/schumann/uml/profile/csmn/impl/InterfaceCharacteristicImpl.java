@@ -4,6 +4,7 @@ package engineering.schumann.uml.profile.csmn.impl;
 
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
 import engineering.schumann.uml.profile.csmn.InterfaceCharacteristic;
+import engineering.schumann.uml.profile.csmn.InterfaceConnector;
 import engineering.schumann.uml.profile.csmn.InterfaceType;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -27,6 +28,7 @@ import org.eclipse.uml2.uml.Port;
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl#getBase_Port <em>Base Port</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl#getPurpose <em>Purpose</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl#getInterfaceConnector <em>Interface Connector</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,6 +83,26 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 	 * @ordered
 	 */
 	protected String purpose = PURPOSE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getInterfaceConnector() <em>Interface Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final InterfaceConnector INTERFACE_CONNECTOR_EDEFAULT = InterfaceConnector.LUER;
+
+	/**
+	 * The cached value of the '{@link #getInterfaceConnector() <em>Interface Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInterfaceConnector()
+	 * @generated
+	 * @ordered
+	 */
+	protected InterfaceConnector interfaceConnector = INTERFACE_CONNECTOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -193,6 +215,29 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public InterfaceConnector getInterfaceConnector() {
+		return interfaceConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInterfaceConnector(InterfaceConnector newInterfaceConnector) {
+		InterfaceConnector oldInterfaceConnector = interfaceConnector;
+		interfaceConnector = newInterfaceConnector == null ? INTERFACE_CONNECTOR_EDEFAULT : newInterfaceConnector;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR, oldInterfaceConnector, interfaceConnector));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CSMNPackage.INTERFACE_CHARACTERISTIC__BASE_PORT:
@@ -202,6 +247,8 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 				return getInterfaceType();
 			case CSMNPackage.INTERFACE_CHARACTERISTIC__PURPOSE:
 				return getPurpose();
+			case CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR:
+				return getInterfaceConnector();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -222,6 +269,9 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 				return;
 			case CSMNPackage.INTERFACE_CHARACTERISTIC__PURPOSE:
 				setPurpose((String)newValue);
+				return;
+			case CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR:
+				setInterfaceConnector((InterfaceConnector)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,6 +294,9 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 			case CSMNPackage.INTERFACE_CHARACTERISTIC__PURPOSE:
 				setPurpose(PURPOSE_EDEFAULT);
 				return;
+			case CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR:
+				setInterfaceConnector(INTERFACE_CONNECTOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -262,6 +315,8 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 				return interfaceType != INTERFACE_TYPE_EDEFAULT;
 			case CSMNPackage.INTERFACE_CHARACTERISTIC__PURPOSE:
 				return PURPOSE_EDEFAULT == null ? purpose != null : !PURPOSE_EDEFAULT.equals(purpose);
+			case CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR:
+				return interfaceConnector != INTERFACE_CONNECTOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -280,6 +335,8 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 		result.append(interfaceType);
 		result.append(", purpose: ");
 		result.append(purpose);
+		result.append(", interfaceConnector: ");
+		result.append(interfaceConnector);
 		result.append(')');
 		return result.toString();
 	}

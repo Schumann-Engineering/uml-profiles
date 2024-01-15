@@ -119,6 +119,8 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return createEnergyTypeFromString(eDataType, initialValue);
 			case CSMNPackage.INTERFACE_TYPE:
 				return createInterfaceTypeFromString(eDataType, initialValue);
+			case CSMNPackage.INTERFACE_CONNECTOR:
+				return createInterfaceConnectorFromString(eDataType, initialValue);
 			case CSMNPackage.MATERIAL_TYPE:
 				return createMaterialTypeFromString(eDataType, initialValue);
 			case CSMNPackage.IEC62443_SECURITY_LEVEL:
@@ -164,6 +166,8 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return convertEnergyTypeToString(eDataType, instanceValue);
 			case CSMNPackage.INTERFACE_TYPE:
 				return convertInterfaceTypeToString(eDataType, instanceValue);
+			case CSMNPackage.INTERFACE_CONNECTOR:
+				return convertInterfaceConnectorToString(eDataType, instanceValue);
 			case CSMNPackage.MATERIAL_TYPE:
 				return convertMaterialTypeToString(eDataType, instanceValue);
 			case CSMNPackage.IEC62443_SECURITY_LEVEL:
@@ -673,6 +677,26 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	public String convertInterfaceTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InterfaceConnector createInterfaceConnectorFromString(EDataType eDataType, String initialValue) {
+		InterfaceConnector result = InterfaceConnector.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInterfaceConnectorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

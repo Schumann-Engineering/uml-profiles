@@ -113,7 +113,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Unspecified"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirByFan"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirByTurbine"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Alarm"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Alarmlight"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Bluetooth"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Cellular"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Cellular2G"/>
@@ -123,15 +123,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Display"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/DisplaySmall"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Ethernet"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Hardwired"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Hdmi"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Knob"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Nfc"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Optical"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Proprietary"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/PowerBattery"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/PowerPlug"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/PowerSocket"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Power"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/SdCard"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Serial"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Speaker"/>
@@ -143,6 +140,24 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/WifiAccessPoint"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/WifiClient"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Zigbee"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//InterfaceConnector">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Luer"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/RJ45"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Hardwired"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Hdmi"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Knob"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Toslink"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecPlugC"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecPlugC13"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Proprietary"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/SdCard"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/SubD"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/None"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/UsbA"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/UsbC"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Wireless"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecSocketC14"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//MaterialType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//MaterialType/Unspecified"/>

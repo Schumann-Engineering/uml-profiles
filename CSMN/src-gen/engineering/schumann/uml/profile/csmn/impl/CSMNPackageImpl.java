@@ -28,6 +28,7 @@ import engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel;
 import engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelCharacteristic;
 import engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelType;
 import engineering.schumann.uml.profile.csmn.InterfaceCharacteristic;
+import engineering.schumann.uml.profile.csmn.InterfaceConnector;
 import engineering.schumann.uml.profile.csmn.InterfaceType;
 import engineering.schumann.uml.profile.csmn.MaterialCharacteristic;
 import engineering.schumann.uml.profile.csmn.MaterialType;
@@ -334,6 +335,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EEnum interfaceTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum interfaceConnectorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1228,6 +1236,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getInterfaceCharacteristic_InterfaceConnector() {
+		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBandwidthCharacteristics() {
 		return bandwidthCharacteristicsEClass;
 	}
@@ -1688,6 +1706,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getInterfaceConnector() {
+		return interfaceConnectorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getMaterialType() {
 		return materialTypeEEnum;
 	}
@@ -1874,6 +1902,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEReference(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__BASE_PORT);
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_TYPE);
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__PURPOSE);
+		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR);
 
 		bandwidthCharacteristicsEClass = createEClass(BANDWIDTH_CHARACTERISTICS);
 		createEReference(bandwidthCharacteristicsEClass, BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP);
@@ -1925,6 +1954,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		assetTypeEEnum = createEEnum(ASSET_TYPE);
 		energyTypeEEnum = createEEnum(ENERGY_TYPE);
 		interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
+		interfaceConnectorEEnum = createEEnum(INTERFACE_CONNECTOR);
 		materialTypeEEnum = createEEnum(MATERIAL_TYPE);
 		iec62443SecurityLevelEEnum = createEEnum(IEC62443_SECURITY_LEVEL);
 		iec62443FoundationalRequirementTypeEEnum = createEEnum(IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE);
@@ -2072,6 +2102,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getInterfaceCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_InterfaceType(), this.getInterfaceType(), "interfaceType", "Unspecified", 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_Purpose(), ecorePackage.getEString(), "purpose", null, 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInterfaceCharacteristic_InterfaceConnector(), this.getInterfaceConnector(), "interfaceConnector", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bandwidthCharacteristicsEClass, BandwidthCharacteristics.class, "BandwidthCharacteristics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBandwidthCharacteristics_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2192,7 +2223,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.UNSPECIFIED);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_FAN);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_TURBINE);
-		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ALARM);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ALARMLIGHT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.BLUETOOTH);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.CELLULAR);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.CELLULAR2_G);
@@ -2202,15 +2233,12 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.DISPLAY);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.DISPLAY_SMALL);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ETHERNET);
-		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.HARDWIRED);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.HDMI);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.KNOB);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.NFC);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.OPTICAL);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.PROPRIETARY);
-		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.POWER_BATTERY);
-		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.POWER_PLUG);
-		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.POWER_SOCKET);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.POWER);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.SD_CARD);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.SERIAL);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.SPEAKER);
@@ -2222,6 +2250,24 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_ACCESS_POINT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_CLIENT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ZIGBEE);
+
+		initEEnum(interfaceConnectorEEnum, InterfaceConnector.class, "InterfaceConnector");
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.LUER);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.RJ45);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HARDWIRED);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HDMI);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.KNOB);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.TOSLINK);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C13);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.PROPRIETARY);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SD_CARD);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SUB_D);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.NONE);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_A);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_C);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.WIRELESS);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
 
 		initEEnum(materialTypeEEnum, MaterialType.class, "MaterialType");
 		addEEnumLiteral(materialTypeEEnum, MaterialType.UNSPECIFIED);
