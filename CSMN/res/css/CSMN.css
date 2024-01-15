@@ -807,236 +807,236 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 
 
 /* === InterfaceType.Unspecified === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Unspecified"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Unspecified"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
 }
 
 /* === InterfaceType.AirByFan === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="AirByFan"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByFan"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
 }
 
 /* === InterfaceType.AirByTurbine === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="AirByTurbine"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByTurbine"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/turbine.svg';
 }
 
 /* === InterfaceType.Alarm === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Alarm"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Alarm"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/alarm-light.svg';
 }
 
 /* === InterfaceType.Bluetooth === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Bluetooth"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Bluetooth"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/bluetooth.svg';
 }
 
 /* === InterfaceType.Cellular === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Cellular"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-cellular-3.svg';
 }
 
 /* === InterfaceType.Cellular2G === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Cellular2G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular2G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-2g.svg';
 }
 
 /* === InterfaceType.Cellular3G === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Cellular3G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular3G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-3g.svg';
 }
 
 /* === InterfaceType.Cellular4G === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Cellular4G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular4G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-4g.svg';
 }
 
 /* === InterfaceType.Cellular5G === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Cellular5G"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Cellular5G"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/signal-5g.svg';
 }
 
 /* === InterfaceType.Display === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Display"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Display"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/monitor.svg';
 }
 
 /* === InterfaceType.DisplaySmall === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="DisplaySmall"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="DisplaySmall"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/monitor-small.svg';
 }
 
 /* === InterfaceType.Ethernet === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Ethernet"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Ethernet"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/ethernet.svg';
 }
 
 /* === InterfaceType.Hdmi === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Hdmi"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Hdmi"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/hdmi-port.svg';
 }
 
 /* === InterfaceType.Knob === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Knob"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Knob"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/knob.svg';
 }
 
 /* === InterfaceType.Nfc === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Nfc"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Nfc"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/nfc.svg';
 }
 
 /* === InterfaceType.Optical === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Optical"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Optical"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/toslink.svg';
 }
 
 /* === InterfaceType.Proprietary === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Proprietary"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Proprietary"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/midi-port.svg';
 }
 
 /* === InterfaceType.SdCard === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="SdCard"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="SdCard"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/sd.svg';
 }
 
 /* === InterfaceType.Serial === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Serial"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Serial"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/serial-port.svg';
 }
 
 /* === InterfaceType.Speaker === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Speaker"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Speaker"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/speaker.svg';
 }
 
 /* === InterfaceType.Touch === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Touch"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Touch"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/gesture-tap.svg';
 }
 
 /* === InterfaceType.Usb === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Usb"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Usb"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb.svg';
 }
 
 /* === InterfaceType.UsbA === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="UsbA"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbA"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-port.svg';
 }
 
 /* === InterfaceType.UsbC === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="UsbC"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbC"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-c-port.svg';
 }
 
 /* === InterfaceType.UsbFlash === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="UsbFlash"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbFlash"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-flash-drive.svg';
 }
 
 /* === InterfaceType.WifiAccessPoint === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="WifiAccessPoint"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="WifiAccessPoint"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/access-point.svg';
 }
 
 /* === InterfaceType.WifiClient === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="WifiClient"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="WifiClient"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/wifi.svg';
 }
 
 /* === InterfaceType.Zigbee === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceType="Zigbee"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Zigbee"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/zigbee.svg';
 }
 
 
 
 /* === InterfaceConnector.Air === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Air"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Air"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
 }
 
 /* === InterfaceType.Alarmlight === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Alarmlight"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Alarmlight"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/alarm-light.svg';
 }
 
 /* === InterfaceConnector.Hardwired === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Hardwired"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Hardwired"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/link-variant.svg';
 }
 
 /* === InterfaceConnector.Hdmi === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Hdmi"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Hdmi"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/hdmi-port.svg';
 }
 
 /* === InterfaceConnector.Knob === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Knob"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Knob"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/knob.svg';
 }
 
 /* === InterfaceConnector.Luer === */
 /*
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Luer"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Luer"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/???.svg';
 }
 */
 
 /* === InterfaceConnector.IecPlugC === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="IecPlugC"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="IecPlugC"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-plug.svg';
 }
 
 /* === InterfaceConnector.IecPlugC13 === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="IecPlugC13"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="IecPlugC13"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-socket.svg';
 }
 
 /* === InterfaceConnector.IecSocketC14 === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="IecSocketC14"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="IecSocketC14"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/power-socket.svg';
 }
 
 /* === InterfaceConnector.Proprietary === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Proprietary"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Proprietary"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/midi-port.svg';
 }
 
 /* === InterfaceConnector.RJ45 === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="RJ45"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="RJ45"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/ethernet.svg';
 }
 
 /* === InterfaceConnector.SdCard === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="SdCard"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="SdCard"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/sd.svg';
 }
 
 /* === InterfaceConnector.SubD === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="SubD"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="SubD"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/serial-port.svg';
 }
 
 /* === InterfaceConnector.Toslink === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Optical"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Optical"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/toslink.svg';
 }
 
 /* === InterfaceConnector.UsbA === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="UsbA"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="UsbA"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-port.svg';
 }
 
 /* === InterfaceConnector.UsbC === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="UsbC"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="UsbC"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-c-port.svg';
 }
 
 /* === InterfaceConnector.Wireless === */
-*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interaceConnector="Wireless"] {
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Wireless"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/wifi.svg';
 }
 
