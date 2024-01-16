@@ -265,6 +265,24 @@ public interface CSMNFactory extends EFactory {
 	StorageCharacteristic createStorageCharacteristic();
 
 	/**
+	 * Returns a new object of class '<em>Access Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Access Characteristic</em>'.
+	 * @generated
+	 */
+	AccessCharacteristic createAccessCharacteristic();
+
+	/**
+	 * Returns a new object of class '<em>Usage Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Usage Characteristic</em>'.
+	 * @generated
+	 */
+	UsageCharacteristic createUsageCharacteristic();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

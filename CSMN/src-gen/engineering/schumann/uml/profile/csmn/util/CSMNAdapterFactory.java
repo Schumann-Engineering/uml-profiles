@@ -180,6 +180,14 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 				return createStorageCharacteristicAdapter();
 			}
 			@Override
+			public Adapter caseAccessCharacteristic(AccessCharacteristic object) {
+				return createAccessCharacteristicAdapter();
+			}
+			@Override
+			public Adapter caseUsageCharacteristic(UsageCharacteristic object) {
+				return createUsageCharacteristicAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -588,6 +596,34 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStorageCharacteristicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic <em>Access Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic
+	 * @generated
+	 */
+	public Adapter createAccessCharacteristicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic <em>Usage Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic
+	 * @generated
+	 */
+	public Adapter createUsageCharacteristicAdapter() {
 		return null;
 	}
 

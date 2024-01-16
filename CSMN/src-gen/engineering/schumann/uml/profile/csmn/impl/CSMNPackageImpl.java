@@ -2,6 +2,7 @@
  */
 package engineering.schumann.uml.profile.csmn.impl;
 
+import engineering.schumann.uml.profile.csmn.AccessCharacteristic;
 import engineering.schumann.uml.profile.csmn.Asset;
 import engineering.schumann.uml.profile.csmn.AssetLibrary;
 import engineering.schumann.uml.profile.csmn.AssetType;
@@ -23,6 +24,7 @@ import engineering.schumann.uml.profile.csmn.EnvironmentElement;
 import engineering.schumann.uml.profile.csmn.EnvironmentLibrary;
 import engineering.schumann.uml.profile.csmn.FirewallCharacteristic;
 import engineering.schumann.uml.profile.csmn.FlowCharacteristic;
+import engineering.schumann.uml.profile.csmn.FunctionalAccessLevel;
 import engineering.schumann.uml.profile.csmn.Iec62443FoundationalRequirementType;
 import engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel;
 import engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelCharacteristic;
@@ -32,6 +34,7 @@ import engineering.schumann.uml.profile.csmn.InterfaceConnector;
 import engineering.schumann.uml.profile.csmn.InterfaceType;
 import engineering.schumann.uml.profile.csmn.MaterialCharacteristic;
 import engineering.schumann.uml.profile.csmn.MaterialType;
+import engineering.schumann.uml.profile.csmn.MechanicalAccessLevel;
 import engineering.schumann.uml.profile.csmn.OsiCharacteristic;
 import engineering.schumann.uml.profile.csmn.Product;
 import engineering.schumann.uml.profile.csmn.ProductConstraint;
@@ -47,6 +50,8 @@ import engineering.schumann.uml.profile.csmn.StorageCharacteristic;
 import engineering.schumann.uml.profile.csmn.StorageType;
 import engineering.schumann.uml.profile.csmn.SystemElement;
 import engineering.schumann.uml.profile.csmn.TcpCharacteristic;
+import engineering.schumann.uml.profile.csmn.UsageCharacteristic;
+import engineering.schumann.uml.profile.csmn.UsageType;
 import engineering.schumann.uml.profile.csmn.User;
 import engineering.schumann.uml.profile.csmn.UserType;
 
@@ -271,6 +276,20 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass accessCharacteristicEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass usageCharacteristicEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum userTypeEEnum = null;
 
 	/**
@@ -384,6 +403,27 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EEnum storageTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum functionalAccessLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum mechanicalAccessLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum usageTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1217,16 +1257,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 */
 	@Override
 	public EAttribute getInterfaceCharacteristic_InterfaceType() {
-		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getInterfaceCharacteristic_Purpose() {
 		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1236,8 +1266,18 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInterfaceCharacteristic_InterfaceConnector() {
+	public EAttribute getInterfaceCharacteristic_Purpose() {
 		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getInterfaceCharacteristic_InterfaceConnector() {
+		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1606,6 +1646,116 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getAccessCharacteristic() {
+		return accessCharacteristicEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAccessCharacteristic_Base_NamedElement() {
+		return (EReference)accessCharacteristicEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAccessCharacteristic_FunctionalLevel() {
+		return (EAttribute)accessCharacteristicEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAccessCharacteristic_FunctionalSpec() {
+		return (EAttribute)accessCharacteristicEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAccessCharacteristic_MechanicalLevel() {
+		return (EAttribute)accessCharacteristicEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAccessCharacteristic_MechanicalSpec() {
+		return (EAttribute)accessCharacteristicEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUsageCharacteristic() {
+		return usageCharacteristicEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUsageCharacteristic_Base_NamedElement() {
+		return (EReference)usageCharacteristicEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUsageCharacteristic_IntendedUserGroup() {
+		return (EReference)usageCharacteristicEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUsageCharacteristic_UsageSpec() {
+		return (EAttribute)usageCharacteristicEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUsageCharacteristic_UsageType() {
+		return (EAttribute)usageCharacteristicEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getUserType() {
 		return userTypeEEnum;
 	}
@@ -1776,6 +1926,36 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getFunctionalAccessLevel() {
+		return functionalAccessLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getMechanicalAccessLevel() {
+		return mechanicalAccessLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getUsageType() {
+		return usageTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public CSMNFactory getCSMNFactory() {
 		return (CSMNFactory)getEFactoryInstance();
 	}
@@ -1900,9 +2080,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		interfaceCharacteristicEClass = createEClass(INTERFACE_CHARACTERISTIC);
 		createEReference(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__BASE_PORT);
+		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR);
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_TYPE);
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__PURPOSE);
-		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR);
 
 		bandwidthCharacteristicsEClass = createEClass(BANDWIDTH_CHARACTERISTICS);
 		createEReference(bandwidthCharacteristicsEClass, BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP);
@@ -1942,6 +2122,19 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(storageCharacteristicEClass, STORAGE_CHARACTERISTIC__STORAGE_NAME);
 		createEReference(storageCharacteristicEClass, STORAGE_CHARACTERISTIC__TOTAL_SIZE);
 
+		accessCharacteristicEClass = createEClass(ACCESS_CHARACTERISTIC);
+		createEReference(accessCharacteristicEClass, ACCESS_CHARACTERISTIC__BASE_NAMED_ELEMENT);
+		createEAttribute(accessCharacteristicEClass, ACCESS_CHARACTERISTIC__FUNCTIONAL_LEVEL);
+		createEAttribute(accessCharacteristicEClass, ACCESS_CHARACTERISTIC__FUNCTIONAL_SPEC);
+		createEAttribute(accessCharacteristicEClass, ACCESS_CHARACTERISTIC__MECHANICAL_LEVEL);
+		createEAttribute(accessCharacteristicEClass, ACCESS_CHARACTERISTIC__MECHANICAL_SPEC);
+
+		usageCharacteristicEClass = createEClass(USAGE_CHARACTERISTIC);
+		createEReference(usageCharacteristicEClass, USAGE_CHARACTERISTIC__BASE_NAMED_ELEMENT);
+		createEReference(usageCharacteristicEClass, USAGE_CHARACTERISTIC__INTENDED_USER_GROUP);
+		createEAttribute(usageCharacteristicEClass, USAGE_CHARACTERISTIC__USAGE_SPEC);
+		createEAttribute(usageCharacteristicEClass, USAGE_CHARACTERISTIC__USAGE_TYPE);
+
 		// Create enums
 		userTypeEEnum = createEEnum(USER_TYPE);
 		connectionTypeEEnum = createEEnum(CONNECTION_TYPE);
@@ -1953,13 +2146,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		scopeConstraintTypeEEnum = createEEnum(SCOPE_CONSTRAINT_TYPE);
 		assetTypeEEnum = createEEnum(ASSET_TYPE);
 		energyTypeEEnum = createEEnum(ENERGY_TYPE);
-		interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
 		interfaceConnectorEEnum = createEEnum(INTERFACE_CONNECTOR);
+		interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
 		materialTypeEEnum = createEEnum(MATERIAL_TYPE);
 		iec62443SecurityLevelEEnum = createEEnum(IEC62443_SECURITY_LEVEL);
 		iec62443FoundationalRequirementTypeEEnum = createEEnum(IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE);
 		iec62443SecurityLevelTypeEEnum = createEEnum(IEC62443_SECURITY_LEVEL_TYPE);
 		storageTypeEEnum = createEEnum(STORAGE_TYPE);
+		functionalAccessLevelEEnum = createEEnum(FUNCTIONAL_ACCESS_LEVEL);
+		mechanicalAccessLevelEEnum = createEEnum(MECHANICAL_ACCESS_LEVEL);
+		usageTypeEEnum = createEEnum(USAGE_TYPE);
 	}
 
 	/**
@@ -2100,9 +2296,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		initEClass(interfaceCharacteristicEClass, InterfaceCharacteristic.class, "InterfaceCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getInterfaceCharacteristic_InterfaceConnector(), this.getInterfaceConnector(), "interfaceConnector", "Unspecified", 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_InterfaceType(), this.getInterfaceType(), "interfaceType", "Unspecified", 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_Purpose(), ecorePackage.getEString(), "purpose", null, 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getInterfaceCharacteristic_InterfaceConnector(), this.getInterfaceConnector(), "interfaceConnector", "Unspecified", 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bandwidthCharacteristicsEClass, BandwidthCharacteristics.class, "BandwidthCharacteristics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBandwidthCharacteristics_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2141,6 +2337,19 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getStorageCharacteristic_StorageType(), this.getStorageType(), "storageType", "Unknown", 1, 1, StorageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStorageCharacteristic_StorageName(), ecorePackage.getEString(), "storageName", null, 0, 1, StorageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getStorageCharacteristic_TotalSize(), this.getSize_T(), null, "totalSize", null, 1, 1, StorageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(accessCharacteristicEClass, AccessCharacteristic.class, "AccessCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAccessCharacteristic_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, AccessCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAccessCharacteristic_FunctionalLevel(), this.getFunctionalAccessLevel(), "functionalLevel", null, 1, 1, AccessCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAccessCharacteristic_FunctionalSpec(), ecorePackage.getEString(), "functionalSpec", null, 0, 1, AccessCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAccessCharacteristic_MechanicalLevel(), this.getMechanicalAccessLevel(), "mechanicalLevel", null, 0, 1, AccessCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAccessCharacteristic_MechanicalSpec(), ecorePackage.getEString(), "mechanicalSpec", null, 0, 1, AccessCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(usageCharacteristicEClass, UsageCharacteristic.class, "UsageCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUsageCharacteristic_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, UsageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUsageCharacteristic_IntendedUserGroup(), theUMLPackage.getActor(), null, "intendedUserGroup", null, 0, -1, UsageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUsageCharacteristic_UsageSpec(), ecorePackage.getEString(), "usageSpec", null, 0, 1, UsageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUsageCharacteristic_UsageType(), this.getUsageType(), "usageType", null, 0, 1, UsageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(userTypeEEnum, UserType.class, "UserType");
@@ -2219,6 +2428,25 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(energyTypeEEnum, EnergyType.SOUND);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.VIBRATION);
 
+		initEEnum(interfaceConnectorEEnum, InterfaceConnector.class, "InterfaceConnector");
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.UNSPECIFIED);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.NONE);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HARDWIRED);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HDMI);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.KNOB);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.LUER);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.RJ45);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C13);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.PROPRIETARY);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SD_CARD);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SUB_D);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.TOSLINK);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_A);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_C);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.WIRELESS);
+
 		initEEnum(interfaceTypeEEnum, InterfaceType.class, "InterfaceType");
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.UNSPECIFIED);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_FAN);
@@ -2250,25 +2478,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_ACCESS_POINT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_CLIENT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ZIGBEE);
-
-		initEEnum(interfaceConnectorEEnum, InterfaceConnector.class, "InterfaceConnector");
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.UNSPECIFIED);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.NONE);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HARDWIRED);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.HDMI);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.KNOB);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.LUER);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.RJ45);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C13);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.PROPRIETARY);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SD_CARD);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SUB_D);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.TOSLINK);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_A);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.USB_C);
-		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.WIRELESS);
 
 		initEEnum(materialTypeEEnum, MaterialType.class, "MaterialType");
 		addEEnumLiteral(materialTypeEEnum, MaterialType.UNSPECIFIED);
@@ -2309,6 +2518,31 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(storageTypeEEnum, StorageType.NETWORK);
 		addEEnumLiteral(storageTypeEEnum, StorageType.CD_ROM);
 		addEEnumLiteral(storageTypeEEnum, StorageType.RAM);
+
+		initEEnum(functionalAccessLevelEEnum, FunctionalAccessLevel.class, "FunctionalAccessLevel");
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.UNSPECIFIED);
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.OPEN);
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.OPERATOR);
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.SERVICE);
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.VENDOR);
+		addEEnumLiteral(functionalAccessLevelEEnum, FunctionalAccessLevel.DISABLED);
+
+		initEEnum(mechanicalAccessLevelEEnum, MechanicalAccessLevel.class, "MechanicalAccessLevel");
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.UNSPECIFIED);
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.OPEN);
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.COVERED_NO_TOOLS);
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.COVERED_SIMPLE_TOOLS);
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.DISMANTLE_REQUIRED);
+		addEEnumLiteral(mechanicalAccessLevelEEnum, MechanicalAccessLevel.NONE);
+
+		initEEnum(usageTypeEEnum, UsageType.class, "UsageType");
+		addEEnumLiteral(usageTypeEEnum, UsageType.UNSPECIFIED);
+		addEEnumLiteral(usageTypeEEnum, UsageType.EVERYTIME);
+		addEEnumLiteral(usageTypeEEnum, UsageType.MOSTTIME);
+		addEEnumLiteral(usageTypeEEnum, UsageType.SOMETIMES);
+		addEEnumLiteral(usageTypeEEnum, UsageType.SETUP);
+		addEEnumLiteral(usageTypeEEnum, UsageType.MAINTENANCE);
+		addEEnumLiteral(usageTypeEEnum, UsageType.MANUFACTURING);
 
 		// Create resource
 		createResource(eNS_URI);

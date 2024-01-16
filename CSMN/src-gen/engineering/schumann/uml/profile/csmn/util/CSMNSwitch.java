@@ -237,6 +237,18 @@ public class CSMNSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CSMNPackage.ACCESS_CHARACTERISTIC: {
+				AccessCharacteristic accessCharacteristic = (AccessCharacteristic)theEObject;
+				T result = caseAccessCharacteristic(accessCharacteristic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CSMNPackage.USAGE_CHARACTERISTIC: {
+				UsageCharacteristic usageCharacteristic = (UsageCharacteristic)theEObject;
+				T result = caseUsageCharacteristic(usageCharacteristic);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -658,6 +670,36 @@ public class CSMNSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStorageCharacteristic(StorageCharacteristic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Access Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Access Characteristic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAccessCharacteristic(AccessCharacteristic object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Usage Characteristic</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Usage Characteristic</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUsageCharacteristic(UsageCharacteristic object) {
 		return null;
 	}
 

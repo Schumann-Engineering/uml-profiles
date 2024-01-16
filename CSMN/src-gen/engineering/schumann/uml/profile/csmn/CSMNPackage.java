@@ -1283,13 +1283,22 @@ public interface CSMNPackage extends EPackage {
 	int INTERFACE_CHARACTERISTIC__BASE_PORT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Interface Connector</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = 1;
+
+	/**
 	 * The feature id for the '<em><b>Interface Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_CHARACTERISTIC__INTERFACE_TYPE = 1;
+	int INTERFACE_CHARACTERISTIC__INTERFACE_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' attribute.
@@ -1298,16 +1307,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERFACE_CHARACTERISTIC__PURPOSE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Interface Connector</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = 3;
+	int INTERFACE_CHARACTERISTIC__PURPOSE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Interface Characteristic</em>' class.
@@ -1680,6 +1680,143 @@ public interface CSMNPackage extends EPackage {
 	int STORAGE_CHARACTERISTIC_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.AccessCharacteristicImpl <em>Access Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.AccessCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAccessCharacteristic()
+	 * @generated
+	 */
+	int ACCESS_CHARACTERISTIC = 28;
+
+	/**
+	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC__BASE_NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Functional Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC__FUNCTIONAL_LEVEL = 1;
+
+	/**
+	 * The feature id for the '<em><b>Functional Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC__FUNCTIONAL_SPEC = 2;
+
+	/**
+	 * The feature id for the '<em><b>Mechanical Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC__MECHANICAL_LEVEL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Mechanical Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC__MECHANICAL_SPEC = 4;
+
+	/**
+	 * The number of structural features of the '<em>Access Characteristic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Access Characteristic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACCESS_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.UsageCharacteristicImpl <em>Usage Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.UsageCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageCharacteristic()
+	 * @generated
+	 */
+	int USAGE_CHARACTERISTIC = 29;
+
+	/**
+	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC__BASE_NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Intended User Group</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC__INTENDED_USER_GROUP = 1;
+
+	/**
+	 * The feature id for the '<em><b>Usage Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC__USAGE_SPEC = 2;
+
+	/**
+	 * The feature id for the '<em><b>Usage Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC__USAGE_TYPE = 3;
+
+	/**
+	 * The number of structural features of the '<em>Usage Characteristic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Usage Characteristic</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int USAGE_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.UserType <em>User Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1687,7 +1824,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUserType()
 	 * @generated
 	 */
-	int USER_TYPE = 28;
+	int USER_TYPE = 30;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.ConnectionType <em>Connection Type</em>}' enum.
@@ -1697,7 +1834,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getConnectionType()
 	 * @generated
 	 */
-	int CONNECTION_TYPE = 29;
+	int CONNECTION_TYPE = 31;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.DirectionOfPrimaryFlow <em>Direction Of Primary Flow</em>}' enum.
@@ -1707,7 +1844,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getDirectionOfPrimaryFlow()
 	 * @generated
 	 */
-	int DIRECTION_OF_PRIMARY_FLOW = 30;
+	int DIRECTION_OF_PRIMARY_FLOW = 32;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.DirectionType <em>Direction Type</em>}' enum.
@@ -1717,7 +1854,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getDirectionType()
 	 * @generated
 	 */
-	int DIRECTION_TYPE = 31;
+	int DIRECTION_TYPE = 33;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.SizeUnitOfMeasure <em>Size Unit Of Measure</em>}' enum.
@@ -1727,7 +1864,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSizeUnitOfMeasure()
 	 * @generated
 	 */
-	int SIZE_UNIT_OF_MEASURE = 32;
+	int SIZE_UNIT_OF_MEASURE = 34;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.SpeedUnitOfMeasurement <em>Speed Unit Of Measurement</em>}' enum.
@@ -1737,7 +1874,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSpeedUnitOfMeasurement()
 	 * @generated
 	 */
-	int SPEED_UNIT_OF_MEASUREMENT = 33;
+	int SPEED_UNIT_OF_MEASUREMENT = 35;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.ScopeConstraintType <em>Scope Constraint Type</em>}' enum.
@@ -1747,7 +1884,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getScopeConstraintType()
 	 * @generated
 	 */
-	int SCOPE_CONSTRAINT_TYPE = 35;
+	int SCOPE_CONSTRAINT_TYPE = 37;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.AssetType <em>Asset Type</em>}' enum.
@@ -1757,7 +1894,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetType()
 	 * @generated
 	 */
-	int ASSET_TYPE = 36;
+	int ASSET_TYPE = 38;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.EnergyType <em>Energy Type</em>}' enum.
@@ -1767,7 +1904,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getEnergyType()
 	 * @generated
 	 */
-	int ENERGY_TYPE = 37;
+	int ENERGY_TYPE = 39;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
@@ -1777,7 +1914,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
 	 * @generated
 	 */
-	int INTERFACE_TYPE = 38;
+	int INTERFACE_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
@@ -1787,7 +1924,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceConnector()
 	 * @generated
 	 */
-	int INTERFACE_CONNECTOR = 39;
+	int INTERFACE_CONNECTOR = 40;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
@@ -1797,7 +1934,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialType()
 	 * @generated
 	 */
-	int MATERIAL_TYPE = 40;
+	int MATERIAL_TYPE = 42;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}' enum.
@@ -1807,7 +1944,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevel()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL = 41;
+	int IEC62443_SECURITY_LEVEL = 43;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443FoundationalRequirementType <em>Iec62443 Foundational Requirement Type</em>}' enum.
@@ -1817,7 +1954,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443FoundationalRequirementType()
 	 * @generated
 	 */
-	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 42;
+	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 44;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelType <em>Iec62443 Security Level Type</em>}' enum.
@@ -1827,7 +1964,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelType()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL_TYPE = 43;
+	int IEC62443_SECURITY_LEVEL_TYPE = 45;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
@@ -1837,7 +1974,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumerationType()
 	 * @generated
 	 */
-	int COMMON_PLATFORM_ENUMERATION_TYPE = 34;
+	int COMMON_PLATFORM_ENUMERATION_TYPE = 36;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}' enum.
@@ -1847,7 +1984,38 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getStorageType()
 	 * @generated
 	 */
-	int STORAGE_TYPE = 44;
+	int STORAGE_TYPE = 46;
+
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.FunctionalAccessLevel
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFunctionalAccessLevel()
+	 * @generated
+	 */
+	int FUNCTIONAL_ACCESS_LEVEL = 47;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MechanicalAccessLevel <em>Mechanical Access Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.MechanicalAccessLevel
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMechanicalAccessLevel()
+	 * @generated
+	 */
+	int MECHANICAL_ACCESS_LEVEL = 48;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.UsageType <em>Usage Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.UsageType
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageType()
+	 * @generated
+	 */
+	int USAGE_TYPE = 49;
 
 
 	/**
@@ -3088,6 +3256,125 @@ public interface CSMNPackage extends EPackage {
 	EReference getStorageCharacteristic_TotalSize();
 
 	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic <em>Access Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Access Characteristic</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic
+	 * @generated
+	 */
+	EClass getAccessCharacteristic();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic#getBase_NamedElement <em>Base Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Named Element</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic#getBase_NamedElement()
+	 * @see #getAccessCharacteristic()
+	 * @generated
+	 */
+	EReference getAccessCharacteristic_Base_NamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic#getFunctionalLevel <em>Functional Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Functional Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic#getFunctionalLevel()
+	 * @see #getAccessCharacteristic()
+	 * @generated
+	 */
+	EAttribute getAccessCharacteristic_FunctionalLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic#getFunctionalSpec <em>Functional Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Functional Spec</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic#getFunctionalSpec()
+	 * @see #getAccessCharacteristic()
+	 * @generated
+	 */
+	EAttribute getAccessCharacteristic_FunctionalSpec();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic#getMechanicalLevel <em>Mechanical Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mechanical Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic#getMechanicalLevel()
+	 * @see #getAccessCharacteristic()
+	 * @generated
+	 */
+	EAttribute getAccessCharacteristic_MechanicalLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AccessCharacteristic#getMechanicalSpec <em>Mechanical Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Mechanical Spec</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AccessCharacteristic#getMechanicalSpec()
+	 * @see #getAccessCharacteristic()
+	 * @generated
+	 */
+	EAttribute getAccessCharacteristic_MechanicalSpec();
+
+	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic <em>Usage Characteristic</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Usage Characteristic</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic
+	 * @generated
+	 */
+	EClass getUsageCharacteristic();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic#getBase_NamedElement <em>Base Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Named Element</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic#getBase_NamedElement()
+	 * @see #getUsageCharacteristic()
+	 * @generated
+	 */
+	EReference getUsageCharacteristic_Base_NamedElement();
+
+	/**
+	 * Returns the meta object for the reference list '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic#getIntendedUserGroup <em>Intended User Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Intended User Group</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic#getIntendedUserGroup()
+	 * @see #getUsageCharacteristic()
+	 * @generated
+	 */
+	EReference getUsageCharacteristic_IntendedUserGroup();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic#getUsageSpec <em>Usage Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Usage Spec</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic#getUsageSpec()
+	 * @see #getUsageCharacteristic()
+	 * @generated
+	 */
+	EAttribute getUsageCharacteristic_UsageSpec();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.UsageCharacteristic#getUsageType <em>Usage Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Usage Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageCharacteristic#getUsageType()
+	 * @see #getUsageCharacteristic()
+	 * @generated
+	 */
+	EAttribute getUsageCharacteristic_UsageType();
+
+	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.UserType <em>User Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3256,6 +3543,36 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getStorageType();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Functional Access Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.FunctionalAccessLevel
+	 * @generated
+	 */
+	EEnum getFunctionalAccessLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.MechanicalAccessLevel <em>Mechanical Access Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Mechanical Access Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.MechanicalAccessLevel
+	 * @generated
+	 */
+	EEnum getMechanicalAccessLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.UsageType <em>Usage Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Usage Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.UsageType
+	 * @generated
+	 */
+	EEnum getUsageType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -4257,6 +4574,98 @@ public interface CSMNPackage extends EPackage {
 		EReference STORAGE_CHARACTERISTIC__TOTAL_SIZE = eINSTANCE.getStorageCharacteristic_TotalSize();
 
 		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.AccessCharacteristicImpl <em>Access Characteristic</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.impl.AccessCharacteristicImpl
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAccessCharacteristic()
+		 * @generated
+		 */
+		EClass ACCESS_CHARACTERISTIC = eINSTANCE.getAccessCharacteristic();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACCESS_CHARACTERISTIC__BASE_NAMED_ELEMENT = eINSTANCE.getAccessCharacteristic_Base_NamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Functional Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACCESS_CHARACTERISTIC__FUNCTIONAL_LEVEL = eINSTANCE.getAccessCharacteristic_FunctionalLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Functional Spec</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACCESS_CHARACTERISTIC__FUNCTIONAL_SPEC = eINSTANCE.getAccessCharacteristic_FunctionalSpec();
+
+		/**
+		 * The meta object literal for the '<em><b>Mechanical Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACCESS_CHARACTERISTIC__MECHANICAL_LEVEL = eINSTANCE.getAccessCharacteristic_MechanicalLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Mechanical Spec</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACCESS_CHARACTERISTIC__MECHANICAL_SPEC = eINSTANCE.getAccessCharacteristic_MechanicalSpec();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.UsageCharacteristicImpl <em>Usage Characteristic</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.impl.UsageCharacteristicImpl
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageCharacteristic()
+		 * @generated
+		 */
+		EClass USAGE_CHARACTERISTIC = eINSTANCE.getUsageCharacteristic();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USAGE_CHARACTERISTIC__BASE_NAMED_ELEMENT = eINSTANCE.getUsageCharacteristic_Base_NamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Intended User Group</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference USAGE_CHARACTERISTIC__INTENDED_USER_GROUP = eINSTANCE.getUsageCharacteristic_IntendedUserGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Usage Spec</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USAGE_CHARACTERISTIC__USAGE_SPEC = eINSTANCE.getUsageCharacteristic_UsageSpec();
+
+		/**
+		 * The meta object literal for the '<em><b>Usage Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute USAGE_CHARACTERISTIC__USAGE_TYPE = eINSTANCE.getUsageCharacteristic_UsageType();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.UserType <em>User Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4425,6 +4834,36 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum STORAGE_TYPE = eINSTANCE.getStorageType();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.FunctionalAccessLevel
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFunctionalAccessLevel()
+		 * @generated
+		 */
+		EEnum FUNCTIONAL_ACCESS_LEVEL = eINSTANCE.getFunctionalAccessLevel();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.MechanicalAccessLevel <em>Mechanical Access Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.MechanicalAccessLevel
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMechanicalAccessLevel()
+		 * @generated
+		 */
+		EEnum MECHANICAL_ACCESS_LEVEL = eINSTANCE.getMechanicalAccessLevel();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.UsageType <em>Usage Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.UsageType
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageType()
+		 * @generated
+		 */
+		EEnum USAGE_TYPE = eINSTANCE.getUsageType();
 
 	}
 

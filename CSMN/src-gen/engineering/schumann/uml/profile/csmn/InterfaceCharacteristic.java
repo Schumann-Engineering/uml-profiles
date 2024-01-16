@@ -16,9 +16,9 @@ import org.eclipse.uml2.uml.Port;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceType <em>Interface Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getPurpose <em>Purpose</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic()

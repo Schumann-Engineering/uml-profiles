@@ -84,6 +84,8 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 			case CSMNPackage.SECURITY_LEVEL: return createSecurityLevel();
 			case CSMNPackage.CPE_CHARACTERISTIC: return createCpeCharacteristic();
 			case CSMNPackage.STORAGE_CHARACTERISTIC: return createStorageCharacteristic();
+			case CSMNPackage.ACCESS_CHARACTERISTIC: return createAccessCharacteristic();
+			case CSMNPackage.USAGE_CHARACTERISTIC: return createUsageCharacteristic();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -117,10 +119,10 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return createAssetTypeFromString(eDataType, initialValue);
 			case CSMNPackage.ENERGY_TYPE:
 				return createEnergyTypeFromString(eDataType, initialValue);
-			case CSMNPackage.INTERFACE_TYPE:
-				return createInterfaceTypeFromString(eDataType, initialValue);
 			case CSMNPackage.INTERFACE_CONNECTOR:
 				return createInterfaceConnectorFromString(eDataType, initialValue);
+			case CSMNPackage.INTERFACE_TYPE:
+				return createInterfaceTypeFromString(eDataType, initialValue);
 			case CSMNPackage.MATERIAL_TYPE:
 				return createMaterialTypeFromString(eDataType, initialValue);
 			case CSMNPackage.IEC62443_SECURITY_LEVEL:
@@ -131,6 +133,12 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return createIec62443SecurityLevelTypeFromString(eDataType, initialValue);
 			case CSMNPackage.STORAGE_TYPE:
 				return createStorageTypeFromString(eDataType, initialValue);
+			case CSMNPackage.FUNCTIONAL_ACCESS_LEVEL:
+				return createFunctionalAccessLevelFromString(eDataType, initialValue);
+			case CSMNPackage.MECHANICAL_ACCESS_LEVEL:
+				return createMechanicalAccessLevelFromString(eDataType, initialValue);
+			case CSMNPackage.USAGE_TYPE:
+				return createUsageTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -164,10 +172,10 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return convertAssetTypeToString(eDataType, instanceValue);
 			case CSMNPackage.ENERGY_TYPE:
 				return convertEnergyTypeToString(eDataType, instanceValue);
-			case CSMNPackage.INTERFACE_TYPE:
-				return convertInterfaceTypeToString(eDataType, instanceValue);
 			case CSMNPackage.INTERFACE_CONNECTOR:
 				return convertInterfaceConnectorToString(eDataType, instanceValue);
+			case CSMNPackage.INTERFACE_TYPE:
+				return convertInterfaceTypeToString(eDataType, instanceValue);
 			case CSMNPackage.MATERIAL_TYPE:
 				return convertMaterialTypeToString(eDataType, instanceValue);
 			case CSMNPackage.IEC62443_SECURITY_LEVEL:
@@ -178,6 +186,12 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return convertIec62443SecurityLevelTypeToString(eDataType, instanceValue);
 			case CSMNPackage.STORAGE_TYPE:
 				return convertStorageTypeToString(eDataType, instanceValue);
+			case CSMNPackage.FUNCTIONAL_ACCESS_LEVEL:
+				return convertFunctionalAccessLevelToString(eDataType, instanceValue);
+			case CSMNPackage.MECHANICAL_ACCESS_LEVEL:
+				return convertMechanicalAccessLevelToString(eDataType, instanceValue);
+			case CSMNPackage.USAGE_TYPE:
+				return convertUsageTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -478,6 +492,28 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	public StorageCharacteristic createStorageCharacteristic() {
 		StorageCharacteristicImpl storageCharacteristic = new StorageCharacteristicImpl();
 		return storageCharacteristic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AccessCharacteristic createAccessCharacteristic() {
+		AccessCharacteristicImpl accessCharacteristic = new AccessCharacteristicImpl();
+		return accessCharacteristic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UsageCharacteristic createUsageCharacteristic() {
+		UsageCharacteristicImpl usageCharacteristic = new UsageCharacteristicImpl();
+		return usageCharacteristic;
 	}
 
 	/**
@@ -817,6 +853,66 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	public String convertStorageTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FunctionalAccessLevel createFunctionalAccessLevelFromString(EDataType eDataType, String initialValue) {
+		FunctionalAccessLevel result = FunctionalAccessLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFunctionalAccessLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MechanicalAccessLevel createMechanicalAccessLevelFromString(EDataType eDataType, String initialValue) {
+		MechanicalAccessLevel result = MechanicalAccessLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMechanicalAccessLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UsageType createUsageTypeFromString(EDataType eDataType, String initialValue) {
+		UsageType result = UsageType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUsageTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

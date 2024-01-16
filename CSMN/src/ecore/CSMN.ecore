@@ -247,12 +247,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceCharacteristic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceConnector" ordered="false"
+        eType="#//InterfaceConnector" defaultValueLiteral="Unspecified"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceType" ordered="false"
         lowerBound="1" eType="#//InterfaceType" defaultValueLiteral="Unspecified"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="purpose" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="interfaceConnector" ordered="false"
-        eType="#//InterfaceConnector" defaultValueLiteral="Unspecified"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InterfaceConnector">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="None" value="1"/>
+    <eLiterals name="Hardwired" value="2"/>
+    <eLiterals name="Hdmi" value="3"/>
+    <eLiterals name="Knob" value="4"/>
+    <eLiterals name="Luer" value="5"/>
+    <eLiterals name="RJ45" value="6"/>
+    <eLiterals name="IecPlugC" value="7"/>
+    <eLiterals name="IecPlugC13" value="8"/>
+    <eLiterals name="IecSocketC14" value="9"/>
+    <eLiterals name="Proprietary" value="10"/>
+    <eLiterals name="SdCard" value="11"/>
+    <eLiterals name="SubD" value="12"/>
+    <eLiterals name="Toslink" value="13"/>
+    <eLiterals name="UsbA" value="14"/>
+    <eLiterals name="UsbC" value="15"/>
+    <eLiterals name="Wireless" value="16"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="InterfaceType">
     <eLiterals name="Unspecified"/>
@@ -285,25 +304,6 @@
     <eLiterals name="WifiAccessPoint" value="27"/>
     <eLiterals name="WifiClient" value="28"/>
     <eLiterals name="Zigbee" value="29"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="InterfaceConnector">
-    <eLiterals name="Unspecified"/>
-    <eLiterals name="None" value="1"/>
-    <eLiterals name="Hardwired" value="2"/>
-    <eLiterals name="Hdmi" value="3"/>
-    <eLiterals name="Knob" value="4"/>
-    <eLiterals name="Luer" value="5"/>
-    <eLiterals name="RJ45" value="6"/>
-    <eLiterals name="IecPlugC" value="7"/>
-    <eLiterals name="IecPlugC13" value="8"/>
-    <eLiterals name="IecSocketC14" value="9"/>
-    <eLiterals name="Proprietary" value="10"/>
-    <eLiterals name="SdCard" value="11"/>
-    <eLiterals name="SubD" value="12"/>
-    <eLiterals name="Toslink" value="13"/>
-    <eLiterals name="UsbA" value="14"/>
-    <eLiterals name="UsbC" value="15"/>
-    <eLiterals name="Wireless" value="16"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristics">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
@@ -465,5 +465,52 @@
         <details key="documentation" value="The drive is a RAM disk."/>
       </eAnnotations>
     </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AccessCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalLevel" ordered="false"
+        lowerBound="1" eType="#//FunctionalAccessLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalSpec" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanicalLevel" ordered="false"
+        eType="#//MechanicalAccessLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanicalSpec" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FunctionalAccessLevel">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Open" value="1"/>
+    <eLiterals name="Operator" value="2"/>
+    <eLiterals name="Service" value="3"/>
+    <eLiterals name="Vendor" value="4"/>
+    <eLiterals name="Disabled" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MechanicalAccessLevel">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Open" value="1"/>
+    <eLiterals name="CoveredNoTools" value="2"/>
+    <eLiterals name="CoveredSimpleTools" value="3"/>
+    <eLiterals name="DismantleRequired" value="4"/>
+    <eLiterals name="None" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UsageCharacteristic">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intendedUserGroup" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Actor"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageSpec" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageType" ordered="false"
+        eType="#//UsageType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UsageType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Everytime" value="1"/>
+    <eLiterals name="Mosttime" value="2"/>
+    <eLiterals name="Sometimes" value="3"/>
+    <eLiterals name="Setup" value="4"/>
+    <eLiterals name="Maintenance" value="5"/>
+    <eLiterals name="Manufacturing" value="6"/>
   </eClassifiers>
 </ecore:EPackage>
