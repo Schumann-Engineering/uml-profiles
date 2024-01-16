@@ -13,6 +13,23 @@
 [query public getUChars(arg0 : String) : String
 	= invoke('engineering.schumann.uml.m2t.services.StringServiceImpl', 'getUChars(java.lang.String)', Sequence{arg0}) /]
 
+[query public hasContent(arg0 : String) : Boolean
+	= not isNullOrEmpty( arg0 ) /]
+
+[query public isEmpty(arg0 : String) : Boolean = 
+	if (arg0 = null) then 
+		true
+	else
+		arg0.trim() = ''
+	endif
+/]
+
+[query public isNull(arg0 : String) : Boolean
+	= arg0 = null /]
+
+[query public isNullOrEmpty(arg0 : String) : Boolean
+	= isNull(arg0) or isEmpty(arg0) /]
+
 [comment pads a string to the left /]
 [query public padLeft(str : String, length : Integer) : String
 	= str.padLeft(length, ' ') /]
