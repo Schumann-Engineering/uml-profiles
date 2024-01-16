@@ -1,0 +1,53 @@
+[comment encoding = UTF-8 /]
+[module common(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::AccessCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::BandwidthCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::EnergyCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::FirewallCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::StorageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::UsageCharacteristic /]
+[import engineering::schumann::uml::m2t::Comment /]
+[import engineering::schumann::uml::m2t::services::CommentService /]
+
+
+[template public printCharacteristics(
+	this : Element
+)
+post(trim())
+]
+[comment Access /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAccessCharacteristic() /][/if]
+[comment Bandwith /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printBandwidthCharacteristic() /][/if]
+[if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printBandwidthCharacteristic() /][/if]
+[comment Interface /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
+[comment Energy /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printEnergyCharacteristic() /][/if]
+[if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printEnergyCharacteristic() /][/if]
+[comment Firewall /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printFirewallCharacteristic() /][/if]
+[comment Storage /]
+[if (this.oclIsKindOf(Port))]
+[this.oclAsType(Port).owner.oclAsType(Component).printStorageCharacteristic() /]
+[this.oclAsType(Port).printStorageCharacteristic() /]
+[/if]
+[if (this.oclIsKindOf(Component))][this.oclAsType(Component).printStorageCharacteristic() /][/if]
+[comment Usage /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printUsageCharacteristic() /][/if]
+[comment Comment /]
+[if (this.ownedComment->size() > 0 and this.ownedComment->one(not _isEmpty()))]
+***COMMENT***:
+[for (eComment : Comment | this.ownedComment)]
+[if (not eComment._isEmpty())]
+[for (eComment.stripComment()) separator ('\n')]  [self/][/for]
+[/if]
+[/for]
+[/if]
+[/template]

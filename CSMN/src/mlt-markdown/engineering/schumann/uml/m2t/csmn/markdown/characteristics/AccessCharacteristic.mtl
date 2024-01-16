@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module AccessCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::AccessCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::MechanicalAccessLevel /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::FunctionalAccessLevel /]
+
+
+[template public printAccessCharacteristic(
+	this : NamedElement
+) 
+? (this.csmn_hasAccessCharacteristic())
+post(trim())
+{
+	characteristic : AccessCharacteristic = this.csmn_accessCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : AccessCharacteristic
+)
+post(trim())]
+***Access Characteristic:***
+[if (this.mechanicalLevel <> null and this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
+▪ *Mechanical*: [this.mechanicalLevel.csmn_toString() /]
+[if (this.mechanicalSpec <> null)]
+  *NOTE:* [this.mechanicalSpec /]
+[/if]
+[/if]
+[if (this.functionalLevel <> null and this.functionalLevel <> FunctionalAccessLevel::Unspecified)]
+▪ *Functionality*: [this.functionalLevel.csmn_toString() /]
+[if (this.functionalSpec <> null)]
+  *NOTE:* [this.functionalSpec /]
+[/if]
+[/if]
+<hr/>
+[/template]

@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module InterfaceCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceType /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceConnector /]
+
+
+[template public printInterfaceCharacteristic(
+	this : Port
+) 
+? (this.csmn_hasInterfaceCharacteristic())
+{
+	characteristic : InterfaceCharacteristic = this.csmn_interfaceCharacteristic();
+}
+]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : InterfaceCharacteristic
+)
+post(trim())]
+***Interface Characteristic***:
+[comment]
+***Purpose***:
+[this.purpose/]
+[/comment]
+[if (this.interfaceType <> null and this.interfaceType <> InterfaceType::Unspecified)]
+▪ *Type*: [this.interfaceType.csmn_toString() /]
+[/if]
+[if (this.interfaceConnector <> null and this.interfaceConnector <> InterfaceConnector::Unspecified)]
+▪ *Connector*: [this.interfaceConnector.csmn_toString() /]
+[/if]
+<hr/>
+[/template]

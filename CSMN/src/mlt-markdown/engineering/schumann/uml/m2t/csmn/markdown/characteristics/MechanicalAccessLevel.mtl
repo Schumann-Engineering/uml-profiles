@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module MechanicalAccessLevel(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toString(
+	this : MechanicalAccessLevel
+) : String =
+	     if (this = MechanicalAccessLevel::Unspecified) 		then '(Unspecified)'
+	else if (this = MechanicalAccessLevel::Open) 				then 'Open'
+	else if (this = MechanicalAccessLevel::CoveredNoTools)		then 'Covered, no tools required'
+	else if (this = MechanicalAccessLevel::CoveredSimpleTools)	then 'Covered, simple tools required'
+	else if (this = MechanicalAccessLevel::DismantleRequired)	then 'Dismantling required'
+	else if (this = MechanicalAccessLevel::None)				then 'No mechanical access'
+	else '?'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module UsageCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::UsageCharacteristic /]
+
+
+[template public printUsageCharacteristic(
+	this : NamedElement
+) 
+? (this.csmn_hasUsageCharacteristic())
+post(trim())
+{
+	characteristic : UsageCharacteristic = this.csmn_usageCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : UsageCharacteristic
+)
+post(trim())]
+***Usage Characteristic:***
+[comment usage type & usage spec/]
+[if (this.usageType <> null and this.usageType <> UsageType::Unspecified)]
+▪ *Type*: [this.usageType /]
+[if (this.usageSpec <> null)]
+  *NOTE:* [this.usageSpec /]
+[/if]
+[/if]
+[comment intended user group /]
+[if (this.intendedUserGroup <> null and this.intendedUserGroup->size() > 0)]
+▪ *Intended user groups*: 
+[for (userGroup : Actor | this.intendedUserGroup->filter(Actor))]
+  ▪ [userGroup.name /]
+[/for]
+[/if]
+<hr/>
+[/template]

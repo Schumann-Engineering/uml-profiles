@@ -1,0 +1,42 @@
+[comment encoding = UTF-8 /]
+[module BandwidthCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::BandwidthCharacteristic /]
+
+
+[template public printBandwidthCharacteristic(
+	this : Port
+) 
+? (this.csmn_hasBandwidthCharacteristic())
+post(trim())
+{
+	characteristic : BandwidthCharacteristic = this.csmn_bandwidthCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public printBandwidthCharacteristic(
+	this : Relationship
+) 
+? (this.csmn_hasBandwidthCharacteristic())
+post(trim())
+{
+	characteristic : BandwidthCharacteristic = this.csmn_bandwidthCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : BandwidthCharacteristic
+)
+post(trim())]
+***Bandwidth Characteristic:***
+[this.bandwidth.size /] [this.bandwidth.unit /]
+<hr/>
+[/template]

@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module FunctionalAccessLevel(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toString(
+	this : FunctionalAccessLevel
+) : String =
+	     if (this = FunctionalAccessLevel::Unspecified) then '(Unspecified)'
+	else if (this = FunctionalAccessLevel::Open) 		then 'Open'
+	else if (this = FunctionalAccessLevel::Operator)	then 'Operator'
+	else if (this = FunctionalAccessLevel::Service)		then 'Service'
+	else if (this = FunctionalAccessLevel::Vendor)		then 'Vendor'
+	else if (this = FunctionalAccessLevel::Disabled)	then 'Disabled'
+	else '?'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module FirewallCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::FirewallCharacteristic /]
+
+
+[template public printFirewallCharacteristic(
+	this : Port
+) 
+? (this.csmn_hasFirewallCharacteristic())
+post(trim())
+{
+	characteristic : FirewallCharacteristic = this.csmn_firewallCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : FirewallCharacteristic
+)
+post(trim())]
+***Firewall Characteristic:***
+▪ Port is firewalled
+<hr/>
+[/template]

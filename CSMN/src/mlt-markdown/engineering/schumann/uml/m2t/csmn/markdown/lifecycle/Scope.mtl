@@ -17,7 +17,7 @@
 
 
 [template public printScope(
-	this : Package,
+	this : NamedElement,
 	printSoftware : Boolean,
 	printCpe : Boolean
 )

@@ -8,7 +8,7 @@
 [import engineering::schumann::uml::m2t::services::EnvironmentService /]
 [import engineering::schumann::uml::m2t::services::StereotypeService /]
 [import engineering::schumann::uml::m2t::test::Profile /]
-[import engineering::schumann::uml::m2t::csmn::common::characteristics::interfaces::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
@@ -16,8 +16,8 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::Port /]
-[import engineering::schumann::uml::m2t::csmn::markdown::uml::VisibilityKind /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::common /]
 [import net::daringfireball::markdown::Table /]
 
 
@@ -204,66 +204,109 @@ There are different types of PRODUCT INTERFACE:
 
 ### List of PRODUCT INTERFACE
 
-#### Network interface
+[let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
+#### Network interfaces
 
-| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
-[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasNetworkPort() )->sortedBy(name))]
+[let parts : OrderedSet(Component) = systemElements->select(csmn_networkPort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
 [for (port : Port | component.csmn_networkPort()->csmn_filterInScope()->sortedBy(name))]
 [printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
 [/for]
 [/for]
+[/if]
+[/let]
 
+#### Non-Network interfaces
 
-#### Non-Network interface
-
-| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
-[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasNonNetworkPort() )->sortedBy(name))]
+[let parts : OrderedSet(Component) = systemElements->select(csmn_nonNetworkPort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
 [for (port : Port | component.csmn_nonNetworkPort()->csmn_filterInScope()->sortedBy(name))]
 [printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
 [/for]
 [/for]
-
+[/if]
+[/let]
 
 #### Storage Media
 
-| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
-[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasStoragePort() )->sortedBy(name))]
+[let parts : OrderedSet(Component) = systemElements->select(csmn_storagePort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
 [for (port : Port | component.csmn_storagePort()->csmn_filterInScope()->sortedBy(name))]
 [printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
 [/for]
 [/for]
+[/if]
+[/let]
 
+#### Material interfaces
 
-#### Material interface
-
-| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
-[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasMaterialPort() )->sortedBy(name))]
+[let parts : OrderedSet(Component) = systemElements->select(csmn_materialPort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
 [for (port : Port | component.csmn_materialPort()->csmn_filterInScope()->sortedBy(name))]
 [printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
 [/for]
 [/for]
+[/if]
+[/let]
 
+#### Energy interfaces
 
-#### Energy interface
-
-| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | Accessibility | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-----: | :-----------: | :-------------------------------- |
-[for (component : Component | this.csmn_allSystemElement()->select(c : Component | c.csmn_hasEnergyPort() )->sortedBy(name))]
+[let parts : OrderedSet(Component) = systemElements->select(csmn_energyPort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
 [for (port : Port | component.csmn_energyPort()->csmn_filterInScope()->sortedBy(name))]
 [printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
 [/for]
 [/for]
+[/if]
+[/let]
+
+[let parts : OrderedSet(Component) = systemElements->select(csmn_otherPort()->csmn_filterInScope()->size() > 0)]
+[if (parts->size() > 0)]
+#### Other interfaces
+
+WARN: this section should be empty! This is an indicator of a wrongly configured model!
+
+| System Element | Security Zone | ==PRODUCT INTERFACE== | Purpose | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-----: | :-------------------------------- |
+[for (component : Component | parts)]
+[for (port : Port | component.csmn_otherPort()->csmn_filterInScope()->sortedBy(name))]
+[printComponentPortAsTableCell(component, port).toMarkdownTableRow() /]
+[/for]
+[/for]
+[/if]
+[/let]
+[/let]
 
 [comment
 	--------------------
 	CONNECTIONS
 	--------------------
 /]
-
 ## Interface connections
 
 ### Definition
@@ -292,15 +335,13 @@ An INTERFACE CONNECTION
 )
 post(trim())]
 [comment System Element /]
-<td>[component.name /]</td>
+<td>[component.name /][if (component.csmn_hasScopeConstraint())]<br/>[component.printScopeConstraint() /][/if]</td>
 [comment Security Zone /]
 <td>[if (component.csmn_hasSecurityZone())][component.csmn_securityZoneElement().name/][else]./.[/if]</td>
 [comment PRODUCT INTERFACE /]
-<td>[port.name/]</td>
+<td>[port.name/][if (port.csmn_hasScopeConstraint())]<br/>[port.printScopeConstraint().toMarkdownTableCell() /][/if]</td>
 [comment Purpose /]
 <td>[port.csmn_interfaceCharacteristic().purpose /]</td>
-[comment Accessibility /]
-<td>[port.visibility.printVisibilityAsTableCell().toMarkdownTableCell() /]</td>
 [comment PRODUCT INTERFACE Characteristics /]
-<td>[port.printCharacteristicsAsTableCell().toMarkdownTableCell()/]</td> 
+<td>[port.printCharacteristics().toMarkdownTableCell()/]</td> 
 [/template]

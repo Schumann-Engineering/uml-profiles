@@ -1,0 +1,56 @@
+[comment encoding = UTF-8 /]
+[module StorageCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::StorageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::primitiveTypes::Dt_Size_T /]
+[import engineering::schumann::uml::m2t::services::StringService /]
+
+
+[template public printStorageCharacteristic(
+	this : Port
+) 
+? (this.csmn_hasStorageCharacteristic())
+post(trim())
+{
+	characteristic : StorageCharacteristic = this.csmn_storageCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public printStorageCharacteristic(
+	this : Component
+) 
+? (this.csmn_hasStorageCharacteristic())
+post(trim())
+{
+	characteristic : StorageCharacteristic = this.csmn_storageCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : StorageCharacteristic
+)
+post(trim())]
+***Storage Characteristic:***
+[if (this.storageName.hasContent())]
+▪ *Name*: [this.storageName /]
+[/if]
+[if (this.storageType <> null and this.storageType <> StorageType::Unknown)]
+▪ *Type*: [this.storageType /]
+[/if]
+▪ *Size*: [this.totalSize.csmn_toString() /]
+[if (this.storageFormat.hasContent())]
+▪ *Format*: [this.storageFormat /]
+[/if]
+[if (this.encryption.hasContent())]
+▪ *Encryption*: [this.encryption /]
+[/if]
+<hr/>
+[/template]
