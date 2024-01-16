@@ -258,6 +258,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//EnvironmentLibrary/base_Package"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//Connection">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//Connection/base_Dependency"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Connection/connectionType"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Connection/directionPrimary"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Connection/directionType"/>
@@ -267,8 +269,6 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//Connection/flowToSupplier"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Connection/isRealTime"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Connection/purpose"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//Connection/base_DirectedRelationship"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//Size_T">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Size_T/size"/>
@@ -320,10 +320,10 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//EnergyCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//EnergyCharacteristic/base_Relationship"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//EnergyCharacteristic/base_Port"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//EnergyCharacteristic/energyType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//EnergyCharacteristic/base_Dependency"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//OsiCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//OsiCharacteristic/application"/>
@@ -336,7 +336,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="CSMN.ecore#//FlowCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//FlowCharacteristic/base_Relationship"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//FlowCharacteristic/base_Dependency"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//TcpCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//TcpCharacteristic/application"/>
@@ -355,11 +355,11 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//BandwidthCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/base_Relationship"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/base_Port"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/bandwidth"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/base_Dependency"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//FirewallCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -368,10 +368,10 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//MaterialCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//MaterialCharacteristic/base_Port"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//MaterialCharacteristic/base_Relationship"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//MaterialCharacteristic/materialType"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//MaterialCharacteristic/otherMaterialType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//MaterialCharacteristic/base_Dependency"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//Iec62443SecurityLevelCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

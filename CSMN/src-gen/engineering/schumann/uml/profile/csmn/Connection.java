@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.uml2.uml.DataType;
-import org.eclipse.uml2.uml.DirectedRelationship;
+import org.eclipse.uml2.uml.Dependency;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,6 +19,7 @@ import org.eclipse.uml2.uml.DirectedRelationship;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getBase_Dependency <em>Base Dependency</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getConnectionType <em>Connection Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getDirectionPrimary <em>Direction Primary</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getDirectionType <em>Direction Type</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.uml2.uml.DirectedRelationship;
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getFlowToSupplier <em>Flow To Supplier</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#isRealTime <em>Is Real Time</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getPurpose <em>Purpose</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.Connection#getBase_DirectedRelationship <em>Base Directed Relationship</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getConnection()
@@ -34,6 +34,32 @@ import org.eclipse.uml2.uml.DirectedRelationship;
  * @generated
  */
 public interface Connection extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Dependency</em>' reference.
+	 * @see #setBase_Dependency(Dependency)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getConnection_Base_Dependency()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	Dependency getBase_Dependency();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Connection#getBase_Dependency <em>Base Dependency</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Dependency</em>' reference.
+	 * @see #getBase_Dependency()
+	 * @generated
+	 */
+	void setBase_Dependency(Dependency value);
+
 	/**
 	 * Returns the value of the '<em><b>Connection Type</b></em>' attribute.
 	 * The default value is <code>"Information"</code>.
@@ -255,31 +281,5 @@ public interface Connection extends EObject {
 	 * @generated
 	 */
 	void setPurpose(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Base Directed Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base Directed Relationship</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Directed Relationship</em>' reference.
-	 * @see #setBase_DirectedRelationship(DirectedRelationship)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getConnection_Base_DirectedRelationship()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	DirectedRelationship getBase_DirectedRelationship();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Connection#getBase_DirectedRelationship <em>Base Directed Relationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Directed Relationship</em>' reference.
-	 * @see #getBase_DirectedRelationship()
-	 * @generated
-	 */
-	void setBase_DirectedRelationship(DirectedRelationship value);
 
 } // Connection

@@ -336,13 +336,22 @@ public interface CSMNPackage extends EPackage {
 	int CONNECTION = 6;
 
 	/**
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTION__BASE_DEPENDENCY = 0;
+
+	/**
 	 * The feature id for the '<em><b>Connection Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__CONNECTION_TYPE = 0;
+	int CONNECTION__CONNECTION_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Direction Primary</b></em>' attribute.
@@ -351,7 +360,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__DIRECTION_PRIMARY = 1;
+	int CONNECTION__DIRECTION_PRIMARY = 2;
 
 	/**
 	 * The feature id for the '<em><b>Direction Type</b></em>' attribute.
@@ -360,7 +369,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__DIRECTION_TYPE = 2;
+	int CONNECTION__DIRECTION_TYPE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Flow To Client</b></em>' reference list.
@@ -369,7 +378,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__FLOW_TO_CLIENT = 3;
+	int CONNECTION__FLOW_TO_CLIENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Flow To Supplier</b></em>' reference list.
@@ -378,7 +387,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__FLOW_TO_SUPPLIER = 4;
+	int CONNECTION__FLOW_TO_SUPPLIER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Is Real Time</b></em>' attribute.
@@ -387,7 +396,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__IS_REAL_TIME = 5;
+	int CONNECTION__IS_REAL_TIME = 6;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' attribute.
@@ -396,16 +405,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__PURPOSE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Base Directed Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTION__BASE_DIRECTED_RELATIONSHIP = 7;
+	int CONNECTION__PURPOSE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Connection</em>' class.
@@ -931,22 +931,13 @@ public interface CSMNPackage extends EPackage {
 	int ENERGY_CHARACTERISTIC = 16;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENERGY_CHARACTERISTIC__BASE_RELATIONSHIP = 0;
-
-	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_CHARACTERISTIC__BASE_PORT = 1;
+	int ENERGY_CHARACTERISTIC__BASE_PORT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Energy Type</b></em>' attribute.
@@ -955,7 +946,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENERGY_CHARACTERISTIC__ENERGY_TYPE = 2;
+	int ENERGY_CHARACTERISTIC__ENERGY_TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENERGY_CHARACTERISTIC__BASE_DEPENDENCY = 2;
 
 	/**
 	 * The number of structural features of the '<em>Energy Characteristic</em>' class.
@@ -986,13 +986,13 @@ public interface CSMNPackage extends EPackage {
 	int FLOW_CHARACTERISTIC = 18;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOW_CHARACTERISTIC__BASE_RELATIONSHIP = 0;
+	int FLOW_CHARACTERISTIC__BASE_DEPENDENCY = 0;
 
 	/**
 	 * The number of structural features of the '<em>Flow Characteristic</em>' class.
@@ -1023,13 +1023,13 @@ public interface CSMNPackage extends EPackage {
 	int OSI_CHARACTERISTIC = 17;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OSI_CHARACTERISTIC__BASE_RELATIONSHIP = FLOW_CHARACTERISTIC__BASE_RELATIONSHIP;
+	int OSI_CHARACTERISTIC__BASE_DEPENDENCY = FLOW_CHARACTERISTIC__BASE_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Application</b></em>' attribute.
@@ -1123,13 +1123,13 @@ public interface CSMNPackage extends EPackage {
 	int TCP_CHARACTERISTIC = 19;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCP_CHARACTERISTIC__BASE_RELATIONSHIP = FLOW_CHARACTERISTIC__BASE_RELATIONSHIP;
+	int TCP_CHARACTERISTIC__BASE_DEPENDENCY = FLOW_CHARACTERISTIC__BASE_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Application</b></em>' attribute.
@@ -1278,22 +1278,13 @@ public interface CSMNPackage extends EPackage {
 	int BANDWIDTH_CHARACTERISTIC = 21;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP = 0;
-
-	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTIC__BASE_PORT = 1;
+	int BANDWIDTH_CHARACTERISTIC__BASE_PORT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
@@ -1302,7 +1293,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTIC__BANDWIDTH = 2;
+	int BANDWIDTH_CHARACTERISTIC__BANDWIDTH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BANDWIDTH_CHARACTERISTIC__BASE_DEPENDENCY = 2;
 
 	/**
 	 * The number of structural features of the '<em>Bandwidth Characteristic</em>' class.
@@ -1379,22 +1379,13 @@ public interface CSMNPackage extends EPackage {
 	int MATERIAL_CHARACTERISTIC__BASE_PORT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATERIAL_CHARACTERISTIC__BASE_RELATIONSHIP = 1;
-
-	/**
 	 * The feature id for the '<em><b>Material Type</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = 2;
+	int MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Other Material Type</b></em>' attribute.
@@ -1403,7 +1394,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = 3;
+	int MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY = 3;
 
 	/**
 	 * The number of structural features of the '<em>Material Characteristic</em>' class.
@@ -2209,6 +2209,17 @@ public interface CSMNPackage extends EPackage {
 	EClass getConnection();
 
 	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Connection#getBase_Dependency <em>Base Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Dependency</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Connection#getBase_Dependency()
+	 * @see #getConnection()
+	 * @generated
+	 */
+	EReference getConnection_Base_Dependency();
+
+	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Connection#getConnectionType <em>Connection Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2284,17 +2295,6 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getConnection_Purpose();
-
-	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Connection#getBase_DirectedRelationship <em>Base Directed Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Directed Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.Connection#getBase_DirectedRelationship()
-	 * @see #getConnection()
-	 * @generated
-	 */
-	EReference getConnection_Base_DirectedRelationship();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.Size_T <em>Size T</em>}'.
@@ -2650,17 +2650,6 @@ public interface CSMNPackage extends EPackage {
 	EClass getEnergyCharacteristic();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.EnergyCharacteristic#getBase_Relationship <em>Base Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.EnergyCharacteristic#getBase_Relationship()
-	 * @see #getEnergyCharacteristic()
-	 * @generated
-	 */
-	EReference getEnergyCharacteristic_Base_Relationship();
-
-	/**
 	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.EnergyCharacteristic#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2681,6 +2670,17 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getEnergyCharacteristic_EnergyType();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.EnergyCharacteristic#getBase_Dependency <em>Base Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Dependency</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.EnergyCharacteristic#getBase_Dependency()
+	 * @see #getEnergyCharacteristic()
+	 * @generated
+	 */
+	EReference getEnergyCharacteristic_Base_Dependency();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.OsiCharacteristic <em>Osi Characteristic</em>}'.
@@ -2780,15 +2780,15 @@ public interface CSMNPackage extends EPackage {
 	EClass getFlowCharacteristic();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Relationship <em>Base Relationship</em>}'.
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Dependency <em>Base Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Relationship()
+	 * @return the meta object for the reference '<em>Base Dependency</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Dependency()
 	 * @see #getFlowCharacteristic()
 	 * @generated
 	 */
-	EReference getFlowCharacteristic_Base_Relationship();
+	EReference getFlowCharacteristic_Base_Dependency();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic <em>Tcp Characteristic</em>}'.
@@ -2931,17 +2931,6 @@ public interface CSMNPackage extends EPackage {
 	EClass getBandwidthCharacteristic();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship <em>Base Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship()
-	 * @see #getBandwidthCharacteristic()
-	 * @generated
-	 */
-	EReference getBandwidthCharacteristic_Base_Relationship();
-
-	/**
 	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2962,6 +2951,17 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBandwidthCharacteristic_Bandwidth();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Dependency <em>Base Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Dependency</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Dependency()
+	 * @see #getBandwidthCharacteristic()
+	 * @generated
+	 */
+	EReference getBandwidthCharacteristic_Base_Dependency();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.FirewallCharacteristic <em>Firewall Characteristic</em>}'.
@@ -3006,17 +3006,6 @@ public interface CSMNPackage extends EPackage {
 	EReference getMaterialCharacteristic_Base_Port();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Relationship <em>Base Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Relationship()
-	 * @see #getMaterialCharacteristic()
-	 * @generated
-	 */
-	EReference getMaterialCharacteristic_Base_Relationship();
-
-	/**
 	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3037,6 +3026,17 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMaterialCharacteristic_OtherMaterialType();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Dependency</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency()
+	 * @see #getMaterialCharacteristic()
+	 * @generated
+	 */
+	EReference getMaterialCharacteristic_Base_Dependency();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelCharacteristic <em>Iec62443 Security Level Characteristic</em>}'.
@@ -3755,6 +3755,14 @@ public interface CSMNPackage extends EPackage {
 		EClass CONNECTION = eINSTANCE.getConnection();
 
 		/**
+		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTION__BASE_DEPENDENCY = eINSTANCE.getConnection_Base_Dependency();
+
+		/**
 		 * The meta object literal for the '<em><b>Connection Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3809,14 +3817,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONNECTION__PURPOSE = eINSTANCE.getConnection_Purpose();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Directed Relationship</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONNECTION__BASE_DIRECTED_RELATIONSHIP = eINSTANCE.getConnection_Base_DirectedRelationship();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.Size_TImpl <em>Size T</em>}' class.
@@ -4103,14 +4103,6 @@ public interface CSMNPackage extends EPackage {
 		EClass ENERGY_CHARACTERISTIC = eINSTANCE.getEnergyCharacteristic();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Relationship</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENERGY_CHARACTERISTIC__BASE_RELATIONSHIP = eINSTANCE.getEnergyCharacteristic_Base_Relationship();
-
-		/**
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4125,6 +4117,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ENERGY_CHARACTERISTIC__ENERGY_TYPE = eINSTANCE.getEnergyCharacteristic_EnergyType();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENERGY_CHARACTERISTIC__BASE_DEPENDENCY = eINSTANCE.getEnergyCharacteristic_Base_Dependency();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.OsiCharacteristicImpl <em>Osi Characteristic</em>}' class.
@@ -4203,12 +4203,12 @@ public interface CSMNPackage extends EPackage {
 		EClass FLOW_CHARACTERISTIC = eINSTANCE.getFlowCharacteristic();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Relationship</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FLOW_CHARACTERISTIC__BASE_RELATIONSHIP = eINSTANCE.getFlowCharacteristic_Base_Relationship();
+		EReference FLOW_CHARACTERISTIC__BASE_DEPENDENCY = eINSTANCE.getFlowCharacteristic_Base_Dependency();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl <em>Tcp Characteristic</em>}' class.
@@ -4321,14 +4321,6 @@ public interface CSMNPackage extends EPackage {
 		EClass BANDWIDTH_CHARACTERISTIC = eINSTANCE.getBandwidthCharacteristic();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Relationship</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP = eINSTANCE.getBandwidthCharacteristic_Base_Relationship();
-
-		/**
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4343,6 +4335,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BANDWIDTH_CHARACTERISTIC__BANDWIDTH = eINSTANCE.getBandwidthCharacteristic_Bandwidth();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BANDWIDTH_CHARACTERISTIC__BASE_DEPENDENCY = eINSTANCE.getBandwidthCharacteristic_Base_Dependency();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl <em>Firewall Characteristic</em>}' class.
@@ -4381,14 +4381,6 @@ public interface CSMNPackage extends EPackage {
 		EReference MATERIAL_CHARACTERISTIC__BASE_PORT = eINSTANCE.getMaterialCharacteristic_Base_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Relationship</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MATERIAL_CHARACTERISTIC__BASE_RELATIONSHIP = eINSTANCE.getMaterialCharacteristic_Base_Relationship();
-
-		/**
 		 * The meta object literal for the '<em><b>Material Type</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4403,6 +4395,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = eINSTANCE.getMaterialCharacteristic_OtherMaterialType();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY = eINSTANCE.getMaterialCharacteristic_Base_Dependency();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.Iec62443SecurityLevelCharacteristicImpl <em>Iec62443 Security Level Characteristic</em>}' class.

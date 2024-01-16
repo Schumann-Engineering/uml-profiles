@@ -6,8 +6,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Port;
-import org.eclipse.uml2.uml.Relationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,9 +19,9 @@ import org.eclipse.uml2.uml.Relationship;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Relationship <em>Base Relationship</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic()
@@ -54,32 +54,6 @@ public interface MaterialCharacteristic extends EObject {
 	 * @generated
 	 */
 	void setBase_Port(Port value);
-
-	/**
-	 * Returns the value of the '<em><b>Base Relationship</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base Relationship</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Relationship</em>' reference.
-	 * @see #setBase_Relationship(Relationship)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_Base_Relationship()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	Relationship getBase_Relationship();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Relationship <em>Base Relationship</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Relationship</em>' reference.
-	 * @see #getBase_Relationship()
-	 * @generated
-	 */
-	void setBase_Relationship(Relationship value);
 
 	/**
 	 * Returns the value of the '<em><b>Material Type</b></em>' attribute list.
@@ -124,5 +98,31 @@ public interface MaterialCharacteristic extends EObject {
 	 * @generated
 	 */
 	void setOtherMaterialType(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Dependency</em>' reference.
+	 * @see #setBase_Dependency(Dependency)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_Base_Dependency()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	Dependency getBase_Dependency();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Dependency</em>' reference.
+	 * @see #getBase_Dependency()
+	 * @generated
+	 */
+	void setBase_Dependency(Dependency value);
 
 } // MaterialCharacteristic

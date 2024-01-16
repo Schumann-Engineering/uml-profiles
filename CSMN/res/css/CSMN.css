@@ -653,7 +653,7 @@ Dependency[appliedStereotypes~="CSMN::Connection"][directionType="BiDirectional"
 
 
 /*
-Relationship[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
+Dependency[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 }
 */
 

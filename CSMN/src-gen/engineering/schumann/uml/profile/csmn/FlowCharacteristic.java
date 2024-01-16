@@ -4,7 +4,7 @@ package engineering.schumann.uml.profile.csmn;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.eclipse.uml2.uml.Relationship;
+import org.eclipse.uml2.uml.Dependency;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +15,7 @@ import org.eclipse.uml2.uml.Relationship;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Relationship <em>Base Relationship</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getFlowCharacteristic()
@@ -24,29 +24,29 @@ import org.eclipse.uml2.uml.Relationship;
  */
 public interface FlowCharacteristic extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Base Relationship</b></em>' reference.
+	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Relationship</em>' reference isn't clear,
+	 * If the meaning of the '<em>Base Dependency</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Relationship</em>' reference.
-	 * @see #setBase_Relationship(Relationship)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getFlowCharacteristic_Base_Relationship()
-	 * @model required="true" ordered="false"
+	 * @return the value of the '<em>Base Dependency</em>' reference.
+	 * @see #setBase_Dependency(Dependency)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getFlowCharacteristic_Base_Dependency()
+	 * @model ordered="false"
 	 * @generated
 	 */
-	Relationship getBase_Relationship();
+	Dependency getBase_Dependency();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Relationship <em>Base Relationship</em>}' reference.
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.FlowCharacteristic#getBase_Dependency <em>Base Dependency</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Relationship</em>' reference.
-	 * @see #getBase_Relationship()
+	 * @param value the new value of the '<em>Base Dependency</em>' reference.
+	 * @see #getBase_Dependency()
 	 * @generated
 	 */
-	void setBase_Relationship(Relationship value);
+	void setBase_Dependency(Dependency value);
 
 } // FlowCharacteristic

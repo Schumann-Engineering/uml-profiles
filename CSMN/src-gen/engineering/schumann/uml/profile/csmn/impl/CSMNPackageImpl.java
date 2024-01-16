@@ -676,8 +676,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConnection_ConnectionType() {
-		return (EAttribute)connectionEClass.getEStructuralFeatures().get(0);
+	public EReference getConnection_Base_Dependency() {
+		return (EReference)connectionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -686,7 +686,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConnection_DirectionPrimary() {
+	public EAttribute getConnection_ConnectionType() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -696,7 +696,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConnection_DirectionType() {
+	public EAttribute getConnection_DirectionPrimary() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -706,8 +706,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getConnection_FlowToClient() {
-		return (EReference)connectionEClass.getEStructuralFeatures().get(3);
+	public EAttribute getConnection_DirectionType() {
+		return (EAttribute)connectionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -716,7 +716,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getConnection_FlowToSupplier() {
+	public EReference getConnection_FlowToClient() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -726,8 +726,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConnection_IsRealTime() {
-		return (EAttribute)connectionEClass.getEStructuralFeatures().get(5);
+	public EReference getConnection_FlowToSupplier() {
+		return (EReference)connectionEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -736,7 +736,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getConnection_Purpose() {
+	public EAttribute getConnection_IsRealTime() {
 		return (EAttribute)connectionEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -746,8 +746,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getConnection_Base_DirectedRelationship() {
-		return (EReference)connectionEClass.getEStructuralFeatures().get(7);
+	public EAttribute getConnection_Purpose() {
+		return (EAttribute)connectionEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -1086,7 +1086,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEnergyCharacteristic_Base_Relationship() {
+	public EReference getEnergyCharacteristic_Base_Port() {
 		return (EReference)energyCharacteristicEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1096,8 +1096,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getEnergyCharacteristic_Base_Port() {
-		return (EReference)energyCharacteristicEClass.getEStructuralFeatures().get(1);
+	public EAttribute getEnergyCharacteristic_EnergyType() {
+		return (EAttribute)energyCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1106,8 +1106,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getEnergyCharacteristic_EnergyType() {
-		return (EAttribute)energyCharacteristicEClass.getEStructuralFeatures().get(2);
+	public EReference getEnergyCharacteristic_Base_Dependency() {
+		return (EReference)energyCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1206,7 +1206,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getFlowCharacteristic_Base_Relationship() {
+	public EReference getFlowCharacteristic_Base_Dependency() {
 		return (EReference)flowCharacteristicEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1346,7 +1346,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBandwidthCharacteristic_Base_Relationship() {
+	public EReference getBandwidthCharacteristic_Base_Port() {
 		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1356,7 +1356,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBandwidthCharacteristic_Base_Port() {
+	public EReference getBandwidthCharacteristic_Bandwidth() {
 		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1366,7 +1366,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBandwidthCharacteristic_Bandwidth() {
+	public EReference getBandwidthCharacteristic_Base_Dependency() {
 		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1416,18 +1416,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getMaterialCharacteristic_Base_Relationship() {
-		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getMaterialCharacteristic_MaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1437,7 +1427,17 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 */
 	@Override
 	public EAttribute getMaterialCharacteristic_OtherMaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMaterialCharacteristic_Base_Dependency() {
+		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -2003,6 +2003,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEReference(environmentLibraryEClass, ENVIRONMENT_LIBRARY__BASE_PACKAGE);
 
 		connectionEClass = createEClass(CONNECTION);
+		createEReference(connectionEClass, CONNECTION__BASE_DEPENDENCY);
 		createEAttribute(connectionEClass, CONNECTION__CONNECTION_TYPE);
 		createEAttribute(connectionEClass, CONNECTION__DIRECTION_PRIMARY);
 		createEAttribute(connectionEClass, CONNECTION__DIRECTION_TYPE);
@@ -2010,7 +2011,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEReference(connectionEClass, CONNECTION__FLOW_TO_SUPPLIER);
 		createEAttribute(connectionEClass, CONNECTION__IS_REAL_TIME);
 		createEAttribute(connectionEClass, CONNECTION__PURPOSE);
-		createEReference(connectionEClass, CONNECTION__BASE_DIRECTED_RELATIONSHIP);
 
 		size_TEClass = createEClass(SIZE_T);
 		createEAttribute(size_TEClass, SIZE_T__SIZE);
@@ -2054,9 +2054,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(assetLibraryEClass, ASSET_LIBRARY__ASSET_TYPE);
 
 		energyCharacteristicEClass = createEClass(ENERGY_CHARACTERISTIC);
-		createEReference(energyCharacteristicEClass, ENERGY_CHARACTERISTIC__BASE_RELATIONSHIP);
 		createEReference(energyCharacteristicEClass, ENERGY_CHARACTERISTIC__BASE_PORT);
 		createEAttribute(energyCharacteristicEClass, ENERGY_CHARACTERISTIC__ENERGY_TYPE);
+		createEReference(energyCharacteristicEClass, ENERGY_CHARACTERISTIC__BASE_DEPENDENCY);
 
 		osiCharacteristicEClass = createEClass(OSI_CHARACTERISTIC);
 		createEAttribute(osiCharacteristicEClass, OSI_CHARACTERISTIC__APPLICATION);
@@ -2068,7 +2068,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(osiCharacteristicEClass, OSI_CHARACTERISTIC__PHYSICAL);
 
 		flowCharacteristicEClass = createEClass(FLOW_CHARACTERISTIC);
-		createEReference(flowCharacteristicEClass, FLOW_CHARACTERISTIC__BASE_RELATIONSHIP);
+		createEReference(flowCharacteristicEClass, FLOW_CHARACTERISTIC__BASE_DEPENDENCY);
 
 		tcpCharacteristicEClass = createEClass(TCP_CHARACTERISTIC);
 		createEAttribute(tcpCharacteristicEClass, TCP_CHARACTERISTIC__APPLICATION);
@@ -2085,18 +2085,18 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__PURPOSE);
 
 		bandwidthCharacteristicEClass = createEClass(BANDWIDTH_CHARACTERISTIC);
-		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP);
 		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BASE_PORT);
 		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BANDWIDTH);
+		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BASE_DEPENDENCY);
 
 		firewallCharacteristicEClass = createEClass(FIREWALL_CHARACTERISTIC);
 		createEReference(firewallCharacteristicEClass, FIREWALL_CHARACTERISTIC__BASE_PORT);
 
 		materialCharacteristicEClass = createEClass(MATERIAL_CHARACTERISTIC);
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_PORT);
-		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_RELATIONSHIP);
 		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
 		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE);
+		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY);
 
 		iec62443SecurityLevelCharacteristicEClass = createEClass(IEC62443_SECURITY_LEVEL_CHARACTERISTIC);
 		createEReference(iec62443SecurityLevelCharacteristicEClass, IEC62443_SECURITY_LEVEL_CHARACTERISTIC__BASE_NAMED_ELEMENT);
@@ -2219,6 +2219,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getEnvironmentLibrary_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 1, 1, EnvironmentLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(connectionEClass, Connection.class, "Connection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConnection_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConnection_ConnectionType(), this.getConnectionType(), "connectionType", "Information", 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConnection_DirectionPrimary(), this.getDirectionOfPrimaryFlow(), "directionPrimary", "Client", 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConnection_DirectionType(), this.getDirectionType(), "directionType", null, 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2226,7 +2227,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getConnection_FlowToSupplier(), theUMLPackage.getDataType(), null, "flowToSupplier", null, 0, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConnection_IsRealTime(), ecorePackage.getEBoolean(), "isRealTime", "false", 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getConnection_Purpose(), ecorePackage.getEString(), "purpose", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getConnection_Base_DirectedRelationship(), theUMLPackage.getDirectedRelationship(), null, "base_DirectedRelationship", null, 0, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(size_TEClass, Size_T.class, "Size_T", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSize_T_Size(), theTypesPackage.getInteger(), "size", null, 1, 1, Size_T.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2270,9 +2270,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getAssetLibrary_AssetType(), this.getAssetType(), "assetType", null, 1, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(energyCharacteristicEClass, EnergyCharacteristic.class, "EnergyCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnergyCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, EnergyCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getEnergyCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, EnergyCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getEnergyCharacteristic_EnergyType(), this.getEnergyType(), "energyType", "Unspecified", 1, 1, EnergyCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getEnergyCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, EnergyCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(osiCharacteristicEClass, OsiCharacteristic.class, "OsiCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOsiCharacteristic_Application(), ecorePackage.getEString(), "application", null, 0, 1, OsiCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2284,7 +2284,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getOsiCharacteristic_Physical(), ecorePackage.getEString(), "physical", null, 1, 1, OsiCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(flowCharacteristicEClass, FlowCharacteristic.class, "FlowCharacteristic", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFlowCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 1, 1, FlowCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFlowCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, FlowCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tcpCharacteristicEClass, TcpCharacteristic.class, "TcpCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTcpCharacteristic_Application(), ecorePackage.getEString(), "application", null, 0, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2301,18 +2301,18 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getInterfaceCharacteristic_Purpose(), ecorePackage.getEString(), "purpose", null, 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(bandwidthCharacteristicEClass, BandwidthCharacteristic.class, "BandwidthCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBandwidthCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBandwidthCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBandwidthCharacteristic_Bandwidth(), this.getBandwidth(), null, "bandwidth", null, 1, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBandwidthCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(firewallCharacteristicEClass, FirewallCharacteristic.class, "FirewallCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFirewallCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, FirewallCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(materialCharacteristicEClass, MaterialCharacteristic.class, "MaterialCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaterialCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getMaterialCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMaterialCharacteristic_MaterialType(), this.getMaterialType(), "materialType", "Unspecified", 1, -1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getMaterialCharacteristic_OtherMaterialType(), ecorePackage.getEString(), "otherMaterialType", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMaterialCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iec62443SecurityLevelCharacteristicEClass, Iec62443SecurityLevelCharacteristic.class, "Iec62443SecurityLevelCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIec62443SecurityLevelCharacteristic_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Iec62443SecurityLevelCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
