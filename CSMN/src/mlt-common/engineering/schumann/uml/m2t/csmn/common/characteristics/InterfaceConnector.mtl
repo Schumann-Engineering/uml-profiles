@@ -1,0 +1,28 @@
+[comment encoding = UTF-8 /]
+[module InterfaceConnector(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toString(
+	this : InterfaceConnector
+) : String =
+	     if (this = InterfaceConnector::Hdmi) 			then 'HDMI'
+	else if (this = InterfaceConnector::IecPlugC)		then 'ICE Plug Type C'
+	else if (this = InterfaceConnector::IecPlugC13)		then 'IEC 60320-C13'
+	else if (this = InterfaceConnector::IecSocketC14)	then 'IEC 60320-C14'
+	else if (this = InterfaceConnector::SdCard)			then 'SD card'
+	else if (this = InterfaceConnector::SubD)			then 'Sub-D'
+	else if (this = InterfaceConnector::UsbA)			then 'USB A'
+	else if (this = InterfaceConnector::UsbC)			then 'USB C'
+	else this.toString()
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

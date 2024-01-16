@@ -28,7 +28,7 @@
 	else if (this = InterfaceType::Power)			then 'energy'
 	else if (this = InterfaceType::Proprietary)		then '?'
 	else if (this = InterfaceType::SdCard)			then 'storage'
-	else if (this = InterfaceType::Serial)			then 'non-medical'
+	else if (this = InterfaceType::Serial)			then 'non-network'
 	else if (this = InterfaceType::Speaker)			then 'energy'
 	else if (this = InterfaceType::Touch)			then 'energy'
 	else if (this = InterfaceType::Usb)				then 'non-network'
@@ -111,4 +111,45 @@
 	this : InterfaceType
 ) : Boolean =
 	this.csmn_interfaceTypeCategory() = '?'
+/]
+
+
+[query public csmn_toString(
+	this : InterfaceType
+) : String =
+	     if (this = InterfaceType::AirByFan) 		then 'Air by Fan'
+	else if (this = InterfaceType::AirByTurbine)	then 'Air by Turbine'
+	else if (this = InterfaceType::Cellular2G)		then 'Cellular (2G)'
+	else if (this = InterfaceType::Cellular3G)		then 'Cellular (3G)'
+	else if (this = InterfaceType::Cellular4G)		then 'Cellular (4G)'
+	else if (this = InterfaceType::Cellular5G)		then 'Cellular (5G)'
+	else if (this = InterfaceType::Display)			then 'Display'
+	else if (this = InterfaceType::DisplaySmall)	then 'Display'
+	else if (this = InterfaceType::Hdmi)			then 'HDMI'
+	else if (this = InterfaceType::Nfc)				then 'NFC'
+	else if (this = InterfaceType::SdCard)			then 'SD card'
+	else if (this = InterfaceType::Usb)				then 'USB'
+	else if (this = InterfaceType::UsbA)			then 'USB A'
+	else if (this = InterfaceType::UsbC)			then 'USB C'
+	else if (this = InterfaceType::UsbFlash)		then 'USB mass storage device'
+	else if (this = InterfaceType::WifiAccessPoint)	then 'Wifi Access Point'
+	else if (this = InterfaceType::WifiClient)		then 'Wifi Client'
+	else this.toString()
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
 /]

@@ -40,9 +40,13 @@
 	this : ScopeConstraint
 ) : Boolean = 
 	if (this <> null) then
-		this
-		.constraint
-		->csmn_hasValidScope()
+		if (this.constraintType = ScopeConstraintType::Removed) then
+			true
+		else
+			this
+			.constraint
+			->csmn_hasValidScope()
+		endif
 	else
 		true
 	endif

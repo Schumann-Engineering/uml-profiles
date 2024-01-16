@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module FirewallCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_hasFirewallCharacteristic(
+	this : Port
+) : Boolean =
+	this
+	._hasStereotype('CSMN::FirewallCharacteristic')
+/]
+
+
+[query public csmn_firewallCharacteristic(
+	this : Port
+) : FirewallCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::FirewallCharacteristic')
+/]

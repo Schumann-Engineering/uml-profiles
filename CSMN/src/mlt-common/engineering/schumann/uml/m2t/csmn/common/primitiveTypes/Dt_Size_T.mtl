@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module Dt_Size_T(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toString(
+	this : Size_T
+) : String =
+	this.size + ' ' + this.unit
+/]

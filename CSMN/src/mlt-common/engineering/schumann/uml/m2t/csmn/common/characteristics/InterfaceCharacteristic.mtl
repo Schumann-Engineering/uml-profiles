@@ -5,7 +5,7 @@
 )]
 
 [import engineering::schumann::uml::m2t::Element /]
-[import engineering::schumann::uml::m2t::csmn::common::characteristics::interfaces::InterfaceType /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceType /]
 
 
 [query public csmn_hasInterfaceCharacteristic(
