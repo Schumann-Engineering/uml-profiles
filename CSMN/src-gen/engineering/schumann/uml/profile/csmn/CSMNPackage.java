@@ -1177,22 +1177,13 @@ public interface CSMNPackage extends EPackage {
 	int TCP_CHARACTERISTIC__PHYSICAL = FLOW_CHARACTERISTIC_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Mechanical</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TCP_CHARACTERISTIC__MECHANICAL = FLOW_CHARACTERISTIC_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Tcp Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TCP_CHARACTERISTIC_FEATURE_COUNT = FLOW_CHARACTERISTIC_FEATURE_COUNT + 6;
+	int TCP_CHARACTERISTIC_FEATURE_COUNT = FLOW_CHARACTERISTIC_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Tcp Characteristic</em>' class.
@@ -2856,17 +2847,6 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getTcpCharacteristic_Physical();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getMechanical <em>Mechanical</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mechanical</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.TcpCharacteristic#getMechanical()
-	 * @see #getTcpCharacteristic()
-	 * @generated
-	 */
-	EAttribute getTcpCharacteristic_Mechanical();
-
-	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic <em>Interface Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4259,14 +4239,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TCP_CHARACTERISTIC__PHYSICAL = eINSTANCE.getTcpCharacteristic_Physical();
-
-		/**
-		 * The meta object literal for the '<em><b>Mechanical</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TCP_CHARACTERISTIC__MECHANICAL = eINSTANCE.getTcpCharacteristic_Mechanical();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl <em>Interface Characteristic</em>}' class.

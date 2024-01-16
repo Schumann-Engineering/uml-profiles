@@ -17,7 +17,6 @@ package engineering.schumann.uml.profile.csmn;
  *   <li>{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getNetwork <em>Network</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getDataLink <em>Data Link</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getPhysical <em>Physical</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getMechanical <em>Mechanical</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic()
@@ -154,31 +153,5 @@ public interface TcpCharacteristic extends FlowCharacteristic {
 	 * @generated
 	 */
 	void setPhysical(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Mechanical</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Mechanical</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Mechanical</em>' attribute.
-	 * @see #setMechanical(String)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getTcpCharacteristic_Mechanical()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	String getMechanical();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.TcpCharacteristic#getMechanical <em>Mechanical</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mechanical</em>' attribute.
-	 * @see #getMechanical()
-	 * @generated
-	 */
-	void setMechanical(String value);
 
 } // TcpCharacteristic

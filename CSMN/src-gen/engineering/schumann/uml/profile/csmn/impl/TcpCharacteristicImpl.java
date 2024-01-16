@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl#getNetwork <em>Network</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl#getDataLink <em>Data Link</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl#getPhysical <em>Physical</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl#getMechanical <em>Mechanical</em>}</li>
  * </ul>
  *
  * @generated
@@ -129,26 +128,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 	 * @ordered
 	 */
 	protected String physical = PHYSICAL_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getMechanical() <em>Mechanical</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMechanical()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String MECHANICAL_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getMechanical() <em>Mechanical</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMechanical()
-	 * @generated
-	 * @ordered
-	 */
-	protected String mechanical = MECHANICAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,29 +269,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 	 * @generated
 	 */
 	@Override
-	public String getMechanical() {
-		return mechanical;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setMechanical(String newMechanical) {
-		String oldMechanical = mechanical;
-		mechanical = newMechanical;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.TCP_CHARACTERISTIC__MECHANICAL, oldMechanical, mechanical));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CSMNPackage.TCP_CHARACTERISTIC__APPLICATION:
@@ -325,8 +281,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 				return getDataLink();
 			case CSMNPackage.TCP_CHARACTERISTIC__PHYSICAL:
 				return getPhysical();
-			case CSMNPackage.TCP_CHARACTERISTIC__MECHANICAL:
-				return getMechanical();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -353,9 +307,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 				return;
 			case CSMNPackage.TCP_CHARACTERISTIC__PHYSICAL:
 				setPhysical((String)newValue);
-				return;
-			case CSMNPackage.TCP_CHARACTERISTIC__MECHANICAL:
-				setMechanical((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,9 +335,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 			case CSMNPackage.TCP_CHARACTERISTIC__PHYSICAL:
 				setPhysical(PHYSICAL_EDEFAULT);
 				return;
-			case CSMNPackage.TCP_CHARACTERISTIC__MECHANICAL:
-				setMechanical(MECHANICAL_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -409,8 +357,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 				return DATA_LINK_EDEFAULT == null ? dataLink != null : !DATA_LINK_EDEFAULT.equals(dataLink);
 			case CSMNPackage.TCP_CHARACTERISTIC__PHYSICAL:
 				return PHYSICAL_EDEFAULT == null ? physical != null : !PHYSICAL_EDEFAULT.equals(physical);
-			case CSMNPackage.TCP_CHARACTERISTIC__MECHANICAL:
-				return MECHANICAL_EDEFAULT == null ? mechanical != null : !MECHANICAL_EDEFAULT.equals(mechanical);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -435,8 +381,6 @@ public class TcpCharacteristicImpl extends FlowCharacteristicImpl implements Tcp
 		result.append(dataLink);
 		result.append(", physical: ");
 		result.append(physical);
-		result.append(", mechanical: ");
-		result.append(mechanical);
 		result.append(')');
 		return result.toString();
 	}

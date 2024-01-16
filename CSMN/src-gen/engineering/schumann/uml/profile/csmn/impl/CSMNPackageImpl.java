@@ -1276,16 +1276,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTcpCharacteristic_Mechanical() {
-		return (EAttribute)tcpCharacteristicEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getInterfaceCharacteristic() {
 		return interfaceCharacteristicEClass;
 	}
@@ -2076,7 +2066,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(tcpCharacteristicEClass, TCP_CHARACTERISTIC__NETWORK);
 		createEAttribute(tcpCharacteristicEClass, TCP_CHARACTERISTIC__DATA_LINK);
 		createEAttribute(tcpCharacteristicEClass, TCP_CHARACTERISTIC__PHYSICAL);
-		createEAttribute(tcpCharacteristicEClass, TCP_CHARACTERISTIC__MECHANICAL);
 
 		interfaceCharacteristicEClass = createEClass(INTERFACE_CHARACTERISTIC);
 		createEReference(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__BASE_PORT);
@@ -2292,7 +2281,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getTcpCharacteristic_Network(), ecorePackage.getEString(), "network", null, 0, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTcpCharacteristic_DataLink(), ecorePackage.getEString(), "dataLink", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTcpCharacteristic_Physical(), ecorePackage.getEString(), "physical", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getTcpCharacteristic_Mechanical(), ecorePackage.getEString(), "mechanical", null, 1, 1, TcpCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(interfaceCharacteristicEClass, InterfaceCharacteristic.class, "InterfaceCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
