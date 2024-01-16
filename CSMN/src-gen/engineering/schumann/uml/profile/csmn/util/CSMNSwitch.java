@@ -195,9 +195,9 @@ public class CSMNSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS: {
-				BandwidthCharacteristics bandwidthCharacteristics = (BandwidthCharacteristics)theEObject;
-				T result = caseBandwidthCharacteristics(bandwidthCharacteristics);
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC: {
+				BandwidthCharacteristic bandwidthCharacteristic = (BandwidthCharacteristic)theEObject;
+				T result = caseBandwidthCharacteristic(bandwidthCharacteristic);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -419,6 +419,21 @@ public class CSMNSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Common Platform Enumeration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Common Platform Enumeration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCommonPlatformEnumeration(CommonPlatformEnumeration object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Scope Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -554,17 +569,17 @@ public class CSMNSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Bandwidth Characteristics</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Bandwidth Characteristic</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Bandwidth Characteristics</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Bandwidth Characteristic</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBandwidthCharacteristics(BandwidthCharacteristics object) {
+	public T caseBandwidthCharacteristic(BandwidthCharacteristic object) {
 		return null;
 	}
 
@@ -640,21 +655,6 @@ public class CSMNSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCpeCharacteristic(CpeCharacteristic object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Common Platform Enumeration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Common Platform Enumeration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCommonPlatformEnumeration(CommonPlatformEnumeration object) {
 		return null;
 	}
 

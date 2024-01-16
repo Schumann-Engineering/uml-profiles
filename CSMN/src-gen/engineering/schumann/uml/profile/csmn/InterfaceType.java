@@ -56,7 +56,9 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALARMLIGHT(3, "Alarmlight", "Alarmlight"), /**
+	ALARMLIGHT(3, "Alarmlight", "Alarmlight"),
+
+	/**
 	 * The '<em><b>Bluetooth</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,7 +206,9 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POWER(18, "Power", "Power"), /**
+	POWER(18, "Power", "Power"),
+
+	/**
 	 * The '<em><b>Sd Card</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

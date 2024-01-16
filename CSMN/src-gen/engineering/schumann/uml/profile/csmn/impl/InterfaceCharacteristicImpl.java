@@ -169,6 +169,29 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
+	public InterfaceConnector getInterfaceConnector() {
+		return interfaceConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setInterfaceConnector(InterfaceConnector newInterfaceConnector) {
+		InterfaceConnector oldInterfaceConnector = interfaceConnector;
+		interfaceConnector = newInterfaceConnector == null ? INTERFACE_CONNECTOR_EDEFAULT : newInterfaceConnector;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR, oldInterfaceConnector, interfaceConnector));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public InterfaceType getInterfaceType() {
 		return interfaceType;
 	}
@@ -207,29 +230,6 @@ public class InterfaceCharacteristicImpl extends MinimalEObjectImpl.Container im
 		purpose = newPurpose;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.INTERFACE_CHARACTERISTIC__PURPOSE, oldPurpose, purpose));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public InterfaceConnector getInterfaceConnector() {
-		return interfaceConnector;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setInterfaceConnector(InterfaceConnector newInterfaceConnector) {
-		InterfaceConnector oldInterfaceConnector = interfaceConnector;
-		interfaceConnector = newInterfaceConnector == null ? INTERFACE_CONNECTOR_EDEFAULT : newInterfaceConnector;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR, oldInterfaceConnector, interfaceConnector));
 	}
 
 	/**

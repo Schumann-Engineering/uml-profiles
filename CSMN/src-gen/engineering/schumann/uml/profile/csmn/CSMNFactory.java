@@ -121,6 +121,15 @@ public interface CSMNFactory extends EFactory {
 	Product createProduct();
 
 	/**
+	 * Returns a new object of class '<em>Common Platform Enumeration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Common Platform Enumeration</em>'.
+	 * @generated
+	 */
+	CommonPlatformEnumeration createCommonPlatformEnumeration();
+
+	/**
 	 * Returns a new object of class '<em>Scope Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,13 +202,13 @@ public interface CSMNFactory extends EFactory {
 	InterfaceCharacteristic createInterfaceCharacteristic();
 
 	/**
-	 * Returns a new object of class '<em>Bandwidth Characteristics</em>'.
+	 * Returns a new object of class '<em>Bandwidth Characteristic</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bandwidth Characteristics</em>'.
+	 * @return a new object of class '<em>Bandwidth Characteristic</em>'.
 	 * @generated
 	 */
-	BandwidthCharacteristics createBandwidthCharacteristics();
+	BandwidthCharacteristic createBandwidthCharacteristic();
 
 	/**
 	 * Returns a new object of class '<em>Firewall Characteristic</em>'.
@@ -245,15 +254,6 @@ public interface CSMNFactory extends EFactory {
 	 * @generated
 	 */
 	CpeCharacteristic createCpeCharacteristic();
-
-	/**
-	 * Returns a new object of class '<em>Common Platform Enumeration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Common Platform Enumeration</em>'.
-	 * @generated
-	 */
-	CommonPlatformEnumeration createCommonPlatformEnumeration();
 
 	/**
 	 * Returns a new object of class '<em>Storage Characteristic</em>'.

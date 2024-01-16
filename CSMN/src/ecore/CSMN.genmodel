@@ -353,13 +353,13 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//InterfaceCharacteristic/interfaceType"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//InterfaceCharacteristic/purpose"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//BandwidthCharacteristics">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//BandwidthCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristics/base_Relationship"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/base_Relationship"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristics/base_Port"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/base_Port"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristics/bandwidth"/>
+          createChild="true" ecoreFeature="ecore:EReference CSMN.ecore#//BandwidthCharacteristic/bandwidth"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//FirewallCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

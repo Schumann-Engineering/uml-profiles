@@ -77,7 +77,7 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 			case CSMNPackage.OSI_CHARACTERISTIC: return createOsiCharacteristic();
 			case CSMNPackage.TCP_CHARACTERISTIC: return createTcpCharacteristic();
 			case CSMNPackage.INTERFACE_CHARACTERISTIC: return createInterfaceCharacteristic();
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS: return createBandwidthCharacteristics();
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC: return createBandwidthCharacteristic();
 			case CSMNPackage.FIREWALL_CHARACTERISTIC: return createFirewallCharacteristic();
 			case CSMNPackage.MATERIAL_CHARACTERISTIC: return createMaterialCharacteristic();
 			case CSMNPackage.IEC62443_SECURITY_LEVEL_CHARACTERISTIC: return createIec62443SecurityLevelCharacteristic();
@@ -324,6 +324,17 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	@Override
+	public CommonPlatformEnumeration createCommonPlatformEnumeration() {
+		CommonPlatformEnumerationImpl commonPlatformEnumeration = new CommonPlatformEnumerationImpl();
+		return commonPlatformEnumeration;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ScopeConstraint createScopeConstraint() {
 		ScopeConstraintImpl scopeConstraint = new ScopeConstraintImpl();
 		return scopeConstraint;
@@ -412,9 +423,9 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	@Override
-	public BandwidthCharacteristics createBandwidthCharacteristics() {
-		BandwidthCharacteristicsImpl bandwidthCharacteristics = new BandwidthCharacteristicsImpl();
-		return bandwidthCharacteristics;
+	public BandwidthCharacteristic createBandwidthCharacteristic() {
+		BandwidthCharacteristicImpl bandwidthCharacteristic = new BandwidthCharacteristicImpl();
+		return bandwidthCharacteristic;
 	}
 
 	/**
@@ -470,17 +481,6 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	public CpeCharacteristic createCpeCharacteristic() {
 		CpeCharacteristicImpl cpeCharacteristic = new CpeCharacteristicImpl();
 		return cpeCharacteristic;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CommonPlatformEnumeration createCommonPlatformEnumeration() {
-		CommonPlatformEnumerationImpl commonPlatformEnumeration = new CommonPlatformEnumerationImpl();
-		return commonPlatformEnumeration;
 	}
 
 	/**
@@ -641,6 +641,26 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public CommonPlatformEnumerationType createCommonPlatformEnumerationTypeFromString(EDataType eDataType, String initialValue) {
+		CommonPlatformEnumerationType result = CommonPlatformEnumerationType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertCommonPlatformEnumerationTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ScopeConstraintType createScopeConstraintTypeFromString(EDataType eDataType, String initialValue) {
 		ScopeConstraintType result = ScopeConstraintType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -701,26 +721,6 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InterfaceType createInterfaceTypeFromString(EDataType eDataType, String initialValue) {
-		InterfaceType result = InterfaceType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertInterfaceTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public InterfaceConnector createInterfaceConnectorFromString(EDataType eDataType, String initialValue) {
 		InterfaceConnector result = InterfaceConnector.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -733,6 +733,26 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	public String convertInterfaceConnectorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InterfaceType createInterfaceTypeFromString(EDataType eDataType, String initialValue) {
+		InterfaceType result = InterfaceType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInterfaceTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -813,26 +833,6 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	public String convertIec62443SecurityLevelTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CommonPlatformEnumerationType createCommonPlatformEnumerationTypeFromString(EDataType eDataType, String initialValue) {
-		CommonPlatformEnumerationType result = CommonPlatformEnumerationType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCommonPlatformEnumerationTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -53,6 +53,36 @@ public interface InterfaceCharacteristic extends EObject {
 	void setBase_Port(Port value);
 
 	/**
+	 * Returns the value of the '<em><b>Interface Connector</b></em>' attribute.
+	 * The default value is <code>"Unspecified"</code>.
+	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.InterfaceConnector}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Interface Connector</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Interface Connector</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @see #setInterfaceConnector(InterfaceConnector)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic_InterfaceConnector()
+	 * @model default="Unspecified" ordered="false"
+	 * @generated
+	 */
+	InterfaceConnector getInterfaceConnector();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Interface Connector</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
+	 * @see #getInterfaceConnector()
+	 * @generated
+	 */
+	void setInterfaceConnector(InterfaceConnector value);
+
+	/**
 	 * Returns the value of the '<em><b>Interface Type</b></em>' attribute.
 	 * The default value is <code>"Unspecified"</code>.
 	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.InterfaceType}.
@@ -107,35 +137,5 @@ public interface InterfaceCharacteristic extends EObject {
 	 * @generated
 	 */
 	void setPurpose(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Interface Connector</b></em>' attribute.
-	 * The default value is <code>"Unspecified"</code>.
-	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.InterfaceConnector}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Interface Connector</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Interface Connector</em>' attribute.
-	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
-	 * @see #setInterfaceConnector(InterfaceConnector)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getInterfaceCharacteristic_InterfaceConnector()
-	 * @model default="Unspecified" ordered="false"
-	 * @generated
-	 */
-	InterfaceConnector getInterfaceConnector();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Interface Connector</em>' attribute.
-	 * @see engineering.schumann.uml.profile.csmn.InterfaceConnector
-	 * @see #getInterfaceConnector()
-	 * @generated
-	 */
-	void setInterfaceConnector(InterfaceConnector value);
 
 } // InterfaceCharacteristic

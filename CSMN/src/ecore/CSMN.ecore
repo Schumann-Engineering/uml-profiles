@@ -305,7 +305,7 @@
     <eLiterals name="WifiClient" value="28"/>
     <eLiterals name="Zigbee" value="29"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristics">
+  <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Relationship" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Relationship"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"

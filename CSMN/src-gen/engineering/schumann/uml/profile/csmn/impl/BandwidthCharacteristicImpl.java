@@ -3,7 +3,7 @@
 package engineering.schumann.uml.profile.csmn.impl;
 
 import engineering.schumann.uml.profile.csmn.Bandwidth;
-import engineering.schumann.uml.profile.csmn.BandwidthCharacteristics;
+import engineering.schumann.uml.profile.csmn.BandwidthCharacteristic;
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,20 +20,20 @@ import org.eclipse.uml2.uml.Relationship;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Bandwidth Characteristics</b></em>'.
+ * An implementation of the model object '<em><b>Bandwidth Characteristic</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl#getBase_Relationship <em>Base Relationship</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl#getBandwidth <em>Bandwidth</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl#getBase_Relationship <em>Base Relationship</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl#getBandwidth <em>Bandwidth</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container implements BandwidthCharacteristics {
+public class BandwidthCharacteristicImpl extends MinimalEObjectImpl.Container implements BandwidthCharacteristic {
 	/**
 	 * The cached value of the '{@link #getBase_Relationship() <em>Base Relationship</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -69,7 +69,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BandwidthCharacteristicsImpl() {
+	protected BandwidthCharacteristicImpl() {
 		super();
 	}
 
@@ -80,7 +80,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CSMNPackage.Literals.BANDWIDTH_CHARACTERISTICS;
+		return CSMNPackage.Literals.BANDWIDTH_CHARACTERISTIC;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 			base_Relationship = (Relationship)eResolveProxy(oldBase_Relationship);
 			if (base_Relationship != oldBase_Relationship) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP, oldBase_Relationship, base_Relationship));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP, oldBase_Relationship, base_Relationship));
 			}
 		}
 		return base_Relationship;
@@ -120,7 +120,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 		Relationship oldBase_Relationship = base_Relationship;
 		base_Relationship = newBase_Relationship;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP, oldBase_Relationship, base_Relationship));
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP, oldBase_Relationship, base_Relationship));
 	}
 
 	/**
@@ -135,7 +135,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 			base_Port = (Port)eResolveProxy(oldBase_Port);
 			if (base_Port != oldBase_Port) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT, oldBase_Port, base_Port));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT, oldBase_Port, base_Port));
 			}
 		}
 		return base_Port;
@@ -160,7 +160,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 		Port oldBase_Port = base_Port;
 		base_Port = newBase_Port;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT, oldBase_Port, base_Port));
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT, oldBase_Port, base_Port));
 	}
 
 	/**
@@ -182,7 +182,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 		Bandwidth oldBandwidth = bandwidth;
 		bandwidth = newBandwidth;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH, oldBandwidth, newBandwidth);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH, oldBandwidth, newBandwidth);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -198,14 +198,14 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 		if (newBandwidth != bandwidth) {
 			NotificationChain msgs = null;
 			if (bandwidth != null)
-				msgs = ((InternalEObject)bandwidth).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH, null, msgs);
+				msgs = ((InternalEObject)bandwidth).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH, null, msgs);
 			if (newBandwidth != null)
-				msgs = ((InternalEObject)newBandwidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH, null, msgs);
+				msgs = ((InternalEObject)newBandwidth).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH, null, msgs);
 			msgs = basicSetBandwidth(newBandwidth, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH, newBandwidth, newBandwidth));
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH, newBandwidth, newBandwidth));
 	}
 
 	/**
@@ -216,7 +216,7 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH:
 				return basicSetBandwidth(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -230,13 +230,13 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP:
 				if (resolve) return getBase_Relationship();
 				return basicGetBase_Relationship();
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT:
 				if (resolve) return getBase_Port();
 				return basicGetBase_Port();
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH:
 				return getBandwidth();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -250,13 +250,13 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP:
 				setBase_Relationship((Relationship)newValue);
 				return;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT:
 				setBase_Port((Port)newValue);
 				return;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH:
 				setBandwidth((Bandwidth)newValue);
 				return;
 		}
@@ -271,13 +271,13 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP:
 				setBase_Relationship((Relationship)null);
 				return;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT:
 				setBase_Port((Port)null);
 				return;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH:
 				setBandwidth((Bandwidth)null);
 				return;
 		}
@@ -292,14 +292,14 @@ public class BandwidthCharacteristicsImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP:
 				return base_Relationship != null;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BASE_PORT:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BASE_PORT:
 				return base_Port != null;
-			case CSMNPackage.BANDWIDTH_CHARACTERISTICS__BANDWIDTH:
+			case CSMNPackage.BANDWIDTH_CHARACTERISTIC__BANDWIDTH:
 				return bandwidth != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //BandwidthCharacteristicsImpl
+} //BandwidthCharacteristicImpl

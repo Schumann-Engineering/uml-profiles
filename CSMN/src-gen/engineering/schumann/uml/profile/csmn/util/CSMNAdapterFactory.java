@@ -152,8 +152,8 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 				return createInterfaceCharacteristicAdapter();
 			}
 			@Override
-			public Adapter caseBandwidthCharacteristics(BandwidthCharacteristics object) {
-				return createBandwidthCharacteristicsAdapter();
+			public Adapter caseBandwidthCharacteristic(BandwidthCharacteristic object) {
+				return createBandwidthCharacteristicAdapter();
 			}
 			@Override
 			public Adapter caseFirewallCharacteristic(FirewallCharacteristic object) {
@@ -362,6 +362,20 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration <em>Common Platform Enumeration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration
+	 * @generated
+	 */
+	public Adapter createCommonPlatformEnumerationAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.ScopeConstraint <em>Scope Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -488,16 +502,16 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics <em>Bandwidth Characteristics</em>}'.
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic <em>Bandwidth Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristics
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic
 	 * @generated
 	 */
-	public Adapter createBandwidthCharacteristicsAdapter() {
+	public Adapter createBandwidthCharacteristicAdapter() {
 		return null;
 	}
 
@@ -568,20 +582,6 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCpeCharacteristicAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration <em>Common Platform Enumeration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration
-	 * @generated
-	 */
-	public Adapter createCommonPlatformEnumerationAdapter() {
 		return null;
 	}
 

@@ -9,23 +9,23 @@ import org.eclipse.uml2.uml.Relationship;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Bandwidth Characteristics</b></em>'.
+ * A representation of the model object '<em><b>Bandwidth Characteristic</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Relationship <em>Base Relationship</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Port <em>Base Port</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBandwidth <em>Bandwidth</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship <em>Base Relationship</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBandwidth <em>Bandwidth</em>}</li>
  * </ul>
  *
- * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristics()
+ * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristic()
  * @model
  * @generated
  */
-public interface BandwidthCharacteristics extends EObject {
+public interface BandwidthCharacteristic extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Base Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -36,14 +36,14 @@ public interface BandwidthCharacteristics extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Relationship</em>' reference.
 	 * @see #setBase_Relationship(Relationship)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristics_Base_Relationship()
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristic_Base_Relationship()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	Relationship getBase_Relationship();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Relationship <em>Base Relationship</em>}' reference.
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship <em>Base Relationship</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Relationship</em>' reference.
@@ -62,14 +62,14 @@ public interface BandwidthCharacteristics extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Port</em>' reference.
 	 * @see #setBase_Port(Port)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristics_Base_Port()
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristic_Base_Port()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	Port getBase_Port();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Port <em>Base Port</em>}' reference.
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Port <em>Base Port</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Port</em>' reference.
@@ -88,14 +88,14 @@ public interface BandwidthCharacteristics extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bandwidth</em>' containment reference.
 	 * @see #setBandwidth(Bandwidth)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristics_Bandwidth()
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getBandwidthCharacteristic_Bandwidth()
 	 * @model containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	Bandwidth getBandwidth();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBandwidth <em>Bandwidth</em>}' containment reference.
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBandwidth <em>Bandwidth</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bandwidth</em>' containment reference.
@@ -104,4 +104,4 @@ public interface BandwidthCharacteristics extends EObject {
 	 */
 	void setBandwidth(Bandwidth value);
 
-} // BandwidthCharacteristics
+} // BandwidthCharacteristic

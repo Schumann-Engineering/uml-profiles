@@ -7,7 +7,7 @@ import engineering.schumann.uml.profile.csmn.Asset;
 import engineering.schumann.uml.profile.csmn.AssetLibrary;
 import engineering.schumann.uml.profile.csmn.AssetType;
 import engineering.schumann.uml.profile.csmn.Bandwidth;
-import engineering.schumann.uml.profile.csmn.BandwidthCharacteristics;
+import engineering.schumann.uml.profile.csmn.BandwidthCharacteristic;
 import engineering.schumann.uml.profile.csmn.Box;
 import engineering.schumann.uml.profile.csmn.CSMNFactory;
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
@@ -157,6 +157,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass commonPlatformEnumerationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass scopeConstraintEClass = null;
 
 	/**
@@ -220,7 +227,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass bandwidthCharacteristicsEClass = null;
+	private EClass bandwidthCharacteristicEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,13 +263,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EClass cpeCharacteristicEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass commonPlatformEnumerationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,6 +332,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EEnum commonPlatformEnumerationTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum scopeConstraintTypeEEnum = null;
 
 	/**
@@ -353,14 +360,14 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum interfaceTypeEEnum = null;
+	private EEnum interfaceConnectorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum interfaceConnectorEEnum = null;
+	private EEnum interfaceTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -389,13 +396,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EEnum iec62443SecurityLevelTypeEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum commonPlatformEnumerationTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -886,6 +886,56 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getCommonPlatformEnumeration() {
+		return commonPlatformEnumerationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCommonPlatformEnumeration_PlatformType() {
+		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCommonPlatformEnumeration_VendorName() {
+		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCommonPlatformEnumeration_ProductName() {
+		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCommonPlatformEnumeration_Model() {
+		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getScopeConstraint() {
 		return scopeConstraintEClass;
 	}
@@ -1256,6 +1306,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getInterfaceCharacteristic_InterfaceConnector() {
+		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EAttribute getInterfaceCharacteristic_InterfaceType() {
 		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
@@ -1276,8 +1336,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getInterfaceCharacteristic_InterfaceConnector() {
-		return (EAttribute)interfaceCharacteristicEClass.getEStructuralFeatures().get(1);
+	public EClass getBandwidthCharacteristic() {
+		return bandwidthCharacteristicEClass;
 	}
 
 	/**
@@ -1286,8 +1346,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getBandwidthCharacteristics() {
-		return bandwidthCharacteristicsEClass;
+	public EReference getBandwidthCharacteristic_Base_Relationship() {
+		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1296,8 +1356,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBandwidthCharacteristics_Base_Relationship() {
-		return (EReference)bandwidthCharacteristicsEClass.getEStructuralFeatures().get(0);
+	public EReference getBandwidthCharacteristic_Base_Port() {
+		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1306,18 +1366,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getBandwidthCharacteristics_Base_Port() {
-		return (EReference)bandwidthCharacteristicsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getBandwidthCharacteristics_Bandwidth() {
-		return (EReference)bandwidthCharacteristicsEClass.getEStructuralFeatures().get(2);
+	public EReference getBandwidthCharacteristic_Bandwidth() {
+		return (EReference)bandwidthCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1508,56 +1558,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EReference getCpeCharacteristic_Cpe() {
 		return (EReference)cpeCharacteristicEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getCommonPlatformEnumeration() {
-		return commonPlatformEnumerationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCommonPlatformEnumeration_PlatformType() {
-		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCommonPlatformEnumeration_VendorName() {
-		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCommonPlatformEnumeration_ProductName() {
-		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getCommonPlatformEnumeration_Model() {
-		return (EAttribute)commonPlatformEnumerationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1816,6 +1816,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getCommonPlatformEnumerationType() {
+		return commonPlatformEnumerationTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getScopeConstraintType() {
 		return scopeConstraintTypeEEnum;
 	}
@@ -1846,8 +1856,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getInterfaceType() {
-		return interfaceTypeEEnum;
+	public EEnum getInterfaceConnector() {
+		return interfaceConnectorEEnum;
 	}
 
 	/**
@@ -1856,8 +1866,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getInterfaceConnector() {
-		return interfaceConnectorEEnum;
+	public EEnum getInterfaceType() {
+		return interfaceTypeEEnum;
 	}
 
 	/**
@@ -1898,16 +1908,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EEnum getIec62443SecurityLevelType() {
 		return iec62443SecurityLevelTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getCommonPlatformEnumerationType() {
-		return commonPlatformEnumerationTypeEEnum;
 	}
 
 	/**
@@ -2084,10 +2084,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__INTERFACE_TYPE);
 		createEAttribute(interfaceCharacteristicEClass, INTERFACE_CHARACTERISTIC__PURPOSE);
 
-		bandwidthCharacteristicsEClass = createEClass(BANDWIDTH_CHARACTERISTICS);
-		createEReference(bandwidthCharacteristicsEClass, BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP);
-		createEReference(bandwidthCharacteristicsEClass, BANDWIDTH_CHARACTERISTICS__BASE_PORT);
-		createEReference(bandwidthCharacteristicsEClass, BANDWIDTH_CHARACTERISTICS__BANDWIDTH);
+		bandwidthCharacteristicEClass = createEClass(BANDWIDTH_CHARACTERISTIC);
+		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP);
+		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BASE_PORT);
+		createEReference(bandwidthCharacteristicEClass, BANDWIDTH_CHARACTERISTIC__BANDWIDTH);
 
 		firewallCharacteristicEClass = createEClass(FIREWALL_CHARACTERISTIC);
 		createEReference(firewallCharacteristicEClass, FIREWALL_CHARACTERISTIC__BASE_PORT);
@@ -2300,10 +2300,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getInterfaceCharacteristic_InterfaceType(), this.getInterfaceType(), "interfaceType", "Unspecified", 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getInterfaceCharacteristic_Purpose(), ecorePackage.getEString(), "purpose", null, 1, 1, InterfaceCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(bandwidthCharacteristicsEClass, BandwidthCharacteristics.class, "BandwidthCharacteristics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBandwidthCharacteristics_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBandwidthCharacteristics_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBandwidthCharacteristics_Bandwidth(), this.getBandwidth(), null, "bandwidth", null, 1, 1, BandwidthCharacteristics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(bandwidthCharacteristicEClass, BandwidthCharacteristic.class, "BandwidthCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBandwidthCharacteristic_Base_Relationship(), theUMLPackage.getRelationship(), null, "base_Relationship", null, 0, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBandwidthCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBandwidthCharacteristic_Bandwidth(), this.getBandwidth(), null, "bandwidth", null, 1, 1, BandwidthCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(firewallCharacteristicEClass, FirewallCharacteristic.class, "FirewallCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFirewallCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, FirewallCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

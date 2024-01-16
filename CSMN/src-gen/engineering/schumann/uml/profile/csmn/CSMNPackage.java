@@ -564,166 +564,6 @@ public interface CSMNPackage extends EPackage {
 	int SCOPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ProductImpl <em>Product</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.ProductImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProduct()
-	 * @generated
-	 */
-	int PRODUCT = 10;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl <em>Scope Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getScopeConstraint()
-	 * @generated
-	 */
-	int SCOPE_CONSTRAINT = 12;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ProductConstraintImpl <em>Product Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.ProductConstraintImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProductConstraint()
-	 * @generated
-	 */
-	int PRODUCT_CONSTRAINT = 13;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl <em>Asset</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.AssetImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAsset()
-	 * @generated
-	 */
-	int ASSET = 14;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl <em>Asset Library</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetLibrary()
-	 * @generated
-	 */
-	int ASSET_LIBRARY = 15;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.EnergyCharacteristicImpl <em>Energy Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.EnergyCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getEnergyCharacteristic()
-	 * @generated
-	 */
-	int ENERGY_CHARACTERISTIC = 16;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.FlowCharacteristicImpl <em>Flow Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.FlowCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFlowCharacteristic()
-	 * @generated
-	 */
-	int FLOW_CHARACTERISTIC = 18;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.OsiCharacteristicImpl <em>Osi Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.OsiCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getOsiCharacteristic()
-	 * @generated
-	 */
-	int OSI_CHARACTERISTIC = 17;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl <em>Tcp Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getTcpCharacteristic()
-	 * @generated
-	 */
-	int TCP_CHARACTERISTIC = 19;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl <em>Interface Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceCharacteristic()
-	 * @generated
-	 */
-	int INTERFACE_CHARACTERISTIC = 20;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl <em>Bandwidth Characteristics</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getBandwidthCharacteristics()
-	 * @generated
-	 */
-	int BANDWIDTH_CHARACTERISTICS = 21;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl <em>Firewall Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFirewallCharacteristic()
-	 * @generated
-	 */
-	int FIREWALL_CHARACTERISTIC = 22;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl <em>Material Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialCharacteristic()
-	 * @generated
-	 */
-	int MATERIAL_CHARACTERISTIC = 23;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.Iec62443SecurityLevelCharacteristicImpl <em>Iec62443 Security Level Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.Iec62443SecurityLevelCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelCharacteristic()
-	 * @generated
-	 */
-	int IEC62443_SECURITY_LEVEL_CHARACTERISTIC = 24;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.SecurityLevelImpl <em>Security Level</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.SecurityLevelImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSecurityLevel()
-	 * @generated
-	 */
-	int SECURITY_LEVEL = 25;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.CpeCharacteristicImpl <em>Cpe Characteristic</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.impl.CpeCharacteristicImpl
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCpeCharacteristic()
-	 * @generated
-	 */
-	int CPE_CHARACTERISTIC = 26;
-
-	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl <em>Common Platform Enumeration</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -786,6 +626,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMON_PLATFORM_ENUMERATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ProductImpl <em>Product</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.ProductImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProduct()
+	 * @generated
+	 */
+	int PRODUCT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Platform Type</b></em>' attribute.
@@ -869,6 +719,16 @@ public interface CSMNPackage extends EPackage {
 	int PRODUCT_OPERATION_COUNT = COMMON_PLATFORM_ENUMERATION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl <em>Scope Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getScopeConstraint()
+	 * @generated
+	 */
+	int SCOPE_CONSTRAINT = 12;
+
+	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -914,6 +774,16 @@ public interface CSMNPackage extends EPackage {
 	int SCOPE_CONSTRAINT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.ProductConstraintImpl <em>Product Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.ProductConstraintImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProductConstraint()
+	 * @generated
+	 */
+	int PRODUCT_CONSTRAINT = 13;
+
+	/**
 	 * The feature id for the '<em><b>Model</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -948,6 +818,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRODUCT_CONSTRAINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl <em>Asset</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.AssetImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAsset()
+	 * @generated
+	 */
+	int ASSET = 14;
 
 	/**
 	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
@@ -995,6 +875,16 @@ public interface CSMNPackage extends EPackage {
 	int ASSET_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl <em>Asset Library</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetLibrary()
+	 * @generated
+	 */
+	int ASSET_LIBRARY = 15;
+
+	/**
 	 * The feature id for the '<em><b>Base Package</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1029,6 +919,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSET_LIBRARY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.EnergyCharacteristicImpl <em>Energy Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.EnergyCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getEnergyCharacteristic()
+	 * @generated
+	 */
+	int ENERGY_CHARACTERISTIC = 16;
 
 	/**
 	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
@@ -1076,6 +976,16 @@ public interface CSMNPackage extends EPackage {
 	int ENERGY_CHARACTERISTIC_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.FlowCharacteristicImpl <em>Flow Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.FlowCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFlowCharacteristic()
+	 * @generated
+	 */
+	int FLOW_CHARACTERISTIC = 18;
+
+	/**
 	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1101,6 +1011,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int FLOW_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.OsiCharacteristicImpl <em>Osi Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.OsiCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getOsiCharacteristic()
+	 * @generated
+	 */
+	int OSI_CHARACTERISTIC = 17;
 
 	/**
 	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
@@ -1193,6 +1113,16 @@ public interface CSMNPackage extends EPackage {
 	int OSI_CHARACTERISTIC_OPERATION_COUNT = FLOW_CHARACTERISTIC_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl <em>Tcp Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.TcpCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getTcpCharacteristic()
+	 * @generated
+	 */
+	int TCP_CHARACTERISTIC = 19;
+
+	/**
 	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1274,6 +1204,16 @@ public interface CSMNPackage extends EPackage {
 	int TCP_CHARACTERISTIC_OPERATION_COUNT = FLOW_CHARACTERISTIC_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl <em>Interface Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.InterfaceCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceCharacteristic()
+	 * @generated
+	 */
+	int INTERFACE_CHARACTERISTIC = 20;
+
+	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1328,13 +1268,23 @@ public interface CSMNPackage extends EPackage {
 	int INTERFACE_CHARACTERISTIC_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl <em>Bandwidth Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getBandwidthCharacteristic()
+	 * @generated
+	 */
+	int BANDWIDTH_CHARACTERISTIC = 21;
+
+	/**
 	 * The feature id for the '<em><b>Base Relationship</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP = 0;
+	int BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP = 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
@@ -1343,7 +1293,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTICS__BASE_PORT = 1;
+	int BANDWIDTH_CHARACTERISTIC__BASE_PORT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Bandwidth</b></em>' containment reference.
@@ -1352,25 +1302,35 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTICS__BANDWIDTH = 2;
+	int BANDWIDTH_CHARACTERISTIC__BANDWIDTH = 2;
 
 	/**
-	 * The number of structural features of the '<em>Bandwidth Characteristics</em>' class.
+	 * The number of structural features of the '<em>Bandwidth Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTICS_FEATURE_COUNT = 3;
+	int BANDWIDTH_CHARACTERISTIC_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Bandwidth Characteristics</em>' class.
+	 * The number of operations of the '<em>Bandwidth Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BANDWIDTH_CHARACTERISTICS_OPERATION_COUNT = 0;
+	int BANDWIDTH_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl <em>Firewall Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFirewallCharacteristic()
+	 * @generated
+	 */
+	int FIREWALL_CHARACTERISTIC = 22;
 
 	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
@@ -1398,6 +1358,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int FIREWALL_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl <em>Material Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialCharacteristic()
+	 * @generated
+	 */
+	int MATERIAL_CHARACTERISTIC = 23;
 
 	/**
 	 * The feature id for the '<em><b>Base Port</b></em>' reference.
@@ -1454,6 +1424,16 @@ public interface CSMNPackage extends EPackage {
 	int MATERIAL_CHARACTERISTIC_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.Iec62443SecurityLevelCharacteristicImpl <em>Iec62443 Security Level Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.Iec62443SecurityLevelCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelCharacteristic()
+	 * @generated
+	 */
+	int IEC62443_SECURITY_LEVEL_CHARACTERISTIC = 24;
+
+	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1488,6 +1468,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int IEC62443_SECURITY_LEVEL_CHARACTERISTIC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.SecurityLevelImpl <em>Security Level</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.SecurityLevelImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSecurityLevel()
+	 * @generated
+	 */
+	int SECURITY_LEVEL = 25;
 
 	/**
 	 * The feature id for the '<em><b>Foundational Requirement</b></em>' attribute.
@@ -1551,6 +1541,16 @@ public interface CSMNPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECURITY_LEVEL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.impl.CpeCharacteristicImpl <em>Cpe Characteristic</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.impl.CpeCharacteristicImpl
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCpeCharacteristic()
+	 * @generated
+	 */
+	int CPE_CHARACTERISTIC = 26;
 
 	/**
 	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
@@ -1877,6 +1877,16 @@ public interface CSMNPackage extends EPackage {
 	int SPEED_UNIT_OF_MEASUREMENT = 35;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumerationType()
+	 * @generated
+	 */
+	int COMMON_PLATFORM_ENUMERATION_TYPE = 36;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.ScopeConstraintType <em>Scope Constraint Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1907,16 +1917,6 @@ public interface CSMNPackage extends EPackage {
 	int ENERGY_TYPE = 39;
 
 	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.InterfaceType
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
-	 * @generated
-	 */
-	int INTERFACE_TYPE = 41;
-
-	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1925,6 +1925,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	int INTERFACE_CONNECTOR = 40;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceType
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
+	 * @generated
+	 */
+	int INTERFACE_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
@@ -1967,16 +1977,6 @@ public interface CSMNPackage extends EPackage {
 	int IEC62443_SECURITY_LEVEL_TYPE = 45;
 
 	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumerationType()
-	 * @generated
-	 */
-	int COMMON_PLATFORM_ENUMERATION_TYPE = 36;
-
-	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1985,7 +1985,6 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	int STORAGE_TYPE = 46;
-
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}' enum.
@@ -2437,6 +2436,60 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getProduct_SoftwareVersion();
 
 	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration <em>Common Platform Enumeration</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Common Platform Enumeration</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration
+	 * @generated
+	 */
+	EClass getCommonPlatformEnumeration();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getPlatformType <em>Platform Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Platform Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getPlatformType()
+	 * @see #getCommonPlatformEnumeration()
+	 * @generated
+	 */
+	EAttribute getCommonPlatformEnumeration_PlatformType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getVendorName <em>Vendor Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Vendor Name</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getVendorName()
+	 * @see #getCommonPlatformEnumeration()
+	 * @generated
+	 */
+	EAttribute getCommonPlatformEnumeration_VendorName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getProductName <em>Product Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Product Name</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getProductName()
+	 * @see #getCommonPlatformEnumeration()
+	 * @generated
+	 */
+	EAttribute getCommonPlatformEnumeration_ProductName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Model</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getModel()
+	 * @see #getCommonPlatformEnumeration()
+	 * @generated
+	 */
+	EAttribute getCommonPlatformEnumeration_Model();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.ScopeConstraint <em>Scope Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2835,6 +2888,17 @@ public interface CSMNPackage extends EPackage {
 	EReference getInterfaceCharacteristic_Base_Port();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Interface Connector</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector()
+	 * @see #getInterfaceCharacteristic()
+	 * @generated
+	 */
+	EAttribute getInterfaceCharacteristic_InterfaceConnector();
+
+	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceType <em>Interface Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2857,58 +2921,47 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getInterfaceCharacteristic_Purpose();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector <em>Interface Connector</em>}'.
+	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic <em>Bandwidth Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Interface Connector</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.InterfaceCharacteristic#getInterfaceConnector()
-	 * @see #getInterfaceCharacteristic()
+	 * @return the meta object for class '<em>Bandwidth Characteristic</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic
 	 * @generated
 	 */
-	EAttribute getInterfaceCharacteristic_InterfaceConnector();
+	EClass getBandwidthCharacteristic();
 
 	/**
-	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics <em>Bandwidth Characteristics</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bandwidth Characteristics</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristics
-	 * @generated
-	 */
-	EClass getBandwidthCharacteristics();
-
-	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Relationship <em>Base Relationship</em>}'.
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship <em>Base Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Relationship</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Relationship()
-	 * @see #getBandwidthCharacteristics()
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Relationship()
+	 * @see #getBandwidthCharacteristic()
 	 * @generated
 	 */
-	EReference getBandwidthCharacteristics_Base_Relationship();
+	EReference getBandwidthCharacteristic_Base_Relationship();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Port <em>Base Port</em>}'.
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Port <em>Base Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Base Port</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBase_Port()
-	 * @see #getBandwidthCharacteristics()
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBase_Port()
+	 * @see #getBandwidthCharacteristic()
 	 * @generated
 	 */
-	EReference getBandwidthCharacteristics_Base_Port();
+	EReference getBandwidthCharacteristic_Base_Port();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBandwidth <em>Bandwidth</em>}'.
+	 * Returns the meta object for the containment reference '{@link engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBandwidth <em>Bandwidth</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Bandwidth</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristics#getBandwidth()
-	 * @see #getBandwidthCharacteristics()
+	 * @see engineering.schumann.uml.profile.csmn.BandwidthCharacteristic#getBandwidth()
+	 * @see #getBandwidthCharacteristic()
 	 * @generated
 	 */
-	EReference getBandwidthCharacteristics_Bandwidth();
+	EReference getBandwidthCharacteristic_Bandwidth();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.FirewallCharacteristic <em>Firewall Characteristic</em>}'.
@@ -3113,60 +3166,6 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCpeCharacteristic_Cpe();
-
-	/**
-	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration <em>Common Platform Enumeration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Common Platform Enumeration</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration
-	 * @generated
-	 */
-	EClass getCommonPlatformEnumeration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getPlatformType <em>Platform Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Platform Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getPlatformType()
-	 * @see #getCommonPlatformEnumeration()
-	 * @generated
-	 */
-	EAttribute getCommonPlatformEnumeration_PlatformType();
-
-	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getVendorName <em>Vendor Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Vendor Name</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getVendorName()
-	 * @see #getCommonPlatformEnumeration()
-	 * @generated
-	 */
-	EAttribute getCommonPlatformEnumeration_VendorName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getProductName <em>Product Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Product Name</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getProductName()
-	 * @see #getCommonPlatformEnumeration()
-	 * @generated
-	 */
-	EAttribute getCommonPlatformEnumeration_ProductName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getModel <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Model</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration#getModel()
-	 * @see #getCommonPlatformEnumeration()
-	 * @generated
-	 */
-	EAttribute getCommonPlatformEnumeration_Model();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.StorageCharacteristic <em>Storage Characteristic</em>}'.
@@ -3435,6 +3434,16 @@ public interface CSMNPackage extends EPackage {
 	EEnum getSpeedUnitOfMeasurement();
 
 	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Common Platform Enumeration Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
+	 * @generated
+	 */
+	EEnum getCommonPlatformEnumerationType();
+
+	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.ScopeConstraintType <em>Scope Constraint Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3465,16 +3474,6 @@ public interface CSMNPackage extends EPackage {
 	EEnum getEnergyType();
 
 	/**
-	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Interface Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.InterfaceType
-	 * @generated
-	 */
-	EEnum getInterfaceType();
-
-	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3483,6 +3482,16 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getInterfaceConnector();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Interface Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.InterfaceType
+	 * @generated
+	 */
+	EEnum getInterfaceType();
 
 	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}'.
@@ -3523,16 +3532,6 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getIec62443SecurityLevelType();
-
-	/**
-	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Common Platform Enumeration Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
-	 * @generated
-	 */
-	EEnum getCommonPlatformEnumerationType();
 
 	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}'.
@@ -3932,6 +3931,48 @@ public interface CSMNPackage extends EPackage {
 		EAttribute PRODUCT__SOFTWARE_VERSION = eINSTANCE.getProduct_SoftwareVersion();
 
 		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl <em>Common Platform Enumeration</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumeration()
+		 * @generated
+		 */
+		EClass COMMON_PLATFORM_ENUMERATION = eINSTANCE.getCommonPlatformEnumeration();
+
+		/**
+		 * The meta object literal for the '<em><b>Platform Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMON_PLATFORM_ENUMERATION__PLATFORM_TYPE = eINSTANCE.getCommonPlatformEnumeration_PlatformType();
+
+		/**
+		 * The meta object literal for the '<em><b>Vendor Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMON_PLATFORM_ENUMERATION__VENDOR_NAME = eINSTANCE.getCommonPlatformEnumeration_VendorName();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMON_PLATFORM_ENUMERATION__PRODUCT_NAME = eINSTANCE.getCommonPlatformEnumeration_ProductName();
+
+		/**
+		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMMON_PLATFORM_ENUMERATION__MODEL = eINSTANCE.getCommonPlatformEnumeration_Model();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl <em>Scope Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4246,6 +4287,14 @@ public interface CSMNPackage extends EPackage {
 		EReference INTERFACE_CHARACTERISTIC__BASE_PORT = eINSTANCE.getInterfaceCharacteristic_Base_Port();
 
 		/**
+		 * The meta object literal for the '<em><b>Interface Connector</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = eINSTANCE.getInterfaceCharacteristic_InterfaceConnector();
+
+		/**
 		 * The meta object literal for the '<em><b>Interface Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4262,22 +4311,14 @@ public interface CSMNPackage extends EPackage {
 		EAttribute INTERFACE_CHARACTERISTIC__PURPOSE = eINSTANCE.getInterfaceCharacteristic_Purpose();
 
 		/**
-		 * The meta object literal for the '<em><b>Interface Connector</b></em>' attribute feature.
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl <em>Bandwidth Characteristic</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicImpl
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getBandwidthCharacteristic()
 		 * @generated
 		 */
-		EAttribute INTERFACE_CHARACTERISTIC__INTERFACE_CONNECTOR = eINSTANCE.getInterfaceCharacteristic_InterfaceConnector();
-
-		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl <em>Bandwidth Characteristics</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.profile.csmn.impl.BandwidthCharacteristicsImpl
-		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getBandwidthCharacteristics()
-		 * @generated
-		 */
-		EClass BANDWIDTH_CHARACTERISTICS = eINSTANCE.getBandwidthCharacteristics();
+		EClass BANDWIDTH_CHARACTERISTIC = eINSTANCE.getBandwidthCharacteristic();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Relationship</b></em>' reference feature.
@@ -4285,7 +4326,7 @@ public interface CSMNPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BANDWIDTH_CHARACTERISTICS__BASE_RELATIONSHIP = eINSTANCE.getBandwidthCharacteristics_Base_Relationship();
+		EReference BANDWIDTH_CHARACTERISTIC__BASE_RELATIONSHIP = eINSTANCE.getBandwidthCharacteristic_Base_Relationship();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
@@ -4293,7 +4334,7 @@ public interface CSMNPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BANDWIDTH_CHARACTERISTICS__BASE_PORT = eINSTANCE.getBandwidthCharacteristics_Base_Port();
+		EReference BANDWIDTH_CHARACTERISTIC__BASE_PORT = eINSTANCE.getBandwidthCharacteristic_Base_Port();
 
 		/**
 		 * The meta object literal for the '<em><b>Bandwidth</b></em>' containment reference feature.
@@ -4301,7 +4342,7 @@ public interface CSMNPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BANDWIDTH_CHARACTERISTICS__BANDWIDTH = eINSTANCE.getBandwidthCharacteristics_Bandwidth();
+		EReference BANDWIDTH_CHARACTERISTIC__BANDWIDTH = eINSTANCE.getBandwidthCharacteristic_Bandwidth();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.FirewallCharacteristicImpl <em>Firewall Characteristic</em>}' class.
@@ -4464,48 +4505,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CPE_CHARACTERISTIC__CPE = eINSTANCE.getCpeCharacteristic_Cpe();
-
-		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl <em>Common Platform Enumeration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl
-		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumeration()
-		 * @generated
-		 */
-		EClass COMMON_PLATFORM_ENUMERATION = eINSTANCE.getCommonPlatformEnumeration();
-
-		/**
-		 * The meta object literal for the '<em><b>Platform Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_PLATFORM_ENUMERATION__PLATFORM_TYPE = eINSTANCE.getCommonPlatformEnumeration_PlatformType();
-
-		/**
-		 * The meta object literal for the '<em><b>Vendor Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_PLATFORM_ENUMERATION__VENDOR_NAME = eINSTANCE.getCommonPlatformEnumeration_VendorName();
-
-		/**
-		 * The meta object literal for the '<em><b>Product Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_PLATFORM_ENUMERATION__PRODUCT_NAME = eINSTANCE.getCommonPlatformEnumeration_ProductName();
-
-		/**
-		 * The meta object literal for the '<em><b>Model</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMMON_PLATFORM_ENUMERATION__MODEL = eINSTANCE.getCommonPlatformEnumeration_Model();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.StorageCharacteristicImpl <em>Storage Characteristic</em>}' class.
@@ -4726,6 +4725,16 @@ public interface CSMNPackage extends EPackage {
 		EEnum SPEED_UNIT_OF_MEASUREMENT = eINSTANCE.getSpeedUnitOfMeasurement();
 
 		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumerationType()
+		 * @generated
+		 */
+		EEnum COMMON_PLATFORM_ENUMERATION_TYPE = eINSTANCE.getCommonPlatformEnumerationType();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.ScopeConstraintType <em>Scope Constraint Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4756,16 +4765,6 @@ public interface CSMNPackage extends EPackage {
 		EEnum ENERGY_TYPE = eINSTANCE.getEnergyType();
 
 		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.profile.csmn.InterfaceType
-		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
-		 * @generated
-		 */
-		EEnum INTERFACE_TYPE = eINSTANCE.getInterfaceType();
-
-		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4774,6 +4773,16 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INTERFACE_CONNECTOR = eINSTANCE.getInterfaceConnector();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.InterfaceType
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
+		 * @generated
+		 */
+		EEnum INTERFACE_TYPE = eINSTANCE.getInterfaceType();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
@@ -4814,16 +4823,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum IEC62443_SECURITY_LEVEL_TYPE = eINSTANCE.getIec62443SecurityLevelType();
-
-		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType <em>Common Platform Enumeration Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
-		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getCommonPlatformEnumerationType()
-		 * @generated
-		 */
-		EEnum COMMON_PLATFORM_ENUMERATION_TYPE = eINSTANCE.getCommonPlatformEnumerationType();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}' enum.
