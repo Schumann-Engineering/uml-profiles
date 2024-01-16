@@ -66,7 +66,7 @@ public interface AccessCharacteristic extends EObject {
 	 * @see engineering.schumann.uml.profile.csmn.FunctionalAccessLevel
 	 * @see #setFunctionalLevel(FunctionalAccessLevel)
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAccessCharacteristic_FunctionalLevel()
-	 * @model required="true" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	FunctionalAccessLevel getFunctionalLevel();

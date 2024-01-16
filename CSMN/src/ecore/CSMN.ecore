@@ -470,7 +470,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalLevel" ordered="false"
-        lowerBound="1" eType="#//FunctionalAccessLevel"/>
+        eType="#//FunctionalAccessLevel"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionalSpec" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="mechanicalLevel" ordered="false"
