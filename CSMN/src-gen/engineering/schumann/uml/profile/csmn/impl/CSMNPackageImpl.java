@@ -1016,7 +1016,17 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getAsset_Base_DataType() {
+	public EAttribute getAsset_AssetType() {
+		return (EAttribute)assetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAsset_Base_NamedElement() {
 		return (EReference)assetEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1026,18 +1036,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAsset_AssetType() {
+	public EAttribute getAsset_AssetSpec() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAsset_Base_Port() {
-		return (EReference)assetEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1066,8 +1066,18 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAssetLibrary_AssetType() {
+	public EAttribute getAssetLibrary_AssetSpec() {
 		return (EAttribute)assetLibraryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAssetLibrary_AssetType() {
+		return (EAttribute)assetLibraryEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2035,12 +2045,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(productConstraintEClass, PRODUCT_CONSTRAINT__SOFTWARE_VERSION);
 
 		assetEClass = createEClass(ASSET);
-		createEReference(assetEClass, ASSET__BASE_DATA_TYPE);
+		createEReference(assetEClass, ASSET__BASE_NAMED_ELEMENT);
+		createEAttribute(assetEClass, ASSET__ASSET_SPEC);
 		createEAttribute(assetEClass, ASSET__ASSET_TYPE);
-		createEReference(assetEClass, ASSET__BASE_PORT);
 
 		assetLibraryEClass = createEClass(ASSET_LIBRARY);
 		createEReference(assetLibraryEClass, ASSET_LIBRARY__BASE_PACKAGE);
+		createEAttribute(assetLibraryEClass, ASSET_LIBRARY__ASSET_SPEC);
 		createEAttribute(assetLibraryEClass, ASSET_LIBRARY__ASSET_TYPE);
 
 		energyCharacteristicEClass = createEClass(ENERGY_CHARACTERISTIC);
@@ -2250,12 +2261,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getProductConstraint_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, -1, ProductConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAsset_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAsset_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAsset_AssetSpec(), ecorePackage.getEString(), "assetSpec", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAsset_AssetType(), this.getAssetType(), "assetType", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAsset_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assetLibraryEClass, AssetLibrary.class, "AssetLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssetLibrary_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAssetLibrary_AssetSpec(), ecorePackage.getEString(), "assetSpec", null, 0, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAssetLibrary_AssetType(), this.getAssetType(), "assetType", null, 1, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(energyCharacteristicEClass, EnergyCharacteristic.class, "EnergyCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2402,10 +2414,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(assetTypeEEnum, AssetType.DATA);
 		addEEnumLiteral(assetTypeEEnum, AssetType.DISTURBANCE);
 		addEEnumLiteral(assetTypeEEnum, AssetType.INFORMATION);
+		addEEnumLiteral(assetTypeEEnum, AssetType.INTERFACE);
 		addEEnumLiteral(assetTypeEEnum, AssetType.MATERIAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.MECHANICAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.SIGNAL);
-		addEEnumLiteral(assetTypeEEnum, AssetType.INTERFACE);
 
 		initEEnum(energyTypeEEnum, EnergyType.class, "EnergyType");
 		addEEnumLiteral(energyTypeEEnum, EnergyType.UNSPECIFIED);

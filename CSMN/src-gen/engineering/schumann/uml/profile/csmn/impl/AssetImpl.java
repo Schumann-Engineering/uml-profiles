@@ -13,9 +13,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.uml2.uml.DataType;
-import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,23 +23,43 @@ import org.eclipse.uml2.uml.Port;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getAssetSpec <em>Asset Spec</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getAssetType <em>Asset Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getBase_Port <em>Base Port</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	/**
-	 * The cached value of the '{@link #getBase_DataType() <em>Base Data Type</em>}' reference.
+	 * The cached value of the '{@link #getBase_NamedElement() <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBase_DataType()
+	 * @see #getBase_NamedElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType base_DataType;
+	protected NamedElement base_NamedElement;
+
+	/**
+	 * The default value of the '{@link #getAssetSpec() <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssetSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ASSET_SPEC_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAssetSpec() <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssetSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected String assetSpec = ASSET_SPEC_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAssetType() <em>Asset Type</em>}' attribute.
@@ -64,16 +82,6 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	protected AssetType assetType = ASSET_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBase_Port() <em>Base Port</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBase_Port()
-	 * @generated
-	 * @ordered
-	 */
-	protected Port base_Port;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -90,46 +98,6 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	protected EClass eStaticClass() {
 		return CSMNPackage.Literals.ASSET;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DataType getBase_DataType() {
-		if (base_DataType != null && base_DataType.eIsProxy()) {
-			InternalEObject oldBase_DataType = (InternalEObject)base_DataType;
-			base_DataType = (DataType)eResolveProxy(oldBase_DataType);
-			if (base_DataType != oldBase_DataType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.ASSET__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
-			}
-		}
-		return base_DataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType basicGetBase_DataType() {
-		return base_DataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setBase_DataType(DataType newBase_DataType) {
-		DataType oldBase_DataType = base_DataType;
-		base_DataType = newBase_DataType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.ASSET__BASE_DATA_TYPE, oldBase_DataType, base_DataType));
 	}
 
 	/**
@@ -161,16 +129,16 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * @generated
 	 */
 	@Override
-	public Port getBase_Port() {
-		if (base_Port != null && base_Port.eIsProxy()) {
-			InternalEObject oldBase_Port = (InternalEObject)base_Port;
-			base_Port = (Port)eResolveProxy(oldBase_Port);
-			if (base_Port != oldBase_Port) {
+	public NamedElement getBase_NamedElement() {
+		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
+			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
+			base_NamedElement = (NamedElement)eResolveProxy(oldBase_NamedElement);
+			if (base_NamedElement != oldBase_NamedElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.ASSET__BASE_PORT, oldBase_Port, base_Port));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CSMNPackage.ASSET__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
 			}
 		}
-		return base_Port;
+		return base_NamedElement;
 	}
 
 	/**
@@ -178,8 +146,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port basicGetBase_Port() {
-		return base_Port;
+	public NamedElement basicGetBase_NamedElement() {
+		return base_NamedElement;
 	}
 
 	/**
@@ -188,11 +156,34 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * @generated
 	 */
 	@Override
-	public void setBase_Port(Port newBase_Port) {
-		Port oldBase_Port = base_Port;
-		base_Port = newBase_Port;
+	public void setBase_NamedElement(NamedElement newBase_NamedElement) {
+		NamedElement oldBase_NamedElement = base_NamedElement;
+		base_NamedElement = newBase_NamedElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.ASSET__BASE_PORT, oldBase_Port, base_Port));
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.ASSET__BASE_NAMED_ELEMENT, oldBase_NamedElement, base_NamedElement));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAssetSpec() {
+		return assetSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAssetSpec(String newAssetSpec) {
+		String oldAssetSpec = assetSpec;
+		assetSpec = newAssetSpec;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.ASSET__ASSET_SPEC, oldAssetSpec, assetSpec));
 	}
 
 	/**
@@ -203,14 +194,13 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CSMNPackage.ASSET__BASE_DATA_TYPE:
-				if (resolve) return getBase_DataType();
-				return basicGetBase_DataType();
+			case CSMNPackage.ASSET__BASE_NAMED_ELEMENT:
+				if (resolve) return getBase_NamedElement();
+				return basicGetBase_NamedElement();
+			case CSMNPackage.ASSET__ASSET_SPEC:
+				return getAssetSpec();
 			case CSMNPackage.ASSET__ASSET_TYPE:
 				return getAssetType();
-			case CSMNPackage.ASSET__BASE_PORT:
-				if (resolve) return getBase_Port();
-				return basicGetBase_Port();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -223,14 +213,14 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CSMNPackage.ASSET__BASE_DATA_TYPE:
-				setBase_DataType((DataType)newValue);
+			case CSMNPackage.ASSET__BASE_NAMED_ELEMENT:
+				setBase_NamedElement((NamedElement)newValue);
+				return;
+			case CSMNPackage.ASSET__ASSET_SPEC:
+				setAssetSpec((String)newValue);
 				return;
 			case CSMNPackage.ASSET__ASSET_TYPE:
 				setAssetType((AssetType)newValue);
-				return;
-			case CSMNPackage.ASSET__BASE_PORT:
-				setBase_Port((Port)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -244,14 +234,14 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CSMNPackage.ASSET__BASE_DATA_TYPE:
-				setBase_DataType((DataType)null);
+			case CSMNPackage.ASSET__BASE_NAMED_ELEMENT:
+				setBase_NamedElement((NamedElement)null);
+				return;
+			case CSMNPackage.ASSET__ASSET_SPEC:
+				setAssetSpec(ASSET_SPEC_EDEFAULT);
 				return;
 			case CSMNPackage.ASSET__ASSET_TYPE:
 				setAssetType(ASSET_TYPE_EDEFAULT);
-				return;
-			case CSMNPackage.ASSET__BASE_PORT:
-				setBase_Port((Port)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -265,12 +255,12 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CSMNPackage.ASSET__BASE_DATA_TYPE:
-				return base_DataType != null;
+			case CSMNPackage.ASSET__BASE_NAMED_ELEMENT:
+				return base_NamedElement != null;
+			case CSMNPackage.ASSET__ASSET_SPEC:
+				return ASSET_SPEC_EDEFAULT == null ? assetSpec != null : !ASSET_SPEC_EDEFAULT.equals(assetSpec);
 			case CSMNPackage.ASSET__ASSET_TYPE:
 				return assetType != ASSET_TYPE_EDEFAULT;
-			case CSMNPackage.ASSET__BASE_PORT:
-				return base_Port != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -285,7 +275,9 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (assetType: ");
+		result.append(" (assetSpec: ");
+		result.append(assetSpec);
+		result.append(", assetType: ");
 		result.append(assetType);
 		result.append(')');
 		return result.toString();

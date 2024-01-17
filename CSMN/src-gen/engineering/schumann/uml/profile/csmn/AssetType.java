@@ -79,36 +79,6 @@ public enum AssetType implements Enumerator {
 	INFORMATION(5, "Information", "Information"),
 
 	/**
-	 * The '<em><b>Material</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MATERIAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MATERIAL(6, "Material", "Material"),
-
-	/**
-	 * The '<em><b>Mechanical</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #MECHANICAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	MECHANICAL(7, "Mechanical", "Mechanical"),
-
-	/**
-	 * The '<em><b>Signal</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #SIGNAL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	SIGNAL(8, "Signal", "Signal"),
-
-	/**
 	 * The '<em><b>Interface</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -116,7 +86,31 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTERFACE(9, "Interface", "Interface");
+	INTERFACE(6, "Interface", "Interface"), /**
+	 * The '<em><b>Material</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MATERIAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MATERIAL(7, "Material", "Material"), /**
+	 * The '<em><b>Mechanical</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MECHANICAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MECHANICAL(8, "Mechanical", "Mechanical"), /**
+	 * The '<em><b>Signal</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SIGNAL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SIGNAL(9, "Signal", "Signal");
 
 	/**
 	 * The '<em><b>Unspecified</b></em>' literal value.
@@ -185,6 +179,17 @@ public enum AssetType implements Enumerator {
 	public static final int INFORMATION_VALUE = 5;
 
 	/**
+	 * The '<em><b>Interface</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #INTERFACE
+	 * @model name="Interface"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int INTERFACE_VALUE = 6;
+
+	/**
 	 * The '<em><b>Material</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -193,7 +198,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MATERIAL_VALUE = 6;
+	public static final int MATERIAL_VALUE = 7;
 
 	/**
 	 * The '<em><b>Mechanical</b></em>' literal value.
@@ -204,7 +209,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MECHANICAL_VALUE = 7;
+	public static final int MECHANICAL_VALUE = 8;
 
 	/**
 	 * The '<em><b>Signal</b></em>' literal value.
@@ -215,18 +220,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SIGNAL_VALUE = 8;
-
-	/**
-	 * The '<em><b>Interface</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #INTERFACE
-	 * @model name="Interface"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int INTERFACE_VALUE = 9;
+	public static final int SIGNAL_VALUE = 9;
 
 	/**
 	 * An array of all the '<em><b>Asset Type</b></em>' enumerators.
@@ -242,10 +236,10 @@ public enum AssetType implements Enumerator {
 			DATA,
 			DISTURBANCE,
 			INFORMATION,
+			INTERFACE,
 			MATERIAL,
 			MECHANICAL,
 			SIGNAL,
-			INTERFACE,
 		};
 
 	/**
@@ -308,10 +302,10 @@ public enum AssetType implements Enumerator {
 			case DATA_VALUE: return DATA;
 			case DISTURBANCE_VALUE: return DISTURBANCE;
 			case INFORMATION_VALUE: return INFORMATION;
+			case INTERFACE_VALUE: return INTERFACE;
 			case MATERIAL_VALUE: return MATERIAL;
 			case MECHANICAL_VALUE: return MECHANICAL;
 			case SIGNAL_VALUE: return SIGNAL;
-			case INTERFACE_VALUE: return INTERFACE;
 		}
 		return null;
 	}

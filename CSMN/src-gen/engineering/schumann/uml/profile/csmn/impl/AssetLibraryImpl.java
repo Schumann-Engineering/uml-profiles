@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl#getBase_Package <em>Base Package</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl#getAssetSpec <em>Asset Spec</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl#getAssetType <em>Asset Type</em>}</li>
  * </ul>
  *
@@ -38,6 +39,26 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 	 * @ordered
 	 */
 	protected org.eclipse.uml2.uml.Package base_Package;
+
+	/**
+	 * The default value of the '{@link #getAssetSpec() <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssetSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ASSET_SPEC_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAssetSpec() <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssetSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected String assetSpec = ASSET_SPEC_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getAssetType() <em>Asset Type</em>}' attribute.
@@ -124,6 +145,29 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 	 * @generated
 	 */
 	@Override
+	public String getAssetSpec() {
+		return assetSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAssetSpec(String newAssetSpec) {
+		String oldAssetSpec = assetSpec;
+		assetSpec = newAssetSpec;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.ASSET_LIBRARY__ASSET_SPEC, oldAssetSpec, assetSpec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public AssetType getAssetType() {
 		return assetType;
 	}
@@ -152,6 +196,8 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 			case CSMNPackage.ASSET_LIBRARY__BASE_PACKAGE:
 				if (resolve) return getBase_Package();
 				return basicGetBase_Package();
+			case CSMNPackage.ASSET_LIBRARY__ASSET_SPEC:
+				return getAssetSpec();
 			case CSMNPackage.ASSET_LIBRARY__ASSET_TYPE:
 				return getAssetType();
 		}
@@ -168,6 +214,9 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 		switch (featureID) {
 			case CSMNPackage.ASSET_LIBRARY__BASE_PACKAGE:
 				setBase_Package((org.eclipse.uml2.uml.Package)newValue);
+				return;
+			case CSMNPackage.ASSET_LIBRARY__ASSET_SPEC:
+				setAssetSpec((String)newValue);
 				return;
 			case CSMNPackage.ASSET_LIBRARY__ASSET_TYPE:
 				setAssetType((AssetType)newValue);
@@ -187,6 +236,9 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 			case CSMNPackage.ASSET_LIBRARY__BASE_PACKAGE:
 				setBase_Package((org.eclipse.uml2.uml.Package)null);
 				return;
+			case CSMNPackage.ASSET_LIBRARY__ASSET_SPEC:
+				setAssetSpec(ASSET_SPEC_EDEFAULT);
+				return;
 			case CSMNPackage.ASSET_LIBRARY__ASSET_TYPE:
 				setAssetType(ASSET_TYPE_EDEFAULT);
 				return;
@@ -204,6 +256,8 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 		switch (featureID) {
 			case CSMNPackage.ASSET_LIBRARY__BASE_PACKAGE:
 				return base_Package != null;
+			case CSMNPackage.ASSET_LIBRARY__ASSET_SPEC:
+				return ASSET_SPEC_EDEFAULT == null ? assetSpec != null : !ASSET_SPEC_EDEFAULT.equals(assetSpec);
 			case CSMNPackage.ASSET_LIBRARY__ASSET_TYPE:
 				return assetType != ASSET_TYPE_EDEFAULT;
 		}
@@ -220,7 +274,9 @@ public class AssetLibraryImpl extends MinimalEObjectImpl.Container implements As
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (assetType: ");
+		result.append(" (assetSpec: ");
+		result.append(assetSpec);
+		result.append(", assetType: ");
 		result.append(assetType);
 		result.append(')');
 		return result.toString();

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getBase_Package <em>Base Package</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetSpec <em>Asset Spec</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetType <em>Asset Type</em>}</li>
  * </ul>
  *
@@ -47,6 +48,32 @@ public interface AssetLibrary extends EObject {
 	 * @generated
 	 */
 	void setBase_Package(org.eclipse.uml2.uml.Package value);
+
+	/**
+	 * Returns the value of the '<em><b>Asset Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Asset Spec</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Asset Spec</em>' attribute.
+	 * @see #setAssetSpec(String)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAssetLibrary_AssetSpec()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getAssetSpec();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetSpec <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Asset Spec</em>' attribute.
+	 * @see #getAssetSpec()
+	 * @generated
+	 */
+	void setAssetSpec(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Asset Type</b></em>' attribute.

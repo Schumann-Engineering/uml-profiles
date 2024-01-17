@@ -830,13 +830,22 @@ public interface CSMNPackage extends EPackage {
 	int ASSET = 14;
 
 	/**
-	 * The feature id for the '<em><b>Base Data Type</b></em>' reference.
+	 * The feature id for the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__BASE_DATA_TYPE = 0;
+	int ASSET__BASE_NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Asset Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__ASSET_SPEC = 1;
 
 	/**
 	 * The feature id for the '<em><b>Asset Type</b></em>' attribute.
@@ -845,16 +854,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET__ASSET_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Base Port</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSET__BASE_PORT = 2;
+	int ASSET__ASSET_TYPE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Asset</em>' class.
@@ -894,13 +894,22 @@ public interface CSMNPackage extends EPackage {
 	int ASSET_LIBRARY__BASE_PACKAGE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Asset Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET_LIBRARY__ASSET_SPEC = 1;
+
+	/**
 	 * The feature id for the '<em><b>Asset Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_LIBRARY__ASSET_TYPE = 1;
+	int ASSET_LIBRARY__ASSET_TYPE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Asset Library</em>' class.
@@ -909,7 +918,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_LIBRARY_FEATURE_COUNT = 2;
+	int ASSET_LIBRARY_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Asset Library</em>' class.
@@ -2566,17 +2575,6 @@ public interface CSMNPackage extends EPackage {
 	EClass getAsset();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_DataType <em>Base Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Data Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.Asset#getBase_DataType()
-	 * @see #getAsset()
-	 * @generated
-	 */
-	EReference getAsset_Base_DataType();
-
-	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Asset#getAssetType <em>Asset Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2588,15 +2586,26 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getAsset_AssetType();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_Port <em>Base Port</em>}'.
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Port</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.Asset#getBase_Port()
+	 * @return the meta object for the reference '<em>Base Named Element</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement()
 	 * @see #getAsset()
 	 * @generated
 	 */
-	EReference getAsset_Base_Port();
+	EReference getAsset_Base_NamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Asset#getAssetSpec <em>Asset Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Asset Spec</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getAssetSpec()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EAttribute getAsset_AssetSpec();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.AssetLibrary <em>Asset Library</em>}'.
@@ -2618,6 +2627,17 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssetLibrary_Base_Package();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetSpec <em>Asset Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Asset Spec</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetSpec()
+	 * @see #getAssetLibrary()
+	 * @generated
+	 */
+	EAttribute getAssetLibrary_AssetSpec();
 
 	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.AssetLibrary#getAssetType <em>Asset Type</em>}'.
@@ -4023,14 +4043,6 @@ public interface CSMNPackage extends EPackage {
 		EClass ASSET = eINSTANCE.getAsset();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Data Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSET__BASE_DATA_TYPE = eINSTANCE.getAsset_Base_DataType();
-
-		/**
 		 * The meta object literal for the '<em><b>Asset Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4039,12 +4051,20 @@ public interface CSMNPackage extends EPackage {
 		EAttribute ASSET__ASSET_TYPE = eINSTANCE.getAsset_AssetType();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Port</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSET__BASE_PORT = eINSTANCE.getAsset_Base_Port();
+		EReference ASSET__BASE_NAMED_ELEMENT = eINSTANCE.getAsset_Base_NamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Asset Spec</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET__ASSET_SPEC = eINSTANCE.getAsset_AssetSpec();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.AssetLibraryImpl <em>Asset Library</em>}' class.
@@ -4063,6 +4083,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSET_LIBRARY__BASE_PACKAGE = eINSTANCE.getAssetLibrary_Base_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Asset Spec</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET_LIBRARY__ASSET_SPEC = eINSTANCE.getAssetLibrary_AssetSpec();
 
 		/**
 		 * The meta object literal for the '<em><b>Asset Type</b></em>' attribute feature.

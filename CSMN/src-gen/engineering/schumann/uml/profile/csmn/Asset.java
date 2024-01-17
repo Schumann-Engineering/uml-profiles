@@ -3,9 +3,7 @@
 package engineering.schumann.uml.profile.csmn;
 
 import org.eclipse.emf.ecore.EObject;
-
-import org.eclipse.uml2.uml.DataType;
-import org.eclipse.uml2.uml.Port;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,9 +14,9 @@ import org.eclipse.uml2.uml.Port;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement <em>Base Named Element</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getAssetSpec <em>Asset Spec</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getAssetType <em>Asset Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getBase_Port <em>Base Port</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset()
@@ -26,32 +24,6 @@ import org.eclipse.uml2.uml.Port;
  * @generated
  */
 public interface Asset extends EObject {
-	/**
-	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Data Type</em>' reference.
-	 * @see #setBase_DataType(DataType)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset_Base_DataType()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	DataType getBase_DataType();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_DataType <em>Base Data Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Data Type</em>' reference.
-	 * @see #getBase_DataType()
-	 * @generated
-	 */
-	void setBase_DataType(DataType value);
-
 	/**
 	 * Returns the value of the '<em><b>Asset Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.AssetType}.
@@ -82,29 +54,55 @@ public interface Asset extends EObject {
 	void setAssetType(AssetType value);
 
 	/**
-	 * Returns the value of the '<em><b>Base Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Base Named Element</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Base Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Base Named Element</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Base Port</em>' reference.
-	 * @see #setBase_Port(Port)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset_Base_Port()
+	 * @return the value of the '<em>Base Named Element</em>' reference.
+	 * @see #setBase_NamedElement(NamedElement)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset_Base_NamedElement()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	Port getBase_Port();
+	NamedElement getBase_NamedElement();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_Port <em>Base Port</em>}' reference.
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement <em>Base Named Element</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Port</em>' reference.
-	 * @see #getBase_Port()
+	 * @param value the new value of the '<em>Base Named Element</em>' reference.
+	 * @see #getBase_NamedElement()
 	 * @generated
 	 */
-	void setBase_Port(Port value);
+	void setBase_NamedElement(NamedElement value);
+
+	/**
+	 * Returns the value of the '<em><b>Asset Spec</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Asset Spec</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Asset Spec</em>' attribute.
+	 * @see #setAssetSpec(String)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset_AssetSpec()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getAssetSpec();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Asset#getAssetSpec <em>Asset Spec</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Asset Spec</em>' attribute.
+	 * @see #getAssetSpec()
+	 * @generated
+	 */
+	void setAssetSpec(String value);
 
 } // Asset

@@ -168,12 +168,12 @@
     <eLiterals name="Removed" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Asset">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
-        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
+        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetSpec" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
         lowerBound="1" eType="#//AssetType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
-        eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
     <eLiterals name="Unspecified"/>
@@ -182,14 +182,16 @@
     <eLiterals name="Data" value="3"/>
     <eLiterals name="Disturbance" value="4"/>
     <eLiterals name="Information" value="5"/>
-    <eLiterals name="Material" value="6"/>
-    <eLiterals name="Mechanical" value="7"/>
-    <eLiterals name="Signal" value="8"/>
-    <eLiterals name="Interface" value="9"/>
+    <eLiterals name="Interface" value="6"/>
+    <eLiterals name="Material" value="7"/>
+    <eLiterals name="Mechanical" value="8"/>
+    <eLiterals name="Signal" value="9"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssetLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Package"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetSpec" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
         lowerBound="1" eType="#//AssetType"/>
   </eClassifiers>
