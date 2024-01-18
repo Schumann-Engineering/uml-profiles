@@ -26,14 +26,15 @@
 	this : InterfaceCharacteristic
 )
 post(trim())]
-***Interface Characteristic***:
-[comment]
-***Purpose***:
+[comment purpose /]
+▪ ***Purpose***
 [this.purpose/]
-[/comment]
+
+[comment type /]
 [if (this.interfaceType <> null and this.interfaceType <> InterfaceType::Unspecified)]
 ▪ *Type*: [this.interfaceType.csmn_toString() /]
 [/if]
+[comment connector/]
 [if (this.interfaceConnector <> null and this.interfaceConnector <> InterfaceConnector::Unspecified)]
 ▪ *Connector*: [this.interfaceConnector.csmn_toString() /]
 [/if]

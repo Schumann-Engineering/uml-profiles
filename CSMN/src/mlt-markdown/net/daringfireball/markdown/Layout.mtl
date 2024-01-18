@@ -1,0 +1,9 @@
+[comment encoding = UTF-8 /]
+[module Layout(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public markdown_PAGE_BREAK(
+	devNull : OclAny
+)]<div style="page-break-after: always;"></div>[/template]

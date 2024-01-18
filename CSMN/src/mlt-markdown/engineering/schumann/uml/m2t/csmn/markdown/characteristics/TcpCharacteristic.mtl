@@ -1,0 +1,49 @@
+[comment encoding = UTF-8 /]
+[module TcpCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::TcpCharacteristic /]
+
+
+[template public printTcpCharacteristic(
+	this : Dependency
+) 
+? (this.csmn_hasTcpCharacteristic())
+{
+	characteristic : TcpCharacteristic = this.csmn_tcpCharacteristic();
+}
+]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : TcpCharacteristic
+)
+post(trim())]
+***TCP-Layer Characteristic***:
+[comment 5 = Application /]
+[if (not this.application.oclIsUndefined())]
+▪ *Layer 5 (Application)*: [this.application /]
+[/if]
+[comment 4 = Transport /]
+[if (not this.transport.oclIsUndefined())]
+▪ *Layer 4 (Transport)*: [this.transport /]
+[/if]
+[comment 3 = Network /]
+[if (not this.network.oclIsUndefined())]
+▪ *Layer 3 (Network)*: [this.network /]
+[/if]
+[comment 2 = Data Link /]
+[if (not this.dataLink.oclIsUndefined())]
+▪ *Layer 2 (Data Link)*: [this.dataLink /]
+[/if]
+[comment 1 = Physical /]
+[if (not this.physical.oclIsUndefined())]
+▪ *Layer 1 (Physical)*: [this.physical /]
+[/if]
+<hr/>
+[/template]

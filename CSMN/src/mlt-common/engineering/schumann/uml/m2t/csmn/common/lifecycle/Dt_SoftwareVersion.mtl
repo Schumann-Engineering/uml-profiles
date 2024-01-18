@@ -38,8 +38,9 @@
 	this : String
 ) : Boolean =
 	if (this <> null) then
-		this
-		.isContainedInEnvironmentPropertyAsVersion('EXCLUDE_CSMN_SoftwareVersion') = false
+		not this.isContainedInEnvironmentPropertyAsVersion('EXCLUDE_CSMN_SoftwareVersion')
+		and
+		this.isContainedInEnvironmentProperty('ONLY_CSMN_SoftwareVersion', true)
 	else
 		true
 	endif

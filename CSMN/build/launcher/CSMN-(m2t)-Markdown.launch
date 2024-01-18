@@ -8,7 +8,7 @@
     <stringAttribute key="org.eclipse.acceleo.ide.ui.TARGET_PATH" value="/HMAG-model/#export/HMAG-model"/>
     <booleanAttribute key="org.eclipse.debug.core.ATTR_FORCE_SYSTEM_CONSOLE_ENCODING" value="false"/>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-        <listEntry value="/CSMN/src/mlt-markdown/engineering/schumann/uml/m2t/csmn/markdown/MainStandalone.java"/>
+        <listEntry value="/CSMN/src/mlt-markdown/engineering/schumann/uml/m2t/docgen/MainStandalone.java"/>
     </listAttribute>
     <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
         <listEntry value="1"/>
@@ -23,7 +23,7 @@
         <listEntry value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;runtimeClasspathEntry containerPath=&quot;org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17&quot; path=&quot;5&quot; type=&quot;4&quot;/&gt;&#13;&#10;"/>
     </listAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.DEFAULT_CLASSPATH" value="false"/>
-    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="engineering.schumann.uml.m2t.csmn.markdown.MainStandalone"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="engineering.schumann.uml.m2t.docgen.MainStandalone"/>
     <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="CSMN"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="&quot;C:/_/Hamilton Group/MED-TEAM Product Security (TEAM-2670) - Work products/System Boundary Diagram/#UML/v4/hamilton-medical.uml&quot; &quot;C:/_/Hamilton Group/MED-TEAM Product Security (TEAM-2670) - Work products/System Boundary Diagram/#UML/#export/HMAG-model&quot; &quot;env.properties&quot;"/>
     <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="CSMN"/>

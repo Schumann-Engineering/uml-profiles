@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module Link(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[query public html_getLink(
+	href : String
+) : String =
+	'<a href="' + href + '">' + href + '</a>'
+/]
+
+
+[query public html_getLink(
+	text : String,
+	href : String
+) : String =
+	'<a href="' + href + '">' + text + '</a>'
+/]

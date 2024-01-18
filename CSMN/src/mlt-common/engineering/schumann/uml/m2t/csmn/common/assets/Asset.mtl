@@ -1,0 +1,36 @@
+[comment encoding = UTF-8 /]
+[module Asset(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_isAsset(
+	this : DataType
+) : Boolean =
+	this
+	._hasStereotype('CSMN::Asset')
+/]
+
+
+[query public csmn_asset(
+	this : DataType
+) : Asset =
+	this
+	._getStereotypeInstance('CSMN::Asset')
+/]
+
+
+[query public csmn_filter(
+	this      : Set(DataType),
+	assetType : AssetType
+) : Set(DataType) =
+	this
+	->select(dt : DataType |
+		dt.csmn_isAsset() and
+		dt.csmn_asset().assetType = assetType
+	)
+/]

@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package engineering.schumann.uml.m2t.csmn.markdown;
+package engineering.schumann.uml.m2t.docgen;
 
 import java.io.File;
 import java.io.IOException;

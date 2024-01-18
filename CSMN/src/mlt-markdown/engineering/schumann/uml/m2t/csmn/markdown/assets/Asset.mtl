@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module Asset(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
+
+
+[template public printAssetWithIcon(
+	this : DataType
+) 
+? (this.csmn_isAsset())
+post(trim())
+{
+	asset : Asset = this.csmn_asset();
+}]
+[asset.mardown_icon() /]&nbsp;[this.name /]
+[/template]
+
+
+[template public printAssetWithType(
+	this : DataType
+) 
+? (this.csmn_isAsset())
+post(trim())
+{
+	asset : Asset = this.csmn_asset();
+}]
+«[asset.assetType /]»&nbsp;[this.name /]
+[/template]
+
+
+[template public mardown_icon(
+	this : Asset
+)
+post(trim())]
+!['[['/]icon_Asset_[this.assetType.toString().replaceAll(' ', '') /].png[']]'/]
+[/template]

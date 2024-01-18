@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module TcpCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_hasTcpCharacteristic(
+	this : Dependency
+) : Boolean =
+	this
+	._hasStereotype('CSMN::TcpCharacteristic')
+/]
+
+
+[query public csmn_tcpCharacteristic(
+	this : Dependency
+) : TcpCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::TcpCharacteristic')
+/]

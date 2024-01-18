@@ -12,7 +12,8 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
-[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
 [import net::daringfireball::markdown::Table /]
 
 
@@ -23,36 +24,132 @@
 )
 ? ( this.csmn_isScoped() )
 post(trim())
-]
-| Trade name      | Model or version number   | UDI-DI / GTIN   | Base-UDI-DI / GMN    |[if (printSoftware)] Software release |[/if][if (printCpe)] CPE                                                |[/if]
-| :-------------: | :-----------------------: | :-------------: | :------------------: |[if (printSoftware)] :--------------: |[/if][if (printCpe)] :------------------------------------------------: |[/if]
-[for (product : Product | this.csmn_scope().csmn_productInScope())]
-[printScope(product, printSoftware, printCpe).toMarkdownTableRow() /]
+{
+	products : Set(Product) = this.csmn_scope().csmn_productInScope();
+}]
+<table style="width: 100%; text-align: center;">
+[comment Product name /]
+	<tr>
+		<th>Trade name</th>
+[for (products)]
+		<td>[productName /]</td>
 [/for]
-[/template]
-
-
-[template private printScope(
-	product : Product,
-	printSoftware : Boolean,
-	printCpe : Boolean
-)
-post(trim())]
-[comment Trade name /]
-<td>[product.productName.padRightUnsafe(15, ' ') /]</td>
-[comment Model or version number /]
-<td>[product.model.padRightUnsafe(25, ' ') /]</td>
-[comment UDI-DI / GTIN /]
-<td>[product.udiDi.padRightUnsafe(15, ' ') /]</td>
-[comment Base-UDI-DI / GMN /]
-<td>[product.udiDiBase.padRightUnsafe(20, ' ')/]</td>
-[comment Software release /]
+	</tr>
+[comment Model /]
+	<tr>
+		<th>Model</th>
+[for (products)]
+		<td>[model /]</td>
+[/for]
+	</tr>
+[comment UDI-DI /]
+	<tr>
+		<th>UDI-DI / GTIN</th>
+[for (products)]
+		<td>[udiDi /]</td>
+[/for]
+	</tr>
+[comment UDI-DI Base /]
+	<tr>
+		<th>Base-UDI-DI / GMN</th>
+[for (products)]
+		<td>[udiDiBase /]</td>
+[/for]
+	</tr>
+[comment software /]
 [if (printSoftware)]
-<td>[for (product.csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
+	<tr>
+		<th>Software release</th>
+[for (products)]
+		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
+[/for]
+	</tr>
 [/if]
 [comment CPE /]
 [if (printCpe)]
-<td>[product.csmn_markdown_getCpeLink().padRightUnsafe(55, ' ')/]<br/>
-old: [product.csmn_markdown_getCpeLinkOld().padRightUnsafe(55, ' ')/]</td>
+	<tr>
+		<th>CPE</th>
+[for (products)]
+		<td>[csmn_html_getCpeLink()/]</td>
+[/for]
+	<tr>
 [/if]
+</table>
+[/template]
+
+
+[template public printScopeAsSoftware(
+	this : NamedElement,
+	type : CommonPlatformEnumerationType
+)
+? ( this.csmn_isScoped() )
+post(trim())
+{
+	products : Set(Product) = this.csmn_scope().csmn_productInScope();
+}]
+<table style="width: 100%; text-align: center;">
+[comment Product name /]
+	<tr>
+		<th>Product</th>
+[for (products)]
+		<td>[productName /]</td>
+[/for]
+	</tr>
+[comment Model /]
+	<tr>
+		<th>Model</th>
+[for (products)]
+		<td>[model /]</td>
+[/for]
+	</tr>
+[comment UDI-DI /]
+	<tr>
+		<th>UDI-DI / GTIN</th>
+[for (products)]
+		<td>[udiDi /]</td>
+[/for]
+	</tr>
+[comment UDI-DI Base /]
+	<tr>
+		<th>Base-UDI-DI / GMN</th>
+[for (products)]
+		<td>[udiDiBase /]</td>
+[/for]
+	</tr>
+[comment software name /]
+	<tr>
+		<th>Software name</th>
+[for (products)]
+		<td>[productName /] [type /]</td>
+[/for]
+	</tr>
+[comment software /]
+	<tr>
+		<th>Software release</th>
+[for (products)]
+		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
+[/for]
+	</tr>
+[comment CPE /]
+	<tr>
+		<th>CPE</th>
+[for (product : Product | products)]
+		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][product.csmn_html_getCpeLinkForFirmware(self)/][/for]</td>
+[/for]
+	<tr>
+[comment IEC 62304 software safety class /]
+	<tr>
+		<th>IEC 62304 Software Safety Class</th>
+[for (product : Product | products)]
+		<td>[getProperty('ANNOTATION.Product.model.' + product.model + '.Class.software.IEC62304') /]</td>
+[/for]
+	</tr>
+[comment (chinese???) Cybersecurity class ??? /]
+	<tr>
+		<th>Cybersecurity safety class</th>
+[for (product : Product | products)]
+		<td>[getProperty('ANNOTATION.Product.model.' + product.model + '.Class.software.Cybersec') /]</td>
+[/for]
+	</tr>
+</table>
 [/template]

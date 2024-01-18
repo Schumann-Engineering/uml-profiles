@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module ProtectedArea('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public protectedArea(
+	element : NamedElement,
+	name    : String
+)]
+%%
+[protected ('"' + name + '"')]
+%%
+
+%%
+[/protected]
+%%
+[/template]

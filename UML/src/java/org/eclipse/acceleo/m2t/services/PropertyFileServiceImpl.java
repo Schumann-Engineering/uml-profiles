@@ -23,6 +23,7 @@ public class PropertyFileServiceImpl {
 		return isContainedInEnvironmentProperty(
 				needle, 
 				haystack, 
+				false,
 				DEFAULT_PROPERTY_VALUE_DELIMITER
 		);
 	}
@@ -31,15 +32,31 @@ public class PropertyFileServiceImpl {
 	public Boolean isContainedInEnvironmentProperty(
 			String needle,
 			String haystack,
+			Boolean resultIfNull
+	)
+	{
+		return isContainedInEnvironmentProperty(
+				needle, 
+				haystack,
+				resultIfNull,
+				DEFAULT_PROPERTY_VALUE_DELIMITER
+		);
+	}
+	
+	
+	public Boolean isContainedInEnvironmentProperty(
+			String needle,
+			String haystack,
+			Boolean resultIfNull,
 			String delimiter
 	) {
 		// === GUARDS ===
 		if (needle == null)
-			return false;
+			return resultIfNull;
 		if (haystack == null || haystack.trim() == "")
-			return false;
+			return resultIfNull;
 		if (delimiter == null)
-			return false;
+			return resultIfNull;
 		
 		// === BODY ===
 		// split haystack by delimiter	
@@ -67,6 +84,7 @@ public class PropertyFileServiceImpl {
 		return isContainedInEnvironmentPropertyAsVersion(
 				needle,
 				haystack,
+				false,
 				DEFAULT_PROPERTY_VALUE_DELIMITER
 		);				
 	}
@@ -75,15 +93,29 @@ public class PropertyFileServiceImpl {
 	public Boolean isContainedInEnvironmentPropertyAsVersion(
 			String needle,
 			String haystack,
+			Boolean resultIfNull
+	) {
+		return isContainedInEnvironmentPropertyAsVersion(
+				needle,
+				haystack,
+				resultIfNull,
+				DEFAULT_PROPERTY_VALUE_DELIMITER
+		);				
+	}	
+	
+	public Boolean isContainedInEnvironmentPropertyAsVersion(
+			String needle,
+			String haystack,
+			Boolean resultIfNull,
 			String delimiter
 	) {
 		// === GUARDS ===
 		if (needle == null)
-			return false;
+			return resultIfNull;
 		if (haystack == null)
-			return false;
+			return resultIfNull;
 		if (delimiter == null)
-			return false;
+			return resultIfNull;
 		
 		// === BODY ===
 		// split haystack by delimiter	
@@ -106,6 +138,7 @@ public class PropertyFileServiceImpl {
 			// >0 = A is "later" than B
 			// <0 = A is "earlier" than B
 			if (needleAsVersion.compareTo(valueAsVersion) >= 0)
+				// === SUCCESS ===
 				return true;
 		}
 		

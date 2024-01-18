@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module Connection(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+
+
+[query public csmn_hasConnection(
+	this : Dependency
+) : Boolean =
+	this
+	._hasStereotype('CSMN::Connection')
+/]
+
+
+[query public csmn_connection(
+	this : Dependency
+) : Connection =
+	this
+	._getStereotypeInstance('CSMN::Connection')
+/]

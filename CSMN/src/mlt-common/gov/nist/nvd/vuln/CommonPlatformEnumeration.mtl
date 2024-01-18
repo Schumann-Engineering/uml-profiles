@@ -12,7 +12,7 @@
 	vendor : String,
 	product : String
 ) : String =
-	'cpe:2.3:' + type.csmn_toCpeTypePart() + ':' + vendor + ':' + product
+	'cpe:2.3:' + type.csmn_toCpeTypePart() + ':' + vendor.toLower() + ':' + product.toLower()
 /]
 
 

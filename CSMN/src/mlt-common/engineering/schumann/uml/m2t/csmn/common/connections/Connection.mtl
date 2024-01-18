@@ -9,14 +9,30 @@
 
 [query public csmn_allConnection(
 	this : Element
-) : Set(DirectedRelationship) =
+) : Set(Dependency) =
 	this
 	._allStereotypedElements('CSMN::Connection')
 /]
 
 
+[query public csmn_allConnectionInvolved(
+	this : Port
+) : Set(Dependency) =
+	this
+	.getModel()
+	.csmn_allConnection()
+	->select(
+		d : Dependency |
+		(
+			d.source->includes(this) or
+			d.target->includes(this)
+		)
+	)
+/]
+
+
 [query public csmn_isConnection(
-	this : DirectedRelationship
+	this : Dependency
 ) : Boolean =
 	this
 	._hasStereotype('CSMN::Connection')
@@ -24,7 +40,7 @@
 
 
 [query public csmn_connection(
-	this : DirectedRelationship
+	this : Dependency
 ) : Connection =
 	this
 	._getStereotypeInstance('CSMN::Connection')

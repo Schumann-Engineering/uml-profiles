@@ -6,28 +6,32 @@
 	needle : OclAny,
 	propertyKey : String
 ) : Boolean =
-	invoke(
-		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
-		'isContainedInEnvironmentProperty(java.lang.String, java.lang.String)', 
-		Sequence{
-			needle,
-			getProperty(propertyKey)
-		}
-	)
+	isContainedInEnvironmentProperty( needle, propertyKey, false )
 /]
 
 
 [query public isContainedInEnvironmentProperty(
-	needle : OclAny,
+	needle      : OclAny,
 	propertyKey : String,
-	delimiter : String
+	valueIfNull : Boolean
+) : Boolean =
+	isContainedInEnvironmentProperty( needle, propertyKey, valueIfNull, ',' )
+/]
+
+
+[query public isContainedInEnvironmentProperty(
+	needle      : OclAny,
+	propertyKey : String,
+	valueIfNull : Boolean,
+	delimiter   : String
 ) : Boolean =
 	invoke(
 		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
-		'isContainedInEnvironmentProperty(java.lang.String, java.lang.String, java.lang.String)', 
+		'isContainedInEnvironmentProperty(java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String)', 
 		Sequence{
 			needle,
 			getProperty(propertyKey),
+			valueIfNull,
 			delimiter
 		}
 	)
@@ -38,28 +42,32 @@
 	needleAsVersion : OclAny,
 	propertyKey : String
 ) : Boolean =
-	invoke(
-		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
-		'isContainedInEnvironmentPropertyAsVersion(java.lang.String, java.lang.String)', 
-		Sequence{
-			needleAsVersion,
-			getProperty(propertyKey)
-		}
-	)
+	isContainedInEnvironmentPropertyAsVersion( needleAsVersion, propertyKey, false )
 /]
 
 
 [query public isContainedInEnvironmentPropertyAsVersion(
 	needleAsVersion : OclAny,
-	propertyKey : String,
-	delimiter : String
+	propertyKey     : String,
+	valueIfNull     : Boolean
+) : Boolean =
+	isContainedInEnvironmentPropertyAsVersion( needleAsVersion, propertyKey, valueIfNull, ',' )
+/]
+
+
+[query public isContainedInEnvironmentPropertyAsVersion(
+	needleAsVersion : OclAny,
+	propertyKey     : String,
+	valueIfNull     : Boolean,
+	delimiter       : String
 ) : Boolean =
 	invoke(
 		'org.eclipse.acceleo.m2t.services.PropertyFileServiceImpl', 
-		'isContainedInEnvironmentPropertyAsVersion(java.lang.String, java.lang.String, java.lang.String)', 
+		'isContainedInEnvironmentPropertyAsVersion(java.lang.String, java.lang.String, java.lang.Boolean, java.lang.String)', 
 		Sequence{
 			needleAsVersion,
 			getProperty(propertyKey),
+			valueIfNull,
 			delimiter
 		}
 	)

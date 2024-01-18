@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module Product(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+[import gov::nist::nvd::vuln::CommonVulnerabilitiesExposures /]
+[import org::w3c::xhtml::Link /]
+
+
+[query public csmn_html_getCpeLink(
+	this : Product
+) : String =
+	let cpeString : String = this.csmn_cpe()
+	in
+		html_getLink( cpeString, cpeString.nist_getCpeLink() )
+/]
+
+
+[query public csmn_html_getCpeLinkForFirmware(
+	this : Product,
+	softwareVersion : String
+) : String =
+	let cpeString : String = nist_cpe(
+		CommonPlatformEnumerationType::Firmware,
+		this.vendorName,
+		this.productName + '_firmware',
+		softwareVersion
+	)
+	in
+		html_getLink( cpeString, cpeString.nist_getCpeLink() )
+/]
+
+
+[query public csmn_html_getCpeLinkOld(
+	this : Product
+) : String =
+	let cpeString : String = this.csmn_cpeOld()
+	in
+		html_getLink( cpeString, cpeString.nist_getCpeLink() )
+/]

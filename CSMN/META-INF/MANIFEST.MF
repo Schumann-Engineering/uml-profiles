@@ -9,11 +9,11 @@ Bundle-ClassPath: .
 Bundle-Activator: engineering.schumann.uml.m2t.csmn.Activator
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: engineering.schumann.uml.profile.csmn,
+Export-Package: engineering.schumann.uml.m2t.csmn,
+ engineering.schumann.uml.m2t.docgen,
+ engineering.schumann.uml.profile.csmn,
  engineering.schumann.uml.profile.csmn.impl,
- engineering.schumann.uml.profile.csmn.util,
- engineering.schumann.uml.m2t.csmn,
- engineering.schumann.uml.m2t.csmn.markdown
+ engineering.schumann.uml.profile.csmn.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.runtime,
  org.eclipse.uml2.uml;visibility:=reexport,

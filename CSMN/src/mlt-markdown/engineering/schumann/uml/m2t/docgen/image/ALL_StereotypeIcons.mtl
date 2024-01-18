@@ -1,0 +1,37 @@
+[comment encoding = UTF-8 /]
+[module ALL_StereotypeIcons(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	(images)
+ * REALM:    	(docgen)
+ * CONTENT:  	extracts images for stereotypes from profiles
+ * PROFILES: 	(any)
+ * ====================
+ **/]
+
+
+[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+
+
+[template public generateFiles_ALL_StereotypeIcons(
+	this : Model
+)]
+[comment]
+[for (profile : Profile | this.profileApplication.appliedProfile)]
+[for (stereotype : Stereotype | profile.ownedElement->filter(Stereotype)->select(s : Stereotype | s.icon->size() > 0 and s.icon.format = 'Papyrus'))]
+[for (image : Image | stereotype.icon)
+{
+	kind : String = image.getAnnotation('image_papyrus', 'image_kind_key');
+	name : String = image.getAnnotation('image_papyrus', 'image_name_key');
+}]
+[file ('assets/images/' + kind +'_' + stereotype.name + '_' + name + '.png', false, 'UTF-8')][image.content/][/file]
+[/for]
+[/for]
+[/for]
+[/comment]
+[/template]

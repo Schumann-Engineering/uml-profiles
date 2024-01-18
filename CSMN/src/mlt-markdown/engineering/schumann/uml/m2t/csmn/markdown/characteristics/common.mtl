@@ -10,8 +10,11 @@
 [import engineering::schumann::uml::m2t::csmn::markdown::characteristics::EnergyCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::markdown::characteristics::FirewallCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::markdown::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::OsiCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::markdown::characteristics::StorageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::TcpCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::markdown::characteristics::UsageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::markdown::flow::Connection /]
 [import engineering::schumann::uml::m2t::Comment /]
 [import engineering::schumann::uml::m2t::services::CommentService /]
 
@@ -21,24 +24,38 @@
 )
 post(trim())
 ]
+[comment
+	PRIMARY CHARACTERISTICS
+
+	NOTE: these don't advertise their title
+/]
+[comment Connection /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printConnection() /][/if]
+[comment Interface /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
+[comment
+	SECONDARY CHARACTERISTICS
+/]
 [comment Access /]
 [if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAccessCharacteristic() /][/if]
 [comment Bandwith /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printBandwidthCharacteristic() /][/if]
 [if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printBandwidthCharacteristic() /][/if]
-[comment Interface /]
-[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
 [comment Energy /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printEnergyCharacteristic() /][/if]
 [if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printEnergyCharacteristic() /][/if]
 [comment Firewall /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printFirewallCharacteristic() /][/if]
+[comment OSI /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printOsiCharacteristic() /][/if]
 [comment Storage /]
 [if (this.oclIsKindOf(Port))]
 [this.oclAsType(Port).owner.oclAsType(Component).printStorageCharacteristic() /]
 [this.oclAsType(Port).printStorageCharacteristic() /]
 [/if]
 [if (this.oclIsKindOf(Component))][this.oclAsType(Component).printStorageCharacteristic() /][/if]
+[comment TCP /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printTcpCharacteristic() /][/if]
 [comment Usage /]
 [if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printUsageCharacteristic() /][/if]
 [comment Comment /]

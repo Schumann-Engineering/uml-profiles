@@ -6,6 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::UsageCharacteristic /]
+[import net::daringfireball::markdown::Box /]
 
 
 [template public printUsageCharacteristic(
@@ -29,7 +30,9 @@ post(trim())]
 [if (this.usageType <> null and this.usageType <> UsageType::Unspecified)]
 ▪ *Type*: [this.usageType /]
 [if (this.usageSpec <> null)]
-  *NOTE:* [this.usageSpec /]
+[markdown_NOTE_Start()/]
+[this.usageSpec /]
+[markdown_NOTE_End()/]
 [/if]
 [/if]
 [comment intended user group /]

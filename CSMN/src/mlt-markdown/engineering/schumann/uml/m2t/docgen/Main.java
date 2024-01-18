@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package engineering.schumann.uml.m2t.csmn.markdown;
+package engineering.schumann.uml.m2t.docgen;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,14 +35,14 @@ public class Main extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/engineering/schumann/uml/m2t/csmn/markdown/main";
+    public static final String MODULE_FILE_NAME = "/engineering/schumann/uml/m2t/docgen/main";
     
     /**
      * The name of the templates that are to be generated.
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "mainModel" };
+    public static final String[] TEMPLATE_NAMES = { "main_Model" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).

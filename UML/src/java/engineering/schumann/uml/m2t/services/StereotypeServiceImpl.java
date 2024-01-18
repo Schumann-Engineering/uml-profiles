@@ -265,7 +265,7 @@ public class StereotypeServiceImpl {
 			return false;
 
 		// CHECK 2: candidate needs a "base_*" property matching element
-		for (var attribute : metaClass.getEStructuralFeatures())
+		for (var attribute : metaClass.getEAllStructuralFeatures())
 		{
 			// GUARD: has to start with "base_"
 			if (!attribute.getName().startsWith("base_"))

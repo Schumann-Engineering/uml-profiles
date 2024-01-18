@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module Connection(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::flow::Connection /]
+[import engineering::schumann::uml::m2t::services::StringService /]
+
+
+[template public printConnection(
+	this : Dependency
+) 
+? (this.csmn_hasConnection())
+{
+	connection : Connection = this.csmn_connection();
+}
+]
+[connection.print() /]
+[/template]
+
+
+[template public print(
+	this : Connection
+)
+post(trim())]
+[comment purpose /]
+[if (not this.purpose._isNullOrEmpty())]
+***Purpose***
+[this.purpose /]
+
+[/if]
+[comment connectionType /]
+▪ *Type*: [this.connectionType /]
+[comment direction /]
+▪ *Direction*: [this.directionType /]
+[comment primary direction /]
+▪ *primary direction*: [this.directionPrimary /]
+[comment is realtime /]
+▪ *is real-time*: [if (this.isRealTime)]✅ yes[else]❌ no[/if]
+<hr/>
+[/template]

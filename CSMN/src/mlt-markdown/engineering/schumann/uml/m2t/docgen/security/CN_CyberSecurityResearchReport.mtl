@@ -1,0 +1,701 @@
+[comment encoding = UTF-8 /]
+[module CN_CyberSecurityResearchReport(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	Cyber Security Research Report
+ * REALM:    	China
+ * CONTENT:  	report required by medical device authority
+ * PROFILES: 	CSMN
+ * ====================
+ **/]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::common::ProtectedArea /]
+[import net::daringfireball::markdown::Box /]
+[import net::daringfireball::markdown::Layout /]
+
+
+[template public generateDocument_CN_CyberSecurityResearchReport(
+	this : Model
+)]
+	[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
+[pkg.generateDocument_CN_CyberSecurityResearchReport() /]
+	[/for]
+[/template]
+
+
+[template private generateDocument_CN_CyberSecurityResearchReport(
+	this : Package
+)]
+[file (this.getFileNameFqn('/CN_CyberSecurityResearchReport', 'md'), false, 'UTF-8')]
+[printChapter_CoverPage()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_TOC() /]
+
+[markdown_PAGE_BREAK() /]
+
+[printChapter_BasicInformation()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_ImplementationProcess()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_VulnerabilityAssessment()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_Conclusion()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_Appendix()/]
+[/file]
+[/template]
+
+
+[comment
+	====================
+	COVER PAGE
+	====================
+/]
+[template public printChapter_CoverPage(
+	this : Package
+)]
+<div style="font-size: 60pt; text-align: center; margin-bottom: 5cm;">
+Cyber Security Research Report
+</div>
+
+[this.printScope(true, true) /]
+[/template]
+   
+
+
+[comment
+	====================
+	TABLE OF CONTENT
+	====================
+/]
+[template public printChapter_TOC(
+	this : Package
+)] 
+**TABLE OF CONTENTS**
+
+```table-of-contents
+minLevel: 0
+maxLevel: 3
+```
+[/template]
+
+
+[comment
+	====================
+	BASIC INFORMATION
+	====================
+/]
+[template public printChapter_BasicInformation(
+	this : Package
+)]
+# Basic Information
+
+[comment
+	--------------------
+	REGISTRANT
+	--------------------
+/]
+## Registrant
+
+<table style="width: 100%; text-align: center;">
+	<tr>
+		<th>Manufacturer</th>
+		<td>[getProperty('META_VENDOR_NAME') /]</td>
+	</tr>
+	<tr>
+		<th>Registrant address</th>
+		<td>[getProperty('META_VENDOR_ADDRESS') /]</td>
+	</tr>
+</table>
+
+[comment
+	--------------------
+	SOFTWARE
+	--------------------
+/]
+## Software information 
+
+[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+
+[comment
+	--------------------
+	DATA ARCHITECTURE
+	--------------------
+/]
+## Data Architecture 
+
+### Applicable Documents
+
+- Product Security Characteristics
+- Manufacturer Disclosure Statement for Medical Device Security (MDS2)
+[protectedArea('Data Architecture > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Data Architecture > Description') /]
+
+[comment
+	....................
+	NETWORK
+	....................
+/]
+### Network Interfaces
+
+%%
+[markdown_NOTE_Start() /]
+<ul>
+	<li>
+		<b>Transmission Protocol</b><br/>
+  		The transmission protocols commonly used in medical devices are HL7、DICOM. General transmission protocols, such as TCP/IP、UDP、HTTP、HTTPS （based on standard IETF RFC 2616, RFC 2818） may also be used. Data transmission via SD card or U disk (storage format is ZIP file/compressed file according to standard ISO/IEC 21320-1:2015
+	</li>
+	<li>
+		<b>Data Interface Type</b><br/>
+  		commonly used wired interface have USB、RS232、RS485、CAN、RJ45; wireless communication methods have Bluetooth, wifi, Zigbee, RFID and various cellular wireless network.）
+	</li>
+</ul>
+[markdown_NOTE_End() /]
+%%
+
+%%
+[markdown_EXAMPLE_Start() /]
+<ul>
+	<li>['[ ]'/] Wireless Network</li>
+	<li>['[ ]'/] Wired network</li>
+</ul>
+
+Requirements:<br/>
+
+<ul>
+	<li>
+		the transmission protocol:
+		<ul>
+			<li>['[ ]'/] standard</li>
+			<li>['[ ]'/] user-defined</li>
+		</ul>
+	</li>
+	<li>
+		data interface type
+		<ul>
+			<li>bandwidth</li>
+			<li>others requirements if applicable</li>
+		</ul>
+	</li>
+</ul>
+[markdown_EXAMPLE_End() /]
+%%
+
+For a list of network interfaces, see document
+- "*Product Security Characteristics*"
+    chapter "*Product Architecture*"
+    section "*PRODUCT INTERFACEs which are Network interfaces*".
+
+    [markdown_NOTE_Start() /]This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".[markdown_NOTE_End() /]
+
+[comment
+	....................
+	STORAGE
+	....................
+/]
+### Storage Media
+
+%%
+[markdown_EXAMPLE_Start() /]
+<ul>
+	<li>['[ ]'/] CD-ROM</li>
+	<li>['[ ]'/] Mobile Hard Disk</li>
+	<li>['[ ]'/] USB Flash disk</li>
+	<li>['[ ]'/] Others: ...</li>
+</ul>
+
+Requirements:
+
+<ul>
+	<li>Storage Format
+		<ul>
+			<li>['[ ]'/] Standard</li>
+			<li>['[ ]'/] User-defined TRFS, FAT32 (Note:  Standard storage format is EDF or others; if the storage format is user-defined, please provide the name of storage format and the verification methods for testing.)</li>
+		</ul>
+	</li>
+	<li>Capacity
+		<ul>
+			<li>xxx (for example:  >= 1 GB）</li>
+		</ul>
+	</li>
+	<li>Other requirements
+		<ul>
+			<li>xxx</li>
+		</ul>
+	</li>
+</ul>
+[markdown_EXAMPLE_End() /]
+%%
+
+For a list of storage media, see document
+- "*Product Security Characteristics*"
+    chapter *"Product Architecture*"
+    section "*PRODUCT INTERFACEs which are Storage Media*".
+
+    [markdown_NOTE_Start() /]This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".[markdown_NOTE_End() /]
+
+[comment
+	....................
+	WIRELESS DEVICE
+	....................
+/]
+### Wireless Device
+
+%%
+[markdown_NOTE_Start() /]
+Whether it is a particular wireless device (also called as: non-general information technology equipment):
+[markdown_NOTE_End() /]
+%%
+
+%%
+[markdown_EXAMPLE_Start() /]
+<ul>
+	<li>['[ ]'/] No</li>
+	<li>['[ ]'/] Yes, please provide proof file of meet with radio management regulations)</li>
+</ul>
+[markdown_EXAMPLE_End() /]
+%%
+
+[let wirelessInterfaces : Set(Port) = Set{} ]
+- ['['/][if (wirelessInterfaces->size() = 0)]x[else] [/if][']'/] No
+- ['['/][if (wirelessInterfaces->size() > 0)]x[else] [/if][']'/] Yes, additional proof of compliance with radio management regulations is provided (e.g. RED CB report)
+
+The product has ***[if (wirelessInterfaces->size() > 0)][wirelessInterfaces->size() /][else]NO[/if]*** wireless interfaces[if (wirelessInterfaces->size() > 0)]:[else].[/if]
+[for (wirelessInterfaces)]
+- [self.name /]
+[/for]
+[/let]
+
+
+[comment
+	....................
+	DATA
+	....................
+/]
+### Data (Assets)
+
+%%
+[markdown_NOTE_Start() /]
+<ul>
+	<li>Medical data refers to the data (including logs) generated and used by medical devices related to medical activities. From the perspective of personal information protection, it can be divided into sensitive medical data and non-sensitive medical data. Sensitive medical data refers to medical data containing personal information, which is also known as non-sensitive medical data.</li>
+	<li>Device data refers to data (including logs) that records the operation status of medical devices, used for monitoring and controlling the operation or maintenance and upgrading of medical devices, and must not contain personal information.</li>
+	<li>is the Medical Data should be chosen or not? If so, is it sensitive medical data or non-sensitive medical data?</li>
+</ul>
+
+Clarify the specific content of each type of data based on the data type (such as personal information, medical activity information, equipment operation information) 
+[markdown_NOTE_End() /]
+%%
+
+%%
+[markdown_EXAMPLE_Start() /]
+<ul>
+	<li>['[ ]'/] Medical Data</li>
+	<li>['[ ]'/] Device Data</li>
+</ul>   
+[markdown_EXAMPLE_End() /]
+%%
+
+For a list of data assets, see document
+- "*Product Security Characteristics*"
+    chapter "*Product Architecture*"
+    section "*ASSETS which are Data Assets*"
+
+    [markdown_NOTE_Start() /]This list states characteristics and requirements in the column "ASSET Characteristics".[markdown_NOTE_End() /]
+
+[comment
+	....................
+	DATA FLOW
+	....................
+/]
+### Data (Asset) Flow
+ 
+%%
+[markdown_EXAMPLE_Start()/]
+- ['[ ]'/] One-way electronic data interchange 
+- ['[ ]'/] Two-way electronic data interchange 
+- ['[ ]'/] Real-time remote control              
+- ['[ ]'/] Non-Real-time remote control
+[markdown_EXAMPLE_End()/]
+%%
+
+For a list of data flows, see document
+- "*Product Security Characteristics*"
+    chapter "*Product Architecture*"
+    section "*Interface Connections*"
+
+    [markdown_NOTE_Start() /]
+	For each connection to or from a system interface, the following columns show the information:
+	<table>
+		<thead>
+			<tr>
+				<th style="text-align: center">Column</th>
+				<th style="text-align: center">Content</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td style="text-align: center">Supplier & Zone</td>
+				<td style="text-align: left">Element of the Product Architecture and its designated Security Zone</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">Supplier Interface</td>
+				<td style="text-align: left">The interface involved on the supplier side providing assets</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">Asset Flow ←</td>
+				<td style="text-align: left">Assets flowing from client to supplier</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">CONNECTION</td>
+				<td style="text-align: left">Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">Asset Flow →</td>
+				<td style="text-align: left">Assets flowing from supplier to client</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">Client Interface</td>
+				<td style="text-align: left">The interface involved on the client side consuming assets</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">Client & Zone</td>
+				<td style="text-align: left">Element of the Product Architecture and its designated Security Zone</td>
+			</tr>
+			<tr>
+				<td style="text-align: center">CONENCTION Characteristics</td>
+				<td style="text-align: left">Characteristics of the connection. This can consist of many different things:
+					<ul>
+						<li>Purpose: Purpose of the connection</li>
+						<li>Type: e.g. Information, Material, Energy, Mechanical</li>
+						<li>Direction: Uni-Directional or Bi-Directional</li>
+						<li>Real-Time: Is real-time information exchanged?</li>
+						<li>OSI- & TCP-Layers: standards and protocols used according to international layer models</li>
+						<li>...</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	[markdown_NOTE_End() /]
+
+[comment
+	....................
+	PURPOSE
+	....................
+/]
+### Purpose
+
+
+[comment
+	--------------------
+	NETWORK SECURITY CAPABILITIES
+	--------------------
+/]
+## Network security capabilities
+
+%%
+[markdown_NOTE_Start() /]
+Provide Manufacturer Disclosure Statement for Medical Device Security (MDS2)
+[markdown_NOTE_End() /]
+%%
+
+For a list of network security capabilities, see document
+- "*Product Security Characteristics*"
+    chapter "*Security Capabilities*"
+    esp. section "Manufacturer Disclosure Statement for Medical Device Security (MDS2)"
+- "Manufacturer Disclosure Statement for Medical Device Security (MDS2)"
+
+[comment
+	--------------------
+	NETWORK SECURITY PATCHES
+	--------------------
+/]
+## Network security patches
+
+%%
+[markdown_NOTE_Start() /]
+Provide a list of network security patches (including essential software and external software environment), specifying:
+<ul>
+	<li>name</li>
+	<li>complete version</li>
+	<li>release date</li>
+</ul>
+of the network security patches.
+
+Additional documents can be attached.
+[markdown_NOTE_End() /]
+%%
+
+[comment
+	--------------------
+	SECURITY SOFTWARE
+	--------------------
+/]
+##  Security Software
+
+%%
+[markdown_NOTE_Start() /]
+for example:
+<ul>
+	<li>anti-virus software</li>
+	<li>firewall</li>
+	<li>etc.</li>
+</ul>
+[markdown_NOTE_End() /]
+%% 
+
+%%
+[markdown_EXAMPLE_Start() /]
+<table border="1">
+	<tr><th>Software Name</th><td>...</td></tr>
+	<tr><th>Model and Specification</th><td>...</td></tr>
+	<tr><th>Full Version</th><td>...</td></tr>
+	<tr><th>Software Supplier</th><td>...</td></tr>
+	<tr><th>Requirements for Operation Environments</th><td>(for example: Hardware configuration is xxx, software configuration is xxx, Network conditions is xxx )</td></tr>
+	<tr><th>Protection rule configuration requirements</th><td>...</td></tr>
+</table>
+[markdown_EXAMPLE_End() /]
+%%
+
+[protectedArea('Security Software') /]
+
+[comment
+	--------------------
+	OTS
+	--------------------
+/]
+## Off-the-shelf Software (OTS)
+
+%%
+[markdown_NOTE_Start() /]
+includes
+<ul>
+	<li>application software</li>
+	<li>system software</li>
+	<li>support software</li>
+</ul>
+[markdown_NOTE_End() /]
+%%
+
+%%
+[markdown_EXAMPLE_Start() /]
+<table border="1">
+	<tr><td>Software Name:</td><td>...</td></tr>
+	<tr><td>Model and Specification:</td><td>...</td></tr>
+	<tr><td>Full Version:</td><td>...</td></tr>
+	<tr><td>Software Supplier:</td><td>...</td></tr>
+</table>
+[markdown_EXAMPLE_End() /]
+%%
+
+For a list of Off-the-shelf Software, see document
+- "Product Security Characteristics"
+    chapter "Product Architecture"
+    section "Software"
+    sub-section "Software Bill of Material (SBOM)"
+- "Software Bill of Material (SBOM)"
+[/template]
+
+   
+[comment
+	====================
+	IMPLEMENTATION PROCESS
+	====================
+/]
+[template public printChapter_ImplementationProcess(
+	this : Package
+)]
+# Implementation Process
+
+[comment
+	--------------------
+	RISK MANAGEMENT
+	--------------------
+/]
+## Risk Management
+
+%%
+[markdown_NOTE_Start() /]
+Please attach the Risk Analysis Report and Risk Summary Report of Medical Device Network Security Risk Management. Which can ensure all residual risks are acceptable.
+Note: Cybersecurity Risk Management is part of the Risk Analysis 
+[markdown_NOTE_End() /]
+%%
+
+### Applicable Documents
+
+[protectedArea('Risk Management > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Risk Management > Description') /]
+
+[comment
+	--------------------
+	REQIOREMENT SPECIFICATION
+	--------------------
+/]
+## Requirement Specification
+
+%%
+[markdown_NOTE_Start() /]
+Provide a network security requirement specification document for declaring medical devices, along with the original documents formed by network security development. It is also possible to provide a requirement specification document for medical device software, but it should indicate the network security situation. 
+[markdown_NOTE_End() /]
+%%
+
+### Applicable Documents
+
+[protectedArea('Requirement Specification > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Requirement Specification > Description')/]
+
+[comment
+	--------------------
+	VERIFICATION & VALIDATION
+	--------------------
+/]
+## Verification and Validation
+
+%%
+Test Plan and Test Report of Network Security，which can prove that Network security requirements (such as confidentiality, integrity, availability, etc.) have been satisfied
+
+ if it is a security software, please provide the Compatibility Test Report of Security Software (if applicable) 
+ if it is a standard transmission protocol or storage format, please attach the Supporting file of Standard Compliance  
+ If it is a user-defined transmission protocol or storage format, please attach Summary Report of Integrity Test  
+ if it has real-time remote control function, please attach the Integrity and Availability Test Report of real time remote control function ) (if applicable) 
+%%
+
+### Applicable Documents
+
+[protectedArea('Verification and Validation > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Verification and Validation > Description') /]
+
+[comment
+	--------------------
+	TRACEABILITY
+	--------------------
+/]
+## Traceability analysis
+
+%%
+Network Security Traceability Analysis Report, which refers the relationship table of requirements specifications, design specifications, test, risk management in order to trace the network security. 
+%%
+
+### Applicable Documents
+
+[protectedArea('Traceability > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Traceability > Description') /]
+
+[comment
+	--------------------
+	MAINTENANCE PLAN
+	--------------------
+/]
+## Maintenance Plan 
+
+%%
+Provide a flowchart for declaring network security updates for medical devices and describe relevant activities based on the diagram. 
+Provide a flowchart for emergency response to cybersecurity incidents and describe relevant activities based on the diagram; Or provide emergency response plan documents for network security incidents. 
+%%
+
+### Applicable Documents
+
+[protectedArea('Maintenance Plan > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Maintenance Plan > Description') /]
+[/template]
+
+
+[comment
+	====================
+	VULNERABILITY ASSESSMENT
+	====================
+/]
+[template public printChapter_VulnerabilityAssessment(
+	this : Package
+)]
+# vulnerability Assessment
+
+%%
+Provide self-assessment reports on network security vulnerabilities and network security vulnerability assessment reports issued by network security assessment agencies, clarify maintenance plans for known remaining vulnerabilities, and ensure that the overall remaining risks of the product are acceptable. 
+%%
+
+### Applicable Documents
+
+[protectedArea('Vulnerability Assessment > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Vulnerability Assessment > Description') /]
+[/template]
+
+
+[comment
+	====================
+	CONCLUSION
+	====================
+/]
+[template public printChapter_Conclusion(
+	this : Package
+)]
+# Conclusion
+
+%%
+[markdown_TASK_Start()/]
+Outline the standardization of the network security implementation process for declaring medical devices and the results of network security vulnerability assessment, determine whether the network security of the declared medical devices meets the requirements, and whether the benefits outweigh the risks. 
+[markdown_TASK_End()/]
+%%
+
+### Applicable Documents
+
+[protectedArea('Conclusion > Applicable Documents') /]
+
+### Description
+
+[protectedArea('Conclusion > Description') /]
+[/template]
+
+
+[comment
+	====================
+	APPENDIX
+	====================
+/]
+[template public printChapter_Appendix(
+	this : Package
+)]
+# Appendix
+
+[protectedArea('Appendix') /]
+[/template]

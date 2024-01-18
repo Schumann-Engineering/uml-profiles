@@ -1,0 +1,697 @@
+[comment encoding = UTF-8 /]
+[module INT_ProductSecurityCharacteristics(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	Product Security Characteristics
+ * REALM:    	International
+ * CONTENT:  	describes a product based on CSMN annotations
+ * PROFILES: 	CSMN
+ * ====================
+ **/]
+
+
+[import engineering::schumann::uml::m2t::Element /]
+[import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::connections::Connection /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::markdown::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::common /]
+[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import net::daringfireball::markdown::Box /]
+[import net::daringfireball::markdown::Layout /]
+[import net::daringfireball::markdown::Link /]
+[import net::daringfireball::markdown::Table /]
+
+
+[template public generateDocument_INT_ProductSecurityCharacteristics(
+	this : Model
+)]
+	[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
+[pkg.generateDocument_INT_ProductSecurityCharacteristics() /]
+	[/for]
+[/template]
+
+
+[template private generateDocument_INT_ProductSecurityCharacteristics(
+	this : Package
+)]
+[file (this.getFileNameFqn('/INT_ProductSecurityCharacteristics', 'md'), false, 'UTF-8')]
+[printChapter_CoverPage()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_TOC()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_Introduction()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_BasicInformation()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_ProductArchitecture()/]
+
+[markdown_PAGE_BREAK()/]
+
+[printChapter_SecurityCapabilities()/]
+[/file]
+[/template]
+
+
+[comment
+	====================
+	COVER PAGE
+	====================
+/]
+[template public printChapter_CoverPage(
+	this : Package
+)]
+<div style="font-size: 60pt; text-align: center; margin-bottom: 5cm;">
+Product Security Characteristics
+</div>
+
+[this.printScope(true, true) /]
+[/template]
+   
+
+
+[comment
+	====================
+	TABLE OF CONTENT
+	====================
+/]
+[template public printChapter_TOC(
+	this : Package
+)] 
+**TABLE OF CONTENTS**
+
+```table-of-contents
+minLevel: 0
+maxLevel: 3
+```
+[/template]
+
+
+[comment
+	====================
+	INTRODUCTION
+	====================
+/]
+[template public printChapter_Introduction(
+	this : Package
+)]
+# Introduction
+
+## Purpose
+This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
+
+[markdown_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[markdown_INFO_End()/]
+
+## Target audience
+
+This document is targeted at:
+- customers owning the product
+- risk manangers
+- regulatory authorities
+- notified body
+
+## Document Classification
+
+This document is classified as:
+**PUBLIC** = Free to publicate or redistribute without changes.
+
+[markdown_NOTE_Start()/]Copyright still aplies.[markdown_NOTE_End()/]
+
+## Scope
+
+[this.printScope(true, false) /]
+
+## Abbreviations
+| Abbreviation | Name                                 |
+| :----------: | :----------------------------------: |
+| CPE          | Common Platform Enumeration          |
+| CVE          | Common Vulnerabilities and Exposures |
+| HDO          | Health Delivering Organization       |
+[/template]
+
+
+[comment
+	====================
+	BASIC INFORMATION
+	====================
+/]
+[template public printChapter_BasicInformation(
+	this : Package
+)]
+# Basic information
+
+[comment
+	--------------------
+	HARDWARE
+	--------------------
+/]
+## Hardware versions
+
+[this.printScope(false, true) /]
+
+[comment
+	--------------------
+	SOFTWARE
+	--------------------
+/]
+## Software versions
+
+As of writing the following software versions have been released:
+
+**TBD**
+[/template]
+
+
+
+[comment
+	====================
+	PRODUCT ARCHITECTURE
+	====================
+/]
+[template public printChapter_ProductArchitecture(
+	this : Package
+)]
+[let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
+[let interfaces : Set(Port) = systemElements.ownedElement->filter(Port)->select(csmn_hasInterfaceCharacteristic())->oclAsSet()->flatten()->csmn_filterInScope()]
+# Product Architecture
+
+This section describes the boundary of the product and how its interfaces with the environment and different user groups. 
+
+[comment
+	--------------------
+	DIAGRAM
+	--------------------
+/]
+[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
+## Overview [product.productName/] (model [product.model/])
+
+!['[['/][product.productName/]-Product_Architecture_Diagram_([product.model/]).svg[']]'/]
+
+[/for]
+
+[comment
+	--------------------
+	PRODUCT INTERFACES
+	--------------------
+/]
+[markdown_PAGE_BREAK()/]
+
+## Product interfaces
+
+### Definition
+
+A PRODUCT INTERFACE
+- can be directly used by an operator of the product
+- is a technical interface which is being exposed by the top-most level of system components in the system architecture
+
+There are different types of PRODUCT INTERFACE:
+
+1. **NETWORK INTERFACE**
+    is an interface to directly connect to a networked infrastructure
+    
+    *Examples*: Bluetooth, ZigBee, Ethernet, WLAN
+2. **NON-NETWORK INTERFACE**
+    is an electronic data interchange interface
+    
+    *Examples*: touch screen, USB port, RS-232 port
+3. **STORAGE MEDIA**
+    is used for writing or retrieving data from a (mostly) non-volatile data storage.
+    
+    *Examples*: SD card, USB mass storage device, CF card
+4. **MATERIAL INTERFACE**
+    provides or receives physical material.
+    
+    *Examples*: flow of air
+5. **ENERGY INTERFACE**
+    provides or receives any form of energy like electricity, light or sound.
+    
+    *Examples*: power plugs, alarm light, speaker
+
+### List of PRODUCT INTERFACE
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Network interfaces
+
+[printInterfaceAsTable( interfaces->csmn_networkPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Non-Network interfaces
+
+[printInterfaceAsTable( interfaces->csmn_nonNetworkPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Storage Media
+
+[printInterfaceAsTable( interfaces->csmn_storagePort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Material interfaces
+
+[printInterfaceAsTable( interfaces->csmn_materialPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Energy interfaces
+
+[printInterfaceAsTable( interfaces->csmn_energyPort() )/]
+
+[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
+[if (otherInterfaces->size() > 0)]
+
+[markdown_PAGE_BREAK()/]
+
+#### PRODUCT INTERFACEs which are Other interfaces
+
+WARN: this section should be empty! This is an indicator of a wrongly configured model!
+
+[printInterfaceAsTable( otherInterfaces )/]
+[/if]
+[/let]
+
+[comment
+	--------------------
+	CONNECTIONS
+	--------------------
+/]
+
+[markdown_PAGE_BREAK()/]
+
+## Interface connections
+
+### Definition
+
+An INTERFACE CONNECTION
+- is a link from one interface to another
+- describes use-case specific characteristics between those interfaces, e.g. which protocol is used
+
+### List of INTERFACE CONNECTION
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTION for Network interfaces
+
+[printConnectionsForInterfacesAsTable( interfaces->csmn_networkPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTIONs for Non-Network interfaces
+
+[printConnectionsForInterfacesAsTable( interfaces->csmn_nonNetworkPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTIONs for Storage Media
+
+[printConnectionsForInterfacesAsTable( interfaces->csmn_storagePort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTIONs for Material interfaces
+
+[printConnectionsForInterfacesAsTable( interfaces->csmn_materialPort() )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTIONs for Energy interfaces
+
+[printConnectionsForInterfacesAsTable( interfaces->csmn_energyPort() )/]
+
+[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
+[if (otherInterfaces->size() > 0)]
+
+[markdown_PAGE_BREAK()/]
+
+#### INTERFACE CONNECTIONs for Other interfaces
+
+WARN: this section should be empty! This is an indicator of a wrongly configured model!
+
+[printConnectionsForInterfacesAsTable( otherInterfaces )/]
+[/if]
+[/let]
+
+[comment
+	--------------------
+	ASSETS
+	--------------------
+/]
+[markdown_PAGE_BREAK()/]
+
+## Assets
+
+### Definition
+
+An ASSET
+- ```Anything that has value to the organization, its business operations and their continuity, including Information resources that support the organization's mission.```
+(source: EU ENISA Glossary, term G3 'Asset', [markdown_getLink('http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/')/])
+(source: ISO/IEC PDTR 13335-1, [markdown_getLink('https://www.iso.org/standard/80585.html')/])
+
+There are different types of ASSETS:
+
+1. **CREDENTIALS**
+	Special kind of data holding passwords or cryptographic keys.
+
+	*Examples*: Username and password, private key, WLAN key
+2. ***ENERGY***
+	Received or provided physical energy in various forms, like electricity, light, sound or radiation.
+
+	*Examples*: Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
+3. **DATA**
+	Digital (raw) data stored and transfered.
+    
+    *Examples*: Log files, configuration, software, medical data
+4. **INFORMATION**
+	Information is interpreted data. By means of interpretation, data becomes information.
+    
+    *Examples*: Alarm, diagnosis
+5. **MATERIAL**
+    provides or receives physical material.
+    
+    *Examples*: flow of air
+6. **MECHANICAL**
+    
+    *Examples*: power plugs, alarm light, speaker
+7. **SIGNAL**
+    - a gesture, action, or sound that is used to convey information or instructions, typically by prearrangement between the parties concerned.
+    - an indication of a situation.
+    - an event or statement that provides the impulse for an occurrence.
+    - an electrical impulse or radio wave transmitted or received.
+    (source: Oxford English Dictionary)
+
+	*Examples*: radio waves, user input, light impulse.
+
+### List of ASSETs
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Credential Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Energy Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Data Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Data )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Information Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Information )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Material Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Material )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Mechanical Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical )/]
+
+[markdown_PAGE_BREAK()/]
+
+#### ASSETs which are Signal Assets
+
+[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal )/]
+
+[/let]
+[/let]
+
+[comment
+	--------------------
+	SOFTWARE
+	--------------------
+/]
+
+[markdown_PAGE_BREAK()/]
+
+## Software
+
+### Software Bill of Material (SBOM)
+===TBD===
+[/template]
+
+
+[comment
+	====================
+	SECURITY CAPABILITIES
+	====================
+/]
+[template public printChapter_SecurityCapabilities(
+	this : Package
+)]
+# Security capabilities
+
+[comment
+	--------------------
+	MDS2
+	--------------------
+/]
+## Manufacturer Disclosure Statement for Medical Device Security (MDS2) (IEC TR 80001-2-2 et. al.)
+
+### Definition
+
+#### Covered standards
+
+MDS2 is a standardized form under ANSI/AAMI HN1:2019 for reporting security capabilities of a medical device.
+
+[markdown_INFO_Start()/]The attached MDS2 was extended to cover newer standards not considered by version 2019.[markdown_INFO_End()/]
+
+The following standards are covered by MDS2:
+
+!['[['/]MDS2 - Covered Standards[']]'/]
+
+#### Covered capabilities
+
+MDS2 covers the following capabilities:
+
+!['[['/]MDS2 - Covered Capabilities[']]'/]
+
+### Declaration
+
+[markdown_INFO_Start()/]see applicable document(s)[markdown_INFO_End()/]
+
+[comment
+	--------------------
+	CAPABILITY SECURITY LEVEL
+	--------------------
+/]
+## Capability Security Level (SL-C) (IEC 60601-4-5)
+
+### Definition
+
+!['[['/]IEC 60601-4-5 - capability Security Level (SL-C)[']]'/]
+
+### Declaration
+
+=== TBD ===
+
+[comment
+	--------------------
+	TARGET SECURITY LEVEL
+	--------------------
+/]
+## Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)
+
+### Definition
+
+!['[['/]IEC 60601-4-5 - target Security Level (SL-T)[']]'/]
+
+### Declaration
+
+[/template]
+
+
+[template private printConnectionsForInterfacesAsTable(
+	interfaces : Set(Port)
+)
+post(trim())
+{
+	connections : OrderedSet(Dependency) = 	interfaces
+											.csmn_allConnectionInvolved()
+											->flatten()
+											->select(csmn_isConnection())
+											->sortedBy(name)
+											->asOrderedSet();
+}]
+[if (connections->size() = 0)]
+None
+[else]
+| Supplier & Zone | Interface | Asset Flow<br/>← | ===CONNECTION=== | Asset Flow<br/>→ | Interface | Client & Zone | CONNECTION Characteristics |
+| :-------------: | :-------: | :--------------: | :--------------: | :--------------: | :-------: | :-----------: | :------------------------- |
+[for (connections)]
+[self.printConnectionAsTableRow().toMarkdownTableRow() /]
+[/for]
+[/if]
+[/template]
+
+
+[template private printConnectionAsTableRow(
+	this : Dependency
+)
+? (this.csmn_isConnection())
+post(trim())
+{
+	clients   : Set(NamedElement) = this
+									.source
+									->filter(NamedElement)
+									->select(source : NamedElement |
+										source.oclIsKindOf(Port) or
+										source.oclIsKindOf(Component) or
+										source.oclIsKindOf(Actor)
+									)
+									->csmn_filterInScope();
+	suppliers : Set(NamedElement) = this
+									.target
+									->filter(NamedElement)
+									->select(source : NamedElement |
+										source.oclIsKindOf(Port) or
+										source.oclIsKindOf(Component) or
+										source.oclIsKindOf(Actor)
+									)
+									->csmn_filterInScope();
+	connection   : Connection     = this.csmn_connection();
+	supplierFlow : Set(DataType)  = connection.flowToSupplier->filter(DataType);
+	clientFlow   : Set(DataType)  = connection.flowToClient->filter(DataType);
+}]
+[comment Supplier + Zone /]
+<td>[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /]<br/><br/>in *«Zone»* [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+[comment Interface /]
+<td>[for (suppliers) separator('<hr/>')][self.name /][/for]</td>
+[comment Flow ← /]
+<td>[if (supplierFlow->isEmpty())]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+[comment ===CONNECTION=== /]
+<td>[this.name /]</td>
+[comment Flow → /]
+<td>[if (clientFlow->isEmpty())]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+[comment Interface /]
+<td>[for (clients) separator('<hr/>')][self.name /][/for]</td>
+[comment Client + Zone /]
+<td>[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /]<br/><br/>in *«Zone»* [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+[comment CONNECTION Characteristics /]
+<td>[this.printCharacteristics().toMarkdownTableCell()/]</td>
+[/template]
+
+
+[template private printInterfaceAsTable(
+	interfaces : Set(Port)
+)
+post(trim())]
+[if (interfaces->size() = 0)]
+None
+[else]
+| System Element | Security Zone | ==PRODUCT INTERFACE== | PRODUCT INTERFACE Characteristics |
+| :------------: | :-----------: | :-------------------: | :-------------------------------- |
+[for (interface : Port | interfaces->sortedBy(name))]
+[printInterfaceAsTableRow(interface).toMarkdownTableRow() /]
+[/for]
+[/if]
+[/template]
+
+
+[template private printInterfaceAsTableRow(
+	interface : Port
+)
+post(trim())
+{
+	systemElement : Component = interface.owner.oclAsType(Component);
+}]
+[comment System Element /]
+<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
+[comment Security Zone /]
+<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
+[comment PRODUCT INTERFACE /]
+<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint().toMarkdownTableCell() /][/if]</td>
+[comment PRODUCT INTERFACE Characteristics /]
+<td>[interface.printCharacteristics().toMarkdownTableCell()/]</td> 
+[/template]
+
+
+[template private printAssetsForInterfacesAsTable(
+	interfaces : Set(Port),
+	assetType  : AssetType
+)
+post(trim())
+{
+	dependencies   : OrderedSet(Dependency) = interfaces
+											.csmn_allConnectionInvolved()
+											->flatten()
+											->select(csmn_isConnection())
+											->sortedBy(name)
+											->asOrderedSet();
+	connections    : Set(Connection) 		= dependencies
+											->collect(csmn_connection())
+											->filter(Connection)
+											->asSet();
+	flowToClient   : Set(DataType)   		= connections
+											->collect(flowToClient)
+											->filter(DataType)
+											->asSet();
+	flowToSupplier : Set(DataType)   		= connections
+											->collect(flowToSupplier)
+											->filter(DataType)
+											->asSet();
+	assets         : OrderedSet(DataType)	= flowToSupplier
+											->union(flowToClient)
+											->asSet()
+											->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+											->sortedBy(name);
+}]
+[if (assets->size() = 0)]
+None
+[else]
+| ==ASSET== | ASSET Characteristics |
+| :-------: | :-------------------- |
+[for (asset : DataType | assets->sortedBy(name))]
+[printAssetAsTableRow(asset).toMarkdownTableRow() /]
+[/for]
+[/if]
+[/template]
+
+
+[template private printAssetAsTableRow(
+	asset : DataType
+)
+post(trim())
+{
+	assetMeta : Asset = asset.csmn_asset();
+}]
+[comment ASSET /]
+<td>[asset.printAssetWithIcon() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]</td>
+[comment ASSET Characteristics /]
+<td>[asset.printCharacteristics().toMarkdownTableCell()/]</td> 
+[/template]

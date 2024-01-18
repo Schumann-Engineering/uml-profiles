@@ -11,24 +11,17 @@
 [import org::eclipse::acceleo::m2t::services::PropertyFileService /]
 
 
-[query private csmn_cpeBasis(
-	this : Product
-) : String =
-	nist_cpe(this.platformType, this.vendorName, this.productName) + ':'
-/]
-
-
 [query public csmn_cpe(
 	this : Product
 ) : String =
-	this.csmn_cpeBasis() + this.model
+	nist_cpe(this.platformType, this.vendorName, this.productName, this.model)
 /]
 
 
 [query public csmn_cpeOld(
 	this : Product
 ) : String =
-	this.csmn_cpeBasis() + '-'
+	nist_cpe(this.platformType, this.vendorName, this.productName, '-')
 /]
 
 
