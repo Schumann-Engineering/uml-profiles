@@ -1,0 +1,111 @@
+[comment encoding = UTF-8 /]
+[module Asset(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::common::flow::Connection /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
+
+
+[template public printAssetsForInterfacesAsTable(
+	interfaces : Set(Port),
+	assetType  : AssetType
+)
+post(trim())
+{
+	dependencies   : OrderedSet(Dependency) = interfaces
+											.csmn_allConnectionInvolved()
+											->flatten()
+											->select(csmn_isConnection())
+											->sortedBy(name)
+											->asOrderedSet();
+	connections    : Set(Connection) 		= dependencies
+											->collect(csmn_connection())
+											->filter(Connection)
+											->asSet();
+	flowToClient   : Set(DataType)   		= connections
+											->collect(flowToClient)
+											->filter(DataType)
+											->asSet();
+	flowToSupplier : Set(DataType)   		= connections
+											->collect(flowToSupplier)
+											->filter(DataType)
+											->asSet();
+	assets         : OrderedSet(DataType)	= flowToSupplier
+											->union(flowToClient)
+											->asSet()
+											->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+											->sortedBy(name);
+}]
+[if (assets->size() = 0)]
+None
+[else]
+<table class="table-2-columns">
+	<thead>
+		<tr>
+			<th>ASSET</th>
+			<th>ASSET Characteristics</th>
+		</tr>
+	</thead>
+
+	<tbody>
+[for (asset : DataType | assets->sortedBy(name))]
+		[printAssetAsTableRow(asset) /]
+[/for]
+	</tbody>
+</table>
+[/if]
+[/template]
+
+
+[template private printAssetAsTableRow(
+	asset : NamedElement
+)
+post(trim())
+{
+	assetMeta : Asset = asset.csmn_asset();
+}]
+<tr>
+[comment ASSET /]
+	<td>[asset.name /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]</td>
+[comment ASSET Characteristics /]
+	<td>[asset.printCharacteristics()/]</td> 
+</tr>
+[/template]
+
+
+[template public printAssetWithIcon(
+	this : NamedElement
+) 
+? (this.csmn_isAsset())
+post(trim())
+{
+	asset : Asset = this.csmn_asset();
+}]
+[asset.mardown_icon() /]&nbsp;[this.name /]
+[/template]
+
+
+[template public printAssetWithType(
+	this : NamedElement
+) 
+? (this.csmn_isAsset())
+post(trim())
+{
+	asset : Asset = this.csmn_asset();
+}]
+«[asset.assetType /]»&nbsp;[this.name /]
+[/template]
+
+
+[template public mardown_icon(
+	this : Asset
+)
+post(trim())]
+<img src="icon_Asset_[this.assetType.toString().replaceAll(' ', '') /].png[']]'/]" width="16px" />
+[/template]

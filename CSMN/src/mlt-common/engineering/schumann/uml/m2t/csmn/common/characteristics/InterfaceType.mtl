@@ -114,6 +114,26 @@
 /]
 
 
+[query public csmn_isWirelessInterface(
+	this : InterfaceType
+) : Boolean =
+	let list : Set(InterfaceType) = Set{
+		InterfaceType::Bluetooth,
+		InterfaceType::Cellular,
+		InterfaceType::Cellular2G,
+		InterfaceType::Cellular3G,
+		InterfaceType::Cellular4G,
+		InterfaceType::Cellular5G,
+		InterfaceType::Nfc,
+		InterfaceType::WifiAccessPoint,
+		InterfaceType::WifiClient,
+		InterfaceType::Zigbee
+	}
+	in
+		list->includes(this)
+/]
+
+
 [query public csmn_toString(
 	this : InterfaceType
 ) : String =

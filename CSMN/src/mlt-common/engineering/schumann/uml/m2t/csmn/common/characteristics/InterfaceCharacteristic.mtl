@@ -70,22 +70,20 @@
 /]
 
 
+[query public csmn_hasWirelessPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_wirelessPort()
+	->size() > 0
+/]
+
+
 [query public csmn_interfaceCharacteristic(
 	this : Port
 ) : InterfaceCharacteristic =
 	this
 	._getStereotypeInstance('CSMN::InterfaceCharacteristic')
-/]
-
-
-[query public csmn_interfaceType(
-	this : InterfaceCharacteristic
-) : InterfaceType =
-	if (this.interfaceType = null or this.interfaceType = InterfaceType::Unspecified) then
-		this.interfaceConnector
-	else
-		this.interfaceType
-	endif
 /]
 
 
@@ -104,7 +102,7 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isEnergyInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isEnergyInterface()
 	)
 /]
 
@@ -124,7 +122,7 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isMaterialInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isMaterialInterface()
 	)
 /]
 
@@ -144,7 +142,7 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isNetworkInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isNetworkInterface()
 	)
 /]
 
@@ -164,7 +162,7 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isNonNetworkInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isNonNetworkInterface()
 	)
 /]
 
@@ -184,7 +182,7 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isOtherInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isOtherInterface()
 	)
 /]
 
@@ -204,6 +202,26 @@
 ) : Set(Port) =
 	ports
 	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
-		port.csmn_interfaceCharacteristic().csmn_interfaceType().csmn_isStorageInterface()
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isStorageInterface()
+	)
+/]
+
+
+[query public csmn_wirelessPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_wirelessPort()
+/]
+
+
+[query public csmn_wirelessPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isWirelessInterface()
 	)
 /]

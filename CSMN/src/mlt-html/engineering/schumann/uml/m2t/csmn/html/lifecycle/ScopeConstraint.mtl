@@ -6,7 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
-[import net::daringfireball::markdown::Box /]
+[import engineering::schumann::docgen::html::Boxes /]
 
 
 [template public printScopeConstraint(
@@ -25,11 +25,11 @@ post(trim())
 	this : ScopeConstraint
 )
 post(trim())]
-[markdown_NOTE_Start()/]
+[html_NOTE_Start()/]
 [comment type /]
 [this.constraintType /] with
 [for (this.constraint) separator('\n')][self.print() /][/for]
-[markdown_NOTE_End()/]
+[html_NOTE_End()/]
 [/template]
 
 

@@ -6,7 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::UsageCharacteristic /]
-[import net::daringfireball::markdown::Box /]
+[import engineering::schumann::docgen::html::Boxes /]
 
 
 [template public printUsageCharacteristic(
@@ -35,9 +35,9 @@ post(trim())]
 		<i>Type</i>: [this.usageType /]
 		[if (this.usageSpec <> null)]
 		<br/>
-		[markdown_NOTE_Start()/]
+		[html_NOTE_Start()/]
 		[this.usageSpec /]
-		[markdown_NOTE_End()/]
+		[html_NOTE_End()/]
 		[/if]
 	</li>
 [/if]

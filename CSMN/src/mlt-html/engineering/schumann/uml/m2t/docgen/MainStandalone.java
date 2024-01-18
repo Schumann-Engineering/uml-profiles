@@ -11,10 +11,12 @@
 package engineering.schumann.uml.m2t.docgen;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.acceleo.engine.utils.AcceleoEngineUtils;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
+import engineering.schumann.uml.m2t.services.EnvironmentServiceImpl;
 import engineering.schumann.uml.profile.csmn.CSMNFactory;
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
 
@@ -64,7 +67,16 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
     	super(model, targetFolder, arguments);
         initialize(model, targetFolder, arguments);
     }
+
     
+	public void initialize(URI modelURI, File folder, List<?> arguments)
+			throws IOException 
+	{
+		super.initialize(modelURI, folder, arguments);
+		
+		EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
+		EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.OUTPUT_DIR, folder.getAbsolutePath());
+	}    
     
     /**
      * This can be used to launch the generation from a standalone application.
@@ -109,31 +121,41 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
                  */
                  
                 for (int i = 2; i < args.length; i++) {
-                	/*
-                    generator.addPropertiesFile(
-                    		// prefix
-                    		"platform:/plugin/" +
-                            // pluginName
-                    		Activator.PLUGIN_ID +
-                    		// packagePath
-                    		// - ignore
-                    		// fileName 
-                    		args[i]
-                    );
-                    */
+                	var modelFile = new File(modelURI.toFileString());
                 	
+                	/*
+                	 * resolve properties file path
+                	 */
+                	// Try 1: argument
+                	var propertiesFile = new File(args[i]);
+                	if (!propertiesFile.exists())
+                		// Try 2: file relative to model
+                		propertiesFile = new File(modelFile.getParent() + File.separator + args[i]);
+                		
+                	/*
+                	if (!propertiesFile.toFile().exists())
+                		// Try 3: eclipse platform
+                		propertiesFile = Paths.get("platform:/resources/", args[i]);
+					*/
+                	
+                	if (!propertiesFile.exists())
+                    	// === FAIL ===
+                		throw new FileNotFoundException(args[i]);
+                	
+                	/*
+                	 * add properties file to generator
+                	 */
                     generator.addPropertiesFile(
-                    		args[i]
+                    	propertiesFile.getAbsolutePath()
                     );
                 }
                 
                 
                 // If you want to let your users add properties files located in the same folder as the model:
-                /*
-                if (EMFPlugin.IS_ECLIPSE_RUNNING && model != null && model.eResource() != null) { 
-                	 propertiesFiles.addAll(AcceleoEngineUtils.getPropertiesFilesNearModel(model.eResource()));
-                }
-                */
+   			 	var propertiesFilesNearModel = AcceleoEngineUtils.getPropertiesFilesNearModel(generator.getModel().eResource());
+   			 	
+   			 	for (String propertiesFileNearModel : propertiesFilesNearModel)
+   			 		generator.addPropertiesFile(propertiesFileNearModel);
                 
                 
                 generator.doGenerate(new BasicMonitor());

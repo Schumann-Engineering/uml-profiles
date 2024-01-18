@@ -24,6 +24,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
+import engineering.schumann.uml.m2t.services.EnvironmentServiceImpl;
+
 /**
  * Entry point of the 'Generate' generation module.
  *
@@ -110,7 +112,8 @@ public class Main extends AbstractAcceleoGenerator {
             List<? extends Object> arguments) throws IOException {
         initialize(model, targetFolder, arguments);
     }
-    
+
+
     /**
      * This can be used to launch the generation from a standalone application.
      * 

@@ -8,7 +8,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::AccessCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::text::characteristics::MechanicalAccessLevel /]
 [import engineering::schumann::uml::m2t::csmn::text::characteristics::FunctionalAccessLevel /]
-[import net::daringfireball::markdown::Box /]
+[import engineering::schumann::docgen::html::Boxes /]
 
 
 [template public printAccessCharacteristic(
@@ -35,9 +35,9 @@ post(trim())]
 	<li>
 		<i>Mechanical</i>: [this.mechanicalLevel.csmn_toString() /]
 [if (this.mechanicalSpec <> null)]
-		[markdown_NOTE_Start()/]
+		[html_NOTE_Start()/]
 		[this.mechanicalSpec /]
-		[markdown_NOTE_End()/]
+		[html_NOTE_End()/]
 [/if]
 	</li>
 [/if]
@@ -45,9 +45,9 @@ post(trim())]
 	<li>
 		<i>Functionality</i>: [this.functionalLevel.csmn_toString() /]
 [if (this.functionalSpec <> null)]
-	  	[markdown_NOTE_Start() /]
+	  	[html_NOTE_Start() /]
 		[this.functionalSpec /]
-		[markdown_NOTE_End() /]
+		[html_NOTE_End() /]
 [/if]
 	</li>
 [/if]

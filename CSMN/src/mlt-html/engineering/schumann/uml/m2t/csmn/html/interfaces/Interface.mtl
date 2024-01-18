@@ -6,7 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
-[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 
@@ -20,10 +20,10 @@ None
 [else]
 <table>
 	<thead>
-		<th style="text-align: center">System Element</th>
-		<th style="text-align: center">Security Zone</th>
-		<th style="text-align: center">PRODUCT INTERFACE</th>
-		<th style="text-align: center">PRODUCT INTERFACE Characteristics</th>
+		<th style="text-align: center; width: 15%;">System Element</th>
+		<th style="text-align: center; width: 15%;">Security Zone</th>
+		<th style="text-align: center; width: 15%;">PRODUCT INTERFACE</th>
+		<th style="text-align: center; width: 55%;">PRODUCT INTERFACE Characteristics</th>
 	</thead>
 	<tbody>
 [for (interface : Port | interfaces->sortedBy(name))]

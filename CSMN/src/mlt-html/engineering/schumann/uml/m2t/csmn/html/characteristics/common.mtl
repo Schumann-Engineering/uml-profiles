@@ -6,6 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::AccessCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::AssetCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::BandwidthCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::EnergyCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::FirewallCharacteristic /]
@@ -35,6 +36,8 @@ post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
 [if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printConnectionCharacteristic() /][/if]
 [comment Interface /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
+[comment Asset /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAssetCharacteristic() /][/if]
 [comment
 	SECONDARY CHARACTERISTICS
 /]

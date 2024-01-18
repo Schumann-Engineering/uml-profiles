@@ -9,7 +9,7 @@
 
 
 [query public csmn_isAsset(
-	this : DataType
+	this : NamedElement
 ) : Boolean =
 	this
 	._hasStereotype('CSMN::Asset')
@@ -17,7 +17,7 @@
 
 
 [query public csmn_asset(
-	this : DataType
+	this : NamedElement
 ) : Asset =
 	this
 	._getStereotypeInstance('CSMN::Asset')
@@ -25,12 +25,19 @@
 
 
 [query public csmn_filter(
-	this      : Set(DataType),
+	this      : Set(NamedElement),
 	assetType : AssetType
 ) : Set(DataType) =
 	this
-	->select(dt : DataType |
-		dt.csmn_isAsset() and
-		dt.csmn_asset().assetType = assetType
+	->select(el : NamedElement |
+		el.csmn_isAsset() and
+		el.csmn_asset().assetType = assetType
 	)
+/]
+
+
+[query public csmn_toString(
+	this	: AssetType
+) : String = 
+	this.toString()
 /]

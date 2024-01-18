@@ -17,7 +17,7 @@
 
 
 [import engineering::schumann::uml::m2t::test::Profile /]
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::docgen::common::FileName /]
 
 
 [template public generateDocument_DEV_ModelTestReport(

@@ -8,10 +8,10 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
-[import engineering::schumann::uml::m2t::csmn::text::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::html::assets::Asset /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
-[import net::daringfireball::markdown::Table /]
-[import net::daringfireball::markdown::Layout /]
+[import engineering::schumann::docgen::html::Table /]
+[import engineering::schumann::docgen::html::Layout /]
 
 
 [template public printConnectionsForInterfacesAsTable(
@@ -34,7 +34,7 @@ None
 
 [self.printConnectionAsTable() /]
 
-[markdown_PAGE_BREAK() /]
+[html_PAGE_BREAK() /]
 
 [/for]
 [/if]
@@ -69,7 +69,7 @@ post(trim())
 	supplierFlow : Set(DataType)  = connection.flowToSupplier->filter(DataType);
 	clientFlow   : Set(DataType)  = connection.flowToClient->filter(DataType);
 }]
-<table style="width: 100%">
+<table class="table-2-columns" style="width: 100%">
 [comment Supplier /]
 	<tr>
 		<th style="text-align: right">Supplier Element</th>
