@@ -1,0 +1,43 @@
+[comment encoding = UTF-8 /]
+[module PageSetup('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_PAGE_SETUP(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * PAGE SETUP
+  * ========================================
+  * ======================================== **/
+@page {
+	/* set page size = DIN A4*/
+    size:				a4 portrait; 
+}
+
+@page landscape {
+	size:				a4 landscape;
+}
+
+html {
+	margin:				1.5cm auto;
+    max-width:			21cm;
+}
+
+div .page-break {
+	margin-top:			2cm;
+	margin-bottom:		2cm;
+}
+
+h1 {
+	font-size: 			60pt !important;
+	font-weight:		bold !important;
+
+	margin-top:			2cm !important;
+	margin-bottom: 		5cm !important;
+
+	text-align: 		center !important;
+
+	counter-reset: 		H2;
+}
+[/template]

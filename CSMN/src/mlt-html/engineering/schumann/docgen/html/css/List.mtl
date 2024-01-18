@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module List('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_LIST(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * LIST
+  * ========================================
+  * ======================================== **/
+ul, dl, ol {
+	text-align:			left;
+}
+[/template]

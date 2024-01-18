@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module Table('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_TABLE(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * TABLES
+  * ========================================
+  * ======================================== **/
+table {
+	width:				100%;
+}
+
+/* Table headers */
+th { 
+	background-color:	lightgray !important;
+	font-weight:		bold !important;
+	text-align:			center !important;
+}
+
+/* Table cell */
+td {
+	vertical-align:		top !important;
+}
+
+/* Table rows */
+tbody tr:nth-child(odd) {
+
+}
+
+tbody tr:nth-child(even) {
+	background-color:	#FCFCFC !important;
+}
+
+/* Table sizing */
+table.table-2-columns td:nth-child(1) {
+	width:				30%;
+	text-align:			right;
+}
+
+table.table-2-columns td:nth-child(2) {
+	width:				70%;
+	text-align:			left;
+}
+[/template]

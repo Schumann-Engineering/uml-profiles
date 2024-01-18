@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module Checkbox(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public html_checkbox(
+	devNull : OclAny
+)][html_checkbox( false ) /][/template]
+
+
+[template public html_checkbox(
+	devNull : OclAny,
+	checked : Boolean
+)][if (checked)]✅[else]⬜[/if][/template]

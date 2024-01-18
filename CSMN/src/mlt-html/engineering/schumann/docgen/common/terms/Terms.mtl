@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module Terms('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public TERMS_START(
+	devNull : OclAny
+)]
+<table class="table-2-columns">
+	<thead>
+		<tr>
+			<th>Abbreviation</th>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+[/template]
+
+
+[template public TERMS_END(
+	devNull : OclAny
+)]
+	</tbody>
+</table>
+[/template]
+
+
+[template private TERM(
+	devNull : OclAny,
+	abbr	: String,
+	name	: String
+)]
+		<tr>
+			<td>[abbr/]</td>
+			<td>[name/]</td>
+		</tr>
+[/template]
+
+
+[template public TERM_SECURITY_CPE(devNull : OclAny)][TERM('CPE', 'Common Platform Enumeration')/][/template]
+[template public TERM_SECURITY_CVE(devNull : OclAny)][TERM('CVE', 'Common Vulnerabilities and Exposures')/][/template]
+[template public TERM_HEALTHCARE_HDO(devNull : OclAny)][TERM('HDO', 'Health Delivering Organization')/][/template]

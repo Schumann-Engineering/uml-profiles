@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module Toc('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_TOC(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * TABLE OF CONTENTS
+  * ========================================
+  * ======================================== **/
+/* chapter */
+.document-chapter {
+	margin-top:			0.5cm;
+
+	page-break-before:	always !important;
+}
+[/template]

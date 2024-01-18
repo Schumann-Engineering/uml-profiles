@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module MaterialDesign('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_MATERIAL_DESIGN(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * MATERIAL DESIGN
+  * ========================================
+  * ======================================== **/
+@media screen {
+	.card {
+		display: 			inline-block;
+		box-shadow: 		0 1px 2px 0 rgba(0,0,0,.15);
+		padding:			10px;
+		position: 			relative;
+		margin-bottom: 		50px;
+		transition: 		all .2s ease-in-out;
+		width:				100%;
+		min-height:			29.7cm;
+	}
+	
+	.card:hover {
+		box-shadow: 		0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		margin-bottom: 		54px;
+	}
+}
+[/template]

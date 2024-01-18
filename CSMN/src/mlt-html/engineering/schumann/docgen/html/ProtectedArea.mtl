@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module ProtectedArea('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public protectedArea(
+	devNull 	: OclAny,
+	name    	: String,
+	includePath : String
+)]
+	<!['['/]CDATA['['/]Start of user code: [name.replaceAll('>', '-') /][']]'/]>
+	[_protectedArea(name, includePath) /]
+	<!['['/]CDATA['['/]End of user code: [name.replaceAll('>', '-') /][']]'/]>
+[/template]
+
+
+[query private _protectedArea(
+	devNull 	: OclAny,
+	name    	: String,
+	includePath : String
+) : String = 
+	invoke(
+		'engineering.schumann.uml.m2t.services.IncludeServiceImpl',
+		'include(java.lang.String, java.lang.String)',
+		Sequence{
+			name,
+			includePath
+		}
+	)
+/]

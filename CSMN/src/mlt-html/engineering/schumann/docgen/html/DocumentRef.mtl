@@ -1,0 +1,68 @@
+[comment encoding = UTF-8 /]
+[module DocumentRef(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public html_Document_Ref(
+	devNull 		: OclAny,
+	documentName 	: String
+)]
+<table class="table-2-columns">
+	[html_Document_RefEntry('Document',    documentName)   /]
+</table>
+[/template]
+
+
+[template public html_Document_Ref(
+	devNull 		: OclAny,
+	documentName 	: String,
+	chapterName 	: String
+)]
+<table class="table-2-columns">
+	[html_Document_RefEntry('Document',    documentName)   /]
+	[html_Document_RefEntry('Chapter',     chapterName)    /]
+</table>
+[/template]
+
+
+[template public html_Document_Ref(
+	devNull 		: OclAny,
+	documentName 	: String,
+	chapterName 	: String,
+	sectionName 	: String
+)]
+<table class="table-2-columns">
+	[html_Document_RefEntry('Document',    documentName)   /]
+	[html_Document_RefEntry('Chapter',     chapterName)    /]
+	[html_Document_RefEntry('Section',     sectionName)    /]
+</table>
+[/template]
+
+
+[template public html_Document_Ref(
+	devNull 		: OclAny,
+	documentName 	: String,
+	chapterName 	: String,
+	sectionName 	: String,
+	subsectionName 	: String
+)]
+<table class="table-2-columns">
+	[html_Document_RefEntry('Document',    documentName)   /]
+	[html_Document_RefEntry('Chapter',     chapterName)    /]
+	[html_Document_RefEntry('Section',     sectionName)    /]
+	[html_Document_RefEntry('Sub-Section', subsectionName) /]
+</table>
+[/template]
+
+
+[template public html_Document_RefEntry(
+	devNull			: OclAny,
+	key				: String,
+	value			: String
+)]
+<tr>
+	<th>[key /]</th>
+	<td><i>[value /]</i></td>
+<tr>
+[/template]

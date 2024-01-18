@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module Table(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[query public toMarkdownTableCell(
+	this : String
+) : String =
+	(
+		this
+		.replaceAll('\r\n|\r|\n', '<br/>')
+		.replaceAll('<hr>|<hr/>', '\r\n')
+		.replaceAll('<br><br>|<br/><br>|<br><br/>|<br/><br/>', '<br/>')
+		.replaceAll('<br><br>|<br/><br>|<br><br/>|<br/><br/>', '<br/>')
+		.replaceAll('<br><br>|<br/><br>|<br><br/>|<br/><br/>', '<br/>')
+	)
+	.trim()
+/]
+
+
+[query public toMarkdownTableRow(
+	this : String
+) : String =
+	(
+		this
+		.replaceAll('<td>', '| ')
+		.replaceAll('</td>', ' ')
+		.replaceAll('\r\n|\r|\n', '')
+		+ '|'
+	)
+	.trim()
+/]

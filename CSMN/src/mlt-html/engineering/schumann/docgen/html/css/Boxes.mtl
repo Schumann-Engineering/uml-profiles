@@ -1,0 +1,111 @@
+[comment encoding = UTF-8 /]
+[module Boxes('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_BOXES(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * DIALOGS
+  * ========================================
+  * ======================================== **/
+@media print
+{ 
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}
+
+@media screen {
+	.no-print {
+		padding:		10px;
+		background:		repeating-linear-gradient( -45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px );
+	}
+}
+
+/* Example */
+.box-example {
+	background-color: 	#FCFCFC;
+	border-left: 		6px solid #AAB8C6;
+	padding: 			5px;
+	border-radius: 		5px;
+	color: 				#000000;
+}
+
+.box-note {
+	background-color:	#FFFDF6;
+	border-left: 		6px solid #FFEAAE;
+	padding: 			5px;
+	border-radius: 		5px;
+	color: 				#000000;
+}
+
+.box-info {
+	background-color: 	#FCFCFC;
+	border-left: 		6px solid #AAB8C6;
+	padding: 			5px;
+	border-radius: 		5px;
+	color: 				#000000;
+}
+
+.box-tip {
+	background-color:	#F3F9F4;
+	border-left: 		6px solid #91C89C;
+	padding: 			5px;
+	border-radius: 		5px;
+	color: 				#000000;
+}
+
+.box-task {
+	background-color:	#FCFCFC;
+	border-left: 		6px solid #AAB8C6;
+	padding: 			5px;
+	border-radius: 		5px;
+	color: #000000;
+}
+
+.box-tbd {
+	background-color:	rgba(238, 49, 36, 0.5);
+	border-left: 		6px solid #000000; 
+	padding: 			5px; 
+	color: 				#FFFFFF;"
+}
+
+.box-ansi-notice {
+	background-color:	rgba(0, 137, 207, 0.5);
+	border-left:		6px solid #000000;
+	padding: 			5px;
+	color:				#000000;
+}
+
+.box-ansi-warning {
+	background-color:	rgba(255, 221, 0, 0.5);
+	border-left: 		6px solid #000000;
+	padding: 			5px;
+	color: 				#000000;
+}
+
+.box-ansi-caution {
+	background-color:	rgba(245, 145, 29, 0.5);
+	border-left: 		6px solid #000000;
+	padding: 			5px; 
+	color: 				#000000;
+}
+
+.box-ansi-danger {
+ 	background-color: 	rgba(238, 49, 36, 0.5); 
+	border-left: 		6px solid #000000;
+	padding: 5px; 
+	color: #FFFFFF;
+}
+
+
+/* quotes */
+blockquote, q {
+	background-color:	#F0F0F0 !important;
+	border-left:		6px solid #000000 !important;
+	padding:			10px !important;
+}
+[/template]

@@ -1,0 +1,94 @@
+[comment encoding = UTF-8 /]
+[module Boxes(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+[template public html_NO_PRINT_start(devNull : OclAny)]
+<div class="no-print">
+[/template]
+[template public html_NO_PRINT_end(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_EXAMPLE_Start(devNull : OclAny)][html_INFO_Start('EXAMPLE') /][/template]
+[template public html_EXAMPLE_Start(devNull : OclAny, text : String)]
+<div class="box-example"><b>[text/]</b><br/>
+[/template]
+[template public html_EXAMPLE_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_INFO_Start(devNull : OclAny)][html_INFO_Start('INFO') /][/template]
+[template public html_INFO_Start(devNull : OclAny, text : String)]
+<div class="box-info"><b>ℹ [text/]</b><br/>
+[/template]
+[template public html_INFO_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_NOTE_Start(devNull : OclAny)]
+<div class="box-note"><b>📝 NOTE</b><br/>
+[/template]
+[template public html_NOTE_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_TIP_Start(devNull : OclAny)]
+<div class="box-tip"><b>💡 TIP</b><br/>
+[/template]
+[template public html_TIP_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_TASK_Start(devNull : OclAny)][html_TASK_Start('TASK') /][/template]
+[template public html_TASK_Start(devNull : OclAny, text : String)]
+<div class="box-task"><b>👷‍♀️ [text/]</b><br/>
+[/template]
+[template public html_TASK_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_TBD(devNull : OclAny)]
+<div class="box-tbd"><b>⚠ TO-BE-DONE (TBD)</b></div>
+[/template]
+
+
+[** ======================
+  * ANSI Z535.6 
+  * ====================== **/]
+[template public html_ANSI_NOTICE_Start(devNull : OclAny)]
+<div class="box-ansy-notice"><b>NOTICE</b><br/>
+[/template]
+[template public html_ANSI_NOTICE_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_ANSI_CAUTION_Start(devNull : OclAny)]
+<div class="box-ansy-caution"><b>⚠ CAUTION</b><br/> 
+[/template]
+[template public html_ANSI_CAUTION_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_ANSI_WARNING_Start(devNull : OclAny)]
+<div class="box-ansy-warning"><b>⚠ WARNING</b><br/>
+[/template]
+[template public html_ANSI_WARNING_End(devNull : OclAny)]
+</div>
+[/template]
+
+
+[template public html_ANSI_DANGER_Start(devNull : OclAny)]
+<div class="box-ansy-danger"><b>⚠ DANGER</b><br/>
+[/template]
+[template public html_ANSI_DANGER_End(devNull : OclAny)]
+</div>
+[/template]
