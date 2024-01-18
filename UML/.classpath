@@ -9,5 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="lib" path="lib/maven-artifact/4.0.0-alpha-10/maven-artifact-4.0.0-alpha-10.jar"/>
+	<classpathentry kind="lib" path="lib/commonmark/0.21.0/commonmark-0.21.0.jar"/>
+	<classpathentry kind="lib" path="lib/commonmark/0.21.0/commonmark-ext-gfm-tables-0.21.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

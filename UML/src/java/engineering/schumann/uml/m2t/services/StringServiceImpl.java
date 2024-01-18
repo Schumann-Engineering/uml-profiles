@@ -55,7 +55,7 @@ public class StringServiceImpl {
 	 * @param String commentSign
 	 * @return
 	 */
-	public String comment(
+	public static String comment(
 			String input,
 			String commentSign
 	)
@@ -73,7 +73,7 @@ public class StringServiceImpl {
 	 * @param String input
 	 * @return
 	 */
-	public String getUChars(
+	public static String getUChars(
 			String input
 	)
 	{
@@ -110,7 +110,7 @@ public class StringServiceImpl {
 	 * @param string to trim with
 	 * @return
 	 */
-	 public String trim(
+	 public static String trim(
 			 String input,
 			 String trimChars)
 	 {
@@ -139,7 +139,7 @@ public class StringServiceImpl {
 	 * @param paddingChar
 	 * @return
 	 */
-	public String padLeft(
+	public static String padLeft(
 			String input,
 			Integer length,
 			String paddingChar
@@ -156,7 +156,7 @@ public class StringServiceImpl {
 	 * @param paddingChar
 	 * @return
 	 */
-	public String padRight(
+	public static String padRight(
 			String input,
 			Integer length,
 			String paddingChar
@@ -166,7 +166,7 @@ public class StringServiceImpl {
 	}
 
 	
-	public String replaceEachRepeatedly(
+	public static String replaceEachRepeatedly(
 			String input,
 			String pattern,
 			String replacement

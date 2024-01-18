@@ -11,6 +11,12 @@ import java.util.Properties;
  * 
  */
 public class EnvironmentServiceImpl {
+	public static final EnvironmentServiceImpl INSTANCE = new EnvironmentServiceImpl();
+	
+	public static final String MODEL_URI = "__GLOBAL__.MODEL_URI";
+	
+	public static final String OUTPUT_DIR = "__GLOBAL__.OUTPUT_FOLDER";
+	
 	/**
 	 * Constant "Last Error Key" (key in properties map which stores last error which occured)
 	 */
@@ -98,6 +104,16 @@ public class EnvironmentServiceImpl {
 			}
 		}
 	}
+	
+	
+	public void setProperty(
+		String key,
+		String value
+	)
+	{
+		m_Properties.setProperty(key, value);		
+	}
+	
 	
 	
 	/**
