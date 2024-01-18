@@ -24,7 +24,12 @@ post(trim())
 	this : FirewallCharacteristic
 )
 post(trim())]
-***Firewall Characteristic:***
-▪ Port is firewalled
-<hr/>
+<p>
+	<b><i>Firewall Characteristic</i></b>
+</p>
+<ul>
+	<li>
+		Port is firewalled
+	</li>
+</ul>
 [/template]

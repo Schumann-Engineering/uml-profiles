@@ -15,7 +15,6 @@
  **/]
 
 
-[import engineering::schumann::uml::m2t::Element /]
 [import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
@@ -25,10 +24,12 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
-[import engineering::schumann::uml::m2t::csmn::markdown::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::text::assets::Asset /]
 [import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::ScopeConstraint /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::common /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
+[import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import net::daringfireball::markdown::Box /]
 [import net::daringfireball::markdown::Layout /]
@@ -315,31 +316,31 @@ An INTERFACE CONNECTION
 
 #### INTERFACE CONNECTION for Network interfaces
 
-[printConnectionsForInterfacesAsTable( interfaces->csmn_networkPort() )/]
+[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsTable()/]
 
 [markdown_PAGE_BREAK()/]
 
 #### INTERFACE CONNECTIONs for Non-Network interfaces
 
-[printConnectionsForInterfacesAsTable( interfaces->csmn_nonNetworkPort() )/]
+[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable()/]
 
 [markdown_PAGE_BREAK()/]
 
 #### INTERFACE CONNECTIONs for Storage Media
 
-[printConnectionsForInterfacesAsTable( interfaces->csmn_storagePort() )/]
+[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable()/]
 
 [markdown_PAGE_BREAK()/]
 
 #### INTERFACE CONNECTIONs for Material interfaces
 
-[printConnectionsForInterfacesAsTable( interfaces->csmn_materialPort() )/]
+[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable()/]
 
 [markdown_PAGE_BREAK()/]
 
 #### INTERFACE CONNECTIONs for Energy interfaces
 
-[printConnectionsForInterfacesAsTable( interfaces->csmn_energyPort() )/]
+[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable()/]
 
 [let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
 [if (otherInterfaces->size() > 0)]
@@ -350,7 +351,7 @@ An INTERFACE CONNECTION
 
 WARN: this section should be empty! This is an indicator of a wrongly configured model!
 
-[printConnectionsForInterfacesAsTable( otherInterfaces )/]
+[otherInterfaces->printConnectionsForInterfacesAsTable()/]
 [/if]
 [/let]
 
@@ -533,111 +534,6 @@ MDS2 covers the following capabilities:
 
 ### Declaration
 
-[/template]
-
-
-[template private printConnectionsForInterfacesAsTable(
-	interfaces : Set(Port)
-)
-post(trim())
-{
-	connections : OrderedSet(Dependency) = 	interfaces
-											.csmn_allConnectionInvolved()
-											->flatten()
-											->select(csmn_isConnection())
-											->sortedBy(name)
-											->asOrderedSet();
-}]
-[if (connections->size() = 0)]
-None
-[else]
-| Supplier & Zone | Interface | Asset Flow<br/>← | ===CONNECTION=== | Asset Flow<br/>→ | Interface | Client & Zone | CONNECTION Characteristics |
-| :-------------: | :-------: | :--------------: | :--------------: | :--------------: | :-------: | :-----------: | :------------------------- |
-[for (connections)]
-[self.printConnectionAsTableRow().toMarkdownTableRow() /]
-[/for]
-[/if]
-[/template]
-
-
-[template private printConnectionAsTableRow(
-	this : Dependency
-)
-? (this.csmn_isConnection())
-post(trim())
-{
-	clients   : Set(NamedElement) = this
-									.source
-									->filter(NamedElement)
-									->select(source : NamedElement |
-										source.oclIsKindOf(Port) or
-										source.oclIsKindOf(Component) or
-										source.oclIsKindOf(Actor)
-									)
-									->csmn_filterInScope();
-	suppliers : Set(NamedElement) = this
-									.target
-									->filter(NamedElement)
-									->select(source : NamedElement |
-										source.oclIsKindOf(Port) or
-										source.oclIsKindOf(Component) or
-										source.oclIsKindOf(Actor)
-									)
-									->csmn_filterInScope();
-	connection   : Connection     = this.csmn_connection();
-	supplierFlow : Set(DataType)  = connection.flowToSupplier->filter(DataType);
-	clientFlow   : Set(DataType)  = connection.flowToClient->filter(DataType);
-}]
-[comment Supplier + Zone /]
-<td>[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /]<br/><br/>in *«Zone»* [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
-[comment Interface /]
-<td>[for (suppliers) separator('<hr/>')][self.name /][/for]</td>
-[comment Flow ← /]
-<td>[if (supplierFlow->isEmpty())]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
-[comment ===CONNECTION=== /]
-<td>[this.name /]</td>
-[comment Flow → /]
-<td>[if (clientFlow->isEmpty())]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
-[comment Interface /]
-<td>[for (clients) separator('<hr/>')][self.name /][/for]</td>
-[comment Client + Zone /]
-<td>[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /]<br/><br/>in *«Zone»* [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
-[comment CONNECTION Characteristics /]
-<td>[this.printCharacteristics().toMarkdownTableCell()/]</td>
-[/template]
-
-
-[template private printInterfaceAsTable(
-	interfaces : Set(Port)
-)
-post(trim())]
-[if (interfaces->size() = 0)]
-None
-[else]
-| System Element | Security Zone | ==PRODUCT INTERFACE== | PRODUCT INTERFACE Characteristics |
-| :------------: | :-----------: | :-------------------: | :-------------------------------- |
-[for (interface : Port | interfaces->sortedBy(name))]
-[printInterfaceAsTableRow(interface).toMarkdownTableRow() /]
-[/for]
-[/if]
-[/template]
-
-
-[template private printInterfaceAsTableRow(
-	interface : Port
-)
-post(trim())
-{
-	systemElement : Component = interface.owner.oclAsType(Component);
-}]
-[comment System Element /]
-<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
-[comment Security Zone /]
-<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
-[comment PRODUCT INTERFACE /]
-<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint().toMarkdownTableCell() /][/if]</td>
-[comment PRODUCT INTERFACE Characteristics /]
-<td>[interface.printCharacteristics().toMarkdownTableCell()/]</td> 
 [/template]
 
 

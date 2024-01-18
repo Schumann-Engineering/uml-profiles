@@ -36,7 +36,12 @@ post(trim())
 	this : EnergyCharacteristic
 )
 post(trim())]
-***Energy Characteristic:***
-▪ *Type*: [this.energyType /]
-<hr/>
+<p>
+	<b><i>Energy Characteristic</i></b>
+</p>
+<ul>
+	<li>
+		<i>Type</i>: [this.energyType /]
+	</li>
+</ul>
 [/template]

@@ -38,19 +38,32 @@ post(trim())
 	this : StorageCharacteristic
 )
 post(trim())]
-***Storage Characteristic:***
+<p>
+	<b><i>Storage Characteristic</i></b>
+</p>
+<ul>
 [if (this.storageName.hasContent())]
-▪ *Name*: [this.storageName /]
+	<li>
+		<i>Name</i>: [this.storageName /]
+	</li>
 [/if]
 [if (this.storageType <> null and this.storageType <> StorageType::Unknown)]
-▪ *Type*: [this.storageType /]
+	<li>
+		<i>Type</i>: [this.storageType /]
+	</li>
 [/if]
-▪ *Size*: [this.totalSize.csmn_toString() /]
+	<li>
+		<i>Size</i>: [this.totalSize.csmn_toString() /]
+	</li>
 [if (this.storageFormat.hasContent())]
-▪ *Format*: [this.storageFormat /]
+	<li>
+		<i>Format</i>: [this.storageFormat /]
+	</li>
 [/if]
 [if (this.encryption.hasContent())]
-▪ *Encryption*: [this.encryption /]
+	<li>
+		<i>Encryption</i>: [this.encryption /]
+	</li>
 [/if]
-<hr/>
+</ul>
 [/template]

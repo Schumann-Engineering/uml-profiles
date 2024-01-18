@@ -25,22 +25,32 @@ post(trim())
 	this : UsageCharacteristic
 )
 post(trim())]
-***Usage Characteristic:***
+<p>
+	<b><i>Usage Characteristic</i></b>
+<p>
+<ul>
 [comment usage type & usage spec/]
 [if (this.usageType <> null and this.usageType <> UsageType::Unspecified)]
-▪ *Type*: [this.usageType /]
-[if (this.usageSpec <> null)]
-[markdown_NOTE_Start()/]
-[this.usageSpec /]
-[markdown_NOTE_End()/]
-[/if]
+	<li>
+		<i>Type</i>: [this.usageType /]
+		[if (this.usageSpec <> null)]
+		<br/>
+		[markdown_NOTE_Start()/]
+		[this.usageSpec /]
+		[markdown_NOTE_End()/]
+		[/if]
+	</li>
 [/if]
 [comment intended user group /]
 [if (this.intendedUserGroup <> null and this.intendedUserGroup->size() > 0)]
-▪ *Intended user groups*: 
-[for (userGroup : Actor | this.intendedUserGroup->filter(Actor))]
-  ▪ [userGroup.name /]
-[/for]
+	<li>
+		<i>Intended user groups</i>:
+		<ol> 
+		[for (userGroup : Actor | this.intendedUserGroup->filter(Actor))]
+			<li>[userGroup.name /]</li>
+		[/for]
+		</ol>
+	</li>
 [/if]
-<hr/>
+</ul>
 [/template]

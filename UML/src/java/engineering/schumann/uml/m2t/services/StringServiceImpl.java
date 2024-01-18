@@ -165,4 +165,19 @@ public class StringServiceImpl {
 		return StringUtils.rightPad(input, length, paddingChar);
 	}
 
+	
+	public String replaceEachRepeatedly(
+			String input,
+			String pattern,
+			String replacement
+	)
+	{
+		// === BODY ===
+		var result = input;
+		while (result.contains(pattern))
+			result = result.replaceAll(pattern, replacement);
+		
+		// === RESULT
+		return result;
+	}
 }

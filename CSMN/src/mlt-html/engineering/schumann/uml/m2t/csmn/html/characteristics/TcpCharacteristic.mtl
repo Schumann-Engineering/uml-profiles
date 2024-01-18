@@ -24,26 +24,39 @@
 	this : TcpCharacteristic
 )
 post(trim())]
-***TCP-Layer Characteristic***:
+<p>
+	<b><i>TCP-Layer Characteristic</i></b>
+</p>
+<ul>
 [comment 5 = Application /]
 [if (not this.application.oclIsUndefined())]
-▪ *Layer 5 (Application)*: [this.application /]
+	<li>
+		<i>Layer 5 (Application)</i>: [this.application /]
+	</li>
 [/if]
 [comment 4 = Transport /]
 [if (not this.transport.oclIsUndefined())]
-▪ *Layer 4 (Transport)*: [this.transport /]
+	<li>
+		<i>Layer 4 (Transport)</i>: [this.transport /]
+	</li>
 [/if]
 [comment 3 = Network /]
 [if (not this.network.oclIsUndefined())]
-▪ *Layer 3 (Network)*: [this.network /]
+	<li>
+		<i>Layer 3 (Network)</i>: [this.network /]
+	</li>
 [/if]
 [comment 2 = Data Link /]
 [if (not this.dataLink.oclIsUndefined())]
-▪ *Layer 2 (Data Link)*: [this.dataLink /]
+	<li>
+		<i>Layer 2 (Data Link)</i>: [this.dataLink /]
+	</li>
 [/if]
 [comment 1 = Physical /]
 [if (not this.physical.oclIsUndefined())]
-▪ *Layer 1 (Physical)*: [this.physical /]
+	<li>
+		<i>Layer 1 (Physical)</i>: [this.physical /]
+	</li>
 [/if]
-<hr/>
+</ul>
 [/template]

@@ -5,24 +5,26 @@
 )]
 
 
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::AccessCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::BandwidthCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::EnergyCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::FirewallCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::InterfaceCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::OsiCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::StorageCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::TcpCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::UsageCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::flow::Connection /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::AccessCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::BandwidthCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::EnergyCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::FirewallCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::OsiCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::StorageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::TcpCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::UsageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::ConnectionCharacteristic /]
 [import engineering::schumann::uml::m2t::Comment /]
 [import engineering::schumann::uml::m2t::services::CommentService /]
+
+[import engineering::schumann::uml::m2t::services::StringService /]
 
 
 [template public printCharacteristics(
 	this : Element
 )
-post(trim())
+post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
 ]
 [comment
 	PRIMARY CHARACTERISTICS
@@ -30,7 +32,7 @@ post(trim())
 	NOTE: these don't advertise their title
 /]
 [comment Connection /]
-[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printConnection() /][/if]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printConnectionCharacteristic() /][/if]
 [comment Interface /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
 [comment
@@ -60,7 +62,9 @@ post(trim())
 [if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printUsageCharacteristic() /][/if]
 [comment Comment /]
 [if (this.ownedComment->size() > 0 and this.ownedComment->one(not _isEmpty()))]
-***COMMENT***:
+<p>
+	<b><i>COMMENT</i></b>
+</p>
 [for (eComment : Comment | this.ownedComment)]
 [if (not eComment._isEmpty())]
 [for (eComment.stripComment()) separator ('\n')]  [self/][/for]

@@ -6,8 +6,8 @@
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::AccessCharacteristic /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::MechanicalAccessLevel /]
-[import engineering::schumann::uml::m2t::csmn::markdown::characteristics::FunctionalAccessLevel /]
+[import engineering::schumann::uml::m2t::csmn::text::characteristics::MechanicalAccessLevel /]
+[import engineering::schumann::uml::m2t::csmn::text::characteristics::FunctionalAccessLevel /]
 [import net::daringfireball::markdown::Box /]
 
 
@@ -27,20 +27,29 @@ post(trim())
 	this : AccessCharacteristic
 )
 post(trim())]
-***Access Characteristic:***
+<p>
+	<b><i>Access Characteristic</i></b>
+</p>
+<ul>
 [if (this.mechanicalLevel <> null and this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
-▪ *Mechanical*: [this.mechanicalLevel.csmn_toString() /]
+	<li>
+		<i>Mechanical</i>: [this.mechanicalLevel.csmn_toString() /]
 [if (this.mechanicalSpec <> null)]
-[markdown_NOTE_Start()/]
-[this.mechanicalSpec /]
-[markdown_NOTE_End()/]
+		[markdown_NOTE_Start()/]
+		[this.mechanicalSpec /]
+		[markdown_NOTE_End()/]
 [/if]
+	</li>
 [/if]
 [if (this.functionalLevel <> null and this.functionalLevel <> FunctionalAccessLevel::Unspecified)]
-▪ *Functionality*: [this.functionalLevel.csmn_toString() /]
+	<li>
+		<i>Functionality</i>: [this.functionalLevel.csmn_toString() /]
 [if (this.functionalSpec <> null)]
-  *NOTE:* [this.functionalSpec /]
+	  	[markdown_NOTE_Start() /]
+		[this.functionalSpec /]
+		[markdown_NOTE_End() /]
 [/if]
+	</li>
 [/if]
-<hr/>
+</ul>
 [/template]

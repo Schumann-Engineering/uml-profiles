@@ -1,0 +1,126 @@
+[comment encoding = UTF-8 /]
+[module Connection(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::flow::Connection /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::text::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import net::daringfireball::markdown::Table /]
+[import net::daringfireball::markdown::Layout /]
+
+
+[template public printConnectionsForInterfacesAsTable(
+	interfaces : Set(Port)
+)
+post(trim())
+{
+	connections : OrderedSet(Dependency) = 	interfaces
+											.csmn_allConnectionInvolved()
+											->flatten()
+											->select(csmn_isConnection())
+											->sortedBy(name)
+											->asOrderedSet();
+}]
+[if (connections->size() = 0)]
+None
+[else]
+[for (connections)]
+<b>Connection "[name/]"</b>
+
+[self.printConnectionAsTable() /]
+
+[markdown_PAGE_BREAK() /]
+
+[/for]
+[/if]
+[/template]
+
+
+[template private printConnectionAsTable(
+	this : Dependency
+)
+? (this.csmn_isConnection())
+post(trim())
+{
+	clients   : Set(NamedElement) = this
+									.source
+									->filter(NamedElement)
+									->select(source : NamedElement |
+										source.oclIsKindOf(Port) or
+										source.oclIsKindOf(Component) or
+										source.oclIsKindOf(Actor)
+									)
+									->csmn_filterInScope();
+	suppliers : Set(NamedElement) = this
+									.target
+									->filter(NamedElement)
+									->select(source : NamedElement |
+										source.oclIsKindOf(Port) or
+										source.oclIsKindOf(Component) or
+										source.oclIsKindOf(Actor)
+									)
+									->csmn_filterInScope();
+	connection   : Connection     = this.csmn_connection();
+	supplierFlow : Set(DataType)  = connection.flowToSupplier->filter(DataType);
+	clientFlow   : Set(DataType)  = connection.flowToClient->filter(DataType);
+}]
+<table style="width: 100%">
+[comment Supplier /]
+	<tr>
+		<th style="text-align: right">Supplier Element</th>
+		<td style="text-align: left">[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /][/for]</td>
+	</tr>
+[comment Supplier Security Zone /]
+	<tr>
+		<th style="text-align: right">Supplier Element's Security Zone</th>
+		<td style="text-align: left">[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+	</tr>
+[comment Interface /]
+	<tr>
+		<th style="text-align: right">Supplier Interface</th>
+		<td style="text-align: left">[for (suppliers) separator('<hr/>')][self.name /][/for]</td>
+	</tr>
+[comment Flow ← /]
+	<tr>
+		<th style="text-align: right">Asset Flow<br/>Supplier ← Client</th>
+		<td style="text-align: left">[if (supplierFlow->isEmpty())]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+	</tr>
+[comment ===CONNECTION=== /]
+	<tr>
+		<th style="text-align: right">Connection Name</th>
+		<td style="text-align: left">[this.name /]</td>
+	</tr>
+[comment Flow → /]
+	<tr>
+		<th style="text-align: right">Asset Flow<br/>Supplier → Client</th>
+		<td style="text-align: left">[if (clientFlow->isEmpty())]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+	</tr>
+[comment Interface /]
+	<tr>
+		<th style="text-align: right">Client Interface</th>
+		<td style="text-align: left">[for (clients) separator('<hr/>')][self.name /][/for]</td>
+	</tr>
+[comment Client /]
+	<tr>
+		<th style="text-align: right">Client Element</th>
+		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /][/for]</td>
+	</tr>
+[comment Client Zone /]
+	<tr>
+		<th style="text-align: right">Client Element's Security Zone</th>
+		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+	</tr>
+[comment CONNECTION Characteristics /]
+	<tr>
+		<th style="text-align: right">CONNECTION Characteristics</th>
+		<td style="text-align: left">[this.printCharacteristics()/]</td>
+	</tr>
+</table>
+
+
+[/template]

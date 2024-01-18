@@ -25,18 +25,26 @@
 [template public print(
 	this : InterfaceCharacteristic
 )
+? (this <> null)
 post(trim())]
 [comment purpose /]
-▪ ***Purpose***
-[this.purpose/]
-
+<p>
+	<b><i>Purpose</i></b>
+	<br/>
+	[this.purpose/]
+</p>
+<ul>
 [comment type /]
 [if (this.interfaceType <> null and this.interfaceType <> InterfaceType::Unspecified)]
-▪ *Type*: [this.interfaceType.csmn_toString() /]
+	<li>
+		<i>Type</i>: [this.interfaceType.csmn_toString() /]
+	</li>
 [/if]
 [comment connector/]
 [if (this.interfaceConnector <> null and this.interfaceConnector <> InterfaceConnector::Unspecified)]
-▪ *Connector*: [this.interfaceConnector.csmn_toString() /]
+	<li>
+		<i>Connector</i>: [this.interfaceConnector.csmn_toString() /]
+	</li>
 [/if]
-<hr/>
+</ul>
 [/template]

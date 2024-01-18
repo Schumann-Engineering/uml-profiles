@@ -36,7 +36,9 @@ post(trim())
 	this : BandwidthCharacteristic
 )
 post(trim())]
-***Bandwidth Characteristic:***
-[this.bandwidth.size /] [this.bandwidth.unit /]
-<hr/>
+<p>
+	<b><i>Bandwidth Characteristic:</i></b>
+	<br/>
+	[this.bandwidth.size /] [this.bandwidth.unit /]
+</p>
 [/template]

@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[module Interface(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::markdown::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+
+
+[template public printInterfaceAsTable(
+	interfaces : Set(Port)
+)
+post(trim())]
+[if (interfaces->size() = 0)]
+None
+[else]
+<table>
+	<thead>
+		<th style="text-align: center">System Element</th>
+		<th style="text-align: center">Security Zone</th>
+		<th style="text-align: center">PRODUCT INTERFACE</th>
+		<th style="text-align: center">PRODUCT INTERFACE Characteristics</th>
+	</thead>
+	<tbody>
+[for (interface : Port | interfaces->sortedBy(name))]
+		[printInterfaceAsTableRow(interface) /]
+[/for]
+	</tbody>
+</table>
+[/if]
+[/template]
+
+
+[template private printInterfaceAsTableRow(
+	interface : Port
+)
+post(trim())
+{
+	systemElement : Component = interface.owner.oclAsType(Component);
+}]
+<tr>
+[comment System Element /]
+	<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
+[comment Security Zone /]
+	<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
+[comment PRODUCT INTERFACE /]
+	<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
+[comment PRODUCT INTERFACE Characteristics /]
+	<td>[interface.printCharacteristics()/]</td> 
+</tr>
+[/template]
