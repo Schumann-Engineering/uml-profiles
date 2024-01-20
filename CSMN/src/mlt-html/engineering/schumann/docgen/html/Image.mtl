@@ -1,0 +1,12 @@
+[comment encoding = UTF-8 /]
+[module Image(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public html_IMG(
+	href	: String,
+	title	: String
+)]
+<img src="[href/]" title="[title/]" />
+[/template]
