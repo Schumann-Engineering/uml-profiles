@@ -8,6 +8,7 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::AccessCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::AssetCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::BandwidthCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::EnergyCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::FirewallCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::InterfaceCharacteristic /]
@@ -16,8 +17,6 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::TcpCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::UsageCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::ConnectionCharacteristic /]
-[import engineering::schumann::uml::m2t::Comment /]
-[import engineering::schumann::uml::m2t::services::CommentService /]
 
 [import engineering::schumann::uml::m2t::services::StringService /]
 
@@ -64,14 +63,5 @@ post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
 [comment Usage /]
 [if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printUsageCharacteristic() /][/if]
 [comment Comment /]
-[if (this.ownedComment->size() > 0 and this.ownedComment->one(not _isEmpty()))]
-<p>
-	<b><i>COMMENT</i></b>
-</p>
-[for (eComment : Comment | this.ownedComment)]
-[if (not eComment._isEmpty())]
-[for (eComment.stripComment()) separator ('\n')]  [self/][/for]
-[/if]
-[/for]
-[/if]
+[this.printComment() /]
 [/template]
