@@ -11,13 +11,13 @@
 package engineering.schumann.uml.m2t.docgen;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.acceleo.engine.utils.AcceleoEngineUtils;
+import org.eclipse.acceleo.m2t.services.AcceleoGeneratorHelper;
 import org.eclipse.emf.common.util.BasicMonitor;
+import org.eclipse.emf.common.util.Monitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -73,9 +73,6 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
 			throws IOException 
 	{
 		super.initialize(modelURI, folder, arguments);
-		
-		EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
-		EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.OUTPUT_DIR, folder.getAbsolutePath());
 	}    
     
     /**
@@ -119,45 +116,20 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
                  * The behavior of the properties loader service is explained in the Acceleo documentation
                  * (Help -> Help Contents).
                  */
-                 
                 for (int i = 2; i < args.length; i++) {
-                	var modelFile = new File(modelURI.toFileString());
-                	
-                	/*
-                	 * resolve properties file path
-                	 */
-                	// Try 1: argument
-                	var propertiesFile = new File(args[i]);
-                	if (!propertiesFile.exists())
-                		// Try 2: file relative to model
-                		propertiesFile = new File(modelFile.getParent() + File.separator + args[i]);
-                		
-                	/*
-                	if (!propertiesFile.toFile().exists())
-                		// Try 3: eclipse platform
-                		propertiesFile = Paths.get("platform:/resources/", args[i]);
-					*/
-                	
-                	if (!propertiesFile.exists())
-                    	// === FAIL ===
-                		throw new FileNotFoundException(args[i]);
-                	
-                	/*
-                	 * add properties file to generator
-                	 */
-                    generator.addPropertiesFile(
-                    	propertiesFile.getAbsolutePath()
-                    );
+                    // generator.addPropertiesFile(args[i]);
+                	AcceleoGeneratorHelper.registerPropertiesFile(modelURI, args[i], generator);
                 }
                 
-                
                 // If you want to let your users add properties files located in the same folder as the model:
-   			 	var propertiesFilesNearModel = AcceleoEngineUtils.getPropertiesFilesNearModel(generator.getModel().eResource());
-   			 	
-   			 	for (String propertiesFileNearModel : propertiesFilesNearModel)
-   			 		generator.addPropertiesFile(propertiesFileNearModel);
+                AcceleoGeneratorHelper.registerPropertiesFilesNearModel(generator);
                 
+                // NASTY HACK: this does not work in multi-threaded environments
+                // the main issue: accessing generator settings from a template is not possible. :(
+                EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
+                EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.OUTPUT_DIR, folder.getCanonicalPath());
                 
+   			 	// GO TIME!
                 generator.doGenerate(new BasicMonitor());
             }
         } catch (IOException e) {
@@ -237,5 +209,14 @@ public class MainStandalone extends Main { // extends AbstractAcceleoGenerator {
          * targetting UML models in standalone, you NEED to use the following:
          */
         UMLResourcesUtil.init(resourceSet);
+    }
+    
+    @Override
+    public void doGenerate(Monitor monitor) throws IOException {
+    	// resolve all proxies
+    	// this should ensure that all profiles are loaded correctly.
+        org.eclipse.emf.ecore.util.EcoreUtil.resolveAll(model);
+
+    	super.doGenerate(monitor);
     }
 }
