@@ -3,27 +3,27 @@
 
 
 [template public protectedArea(
-	devNull 	: OclAny,
-	name    	: String,
-	includePath : String
+	devNull 		: OclAny,
+	name    		: String,
+	includePaths	: Sequence(String)
 )]
 	<!['['/]CDATA['['/]Start of user code: [name.replaceAll('>', '-') /][']]'/]>
-	[_protectedArea(name, includePath) /]
+	[_protectedArea(name, includePaths) /]
 	<!['['/]CDATA['['/]End of user code: [name.replaceAll('>', '-') /][']]'/]>
 [/template]
 
 
 [query private _protectedArea(
-	devNull 	: OclAny,
-	name    	: String,
-	includePath : String
+	devNull 		: OclAny,
+	name    		: String,
+	includePaths	: Sequence(String)
 ) : String = 
 	invoke(
 		'engineering.schumann.uml.m2t.services.IncludeServiceImpl',
-		'include(java.lang.String, java.lang.String)',
+		'include(java.lang.String, java.lang.Object)',
 		Sequence{
 			name,
-			includePath
+			includePaths
 		}
 	)
 /]

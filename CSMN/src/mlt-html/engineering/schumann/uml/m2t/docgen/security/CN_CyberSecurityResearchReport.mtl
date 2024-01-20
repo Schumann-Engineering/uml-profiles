@@ -2,7 +2,9 @@
 [module CN_CyberSecurityResearchReport(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::docgen::common::FileName
+]
 
 
 [**
@@ -11,6 +13,7 @@
  * REALM:    	China
  * CONTENT:  	report required by medical device authority
  * PROFILES: 	CSMN
+ * UUID:		2
  * ====================
  **/]
 
@@ -18,9 +21,14 @@
 [import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
 [import engineering::schumann::docgen::common::FileName /]
 [import engineering::schumann::docgen::common::terms::Terms /]
+[import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::docgen::html::Boxes /]
 [import engineering::schumann::docgen::html::Checkbox /]
 [import engineering::schumann::docgen::html::DocumentRef /]
@@ -28,20 +36,6 @@
 [import engineering::schumann::docgen::html::Layout /]
 [import engineering::schumann::docgen::html::ProtectedArea /]
 [import engineering::schumann::docgen::html::Toc /]
-
-
-[query private _getFileNameFqn(
-	this : Package
-) : String = 
-	this.getFileNameFqn('/CN_CyberSecurityResearchReport', 'html')
-/]
-
-
-[query private _getSnippetsPathName(
-	this : Package
-) : String =
-	this.getFileName() + '/snippets/CN_CyberSecurityResearchReport/'
-/]
 
 
 [template public generateDocument_CN_CyberSecurityResearchReport(
@@ -56,21 +50,24 @@
 [template private generateDocument_CN_CyberSecurityResearchReport(
 	this : Package
 )]
-[file (this._getFileNameFqn(), false, 'UTF-8')]
+[setEnv('DOCUMENT_NAME',        'CN_CyberSecurityResearchReport') /]
+[setEnv('DOCUMENT_EXTENSION',   'html') /]
+
+[file (FILE_URI_DOCUMENT('2'), false, 'UTF-8')]
 [HTML_START()/]
-	[printChapter_CoverPage()/]
+	[CoverPage_Chapter_print()/]
 
-	[printChapter_Introduction()/]
+	[Introduction_Chapter_print()/]
 
-	[printChapter_BasicInformation()/]
+	[BasicInformation_Chapter_print()/]
 
-	[printChapter_ImplementationProcess()/]
+	[ImplementationProcess_Chapter_print()/]
 
-	[printChapter_VulnerabilityAssessment()/]
+	[VulnerabilityAssessment_Chapter_print()/]
 
-	[printChapter_Conclusion()/]
+	[Conclusion_Chapter_print()/]
 
-	[printChapter_Appendix()/]
+	[Appendix_Chapter_print()/]
 [HTML_END()/]
 [/file]
 [/template]
@@ -81,7 +78,7 @@
 	COVER PAGE
 	====================
 /]
-[template public printChapter_CoverPage(
+[template private CoverPage_Chapter_print(
 	this : Package
 )]
 [TOC_CoverPage_begin('Cyber Security Research Report') /]
@@ -95,7 +92,7 @@
 	INTRODUCTION
 	====================
 /]
-[template public printChapter_Introduction(
+[template private Introduction_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Introduction') /]
@@ -111,7 +108,8 @@
 		<p>
 			This document is targeted at:
 			<ul>
-				<li>regulatory authorities, especially in China</li>
+				<li>regulatory authorities</li>
+				<li>notified body</li>
 			</ul>
 		</ul>
 	[TOC_Section_end() /]
@@ -144,7 +142,7 @@
 	BASIC INFORMATION
 	====================
 /]
-[template public printChapter_BasicInformation(
+[template private BasicInformation_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Basic Information') /]
@@ -154,7 +152,7 @@
 		REGISTRANT
 		--------------------
 	/]
-	[printSection_Registrant() /]
+	[Registrant_Section_print() /]
 	
 	[comment
 		--------------------
@@ -170,28 +168,28 @@
 		DATA ARCHITECTURE
 		--------------------
 	/]
-	[printSection_DataArchitecture()/]
+	[DataArchitecture_Section_print()/]
 	
 	[comment
 		--------------------
 		NETWORK SECURITY CAPABILITIES
 		--------------------
 	/]
-	[printSection_NetworkSecurityCapabilities() /]
+	[NetworkSecurityCapabilities_Section_print() /]
 	
 	[comment
 		--------------------
 		SECURITY PATCHES
 		--------------------
 	/]
-	[printSection_SecurityPatches() /]
+	[SecurityPatches_Section_print() /]
 	
 	[comment
 		--------------------
 		SECURITY SOFTWARE
 		--------------------
 	/]
-	[printSection_SecuritySoftware() /]
+	[SecuritySoftware_Section_print() /]
 
 	
 	[comment
@@ -199,7 +197,7 @@
 		OTS
 		--------------------
 	/]
-	[printSection_OTS() /]
+	[OTS_Section_print() /]
 [TOC_Chapter_end() /]
 [/template]
 
@@ -209,7 +207,7 @@
 	REGISTRANT
 	--------------------
 /]
-[template public printSection_Registrant(
+[template private Registrant_Section_print(
 	this : Package
 )]
 [TOC_Section_begin('Registrant') /]
@@ -232,464 +230,71 @@
 	DATA ARCHITECTURE
 	--------------------
 /]
-[template public printSection_DataArchitecture (this : Package) ]
+[template private DataArchitecture_Section_print(this : Package) ]
 [TOC_Section_begin('Data Architecture') /]
+	[comment
+		....................
+		APPLICABLE DOCUMENTS
+		....................
+	/]
 	[TOC_SubSection_begin('Applicable Documents') /]
 		<ul>
 			<li>Product Security Characteristics</li>
 			<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
-			[protectedArea('Data Architecture > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		</ul>
 	[TOC_SubSection_end() /]
-	
+
+	[comment
+		....................
+		DIAGRAM
+		....................
+	/]
+	[Diagram_SubSection_print() /]
+
+	[comment
+		....................
+		DESCRIPTION
+		....................
+	/]
 	[TOC_SubSection_begin('Description') /]
-		[protectedArea('Data Architecture > Description', this._getSnippetsPathName()) /]
+		[protectedArea('Data Architecture > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_SubSection_end() /]
 
 	[comment
 		....................
-		NETWORK
+		NETWORK INTERFACES
 		....................
 	/]
-	[TOC_SubSection_begin('Network Interfaces') /]
-		[html_NO_PRINT_start() /]
-			[html_NOTE_Start() /]
-			<ul>
-				<li>
-					<b>Transmission Protocol</b><br/>
-			  		The transmission protocols commonly used in medical devices are HL7、DICOM. General transmission protocols, such as TCP/IP、UDP、HTTP、HTTPS （based on standard IETF RFC 2616, RFC 2818） may also be used. Data transmission via SD card or U disk (storage format is ZIP file/compressed file according to standard ISO/IEC 21320-1:2015
-				</li>
-				<li>
-					<b>Data Interface Type</b><br/>
-			  		commonly used wired interface have USB、RS232、RS485、CAN、RJ45; wireless communication methods have Bluetooth, wifi, Zigbee, RFID and various cellular wireless network.）
-				</li>
-			</ul>
-			[html_NOTE_End() /]
-
-			[html_EXAMPLE_Start() /]
-				<ul>
-					<li>[html_checkbox() /] Wireless Network</li>
-					<li>[html_checkbox() /] Wired network</li>
-				</ul>
-
-				<p>
-					Requirements:
-				</p>
-				
-				<ul>
-					<li>
-						the transmission protocol:
-						<ul>
-							<li>[html_checkbox() /] standard</li>
-							<li>[html_checkbox() /] user-defined</li>
-						</ul>
-					</li>
-					<li>
-						data interface type
-						<ul>
-							<li>bandwidth</li>
-							<li>others requirements if applicable</li>
-						</ul>
-					</li>
-				</ul>
-			[html_EXAMPLE_End() /]
-		[html_NO_PRINT_end() /]
-		
-
-		[let networkPorts : Set(Port) = this
-										.csmn_allSystemElement()
-										.csmn_networkPort()
-										->flatten()
-										->asSet()
-										->csmn_filterInScope() ]
-		<ul>
-			<li>
-				[html_checkbox(networkPorts->size() = 0) /] No
-			</li>
-			<li>
-				[html_checkbox(networkPorts->size() > 0) /] Yes, see below
-			</li>
-		</ul>
-		
-		<p>
-			[if (networkPorts->size() = 0)]
-			The product has <b><i>NO</i></b> network ports.
-			[else]
-			The product has <b><i>[networkPorts->size() /]</i></b> network ports:
-			<ul>
-				[let publicPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::public)]
-				<li>
-					[if (publicPorts->size() = 0)]
-					<b>NONE</b> usable by HDO.
-					[else]
-					<b>[publicPorts->size() /]</b> usable by HDO:
-					<ul>
-					[for (publicPorts)]
-						<li>
-							[self.name /]
-						</li>
-					[/for]
-					</ul>
-					[/if]
-				</li>
-				[/let]
-
-				[let devicePorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::_package)]
-				<li>
-					[if (devicePorts->size() = 0)]
-					<b>NONE</b> used by device "internaly".
-					[else]
-					<b>[devicePorts->size() /]</b> usable by device "internaly":
-					<ul>
-					[for (devicePorts)]
-						<li>
-							[self.name /]
-						</li>
-					[/for]
-					</ul>
-					[/if]
-				</li>
-				[/let]
-
-				[let vendorPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::protected)]
-				<li>
-					[if (vendorPorts->size() = 0)]
-					<b>NONE</b> usable by vendor.
-					[else]
-					<b>[vendorPorts->size() /]</b> usable by vendor:
-					<ul>
-					[for (vendorPorts)]
-						<li>
-							[self.name /]
-						</li>
-					[/for]
-					</ul>
-					[/if]
-				</li>
-				[/let]
-			</ul>
-			[/if]
-		</p>
-
-		[if (networkPorts->size() > 0)]
-		<p>
-			For a list of network interfaces, see document
-		</p>
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'PRODUCT INTERFACEs which are Network interfaces'
-				)/]
-		    	[html_NOTE_Start() /]
-					This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
-				[html_NOTE_End() /]
-			</li>
-		</ul>
-		[/if]
-		[/let]
-	[TOC_SubSection_end() /]
+	[NetworkInterfaces_SubSection_print() /]
 	
 	[comment
 		....................
-		STORAGE
+		STORAGE MEDIA
 		....................
 	/]
-	[TOC_SubSection_begin('Storage Media') /]
-		[html_NO_PRINT_start() /]
-			[html_EXAMPLE_Start() /]
-				<ul>
-					<li>[html_checkbox() /] CD-ROM</li>
-					<li>[html_checkbox() /] Mobile Hard Disk</li>
-					<li>[html_checkbox() /] USB Flash disk</li>
-					<li>[html_checkbox() /] Others: ...</li>
-				</ul>
-				
-				<p>
-					Requirements:
-				</p>
-				
-				<ul>
-					<li>Storage Format
-						<ul>
-							<li>[html_checkbox() /] Standard</li>
-							<li>[html_checkbox() /] User-defined TRFS, FAT32 (Note:  Standard storage format is EDF or others; if the storage format is user-defined, please provide the name of storage format and the verification methods for testing.)</li>
-						</ul>
-					</li>
-					<li>Capacity
-						<ul>
-							<li>xxx (for example:  >= 1 GB）</li>
-						</ul>
-					</li>
-					<li>Other requirements
-						<ul>
-							<li>xxx</li>
-						</ul>
-					</li>
-				</ul>
-			[html_EXAMPLE_End() /]
-		[html_NO_PRINT_end() /]
+	[StorageMedia_SubSection_print() /]
 
-		[let storageMedia : Set(Port) = this
-										.csmn_allSystemElement()
-										.csmn_storagePort()
-										->flatten()
-										->asSet()
-										->csmn_filterInScope() ]
-		<ul>
-			<li>
-				[html_checkbox(storageMedia->size() = 0) /] No
-			</li>
-			<li>
-				[html_checkbox(storageMedia->size() > 0) /] Yes, see below
-			</li>
-		</ul>
-		
-		<p>
-			[if (storageMedia->size() = 0)]
-			The product has <b><i>NO</i></b> storage media.
-			[else]
-			The product has <b><i>[storageMedia->size() /]</i></b> storage media:
-			<ul>
-			[for (storageMedia)]
-				<li>
-					[self.name /]
-				</li>
-			[/for]
-			</ul>
-			[/if]
-		</p>
-
-		[if (storageMedia->size() > 0)]
-		<p>
-			For a list of storage media, see document
-			<ul>
-				<li>
-					[html_Document_Ref(
-						'Product Security Characteristics',
-						'Product Architecture',
-						'PRODUCT INTERFACEs which are Storage Media'
-					)/]
-				    [html_NOTE_Start() /]
-						This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
-					[html_NOTE_End() /]
-				</li>
-			</ul>
-		</p>
-		[/if]
-		[/let]
-	[TOC_SubSection_end() /]
-	
 	[comment
 		....................
 		WIRELESS DEVICE
 		....................
 	/]
-	[TOC_SubSection_begin('Wireless Device') /]
-		[html_NO_PRINT_start() /]
-			[html_NOTE_Start() /]
-				Whether it is a particular wireless device (also called as: non-general information technology equipment):
-			[html_NOTE_End() /]
-
-			[html_EXAMPLE_Start() /]
-				<ul>
-					<li>[html_checkbox() /] No</li>
-					<li>[html_checkbox() /] Yes, please provide proof file of meet with radio management regulations)</li>
-				</ul>
-			[html_EXAMPLE_End() /]
-		[html_NO_PRINT_end() /]
-		
-		[let wirelessInterfaces : Set(Port) = this
-										.csmn_allSystemElement()
-										.csmn_wirelessPort()
-										->flatten()
-										->asSet()
-										->csmn_filterInScope() ]
-		<ul>
-			<li>
-				[html_checkbox(wirelessInterfaces->size() = 0) /] No
-			</li>
-			<li>
-				[html_checkbox(wirelessInterfaces->size() > 0) /] Yes, additional proof of compliance with radio management regulations is provided (e.g. RED CB report)
-			</li>
-		</ul>
-		
-		<p>
-			The product has <b><i>[if (wirelessInterfaces->size() > 0)][wirelessInterfaces->size() /][else]NO[/if]</i></b> wireless interfaces[if (wirelessInterfaces->size() > 0)]:[else].[/if]
-			<ul>
-			[for (wirelessInterfaces)]
-				<li>
-					[self.name /]
-				</li>
-			[/for]
-			</ul>
-		</p>
-
-		[if (wirelessInterfaces->size() > 0)]
-		<p>
-			For a list of wireless interfaces, see document
-			<ul>
-				<li>
-					[html_Document_Ref(
-						'Product Security Characteristics',
-						'Product Architecture',
-						'List of PRODUCT INTERFACE'
-					)/]
-				    [html_NOTE_Start() /]
-						This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
-					[html_NOTE_End() /]
-				</li>
-			</ul>
-		</p>
-		[/if]
-		[/let]
-	[TOC_SubSection_end() /]
+	[WirelessDevice_SubSection_print() /]	
 	
 	[comment
 		....................
-		DATA
+		DATA ASSETS
 		....................
 	/]
-	[TOC_SubSection_begin('Data (Assets)') /]
-		[html_NO_PRINT_start() /]
-			[html_NOTE_Start() /]
-				<ul>
-					<li>Medical data refers to the data (including logs) generated and used by medical devices related to medical activities. From the perspective of personal information protection, it can be divided into sensitive medical data and non-sensitive medical data. Sensitive medical data refers to medical data containing personal information, which is also known as non-sensitive medical data.</li>
-					<li>Device data refers to data (including logs) that records the operation status of medical devices, used for monitoring and controlling the operation or maintenance and upgrading of medical devices, and must not contain personal information.</li>
-					<li>is the Medical Data should be chosen or not? If so, is it sensitive medical data or non-sensitive medical data?</li>
-				</ul>
-				
-				Clarify the specific content of each type of data based on the data type (such as personal information, medical activity information, equipment operation information) 
-			[html_NOTE_End() /]
-
-			[html_EXAMPLE_Start() /]
-				<ul>
-					<li>[html_checkbox() /] Medical Data</li>
-					<li>[html_checkbox() /] Device Data</li>
-				</ul>   
-			[html_EXAMPLE_End() /]
-		[html_NO_PRINT_end() /]
-		
-		<p>
-			For a list of data assets, see documents:
-			<ul>
-				<li>
-					[html_Document_Ref(
-						'Product Security Characteristics',
-						'Product Architecture',
-						'ASSETS which are Data Assets'
-					)/]
-				    [html_NOTE_Start() /]
-						For each asset, the following information is included:
-						<table class="table-2-columns">
-							<thead>
-								<tr>
-									<th>Column</th>
-									<th>Content</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<th>ASSET</th>
-									<td>Name of the asset</td>
-								</tr>
-								<tr>
-									<th>ASSET CHARACTERISTICS</th>
-									<td>List characteristics of the ASSET</td>
-								</tr>
-							</tbody>
-						</table>
-					[html_NOTE_End() /]
-				</li>
-			</ul>
-		</p>
-	[TOC_SubSection_end() /]
+	[DataAssets_SubSection_print() /]
 	
 	[comment
 		....................
 		DATA FLOW
 		....................
 	/]
-	[TOC_SubSection_begin('Data (Asset) Flow') /]
-		[html_NO_PRINT_start() /]
-			[html_EXAMPLE_Start()/]
-				<ul>
-					<li>[html_checkbox() /] One-way electronic data interchange</li>
-					<li>[html_checkbox() /] Two-way electronic data interchange</li>
-					<li>[html_checkbox() /] Real-time remote control</li>          
-					<li>[html_checkbox() /] Non-Real-time remote control</li>
-				</ul>
-			[html_EXAMPLE_End()/]
-		[html_NO_PRINT_end() /]
-		
-		<p>
-			For a list of data flows, see document
-			<ul>
-				<li>
-					[html_Document_Ref(
-						'Product Security Characteristics',
-						'Product Architecture',
-						'Interface Connections'
-					)/]
-					[html_NOTE_Start() /]
-						For each connection to or from a system interface, the following information is included:
-						<table class="table-2-columns">
-							<thead>
-								<tr>
-									<th>Column</th>
-									<th>Content</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Supplier & Zone</td>
-									<td>Element of the Product Architecture and its designated Security Zone</td>
-								</tr>
-								<tr>
-									<td>Supplier Interface</td>
-									<td>The interface involved on the supplier side providing assets</td>
-								</tr>
-								<tr>
-									<td>Asset Flow ←</td>
-									<td>Assets flowing from client to supplier</td>
-								</tr>
-								<tr>
-									<td>CONNECTION</td>
-									<td>Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
-								</tr>
-								<tr>
-									<td>Asset Flow →</td>
-									<td>Assets flowing from supplier to client</td>
-								</tr>
-								<tr>
-									<td>Client Interface</td>
-									<td>The interface involved on the client side consuming assets</td>
-								</tr>
-								<tr>
-									<td>Client & Zone</td>
-									<td>Element of the Product Architecture and its designated Security Zone</td>
-								</tr>
-								<tr>
-									<td>CONENCTION Characteristics</td>
-									<td>Characteristics of the connection. This can consist of many different things:
-										<ul>
-											<li>Purpose: Purpose of the connection</li>
-											<li>Type: e.g. Information, Material, Energy, Mechanical</li>
-											<li>Direction: Uni-Directional or Bi-Directional</li>
-											<li>Real-Time: Is real-time information exchanged?</li>
-											<li>OSI- & TCP-Layers: standards and protocols used according to international layer models</li>
-											<li>...</li>
-										</ul>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					[html_NOTE_End() /]
-				</li>
-			</ul>
-		</p>
-	[TOC_SubSection_end() /]
+	[DataFlow_SubSection_print() /]
 [TOC_Section_end() /]
 [/template]
 
@@ -699,7 +304,7 @@
 	NETWORK SECURITY CAPABILITIES
 	--------------------
 /]
-[template public printSection_NetworkSecurityCapabilities(
+[template private NetworkSecurityCapabilities_Section_print(
 	this : Package
 )]
 [TOC_Section_begin('Network security capabilities') /]
@@ -735,7 +340,7 @@
 	OTS
 	--------------------
 /]
-[template public printSection_OTS(
+[template private OTS_Section_print(
 	this : Package
 )]
 [TOC_Section_begin('Off-the-shelf Software (OTS)') /]
@@ -796,7 +401,7 @@
 	SECURITY PATCHES
 	--------------------
 /]
-[template public printSection_SecurityPatches(
+[template private SecurityPatches_Section_print(
 	this : Package
 )]
 [TOC_Section_begin('Security patches') /]
@@ -814,7 +419,7 @@
 		[html_NOTE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Patches', this._getSnippetsPathName()) /]
+	[protectedArea('Security > Security Patches', DIRECTORY_URI_SNIPPETS('2')) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -825,7 +430,7 @@
 	SECURITY SOFTWARE
 	--------------------
 /]
-[template public printSection_SecuritySoftware(
+[template private SecuritySoftware_Section_print(
 	this : Package
 )]
 [TOC_Section_begin('Security Software') /]
@@ -851,7 +456,7 @@
 		[html_EXAMPLE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Software', this._getSnippetsPathName()) /]
+	[protectedArea('Security > Security Software', DIRECTORY_URI_SNIPPETS('2')) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -861,7 +466,7 @@
 	IMPLEMENTATION PROCESS
 	====================
 /]
-[template public printChapter_ImplementationProcess(
+[template private ImplementationProcess_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Implementation Process') /]
@@ -883,11 +488,11 @@
 		[html_NO_PRINT_end() /]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Risk Management > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Risk Management > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 		
 		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Risk Management > Description', this._getSnippetsPathName()) /]
+			[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 	
@@ -904,11 +509,11 @@
 		[html_NO_PRINT_end() /]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Requirements Specification > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Requirements Specification > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 		
 		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Requirements Specification > Description', this._getSnippetsPathName())/]
+			[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS('2'))/]
 		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 	
@@ -930,11 +535,11 @@
 		[html_NO_PRINT_end() /]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Verification and Validation > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Verification and Validation > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 		
 		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Verification and Validation > Description', this._getSnippetsPathName()) /]	
+			[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS('2')) /]	
 		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 	
@@ -951,11 +556,11 @@
 		[html_NO_PRINT_end() /]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Traceability > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Traceability > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 		
 		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Traceability > Description', this._getSnippetsPathName()) /]
+			[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 	
@@ -973,11 +578,11 @@
 		[html_NO_PRINT_end() /]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Maintenance Plan > Applicable Documents', this._getSnippetsPathName()) /]
+			[protectedArea('Maintenance Plan > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 		
 		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Maintenance Plan > Description', this._getSnippetsPathName()) /]
+			[protectedArea('Maintenance Plan > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
@@ -989,7 +594,7 @@
 	VULNERABILITY ASSESSMENT
 	====================
 /]
-[template public printChapter_VulnerabilityAssessment(
+[template private VulnerabilityAssessment_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Vulnerability Assessment') /]
@@ -1000,11 +605,11 @@
 	[html_NO_PRINT_end() /]
 	
 	[TOC_Section_begin('Applicable Documents') /]
-		[protectedArea('Vulnerability Assessment > Applicable Documents', this._getSnippetsPathName()) /]
+		[protectedArea('Vulnerability Assessment > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Section_end() /]
 	
 	[TOC_Section_begin('Description') /]
-		[protectedArea('Vulnerability Assessment > Description', this._getSnippetsPathName()) /]
+		[protectedArea('Vulnerability Assessment > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
 [/template]
@@ -1015,7 +620,7 @@
 	CONCLUSION
 	====================
 /]
-[template public printChapter_Conclusion(
+[template private Conclusion_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Conclusion') /]
@@ -1026,11 +631,11 @@
 	[html_NO_PRINT_end() /]
 	
 	[TOC_Section_begin('Applicable Documents') /]
-		[protectedArea('Conclusion > Applicable Documents', this._getSnippetsPathName()) /]
+		[protectedArea('Conclusion > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Section_end() /]
 	
 	[TOC_Section_begin('Description') /]
-		[protectedArea('Conclusion > Description', this._getSnippetsPathName()) /]
+		[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
 [/template]
@@ -1041,10 +646,537 @@
 	APPENDIX
 	====================
 /]
-[template public printChapter_Appendix(
+[template private Appendix_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Appendix') /]
-	[protectedArea('Appendix', this._getSnippetsPathName()) /]
+	[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS('2')) /]
 [TOC_Chapter_end() /]
+[/template]
+
+
+[comment
+	....................
+	DATA ASSETS
+	....................
+/]
+[template private DataAssets_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Data (Assets)') /]
+	[html_NO_PRINT_start() /]
+		[html_NOTE_Start() /]
+			<ul>
+				<li>Medical data refers to the data (including logs) generated and used by medical devices related to medical activities. From the perspective of personal information protection, it can be divided into sensitive medical data and non-sensitive medical data. Sensitive medical data refers to medical data containing personal information, which is also known as non-sensitive medical data.</li>
+				<li>Device data refers to data (including logs) that records the operation status of medical devices, used for monitoring and controlling the operation or maintenance and upgrading of medical devices, and must not contain personal information.</li>
+				<li>is the Medical Data should be chosen or not? If so, is it sensitive medical data or non-sensitive medical data?</li>
+			</ul>
+			
+			Clarify the specific content of each type of data based on the data type (such as personal information, medical activity information, equipment operation information) 
+		[html_NOTE_End() /]
+
+		[html_EXAMPLE_Start() /]
+			<ul>
+				<li>[html_checkbox() /] Medical Data</li>
+				<li>[html_checkbox() /] Device Data</li>
+			</ul>   
+		[html_EXAMPLE_End() /]
+	[html_NO_PRINT_end() /]
+	
+	<p>
+		For a list of data assets, see documents:
+		<ul>
+			<li>
+				[html_Document_Ref(
+					'Product Security Characteristics',
+					'Product Architecture',
+					'ASSETS which are Data Assets'
+				)/]
+			    [html_NOTE_Start() /]
+					For each asset, the following information is included:
+					<table class="table-2-columns">
+						<thead>
+							<tr>
+								<th>Column</th>
+								<th>Content</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>ASSET</th>
+								<td>Name of the asset</td>
+							</tr>
+							<tr>
+								<th>ASSET CHARACTERISTICS</th>
+								<td>List characteristics of the ASSET</td>
+							</tr>
+						</tbody>
+					</table>
+				[html_NOTE_End() /]
+			</li>
+		</ul>
+	</p>
+[TOC_SubSection_end() /]
+[/template]
+
+
+[comment
+	....................
+	DATA FLOW
+	....................
+/]
+[template private DataFlow_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Data (Asset) Flow') /]
+	[html_NO_PRINT_start() /]
+		[html_EXAMPLE_Start()/]
+			<ul>
+				<li>[html_checkbox() /] One-way electronic data interchange</li>
+				<li>[html_checkbox() /] Two-way electronic data interchange</li>
+				<li>[html_checkbox() /] Real-time remote control</li>          
+				<li>[html_checkbox() /] Non-Real-time remote control</li>
+			</ul>
+		[html_EXAMPLE_End()/]
+	[html_NO_PRINT_end() /]
+	
+	<p>
+		For a list of data flows, see document
+		<ul>
+			<li>
+				[html_Document_Ref(
+					'Product Security Characteristics',
+					'Product Architecture',
+					'Interface Connections'
+				)/]
+				[html_NOTE_Start() /]
+					For each connection to or from a system interface, the following information is included:
+					<table class="table-2-columns">
+						<thead>
+							<tr>
+								<th>Column</th>
+								<th>Content</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Supplier & Zone</td>
+								<td>Element of the Product Architecture and its designated Security Zone</td>
+							</tr>
+							<tr>
+								<td>Supplier Interface</td>
+								<td>The interface involved on the supplier side providing assets</td>
+							</tr>
+							<tr>
+								<td>Asset Flow ←</td>
+								<td>Assets flowing from client to supplier</td>
+							</tr>
+							<tr>
+								<td>CONNECTION</td>
+								<td>Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
+							</tr>
+							<tr>
+								<td>Asset Flow →</td>
+								<td>Assets flowing from supplier to client</td>
+							</tr>
+							<tr>
+								<td>Client Interface</td>
+								<td>The interface involved on the client side consuming assets</td>
+							</tr>
+							<tr>
+								<td>Client & Zone</td>
+								<td>Element of the Product Architecture and its designated Security Zone</td>
+							</tr>
+							<tr>
+								<td>CONENCTION Characteristics</td>
+								<td>Characteristics of the connection. This can consist of many different things:
+									<ul>
+										<li>Purpose: Purpose of the connection</li>
+										<li>Type: e.g. Information, Material, Energy, Mechanical</li>
+										<li>Direction: Uni-Directional or Bi-Directional</li>
+										<li>Real-Time: Is real-time information exchanged?</li>
+										<li>OSI- & TCP-Layers: standards and protocols used according to international layer models</li>
+										<li>...</li>
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				[html_NOTE_End() /]
+			</li>
+		</ul>
+	</p>
+[TOC_SubSection_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	DIAGRAM
+	--------------------
+/]
+[template private Diagram_SubSection_print(
+	this : Package
+)]
+[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
+[this.TOC_SubSection_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
+
+	[this.html_IMG_ProductArchitectureDiagram('2', product) /]
+	
+[this.TOC_SubSection_end()/]
+[/for]
+[/template]
+
+
+[comment
+	....................
+	NETWORK
+	....................
+/]
+[template private NetworkInterfaces_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Network Interfaces') /]
+	[html_NO_PRINT_start() /]
+		[html_NOTE_Start() /]
+		<ul>
+			<li>
+				<b>Transmission Protocol</b><br/>
+		  		The transmission protocols commonly used in medical devices are HL7、DICOM. General transmission protocols, such as TCP/IP、UDP、HTTP、HTTPS （based on standard IETF RFC 2616, RFC 2818） may also be used. Data transmission via SD card or U disk (storage format is ZIP file/compressed file according to standard ISO/IEC 21320-1:2015
+			</li>
+			<li>
+				<b>Data Interface Type</b><br/>
+		  		commonly used wired interface have USB、RS232、RS485、CAN、RJ45; wireless communication methods have Bluetooth, wifi, Zigbee, RFID and various cellular wireless network.）
+			</li>
+		</ul>
+		[html_NOTE_End() /]
+
+		[html_EXAMPLE_Start() /]
+			<ul>
+				<li>[html_checkbox() /] Wireless Network</li>
+				<li>[html_checkbox() /] Wired network</li>
+			</ul>
+
+			<p>
+				Requirements:
+			</p>
+			
+			<ul>
+				<li>
+					the transmission protocol:
+					<ul>
+						<li>[html_checkbox() /] standard</li>
+						<li>[html_checkbox() /] user-defined</li>
+					</ul>
+				</li>
+				<li>
+					data interface type
+					<ul>
+						<li>bandwidth</li>
+						<li>others requirements if applicable</li>
+					</ul>
+				</li>
+			</ul>
+		[html_EXAMPLE_End() /]
+	[html_NO_PRINT_end() /]
+	
+
+	[let networkPorts : Set(Port) = this
+									.csmn_allSystemElement()
+									.csmn_networkPort()
+									->flatten()
+									->asSet()
+									->csmn_filterInScope() ]
+	<ul>
+		<li>
+			[html_checkbox(networkPorts->size() = 0) /] No
+		</li>
+		<li>
+			[html_checkbox(networkPorts->size() > 0) /] Yes, see below
+		</li>
+	</ul>
+	
+	<p>
+		[if (networkPorts->size() = 0)]
+		The product has <b><i>NO</i></b> network ports.
+		[else]
+		The product has <b><i>[networkPorts->size() /]</i></b> network ports:
+		<ul>
+			[let publicPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::public)]
+			<li>
+				[if (publicPorts->size() = 0)]
+				<b>NONE</b> usable by HDO.
+				[else]
+				<b>[publicPorts->size() /]</b> usable by HDO:
+				<ul>
+				[for (publicPorts)]
+					<li>
+						[self.name /]
+						[self.printComment() /]
+					</li>
+				[/for]
+				</ul>
+				[/if]
+			</li>
+			[/let]
+
+			[let devicePorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::_package)]
+			<li>
+				[if (devicePorts->size() = 0)]
+				<b>NONE</b> used by device "internaly".
+				[else]
+				<b>[devicePorts->size() /]</b> usable by device "internaly":
+				<ul>
+				[for (devicePorts)]
+					<li>
+						[self.name /]
+						[self.printComment() /]
+					</li>
+				[/for]
+				</ul>
+				[/if]
+			</li>
+			[/let]
+
+			[let vendorPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::protected)]
+			<li>
+				[if (vendorPorts->size() = 0)]
+				<b>NONE</b> usable by vendor.
+				[else]
+				<b>[vendorPorts->size() /]</b> usable by vendor:
+				<ul>
+				[for (vendorPorts)]
+					<li>
+						[self.name /]
+						[self.printComment() /]
+					</li>
+				[/for]
+				</ul>
+				[/if]
+			</li>
+			[/let]
+		</ul>
+		[/if]
+	</p>
+
+	[if (networkPorts->size() > 0)]
+	<p>
+		For a list of network interfaces, see document
+	</p>
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'PRODUCT INTERFACEs which are Network interfaces'
+			)/]
+	    	[html_NOTE_Start() /]
+				For each asset, the following information is included:
+				<table class="table-2-columns">
+					<thead>
+						<tr>
+							<th>Column</th>
+							<th>Content</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>System Element</th>
+							<td>Element of the Product Architecture</td>
+						</tr>
+						<tr>
+							<th>Security Zone</th>
+							<td>Security Zone of the System Element</td>
+						</tr>
+						<tr>
+							<th>PRODUCT INTERFACE</th>
+							<td>Name of the product interface within the Product Architecture</td>
+						</tr>
+						<tr>
+							<th>PRODUCT INTERFACE Characteristics</th>
+							<td>Characteristics of the interface. This can consist of many different things:
+								<ul>
+									<li>Purpose:   Purpose of the interface</li>
+									<li>Type:      Technical nature of the interface</li>
+									<li>Connector: Physical connector or interface</li>
+									<li>Access:    Who has access to the interface</li>
+									<li>Bandwidth: Bandwidth of digital interfaces</li>
+									<li>Firewall:  Properties of a firewall, if present</li>
+									<li>...</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			[html_NOTE_End() /]
+		</li>
+	</ul>
+	[/if]
+	[/let]
+[TOC_SubSection_end() /]
+[/template]
+
+
+[comment
+	....................
+	STORAGE
+	....................
+/]
+[template private StorageMedia_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Storage Media') /]
+	[html_NO_PRINT_start() /]
+		[html_EXAMPLE_Start() /]
+			<ul>
+				<li>[html_checkbox() /] CD-ROM</li>
+				<li>[html_checkbox() /] Mobile Hard Disk</li>
+				<li>[html_checkbox() /] USB Flash disk</li>
+				<li>[html_checkbox() /] Others: ...</li>
+			</ul>
+			
+			<p>
+				Requirements:
+			</p>
+			
+			<ul>
+				<li>Storage Format
+					<ul>
+						<li>[html_checkbox() /] Standard</li>
+						<li>[html_checkbox() /] User-defined TRFS, FAT32 (Note:  Standard storage format is EDF or others; if the storage format is user-defined, please provide the name of storage format and the verification methods for testing.)</li>
+					</ul>
+				</li>
+				<li>Capacity
+					<ul>
+						<li>xxx (for example:  >= 1 GB）</li>
+					</ul>
+				</li>
+				<li>Other requirements
+					<ul>
+						<li>xxx</li>
+					</ul>
+				</li>
+			</ul>
+		[html_EXAMPLE_End() /]
+	[html_NO_PRINT_end() /]
+
+	[let storageMedia : Set(Port) = this
+									.csmn_allSystemElement()
+									.csmn_storagePort()
+									->flatten()
+									->asSet()
+									->csmn_filterInScope() ]
+	<ul>
+		<li>
+			[html_checkbox(storageMedia->size() = 0) /] No
+		</li>
+		<li>
+			[html_checkbox(storageMedia->size() > 0) /] Yes, see below
+		</li>
+	</ul>
+	
+	<p>
+		[if (storageMedia->size() = 0)]
+		The product has <b><i>NO</i></b> storage media.
+		[else]
+		The product has <b><i>[storageMedia->size() /]</i></b> storage media:
+		<ul>
+		[for (storageMedia)]
+			<li>
+				[self.name /]
+			</li>
+		[/for]
+		</ul>
+		[/if]
+	</p>
+
+	[if (storageMedia->size() > 0)]
+	<p>
+		For a list of storage media, see document
+		<ul>
+			<li>
+				[html_Document_Ref(
+					'Product Security Characteristics',
+					'Product Architecture',
+					'PRODUCT INTERFACEs which are Storage Media'
+				)/]
+			    [html_NOTE_Start() /]
+					This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
+				[html_NOTE_End() /]
+			</li>
+		</ul>
+	</p>
+	[/if]
+	[/let]
+[TOC_SubSection_end() /]
+[/template]
+
+
+[comment
+	....................
+	WIRELESS DEVICE
+	....................
+/]
+[template private WirelessDevice_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Wireless Device') /]
+	[html_NO_PRINT_start() /]
+		[html_NOTE_Start() /]
+			Whether it is a particular wireless device (also called as: non-general information technology equipment):
+		[html_NOTE_End() /]
+
+		[html_EXAMPLE_Start() /]
+			<ul>
+				<li>[html_checkbox() /] No</li>
+				<li>[html_checkbox() /] Yes, please provide proof file of meet with radio management regulations)</li>
+			</ul>
+		[html_EXAMPLE_End() /]
+	[html_NO_PRINT_end() /]
+	
+	[let wirelessInterfaces : Set(Port) = this
+									.csmn_allSystemElement()
+									.csmn_wirelessPort()
+									->flatten()
+									->asSet()
+									->csmn_filterInScope() ]
+	<ul>
+		<li>
+			[html_checkbox(wirelessInterfaces->size() = 0) /] No
+		</li>
+		<li>
+			[html_checkbox(wirelessInterfaces->size() > 0) /] Yes, additional proof of compliance with radio management regulations is provided (e.g. RED CB report)
+		</li>
+	</ul>
+	
+	<p>
+		The product has <b><i>[if (wirelessInterfaces->size() > 0)][wirelessInterfaces->size() /][else]NO[/if]</i></b> wireless interfaces[if (wirelessInterfaces->size() > 0)]:[else].[/if]
+		<ul>
+		[for (wirelessInterfaces)]
+			<li>
+				[self.name /]
+			</li>
+		[/for]
+		</ul>
+	</p>
+
+	[if (wirelessInterfaces->size() > 0)]
+	<p>
+		For a list of wireless interfaces, see document
+		<ul>
+			<li>
+				[html_Document_Ref(
+					'Product Security Characteristics',
+					'Product Architecture',
+					'List of PRODUCT INTERFACE'
+				)/]
+			    [html_NOTE_Start() /]
+					This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
+				[html_NOTE_End() /]
+			</li>
+		</ul>
+	</p>
+	[/if]
+	[/let]
+[TOC_SubSection_end() /]
 [/template]

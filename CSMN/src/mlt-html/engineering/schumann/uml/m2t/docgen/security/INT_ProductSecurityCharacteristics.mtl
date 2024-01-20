@@ -11,6 +11,7 @@
  * REALM:    	International
  * CONTENT:  	describes a product based on CSMN annotations
  * PROFILES: 	CSMN
+ * UUID:		1
  * ====================
  **/]
 
@@ -30,21 +31,18 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
 [import engineering::schumann::docgen::common::terms::Terms /]
 [import engineering::schumann::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::docgen::html::Boxes /]
+[import engineering::schumann::docgen::html::DocumentRef /]
 [import engineering::schumann::docgen::html::Html /]
 [import engineering::schumann::docgen::html::Layout /]
+[import engineering::schumann::docgen::html::ProtectedArea /]
 [import engineering::schumann::docgen::html::Table /]
 [import engineering::schumann::docgen::html::Toc /]
 [import org::w3c::xhtml::Link /]
-
-
-[query private _getFileNameFqn(
-	this : Package
-) : String = 
-	this.getFileNameFqn('/INT_ProductSecurityCharacteristics', 'html')
-/]
 
 
 [template public generateDocument_INT_ProductSecurityCharacteristics(
@@ -58,18 +56,23 @@
 
 [template private generateDocument_INT_ProductSecurityCharacteristics(
 	this : Package
-)]
-[file (this._getFileNameFqn(), false, 'UTF-8')]
+)
+? (this.csmn_isScoped())
+]
+[setEnv('DOCUMENT_NAME',        'INT_ProductSecurityCharacteristics') /]
+[setEnv('DOCUMENT_EXTENSION',   'html') /]
+
+[file (FILE_URI_DOCUMENT('1'), false, 'UTF-8')]
 [HTML_START()/]
-	[printChapter_CoverPage()/]
+	[CoverPage_Chapter_print()/]
 
-	[printChapter_Introduction()/]
+	[Introduction_Chapter_print()/]
 
-	[printChapter_BasicInformation()/]
+	[BasicInformation_Chapter_print()/]
 
-	[printChapter_ProductArchitecture()/]
+	[ProductArchitecture_Chapter_print()/]
 
-	[printChapter_SecurityCapabilities()/]
+	[SecurityCapabilities_Chapter_print()/]
 [HTML_END()/]
 [/file]
 [/template]
@@ -80,7 +83,7 @@
 	COVER PAGE
 	====================
 /]
-[template public printChapter_CoverPage(
+[template private CoverPage_Chapter_print(
 	this : Package
 )]
 [TOC_CoverPage_begin('Product Security Characteristics') /]
@@ -96,7 +99,7 @@
 	INTRODUCTION
 	====================
 /]
-[template public printChapter_Introduction(
+[template private Introduction_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Introduction') /]
@@ -149,7 +152,7 @@
 	BASIC INFORMATION
 	====================
 /]
-[template public printChapter_BasicInformation(
+[template private BasicInformation_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Basic information') /]
@@ -184,7 +187,7 @@
 	PRODUCT ARCHITECTURE
 	====================
 /]
-[template public printChapter_ProductArchitecture(
+[template private ProductArchitecture_Chapter_print(
 	this : Package
 )]
 [let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
@@ -201,9 +204,9 @@
 		--------------------
 	/]
 	[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
-	[this.TOC_Section_begin('Overview [product.productName/] (model ' + product.model + ')') /]
+	[this.TOC_Section_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
 	
-		!['[['/][product.productName/]-Product_Architecture_Diagram_([product.model/]).svg[']]'/]
+		[this.html_IMG_ProductArchitectureDiagram('1', product) /]
 		
 	[this.TOC_Section_end()/]
 	[/for]
@@ -293,9 +296,9 @@
 			
 			[html_PAGE_BREAK()/]			
 			[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Other interfaces') /]
-				<p>	
-					WARN: this section should be empty! This is an indicator of a wrongly configured model!
-				</p>
+				[html_ANSI_WARNING_Start()/]
+					this section should be empty! This is an indicator of a wrongly configured model!
+				[html_ANSI_CAUTION_End()/]
 			
 				[printInterfaceAsTable( otherInterfaces )/]
 			[TOC_SubSubSection_end() /]
@@ -486,13 +489,45 @@
 	/]
 	
 	[html_PAGE_BREAK()/]
-	[TOC_Section_begin('Software') /]	
-		[TOC_SubSection_begin('Software Bill of Material (SBOM)')/]
-[html_TBD() /]
-		[TOC_SubSection_end() /]
+	[TOC_Section_begin('Software') /]
+		[SBOM_SubSection_print() /]
 	[TOC_Section_end() /]
 
 [TOC_Chapter_end() /]
+[/template]
+
+
+[template private SBOM_SubSection_print(
+	this : Package
+)]
+[TOC_SubSection_begin('Software Bill of Material (SBOM)')/]
+	[TOC_SubSubSection_begin('Applicable Documents') /]
+
+	[TOC_SubSubSection_end() /]
+
+	[TOC_SubSubSection_begin('Declaration') /]
+		<p>
+			Off-the-shelf software is managed though Software Bill of Material (SBOM).
+		</p>
+	
+		[html_NOTE_Start() /]
+			Not every development environment supports the automated creation of a SBOM.<br/>
+			In such a case, the SBOM is written by hand.</br>
+			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
+		[html_NOTE_End() /]
+	
+		<p>
+			For a list of Off-the-shelf Software, see document
+			<ul>
+				<li>
+					[html_Document_Ref(
+						'Software Bill of Material (SBOM)'
+					)/]
+				</li>
+			</ul>
+		</p>
+	[TOC_SubSubSection_end() /]
+[TOC_SubSection_end() /]
 [/template]
 
 
@@ -501,7 +536,7 @@
 	SECURITY CAPABILITIES
 	====================
 /]
-[template public printChapter_SecurityCapabilities(
+[template private SecurityCapabilities_Chapter_print(
 	this : Package
 )]
 [TOC_Chapter_begin('Security capabilities') /]
@@ -521,17 +556,15 @@
 				
 				<p>
 					The following standards are covered by MDS2:
-				
-					!['[['/]MDS2 - Covered Standards[']]'/]
 				</p>
+				[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS('1')) /]
 			[TOC_SubSubSection_end() /]
 			
 			[TOC_SubSubSection_begin(' Covered capabilities') /]
 				<p>
 					MDS2 covers the following capabilities:
-			
-					!['[['/]MDS2 - Covered Capabilities[']]'/]
 				</p>
+				[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('1')) /]
 			[TOC_SubSubSection_end() /]
 		[TOC_SubSection_end()/]
 		

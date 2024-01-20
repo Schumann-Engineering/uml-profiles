@@ -12,18 +12,23 @@
  * REALM:    	(development)
  * CONTENT:  	iterates model to show debug information
  * PROFILES: 	./.
+ * UUID:		0
  * ====================
  **/]
 
 
 [import engineering::schumann::uml::m2t::test::Profile /]
 [import engineering::schumann::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::services::EnvironmentService /]
 
 
 [template public generateDocument_DEV_ModelTestReport(
 	this : Model
 )]
-	[file (this.getFileNameFqn(' (test-report)', 'md'), false, 'UTF-8')]
+[setEnv('DOCUMENT_NAME',        this.name + ' (test-report)') /]
+[setEnv('DOCUMENT_EXTENSION',   'md') /]
+
+[file (FILE_URI_DOCUMENT('0'), false, 'UTF-8')]
 # Self-test
 
 ## Profiles
@@ -59,5 +64,5 @@
 [/for]
 [/for]
 
-	[/file]
+[/file]
 [/template]
