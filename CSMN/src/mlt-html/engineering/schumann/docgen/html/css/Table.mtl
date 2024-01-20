@@ -28,11 +28,11 @@ td {
 
 /* Table rows */
 tbody tr:nth-child(odd) {
-
+	background-color:	#FFFFFF !important;
 }
 
 tbody tr:nth-child(even) {
-	background-color:	#FCFCFC !important;
+	background-color:	#F0F0F0 !important;
 }
 
 /* Table sizing */
