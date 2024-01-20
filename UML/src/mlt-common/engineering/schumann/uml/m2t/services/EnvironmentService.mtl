@@ -12,6 +12,35 @@
 /]
 
 
+[query public envVariable(scope : String, key : String) : String =
+	invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'getEnvironmentVariable(java.lang.String)', Sequence{key})
+/]
+
+
+[query public env(key : String, default : String) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 
+		'getEnvironmentVariable(java.lang.String, java.lang.String)',
+		Sequence{
+			key,
+			default
+		}
+	)
+/]
+
+
+[query public envVariable(scope : String, key : String, default : String) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 
+		'getEnvironmentVariable(java.lang.String, java.lang.String)',
+		Sequence{
+			key,
+			default
+		}
+	)
+/]
+
+
 [query public isTrue(key : String) : Boolean =
 	invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'isTrue(java.lang.String)', Sequence{key})
 /]
@@ -34,4 +63,32 @@
 
 [query public lastError() : String =
 	invoke('engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'lastError()', Sequence{})
+/]
+
+
+[query public setEnv(
+	key 	: String,
+	value	: String
+) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'setProperty(java.lang.String, java.lang.String)', 
+		Sequence{
+			key,
+			value
+		}
+	)
+/]
+
+
+[query public setEnvIfNotExists(
+	key 	: String,
+	value	: String
+) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.services.EnvironmentServiceImpl', 'setPropertyIfNotExist(java.lang.String, java.lang.String)', 
+		Sequence{
+			key,
+			value
+		}
+	)
 /]

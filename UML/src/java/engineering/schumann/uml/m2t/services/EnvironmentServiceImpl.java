@@ -34,6 +34,13 @@ public class EnvironmentServiceImpl {
 	private Properties m_Properties = new Properties();
 	
 	
+	public String getEnvironmentVariable(
+			String key
+	) throws IndexOutOfBoundsException
+	{
+		return getEnvironmentVariable(key, null);
+	}	
+	
 	/**
 	 * Returns the environment variable defined by key. Throws an exception if no such variable exists.  
 	 * 
@@ -41,15 +48,20 @@ public class EnvironmentServiceImpl {
 	 * @return Value of environment variable defined by key. 
 	 */
 	public String getEnvironmentVariable(
-			String key
+			String key,
+			String _default
 	) throws IndexOutOfBoundsException
 	{
-		// check if key exists in environment
-		if (!m_Properties.containsKey(key))
-			return null;
+		// check if key exists locally
+		if (m_Properties.containsKey(key))
+			return m_Properties.getProperty(key);
 		
-		// return environment variable by key 
-		return m_Properties.getProperty(key);
+		// check global instance
+		if (this != INSTANCE)
+			return INSTANCE.getEnvironmentVariable(key, _default);
+		
+		// nope
+		return _default;
 	}
 	
 	
@@ -115,6 +127,18 @@ public class EnvironmentServiceImpl {
 	}
 	
 	
+	public void setPropertyIfNotExist(
+		String key,
+		String value
+	)
+	{
+		// check local instance
+		if (m_Properties.containsKey(key))
+			return;
+		
+		m_Properties.setProperty(key, value);		
+	}	
+	
 	
 	/**
 	 * Query if an error occured or not.
@@ -143,14 +167,13 @@ public class EnvironmentServiceImpl {
 	 * @return True if key exists and its value is [on|true|1|yes]. False otherwise.
 	 */
 	public Boolean isTrue(String key)
-	{
-		
+	{		
 		// first check if key exists
-		if (!m_Properties.containsKey(key))
+		if (!exists(key))
 			return false;
 		
 		// get value
-		String value = m_Properties.getProperty(key).trim().toLowerCase();
+		String value = getEnvironmentVariable(key).trim().toLowerCase();
 
 		// check for true cases
 		for (String trueValue : TRUE_VALUES)
@@ -182,6 +205,15 @@ public class EnvironmentServiceImpl {
 	 */
 	public Boolean exists(String key)
 	{
-		return m_Properties.containsKey(key);		
+		// check local instance
+		if (m_Properties.containsKey(key))
+			return true;
+		
+		// check global instance
+		if (this != INSTANCE)
+			return INSTANCE.exists(key);
+		
+		// nope
+		return false;
 	}
 }
