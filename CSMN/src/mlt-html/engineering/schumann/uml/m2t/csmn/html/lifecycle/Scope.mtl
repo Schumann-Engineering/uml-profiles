@@ -26,7 +26,7 @@ post(trim())
 {
 	products : Set(Product) = this.csmn_scope().csmn_productInScope();
 }]
-<table class="table-2-columns" style="width: 100%; text-align: center;">
+<table class="table-[products->size()+1/]-columns" style="width: 100%; text-align: center;">
 [comment Product name /]
 	<tr>
 		<th>Trade name</th>
