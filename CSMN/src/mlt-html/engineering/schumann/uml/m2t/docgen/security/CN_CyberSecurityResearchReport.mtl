@@ -81,9 +81,9 @@ extends engineering::schumann::docgen::common::FileName
 [template private CoverPage_Chapter_print(
 	this : Package
 )]
-[TOC_CoverPage_begin('Cyber Security Research Report') /]
+[TOC_Title_begin('Cyber Security Research Report') /]
 	[this.printScope(true, true) /]
-[TOC_CoverPage_end() /]
+[TOC_Title_end() /]
 [/template]
 
 

@@ -1,18 +1,31 @@
 [comment encoding = UTF-8 /]
 [module Toc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
+[template public TOC_PAGE_begin(
+	devNull	: Element
+)]
+<div class="document-page">
+[/template]
+[template public TOC_PAGE_end(
+	devNull	: Element
+)]
+</div>
+[/template]
 
-[template public TOC_CoverPage_begin(
+
+[template public TOC_Title_begin(
 	devNull : Element,
 	title   : String
 )]
-<div class="card document-title">
-	<h1>[title /]</h1>
+[TOC_PAGE_begin()/]
+	<div class="document-title">
+		<h1>[title /]</h1>
 [/template]
-[template public TOC_CoverPage_end(
+[template public TOC_Title_end(
 	devNull : Element
 )]
-</div>
+	</div>
+[TOC_PAGE_end()/]
 [/template]
 
 
@@ -20,13 +33,15 @@
 	devNull : Element,
 	title   : String
 )]
-<div class="card document-chapter">
-	<h2>[title /]</h2>
+[TOC_PAGE_begin()/]
+	<div class="document-chapter">
+		<h2>[title /]</h2>
 [/template]
 [template public TOC_Chapter_end(
 	devNull : Element
 )]
-</div>
+	</div>
+[TOC_PAGE_end()/]
 [/template]
 
 

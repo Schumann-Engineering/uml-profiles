@@ -86,11 +86,9 @@
 [template private CoverPage_Chapter_print(
 	this : Package
 )]
-[TOC_CoverPage_begin('Product Security Characteristics') /]
-
-[this.printScope(true, true) /]
-
-[TOC_CoverPage_end() /]
+[TOC_Title_begin('Product Security Characteristics') /]
+	[this.printScope(true, true) /]
+[TOC_Title_end() /]
 [/template]
 
 
