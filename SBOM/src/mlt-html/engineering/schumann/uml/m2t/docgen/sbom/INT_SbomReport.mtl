@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module INT_SbomReport(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[**
+ * ====================
+ * MAIN
+ * ====================
+*/]
+[template public generateDocument_INT_SbomReport(
+	this : Model
+)]
+[/template]
