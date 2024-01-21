@@ -13,8 +13,8 @@
 
 
 [template public printAssetsForInterfacesAsTable(
-	interfaces : Set(Port),
-	assetType  : AssetType
+	interfaces 		: Set(Port),
+	assetType  		: AssetType
 )
 post(trim())
 {

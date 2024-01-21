@@ -4,6 +4,18 @@
 )]
 
 
+[template public html_PAGE_begin(
+	devNull	: Element
+)]
+<div class="document-page">
+[/template]
+[template public html_PAGE_end(
+	devNull	: Element
+)]
+</div>
+[/template]
+
+
 [template public html_PAGE_BREAK(
 	devNull : OclAny
 )]<div class="page-break" style="page-break-after: always;"></div>[/template]

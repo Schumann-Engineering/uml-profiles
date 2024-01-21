@@ -1,87 +1,57 @@
 [comment encoding = UTF-8 /]
 [module Toc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
-[template public TOC_PAGE_begin(
-	devNull	: Element
-)]
-<div class="document-page">
-[/template]
-[template public TOC_PAGE_end(
-	devNull	: Element
-)]
-</div>
-[/template]
-
 
 [template public TOC_Title_begin(
 	devNull : Element,
 	title   : String
 )]
-[TOC_PAGE_begin()/]
-	<div class="document-title">
-		<h1>[title /]</h1>
+<h1 class="document-title">[title /]</h1>
 [/template]
 [template public TOC_Title_end(
 	devNull : Element
-)]
-	</div>
-[TOC_PAGE_end()/]
-[/template]
+)][/template]
 
 
 [template public TOC_Chapter_begin(
 	devNull : Element,
 	title   : String
 )]
-[TOC_PAGE_begin()/]
-	<div class="document-chapter">
-		<h2>[title /]</h2>
+<h2 class="document-chapter">[title /]</h2>
 [/template]
 [template public TOC_Chapter_end(
 	devNull : Element
-)]
-	</div>
-[TOC_PAGE_end()/]
-[/template]
+)][/template]
 
 
 [template public TOC_Section_begin(
 	devNull : Element,
 	title   : String
 )]
-<div class="document-section">
-	<h3>[title /]</h3>
+<h3 class="document-section">[title /]</h3>
 [/template]
 [template public TOC_Section_end(
 	devNull : Element
-)]
-</div>
-[/template]
+)][/template]
 
 
 [template public TOC_SubSection_begin(
 	devNull : Element,
 	title   : String
 )]
-<div class="document-subsection">
-	<h4>[title /]</h4>
+<h4 class="document-subsection">[title /]</h4>
 [/template]
 [template public TOC_SubSection_end(
 	devNull : Element
-)]
-</div>
-[/template]
+)][/template]
 
 
 [template public TOC_SubSubSection_begin(
 	devNull : Element,
 	title   : String
 )]
-<div class="document-subsubsection">
-	<h5>[title /]</h5>
+<h5 class="document-subsubsection">[title /]</h5>
 [/template]
 [template public TOC_SubSubSection_end(
 	devNull : Element
-)]
-</div>
-[/template]
+)][/template]

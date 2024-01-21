@@ -15,7 +15,8 @@
 
 
 [template public printConnectionsForInterfacesAsTable(
-	interfaces : Set(Port)
+	interfaces : Set(Port),
+	startNewPage	: Boolean
 )
 post(trim())
 {
@@ -33,8 +34,12 @@ None
 <b>Connection "[name/]"</b>
 
 [self.printConnectionAsTable() /]
-
+[if (startNewPage)]
+[html_PAGE_end()/]
+[html_PAGE_begin()/]
+[else]
 [html_PAGE_BREAK() /]
+[/if]
 
 [/for]
 [/if]

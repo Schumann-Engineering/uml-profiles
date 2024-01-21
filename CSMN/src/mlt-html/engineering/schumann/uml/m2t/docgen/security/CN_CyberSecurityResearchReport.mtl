@@ -81,9 +81,11 @@ extends engineering::schumann::docgen::common::FileName
 [template private CoverPage_Chapter_print(
 	this : Package
 )]
-[TOC_Title_begin('Cyber Security Research Report') /]
-	[this.printScope(true, true) /]
-[TOC_Title_end() /]
+[html_PAGE_begin()/]
+	[TOC_Title_begin('Cyber Security Research Report') /]
+		[this.printScope(true, true) /]
+	[TOC_Title_end() /]
+[html_PAGE_end()/]
 [/template]
 
 
@@ -95,45 +97,46 @@ extends engineering::schumann::docgen::common::FileName
 [template private Introduction_Chapter_print(
 	this : Package
 )]
-[TOC_Chapter_begin('Introduction') /]
-	[TOC_Section_begin('Purpose') /]
-		<p>
-			This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
-		</p>
-
-		[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
-	[TOC_Section_end() /]
+[html_PAGE_begin()/]
+	[TOC_Chapter_begin('Introduction') /]
+		[TOC_Section_begin('Purpose') /]
+			<p>
+				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
+			</p>
 	
-	[TOC_Section_begin('Target audience') /]
-		<p>
-			This document is targeted at:
-			<ul>
-				<li>regulatory authorities</li>
-				<li>notified body</li>
+			[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_begin('Target audience') /]
+			<p>
+				This document is targeted at:
+				<ul>
+					<li>regulatory authorities</li>
+					<li>notified body</li>
+				</ul>
 			</ul>
-		</ul>
-	[TOC_Section_end() /]
-	
-	[TOC_Section_begin('Document Classification') /]
-		<p>
-			This document is classified as:<br/>
-			<b>CONFIDENTIAL</b> = for target eyes only.
-		</p>
-	[TOC_Section_end() /]
-	
-	[TOC_Section_begin('Scope') /]
-		[this.printScope(true, false) /]
-	[TOC_Section_end() /]
-	
-	[TOC_Section_begin('Abbreviations') /]
-		[TERMS_START()/]
-			[TERM_SECURITY_CPE()/]
-			[TERM_SECURITY_CPE()/]
-			[TERM_HEALTHCARE_HDO()/]
-		[TERMS_END()/]
-	[TOC_Section_end() /]
-
-[TOC_Chapter_end() /]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_begin('Document Classification') /]
+			<p>
+				This document is classified as:<br/>
+				<b>CONFIDENTIAL</b> = for target eyes only.
+			</p>
+		[TOC_Section_end() /]
+		
+		[TOC_Section_begin('Scope') /]
+			[this.printScope(true, false) /]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_begin('Abbreviations') /]
+			[TERMS_START()/]
+				[TERM_SECURITY_CPE()/]
+				[TERM_SECURITY_CPE()/]
+				[TERM_HEALTHCARE_HDO()/]
+			[TERMS_END()/]
+		[TOC_Section_end() /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end()/]
 [/template]
 
 
@@ -145,60 +148,62 @@ extends engineering::schumann::docgen::common::FileName
 [template private BasicInformation_Chapter_print(
 	this : Package
 )]
-[TOC_Chapter_begin('Basic Information') /]
+[html_PAGE_begin()/]
+	[TOC_Chapter_begin('Basic Information') /]
+		
+		[comment
+			--------------------
+			REGISTRANT
+			--------------------
+		/]
+		[Registrant_Section_print() /]
+		
+		[comment
+			--------------------
+			SOFTWARE
+			--------------------
+		/]
+		[TOC_Section_begin('Software information') /] 
+			[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+		[TOC_Section_end() /]
+		
+		[comment
+			--------------------
+			DATA ARCHITECTURE
+			--------------------
+		/]
+		[DataArchitecture_Section_print()/]
+		
+		[comment
+			--------------------
+			NETWORK SECURITY CAPABILITIES
+			--------------------
+		/]
+		[NetworkSecurityCapabilities_Section_print() /]
+		
+		[comment
+			--------------------
+			SECURITY PATCHES
+			--------------------
+		/]
+		[SecurityPatches_Section_print() /]
+		
+		[comment
+			--------------------
+			SECURITY SOFTWARE
+			--------------------
+		/]
+		[SecuritySoftware_Section_print() /]
 	
-	[comment
-		--------------------
-		REGISTRANT
-		--------------------
-	/]
-	[Registrant_Section_print() /]
-	
-	[comment
-		--------------------
-		SOFTWARE
-		--------------------
-	/]
-	[TOC_Section_begin('Software information') /] 
-		[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
-	[TOC_Section_end() /]
-	
-	[comment
-		--------------------
-		DATA ARCHITECTURE
-		--------------------
-	/]
-	[DataArchitecture_Section_print()/]
-	
-	[comment
-		--------------------
-		NETWORK SECURITY CAPABILITIES
-		--------------------
-	/]
-	[NetworkSecurityCapabilities_Section_print() /]
-	
-	[comment
-		--------------------
-		SECURITY PATCHES
-		--------------------
-	/]
-	[SecurityPatches_Section_print() /]
-	
-	[comment
-		--------------------
-		SECURITY SOFTWARE
-		--------------------
-	/]
-	[SecuritySoftware_Section_print() /]
-
-	
-	[comment
-		--------------------
-		OTS
-		--------------------
-	/]
-	[OTS_Section_print() /]
-[TOC_Chapter_end() /]
+		
+		[comment
+			--------------------
+			OTS
+			--------------------
+		/]
+		[OTS_Section_print() /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end()/]
 [/template]
 
 
@@ -623,21 +628,23 @@ extends engineering::schumann::docgen::common::FileName
 [template private Conclusion_Chapter_print(
 	this : Package
 )]
-[TOC_Chapter_begin('Conclusion') /]
-	[html_NO_PRINT_start() /]
-		[html_TASK_Start()/]
-			Outline the standardization of the network security implementation process for declaring medical devices and the results of network security vulnerability assessment, determine whether the network security of the declared medical devices meets the requirements, and whether the benefits outweigh the risks. 
-		[html_TASK_End()/]
-	[html_NO_PRINT_end() /]
-	
-	[TOC_Section_begin('Applicable Documents') /]
-		[protectedArea('Conclusion > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-	[TOC_Section_end() /]
-	
-	[TOC_Section_begin('Description') /]
-		[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
-	[TOC_Section_end() /]
-[TOC_Chapter_end() /]
+[html_PAGE_begin()/]
+	[TOC_Chapter_begin('Conclusion') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_Start()/]
+				Outline the standardization of the network security implementation process for declaring medical devices and the results of network security vulnerability assessment, determine whether the network security of the declared medical devices meets the requirements, and whether the benefits outweigh the risks. 
+			[html_TASK_End()/]
+		[html_NO_PRINT_end() /]
+		
+		[TOC_Section_begin('Applicable Documents') /]
+			[protectedArea('Conclusion > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_begin('Description') /]
+			[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		[TOC_Section_end() /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end()/]
 [/template]
 
 
@@ -649,9 +656,11 @@ extends engineering::schumann::docgen::common::FileName
 [template private Appendix_Chapter_print(
 	this : Package
 )]
-[TOC_Chapter_begin('Appendix') /]
-	[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS('2')) /]
-[TOC_Chapter_end() /]
+[html_PAGE_begin()/]
+	[TOC_Chapter_begin('Appendix') /]
+		[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS('2')) /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end()/]
 [/template]
 
 
