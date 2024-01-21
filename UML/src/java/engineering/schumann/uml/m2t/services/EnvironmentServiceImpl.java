@@ -76,6 +76,8 @@ public class EnvironmentServiceImpl {
 	{
 		try
 		{
+			System.out.println("INFO: tyring to load property file '" + fileName + "'");
+			
 			// open input stream from file name
 	        FileInputStream fis = new FileInputStream(fileName);
 			
@@ -87,6 +89,8 @@ public class EnvironmentServiceImpl {
 		}
 		catch (IOException e)
 		{
+			System.err.println("FAIL: loading of property file '" + fileName + "'");
+			
 			m_Properties.put(
 					LAST_ERROR_KEY, 
 					"Couldn't load properties from file '" + fileName + "'. Error: " + e.getMessage()

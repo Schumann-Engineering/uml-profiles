@@ -105,6 +105,7 @@ public class IncludeServiceImpl {
 			/* -----------
 			 * read file
 			 * ----------- */
+			System.out.println("INFO: including file '" + name + "' (found in '" + candidate + "')");
 			var result = Files.readString(Path.of(candidate));
 
 			/* -----------
@@ -112,6 +113,8 @@ public class IncludeServiceImpl {
 			 * ----------- */
 			if (file.getName().endsWith(".md"))
 			{
+				System.out.println("INFO: rendering file '" + name + "' (found in '" + candidate + "') as markdown");
+				
 				var renderExtensions = Arrays.asList(TablesExtension.create());
 				
 				// parse markdown
@@ -133,6 +136,7 @@ public class IncludeServiceImpl {
 		}
 		
 		// === FAIL ===
+		System.err.println("FAIL: include file '" + name + "' not found");
 		throw new FileNotFoundException("'" + name + "' not found in " + String.join("; ", paths));
 	}
 }
