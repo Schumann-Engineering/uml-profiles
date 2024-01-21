@@ -5,7 +5,6 @@
 
 
 [import engineering::schumann::uml::m2t::docgen::DEV_ModelReport /]
-[import engineering::schumann::uml::m2t::docgen::image::ALL_StereotypeIcons /]
 [import engineering::schumann::uml::m2t::docgen::security::CN_CyberSecurityResearchReport /]
 [import engineering::schumann::uml::m2t::docgen::security::INT_ProductSecurityCharacteristics /]
 
@@ -21,8 +20,6 @@
 	[comment @main/]
 
 [this.generateDocument_DEV_ModelTestReport() /]
-
-[this.generateFiles_ALL_StereotypeIcons() /]
 
 [this.generateDocument_INT_ProductSecurityCharacteristics() /]
 

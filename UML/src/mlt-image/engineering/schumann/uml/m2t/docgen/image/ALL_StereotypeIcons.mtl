@@ -15,9 +15,6 @@
  **/]
 
 
-[import engineering::schumann::docgen::common::FileName /]
-
-
 [template public generateFiles_ALL_StereotypeIcons(
 	this : Model
 )]
