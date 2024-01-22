@@ -1,0 +1,1 @@
+source: https://spdx.dev/use/specifications/

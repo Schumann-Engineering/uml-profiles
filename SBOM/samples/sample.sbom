@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbom:Sbom xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sbom="http://schumann.engineering/sbom/1" id="_xUDdkLkyEe6ZM4oBSVvf2w" timestamp="2024-01-22" name="Sample SBOM" version="1.0">
+  <ownedSystem id="_xUEEoLkyEe6ZM4oBSVvf2w" name="Coffee Maker Deluxe" version="1.0" supplier="CofeeMaker Inc.">
+    <ownedComponent id="_xUErsrkyEe6ZM4oBSVvf2t" name="Casing" version="3.0" supplier="CoffeeMaker Inc." requiredComponent="_xUErsbkyEe6ZM4oBSVvf2w">
+      <ownedComponent id="_xUErsbkyEe6ZM4oBSVvf2w" name="test">
+        <ownedComponent id="_44jJwLkyEe6ZM4oBSVvf2w"/>
+      </ownedComponent>
+    </ownedComponent>
+    <ownedComponent id="_xUErsrkyEe6ZM4oBSVvf2w" name="PCB" version="2.0a" supplier="CoffeeMaker Inc."/>
+  </ownedSystem>
+  <ownedRelationship source="_xUErsrkyEe6ZM4oBSVvf2t" target="_xUErsrkyEe6ZM4oBSVvf2w" type="contains"/>
+</sbom:Sbom>

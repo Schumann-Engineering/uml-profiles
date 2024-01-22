@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin
+      name="%pluginName"
+      id="SBOM"
+      version="1.0.0"
+      provider-name="Schumann.Engineering">
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore" export="true"/>
+   </requires>
+
+   <runtime>
+      <library name=".">
+         <export name="*"/>
+      </library>
+   </runtime>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SBOM -->
+      <package
+            uri="http://schumann.engineering/sbom/1"
+            class="engineering.schumann.uml.model.sbom.SBOMPackage"
+            genModel="src/ecore/SBOM.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated SBOM -->
+      <factory
+            uri="http://schumann.engineering/sbom/1"
+            class="engineering.schumann.uml.model.sbom.provider.SBOMItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SBOM -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="engineering.schumann.uml.model.sbom.presentation.SBOMModelWizardID"
+            name="%_UI_SBOMModelWizard_label"
+            class="engineering.schumann.uml.model.sbom.presentation.SBOMModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SBOMModelFile.gif">
+         <description>%_UI_SBOMModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SBOM -->
+      <editor
+            id="engineering.schumann.uml.model.sbom.presentation.SBOMEditorID"
+            name="%_UI_SBOMEditor_label"
+            icon="icons/full/obj16/SBOMModelFile.gif"
+            extensions="sbom"
+            class="engineering.schumann.uml.model.sbom.presentation.SBOMEditor"
+            contributorClass="engineering.schumann.uml.model.sbom.presentation.SBOMActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

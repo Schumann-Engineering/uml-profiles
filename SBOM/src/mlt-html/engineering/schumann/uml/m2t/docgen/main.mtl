@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module main(
-	'http://www.eclipse.org/uml2/5.0.0/UML'
+	'http://schumann.engineering/sbom/1'
 )]
 
 
@@ -12,8 +12,8 @@
  * MAIN
  * ====================
 */]
-[template public main_Model(
-	this : Model
+[template public main_Sbom(
+	this : Sbom
 )]
 	[comment @main/]
 

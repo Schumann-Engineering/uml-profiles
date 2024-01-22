@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="src-gen/edit"/>
+	<classpathentry kind="src" path="src-gen/editor"/>
+	<classpathentry kind="src" path="src-gen/model"/>
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="src" path="src/mlt-sbom"/>
 	<classpathentry kind="src" path="src/mlt-html"/>
