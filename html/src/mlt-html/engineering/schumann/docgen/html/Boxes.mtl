@@ -5,57 +5,88 @@
 
 [template public html_NO_PRINT_start(devNull : OclAny)]
 <div class="no-print">
+	<p class="box-header">
 [/template]
 [template public html_NO_PRINT_end(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_EXAMPLE_Start(devNull : OclAny)][html_INFO_Start('EXAMPLE') /][/template]
 [template public html_EXAMPLE_Start(devNull : OclAny, text : String)]
-<div class="box-example"><b>[text/]</b><br/>
+<div class="box-example">
+	<p class="box-header">
+		<b>[text/]</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_EXAMPLE_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_INFO_Start(devNull : OclAny)][html_INFO_Start('INFO') /][/template]
 [template public html_INFO_Start(devNull : OclAny, text : String)]
-<div class="box-info"><b>ℹ [text/]</b><br/>
+<div class="box-info">
+	<p class="box-header">
+		<b>ℹ [text/]</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_INFO_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_NOTE_Start(devNull : OclAny)]
-<div class="box-note"><b>📝 NOTE</b><br/>
+<div class="box-note">
+	<p class="box-header">
+		<b>📝 NOTE</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_NOTE_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_TIP_Start(devNull : OclAny)]
-<div class="box-tip"><b>💡 TIP</b><br/>
+<div class="box-tip">
+	<p class="box-header">
+		<b>💡 TIP</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_TIP_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_TASK_Start(devNull : OclAny)][html_TASK_Start('TASK') /][/template]
 [template public html_TASK_Start(devNull : OclAny, text : String)]
-<div class="box-task"><b>👷‍♀️ [text/]</b><br/>
+<div class="box-task">
+	<p class="box-header">
+		<b>👷‍♀️ [text/]</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_TASK_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_TBD(devNull : OclAny)]
-<div class="box-tbd"><b>⚠ TO-BE-DONE (TBD)</b></div>
+<div class="box-tbd">
+	<p>
+		<b>⚠ TO-BE-DONE (TBD)</b>
+	</p>
+</div>
 [/template]
 
 
@@ -63,32 +94,52 @@
   * ANSI Z535.6 
   * ====================== **/]
 [template public html_ANSI_NOTICE_Start(devNull : OclAny)]
-<div class="box-ansy-notice"><b>NOTICE</b><br/>
+<div class="box-ansy-notice">
+	<p class="box-header">
+		<b>NOTICE</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_ANSI_NOTICE_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_ANSI_CAUTION_Start(devNull : OclAny)]
-<div class="box-ansy-caution"><b>⚠ CAUTION</b><br/> 
+<div class="box-ansy-caution">
+	<p class="box-header">
+		<b>⚠ CAUTION</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_ANSI_CAUTION_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_ANSI_WARNING_Start(devNull : OclAny)]
-<div class="box-ansy-warning"><b>⚠ WARNING</b><br/>
+<div class="box-ansy-warning">
+	<p class="box-header">
+		<b>⚠ WARNING</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_ANSI_WARNING_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]
 
 
 [template public html_ANSI_DANGER_Start(devNull : OclAny)]
-<div class="box-ansy-danger"><b>⚠ DANGER</b><br/>
+<div class="box-ansy-danger">
+	<p class="box-header">
+		<b>⚠ DANGER</b>
+	</p>
+	<p class="box-content">
 [/template]
 [template public html_ANSI_DANGER_End(devNull : OclAny)]
+	</p>
 </div>
 [/template]

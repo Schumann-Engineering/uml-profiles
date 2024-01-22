@@ -25,6 +25,11 @@
 	}
 }
 
+.box-header {
+	font-weight:		bold;
+	font-transform:		capitalize;
+}
+
 /* Example */
 .box-example {
 	background-color: 	#FCFCFC;
