@@ -1,0 +1,77 @@
+[comment encoding = UTF-8 /]
+[module Product(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_Model /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+[import engineering::schumann::uml::m2t::common::services::PropertyFileService /]
+
+
+[query public csmn_cpe(
+	this : Product
+) : String =
+	nist_cpe(this.platformType, this.vendorName, this.productName, this.model)
+/]
+
+
+[query public csmn_cpeOld(
+	this : Product
+) : String =
+	nist_cpe(this.platformType, this.vendorName, this.productName, '-')
+/]
+
+
+[query public csmn_filterInScope(
+	this : Set(Product)
+) : Set(Product) =
+	this
+	->select( product : Product | product.csmn_hasValidScope() )
+	->sortedBy( model )
+/]
+
+
+[query public csmn_hasSoftwareVersionInScope(
+	this : Product
+) : Boolean = 
+	this
+	.csmn_softwareVersionInScope()
+	->size() > 0
+/]
+
+
+[query public csmn_hasValidScope(
+	this : Set(Product)
+) : Boolean =
+	if (this <> null) then
+		this
+		->csmn_filterInScope()
+		->size() > 0
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this : Product
+) : Boolean =
+	if (this <> null) then
+		this.model.csmn_hasValidScopeAsModel() and
+		this.softwareVersion->csmn_hasValidScopeAsSoftwareVersion()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_softwareVersionInScope(
+	this : Product
+) : Set(String) =
+	this
+	.softwareVersion
+	->csmn_filterInScopeAsSoftwareVersion()
+/]

@@ -1,0 +1,51 @@
+[module ManifestParserService(
+	'http://schumann.engineering/sbom/1'
+)/]
+
+
+[query public hasSbomManifest(
+	devNull			: OclAny,
+	locator			: String
+) : Boolean  =
+	hasSbomManifest(locator, Sequence(String) { } )
+/]
+
+
+[query public hasSbomManifest(
+	devNull			: OclAny,
+	locator			: String,
+	includePaths	: Sequence(String)
+) : Boolean  =
+	invoke(
+		'engineering.schumann.uml.m2t.sbom.services.ManifestParserServiceImpl',
+		'hasSbomManifest(java.lang.String, java.lang.Object)', 
+		Sequence{
+			locator,
+			includePaths
+		}
+	)
+/]
+
+
+[query public readSbomManifest(
+	devNull			: OclAny,
+	locator			: String
+) : Sbom  =
+	readSbomManifest(locator, Sequence(String) { } )
+/]
+
+
+[query public readSbomManifest(
+	devNull			: OclAny,
+	locator			: String,
+	includePaths	: Sequence(String)
+) : Sbom  =
+	invoke(
+		'engineering.schumann.uml.m2t.sbom.services.ManifestParserServiceImpl',
+		'loadSbomManifest(java.lang.String, java.lang.Object)', 
+		Sequence{
+			locator,
+			includePaths
+		}
+	)
+/]

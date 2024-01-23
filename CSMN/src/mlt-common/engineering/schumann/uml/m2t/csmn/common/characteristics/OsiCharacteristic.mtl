@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module OsiCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+
+
+[query public csmn_hasOsiCharacteristic(
+	this : Dependency
+) : Boolean =
+	this
+	._hasStereotype('CSMN::OsiCharacteristic')
+/]
+
+
+[query public csmn_osiCharacteristic(
+	this : Dependency
+) : OsiCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::OsiCharacteristic')
+/]

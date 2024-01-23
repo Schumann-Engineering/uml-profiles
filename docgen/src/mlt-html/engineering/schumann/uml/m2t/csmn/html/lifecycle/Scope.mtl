@@ -1,0 +1,158 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://www.eclipse.org/uml2/5.0.0/Types',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+[import engineering::schumann::uml::m2t::uml::services::StereotypeService /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::csmn::common::CpeCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+
+
+[template public printScope(
+	this : NamedElement,
+	printSoftware : Boolean,
+	printCpe : Boolean
+)
+? ( this.csmn_isScoped() )
+post(trim())
+{
+	products : Set(Product) = this.csmn_scope().csmn_productInScope();
+}]
+<table class="table-[products->size()+1/]-columns" style="width: 100%; text-align: center;">
+[comment Product name /]
+	<tr>
+		<th>Trade name</th>
+[for (products)]
+		<td>[productName /]</td>
+[/for]
+	</tr>
+[comment Model /]
+	<tr>
+		<th>Model</th>
+[for (products)]
+		<td>[model /]</td>
+[/for]
+	</tr>
+[comment UDI-DI /]
+	<tr>
+		<th>UDI-DI / GTIN</th>
+[for (products)]
+		<td>[udiDi /]</td>
+[/for]
+	</tr>
+[comment UDI-DI Base /]
+	<tr>
+		<th>Base-UDI-DI / GMN</th>
+[for (products)]
+		<td>[udiDiBase /]</td>
+[/for]
+	</tr>
+[comment software /]
+[if (printSoftware)]
+	<tr>
+		<th>Software release</th>
+[for (products)]
+		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
+[/for]
+	</tr>
+[/if]
+[comment CPE /]
+[if (printCpe)]
+	<tr>
+		<th>CPE</th>
+[for (products)]
+		<td>[csmn_html_getCpeLink()/]</td>
+[/for]
+	<tr>
+[/if]
+</table>
+[/template]
+
+
+[template public printScopeAsSoftware(
+	this : NamedElement,
+	type : CommonPlatformEnumerationType
+)
+? ( this.csmn_isScoped() )
+post(trim())
+{
+	products : Set(Product) = this.csmn_scope().csmn_productInScope();
+}]
+<table class="table-2-columns">
+[comment Product name /]
+	<tr>
+		<th>Product</th>
+[for (products)]
+		<td>[productName /]</td>
+[/for]
+	</tr>
+[comment Model /]
+	<tr>
+		<th>Model</th>
+[for (products)]
+		<td>[model /]</td>
+[/for]
+	</tr>
+[comment UDI-DI /]
+	<tr>
+		<th>UDI-DI / GTIN</th>
+[for (products)]
+		<td>[udiDi /]</td>
+[/for]
+	</tr>
+[comment UDI-DI Base /]
+	<tr>
+		<th>Base-UDI-DI / GMN</th>
+[for (products)]
+		<td>[udiDiBase /]</td>
+[/for]
+	</tr>
+[comment software name /]
+	<tr>
+		<th>Software name</th>
+[for (products)]
+		<td>[productName /] [type /]</td>
+[/for]
+	</tr>
+[comment software /]
+	<tr>
+		<th>Software release</th>
+[for (product : Product | products)]
+		<td>
+		[for (csmn_softwareVersionInScope()) separator ('<br/>')]
+			[self/] ([getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Date.Release.' + self) /])
+		[/for]
+		</td>
+[/for]
+	</tr>
+[comment CPE /]
+	<tr>
+		<th>CPE</th>
+[for (product : Product | products)]
+		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][product.csmn_html_getCpeLinkForFirmware(self)/][/for]</td>
+[/for]
+	<tr>
+[comment IEC 62304 software safety class /]
+	<tr>
+		<th>IEC 62304 Software Safety Class</th>
+[for (product : Product | products)]
+		<td>[getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Class.IEC62304') /]</td>
+[/for]
+	</tr>
+[comment (chinese???) Cybersecurity class ??? /]
+	<tr>
+		<th>Cybersecurity safety class</th>
+[for (product : Product | products)]
+		<td>[getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Class.Cybersec') /]</td>
+[/for]
+	</tr>
+</table>
+[/template]

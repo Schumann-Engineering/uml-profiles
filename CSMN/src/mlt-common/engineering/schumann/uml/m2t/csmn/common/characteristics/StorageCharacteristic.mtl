@@ -1,0 +1,40 @@
+[comment encoding = UTF-8 /]
+[module StorageCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+
+
+[query public csmn_hasStorageCharacteristic(
+	this : Port
+) : Boolean =
+	this
+	._hasStereotype('CSMN::StorageCharacteristic')
+/]
+
+
+[query public csmn_hasStorageCharacteristic(
+	this : Component
+) : Boolean =
+	this
+	._hasStereotype('CSMN::StorageCharacteristic')
+/]
+
+
+[query public csmn_storageCharacteristic(
+	this : Port
+) : StorageCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::StorageCharacteristic')
+/]
+
+
+[query public csmn_storageCharacteristic(
+	this : Component
+) : StorageCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::StorageCharacteristic')
+/]

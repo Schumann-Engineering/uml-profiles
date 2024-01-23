@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module Html('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[import engineering::schumann::uml::m2t::html::css::Boxes /]
+[import engineering::schumann::uml::m2t::html::css::ExternalTheme /]
+[import engineering::schumann::uml::m2t::html::css::List /]
+[import engineering::schumann::uml::m2t::html::css::MaterialDesign /]
+[import engineering::schumann::uml::m2t::html::css::PageSetup /]
+[import engineering::schumann::uml::m2t::html::css::Table /]
+[import engineering::schumann::uml::m2t::html::css::Toc /]
+
+[template private CSS(
+	devNull : OclAny
+)]
+[CSS_EXTERNAL_THEME() /]
+
+[CSS_PAGE_SETUP() /]
+
+[CSS_TABLE() /]
+
+[CSS_TOC() /]
+
+[CSS_LIST() /]
+
+[CSS_MATERIAL_DESIGN() /]
+
+[CSS_BOXES() /]
+[/template]
+
+
+[template public HTML_START(
+	devNull : OclAny
+)]
+<html>
+	<head>
+		<style>
+[CSS() /]
+		</style>
+	</head>
+	<body>
+[/template]
+
+
+[template public HTML_END(
+	devNull : OclAny
+)]
+	</body>
+</html>
+[/template]

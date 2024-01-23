@@ -1,0 +1,45 @@
+[comment encoding = UTF-8 /]
+[module AssetCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::css::Boxes /]
+
+
+[template public printAssetCharacteristic(
+	this : NamedElement
+) 
+? (this.csmn_isAsset())
+post(trim())
+{
+	asset : Asset = this.csmn_asset();
+}]
+[asset.print() /]
+[/template]
+
+
+[template public print(
+	this : Asset
+)
+post(trim())]
+[comment spec /]
+[if (not this.assetSpec._isNullOrEmpty())]
+<p>
+	<b><i>Specification</i></b>
+	<br/>
+	[this.assetSpec /]
+</p>
+[/if]
+<ul>
+[if (this.assetType <> null and this.assetType <> AssetType::Unspecified)]
+	<li>
+		<i>Type</i>: [this.assetType.csmn_toString() /]
+	</li>
+[/if]
+</ul>
+[/template]

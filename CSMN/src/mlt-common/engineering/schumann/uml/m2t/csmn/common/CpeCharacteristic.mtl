@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module CpeCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+
+
+[query public csmn_allCpe(
+	this : Model
+) : Set(Element) =
+	this._allStereotypedElements('CSMN::CpeCharacteristic')
+/]
+
+
+[query public csmn_cpes(
+	this : NamedElement
+) : Set(CommonPlatformEnumeration) =
+	this
+	._getTaggedValue('CSMN::CpeCharacteristic', 'cpe')
+/]
+
+
+[query public csmn_hasCpe(
+	this : NamedElement
+) : Boolean =
+	this
+	._hasStereotype('CSMN::CpeCharacteristic')
+/]

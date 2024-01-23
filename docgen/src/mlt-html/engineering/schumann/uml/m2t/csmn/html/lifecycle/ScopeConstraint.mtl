@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module ScopeConstraint(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+
+
+[template public printScopeConstraint(
+	this : NamedElement
+)
+? ( this.csmn_hasScopeConstraint() )
+post(trim())
+{
+	constraint : ScopeConstraint = this.csmn_scopeConstraint();
+}]
+[constraint.print() /]
+[/template]
+
+
+[template private print(
+	this : ScopeConstraint
+)
+post(trim())]
+[html_NOTE_Start()/]
+[comment type /]
+[this.constraintType /] with
+[for (this.constraint) separator('\n')][self.print() /][/for]
+[html_NOTE_End()/]
+[/template]
+
+
+[template private print(
+	this : ProductConstraint
+)
+post(trim())]
+▪ model [this.model /][for (this.softwareVersion) before('; SW') separator(', ')][self/][/for]
+[/template]

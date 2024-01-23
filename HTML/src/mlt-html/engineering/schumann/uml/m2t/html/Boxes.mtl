@@ -1,0 +1,145 @@
+[comment encoding = UTF-8 /]
+[module Boxes(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+[template public html_NO_PRINT_start(devNull : OclAny)]
+<div class="no-print">
+	<p class="box-header">
+[/template]
+[template public html_NO_PRINT_end(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_EXAMPLE_Start(devNull : OclAny)][html_INFO_Start('EXAMPLE') /][/template]
+[template public html_EXAMPLE_Start(devNull : OclAny, text : String)]
+<div class="box-example">
+	<p class="box-header">
+		<b>[text/]</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_EXAMPLE_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_INFO_Start(devNull : OclAny)][html_INFO_Start('INFO') /][/template]
+[template public html_INFO_Start(devNull : OclAny, text : String)]
+<div class="box-info">
+	<p class="box-header">
+		<b>ℹ [text/]</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_INFO_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_NOTE_Start(devNull : OclAny)]
+<div class="box-note">
+	<p class="box-header">
+		<b>📝 NOTE</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_NOTE_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_TIP_Start(devNull : OclAny)]
+<div class="box-tip">
+	<p class="box-header">
+		<b>💡 TIP</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_TIP_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_TASK_Start(devNull : OclAny)][html_TASK_Start('TASK') /][/template]
+[template public html_TASK_Start(devNull : OclAny, text : String)]
+<div class="box-task">
+	<p class="box-header">
+		<b>👷‍♀️ [text/]</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_TASK_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_TBD(devNull : OclAny)]
+<div class="box-tbd">
+	<p>
+		<b>⚠ TO-BE-DONE (TBD)</b>
+	</p>
+</div>
+[/template]
+
+
+[** ======================
+  * ANSI Z535.6 
+  * ====================== **/]
+[template public html_ANSI_NOTICE_Start(devNull : OclAny)]
+<div class="box-ansi-notice">
+	<p class="box-header">
+		<b>NOTICE</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_ANSI_NOTICE_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_ANSI_CAUTION_Start(devNull : OclAny)]
+<div class="box-ansi-caution">
+	<p class="box-header">
+		<b>⚠ CAUTION</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_ANSI_CAUTION_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_ANSI_WARNING_Start(devNull : OclAny)]
+<div class="box-ansi-warning">
+	<p class="box-header">
+		<b>⚠ WARNING</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_ANSI_WARNING_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]
+
+
+[template public html_ANSI_DANGER_Start(devNull : OclAny)]
+<div class="box-ansi-danger">
+	<p class="box-header">
+		<b>⚠ DANGER</b>
+	</p>
+	<p class="box-content">
+[/template]
+[template public html_ANSI_DANGER_End(devNull : OclAny)]
+	</p>
+</div>
+[/template]

@@ -1,7 +1,0 @@
-[module CommentService('http://www.eclipse.org/uml2/5.0.0/UML')/]
-
-[query public stripComment(aComment : Comment) : Sequence(String)
-	= invoke('engineering.schumann.uml.m2t.services.CommentServiceImpl', 'stripComment(org.eclipse.uml2.uml.Comment)', Sequence{aComment}) /]
-
-[query public stripComment(aComment : String) : Sequence(String)
-	= invoke('engineering.schumann.uml.m2t.services.CommentServiceImpl', 'stripComment(java.lang.String)', Sequence{aComment}) /]

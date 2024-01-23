@@ -2,15 +2,14 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: UML profiles and M2T
 Bundle-Vendor: Schumann.Engineering
-Bundle-SymbolicName: engineering.schumann.uml;singleton:=true
+Bundle-SymbolicName: engineering.schumann.uml.model.uml;singleton:=true
 Bundle-Version: 0.1.0
-Automatic-Module-Name: engineering.schumann.uml
-Bundle-Activator: engineering.schumann.uml.Activator
-Export-Package: engineering.schumann.uml,
- engineering.schumann.uml.m2t.services,
- org.eclipse.acceleo.m2t.services
+Automatic-Module-Name: engineering.schumann.uml.model.uml
+Bundle-Activator: engineering.schumann.uml.model.uml.Activator
+Export-Package: engineering.schumann.uml.m2t.common.services,
+ engineering.schumann.uml.m2t.uml.services,
+ engineering.schumann.uml.model.uml
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.uml2.uml,
  org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi,
  org.eclipse.ocl,
@@ -20,6 +19,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.profiler;bundle-version="3.3.0",
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
  com.google.guava,
+ org.eclipse.uml2.uml;bundle-version="5.5.0",
  org.apache.commons.lang;bundle-version="2.6.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy

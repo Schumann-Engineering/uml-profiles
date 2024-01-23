@@ -2,15 +2,14 @@
 <classpath>
 	<classpathentry kind="src" path="src/java"/>
 	<classpathentry kind="src" path="src/mlt-common"/>
-	<classpathentry kind="src" path="src/mlt-image"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="lib/maven-artifact/4.0.0-alpha-10/maven-artifact-4.0.0-alpha-10.jar"/>
-	<classpathentry kind="lib" path="lib/commonmark/0.21.0/commonmark-0.21.0.jar"/>
-	<classpathentry kind="lib" path="lib/commonmark/0.21.0/commonmark-ext-gfm-tables-0.21.0.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry exported="true" kind="lib" path="lib/maven-artifact/4.0.0-alpha-10/maven-artifact-4.0.0-alpha-10.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commonmark/0.21.0/commonmark-0.21.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commonmark/0.21.0/commonmark-ext-gfm-tables-0.21.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

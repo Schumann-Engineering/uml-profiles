@@ -1,0 +1,67 @@
+[comment encoding = UTF-8 /]
+[module common(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::AccessCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::AssetCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::BandwidthCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::EnergyCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::FirewallCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::OsiCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::StorageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::TcpCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::UsageCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::ConnectionCharacteristic /]
+
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+
+
+[template public printCharacteristics(
+	this : Element
+)
+post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
+]
+[comment
+	PRIMARY CHARACTERISTICS
+
+	NOTE: these don't advertise their title
+/]
+[comment Connection /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printConnectionCharacteristic() /][/if]
+[comment Interface /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
+[comment Asset /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAssetCharacteristic() /][/if]
+[comment
+	SECONDARY CHARACTERISTICS
+/]
+[comment Access /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAccessCharacteristic() /][/if]
+[comment Bandwith /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printBandwidthCharacteristic() /][/if]
+[if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printBandwidthCharacteristic() /][/if]
+[comment Energy /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printEnergyCharacteristic() /][/if]
+[if (this.oclIsKindOf(Relationship))][this.oclAsType(Relationship).printEnergyCharacteristic() /][/if]
+[comment Firewall /]
+[if (this.oclIsKindOf(Port))][this.oclAsType(Port).printFirewallCharacteristic() /][/if]
+[comment OSI /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printOsiCharacteristic() /][/if]
+[comment Storage /]
+[if (this.oclIsKindOf(Port))]
+[this.oclAsType(Port).owner.oclAsType(Component).printStorageCharacteristic() /]
+[this.oclAsType(Port).printStorageCharacteristic() /]
+[/if]
+[if (this.oclIsKindOf(Component))][this.oclAsType(Component).printStorageCharacteristic() /][/if]
+[comment TCP /]
+[if (this.oclIsKindOf(Dependency))][this.oclAsType(Dependency).printTcpCharacteristic() /][/if]
+[comment Usage /]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printUsageCharacteristic() /][/if]
+[comment Comment /]
+[this.printComment() /]
+[/template]

@@ -10,7 +10,6 @@ Bundle-Activator: engineering.schumann.uml.m2t.csmn.Activator
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: engineering.schumann.uml.m2t.csmn,
- engineering.schumann.uml.m2t.docgen,
  engineering.schumann.uml.profile.csmn,
  engineering.schumann.uml.profile.csmn.impl,
  engineering.schumann.uml.profile.csmn.util
@@ -30,7 +29,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
  com.google.guava,
  org.eclipse.papyrus.uml.extensionpoints,
- engineering.schumann.uml;bundle-version="0.1.0",
- engineering.schumann.uml.m2t.html;bundle-version="0.1.0"
+ engineering.schumann.uml.model.uml;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

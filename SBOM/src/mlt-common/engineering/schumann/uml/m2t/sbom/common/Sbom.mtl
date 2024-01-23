@@ -1,0 +1,51 @@
+[module Sbom(
+	'http://schumann.engineering/sbom/1'
+)/]
+
+
+[query public hasSbom(
+	devNull			: OclAny,
+	locator			: String
+) : Boolean  =
+	hasSbom(locator, Sequence(String) { } )
+/]
+
+
+[query public hasSbom(
+	devNull			: OclAny,
+	locator			: String,
+	includePaths	: Sequence(String)
+) : Boolean  =
+	invoke(
+		'engineering.schumann.uml.m2t.sbom.services.SbomServiceImpl',
+		'hasSbom(java.lang.String, java.lang.Object)', 
+		Sequence{
+			locator,
+			includePaths
+		}
+	)
+/]
+
+
+[query public readSbom(
+	devNull			: OclAny,
+	locator			: String
+) : Sbom  =
+	readSbom(locator, Sequence(String) { } )
+/]
+
+
+[query public readSbom(
+	devNull			: OclAny,
+	locator			: String,
+	includePaths	: Sequence(String)
+) : Sbom  =
+	invoke(
+		'engineering.schumann.uml.m2t.sbom.services.SbomServiceImpl',
+		'loadSbom(java.lang.String, java.lang.Object)', 
+		Sequence{
+			locator,
+			includePaths
+		}
+	)
+/]

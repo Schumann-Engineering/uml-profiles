@@ -1,0 +1,227 @@
+[comment encoding = UTF-8 /]
+[module InterfaceCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceType /]
+
+
+[query public csmn_hasInterfaceCharacteristic(
+	this : Port
+) : Boolean =
+	this
+	._hasStereotype('CSMN::InterfaceCharacteristic')
+/]
+
+
+[query public csmn_hasEnergyPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_energyPort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasMaterialPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_materialPort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasNetworkPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_networkPort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasNonNetworkPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_nonNetworkPort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasOtherPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_otherPort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasStoragePort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_storagePort()
+	->size() > 0
+/]
+
+
+[query public csmn_hasWirelessPort(
+	this : Component
+) : Boolean =
+	this
+	.csmn_wirelessPort()
+	->size() > 0
+/]
+
+
+[query public csmn_interfaceCharacteristic(
+	this : Port
+) : InterfaceCharacteristic =
+	this
+	._getStereotypeInstance('CSMN::InterfaceCharacteristic')
+/]
+
+
+[query public csmn_energyPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_energyPort()
+/]
+
+
+[query public csmn_energyPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isEnergyInterface()
+	)
+/]
+
+
+[query public csmn_materialPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_materialPort()
+/]
+
+
+[query public csmn_materialPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isMaterialInterface()
+	)
+/]
+
+
+[query public csmn_networkPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_networkPort()
+/]
+
+
+[query public csmn_networkPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isNetworkInterface()
+	)
+/]
+
+
+[query public csmn_nonNetworkPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_nonNetworkPort()
+/]
+
+
+[query public csmn_nonNetworkPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isNonNetworkInterface()
+	)
+/]
+
+
+[query public csmn_otherPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_otherPort()
+/]
+
+
+[query public csmn_otherPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isOtherInterface()
+	)
+/]
+
+
+[query public csmn_storagePort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_storagePort()
+/]
+
+
+[query public csmn_storagePort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isStorageInterface()
+	)
+/]
+
+
+[query public csmn_wirelessPort(
+	component : Component
+) : Set(Port) =
+	component
+	.ownedElement
+	->filter(Port)
+	->csmn_wirelessPort()
+/]
+
+
+[query public csmn_wirelessPort(
+	ports : Set(Port)
+) : Set(Port) =
+	ports
+	->select( port : Port | port.csmn_hasInterfaceCharacteristic() and
+		port.csmn_interfaceCharacteristic().interfaceType.csmn_isWirelessInterface()
+	)
+/]

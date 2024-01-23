@@ -1,0 +1,75 @@
+[comment encoding = UTF-8 /]
+[module OsiCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::OsiCharacteristic /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+
+
+[template public printOsiCharacteristic(
+	this : Dependency
+) 
+? (this.csmn_hasOsiCharacteristic())
+{
+	characteristic : OsiCharacteristic = this.csmn_osiCharacteristic();
+}
+]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : OsiCharacteristic
+)
+post(trim())]
+<p>
+	<b><i>OSI-Layer Characteristic</i></b>
+</p>
+<ul>
+[comment 7 = Application /]
+[if (this.application._hasContent())]
+	<li>
+		<i>Layer 7 (Application)</i>: [this.application /]
+	</li>
+[/if]
+[comment 6 = Presentation /]
+[if (this.presentation._hasContent())]
+	<li>
+		<i>Layer 6 (Presentation)</i>: [this.presentation/]
+	</li>
+[/if]
+[comment 5 = Session /]
+[if (this.session._hasContent())]
+	<li>
+		<i>Layer 5 (Session)</i>: [this.session /]
+	</li>
+[/if]
+[comment 4 = Transport /]
+[if (this.transport._hasContent())]
+	<li>
+		<i>Layer 4 (Transport)</i>: [this.transport /]
+	</li>
+[/if]
+[comment 3 = Network /]
+[if (this.network._hasContent())]
+	<li>
+		<i>Layer 3 (Network)</i>: [this.network /]
+	</li>
+[/if]
+[comment 2 = Data Link /]
+[if (this.dataLink._hasContent())]
+	<li>
+		<i>Layer 2 (Data Link)</i>: [this.dataLink /]
+	</li>
+[/if]
+[comment 1 = Physical /]
+[if (this.physical._hasContent())]
+	<li>
+		<i>Layer 1 (Physical)</i>: [this.physical /]
+	</li>
+[/if]
+</ul>
+[/template]

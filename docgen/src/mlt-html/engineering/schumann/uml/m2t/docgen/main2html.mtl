@@ -1,0 +1,61 @@
+[comment encoding = UTF-8 /]
+[module main2html(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::docgen::dev::DEV_ModelReport /]
+[import engineering::schumann::uml::m2t::docgen::security::CN_CyberSecurityResearchReport /]
+[import engineering::schumann::uml::m2t::docgen::security::INT_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::sbom::INT_SbomReport /]
+
+
+[**
+ * ====================
+ * MAIN
+ * ====================
+*/]
+[template public main_Model(
+	this : Model
+)]
+	[comment @main/]
+
+[comment
+	====================
+	DEV
+	====================
+/]
+[generateDocument_DEV_ModelTestReport() /]
+
+
+[comment
+	====================
+	CSMN
+	====================
+/]
+[generateDocument_INT_ProductSecurityCharacteristics() /]
+[generateDocument_CN_CyberSecurityResearchReport() /]
+
+
+[comment
+	====================
+	SBOM
+	====================
+/]
+[for (this.allOwnedElements()->filter(Package))]
+	[generateDocument_INT_SbomReport() /]
+[/for]
+
+[/template]
+
+
+
+
+[template public main_Sbom(
+	this : Sbom
+)]
+	[comment main/]
+
+[comment generateDocument_INT_SbomReport() /]
+[/template]
