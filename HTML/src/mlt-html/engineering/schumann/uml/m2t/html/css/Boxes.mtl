@@ -25,9 +25,17 @@
 	}
 }
 
+.box {
+	margin:				5mm 2mm 5mm 2mm;
+}
+
 .box-header {
 	font-weight:		bold;
 	font-transform:		capitalize;
+}
+
+.box-content {
+	text-align:			left !important;
 }
 
 /* Example */
