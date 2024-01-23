@@ -69,13 +69,14 @@
 )]
 [html_PAGE_begin()/]
 	[TOC_Title_begin('Software Bill of Material (SBOM)') /]
-		[html_ANSI_CAUTION_Start()/]
-			This document is the human readable representation of the SBOM.
-			However, only the machine readable SBOM is "valid".
-			This document is provided for convience only and should not be used to derive information about the product.
-		[html_ANSI_CAUTION_End()/]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
+
+	[html_ANSI_CAUTION_Start()/]
+		This document is the human readable representation of the SBOM.
+		However, only the machine readable SBOM is "valid".
+		This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
+	[html_ANSI_CAUTION_End()/]
 [html_PAGE_end()/]
 [/template]
 
@@ -92,7 +93,7 @@
 	[TOC_Chapter_begin('Introduction') /]
 		[TOC_Section_begin('Purpose') /]
 			<p>
-				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
+				This documents describe the software bill of material (SBOM) of the product(s) in scope.
 			</p>
 	
 			[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
@@ -102,8 +103,10 @@
 			<p>
 				This document is targeted at:
 				<ul>
+					<li>customers owning the product</li>
 					<li>regulatory authorities</li>
 					<li>notified body</li>
+					<li>risk manangers</li>
 				</ul>
 			</ul>
 		[TOC_Section_end() /]
@@ -111,8 +114,9 @@
 		[TOC_Section_begin('Document Classification') /]
 			<p>
 				This document is classified as:<br/>
-				<b>CONFIDENTIAL</b> = for target eyes only.
+				<b>PUBLIC</b> = Free to publicate or redistribute without changes.
 			</p>
+			[html_NOTE_Start()/]Copyright still aplies.[html_NOTE_End()/]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
