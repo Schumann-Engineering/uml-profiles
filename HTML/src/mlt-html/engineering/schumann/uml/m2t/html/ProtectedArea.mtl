@@ -7,9 +7,7 @@
 	name    		: String,
 	includePaths	: Sequence(String)
 )]
-	<!['['/]CDATA['['/]Start of user code: [name.replaceAll('>', '-') /][']]'/]>
 	[_protectedArea(name, includePaths) /]
-	<!['['/]CDATA['['/]End of user code: [name.replaceAll('>', '-') /][']]'/]>
 [/template]
 
 
