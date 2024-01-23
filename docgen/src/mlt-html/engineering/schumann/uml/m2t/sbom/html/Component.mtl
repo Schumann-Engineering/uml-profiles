@@ -1,0 +1,186 @@
+[comment encoding = UTF-8 /]
+[module Component(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::sbom::html::Property /]
+
+
+[template public printAsTable(
+	this : Component
+)]
+<div class="sbom-component">
+	<b>[name /]</b>
+	
+	<table class="table-2-columns">
+		<tbody>
+			[printAsTableRowVertical() /]
+		</tbody>
+	</table>
+</div>
+[/template]
+
+
+[template public printAsTableRowHorizontal(
+	this : Component
+)]
+<tr>
+	<td style="text-align: center">[printName() /]</td>
+	<td style="text-align: center">[type /]</td>
+	<td style="text-align: center">[printVersion() /]</td>
+	<td style="text-align: center">[classificationIec62304 /]</td>
+	<td style="text-align: center">[classificationIec81001_5_1 /]</td>
+</tr>
+[comment ownedComponent.printAsTableRowHorizontal() /]
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Component
+)]
+[comment name /]
+<tr>
+	<th>Name</th>
+	<td>[printName() /]</td>
+</tr>
+[comment type /]
+<tr>
+	<th>Type</th>
+	<td>[type /]</td>
+</tr>
+[comment classification /]
+<tr>
+	<th>IEC 62304 Classification</th>
+	<td>[classificationIec62304 /]</td>
+</tr>
+<tr>
+	<th>IEC 81001-5-1 Classification</th>
+	<td>[classificationIec81001_5_1 /]</td>
+</tr>
+[comment version /]
+<tr>
+	<th>Version</th>
+	<td>[printVersion() /]</td>
+</tr>
+[comment supplier /]
+<tr>
+	<th>Supplier</th>
+	<td>[printSupplier() /]</td>
+</tr>
+[comment summary /]
+<tr>
+	<th>summary</th>
+	<td>[summary /]</td>
+</tr>
+[comment description /]
+<tr>
+	<th>Description</th>
+	<td>[description /]</td>
+</tr>
+[comment owned components /]
+<tr>
+	<th>Sub-Components</th>
+	<td>
+		[if (ownedComponent->isEmpty())]
+		none
+		[else]
+		<ul>
+		[for (ownedComponent->sortedBy(name))]
+			<li>[_toString() /]</li>
+		[/for]
+		</ul>
+		[/if]
+	</td>
+</tr>
+[comment references /]
+[if (not reference->isEmpty())]
+<tr>
+	<th colspan="2">References</th>
+</tr>
+[for (reference)]
+<tr>
+	<td colspan="2" style="text-align: center;">[self /]</td>
+</tr>
+[/for]
+[/if]
+[comment properties /]
+[if (not ownedProperty->isEmpty())]
+<tr>
+	<th colspan="2">additional properties</th>
+</tr>
+[ownedProperty->sortedBy(key).printAsTableRowVertical() /]
+[/if]
+[/template]
+
+
+[template public printName(
+	this : Component
+)
+? (name = null or name.trim().size() = 0)
+]
+[html_ANSI_WARNING_Start()/]
+	name not allowed to be empty.<br/>Reason: NTIA minimum field
+[html_ANSI_WARNING_End()/]
+[/template]
+
+
+[template public printName(
+	this : Component
+)][name /][/template]
+
+
+[template public printSupplier(
+	this : Component
+)
+? (supplier = null or supplier.trim().size() = 0)
+]
+[html_ANSI_WARNING_Start()/]
+	supplier not allowed to be empty.<br/>Reason: NTIA minimum field
+[html_ANSI_WARNING_End()/]
+[/template]
+
+
+[template public printSupplier(
+	this : Component
+)]
+[supplier /]
+[/template]
+
+
+[template public printVersion(
+	this : Component
+)
+? (version = null or version.trim().size() = 0)
+]
+[html_ANSI_WARNING_Start()/]
+	version not allowed to be empty.<br/>Reason: NTIA minimum field
+[html_ANSI_WARNING_End()/]
+[/template]
+
+
+[template public printVersion(
+	this : Component
+)
+? (version.trim() = '*' or version.trim() = '-')
+]
+[html_ANSI_WARNING_Start()/]
+	version not allowed to be generic (* or -).<br/>Reason: NTIA minimum field
+[html_ANSI_WARNING_End()/]
+[/template]
+
+
+[template public printVersion(
+	this : Component
+)]
+[version /]
+[/template]
+
+
+[query public _toString(
+	this : Component
+) : String =
+	'«' + type + '» ' + name + ' (' + version + ')' 
+/]

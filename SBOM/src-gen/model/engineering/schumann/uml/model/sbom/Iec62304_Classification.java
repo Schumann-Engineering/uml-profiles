@@ -10,131 +10,105 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>System Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Iec62304 Classification</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see engineering.schumann.uml.model.sbom.SBOMPackage#getSystemType()
+ * @see engineering.schumann.uml.model.sbom.SBOMPackage#getIec62304_Classification()
  * @model
  * @generated
  */
-public enum SystemType implements Enumerator {
+public enum Iec62304_Classification implements Enumerator {
 	/**
-	 * The '<em><b>Hardware</b></em>' literal object.
+	 * The '<em><b>C</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HARDWARE_VALUE
+	 * @see #C_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	HARDWARE(0, "Hardware", "Hardware"),
-
-	/**
-	 * The '<em><b>Firmware</b></em>' literal object.
+	C(0, "C", "C"), /**
+	 * The '<em><b>B</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FIRMWARE_VALUE
+	 * @see #B_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	FIRMWARE(1, "Firmware", "Firmware"),
-
-	/**
-	 * The '<em><b>Application</b></em>' literal object.
+	B(1, "B", "B"), /**
+	 * The '<em><b>A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #APPLICATION_VALUE
+	 * @see #A_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	APPLICATION(2, "Application", "Application"),
+	A(2, "A", "A");
 
 	/**
-	 * The '<em><b>Operating System</b></em>' literal object.
+	 * The '<em><b>C</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #OPERATING_SYSTEM_VALUE
+	 * @see #C
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	OPERATING_SYSTEM(3, "OperatingSystem", "OperatingSystem");
+	public static final int C_VALUE = 0;
 
 	/**
-	 * The '<em><b>Hardware</b></em>' literal value.
+	 * The '<em><b>B</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #HARDWARE
-	 * @model name="Hardware"
+	 * @see #B
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HARDWARE_VALUE = 0;
+	public static final int B_VALUE = 1;
 
 	/**
-	 * The '<em><b>Firmware</b></em>' literal value.
+	 * The '<em><b>A</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FIRMWARE
-	 * @model name="Firmware"
+	 * @see #A
+	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FIRMWARE_VALUE = 1;
+	public static final int A_VALUE = 2;
 
 	/**
-	 * The '<em><b>Application</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #APPLICATION
-	 * @model name="Application"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int APPLICATION_VALUE = 2;
-
-	/**
-	 * The '<em><b>Operating System</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #OPERATING_SYSTEM
-	 * @model name="OperatingSystem"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int OPERATING_SYSTEM_VALUE = 3;
-
-	/**
-	 * An array of all the '<em><b>System Type</b></em>' enumerators.
+	 * An array of all the '<em><b>Iec62304 Classification</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final SystemType[] VALUES_ARRAY =
-		new SystemType[] {
-			HARDWARE,
-			FIRMWARE,
-			APPLICATION,
-			OPERATING_SYSTEM,
+	private static final Iec62304_Classification[] VALUES_ARRAY =
+		new Iec62304_Classification[] {
+			C,
+			B,
+			A,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>System Type</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Iec62304 Classification</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<SystemType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<Iec62304_Classification> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>System Type</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Iec62304 Classification</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static SystemType get(String literal) {
+	public static Iec62304_Classification get(String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			SystemType result = VALUES_ARRAY[i];
+			Iec62304_Classification result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -143,16 +117,16 @@ public enum SystemType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>System Type</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Iec62304 Classification</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static SystemType getByName(String name) {
+	public static Iec62304_Classification getByName(String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			SystemType result = VALUES_ARRAY[i];
+			Iec62304_Classification result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -161,19 +135,18 @@ public enum SystemType implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>System Type</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Iec62304 Classification</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static SystemType get(int value) {
+	public static Iec62304_Classification get(int value) {
 		switch (value) {
-			case HARDWARE_VALUE: return HARDWARE;
-			case FIRMWARE_VALUE: return FIRMWARE;
-			case APPLICATION_VALUE: return APPLICATION;
-			case OPERATING_SYSTEM_VALUE: return OPERATING_SYSTEM;
+			case C_VALUE: return C;
+			case B_VALUE: return B;
+			case A_VALUE: return A;
 		}
 		return null;
 	}
@@ -205,7 +178,7 @@ public enum SystemType implements Enumerator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private SystemType(int value, String name, String literal) {
+	private Iec62304_Classification(int value, String name, String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -252,4 +225,4 @@ public enum SystemType implements Enumerator {
 		return literal;
 	}
 	
-} //SystemType
+} //Iec62304_Classification

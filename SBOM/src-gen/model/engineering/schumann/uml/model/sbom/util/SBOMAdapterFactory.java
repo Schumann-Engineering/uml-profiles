@@ -7,7 +7,7 @@ import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
@@ -96,8 +96,8 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 				return createElementAdapter();
 			}
 			@Override
-			public Adapter casePropety(Propety object) {
-				return createPropetyAdapter();
+			public Adapter caseProperty(Property object) {
+				return createPropertyAdapter();
 			}
 			@Override
 			public Adapter caseRelationship(Relationship object) {
@@ -160,20 +160,6 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.System <em>System</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see engineering.schumann.uml.model.sbom.System
-	 * @generated
-	 */
-	public Adapter createSystemAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.DescribedElement <em>Described Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -216,16 +202,16 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.Propety <em>Propety</em>}'.
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see engineering.schumann.uml.model.sbom.Propety
+	 * @see engineering.schumann.uml.model.sbom.Property
 	 * @generated
 	 */
-	public Adapter createPropetyAdapter() {
+	public Adapter createPropertyAdapter() {
 		return null;
 	}
 
@@ -254,6 +240,20 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSbomAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.System <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.model.sbom.System
+	 * @generated
+	 */
+	public Adapter createSystemAdapter() {
 		return null;
 	}
 

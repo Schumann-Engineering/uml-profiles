@@ -69,6 +69,11 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_DPmB0LlOEe6X4rbk2n4SSQ" name="Default Value" value="true"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QG_G8ro-Ee6ujtVg7h4KZg" name="classificationIec81001_5_1" type="_HgFikLo-Ee6ujtVg7h4KZg" association="_QG7ckLo-Ee6ujtVg7h4KZg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_l_ttw7o-Ee6ujtVg7h4KZg" name="classificationIec62304" type="_h0Fa0Lo-Ee6ujtVg7h4KZg" association="_l_ttwLo-Ee6ujtVg7h4KZg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l_ttxLo-Ee6ujtVg7h4KZg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l_ttxbo-Ee6ujtVg7h4KZg" value="1"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__IOQsLk1Ee6X4rbk2n4SSQ" name="NamespaceType">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BkgF4Lk2Ee6X4rbk2n4SSQ" name="Application"/>
@@ -82,7 +87,7 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_o8ZCUrkiEe6SsLsmepNrCg" name="target" type="_o3dw8LkgEe6SsLsmepNrCg" association="_o8YbQLkiEe6SsLsmepNrCg"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_50Le0rkiEe6SsLsmepNrCg" name="type" type="_tfI0wLkiEe6SsLsmepNrCg" association="_50K3wLkiEe6SsLsmepNrCg"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="__74qoLknEe6SsLsmepNrCg" name="Propety">
+    <packagedElement xmi:type="uml:Class" xmi:id="__74qoLknEe6SsLsmepNrCg" name="Property">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_J72TsLkoEe6SsLsmepNrCg" name="key">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
@@ -179,6 +184,28 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_P8Q1oLk2Ee6X4rbk2n4SSQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_P8cb0Lk2Ee6X4rbk2n4SSQ" value="*"/>
       </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_HgFikLo-Ee6ujtVg7h4KZg" name="Iec81001_5_1_Classification">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KxDkELo-Ee6ujtVg7h4KZg" name="MAINTAINED"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Lt6N4Lo-Ee6ujtVg7h4KZg" name="SUPPORTED"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MYsQQLo-Ee6ujtVg7h4KZg" name="REQUIRED"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_QG7ckLo-Ee6ujtVg7h4KZg" memberEnd="_QG_G8ro-Ee6ujtVg7h4KZg _QG_G9bo-Ee6ujtVg7h4KZg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QG_G8Lo-Ee6ujtVg7h4KZg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QG_G8bo-Ee6ujtVg7h4KZg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_QG_G9bo-Ee6ujtVg7h4KZg" name="namespace" type="_cIaWULkeEe6SsLsmepNrCg" association="_QG7ckLo-Ee6ujtVg7h4KZg"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="_h0Fa0Lo-Ee6ujtVg7h4KZg" name="Iec62304_Classification">
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_lQVfQLo-Ee6ujtVg7h4KZg" name="C"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ksGw0Lo-Ee6ujtVg7h4KZg" name="B"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jyNUYLo-Ee6ujtVg7h4KZg" name="A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_l_ttwLo-Ee6ujtVg7h4KZg" memberEnd="_l_ttw7o-Ee6ujtVg7h4KZg _l_ttxro-Ee6ujtVg7h4KZg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_l_ttwbo-Ee6ujtVg7h4KZg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_l_ttwro-Ee6ujtVg7h4KZg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_l_ttxro-Ee6ujtVg7h4KZg" name="namespace" type="_cIaWULkeEe6SsLsmepNrCg" association="_l_ttwLo-Ee6ujtVg7h4KZg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_tBTFYLkmEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tBTscLkmEe6SsLsmepNrCg" source="http://www.eclipse.org/uml2/2.0.0/UML">

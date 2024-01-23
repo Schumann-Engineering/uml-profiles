@@ -3,9 +3,11 @@
 package engineering.schumann.uml.model.sbom.impl;
 
 import engineering.schumann.uml.model.sbom.Component;
+import engineering.schumann.uml.model.sbom.Iec62304_Classification;
+import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.NamespaceType;
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 import java.util.Collection;
@@ -19,6 +21,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -36,6 +39,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getOwnedProperty <em>Owned Property</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getType <em>Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#isSOUP <em>Is SOUP</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getClassificationIec62304 <em>Classification Iec62304</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,7 +74,7 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Propety> ownedProperty;
+	protected EList<Property> ownedProperty;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -110,6 +115,46 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @ordered
 	 */
 	protected boolean isSOUP = IS_SOUP_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getClassificationIec81001_5_1() <em>Classification Iec81001 51</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassificationIec81001_5_1()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iec81001_5_1_Classification CLASSIFICATION_IEC81001_51_EDEFAULT = Iec81001_5_1_Classification.MAINTAINED;
+
+	/**
+	 * The cached value of the '{@link #getClassificationIec81001_5_1() <em>Classification Iec81001 51</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassificationIec81001_5_1()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iec81001_5_1_Classification classificationIec81001_5_1 = CLASSIFICATION_IEC81001_51_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getClassificationIec62304() <em>Classification Iec62304</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassificationIec62304()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Iec62304_Classification CLASSIFICATION_IEC62304_EDEFAULT = Iec62304_Classification.C;
+
+	/**
+	 * The cached value of the '{@link #getClassificationIec62304() <em>Classification Iec62304</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClassificationIec62304()
+	 * @generated
+	 * @ordered
+	 */
+	protected Iec62304_Classification classificationIec62304 = CLASSIFICATION_IEC62304_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -162,9 +207,9 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @generated
 	 */
 	@Override
-	public EList<Propety> getOwnedProperty() {
+	public EList<Property> getOwnedProperty() {
 		if (ownedProperty == null) {
-			ownedProperty = new EObjectContainmentEList<Propety>(Propety.class, this, SBOMPackage.NAMESPACE__OWNED_PROPERTY);
+			ownedProperty = new EObjectContainmentEList<Property>(Property.class, this, SBOMPackage.NAMESPACE__OWNED_PROPERTY);
 		}
 		return ownedProperty;
 	}
@@ -221,6 +266,52 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @generated
 	 */
 	@Override
+	public Iec81001_5_1_Classification getClassificationIec81001_5_1() {
+		return classificationIec81001_5_1;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setClassificationIec81001_5_1(Iec81001_5_1_Classification newClassificationIec81001_5_1) {
+		Iec81001_5_1_Classification oldClassificationIec81001_5_1 = classificationIec81001_5_1;
+		classificationIec81001_5_1 = newClassificationIec81001_5_1 == null ? CLASSIFICATION_IEC81001_51_EDEFAULT : newClassificationIec81001_5_1;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51, oldClassificationIec81001_5_1, classificationIec81001_5_1));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Iec62304_Classification getClassificationIec62304() {
+		return classificationIec62304;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setClassificationIec62304(Iec62304_Classification newClassificationIec62304) {
+		Iec62304_Classification oldClassificationIec62304 = classificationIec62304;
+		classificationIec62304 = newClassificationIec62304 == null ? CLASSIFICATION_IEC62304_EDEFAULT : newClassificationIec62304;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304, oldClassificationIec62304, classificationIec62304));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
@@ -249,6 +340,10 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 				return getType();
 			case SBOMPackage.NAMESPACE__IS_SOUP:
 				return isSOUP();
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51:
+				return getClassificationIec81001_5_1();
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304:
+				return getClassificationIec62304();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -272,13 +367,19 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 				return;
 			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
 				getOwnedProperty().clear();
-				getOwnedProperty().addAll((Collection<? extends Propety>)newValue);
+				getOwnedProperty().addAll((Collection<? extends Property>)newValue);
 				return;
 			case SBOMPackage.NAMESPACE__TYPE:
 				setType((NamespaceType)newValue);
 				return;
 			case SBOMPackage.NAMESPACE__IS_SOUP:
 				setIsSOUP((Boolean)newValue);
+				return;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51:
+				setClassificationIec81001_5_1((Iec81001_5_1_Classification)newValue);
+				return;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304:
+				setClassificationIec62304((Iec62304_Classification)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -307,6 +408,12 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 			case SBOMPackage.NAMESPACE__IS_SOUP:
 				setIsSOUP(IS_SOUP_EDEFAULT);
 				return;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51:
+				setClassificationIec81001_5_1(CLASSIFICATION_IEC81001_51_EDEFAULT);
+				return;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304:
+				setClassificationIec62304(CLASSIFICATION_IEC62304_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -329,6 +436,10 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 				return type != TYPE_EDEFAULT;
 			case SBOMPackage.NAMESPACE__IS_SOUP:
 				return isSOUP != IS_SOUP_EDEFAULT;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51:
+				return classificationIec81001_5_1 != CLASSIFICATION_IEC81001_51_EDEFAULT;
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304:
+				return classificationIec62304 != CLASSIFICATION_IEC62304_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -347,6 +458,10 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 		result.append(type);
 		result.append(", isSOUP: ");
 		result.append(isSOUP);
+		result.append(", classificationIec81001_5_1: ");
+		result.append(classificationIec81001_5_1);
+		result.append(", classificationIec62304: ");
+		result.append(classificationIec62304);
 		result.append(')');
 		return result.toString();
 	}

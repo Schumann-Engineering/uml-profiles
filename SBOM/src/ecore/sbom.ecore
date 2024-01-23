@@ -11,12 +11,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredComponent" ordered="false"
         upperBound="-1" eType="#//Component"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedProperty" ordered="false"
-        upperBound="-1" eType="#//Propety" containment="true"/>
+        upperBound="-1" eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
         eType="#//NamespaceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSOUP" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec81001_5_1"
+        ordered="false" lowerBound="1" eType="#//Iec81001_5_1_Classification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec62304"
+        ordered="false" eType="#//Iec62304_Classification"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DescribedElement" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" ordered="false"
@@ -42,7 +46,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Propety">
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" ordered="false"
@@ -55,6 +59,16 @@
     <eLiterals name="Hardware" value="2"/>
     <eLiterals name="Library" value="3"/>
     <eLiterals name="OperatingSystem" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Iec81001_5_1_Classification">
+    <eLiterals name="MAINTAINED"/>
+    <eLiterals name="SUPPORTED" value="1"/>
+    <eLiterals name="REQUIRED" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Iec62304_Classification">
+    <eLiterals name="C"/>
+    <eLiterals name="B" value="1"/>
+    <eLiterals name="A" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"

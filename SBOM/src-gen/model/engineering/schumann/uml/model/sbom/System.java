@@ -2,6 +2,7 @@
  */
 package engineering.schumann.uml.model.sbom;
 
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>System</b></em>'.
@@ -13,5 +14,4 @@ package engineering.schumann.uml.model.sbom;
  * @generated
  */
 public interface System extends Namespace {
-
 } // System

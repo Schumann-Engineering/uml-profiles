@@ -56,7 +56,9 @@ public enum NamespaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIBRARY(3, "Library", "Library"), /**
+	LIBRARY(3, "Library", "Library"),
+
+	/**
 	 * The '<em><b>Operating System</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

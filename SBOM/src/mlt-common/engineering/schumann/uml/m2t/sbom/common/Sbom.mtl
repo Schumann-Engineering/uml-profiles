@@ -3,6 +3,9 @@
 )/]
 
 
+[import engineering::schumann::uml::m2t::sbom::common::System /]
+
+
 [query public hasSbom(
 	devNull			: OclAny,
 	locator			: String
@@ -48,4 +51,14 @@
 			includePaths
 		}
 	)
+/]
+
+
+[query public allComponents(
+	this : Sbom
+) : Set(Component) =
+	Set(Component) {}
+	->union(ownedSystem)
+	->union(ownedSystem.allComponents())
+	->asSet()
 /]

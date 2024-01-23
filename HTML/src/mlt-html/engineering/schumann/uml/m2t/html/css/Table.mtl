@@ -19,6 +19,8 @@ th {
 	background-color:	lightgray !important;
 	font-weight:		bold !important;
 	text-align:			center !important;
+
+	text-transform:		capitalize !important;
 }
 
 /* Table cell */

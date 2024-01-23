@@ -1,0 +1,117 @@
+[comment encoding = UTF-8 /]
+[module Sbom(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::sbom::common::Sbom /]
+[import engineering::schumann::uml::m2t::sbom::html::System /]
+[import engineering::schumann::uml::m2t::sbom::html::Component /]
+
+
+[template public printAsTable(
+	this : Sbom
+)]
+<table class="table-4-columns">
+	<thead>
+		<tr>
+			<th>Component Name</th>
+			<th>Component Type</th>
+			<th>Version</th>
+			<th>IEC 62304<br/>classification</th>
+			<th>IEC 81001-1-5<br/>classification</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		[printAsTableRowHorizontal() /]
+	</tbody>
+</table>
+[/template]
+
+
+[template public printAsTableRowHorizontal(
+	this : Sbom
+)]
+[ownedSystem.printAsTableRowHorizontal() /]
+[/template]
+
+
+[template public printFirmware(
+	sbom : Sbom
+)
+{
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Firmware and isSOUP = false);
+}]
+[if (components->isEmpty())]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
+[/template]
+
+
+[template public printOperatingSystems(
+	sbom : Sbom
+)
+{
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::OperatingSystem);
+}]
+[if (components->isEmpty())]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
+[/template]
+
+
+[template public printApplications(
+	sbom : Sbom
+)
+{
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Application and isSOUP = false);
+}]
+[if (components->isEmpty())]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
+[/template]
+
+
+[template public printLibraries(
+	sbom : Sbom
+)
+{
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Library and isSOUP = false);
+}]
+[if (components->isEmpty())]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
+[/template]
+
+
+[template public print3rdParty(
+	sbom : Sbom
+)
+{
+	components : Set(Component) = sbom.allComponents()->select(type <> NamespaceType::OperatingSystem and isSOUP);
+}]
+[if (components->isEmpty())]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
+[/template]

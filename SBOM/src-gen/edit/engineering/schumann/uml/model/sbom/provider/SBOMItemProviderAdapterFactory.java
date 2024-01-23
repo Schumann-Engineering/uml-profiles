@@ -95,49 +95,26 @@ public class SBOMItemProviderAdapterFactory extends SBOMAdapterFactory implement
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.System} instances.
+	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.Property} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SystemItemProvider systemItemProvider;
+	protected PropertyItemProvider propertyItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.System}.
+	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.Property}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSystemAdapter() {
-		if (systemItemProvider == null) {
-			systemItemProvider = new SystemItemProvider(this);
+	public Adapter createPropertyAdapter() {
+		if (propertyItemProvider == null) {
+			propertyItemProvider = new PropertyItemProvider(this);
 		}
 
-		return systemItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.Propety} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PropetyItemProvider propetyItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.Propety}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPropetyAdapter() {
-		if (propetyItemProvider == null) {
-			propetyItemProvider = new PropetyItemProvider(this);
-		}
-
-		return propetyItemProvider;
+		return propertyItemProvider;
 	}
 
 	/**
@@ -184,6 +161,29 @@ public class SBOMItemProviderAdapterFactory extends SBOMAdapterFactory implement
 		}
 
 		return sbomItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.System} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SystemItemProvider systemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.System}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSystemAdapter() {
+		if (systemItemProvider == null) {
+			systemItemProvider = new SystemItemProvider(this);
+		}
+
+		return systemItemProvider;
 	}
 
 	/**
@@ -292,7 +292,7 @@ public class SBOMItemProviderAdapterFactory extends SBOMAdapterFactory implement
 	@Override
 	public void dispose() {
 		if (componentItemProvider != null) componentItemProvider.dispose();
-		if (propetyItemProvider != null) propetyItemProvider.dispose();
+		if (propertyItemProvider != null) propertyItemProvider.dispose();
 		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
 		if (sbomItemProvider != null) sbomItemProvider.dispose();
 		if (systemItemProvider != null) systemItemProvider.dispose();

@@ -1,0 +1,34 @@
+[comment encoding = UTF-8 /]
+[module System(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::sbom::html::Component /]
+
+
+[template public printAsTableRowHorizontal(
+	this : System
+)
+{
+	components			: OrderedSet(Component)	= this.ownedComponent->sortedBy(name);
+
+	vendorComponents	: Set(Component)		= components->select(isSOUP = false);
+	otherComponents 	: Set(Component)		= components->select(isSOUP = true);
+}]
+<tr>
+	<th colspan="5">«System, [type /]» [name /] version [version /]</th>
+</tr>
+[if (vendorComponents->size() > 0)]
+<tr>
+	<th colspan="5" style="text-align: center;">by vendor</th>
+</tr>
+[vendorComponents.printAsTableRowHorizontal() /]
+[/if]
+[if (otherComponents->size() > 0)]
+<tr>
+	<th colspan="5" style="text-align: center;">by 3rd party</th>
+</tr>
+[otherComponents.printAsTableRowHorizontal() /]
+[/if]
+[/template]

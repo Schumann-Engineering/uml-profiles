@@ -441,13 +441,31 @@ public interface SBOMPackage extends EPackage {
 	int NAMESPACE__IS_SOUP = DESCRIBED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Classification Iec81001 51</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__CLASSIFICATION_IEC81001_51 = DESCRIBED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Classification Iec62304</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__CLASSIFICATION_IEC62304 = DESCRIBED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Namespace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE_FEATURE_COUNT = DESCRIBED_ELEMENT_FEATURE_COUNT + 5;
+	int NAMESPACE_FEATURE_COUNT = DESCRIBED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Namespace</em>' class.
@@ -457,16 +475,6 @@ public interface SBOMPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMESPACE_OPERATION_COUNT = DESCRIBED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.SystemImpl <em>System</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.model.sbom.impl.SystemImpl
-	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSystem()
-	 * @generated
-	 */
-	int SYSTEM = 8;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.ComponentImpl <em>Component</em>}' class.
@@ -605,6 +613,24 @@ public interface SBOMPackage extends EPackage {
 	int COMPONENT__IS_SOUP = NAMESPACE__IS_SOUP;
 
 	/**
+	 * The feature id for the '<em><b>Classification Iec81001 51</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CLASSIFICATION_IEC81001_51 = NAMESPACE__CLASSIFICATION_IEC81001_51;
+
+	/**
+	 * The feature id for the '<em><b>Classification Iec62304</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__CLASSIFICATION_IEC62304 = NAMESPACE__CLASSIFICATION_IEC62304;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -623,14 +649,14 @@ public interface SBOMPackage extends EPackage {
 	int COMPONENT_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.PropetyImpl <em>Propety</em>}' class.
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl <em>Property</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.model.sbom.impl.PropetyImpl
-	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getPropety()
+	 * @see engineering.schumann.uml.model.sbom.impl.PropertyImpl
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getProperty()
 	 * @generated
 	 */
-	int PROPETY = 5;
+	int PROPERTY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -639,7 +665,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPETY__KEY = 0;
+	int PROPERTY__KEY = 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -648,7 +674,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPETY__VALUE = 1;
+	int PROPERTY__VALUE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -657,25 +683,25 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPETY__TYPE = 2;
+	int PROPERTY__TYPE = 2;
 
 	/**
-	 * The number of structural features of the '<em>Propety</em>' class.
+	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPETY_FEATURE_COUNT = 3;
+	int PROPERTY_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Propety</em>' class.
+	 * The number of operations of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPETY_OPERATION_COUNT = 0;
+	int PROPERTY_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl <em>Relationship</em>}' class.
@@ -833,6 +859,16 @@ public interface SBOMPackage extends EPackage {
 	int SBOM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.SystemImpl <em>System</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.impl.SystemImpl
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSystem()
+	 * @generated
+	 */
+	int SYSTEM = 8;
+
+	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -959,6 +995,24 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM__IS_SOUP = NAMESPACE__IS_SOUP;
 
 	/**
+	 * The feature id for the '<em><b>Classification Iec81001 51</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__CLASSIFICATION_IEC81001_51 = NAMESPACE__CLASSIFICATION_IEC81001_51;
+
+	/**
+	 * The feature id for the '<em><b>Classification Iec62304</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__CLASSIFICATION_IEC62304 = NAMESPACE__CLASSIFICATION_IEC62304;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -987,6 +1041,26 @@ public interface SBOMPackage extends EPackage {
 	int NAMESPACE_TYPE = 9;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification <em>Iec81001 51Classification</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec81001_5_1_Classification()
+	 * @generated
+	 */
+	int IEC81001_51CLASSIFICATION = 10;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.Iec62304_Classification <em>Iec62304 Classification</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.Iec62304_Classification
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec62304_Classification()
+	 * @generated
+	 */
+	int IEC62304_CLASSIFICATION = 11;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.RelationshipType <em>Relationship Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -994,7 +1068,7 @@ public interface SBOMPackage extends EPackage {
 	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getRelationshipType()
 	 * @generated
 	 */
-	int RELATIONSHIP_TYPE = 10;
+	int RELATIONSHIP_TYPE = 12;
 
 
 	/**
@@ -1073,24 +1147,26 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getNamespace_IsSOUP();
 
 	/**
-	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.System <em>System</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>System</em>'.
-	 * @see engineering.schumann.uml.model.sbom.System
+	 * @return the meta object for the attribute '<em>Classification Iec81001 51</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Namespace#getClassificationIec81001_5_1()
+	 * @see #getNamespace()
 	 * @generated
 	 */
-	EClass getSystem();
+	EAttribute getNamespace_ClassificationIec81001_5_1();
 
 	/**
-	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec62304 <em>Classification Iec62304</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Namespace Type</em>'.
-	 * @see engineering.schumann.uml.model.sbom.NamespaceType
+	 * @return the meta object for the attribute '<em>Classification Iec62304</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Namespace#getClassificationIec62304()
+	 * @see #getNamespace()
 	 * @generated
 	 */
-	EEnum getNamespaceType();
+	EAttribute getNamespace_ClassificationIec62304();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.DescribedElement <em>Described Element</em>}'.
@@ -1200,17 +1276,6 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getElement_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Element#getTimestamp <em>Timestamp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Timestamp</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Element#getTimestamp()
-	 * @see #getElement()
-	 * @generated
-	 */
-	EAttribute getElement_Timestamp();
-
-	/**
 	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.model.sbom.Element#getReference <em>Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1222,47 +1287,58 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getElement_Reference();
 
 	/**
-	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Propety <em>Propety</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Element#getTimestamp <em>Timestamp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Propety</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Propety
+	 * @return the meta object for the attribute '<em>Timestamp</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Element#getTimestamp()
+	 * @see #getElement()
 	 * @generated
 	 */
-	EClass getPropety();
+	EAttribute getElement_Timestamp();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Propety#getKey <em>Key</em>}'.
+	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Property <em>Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Property</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Property
+	 * @generated
+	 */
+	EClass getProperty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Property#getKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Propety#getKey()
-	 * @see #getPropety()
+	 * @see engineering.schumann.uml.model.sbom.Property#getKey()
+	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getPropety_Key();
+	EAttribute getProperty_Key();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Propety#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Property#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Propety#getValue()
-	 * @see #getPropety()
+	 * @see engineering.schumann.uml.model.sbom.Property#getValue()
+	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getPropety_Value();
+	EAttribute getProperty_Value();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Propety#getType <em>Type</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Property#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Propety#getType()
-	 * @see #getPropety()
+	 * @see engineering.schumann.uml.model.sbom.Property#getType()
+	 * @see #getProperty()
 	 * @generated
 	 */
-	EAttribute getPropety_Type();
+	EAttribute getProperty_Type();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Relationship <em>Relationship</em>}'.
@@ -1338,6 +1414,46 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSbom_OwnedRelationship();
+
+	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.System <em>System</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>System</em>'.
+	 * @see engineering.schumann.uml.model.sbom.System
+	 * @generated
+	 */
+	EClass getSystem();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Namespace Type</em>'.
+	 * @see engineering.schumann.uml.model.sbom.NamespaceType
+	 * @generated
+	 */
+	EEnum getNamespaceType();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification <em>Iec81001 51Classification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Iec81001 51Classification</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification
+	 * @generated
+	 */
+	EEnum getIec81001_5_1_Classification();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.Iec62304_Classification <em>Iec62304 Classification</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Iec62304 Classification</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Iec62304_Classification
+	 * @generated
+	 */
+	EEnum getIec62304_Classification();
 
 	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.RelationshipType <em>Relationship Type</em>}'.
@@ -1433,24 +1549,20 @@ public interface SBOMPackage extends EPackage {
 		EAttribute NAMESPACE__IS_SOUP = eINSTANCE.getNamespace_IsSOUP();
 
 		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.SystemImpl <em>System</em>}' class.
+		 * The meta object literal for the '<em><b>Classification Iec81001 51</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.model.sbom.impl.SystemImpl
-		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSystem()
 		 * @generated
 		 */
-		EClass SYSTEM = eINSTANCE.getSystem();
+		EAttribute NAMESPACE__CLASSIFICATION_IEC81001_51 = eINSTANCE.getNamespace_ClassificationIec81001_5_1();
 
 		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}' enum.
+		 * The meta object literal for the '<em><b>Classification Iec62304</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.model.sbom.NamespaceType
-		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getNamespaceType()
 		 * @generated
 		 */
-		EEnum NAMESPACE_TYPE = eINSTANCE.getNamespaceType();
+		EAttribute NAMESPACE__CLASSIFICATION_IEC62304 = eINSTANCE.getNamespace_ClassificationIec62304();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.DescribedElementImpl <em>Described Element</em>}' class.
@@ -1539,14 +1651,6 @@ public interface SBOMPackage extends EPackage {
 		EAttribute ELEMENT__ID = eINSTANCE.getElement_Id();
 
 		/**
-		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ELEMENT__TIMESTAMP = eINSTANCE.getElement_Timestamp();
-
-		/**
 		 * The meta object literal for the '<em><b>Reference</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1555,14 +1659,22 @@ public interface SBOMPackage extends EPackage {
 		EAttribute ELEMENT__REFERENCE = eINSTANCE.getElement_Reference();
 
 		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.PropetyImpl <em>Propety</em>}' class.
+		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.model.sbom.impl.PropetyImpl
-		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getPropety()
 		 * @generated
 		 */
-		EClass PROPETY = eINSTANCE.getPropety();
+		EAttribute ELEMENT__TIMESTAMP = eINSTANCE.getElement_Timestamp();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl <em>Property</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.impl.PropertyImpl
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getProperty()
+		 * @generated
+		 */
+		EClass PROPERTY = eINSTANCE.getProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -1570,7 +1682,7 @@ public interface SBOMPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPETY__KEY = eINSTANCE.getPropety_Key();
+		EAttribute PROPERTY__KEY = eINSTANCE.getProperty_Key();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
@@ -1578,7 +1690,7 @@ public interface SBOMPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPETY__VALUE = eINSTANCE.getPropety_Value();
+		EAttribute PROPERTY__VALUE = eINSTANCE.getProperty_Value();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1586,7 +1698,7 @@ public interface SBOMPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PROPETY__TYPE = eINSTANCE.getPropety_Type();
+		EAttribute PROPERTY__TYPE = eINSTANCE.getProperty_Type();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl <em>Relationship</em>}' class.
@@ -1647,6 +1759,46 @@ public interface SBOMPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SBOM__OWNED_RELATIONSHIP = eINSTANCE.getSbom_OwnedRelationship();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.SystemImpl <em>System</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.impl.SystemImpl
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSystem()
+		 * @generated
+		 */
+		EClass SYSTEM = eINSTANCE.getSystem();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.NamespaceType
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getNamespaceType()
+		 * @generated
+		 */
+		EEnum NAMESPACE_TYPE = eINSTANCE.getNamespaceType();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification <em>Iec81001 51Classification</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec81001_5_1_Classification()
+		 * @generated
+		 */
+		EEnum IEC81001_51CLASSIFICATION = eINSTANCE.getIec81001_5_1_Classification();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.Iec62304_Classification <em>Iec62304 Classification</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.Iec62304_Classification
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec62304_Classification()
+		 * @generated
+		 */
+		EEnum IEC62304_CLASSIFICATION = eINSTANCE.getIec62304_Classification();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.RelationshipType <em>Relationship Type</em>}' enum.

@@ -31,22 +31,13 @@ public interface SBOMFactory extends EFactory {
 	Component createComponent();
 
 	/**
-	 * Returns a new object of class '<em>System</em>'.
+	 * Returns a new object of class '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>System</em>'.
+	 * @return a new object of class '<em>Property</em>'.
 	 * @generated
 	 */
-	System createSystem();
-
-	/**
-	 * Returns a new object of class '<em>Propety</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Propety</em>'.
-	 * @generated
-	 */
-	Propety createPropety();
+	Property createProperty();
 
 	/**
 	 * Returns a new object of class '<em>Relationship</em>'.
@@ -65,6 +56,15 @@ public interface SBOMFactory extends EFactory {
 	 * @generated
 	 */
 	Sbom createSbom();
+
+	/**
+	 * Returns a new object of class '<em>System</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>System</em>'.
+	 * @generated
+	 */
+	System createSystem();
 
 	/**
 	 * Returns the package supported by this factory.

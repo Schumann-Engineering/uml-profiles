@@ -6,7 +6,40 @@
 
 [template public html_IMG(
 	href	: String,
-	title	: String
+	title	: String,
+	alt		: String
+)][html_IMG(href, title, alt, null) /][/template]
+
+
+[template public html_IMG(
+	href	: String,
+	title	: String,
+	alt		: String,
+	style	: String
 )]
-<img src="[href/]" title="[title/]" />
+<img
+	src="[href/]"
+	title="[title/]"
+	alt="[alt/]"
+[if (style <> null and style.trim().size() > 0)]
+	style="[style /]"
+[/if]
+/>
+[/template]
+
+
+[template public html_IMG(
+	href	: String,
+	title	: String,
+	alt		: String,
+	properties : Sequence(String)
+)]
+<img
+	src="[href/]"
+	title="[title/]"
+	alt="[alt /]"
+	[for (properties) separator(' ')]
+	[self /]
+	[/for]
+/>
 [/template]

@@ -51,6 +51,8 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 			addRequiredComponentPropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addIsSOUPPropertyDescriptor(object);
+			addClassificationIec81001_5_1PropertyDescriptor(object);
+			addClassificationIec62304PropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -122,6 +124,50 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Classification Iec81001 51 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassificationIec81001_5_1PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Namespace_classificationIec81001_5_1_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Namespace_classificationIec81001_5_1_feature", "_UI_Namespace_type"),
+				 SBOMPackage.Literals.NAMESPACE__CLASSIFICATION_IEC81001_51,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Classification Iec62304 feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassificationIec62304PropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Namespace_classificationIec62304_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Namespace_classificationIec62304_feature", "_UI_Namespace_type"),
+				 SBOMPackage.Literals.NAMESPACE__CLASSIFICATION_IEC62304,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -156,22 +202,14 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		var typeValue = ((engineering.schumann.uml.model.sbom.Namespace)object).getType();
-		var isSOUP = ((engineering.schumann.uml.model.sbom.Namespace)object).isSOUP();
-		return
-			((isSOUP || typeValue != null)
-			?
-				"«" +
-					(typeValue == null ? "" :  typeValue.toString() + ", ") +
-					(isSOUP ? "SOUP" : "") +
-				"» "
-			:
-				"") +
-			super.getText(object);
+		String label = ((Namespace)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Namespace_type") :
+			getString("_UI_Namespace_type") + " " + label;
 	}
 
 
@@ -189,6 +227,8 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 		switch (notification.getFeatureID(Namespace.class)) {
 			case SBOMPackage.NAMESPACE__TYPE:
 			case SBOMPackage.NAMESPACE__IS_SOUP:
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC81001_51:
+			case SBOMPackage.NAMESPACE__CLASSIFICATION_IEC62304:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
@@ -218,7 +258,7 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(SBOMPackage.Literals.NAMESPACE__OWNED_PROPERTY,
-				 SBOMFactory.eINSTANCE.createPropety()));
+				 SBOMFactory.eINSTANCE.createProperty()));
 	}
 
 }

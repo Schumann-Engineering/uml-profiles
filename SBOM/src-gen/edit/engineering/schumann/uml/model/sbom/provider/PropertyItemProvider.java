@@ -3,7 +3,7 @@
 package engineering.schumann.uml.model.sbom.provider;
 
 
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 import java.util.Collection;
@@ -26,12 +26,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link engineering.schumann.uml.model.sbom.Propety} object.
+ * This is the item provider adapter for a {@link engineering.schumann.uml.model.sbom.Property} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PropetyItemProvider 
+public class PropertyItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class PropetyItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PropetyItemProvider(AdapterFactory adapterFactory) {
+	public PropertyItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,9 +78,9 @@ public class PropetyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Propety_key_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Propety_key_feature", "_UI_Propety_type"),
-				 SBOMPackage.Literals.PROPETY__KEY,
+				 getString("_UI_Property_key_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_key_feature", "_UI_Property_type"),
+				 SBOMPackage.Literals.PROPERTY__KEY,
 				 true,
 				 false,
 				 false,
@@ -100,9 +100,9 @@ public class PropetyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Propety_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Propety_value_feature", "_UI_Propety_type"),
-				 SBOMPackage.Literals.PROPETY__VALUE,
+				 getString("_UI_Property_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_value_feature", "_UI_Property_type"),
+				 SBOMPackage.Literals.PROPERTY__VALUE,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class PropetyItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Propety_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Propety_type_feature", "_UI_Propety_type"),
-				 SBOMPackage.Literals.PROPETY__TYPE,
+				 getString("_UI_Property_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Property_type_feature", "_UI_Property_type"),
+				 SBOMPackage.Literals.PROPERTY__TYPE,
 				 true,
 				 false,
 				 false,
@@ -134,14 +134,14 @@ public class PropetyItemProvider
 	}
 
 	/**
-	 * This returns Propety.gif.
+	 * This returns Property.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Propety"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Property"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class PropetyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Propety)object).getKey();
+		String label = ((Property)object).getKey();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Propety_type") :
-			getString("_UI_Propety_type") + " " + label;
+			getString("_UI_Property_type") :
+			getString("_UI_Property_type") + " " + label;
 	}
 
 
@@ -170,10 +170,10 @@ public class PropetyItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Propety.class)) {
-			case SBOMPackage.PROPETY__KEY:
-			case SBOMPackage.PROPETY__VALUE:
-			case SBOMPackage.PROPETY__TYPE:
+		switch (notification.getFeatureID(Property.class)) {
+			case SBOMPackage.PROPERTY__KEY:
+			case SBOMPackage.PROPERTY__VALUE:
+			case SBOMPackage.PROPERTY__TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

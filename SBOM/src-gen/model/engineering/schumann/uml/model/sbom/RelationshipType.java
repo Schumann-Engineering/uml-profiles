@@ -66,7 +66,9 @@ public enum RelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	IS_REQUIRED_BY(4, "isRequiredBy", "isRequiredBy"), /**
+	IS_REQUIRED_BY(4, "isRequiredBy", "isRequiredBy"),
+
+	/**
 	 * The '<em><b>Runs On</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -74,7 +76,9 @@ public enum RelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RUNS_ON(5, "runsOn", "runsOn"), /**
+	RUNS_ON(5, "runsOn", "runsOn"),
+
+	/**
 	 * The '<em><b>Runs</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,7 +86,9 @@ public enum RelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	RUNS(6, "runs", "runs"), /**
+	RUNS(6, "runs", "runs"),
+
+	/**
 	 * The '<em><b>Describes</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -90,7 +96,9 @@ public enum RelationshipType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DESCRIBES(7, "describes", "describes"), /**
+	DESCRIBES(7, "describes", "describes"),
+
+	/**
 	 * The '<em><b>Is Described By</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

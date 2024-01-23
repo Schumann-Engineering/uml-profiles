@@ -63,7 +63,7 @@
 [setEnv('DOCUMENT_EXTENSION',   'html') /]
 
 [file (FILE_URI_DOCUMENT('1'), false, 'UTF-8')]
-[HTML_START()/]
+[HTML_START('Product Security Characteristics')/]
 	[CoverPage_Chapter_print()/]
 
 	[Introduction_Chapter_print()/]
@@ -115,12 +115,13 @@
 		[TOC_Section_begin('Target audience') /]
 			<p>
 				This document is targeted at:
-				<ul>
-					<li>customers owning the product</li>
-					<li>regulatory authorities</li>
-					<li>notified body</li>
-					<li>risk manangers</li>
-				</ul>
+			</p>
+
+			<ul>
+				<li>customers owning the product</li>
+				<li>regulatory authorities</li>
+				<li>notified body</li>
+				<li>risk manangers</li>
 			</ul>
 		[TOC_Section_end() /]
 		
@@ -139,7 +140,7 @@
 		[TOC_Section_begin('Abbreviations') /]
 			[TERMS_START()/]
 				[TERM_SECURITY_CPE()/]
-				[TERM_SECURITY_CPE()/]
+				[TERM_SECURITY_CVE()/]
 				[TERM_HEALTHCARE_HDO()/]
 			[TERMS_END()/]
 		[TOC_Section_end() /]

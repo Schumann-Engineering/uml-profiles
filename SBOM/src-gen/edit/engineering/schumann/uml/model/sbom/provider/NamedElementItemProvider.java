@@ -122,19 +122,14 @@ public class NamedElementItemProvider extends ElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		var name = ((NamedElement)object).getName();
-		var version = ((NamedElement)object).getVersion();
-		var supplier = ((NamedElement)object).getSupplier();
-		return
-			// getString("_UI_NamedElement_type") + " " +
-			(name == null ? "(unset)" : name) +
-			(version == null ? "" : " (" + version + ")") +
-			(supplier == null ? "" : " [by " + supplier + "]")
-		;
+		String label = ((NamedElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_NamedElement_type") :
+			getString("_UI_NamedElement_type") + " " + label;
 	}
 
 

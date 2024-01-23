@@ -3,6 +3,43 @@ package engineering.schumann.uml.m2t.common.services;
 import org.apache.commons.lang.StringUtils;
 
 public class StringServiceImpl {
+
+	/**
+	 * Constant "True Values" (strings which are used to represent boolean true)
+	 */
+	private static final String[] TRUE_VALUES = { "1", "on" ,"yes" , "true" };
+
+
+	/**
+	 * Checks if a given string is true.
+	 * 
+	 * @param str
+	 * @return True if str is boolean true.
+	 */
+	public static Boolean IsTrue(String str)
+	{		
+		// check for true cases
+		for (String trueValue : TRUE_VALUES)
+			if (trueValue.equals(str))
+				return true;
+		
+		// otherwise it's false
+		return false;
+	}
+	
+
+	/**
+	 * Checks if a given string is false. (= not true)
+	 * 
+	 * @param str
+	 * @return True if str is boolean false.
+	 */
+	public static Boolean IsFalse(String str)
+	{
+		return !IsTrue(str);		
+	}
+	
+	
 	/**
 	 * ================================================
 	 * escape 

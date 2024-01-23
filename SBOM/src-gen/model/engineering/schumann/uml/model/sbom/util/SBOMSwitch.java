@@ -7,7 +7,7 @@ import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
@@ -114,9 +114,9 @@ public class SBOMSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SBOMPackage.PROPETY: {
-				Propety propety = (Propety)theEObject;
-				T result = casePropety(propety);
+			case SBOMPackage.PROPERTY: {
+				Property property = (Property)theEObject;
+				T result = caseProperty(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,21 +179,6 @@ public class SBOMSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>System</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>System</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSystem(engineering.schumann.uml.model.sbom.System object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Described Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -239,17 +224,17 @@ public class SBOMSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Propety</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Property</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Propety</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Property</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePropety(Propety object) {
+	public T caseProperty(Property object) {
 		return null;
 	}
 
@@ -280,6 +265,21 @@ public class SBOMSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSbom(Sbom object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>System</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>System</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSystem(engineering.schumann.uml.model.sbom.System object) {
 		return null;
 	}
 

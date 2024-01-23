@@ -1,0 +1,137 @@
+[comment encoding = UTF-8 /]
+[module Property(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Boxes /]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('info'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_INFO_Start()/]
+			[value /]
+		[html_INFO_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('note'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_NOTE_Start()/]
+			[value /]
+		[html_NOTE_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('tip'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_TIP_Start()/]
+			[value /]
+		[html_TIP_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('tbd'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_TBD()/]
+		[value /]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('notice'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_ANSI_NOTICE_Start()/]
+			[value /]
+		[html_ANSI_NOTICE_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('caution'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_ANSI_CAUTION_Start()/]
+			[value /]
+		[html_ANSI_CAUTION_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('warning') or key.equalsIgnoreCase('warn'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_ANSI_WARNING_Start()/]
+			[value /]
+		[html_ANSI_WARNING_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.equalsIgnoreCase('danger'))
+]
+<tr>
+	<td colspan="2" style="text-align: center">
+		[html_ANSI_DANGER_Start()/]
+			[value /]
+		[html_ANSI_DANGER_End()/]
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)]
+<tr>
+	<th>[key /]</th>
+	<td>[value /]</td>
+</tr>
+[/template]
+

@@ -3,11 +3,14 @@
 package engineering.schumann.uml.model.sbom.provider;
 
 
+import engineering.schumann.uml.model.sbom.Component;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -57,11 +60,14 @@ public class ComponentItemProvider extends NamespaceItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String label = ((Component)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Component_type") :
+			getString("_UI_Component_type") + " " + label;
 	}
 
 

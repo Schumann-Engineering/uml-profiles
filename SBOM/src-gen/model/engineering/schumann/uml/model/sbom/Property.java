@@ -6,23 +6,23 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Propety</b></em>'.
+ * A representation of the model object '<em><b>Property</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.model.sbom.Propety#getKey <em>Key</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.Propety#getValue <em>Value</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.Propety#getType <em>Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Property#getKey <em>Key</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Property#getValue <em>Value</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Property#getType <em>Type</em>}</li>
  * </ul>
  *
- * @see engineering.schumann.uml.model.sbom.SBOMPackage#getPropety()
+ * @see engineering.schumann.uml.model.sbom.SBOMPackage#getProperty()
  * @model
  * @generated
  */
-public interface Propety extends EObject {
+public interface Property extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,14 +33,14 @@ public interface Propety extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
-	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getPropety_Key()
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getProperty_Key()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getKey();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Propety#getKey <em>Key</em>}' attribute.
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Property#getKey <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Key</em>' attribute.
@@ -59,14 +59,14 @@ public interface Propety extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getPropety_Value()
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getProperty_Value()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	String getValue();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Propety#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Property#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
@@ -85,14 +85,14 @@ public interface Propety extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
-	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getPropety_Type()
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getProperty_Type()
 	 * @model ordered="false"
 	 * @generated
 	 */
 	String getType();
 
 	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Propety#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Property#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
@@ -101,4 +101,4 @@ public interface Propety extends EObject {
 	 */
 	void setType(String value);
 
-} // Propety
+} // Property

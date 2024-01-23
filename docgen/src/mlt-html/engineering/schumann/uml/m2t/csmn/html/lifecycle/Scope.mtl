@@ -71,7 +71,7 @@ post(trim())
 [for (products)]
 		<td>[csmn_html_getCpeLink()/]</td>
 [/for]
-	<tr>
+	</tr>
 [/if]
 </table>
 [/template]
@@ -87,34 +87,6 @@ post(trim())
 	products : Set(Product) = this.csmn_scope().csmn_productInScope();
 }]
 <table class="table-2-columns">
-[comment Product name /]
-	<tr>
-		<th>Product</th>
-[for (products)]
-		<td>[productName /]</td>
-[/for]
-	</tr>
-[comment Model /]
-	<tr>
-		<th>Model</th>
-[for (products)]
-		<td>[model /]</td>
-[/for]
-	</tr>
-[comment UDI-DI /]
-	<tr>
-		<th>UDI-DI / GTIN</th>
-[for (products)]
-		<td>[udiDi /]</td>
-[/for]
-	</tr>
-[comment UDI-DI Base /]
-	<tr>
-		<th>Base-UDI-DI / GMN</th>
-[for (products)]
-		<td>[udiDiBase /]</td>
-[/for]
-	</tr>
 [comment software name /]
 	<tr>
 		<th>Software name</th>
@@ -139,7 +111,7 @@ post(trim())
 [for (product : Product | products)]
 		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][product.csmn_html_getCpeLinkForFirmware(self)/][/for]</td>
 [/for]
-	<tr>
+	</tr>
 [comment IEC 62304 software safety class /]
 	<tr>
 		<th>IEC 62304 Software Safety Class</th>

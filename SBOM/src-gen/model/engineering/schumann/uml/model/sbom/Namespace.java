@@ -18,6 +18,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getOwnedProperty <em>Owned Property</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getType <em>Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#isSOUP <em>Is SOUP</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec62304 <em>Classification Iec62304</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace()
@@ -59,7 +61,7 @@ public interface Namespace extends DescribedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owned Property</b></em>' containment reference list.
-	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Propety}.
+	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Property}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Property</em>' containment reference list isn't clear,
@@ -71,7 +73,7 @@ public interface Namespace extends DescribedElement {
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<Propety> getOwnedProperty();
+	EList<Property> getOwnedProperty();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
@@ -128,5 +130,63 @@ public interface Namespace extends DescribedElement {
 	 * @generated
 	 */
 	void setIsSOUP(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Classification Iec81001 51</b></em>' attribute.
+	 * The literals are from the enumeration {@link engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Classification Iec81001 51</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Classification Iec81001 51</em>' attribute.
+	 * @see engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification
+	 * @see #setClassificationIec81001_5_1(Iec81001_5_1_Classification)
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace_ClassificationIec81001_5_1()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Iec81001_5_1_Classification getClassificationIec81001_5_1();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Classification Iec81001 51</em>' attribute.
+	 * @see engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification
+	 * @see #getClassificationIec81001_5_1()
+	 * @generated
+	 */
+	void setClassificationIec81001_5_1(Iec81001_5_1_Classification value);
+
+	/**
+	 * Returns the value of the '<em><b>Classification Iec62304</b></em>' attribute.
+	 * The literals are from the enumeration {@link engineering.schumann.uml.model.sbom.Iec62304_Classification}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Classification Iec62304</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Classification Iec62304</em>' attribute.
+	 * @see engineering.schumann.uml.model.sbom.Iec62304_Classification
+	 * @see #setClassificationIec62304(Iec62304_Classification)
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace_ClassificationIec62304()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	Iec62304_Classification getClassificationIec62304();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec62304 <em>Classification Iec62304</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Classification Iec62304</em>' attribute.
+	 * @see engineering.schumann.uml.model.sbom.Iec62304_Classification
+	 * @see #getClassificationIec62304()
+	 * @generated
+	 */
+	void setClassificationIec62304(Iec62304_Classification value);
 
 } // Namespace

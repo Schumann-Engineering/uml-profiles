@@ -265,10 +265,21 @@ package engineering.schumann.uml.m2t.sbom.services;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.AbstractMap;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 import engineering.schumann.uml.m2t.common.services.FileServiceImpl;
+import engineering.schumann.uml.m2t.common.services.StringServiceImpl;
+import engineering.schumann.uml.model.sbom.Component;
+import engineering.schumann.uml.model.sbom.Iec62304_Classification;
+import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
+import engineering.schumann.uml.model.sbom.Namespace;
+import engineering.schumann.uml.model.sbom.NamespaceType;
+import engineering.schumann.uml.model.sbom.Relationship;
+import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.Sbom;
 import engineering.schumann.uml.model.sbom.impl.SBOMFactoryImpl;
 
@@ -342,29 +353,399 @@ public class ManifestParserServiceImpl {
 		var system = SBOMFactoryImpl.eINSTANCE.createSystem();
 		result.getOwnedSystem().add(system);
 		
-		for (String line : content.split("\n|\r"))
+		var components = new HashMap<String, Namespace>();
+		var relationships = new ArrayList<AbstractMap.SimpleEntry<Namespace, String[]>>();
+		
+		Namespace lastComponent = null;
+		var lines = content.split("\n|\r");
+		for (int i=0; i<lines.length; i++)
 		{
+			var line = lines[i];
+			
 			if (line.isBlank())
 				continue;
 			if (line.startsWith("#"))
 				continue;
 			
 			// parse line
-			var parts = line.split(" |\t");
-			var componentName = parts[0];
-			var componentVersion = parts[2];
+			String[] parts = null;
+			// advanced manifest file uses tabs
+			if (line.contains("\t"))
+				parts = line.split("\t");
+			// standard manifest uses space
+			else
+				parts = line.split(" ");
 			
-			// create component
-			var component = SBOMFactoryImpl.eINSTANCE.createComponent();
-			component.setName(componentName);
-			component.setVersion(componentVersion);
+			var firstPart = parts[0].trim();
 			
-			// add to system
-			system.getOwnedComponent().add(component);
+			/*
+			 * RELATIONSHIP
+			 */
+			if (firstPart.equals("->"))
+			{
+				// GUARD
+				if (lastComponent == null)
+					throw new Exception("found relationship '" + line + "' without component (line number: " + i + ")");
+				if (parts.length < 3)
+					throw new Exception("at least 3 parts to a relationship required: -> <type> <target>. Found only " + parts.length + " in: " + line + " (line number: " + i + ")");
+
+				// remember relationship for now...
+				// ... we need to resolve the target later after parsing all components
+				relationships.add(new AbstractMap.SimpleEntry<Namespace, String[]>(lastComponent, parts));
+			}
+			/*
+			 * PROPERTY
+			 */
+			else if (firstPart.equals("-") || firstPart.isBlank())
+			{
+				for (int p=1; p<=2 && p<parts.length; p++)
+					SetProperty(lastComponent, parts[p]);
+			}
+			/*
+			 * COMPONENT
+			 */
+			else
+			{
+				if (parts.length <= 2)
+					throw new Exception("Component needs more than information. Maybe missing tab? (line: '" + line + "'; line number: " + i + ")");
+				
+				var name = parts[0];
+				//var componentArch = parts[1];
+				var version = parts[2];
+				
+				// first line is used as system
+				if (lastComponent == null)
+				{
+					system.setName(name);
+					system.setVersion(version);			
+					
+					lastComponent = system;
+				}
+				// create component
+				else
+				{
+					var component = SBOMFactoryImpl.eINSTANCE.createComponent();
+					component.setName(name);
+					component.setVersion(version);
+				
+					// add to system
+					system.getOwnedComponent().add(component);
+					// remember last
+					lastComponent = component;
+				}
+				
+				// remember
+				components.put(name, lastComponent);
+			}
+			
+			/*
+			 * PROPERTIES
+			 */
+			for (int p=3; p<parts.length; p++)
+				SetProperty(lastComponent, parts[p]);
+		}
+
+		/*
+		 * RESOLVE RELATIONSHIPS
+		 */
+		for (var relationshipMeta : relationships)
+		{
+			// map
+			var source = relationshipMeta.getKey();
+			var targetName = relationshipMeta.getValue()[2];
+			if (!components.containsKey(targetName))
+				throw new Exception("couldn't find component '" + targetName + "' in relationship '" + String.join("\t", relationshipMeta.getValue()) + "'");
+			var target = components.get(targetName);
+			
+			
+			// create relationship
+			var relationship = SBOMFactoryImpl.eINSTANCE.createRelationship();			
+			// ... source
+			relationship.setSource(lastComponent);
+			// ... relationship type
+			SetType(relationship, relationshipMeta.getValue()[1]);
+			if (relationship.getType() == RelationshipType.IS_REQUIRED_BY)
+			{
+				if (!(target instanceof Component))
+					throw new Exception("expected a Component, but found '" + target.eClass().getName() + "' for target '" + targetName + "'");
+				
+				// add to component
+				source.getRequiredComponent().add((Component)target);
+			}
+			// ... target
+			relationship.setTarget(target);
+			
+			// add to sbom
+			result.getOwnedRelationship().add(relationship);
 		}
 		
 		// === RESULT ===
 		return result;
 	}
+	
+	
+	private static void SetProperty(
+			Namespace	namespace,
+			String		propertyStr
+	)
+	throws
+		Exception
+	{
+		// === GUARDS ===
+		if (propertyStr == null || propertyStr.isBlank())
+			return;
+		
+		// === BODY ===
+		// split up string into key and value.
+		// NOTE: ':' is the delimiter, however it could be part of the value as well.
+		var delimiterPosition = propertyStr.indexOf(':');
+		
+		if (delimiterPosition < 0)
+			throw new Exception("couldn't find property key-value delimiter (':') in property: '" + propertyStr + "'");
+		
+		
+		var key = propertyStr.substring(0,  delimiterPosition);
+		var value = propertyStr.substring(delimiterPosition+1);
+		
+		SetProperty(namespace, key, value);
+	}
 
+	
+	private static void SetProperty(
+			Namespace	namespace,
+			String		propertyName,
+			String		propertyValue
+	)
+	throws
+		Exception
+	{
+		if (propertyName == null || propertyName.isBlank())
+			throw new Exception("property naem is null or empty");
+		
+		switch (propertyName.trim().toLowerCase())
+		{
+			case "descr":
+			case "description":
+				namespace.setSupplier(propertyValue); break;
+
+			case "issoup":
+				namespace.setIsSOUP(StringServiceImpl.IsTrue(propertyValue));
+				break;
+			
+			case "summary":
+			case "title":
+				namespace.setSummary(propertyValue); break;
+			
+			case "supplier":
+				namespace.setSupplier(propertyValue); break;
+
+			case "type":
+				SetType(namespace, propertyValue); break;	
+
+			case "iec 62304":
+			case "iec62304":
+			case "62304":
+				SetIec62304(namespace, propertyValue); break;	
+
+			case "iec 81001-5-1":
+			case "iec81001-5-1":
+			case "81001-5-1":
+				SetIec81001_5_1(namespace, propertyValue); break;	
+				
+			case "ref":
+			case "reference":
+				namespace.getReference().add(propertyValue); break;
+			
+			default:
+				// create property
+				var genericProperty = SBOMFactoryImpl.eINSTANCE.createProperty();
+				genericProperty.setKey(propertyName);
+				genericProperty.setValue(propertyValue);
+				
+				// add to component
+				namespace.getOwnedProperty().add(genericProperty);
+		}
+	}
+	
+	
+	private static void SetIec62304(
+			Namespace namespace,
+			String classification
+	)
+	throws
+		Exception
+	{
+		switch (classification.trim().toLowerCase())
+		{
+			case "low":
+			case "low risk":
+			case "lowrisk":
+			case "low-risk":
+			case "a":
+				namespace.setClassificationIec62304(Iec62304_Classification.A);
+				break;
+
+			case "medium":
+			case "medium risk":
+			case "mediumrisk":
+			case "medium-risk":
+			case "b":
+				namespace.setClassificationIec62304(Iec62304_Classification.B);
+				break;
+
+			case "high":
+			case "high risk":
+			case "highrisk":
+			case "high-risk":
+			case "c":
+				namespace.setClassificationIec62304(Iec62304_Classification.C);
+				break;
+
+				
+			default:
+				throw new Exception("unknown IEC 62304 classification '" + classification + "'");
+		}		
+	}
+
+	
+	
+	
+	private static void SetIec81001_5_1(
+			Namespace namespace,
+			String classification
+	)
+	throws
+		Exception
+	{
+		switch (classification.trim().toLowerCase())
+		{
+			case "vendor":
+			case "maintained":
+				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.MAINTAINED);
+				break;
+
+			case "sup":
+			case "supported":
+				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.SUPPORTED);
+				break;
+
+			case "req":
+			case "required":
+				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.REQUIRED);
+				break;
+
+				
+			default:
+				throw new Exception("unknown IEC 81001-5-1 classification '" + classification + "'");
+		}		
+	}
+
+	
+	private static void SetType(
+			Namespace namespace,
+			String typeStr
+	)
+	throws
+		Exception
+	{
+		switch (typeStr.trim().toLowerCase())
+		{
+			case "a":
+			case "app":
+			case "application":
+				namespace.setType(NamespaceType.APPLICATION);
+				break;
+		
+			case "f":
+			case "firmware":
+			case "fw":
+				namespace.setType(NamespaceType.FIRMWARE);
+				break;
+
+			case "h":
+			case "hardware":
+			case "hw":
+				namespace.setType(NamespaceType.HARDWARE);
+				break;
+
+			case "lib":
+			case "library":
+				namespace.setType(NamespaceType.LIBRARY);
+				break;
+
+			case "o":
+			case "os":
+			case "operatingsystem":
+			case "operating system":
+			case "operating-system":
+			case "operating_system":
+				namespace.setType(NamespaceType.OPERATING_SYSTEM);
+				break;
+				
+			default:
+				throw new Exception("unknown namespace type '" + typeStr + "'");
+		}		
+	}
+
+	
+	private static void SetType(
+			Relationship relationship,
+			String type
+	)
+	throws
+		Exception
+	{
+		switch (type.trim().toLowerCase())
+		{
+			case "contains":
+				relationship.setType(RelationshipType.CONTAINS);
+				break;
+			
+			case "describes":
+				relationship.setType(RelationshipType.DESCRIBES);
+				break;
+				
+			case "containedin":
+			case "contained-in":
+			case "contained_in":
+			case "iscontainedby":
+			case "is contained by":
+			case "is-contained-by":
+			case "is_contained_by":
+				relationship.setType(RelationshipType.IS_CONTAINED_BY);
+				break;
+				
+			case "isdescribedby":
+			case "is described by":
+			case "is-described-by":
+			case "is_described_by":
+				relationship.setType(RelationshipType.IS_DESCRIBED_BY);
+				break;
+				
+			case "isrequiredby":
+			case "is required by":
+			case "is-required-by":
+			case "is_required_by":
+				relationship.setType(RelationshipType.IS_REQUIRED_BY);
+				break;
+				
+			case "requires":
+				relationship.setType(RelationshipType.REQUIRES);
+				break;
+				
+			case "runs":
+				relationship.setType(RelationshipType.RUNS);
+				break;
+			
+			case "runson":
+			case "runs-on":
+			case "runs_on":
+				relationship.setType(RelationshipType.RUNS_ON);
+				break;
+				
+		
+			default:
+				throw new Exception("unknown relationship type '" + type + "'");
+		}
+	}
 }

@@ -5,15 +5,18 @@ package engineering.schumann.uml.model.sbom.impl;
 import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.Iec62304_Classification;
+import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.NamespaceType;
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.SBOMFactory;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -48,20 +51,6 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass systemEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum namespaceTypeEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass describedElementEClass = null;
 
 	/**
@@ -83,7 +72,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass propetyEClass = null;
+	private EClass propertyEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,6 +87,34 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	private EClass sbomEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass systemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum namespaceTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum iec81001_5_1_ClassificationEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum iec62304_ClassificationEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,8 +259,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getSystem() {
-		return systemEClass;
+	public EAttribute getNamespace_ClassificationIec81001_5_1() {
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -252,8 +269,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getNamespaceType() {
-		return namespaceTypeEEnum;
+	public EAttribute getNamespace_ClassificationIec62304() {
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -362,16 +379,6 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getElement_Timestamp() {
-		return (EAttribute)elementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getElement_Reference() {
 		return (EAttribute)elementEClass.getEStructuralFeatures().get(1);
 	}
@@ -382,8 +389,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getPropety() {
-		return propetyEClass;
+	public EAttribute getElement_Timestamp() {
+		return (EAttribute)elementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -392,8 +399,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPropety_Key() {
-		return (EAttribute)propetyEClass.getEStructuralFeatures().get(0);
+	public EClass getProperty() {
+		return propertyEClass;
 	}
 
 	/**
@@ -402,8 +409,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPropety_Value() {
-		return (EAttribute)propetyEClass.getEStructuralFeatures().get(1);
+	public EAttribute getProperty_Key() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -412,8 +419,18 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPropety_Type() {
-		return (EAttribute)propetyEClass.getEStructuralFeatures().get(2);
+	public EAttribute getProperty_Value() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getProperty_Type() {
+		return (EAttribute)propertyEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -492,6 +509,46 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getSystem() {
+		return systemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getNamespaceType() {
+		return namespaceTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getIec81001_5_1_Classification() {
+		return iec81001_5_1_ClassificationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getIec62304_Classification() {
+		return iec62304_ClassificationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getRelationshipType() {
 		return relationshipTypeEEnum;
 	}
@@ -533,6 +590,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		createEReference(namespaceEClass, NAMESPACE__OWNED_PROPERTY);
 		createEAttribute(namespaceEClass, NAMESPACE__TYPE);
 		createEAttribute(namespaceEClass, NAMESPACE__IS_SOUP);
+		createEAttribute(namespaceEClass, NAMESPACE__CLASSIFICATION_IEC81001_51);
+		createEAttribute(namespaceEClass, NAMESPACE__CLASSIFICATION_IEC62304);
 
 		describedElementEClass = createEClass(DESCRIBED_ELEMENT);
 		createEAttribute(describedElementEClass, DESCRIBED_ELEMENT__SUMMARY);
@@ -549,10 +608,10 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		createEAttribute(elementEClass, ELEMENT__REFERENCE);
 		createEAttribute(elementEClass, ELEMENT__TIMESTAMP);
 
-		propetyEClass = createEClass(PROPETY);
-		createEAttribute(propetyEClass, PROPETY__KEY);
-		createEAttribute(propetyEClass, PROPETY__VALUE);
-		createEAttribute(propetyEClass, PROPETY__TYPE);
+		propertyEClass = createEClass(PROPERTY);
+		createEAttribute(propertyEClass, PROPERTY__KEY);
+		createEAttribute(propertyEClass, PROPERTY__VALUE);
+		createEAttribute(propertyEClass, PROPERTY__TYPE);
 
 		relationshipEClass = createEClass(RELATIONSHIP);
 		createEReference(relationshipEClass, RELATIONSHIP__SOURCE);
@@ -567,6 +626,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 
 		// Create enums
 		namespaceTypeEEnum = createEEnum(NAMESPACE_TYPE);
+		iec81001_5_1_ClassificationEEnum = createEEnum(IEC81001_51CLASSIFICATION);
+		iec62304_ClassificationEEnum = createEEnum(IEC62304_CLASSIFICATION);
 		relationshipTypeEEnum = createEEnum(RELATIONSHIP_TYPE);
 	}
 
@@ -611,9 +672,11 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNamespace_OwnedComponent(), this.getComponent(), null, "ownedComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getNamespace_RequiredComponent(), this.getComponent(), null, "requiredComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamespace_OwnedProperty(), this.getPropety(), null, "ownedProperty", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNamespace_OwnedProperty(), this.getProperty(), null, "ownedProperty", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_Type(), this.getNamespaceType(), "type", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_IsSOUP(), ecorePackage.getEBoolean(), "isSOUP", "true", 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNamespace_ClassificationIec81001_5_1(), this.getIec81001_5_1_Classification(), "classificationIec81001_5_1", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getNamespace_ClassificationIec62304(), this.getIec62304_Classification(), "classificationIec62304", null, 0, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(describedElementEClass, DescribedElement.class, "DescribedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDescribedElement_Summary(), ecorePackage.getEString(), "summary", null, 0, 1, DescribedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -630,10 +693,10 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEAttribute(getElement_Reference(), ecorePackage.getEString(), "reference", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getElement_Timestamp(), ecorePackage.getEString(), "timestamp", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(propetyEClass, Propety.class, "Propety", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPropety_Key(), ecorePackage.getEString(), "key", null, 1, 1, Propety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPropety_Value(), ecorePackage.getEString(), "value", null, 1, 1, Propety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPropety_Type(), ecorePackage.getEString(), "type", null, 0, 1, Propety.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProperty_Key(), ecorePackage.getEString(), "key", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getProperty_Value(), ecorePackage.getEString(), "value", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getProperty_Type(), ecorePackage.getEString(), "type", null, 0, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(relationshipEClass, Relationship.class, "Relationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelationship_Source(), this.getNamedElement(), null, "source", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -653,6 +716,16 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.HARDWARE);
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.LIBRARY);
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.OPERATING_SYSTEM);
+
+		initEEnum(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.class, "Iec81001_5_1_Classification");
+		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.MAINTAINED);
+		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.SUPPORTED);
+		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.REQUIRED);
+
+		initEEnum(iec62304_ClassificationEEnum, Iec62304_Classification.class, "Iec62304_Classification");
+		addEEnumLiteral(iec62304_ClassificationEEnum, Iec62304_Classification.C);
+		addEEnumLiteral(iec62304_ClassificationEEnum, Iec62304_Classification.B);
+		addEEnumLiteral(iec62304_ClassificationEEnum, Iec62304_Classification.A);
 
 		initEEnum(relationshipTypeEEnum, RelationshipType.class, "RelationshipType");
 		addEEnumLiteral(relationshipTypeEEnum, RelationshipType.UNKNOWN);

@@ -42,6 +42,16 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Library"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/OperatingSystem"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//Iec81001_5_1_Classification">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/MAINTAINED"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/SUPPORTED"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/REQUIRED"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//Iec62304_Classification">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec62304_Classification/C"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec62304_Classification/B"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec62304_Classification/A"/>
+    </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//RelationshipType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/Unknown"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/contains"/>
@@ -63,6 +73,8 @@
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/ownedProperty"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/type"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/isSOUP"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/classificationIec81001_5_1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/classificationIec62304"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sbom.ecore#//DescribedElement">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//DescribedElement/summary"/>
@@ -79,10 +91,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Element/reference"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Element/timestamp"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Propety">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Propety/key"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Propety/value"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Propety/type"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Property">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/key"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/value"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/type"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Relationship">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

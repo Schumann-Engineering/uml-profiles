@@ -3,7 +3,9 @@
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/sbom/1'
-)]
+)
+extends engineering::schumann::uml::m2t::html::Html
+]
 
 
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
@@ -14,10 +16,46 @@
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
-[import engineering::schumann::uml::m2t::html::Html /]
+[import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::html::Toc /]
+
+[import engineering::schumann::uml::m2t::sbom::html::Sbom /]
+[import engineering::schumann::uml::m2t::sbom::html::css::Component /]
+
+
+
+[comment @Override engineering.schumann.uml.m2t.html.Html.CSS_ADDON /]
+[template public CSS_ADDON(
+	devNull : OclAny
+)
+overrides CSS_ADDON
+]
+<style type="text/css">
+	[CSS_SBOM_COMPONENT() /]
+</style>
+[/template]
+
+
+[template public HTML_START(
+	devNull : OclAny,
+	title	: String
+)
+overrides HTML_START
+]
+[XHTML_DOCTYPE_STRICT() /]
+[XHTML_START()/]
+	<head>
+		<title>[title /]</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		[CSS() /]
+		[CSS_ADDON() /]
+	</head>
+	<body>
+[/template]
 
 
 [template public generateDocument_INT_SbomReport(
@@ -50,11 +88,15 @@
 [setEnv('DOCUMENT_EXTENSION',   'html') /]
 
 [file (owner.FILE_URI_DOCUMENT('4'), false, 'UTF-8')]
-[HTML_START()/]
-	[owner.CoverPage_Chapter_print()/]
+[HTML_START('Software Bill of Material (SBOM)') /]
+	[owner.CoverPage_Chapter_print() /]
 
-	[owner.Introduction_Chapter_print()/]
-[HTML_END()/]
+	[owner.Introduction_Chapter_print() /]
+
+	[owner.BasicInformation_Chapter_print() /]
+
+	[owner.SoftwareComponents_Chapter_print(this) /]
+[HTML_END() /]
 [/file]
 [/template]
 
@@ -67,17 +109,17 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
-	[TOC_Title_begin('Software Bill of Material (SBOM)') /]
+[html_PAGE_begin() /]
+	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
 
-	[html_ANSI_CAUTION_Start()/]
+	[html_ANSI_CAUTION_Start() /]
 		This document is the human readable representation of the SBOM.
 		However, only the machine readable SBOM is "valid".
 		This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
-	[html_ANSI_CAUTION_End()/]
-[html_PAGE_end()/]
+	[html_ANSI_CAUTION_End() /]
+[html_PAGE_end() /]
 [/template]
 
 
@@ -89,25 +131,26 @@
 [template private Introduction_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin() /]
 	[TOC_Chapter_begin('Introduction') /]
 		[TOC_Section_begin('Purpose') /]
 			<p>
 				This documents describe the software bill of material (SBOM) of the product(s) in scope.
 			</p>
 	
-			[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
+			[html_INFO_Start() /]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Target audience') /]
 			<p>
 				This document is targeted at:
-				<ul>
-					<li>customers owning the product</li>
-					<li>regulatory authorities</li>
-					<li>notified body</li>
-					<li>risk manangers</li>
-				</ul>
+			</p>
+
+			<ul>
+				<li>customers owning the product</li>
+				<li>regulatory authorities</li>
+				<li>notified body</li>
+				<li>risk manangers</li>
 			</ul>
 		[TOC_Section_end() /]
 		
@@ -116,7 +159,7 @@
 				This document is classified as:<br/>
 				<b>PUBLIC</b> = Free to publicate or redistribute without changes.
 			</p>
-			[html_NOTE_Start()/]Copyright still aplies.[html_NOTE_End()/]
+			[html_NOTE_Start() /]Copyright still aplies.[html_NOTE_End() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
@@ -124,12 +167,239 @@
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Abbreviations') /]
-			[TERMS_START()/]
-				[TERM_SECURITY_CPE()/]
-				[TERM_SECURITY_CPE()/]
-				[TERM_HEALTHCARE_HDO()/]
-			[TERMS_END()/]
+			[TERMS_START() /]
+				[TERM_SECURITY_CPE() /]
+				[TERM_SECURITY_CVE() /]
+				[TERM_HEALTHCARE_HDO() /]
+			[TERMS_END() /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end() /]
+[/template]
+
+
+[comment
+	====================
+	BASIC INFORMATION
+	====================
+/]
+[template private BasicInformation_Chapter_print(
+	this : NamedElement
+)]
+[html_PAGE_begin() /]
+	[TOC_Chapter_begin('Basic information') /]
+		[comment
+			--------------------
+			HARDWARE
+			--------------------
+		/]
+		[TOC_Section_begin('Hardware') /]
+			[printScope(false, true) /]
+		[TOC_Section_end() /]
+	
+		[comment
+			--------------------
+			SOFTWARE
+			--------------------
+		/]
+		[TOC_Section_begin('Software') /]
+			[printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+		[TOC_Section_end() /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end() /]
+[/template]
+
+[comment
+	====================
+	SOFTWARE COMPONENTS
+	====================
+/]
+[template private SoftwareComponents_Chapter_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[html_PAGE_begin() /]
+	[TOC_Chapter_begin('Software Components') /]
+		[SoftwareComponent_Overview_Section_print(sbom) /]
+[html_PAGE_end() /]
+
+[html_PAGE_begin() /]
+		[SoftwareComponent_Firmware_Section_print(sbom) /]
+[html_PAGE_end() /]
+
+[html_PAGE_begin() /]
+		[SoftwareComponent_OperatingSystem_Section_print(sbom) /]
+[html_PAGE_end() /]
+
+[html_PAGE_begin() /]
+		[SoftwareComponent_Application_Section_print(sbom) /]
+[html_PAGE_end() /]
+
+[html_PAGE_begin() /]
+		[SoftwareComponent_Library_Section_print(sbom) /]
+[html_PAGE_end() /]
+
+[html_PAGE_begin() /]
+		[SoftwareComponent_3rdParty_Section_print(sbom) /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > Overview
+	--------------------
+/]
+[template private SoftwareComponent_Overview_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('Overview') /]
+	<p>
+		Each component is classified according to IEC 81001-5-1:
+	</p>
+
+	<ul>
+		<li><b><i>MAINTAINED SOFTWARE</i></b></li>
+		<li><b><i>SUPPORTED SOFTWARE</i></b></li>
+		<li><b><i>REQUIRED SOFTWARE</i></b></li>
+	</ul>
+
+	[html_IMG(
+		'../../_snippets/IEC 81001-5-1/IEC 81001-5-1 SOFTWARE ITEM classification.svg',
+		'IEC 81001-5-1 SOFTWARE ITEM classification',
+		'overview and comparison of IEC 81001-5-1 SOFTWARE ITEM classification',
+		'width: 100%'
+	) /]
+
+	<p>
+		The following table shows all components present. Details for each component will be provided in later sections.
+	</p>
+
+	[sbom.printAsTable() /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > Firmware
+	--------------------
+/]
+[template private SoftwareComponent_Firmware_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('Firmware') /]
+	<p>
+		The following lists the firmware included in the software.
+	</p>
+
+	[html_NOTE_Start() /]
+		developed by product's vendor
+	[html_NOTE_End() /]
+
+	[html_TIP_Start()/]
+		Firmware is any software run on an embedded system, no matter if it runs on a field programable gate array (FPGA), micro controller (uC), digital signal processor (DSP), or general purpose computational unit (CPU).
+	[html_TIP_End()/]
+
+	[sbom.printFirmware() /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > Operating System
+	--------------------
+/]
+[template private SoftwareComponent_OperatingSystem_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('Operating System') /]
+	<p>
+		The following lists the operating systems included in the software.
+	</p>
+
+	[html_NOTE_Start() /]
+		developed by product's vendor <b>or</b> a 3rd party
+	[html_NOTE_End() /]
+
+	[sbom.printOperatingSystems() /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > Application
+	--------------------
+/]
+[template private SoftwareComponent_Application_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('Applications') /]
+	<p>
+		The following lists the applications included in the software.
+	</p>
+
+	[html_NOTE_Start() /]
+		developed by product's vendor
+	[html_NOTE_End() /]
+
+	[html_TIP_Start()/]
+		An application is any executable. Libraries used by such an application will be listed in a separate section later.
+	[html_TIP_End()/]
+
+	[sbom.printApplications() /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > Library
+	--------------------
+/]
+[template private SoftwareComponent_Library_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('Libraries') /]
+	<p>
+		The following lists the libraries included in the software.
+	</p>
+
+	[html_NOTE_Start()/]
+		Includes only libraries by the vendor. Libraries from 3rd parties are listed in a separate section later.
+	[html_NOTE_End()/]
+
+	[sbom.printLibraries() /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	SOFTWARE COMPONENTS > 3rd Party
+	--------------------
+/]
+[template private SoftwareComponent_3rdParty_Section_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[TOC_Section_begin('3rd Party') /]
+	<p>
+		The following lists components (applications, firmware, libraries etc.).
+	</p>
+
+	[html_NOTE_Start()/]
+		Includes everything developed by a 3rd party and <b>NOT</b> by the vendor. For operating systems, see list above.
+	[html_NOTE_End()/]
+
+	[sbom.print3rdParty() /]
+[TOC_Section_end() /]
 [/template]

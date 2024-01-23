@@ -3,6 +3,7 @@
 package engineering.schumann.uml.model.sbom.impl;
 
 import engineering.schumann.uml.model.sbom.SBOMPackage;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**

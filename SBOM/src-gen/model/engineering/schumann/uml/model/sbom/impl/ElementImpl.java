@@ -2,17 +2,21 @@
  */
 package engineering.schumann.uml.model.sbom.impl;
 
+import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.SBOMPackage;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
-import engineering.schumann.uml.model.sbom.Element;
-import engineering.schumann.uml.model.sbom.SBOMPackage;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,13 +87,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	protected ElementImpl() {
 		super();
-
-		// set the ID to a generated UUID
-		setId(org.eclipse.emf.ecore.util.EcoreUtil.generateUUID());
 	}
 
 	/**
@@ -131,6 +132,19 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public EList<String> getReference() {
+		if (reference == null) {
+			reference = new EDataTypeUniqueEList<String>(String.class, this, SBOMPackage.ELEMENT__REFERENCE);
+		}
+		return reference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getTimestamp() {
 		return timestamp;
 	}
@@ -146,19 +160,6 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		timestamp = newTimestamp;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.ELEMENT__TIMESTAMP, oldTimestamp, timestamp));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<String> getReference() {
-		if (reference == null) {
-			reference = new EDataTypeUniqueEList<String>(String.class, this, SBOMPackage.ELEMENT__REFERENCE);
-		}
-		return reference;
 	}
 
 	/**

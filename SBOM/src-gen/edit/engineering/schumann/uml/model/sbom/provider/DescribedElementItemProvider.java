@@ -122,11 +122,14 @@ public class DescribedElementItemProvider extends NamedElementItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		String label = ((DescribedElement)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_DescribedElement_type") :
+			getString("_UI_DescribedElement_type") + " " + label;
 	}
 
 

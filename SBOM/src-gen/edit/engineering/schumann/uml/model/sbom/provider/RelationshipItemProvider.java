@@ -3,12 +3,18 @@
 package engineering.schumann.uml.model.sbom.provider;
 
 
+import engineering.schumann.uml.model.sbom.Relationship;
+import engineering.schumann.uml.model.sbom.RelationshipType;
+import engineering.schumann.uml.model.sbom.SBOMPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.ResourceLocator;
+
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -19,9 +25,6 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
-import engineering.schumann.uml.model.sbom.Relationship;
-import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 /**
  * This is the item provider adapter for a {@link engineering.schumann.uml.model.sbom.Relationship} object.
@@ -146,21 +149,15 @@ public class RelationshipItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		var sourceValue = ((Relationship)object).getSource();
-		var labelValue = ((Relationship)object).getType();
-		var targetValue = ((Relationship)object).getTarget();	
-		
-		var source = sourceValue == null ? "(unset)" : sourceValue.getName(); 
-		var label = labelValue == null ? "(unset)" : labelValue.toString();
-		var target = targetValue == null ? "(unset)" : targetValue.getName(); 
-		return 
-			// getString("_UI_Relationship_type") + " " +
-			source + " -[" + label + "]-> " + target
-		;
+		RelationshipType labelValue = ((Relationship)object).getType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Relationship_type") :
+			getString("_UI_Relationship_type") + " " + label;
 	}
 
 

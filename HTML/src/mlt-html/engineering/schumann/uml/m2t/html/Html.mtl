@@ -10,33 +10,58 @@
 [import engineering::schumann::uml::m2t::html::css::Table /]
 [import engineering::schumann::uml::m2t::html::css::Toc /]
 
-[template private CSS(
+
+[template protected CSS(
 	devNull : OclAny
 )]
-[CSS_EXTERNAL_THEME() /]
+<style type="text/css">
+	[CSS_EXTERNAL_THEME() /]
+</style>
 
-[CSS_PAGE_SETUP() /]
+<style type="text/css">
+	[CSS_PAGE_SETUP() /]
+</style>
 
-[CSS_TABLE() /]
+<style type="text/css">
+	[CSS_TABLE() /]
+</style>
 
-[CSS_TOC() /]
+<style type="text/css">
+	[CSS_TOC() /]
+</style>
 
-[CSS_LIST() /]
+<style type="text/css">
+	[CSS_LIST() /]
+</style>
 
-[CSS_MATERIAL_DESIGN() /]
+<style type="text/css">
+	[CSS_MATERIAL_DESIGN() /]
+</style>
 
-[CSS_BOXES() /]
+<style type="text/css">
+	[CSS_BOXES() /]
+</style>
 [/template]
 
 
-[template public HTML_START(
+[template public CSS_ADDON(
 	devNull : OclAny
+)][/template]
+
+
+[template public HTML_START(
+	devNull : OclAny,
+	title	: String
 )]
-<html>
+[XHTML_DOCTYPE_STRICT() /]
+[XHTML_START()/]
 	<head>
-		<style>
-[CSS() /]
-		</style>
+		<title>[title /]</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		[CSS() /]
+		[CSS_ADDON() /]
 	</head>
 	<body>
 [/template]
@@ -47,4 +72,39 @@
 )]
 	</body>
 </html>
+[/template]
+
+
+[template public HTML_DOCTYPE_STRICT(
+	devNull : OclAny
+)]
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+[/template]
+
+
+[template public XHTML_DOCTYPE_STRICT(
+	devNull : OclAny
+)]
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+[/template]
+
+
+[template public XHTML_START(
+	devNull : OclAny
+)]
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+[/template]
+
+
+[template public CDATA_start(
+	devNull : OclAny
+)]
+['<![CDATA['/]
+[/template]
+
+
+[template public CDATA_end(
+	devNull : OclAny
+)]
+[']]>'/]
 [/template]

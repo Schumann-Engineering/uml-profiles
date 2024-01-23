@@ -1,0 +1,13 @@
+[module Component(
+	'http://schumann.engineering/sbom/1'
+)/]
+
+
+[query public allComponents(
+	this : Component
+) : Set(Component) =
+	Set(Component) {}
+	->union(ownedComponent)
+	->union(ownedComponent.allComponents())
+	->asSet()
+/]

@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module Component('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_SBOM_COMPONENT(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * SBOM > COMPONENT
+  * ========================================
+  * ======================================== **/
+.sbom-component {
+	page-break-after:		always;
+	page-break-inside:		avoid;
+}
+[/template]

@@ -22,11 +22,6 @@ public class EnvironmentServiceImpl {
 	 */
 	private static final String LAST_ERROR_KEY = "__LAST_ERROR__";
 
-	/**
-	 * Constant "True Values" (strings which are used to represent boolean true)
-	 */
-	private static final String[] TRUE_VALUES = { "1", "on" ,"yes" , "true" };
-
 	
 	/**
 	 * Property "Properties" which hold a key-value index of key to property
@@ -179,13 +174,8 @@ public class EnvironmentServiceImpl {
 		// get value
 		String value = getEnvironmentVariable(key).trim().toLowerCase();
 
-		// check for true cases
-		for (String trueValue : TRUE_VALUES)
-			if (trueValue.equals(value))
-				return true;
-		
-		// otherwise it's false
-		return false;
+		// === RETURN ===
+		return StringServiceImpl.IsTrue(value);
 	}
 	
 
@@ -198,8 +188,7 @@ public class EnvironmentServiceImpl {
 	public Boolean isFalse(String key)
 	{
 		return !isTrue(key);		
-	}
-	
+	}	
 	
 	/**
 	 * Checks if a given key exists.

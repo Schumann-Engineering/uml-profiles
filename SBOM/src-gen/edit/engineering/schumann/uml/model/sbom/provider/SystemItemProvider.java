@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -57,13 +58,14 @@ public class SystemItemProvider extends NamespaceItemProvider {
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		return 
-			super.getText(object)
-		;
+		String label = ((engineering.schumann.uml.model.sbom.System)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_System_type") :
+			getString("_UI_System_type") + " " + label;
 	}
 
 

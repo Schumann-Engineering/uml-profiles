@@ -2,7 +2,7 @@
  */
 package engineering.schumann.uml.model.sbom.impl;
 
-import engineering.schumann.uml.model.sbom.Propety;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,20 +14,20 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Propety</b></em>'.
+ * An implementation of the model object '<em><b>Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropetyImpl#getKey <em>Key</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropetyImpl#getValue <em>Value</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropetyImpl#getType <em>Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety {
+public class PropertyImpl extends MinimalEObjectImpl.Container implements Property {
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PropetyImpl() {
+	protected PropertyImpl() {
 		super();
 	}
 
@@ -104,7 +104,7 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SBOMPackage.Literals.PROPETY;
+		return SBOMPackage.Literals.PROPERTY;
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 		String oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPETY__KEY, oldKey, key));
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPERTY__KEY, oldKey, key));
 	}
 
 	/**
@@ -150,7 +150,7 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPETY__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPERTY__VALUE, oldValue, value));
 	}
 
 	/**
@@ -173,7 +173,7 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 		String oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPETY__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.PROPERTY__TYPE, oldType, type));
 	}
 
 	/**
@@ -184,11 +184,11 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SBOMPackage.PROPETY__KEY:
+			case SBOMPackage.PROPERTY__KEY:
 				return getKey();
-			case SBOMPackage.PROPETY__VALUE:
+			case SBOMPackage.PROPERTY__VALUE:
 				return getValue();
-			case SBOMPackage.PROPETY__TYPE:
+			case SBOMPackage.PROPERTY__TYPE:
 				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -202,13 +202,13 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SBOMPackage.PROPETY__KEY:
+			case SBOMPackage.PROPERTY__KEY:
 				setKey((String)newValue);
 				return;
-			case SBOMPackage.PROPETY__VALUE:
+			case SBOMPackage.PROPERTY__VALUE:
 				setValue((String)newValue);
 				return;
-			case SBOMPackage.PROPETY__TYPE:
+			case SBOMPackage.PROPERTY__TYPE:
 				setType((String)newValue);
 				return;
 		}
@@ -223,13 +223,13 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SBOMPackage.PROPETY__KEY:
+			case SBOMPackage.PROPERTY__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
-			case SBOMPackage.PROPETY__VALUE:
+			case SBOMPackage.PROPERTY__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case SBOMPackage.PROPETY__TYPE:
+			case SBOMPackage.PROPERTY__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
 		}
@@ -244,11 +244,11 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SBOMPackage.PROPETY__KEY:
+			case SBOMPackage.PROPERTY__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
-			case SBOMPackage.PROPETY__VALUE:
+			case SBOMPackage.PROPERTY__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case SBOMPackage.PROPETY__TYPE:
+			case SBOMPackage.PROPERTY__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		}
 		return super.eIsSet(featureID);
@@ -274,4 +274,4 @@ public class PropetyImpl extends MinimalEObjectImpl.Container implements Propety
 		return result.toString();
 	}
 
-} //PropetyImpl
+} //PropertyImpl
