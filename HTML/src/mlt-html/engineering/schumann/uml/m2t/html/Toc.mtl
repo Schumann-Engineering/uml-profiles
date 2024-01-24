@@ -2,56 +2,120 @@
 [module Toc('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
-[template public TOC_Title_begin(
-	devNull : Element,
-	title   : String
-)]
-<h1 class="document-title">[title /]</h1>
+[template private TOC_Header(
+	title   : String,
+	level	: Integer
+)]<h[level/] id="[title.toHtmlId()/]" class="document-title">[title /]</h[level/]>
+[addBreadcrumb(title, level)/]
 [/template]
+
+
+[template public TOC_Title_begin(
+	title   : String
+)][TOC_Header(title, 1) /][/template]
 [template public TOC_Title_end(
 	devNull : Element
 )][/template]
 
 
 [template public TOC_Chapter_begin(
-	devNull : Element,
 	title   : String
-)]
-<h2 class="document-chapter">[title /]</h2>
-[/template]
+)][TOC_Header(title, 2) /][/template]
 [template public TOC_Chapter_end(
 	devNull : Element
 )][/template]
 
 
 [template public TOC_Section_begin(
-	devNull : Element,
 	title   : String
-)]
-<h3 class="document-section">[title /]</h3>
-[/template]
+)][TOC_Header(title, 3) /][/template]
 [template public TOC_Section_end(
 	devNull : Element
 )][/template]
 
 
 [template public TOC_SubSection_begin(
-	devNull : Element,
 	title   : String
-)]
-<h4 class="document-subsection">[title /]</h4>
-[/template]
+)][TOC_Header(title, 4) /][/template]
 [template public TOC_SubSection_end(
 	devNull : Element
 )][/template]
 
 
 [template public TOC_SubSubSection_begin(
-	devNull : Element,
 	title   : String
-)]
-<h5 class="document-subsubsection">[title /]</h5>
-[/template]
+)][TOC_Header(title, 5) /][/template]
 [template public TOC_SubSubSection_end(
 	devNull : Element
 )][/template]
+
+
+[template private addBreadcrumb(
+	title : String,
+	level : Integer
+)
+post(trim())][invoke(
+	'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+	'Add(java.lang.String, java.lang.Integer)',
+	Sequence {
+		title,
+		level
+	}
+)
+/][/template]
+
+
+[template public getBreadcrumbs(
+	minLevel : Integer
+)
+post(trim())]
+<p class="breadcrumbs">
+	[for (invoke(
+		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+		'toList(java.lang.Integer)',
+		Sequence {
+			minLevel
+		}
+	)) separator(' &gt; ')][TOC_link(self.toString())/][/for]
+</p>
+[/template]
+
+
+[template public TOC_link(
+	text	: String
+)][TOC_link(text, text) /][/template]
+
+
+[template public TOC_link(
+	anchor	: String,
+	text	: String
+)]<a class="breadcrumb" href="#[anchor.toHtmlId() /]">[text /]</a>[/template]
+
+
+[template public TOC_anchor(
+	anchor	: String
+)][TOC_anchor(anchor, '') /][/template]
+
+
+[template public TOC_anchor(
+	anchor	: String,
+	text	: String
+)]<a id="[anchor.toHtmlId() /]">[text /]</a>[/template]
+
+
+[query public toHtmlId(
+	text : String
+) : String =
+	'link-' + 
+	text
+	.replaceAll(' ', '-')
+	.replaceAll('<br/>', '-')
+	.replaceAll('<br>', '-')
+	.replaceAll('\\(', '')
+	.replaceAll('\\)', '')
+	.replaceAll('\\[', '')
+	.replaceAll('\\]', '')
+	.replaceAll('\\\\', '')
+	.replaceAll('/', '')
+	.replaceAll('\\+', '')
+/]

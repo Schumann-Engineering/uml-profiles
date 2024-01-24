@@ -39,10 +39,10 @@ post(trim())
 
 [self.printConnectionAsTable() /]
 [if (startNewPage)]
-[html_PAGE_end()/]
-[html_PAGE_begin()/]
+[html_PAGE_end('')/]
+[html_PAGE_begin('')/]
 [else]
-[html_PAGE_BREAK() /]
+[html_PAGE_BREAK('') /]
 [/if]
 
 [/for]

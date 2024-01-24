@@ -87,13 +87,13 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin('document-classification-confidential-internal')/]
+[html_PAGE_begin('cover page', 'document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
 
 	[TOC_Title_begin('Product Security Characteristics') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('cover page')/]
 [/template]
 
 
@@ -105,7 +105,7 @@
 [template private Introduction_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('introduction')/]
 	[TOC_Chapter_begin('Introduction') /]
 		[TOC_Section_begin('Purpose') /]
 			<p>
@@ -141,7 +141,7 @@
 		[TOC_Section_end() /]
 	
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('introduction')/]
 [/template]
 
 
@@ -153,7 +153,7 @@
 [template private BasicInformation_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('basic information')/]
 	[TOC_Chapter_begin('Basic information') /]
 		[comment
 			--------------------
@@ -177,7 +177,7 @@
 			[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('basic information')/]
 [/template]
 
 
@@ -193,7 +193,7 @@
 [let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
 [let interfaces : Set(Port) = systemElements.ownedElement->filter(Port)->select(csmn_hasInterfaceCharacteristic())->oclAsSet()->flatten()->csmn_filterInScope()]
 
-[html_PAGE_begin()/]
+[html_PAGE_begin('product architecture')/]
 	[TOC_Chapter_begin('Product Architecture') /]
 		<p>
 			This section describes the boundary of the product and how its interfaces with the environment and different user groups. 
@@ -211,14 +211,14 @@
 			
 		[this.TOC_Section_end()/]
 		[/for]
-[html_PAGE_end()/]
+[html_PAGE_end('product architecture-1')/]
 	
 		[comment
 			--------------------
 			PRODUCT INTERFACES
 			--------------------
 		/]
-[html_PAGE_begin()/]
+[html_PAGE_begin('product interfaces')/]
 		[TOC_Section_begin('Product interfaces') /]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
@@ -268,43 +268,43 @@
 				</ol>
 			[TOC_SubSection_end() /]
 				
-[html_PAGE_end()/]
-[html_PAGE_begin()/]
+[html_PAGE_end('product interfaces')/]
+[html_PAGE_begin('network interfaces')/]
 			[TOC_SubSection_begin('List of PRODUCT INTERFACE')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Network interfaces') /]
 					[printInterfaceAsTable( interfaces->csmn_networkPort() )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('network interfaces')/]
 			
-[html_PAGE_begin()/]
+[html_PAGE_begin('non-netowrk interfaces')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Non-Network interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_nonNetworkPort() )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('non-netowrk interfaces')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('storage media')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Storage Media') /]			
 					[printInterfaceAsTable( interfaces->csmn_storagePort() )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('storage media')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('material')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Material interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_materialPort() )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('material')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('energy')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Energy interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_energyPort() )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('energy')/]
 				
 				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
 				[if (otherInterfaces->size() > 0)]
-[html_PAGE_begin()/]
+[html_PAGE_begin('other ports')/]
 				
-				[html_PAGE_BREAK()/]			
+				[html_PAGE_BREAK('')/]			
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Other interfaces') /]
 					[html_ANSI_WARNING_Start()/]
 						this section should be empty! This is an indicator of a wrongly configured model!
@@ -312,7 +312,7 @@
 				
 					[printInterfaceAsTable( otherInterfaces )/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('other ports')/]
 				[/if]
 				[/let]
 			[TOC_SubSection_end()/]
@@ -323,7 +323,7 @@
 			CONNECTIONS
 			--------------------
 		/]
-[html_PAGE_begin()/]
+[html_PAGE_begin('connections')/]
 		[TOC_Section_begin('Interface connections') /]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
@@ -340,35 +340,35 @@
 				[TOC_SubSubSection_begin('INTERFACE CONNECTION for Network interfaces') /]
 					[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('connections')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('non-network connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Non-Network interfaces') /]
 					[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('non-network connections')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('storage connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Storage Media') /]
 					[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('storage connections')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('material connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Material interfaces') /]
 					[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('material connections')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('energy connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Energy interfaces') /]
 					[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('energy connections')/]
 				
 				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
 				[if (otherInterfaces->size() > 0)]
-[html_PAGE_begin()/]
+[html_PAGE_begin('other connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Other interfaces') /]
 					[html_ANSI_WARNING_Start()/]
 						this section should be empty! This is an indicator of a wrongly configured model!
@@ -376,7 +376,7 @@
 					
 					[otherInterfaces->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('other connections')/]
 				[/if]
 				[/let]
 			[TOC_SubSection_end()/]
@@ -387,7 +387,7 @@
 			ASSETS
 			--------------------
 		/]
-[html_PAGE_begin()/]
+[html_PAGE_begin('assets')/]
 		[TOC_Section_begin('Assets') /]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
@@ -458,43 +458,43 @@
 					</li>
 				</ol>
 			[TOC_SubSection_end()/]
-[html_PAGE_end()/]
+[html_PAGE_end('assets')/]
 	
-[html_PAGE_begin()/]
+[html_PAGE_begin('credential assets')/]
 			[TOC_SubSection_begin('List of ASSETs')/]
 				[TOC_SubSubSection_begin('ASSETs which are Credential Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials )/]
-[html_PAGE_end()/]
+[html_PAGE_end('credential assets')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('energy assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Energy Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy )/]
-[html_PAGE_end()/]
+[html_PAGE_end('energy assets')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('data assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Data Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Data )/]
-[html_PAGE_end()/]
+[html_PAGE_end('data assets')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('information assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Information Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Information )/]
-[html_PAGE_end()/]
+[html_PAGE_end('information assets')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('material assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Material Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Material )/]
-[html_PAGE_end()/]
+[html_PAGE_end('material assets')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('mechanical assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Mechanical Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical )/]
-[html_PAGE_end()/]
+[html_PAGE_end('mechanical')/]
 				
-[html_PAGE_begin()/]
+[html_PAGE_begin('signal assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Signal Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal )/]
-[html_PAGE_end()/]
+[html_PAGE_end('signal assets')/]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end() /]
 	
@@ -507,13 +507,13 @@
 			--------------------
 		/]
 		
-[html_PAGE_begin()/]
+[html_PAGE_begin('software')/]
 		[TOC_Section_begin('Software') /]
 			[SBOM_SubSection_print() /]
 		[TOC_Section_end() /]
 	
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('software')/]
 [/template]
 
 
@@ -560,7 +560,7 @@
 [template private SecurityCapabilities_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('security capabilities')/]
 	[TOC_Chapter_begin('Security capabilities') /]
 		[comment
 			--------------------
@@ -624,5 +624,5 @@
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('security capabilities')/]
 [/template]

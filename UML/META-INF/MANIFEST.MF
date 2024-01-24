@@ -7,6 +7,7 @@ Bundle-Version: 0.1.0
 Automatic-Module-Name: engineering.schumann.uml.model.uml
 Bundle-Activator: engineering.schumann.uml.model.uml.Activator
 Export-Package: engineering.schumann.uml.m2t.common.services,
+ engineering.schumann.uml.m2t.uml.common,
  engineering.schumann.uml.m2t.uml.services,
  engineering.schumann.uml.model.uml
 Require-Bundle: org.eclipse.core.runtime,

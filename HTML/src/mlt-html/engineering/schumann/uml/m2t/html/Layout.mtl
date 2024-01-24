@@ -4,31 +4,60 @@
 )]
 
 
-[template public html_PAGE_begin(
-	devNull				: Element
-)][html_PAGE_begin('') /][/template]
+[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
 
 [template public html_PAGE_begin(
-	devNull				: Element,
+	id					: String
+)][html_PAGE_begin(id, '', '') /][/template]
+
+
+[template public html_PAGE_begin(
+	id					: String,
 	additionalClass		: String
-)][html_PAGE_begin(additionalClass, '') /][/template]
+)][html_PAGE_begin(id, additionalClass, '') /][/template]
 
 
 [template public html_PAGE_begin(
-	devNull				: Element,
+	id					: String,
 	additionalClass		: String,
 	additionalAttribute	: String
 )]
-<div class="document-page [additionalClass/]" [additionalAttribute/]>
+[html_PAGE_end(id + '-pre-end') /]
+<div class="document-page[if (additionalClass <> null and additionalClass.trim() <> '')] [additionalClass.trim() /][/if]"[if (additionalAttribute <> null and additionalAttribute.trim() <> '')] [additionalAttribute.trim()/][/if]>
+[invoke(
+		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 'setProperty(java.lang.String, java.lang.String)', 
+		Sequence{
+			'__PAGE_IS_OPEN__',
+			'1'
+		}
+	)/]
 [/template]
+
+
 [template public html_PAGE_end(
-	devNull	: Element
+	id					: String
 )]
+[if (invoke(
+		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 
+		'getEnvironmentVariable(java.lang.String, java.lang.String)',
+		Sequence{
+			'__PAGE_IS_OPEN__',
+			'0'
+		}
+	) = '1')]
 </div>
+[/if]
+[invoke(
+		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 'setProperty(java.lang.String, java.lang.String)', 
+		Sequence{
+			'__PAGE_IS_OPEN__',
+			'0'
+		}
+	)/]
 [/template]
 
 
 [template public html_PAGE_BREAK(
-	devNull : OclAny
-)]<div class="page-break" style="page-break-after: always;"></div>[/template]
+	id					: String 
+)]<div class="page-break"></div>[/template]

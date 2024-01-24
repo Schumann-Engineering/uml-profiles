@@ -7,7 +7,7 @@
 [import engineering::schumann::uml::m2t::html::css::ExternalTheme /]
 [import engineering::schumann::uml::m2t::html::css::List /]
 [import engineering::schumann::uml::m2t::html::css::MaterialDesign /]
-[import engineering::schumann::uml::m2t::html::css::PageSetup /]
+[import engineering::schumann::uml::m2t::html::css::Layout /]
 [import engineering::schumann::uml::m2t::html::css::Table /]
 [import engineering::schumann::uml::m2t::html::css::Toc /]
 

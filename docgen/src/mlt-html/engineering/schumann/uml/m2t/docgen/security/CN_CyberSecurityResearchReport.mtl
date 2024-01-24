@@ -80,13 +80,13 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin('document-classification-confidential-internal')/]
+[html_PAGE_begin('cover page', 'document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
 
 	[TOC_Title_begin('Cyber Security Research Report') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('cover page')/]
 [/template]
 
 
@@ -98,7 +98,7 @@
 [template private Introduction_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('introduction')/]
 	[TOC_Chapter_begin('Introduction') /]
 		[TOC_Section_begin('Purpose') /]
 			<p>
@@ -131,7 +131,7 @@
 			[TERMS_END()/]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('introduction')/]
 [/template]
 
 
@@ -143,7 +143,7 @@
 [template private BasicInformation_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('basic information')/]
 	[TOC_Chapter_begin('Basic Information') /]
 		
 		[comment
@@ -198,7 +198,7 @@
 		/]
 		[OTS_Section_print() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('basic information')/]
 [/template]
 
 
@@ -632,7 +632,7 @@
 [template private Conclusion_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('conclusion')/]
 	[TOC_Chapter_begin('Conclusion') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start()/]
@@ -648,7 +648,7 @@
 			[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('conclusion')/]
 [/template]
 
 
@@ -660,11 +660,11 @@
 [template private Appendix_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('appendix')/]
 	[TOC_Chapter_begin('Appendix') /]
 		[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end()/]
+[html_PAGE_end('appendix')/]
 [/template]
 
 

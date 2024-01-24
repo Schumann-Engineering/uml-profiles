@@ -10,23 +10,58 @@
   * TABLE OF CONTENTS
   * ========================================
   * ======================================== **/
+body {
+	counter-reset: H1 H2 H3 H4 H5 H6 !important;
+}
+/* Header styling and automatic numbering. --------------------------------------------- */
+h1, h2, h3, h4, h5 {
+	font-family: 			Roboto !important;
+	color: 					black !important;
+	font-size: 				12pt !important;
+	font-weight: 			bold !important;
+	line-height: 			1 !important;
+	margin-bottom: 			0 !important;
+	padding-bottom: 		0 !important;
+	margin-top: 			20px !important;
+
+	page-break-after:		avoid !important;
+	break-after:			avoid !important;
+	page-break-inside:		avoid !important;
+	break-inside:			avoid !important;
+}
+h2:before {
+	counter-increment: H2;
+	content: counter(H2) ". \0000a0";
+}
+h2 {counter-reset: H3;}
+h3:before {
+	counter-increment: H3;
+	content: counter(H2) "." counter(H3) ". \0000a0";
+}
+h3 {counter-reset: H4;}
+h4:before {
+	counter-increment: H4;
+	content: counter(H2) "." counter(H3) "." counter(H4) ". \0000a0";
+}
+
+
 /* ==========
  * TITLE
  * ========== */
 .document-title h1,
 h1 {
-	margin-top:			2cm !important;
-	margin-bottom: 		5cm !important;
+	margin-top:				2cm !important;
+	margin-bottom: 			5cm !important;
 }
 
 .document-title h1,
 h1 {
-	font-size: 			60pt !important;
-	font-weight:		bold !important;
+	font-size: 				60pt !important;
+	font-weight:			bold !important;
+	
+	text-align: 			center !important;
 
-	text-align: 		center !important;
-
-	counter-reset: 		H2;
+	counter-reset: 			H2;
 }
 
 
@@ -34,6 +69,27 @@ h1 {
  * CHAPTER
  * ========== */
 .document-chapter {
-	margin-top:			0.5cm;
+	margin-top:				0.5cm;
 }
+
+
+/* ==========
+ * Breadcrumbs
+ * ========== */
+a:link.breadcrumb, 
+a:visited.breadcrumb,
+a.breadcrumb {
+    color: 					orange !important;
+    text-decoration: 		none !important;
+}
+
+@media print {
+    a:link.breadcrumb, 
+	a:visited.breadcrumb,
+	a.breadcrumb {
+        color: 				orange !important;
+        text-decoration: 	none !important;
+    }
+}
+
 [/template]

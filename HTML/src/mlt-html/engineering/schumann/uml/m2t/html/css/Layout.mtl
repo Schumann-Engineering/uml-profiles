@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module PageSetup('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module Layout('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
 [template public CSS_PAGE_SETUP(
@@ -19,9 +19,12 @@ html {
 	font-size:			10pt;
 }
 
-div .page-break {
+div.page-break {
 	margin-top:			2cm;
 	margin-bottom:		2cm;
+	
+	page-break-after:	always !important;
+	break-after:		page !important;
 }
 
 
@@ -30,6 +33,7 @@ div .page-break {
  * ========== */
 .document-page {
 	page-break-before:	always !important;
+	break-before:		page !important;
 }
 
 /* Same as MaterialDesign.card */
@@ -67,14 +71,12 @@ div .page-break {
 	}
 
     a:link, a:visited, a { /* Links. */
-        color: black !important;
-        text-decoration: none !important;
+        color: 				black !important;
+        text-decoration: 	none !important;
     }
 
 	.document-page {
-		display: 			inline-block;
 		padding:			2mm !important;
-		position: 			relative;
 		width:				100% !important;
 		min-height:			28.7cm !important;
 	}

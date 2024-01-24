@@ -24,7 +24,6 @@ body {
 	tab-size: 4 !important;
 	--code-background: white !important;
 	--code-normal: black !important;
-	counter-reset: H1 H2 H3 H4 H5 H6 !important;
 }
 p {
 	font-family: Roboto !important;
@@ -35,34 +34,6 @@ p {
 }
 strong {
 	font-weight: bold !important;
-}
-
-/* Header styling and automatic numbering. --------------------------------------------- */
-h1, h2, h3, h4, h5 {
-	font-family: Roboto !important;
-	color: black !important;
-	page-break-after:avoid;
-	page-break-inside:avoid;
-	font-size: 12pt !important;
-	font-weight: bold !important;
-	line-height: 1 !important;
-	margin-bottom: 0 !important;
-	padding-bottom: 0 !important;
-	margin-top: 20px !important;
-}
-h2:before {
-	counter-increment: H2;
-	content: counter(H2) ". \0000a0";
-}
-h2 {counter-reset: H3;}
-h3:before {
-	counter-increment: H3;
-	content: counter(H2) "." counter(H3) ". \0000a0";
-}
-h3 {counter-reset: H4;}
-h4:before {
-	counter-increment: H4;
-	content: counter(H2) "." counter(H3) "." counter(H4) ". \0000a0";
 }
 
 /* Credits. ---------------------------------------------------- */

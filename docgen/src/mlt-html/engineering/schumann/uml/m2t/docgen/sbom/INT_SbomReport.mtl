@@ -110,7 +110,7 @@ overrides HTML_START
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin('document-classification-public')/]
+[html_PAGE_begin('cover page', 'document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
@@ -122,7 +122,7 @@ overrides HTML_START
 		However, only the machine readable SBOM is "valid".
 		This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
 	[html_ANSI_CAUTION_End() /]
-[html_PAGE_end() /]
+[html_PAGE_end('cover page') /]
 [/template]
 
 
@@ -134,7 +134,7 @@ overrides HTML_START
 [template private Introduction_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin() /]
+[html_PAGE_begin('introduction') /]
 	[TOC_Chapter_begin('Introduction') /]
 		[TOC_Section_begin('Purpose') /]
 			<p>
@@ -169,7 +169,7 @@ overrides HTML_START
 			[TERMS_END() /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end() /]
+[html_PAGE_end('introduction') /]
 [/template]
 
 
@@ -181,7 +181,7 @@ overrides HTML_START
 [template private BasicInformation_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin() /]
+[html_PAGE_begin('basic information') /]
 	[TOC_Chapter_begin('Basic information') /]
 		[comment
 			--------------------
@@ -201,7 +201,7 @@ overrides HTML_START
 			[printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end() /]
+[html_PAGE_end('basic information') /]
 [/template]
 
 [comment
@@ -213,31 +213,31 @@ overrides HTML_START
 	this : NamedElement,
 	sbom : Sbom
 )]
-[html_PAGE_begin() /]
+[html_PAGE_begin('software components') /]
 	[TOC_Chapter_begin('Software Components') /]
 		[SoftwareComponent_Overview_Section_print(sbom) /]
-[html_PAGE_end() /]
+[html_PAGE_end('software components') /]
 
-[html_PAGE_begin() /]
+[html_PAGE_begin('firmware') /]
 		[SoftwareComponent_Firmware_Section_print(sbom) /]
-[html_PAGE_end() /]
+[html_PAGE_end('firmware') /]
 
-[html_PAGE_begin() /]
+[html_PAGE_begin('operating system') /]
 		[SoftwareComponent_OperatingSystem_Section_print(sbom) /]
-[html_PAGE_end() /]
+[html_PAGE_end('operating system') /]
 
-[html_PAGE_begin() /]
+[html_PAGE_begin('application') /]
 		[SoftwareComponent_Application_Section_print(sbom) /]
-[html_PAGE_end() /]
+[html_PAGE_end('application') /]
 
-[html_PAGE_begin() /]
+[html_PAGE_begin('library') /]
 		[SoftwareComponent_Library_Section_print(sbom) /]
-[html_PAGE_end() /]
+[html_PAGE_end('library') /]
 
-[html_PAGE_begin() /]
+[html_PAGE_begin('3rdparty') /]
 		[SoftwareComponent_3rdParty_Section_print(sbom) /]
 	[TOC_Chapter_end() /]
-[html_PAGE_end() /]
+[html_PAGE_end('3rdparty') /]
 [/template]
 
 
@@ -271,6 +271,8 @@ overrides HTML_START
 	<p>
 		The following table shows all components present. Details for each component will be provided in later sections.
 	</p>
+
+	[html_PAGE_BREAK('overview') /]
 
 	[sbom.printAsTable() /]
 [TOC_Section_end() /]

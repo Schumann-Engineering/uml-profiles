@@ -7,13 +7,18 @@
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::sbom::html::Property /]
+[import engineering::schumann::uml::m2t::html::Toc /]
 
 
 [template public printAsTable(
 	this : Component
 )]
 <div class="sbom-component">
-	<b>[name /]</b>
+	[getBreadcrumbs(2) /]
+
+	<p>
+		[TOC_anchor(name, '<b>' + name + '</b>') /]
+	</p>
 	
 	<table class="table-2-columns">
 		<tbody>
@@ -28,7 +33,7 @@
 	this : Component
 )]
 <tr>
-	<td style="text-align: center">[printName() /]</td>
+	<td style="text-align: center">[TOC_link( name, printName()) /]</td>
 	<td style="text-align: center">[type /]</td>
 	<td style="text-align: center">[printVersion() /]</td>
 	<td style="text-align: center">[classificationIec62304 /]</td>
@@ -89,7 +94,7 @@
 		[else]
 		<ul>
 		[for (ownedComponent->sortedBy(name))]
-			<li>[_toString() /]</li>
+			<li>[TOC_link(name, _toString()) /]</li>
 		[/for]
 		</ul>
 		[/if]

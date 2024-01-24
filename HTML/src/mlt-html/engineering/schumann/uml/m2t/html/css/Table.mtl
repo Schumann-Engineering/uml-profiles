@@ -11,7 +11,9 @@
   * ========================================
   * ======================================== **/
 table {
-	width:				100%;
+	width:				100% !important;
+	page-break-inside: 	avoid !important;
+	break-inside: 		avoid !important;
 }
 
 /* Table headers */
