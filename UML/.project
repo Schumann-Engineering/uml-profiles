@@ -29,7 +29,7 @@
 				</dictionary>
 				<dictionary>
 					<key>compliance</key>
-					<value>pragmatic</value>
+					<value>strict</value>
 				</dictionary>
 				<dictionary>
 					<key>resource.kind</key>
