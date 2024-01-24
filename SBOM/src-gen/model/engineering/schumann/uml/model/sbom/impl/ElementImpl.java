@@ -3,20 +3,25 @@
 package engineering.schumann.uml.model.sbom.impl;
 
 import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +34,7 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.ElementImpl#getId <em>Id</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.ElementImpl#getReference <em>Reference</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.ElementImpl#getTimestamp <em>Timestamp</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.ElementImpl#getOwnedProperty <em>Owned Property</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,6 +89,16 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected String timestamp = TIMESTAMP_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOwnedProperty() <em>Owned Property</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedProperty()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Property> ownedProperty;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -168,6 +184,33 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
+	public EList<Property> getOwnedProperty() {
+		if (ownedProperty == null) {
+			ownedProperty = new EObjectContainmentEList<Property>(Property.class, this, SBOMPackage.ELEMENT__OWNED_PROPERTY);
+		}
+		return ownedProperty;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+				return ((InternalEList<?>)getOwnedProperty()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SBOMPackage.ELEMENT__ID:
@@ -176,6 +219,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return getReference();
 			case SBOMPackage.ELEMENT__TIMESTAMP:
 				return getTimestamp();
+			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+				return getOwnedProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,6 +244,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			case SBOMPackage.ELEMENT__TIMESTAMP:
 				setTimestamp((String)newValue);
 				return;
+			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+				getOwnedProperty().clear();
+				getOwnedProperty().addAll((Collection<? extends Property>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -220,6 +269,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			case SBOMPackage.ELEMENT__TIMESTAMP:
 				setTimestamp(TIMESTAMP_EDEFAULT);
 				return;
+			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+				getOwnedProperty().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -238,6 +290,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return reference != null && !reference.isEmpty();
 			case SBOMPackage.ELEMENT__TIMESTAMP:
 				return TIMESTAMP_EDEFAULT == null ? timestamp != null : !TIMESTAMP_EDEFAULT.equals(timestamp);
+			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+				return ownedProperty != null && !ownedProperty.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

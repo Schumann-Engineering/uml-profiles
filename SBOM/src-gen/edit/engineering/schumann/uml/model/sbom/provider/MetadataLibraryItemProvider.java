@@ -3,7 +3,7 @@
 package engineering.schumann.uml.model.sbom.provider;
 
 
-import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.MetadataLibrary;
 import engineering.schumann.uml.model.sbom.SBOMFactory;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
@@ -17,24 +17,22 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link engineering.schumann.uml.model.sbom.Element} object.
+ * This is the item provider adapter for a {@link engineering.schumann.uml.model.sbom.MetadataLibrary} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElementItemProvider 
+public class MetadataLibraryItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +46,7 @@ public class ElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ElementItemProvider(AdapterFactory adapterFactory) {
+	public MetadataLibraryItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -63,77 +61,8 @@ public class ElementItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addReferencePropertyDescriptor(object);
-			addTimestampPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Id feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIdPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_id_feature", "_UI_Element_type"),
-				 SBOMPackage.Literals.ELEMENT__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Reference feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReferencePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_reference_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_reference_feature", "_UI_Element_type"),
-				 SBOMPackage.Literals.ELEMENT__REFERENCE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Timestamp feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimestampPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_timestamp_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_timestamp_feature", "_UI_Element_type"),
-				 SBOMPackage.Literals.ELEMENT__TIMESTAMP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -148,7 +77,8 @@ public class ElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SBOMPackage.Literals.ELEMENT__OWNED_PROPERTY);
+			childrenFeatures.add(SBOMPackage.Literals.METADATA_LIBRARY__ARTIFACT_META);
+			childrenFeatures.add(SBOMPackage.Literals.METADATA_LIBRARY__SUPPLIER_META);
 		}
 		return childrenFeatures;
 	}
@@ -167,6 +97,17 @@ public class ElementItemProvider
 	}
 
 	/**
+	 * This returns MetadataLibrary.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/MetadataLibrary"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,10 +115,7 @@ public class ElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Element)object).getId();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Element_type") :
-			getString("_UI_Element_type") + " " + label;
+		return getString("_UI_MetadataLibrary_type");
 	}
 
 
@@ -192,13 +130,9 @@ public class ElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Element.class)) {
-			case SBOMPackage.ELEMENT__ID:
-			case SBOMPackage.ELEMENT__REFERENCE:
-			case SBOMPackage.ELEMENT__TIMESTAMP:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SBOMPackage.ELEMENT__OWNED_PROPERTY:
+		switch (notification.getFeatureID(MetadataLibrary.class)) {
+			case SBOMPackage.METADATA_LIBRARY__ARTIFACT_META:
+			case SBOMPackage.METADATA_LIBRARY__SUPPLIER_META:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -218,8 +152,13 @@ public class ElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SBOMPackage.Literals.ELEMENT__OWNED_PROPERTY,
-				 SBOMFactory.eINSTANCE.createProperty()));
+				(SBOMPackage.Literals.METADATA_LIBRARY__ARTIFACT_META,
+				 SBOMFactory.eINSTANCE.createArtifactMetadata()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SBOMPackage.Literals.METADATA_LIBRARY__SUPPLIER_META,
+				 SBOMFactory.eINSTANCE.createSupplierMetadata()));
 	}
 
 	/**

@@ -180,7 +180,6 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SBOMPackage.Literals.NAMESPACE__OWNED_COMPONENT);
-			childrenFeatures.add(SBOMPackage.Literals.NAMESPACE__OWNED_PROPERTY);
 		}
 		return childrenFeatures;
 	}
@@ -232,7 +231,6 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -254,11 +252,6 @@ public class NamespaceItemProvider extends DescribedElementItemProvider {
 			(createChildParameter
 				(SBOMPackage.Literals.NAMESPACE__OWNED_COMPONENT,
 				 SBOMFactory.eINSTANCE.createComponent()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SBOMPackage.Literals.NAMESPACE__OWNED_PROPERTY,
-				 SBOMFactory.eINSTANCE.createProperty()));
 	}
 
 }

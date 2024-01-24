@@ -96,13 +96,22 @@ public interface SBOMPackage extends EPackage {
 	int ELEMENT__TIMESTAMP = 2;
 
 	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT__OWNED_PROPERTY = 3;
+
+	/**
 	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_FEATURE_COUNT = 3;
+	int ELEMENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -149,6 +158,15 @@ public interface SBOMPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAMED_ELEMENT__TIMESTAMP = ELEMENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__OWNED_PROPERTY = ELEMENT__OWNED_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -231,6 +249,15 @@ public interface SBOMPackage extends EPackage {
 	 * @ordered
 	 */
 	int DESCRIBED_ELEMENT__TIMESTAMP = NAMED_ELEMENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DESCRIBED_ELEMENT__OWNED_PROPERTY = NAMED_ELEMENT__OWNED_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -342,6 +369,15 @@ public interface SBOMPackage extends EPackage {
 	int NAMESPACE__TIMESTAMP = DESCRIBED_ELEMENT__TIMESTAMP;
 
 	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNED_PROPERTY = DESCRIBED_ELEMENT__OWNED_PROPERTY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -414,22 +450,13 @@ public interface SBOMPackage extends EPackage {
 	int NAMESPACE__REQUIRED_COMPONENT = DESCRIBED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMESPACE__OWNED_PROPERTY = DESCRIBED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__TYPE = DESCRIBED_ELEMENT_FEATURE_COUNT + 3;
+	int NAMESPACE__TYPE = DESCRIBED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is SOUP</b></em>' attribute.
@@ -438,7 +465,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__IS_SOUP = DESCRIBED_ELEMENT_FEATURE_COUNT + 4;
+	int NAMESPACE__IS_SOUP = DESCRIBED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Classification Iec81001 51</b></em>' attribute.
@@ -447,7 +474,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__CLASSIFICATION_IEC81001_51 = DESCRIBED_ELEMENT_FEATURE_COUNT + 5;
+	int NAMESPACE__CLASSIFICATION_IEC81001_51 = DESCRIBED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Classification Iec62304</b></em>' attribute.
@@ -456,7 +483,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE__CLASSIFICATION_IEC62304 = DESCRIBED_ELEMENT_FEATURE_COUNT + 6;
+	int NAMESPACE__CLASSIFICATION_IEC62304 = DESCRIBED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Namespace</em>' class.
@@ -465,7 +492,7 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMESPACE_FEATURE_COUNT = DESCRIBED_ELEMENT_FEATURE_COUNT + 7;
+	int NAMESPACE_FEATURE_COUNT = DESCRIBED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Namespace</em>' class.
@@ -512,6 +539,15 @@ public interface SBOMPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT__TIMESTAMP = NAMESPACE__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__OWNED_PROPERTY = NAMESPACE__OWNED_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -584,15 +620,6 @@ public interface SBOMPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMPONENT__REQUIRED_COMPONENT = NAMESPACE__REQUIRED_COMPONENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT__OWNED_PROPERTY = NAMESPACE__OWNED_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -796,6 +823,15 @@ public interface SBOMPackage extends EPackage {
 	int SBOM__TIMESTAMP = NAMED_ELEMENT__TIMESTAMP;
 
 	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SBOM__OWNED_PROPERTY = NAMED_ELEMENT__OWNED_PROPERTY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -896,6 +932,15 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM__TIMESTAMP = NAMESPACE__TIMESTAMP;
 
 	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__OWNED_PROPERTY = NAMESPACE__OWNED_PROPERTY;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -968,15 +1013,6 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM__REQUIRED_COMPONENT = NAMESPACE__REQUIRED_COMPONENT;
 
 	/**
-	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SYSTEM__OWNED_PROPERTY = NAMESPACE__OWNED_PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1031,6 +1067,216 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.MetadataLibraryImpl <em>Metadata Library</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.impl.MetadataLibraryImpl
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getMetadataLibrary()
+	 * @generated
+	 */
+	int METADATA_LIBRARY = 9;
+
+	/**
+	 * The feature id for the '<em><b>Artifact Meta</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_LIBRARY__ARTIFACT_META = 0;
+
+	/**
+	 * The feature id for the '<em><b>Supplier Meta</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_LIBRARY__SUPPLIER_META = 1;
+
+	/**
+	 * The number of structural features of the '<em>Metadata Library</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_LIBRARY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Metadata Library</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int METADATA_LIBRARY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.ArtifactMetadataImpl <em>Artifact Metadata</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.impl.ArtifactMetadataImpl
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getArtifactMetadata()
+	 * @generated
+	 */
+	int ARTIFACT_METADATA = 10;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__REFERENCE = ELEMENT__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__TIMESTAMP = ELEMENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__OWNED_PROPERTY = ELEMENT__OWNED_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Supplier</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__SUPPLIER = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA__LIBRARY = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Artifact Metadata</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Artifact Metadata</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARTIFACT_METADATA_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.impl.SupplierMetadataImpl <em>Supplier Metadata</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.model.sbom.impl.SupplierMetadataImpl
+	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSupplierMetadata()
+	 * @generated
+	 */
+	int SUPPLIER_METADATA = 11;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__ID = ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Reference</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__REFERENCE = ELEMENT__REFERENCE;
+
+	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__TIMESTAMP = ELEMENT__TIMESTAMP;
+
+	/**
+	 * The feature id for the '<em><b>Owned Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__OWNED_PROPERTY = ELEMENT__OWNED_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Library</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__LIBRARY = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Component</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA__COMPONENT = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Supplier Metadata</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Supplier Metadata</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPPLIER_METADATA_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1038,7 +1284,7 @@ public interface SBOMPackage extends EPackage {
 	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getNamespaceType()
 	 * @generated
 	 */
-	int NAMESPACE_TYPE = 9;
+	int NAMESPACE_TYPE = 12;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification <em>Iec81001 51Classification</em>}' enum.
@@ -1048,7 +1294,7 @@ public interface SBOMPackage extends EPackage {
 	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec81001_5_1_Classification()
 	 * @generated
 	 */
-	int IEC81001_51CLASSIFICATION = 10;
+	int IEC81001_51CLASSIFICATION = 13;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.Iec62304_Classification <em>Iec62304 Classification</em>}' enum.
@@ -1058,7 +1304,7 @@ public interface SBOMPackage extends EPackage {
 	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getIec62304_Classification()
 	 * @generated
 	 */
-	int IEC62304_CLASSIFICATION = 11;
+	int IEC62304_CLASSIFICATION = 14;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.model.sbom.RelationshipType <em>Relationship Type</em>}' enum.
@@ -1068,7 +1314,7 @@ public interface SBOMPackage extends EPackage {
 	 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getRelationshipType()
 	 * @generated
 	 */
-	int RELATIONSHIP_TYPE = 12;
+	int RELATIONSHIP_TYPE = 15;
 
 
 	/**
@@ -1112,17 +1358,6 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNamespace_RequiredComponent();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link engineering.schumann.uml.model.sbom.Namespace#getOwnedProperty <em>Owned Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Property</em>'.
-	 * @see engineering.schumann.uml.model.sbom.Namespace#getOwnedProperty()
-	 * @see #getNamespace()
-	 * @generated
-	 */
-	EReference getNamespace_OwnedProperty();
 
 	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.Namespace#getType <em>Type</em>}'.
@@ -1298,6 +1533,17 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getElement_Timestamp();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link engineering.schumann.uml.model.sbom.Element#getOwnedProperty <em>Owned Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Property</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Element#getOwnedProperty()
+	 * @see #getElement()
+	 * @generated
+	 */
+	EReference getElement_OwnedProperty();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1426,6 +1672,102 @@ public interface SBOMPackage extends EPackage {
 	EClass getSystem();
 
 	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.MetadataLibrary <em>Metadata Library</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Metadata Library</em>'.
+	 * @see engineering.schumann.uml.model.sbom.MetadataLibrary
+	 * @generated
+	 */
+	EClass getMetadataLibrary();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link engineering.schumann.uml.model.sbom.MetadataLibrary#getArtifactMeta <em>Artifact Meta</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Artifact Meta</em>'.
+	 * @see engineering.schumann.uml.model.sbom.MetadataLibrary#getArtifactMeta()
+	 * @see #getMetadataLibrary()
+	 * @generated
+	 */
+	EReference getMetadataLibrary_ArtifactMeta();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link engineering.schumann.uml.model.sbom.MetadataLibrary#getSupplierMeta <em>Supplier Meta</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Supplier Meta</em>'.
+	 * @see engineering.schumann.uml.model.sbom.MetadataLibrary#getSupplierMeta()
+	 * @see #getMetadataLibrary()
+	 * @generated
+	 */
+	EReference getMetadataLibrary_SupplierMeta();
+
+	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.ArtifactMetadata <em>Artifact Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Artifact Metadata</em>'.
+	 * @see engineering.schumann.uml.model.sbom.ArtifactMetadata
+	 * @generated
+	 */
+	EClass getArtifactMetadata();
+
+	/**
+	 * Returns the meta object for the reference '{@link engineering.schumann.uml.model.sbom.ArtifactMetadata#getSupplier <em>Supplier</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Supplier</em>'.
+	 * @see engineering.schumann.uml.model.sbom.ArtifactMetadata#getSupplier()
+	 * @see #getArtifactMetadata()
+	 * @generated
+	 */
+	EReference getArtifactMetadata_Supplier();
+
+	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.model.sbom.ArtifactMetadata#getLibrary <em>Library</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Library</em>'.
+	 * @see engineering.schumann.uml.model.sbom.ArtifactMetadata#getLibrary()
+	 * @see #getArtifactMetadata()
+	 * @generated
+	 */
+	EReference getArtifactMetadata_Library();
+
+	/**
+	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.SupplierMetadata <em>Supplier Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Supplier Metadata</em>'.
+	 * @see engineering.schumann.uml.model.sbom.SupplierMetadata
+	 * @generated
+	 */
+	EClass getSupplierMetadata();
+
+	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.model.sbom.SupplierMetadata#getLibrary <em>Library</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Library</em>'.
+	 * @see engineering.schumann.uml.model.sbom.SupplierMetadata#getLibrary()
+	 * @see #getSupplierMetadata()
+	 * @generated
+	 */
+	EReference getSupplierMetadata_Library();
+
+	/**
+	 * Returns the meta object for the reference list '{@link engineering.schumann.uml.model.sbom.SupplierMetadata#getComponent <em>Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Component</em>'.
+	 * @see engineering.schumann.uml.model.sbom.SupplierMetadata#getComponent()
+	 * @see #getSupplierMetadata()
+	 * @generated
+	 */
+	EReference getSupplierMetadata_Component();
+
+	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1523,14 +1865,6 @@ public interface SBOMPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NAMESPACE__REQUIRED_COMPONENT = eINSTANCE.getNamespace_RequiredComponent();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Property</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NAMESPACE__OWNED_PROPERTY = eINSTANCE.getNamespace_OwnedProperty();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1667,6 +2001,14 @@ public interface SBOMPackage extends EPackage {
 		EAttribute ELEMENT__TIMESTAMP = eINSTANCE.getElement_Timestamp();
 
 		/**
+		 * The meta object literal for the '<em><b>Owned Property</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ELEMENT__OWNED_PROPERTY = eINSTANCE.getElement_OwnedProperty();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.PropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1769,6 +2111,84 @@ public interface SBOMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYSTEM = eINSTANCE.getSystem();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.MetadataLibraryImpl <em>Metadata Library</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.impl.MetadataLibraryImpl
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getMetadataLibrary()
+		 * @generated
+		 */
+		EClass METADATA_LIBRARY = eINSTANCE.getMetadataLibrary();
+
+		/**
+		 * The meta object literal for the '<em><b>Artifact Meta</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METADATA_LIBRARY__ARTIFACT_META = eINSTANCE.getMetadataLibrary_ArtifactMeta();
+
+		/**
+		 * The meta object literal for the '<em><b>Supplier Meta</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference METADATA_LIBRARY__SUPPLIER_META = eINSTANCE.getMetadataLibrary_SupplierMeta();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.ArtifactMetadataImpl <em>Artifact Metadata</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.impl.ArtifactMetadataImpl
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getArtifactMetadata()
+		 * @generated
+		 */
+		EClass ARTIFACT_METADATA = eINSTANCE.getArtifactMetadata();
+
+		/**
+		 * The meta object literal for the '<em><b>Supplier</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT_METADATA__SUPPLIER = eINSTANCE.getArtifactMetadata_Supplier();
+
+		/**
+		 * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARTIFACT_METADATA__LIBRARY = eINSTANCE.getArtifactMetadata_Library();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.SupplierMetadataImpl <em>Supplier Metadata</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.model.sbom.impl.SupplierMetadataImpl
+		 * @see engineering.schumann.uml.model.sbom.impl.SBOMPackageImpl#getSupplierMetadata()
+		 * @generated
+		 */
+		EClass SUPPLIER_METADATA = eINSTANCE.getSupplierMetadata();
+
+		/**
+		 * The meta object literal for the '<em><b>Library</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLIER_METADATA__LIBRARY = eINSTANCE.getSupplierMetadata_Library();
+
+		/**
+		 * The meta object literal for the '<em><b>Component</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUPPLIER_METADATA__COMPONENT = eINSTANCE.getSupplierMetadata_Component();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.NamespaceType <em>Namespace Type</em>}' enum.

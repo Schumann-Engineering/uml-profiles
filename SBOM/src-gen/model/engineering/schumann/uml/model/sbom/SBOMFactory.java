@@ -67,6 +67,33 @@ public interface SBOMFactory extends EFactory {
 	System createSystem();
 
 	/**
+	 * Returns a new object of class '<em>Metadata Library</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Metadata Library</em>'.
+	 * @generated
+	 */
+	MetadataLibrary createMetadataLibrary();
+
+	/**
+	 * Returns a new object of class '<em>Artifact Metadata</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Artifact Metadata</em>'.
+	 * @generated
+	 */
+	ArtifactMetadata createArtifactMetadata();
+
+	/**
+	 * Returns a new object of class '<em>Supplier Metadata</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Supplier Metadata</em>'.
+	 * @generated
+	 */
+	SupplierMetadata createSupplierMetadata();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

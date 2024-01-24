@@ -2,9 +2,11 @@
  */
 package engineering.schumann.uml.model.sbom.impl;
 
+import engineering.schumann.uml.model.sbom.ArtifactMetadata;
 import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.Iec62304_Classification;
 import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
+import engineering.schumann.uml.model.sbom.MetadataLibrary;
 import engineering.schumann.uml.model.sbom.NamespaceType;
 import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
@@ -12,6 +14,7 @@ import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.SBOMFactory;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
+import engineering.schumann.uml.model.sbom.SupplierMetadata;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -71,6 +74,9 @@ public class SBOMFactoryImpl extends EFactoryImpl implements SBOMFactory {
 			case SBOMPackage.RELATIONSHIP: return createRelationship();
 			case SBOMPackage.SBOM: return createSbom();
 			case SBOMPackage.SYSTEM: return createSystem();
+			case SBOMPackage.METADATA_LIBRARY: return createMetadataLibrary();
+			case SBOMPackage.ARTIFACT_METADATA: return createArtifactMetadata();
+			case SBOMPackage.SUPPLIER_METADATA: return createSupplierMetadata();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -171,6 +177,39 @@ public class SBOMFactoryImpl extends EFactoryImpl implements SBOMFactory {
 	public engineering.schumann.uml.model.sbom.System createSystem() {
 		SystemImpl system = new SystemImpl();
 		return system;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MetadataLibrary createMetadataLibrary() {
+		MetadataLibraryImpl metadataLibrary = new MetadataLibraryImpl();
+		return metadataLibrary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ArtifactMetadata createArtifactMetadata() {
+		ArtifactMetadataImpl artifactMetadata = new ArtifactMetadataImpl();
+		return artifactMetadata;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SupplierMetadata createSupplierMetadata() {
+		SupplierMetadataImpl supplierMetadata = new SupplierMetadataImpl();
+		return supplierMetadata;
 	}
 
 	/**

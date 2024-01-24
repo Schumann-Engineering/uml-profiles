@@ -10,8 +10,6 @@
         upperBound="-1" eType="#//Component" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredComponent" ordered="false"
         upperBound="-1" eType="#//Component"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedProperty" ordered="false"
-        upperBound="-1" eType="#//Property" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
         eType="#//NamespaceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSOUP" ordered="false"
@@ -45,6 +43,8 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedProperty" ordered="false"
+        upperBound="-1" eType="#//Property" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
@@ -96,4 +96,22 @@
         upperBound="-1" eType="#//Relationship" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Namespace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MetadataLibrary">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="artifactMeta" ordered="false"
+        upperBound="-1" eType="#//ArtifactMetadata" containment="true" eOpposite="#//ArtifactMetadata/library"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supplierMeta" ordered="false"
+        upperBound="-1" eType="#//SupplierMetadata" containment="true" eOpposite="#//SupplierMetadata/library"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ArtifactMetadata" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supplier" ordered="false"
+        lowerBound="1" eType="#//SupplierMetadata" eOpposite="#//SupplierMetadata/component"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="library" ordered="false"
+        lowerBound="1" eType="#//MetadataLibrary" eOpposite="#//MetadataLibrary/artifactMeta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SupplierMetadata" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="library" ordered="false"
+        lowerBound="1" eType="#//MetadataLibrary" eOpposite="#//MetadataLibrary/supplierMeta"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="component" ordered="false"
+        upperBound="-1" eType="#//ArtifactMetadata" eOpposite="#//ArtifactMetadata/supplier"/>
+  </eClassifiers>
 </ecore:EPackage>

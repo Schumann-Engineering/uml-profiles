@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link engineering.schumann.uml.model.sbom.Element#getId <em>Id</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Element#getReference <em>Reference</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Element#getTimestamp <em>Timestamp</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Element#getOwnedProperty <em>Owned Property</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.model.sbom.SBOMPackage#getElement()
@@ -92,5 +93,21 @@ public interface Element extends EObject {
 	 * @generated
 	 */
 	void setTimestamp(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Owned Property</b></em>' containment reference list.
+	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Property}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owned Property</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owned Property</em>' containment reference list.
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getElement_OwnedProperty()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<Property> getOwnedProperty();
 
 } // Element

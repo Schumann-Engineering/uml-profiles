@@ -69,8 +69,6 @@
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/ownedComponent"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/requiredComponent"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/ownedProperty"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/type"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/isSOUP"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/classificationIec81001_5_1"/>
@@ -90,6 +88,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Element/id"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Element/reference"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Element/timestamp"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Element/ownedProperty"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Property">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/key"/>
@@ -110,5 +110,23 @@
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedRelationship"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//System"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//MetadataLibrary">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//MetadataLibrary/artifactMeta"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//MetadataLibrary/supplierMeta"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//ArtifactMetadata">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//ArtifactMetadata/supplier"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//ArtifactMetadata/library"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//SupplierMetadata">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//SupplierMetadata/library"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//SupplierMetadata/component"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

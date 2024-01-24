@@ -2,11 +2,13 @@
  */
 package engineering.schumann.uml.model.sbom.impl;
 
+import engineering.schumann.uml.model.sbom.ArtifactMetadata;
 import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
 import engineering.schumann.uml.model.sbom.Iec62304_Classification;
 import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
+import engineering.schumann.uml.model.sbom.MetadataLibrary;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.NamespaceType;
@@ -16,6 +18,7 @@ import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.SBOMFactory;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
+import engineering.schumann.uml.model.sbom.SupplierMetadata;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -94,6 +97,27 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	private EClass systemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass metadataLibraryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass artifactMetadataEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass supplierMetadataEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -229,18 +253,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamespace_OwnedProperty() {
-		return (EReference)namespaceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getNamespace_Type() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -250,7 +264,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 */
 	@Override
 	public EAttribute getNamespace_IsSOUP() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -260,7 +274,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 */
 	@Override
 	public EAttribute getNamespace_ClassificationIec81001_5_1() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -270,7 +284,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 */
 	@Override
 	public EAttribute getNamespace_ClassificationIec62304() {
-		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)namespaceEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -399,6 +413,16 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getElement_OwnedProperty() {
+		return (EReference)elementEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -519,6 +543,96 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getMetadataLibrary() {
+		return metadataLibraryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMetadataLibrary_ArtifactMeta() {
+		return (EReference)metadataLibraryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMetadataLibrary_SupplierMeta() {
+		return (EReference)metadataLibraryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getArtifactMetadata() {
+		return artifactMetadataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getArtifactMetadata_Supplier() {
+		return (EReference)artifactMetadataEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getArtifactMetadata_Library() {
+		return (EReference)artifactMetadataEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSupplierMetadata() {
+		return supplierMetadataEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSupplierMetadata_Library() {
+		return (EReference)supplierMetadataEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSupplierMetadata_Component() {
+		return (EReference)supplierMetadataEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getNamespaceType() {
 		return namespaceTypeEEnum;
 	}
@@ -587,7 +701,6 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		namespaceEClass = createEClass(NAMESPACE);
 		createEReference(namespaceEClass, NAMESPACE__OWNED_COMPONENT);
 		createEReference(namespaceEClass, NAMESPACE__REQUIRED_COMPONENT);
-		createEReference(namespaceEClass, NAMESPACE__OWNED_PROPERTY);
 		createEAttribute(namespaceEClass, NAMESPACE__TYPE);
 		createEAttribute(namespaceEClass, NAMESPACE__IS_SOUP);
 		createEAttribute(namespaceEClass, NAMESPACE__CLASSIFICATION_IEC81001_51);
@@ -607,6 +720,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		createEAttribute(elementEClass, ELEMENT__ID);
 		createEAttribute(elementEClass, ELEMENT__REFERENCE);
 		createEAttribute(elementEClass, ELEMENT__TIMESTAMP);
+		createEReference(elementEClass, ELEMENT__OWNED_PROPERTY);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__KEY);
@@ -623,6 +737,18 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		createEReference(sbomEClass, SBOM__OWNED_RELATIONSHIP);
 
 		systemEClass = createEClass(SYSTEM);
+
+		metadataLibraryEClass = createEClass(METADATA_LIBRARY);
+		createEReference(metadataLibraryEClass, METADATA_LIBRARY__ARTIFACT_META);
+		createEReference(metadataLibraryEClass, METADATA_LIBRARY__SUPPLIER_META);
+
+		artifactMetadataEClass = createEClass(ARTIFACT_METADATA);
+		createEReference(artifactMetadataEClass, ARTIFACT_METADATA__SUPPLIER);
+		createEReference(artifactMetadataEClass, ARTIFACT_METADATA__LIBRARY);
+
+		supplierMetadataEClass = createEClass(SUPPLIER_METADATA);
+		createEReference(supplierMetadataEClass, SUPPLIER_METADATA__LIBRARY);
+		createEReference(supplierMetadataEClass, SUPPLIER_METADATA__COMPONENT);
 
 		// Create enums
 		namespaceTypeEEnum = createEEnum(NAMESPACE_TYPE);
@@ -665,6 +791,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		namedElementEClass.getESuperTypes().add(this.getElement());
 		sbomEClass.getESuperTypes().add(this.getNamedElement());
 		systemEClass.getESuperTypes().add(this.getNamespace());
+		artifactMetadataEClass.getESuperTypes().add(this.getElement());
+		supplierMetadataEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -672,7 +800,6 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNamespace_OwnedComponent(), this.getComponent(), null, "ownedComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getNamespace_RequiredComponent(), this.getComponent(), null, "requiredComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamespace_OwnedProperty(), this.getProperty(), null, "ownedProperty", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_Type(), this.getNamespaceType(), "type", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_IsSOUP(), ecorePackage.getEBoolean(), "isSOUP", "true", 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_ClassificationIec81001_5_1(), this.getIec81001_5_1_Classification(), "classificationIec81001_5_1", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -692,6 +819,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEAttribute(getElement_Id(), ecorePackage.getEString(), "id", null, 1, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getElement_Reference(), ecorePackage.getEString(), "reference", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getElement_Timestamp(), ecorePackage.getEString(), "timestamp", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getElement_OwnedProperty(), this.getProperty(), null, "ownedProperty", null, 0, -1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperty_Key(), ecorePackage.getEString(), "key", null, 1, 1, Property.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -708,6 +836,18 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEReference(getSbom_OwnedRelationship(), this.getRelationship(), null, "ownedRelationship", null, 0, -1, Sbom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(systemEClass, engineering.schumann.uml.model.sbom.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(metadataLibraryEClass, MetadataLibrary.class, "MetadataLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMetadataLibrary_ArtifactMeta(), this.getArtifactMetadata(), this.getArtifactMetadata_Library(), "artifactMeta", null, 0, -1, MetadataLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMetadataLibrary_SupplierMeta(), this.getSupplierMetadata(), this.getSupplierMetadata_Library(), "supplierMeta", null, 0, -1, MetadataLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(artifactMetadataEClass, ArtifactMetadata.class, "ArtifactMetadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getArtifactMetadata_Supplier(), this.getSupplierMetadata(), this.getSupplierMetadata_Component(), "supplier", null, 1, 1, ArtifactMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getArtifactMetadata_Library(), this.getMetadataLibrary(), this.getMetadataLibrary_ArtifactMeta(), "library", null, 1, 1, ArtifactMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(supplierMetadataEClass, SupplierMetadata.class, "SupplierMetadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSupplierMetadata_Library(), this.getMetadataLibrary(), this.getMetadataLibrary_SupplierMeta(), "library", null, 1, 1, SupplierMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSupplierMetadata_Component(), this.getArtifactMetadata(), this.getArtifactMetadata_Supplier(), "component", null, 0, -1, SupplierMetadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(namespaceTypeEEnum, NamespaceType.class, "NamespaceType");

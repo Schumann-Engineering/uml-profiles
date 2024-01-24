@@ -2,15 +2,18 @@
  */
 package engineering.schumann.uml.model.sbom.util;
 
+import engineering.schumann.uml.model.sbom.ArtifactMetadata;
 import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.MetadataLibrary;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
+import engineering.schumann.uml.model.sbom.SupplierMetadata;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -110,6 +113,18 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseSystem(engineering.schumann.uml.model.sbom.System object) {
 				return createSystemAdapter();
+			}
+			@Override
+			public Adapter caseMetadataLibrary(MetadataLibrary object) {
+				return createMetadataLibraryAdapter();
+			}
+			@Override
+			public Adapter caseArtifactMetadata(ArtifactMetadata object) {
+				return createArtifactMetadataAdapter();
+			}
+			@Override
+			public Adapter caseSupplierMetadata(SupplierMetadata object) {
+				return createSupplierMetadataAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -254,6 +269,48 @@ public class SBOMAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSystemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.MetadataLibrary <em>Metadata Library</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.model.sbom.MetadataLibrary
+	 * @generated
+	 */
+	public Adapter createMetadataLibraryAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.ArtifactMetadata <em>Artifact Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.model.sbom.ArtifactMetadata
+	 * @generated
+	 */
+	public Adapter createArtifactMetadataAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.model.sbom.SupplierMetadata <em>Supplier Metadata</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.model.sbom.SupplierMetadata
+	 * @generated
+	 */
+	public Adapter createSupplierMetadataAdapter() {
 		return null;
 	}
 

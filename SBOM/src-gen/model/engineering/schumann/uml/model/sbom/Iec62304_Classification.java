@@ -26,7 +26,9 @@ public enum Iec62304_Classification implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	C(0, "C", "C"), /**
+	C(0, "C", "C"),
+
+	/**
 	 * The '<em><b>B</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -34,7 +36,9 @@ public enum Iec62304_Classification implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	B(1, "B", "B"), /**
+	B(1, "B", "B"),
+
+	/**
 	 * The '<em><b>A</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

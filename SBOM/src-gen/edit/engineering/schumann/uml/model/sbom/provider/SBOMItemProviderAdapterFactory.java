@@ -187,6 +187,75 @@ public class SBOMItemProviderAdapterFactory extends SBOMAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.MetadataLibrary} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MetadataLibraryItemProvider metadataLibraryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.MetadataLibrary}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMetadataLibraryAdapter() {
+		if (metadataLibraryItemProvider == null) {
+			metadataLibraryItemProvider = new MetadataLibraryItemProvider(this);
+		}
+
+		return metadataLibraryItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.ArtifactMetadata} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ArtifactMetadataItemProvider artifactMetadataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.ArtifactMetadata}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createArtifactMetadataAdapter() {
+		if (artifactMetadataItemProvider == null) {
+			artifactMetadataItemProvider = new ArtifactMetadataItemProvider(this);
+		}
+
+		return artifactMetadataItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link engineering.schumann.uml.model.sbom.SupplierMetadata} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SupplierMetadataItemProvider supplierMetadataItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link engineering.schumann.uml.model.sbom.SupplierMetadata}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSupplierMetadataAdapter() {
+		if (supplierMetadataItemProvider == null) {
+			supplierMetadataItemProvider = new SupplierMetadataItemProvider(this);
+		}
+
+		return supplierMetadataItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -296,6 +365,9 @@ public class SBOMItemProviderAdapterFactory extends SBOMAdapterFactory implement
 		if (relationshipItemProvider != null) relationshipItemProvider.dispose();
 		if (sbomItemProvider != null) sbomItemProvider.dispose();
 		if (systemItemProvider != null) systemItemProvider.dispose();
+		if (metadataLibraryItemProvider != null) metadataLibraryItemProvider.dispose();
+		if (artifactMetadataItemProvider != null) artifactMetadataItemProvider.dispose();
+		if (supplierMetadataItemProvider != null) supplierMetadataItemProvider.dispose();
 	}
 
 }

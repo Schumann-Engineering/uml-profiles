@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getOwnedComponent <em>Owned Component</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getRequiredComponent <em>Required Component</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getOwnedProperty <em>Owned Property</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getType <em>Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#isSOUP <em>Is SOUP</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Namespace#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}</li>
@@ -58,22 +57,6 @@ public interface Namespace extends DescribedElement {
 	 * @generated
 	 */
 	EList<Component> getRequiredComponent();
-
-	/**
-	 * Returns the value of the '<em><b>Owned Property</b></em>' containment reference list.
-	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Property}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Owned Property</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Property</em>' containment reference list.
-	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace_OwnedProperty()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<Property> getOwnedProperty();
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.

@@ -96,16 +96,18 @@
 	</td>
 </tr>
 [comment references /]
-[if (not reference->isEmpty())]
-<tr>
-	<th colspan="2">References</th>
-</tr>
-[for (reference)]
-<tr>
-	<td colspan="2" style="text-align: center;">[self /]</td>
-</tr>
-[/for]
-[/if]
+[comment]
+			[if (not reference->isEmpty())]
+			<tr>
+				<th colspan="2">References</th>
+			</tr>
+			[for (reference)]
+			<tr>
+				<td colspan="2" style="text-align: center;">[self /]</td>
+			</tr>
+			[/for]
+			[/if]
+[/comment]
 [comment properties /]
 [if (not ownedProperty->isEmpty())]
 <tr>

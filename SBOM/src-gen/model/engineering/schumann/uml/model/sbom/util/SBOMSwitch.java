@@ -2,15 +2,18 @@
  */
 package engineering.schumann.uml.model.sbom.util;
 
+import engineering.schumann.uml.model.sbom.ArtifactMetadata;
 import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.Element;
+import engineering.schumann.uml.model.sbom.MetadataLibrary;
 import engineering.schumann.uml.model.sbom.NamedElement;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.model.sbom.Sbom;
+import engineering.schumann.uml.model.sbom.SupplierMetadata;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -141,6 +144,26 @@ public class SBOMSwitch<T> extends Switch<T> {
 				if (result == null) result = caseDescribedElement(system);
 				if (result == null) result = caseNamedElement(system);
 				if (result == null) result = caseElement(system);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SBOMPackage.METADATA_LIBRARY: {
+				MetadataLibrary metadataLibrary = (MetadataLibrary)theEObject;
+				T result = caseMetadataLibrary(metadataLibrary);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SBOMPackage.ARTIFACT_METADATA: {
+				ArtifactMetadata artifactMetadata = (ArtifactMetadata)theEObject;
+				T result = caseArtifactMetadata(artifactMetadata);
+				if (result == null) result = caseElement(artifactMetadata);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SBOMPackage.SUPPLIER_METADATA: {
+				SupplierMetadata supplierMetadata = (SupplierMetadata)theEObject;
+				T result = caseSupplierMetadata(supplierMetadata);
+				if (result == null) result = caseElement(supplierMetadata);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -280,6 +303,51 @@ public class SBOMSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSystem(engineering.schumann.uml.model.sbom.System object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Metadata Library</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Metadata Library</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMetadataLibrary(MetadataLibrary object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Artifact Metadata</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Artifact Metadata</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArtifactMetadata(ArtifactMetadata object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Supplier Metadata</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Supplier Metadata</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSupplierMetadata(SupplierMetadata object) {
 		return null;
 	}
 

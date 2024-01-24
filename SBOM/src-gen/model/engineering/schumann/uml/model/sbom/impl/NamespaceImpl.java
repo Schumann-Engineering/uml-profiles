@@ -7,7 +7,6 @@ import engineering.schumann.uml.model.sbom.Iec62304_Classification;
 import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
 import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.NamespaceType;
-import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
 import java.util.Collection;
@@ -36,7 +35,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getOwnedComponent <em>Owned Component</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getRequiredComponent <em>Required Component</em>}</li>
- *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getOwnedProperty <em>Owned Property</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getType <em>Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#isSOUP <em>Is SOUP</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl#getClassificationIec81001_5_1 <em>Classification Iec81001 51</em>}</li>
@@ -65,16 +63,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @ordered
 	 */
 	protected EList<Component> requiredComponent;
-
-	/**
-	 * The cached value of the '{@link #getOwnedProperty() <em>Owned Property</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnedProperty()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Property> ownedProperty;
 
 	/**
 	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
@@ -207,19 +195,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * @generated
 	 */
 	@Override
-	public EList<Property> getOwnedProperty() {
-		if (ownedProperty == null) {
-			ownedProperty = new EObjectContainmentEList<Property>(Property.class, this, SBOMPackage.NAMESPACE__OWNED_PROPERTY);
-		}
-		return ownedProperty;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NamespaceType getType() {
 		return type;
 	}
@@ -316,8 +291,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 		switch (featureID) {
 			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
 				return ((InternalEList<?>)getOwnedComponent()).basicRemove(otherEnd, msgs);
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
-				return ((InternalEList<?>)getOwnedProperty()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -334,8 +307,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 				return getOwnedComponent();
 			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
 				return getRequiredComponent();
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
-				return getOwnedProperty();
 			case SBOMPackage.NAMESPACE__TYPE:
 				return getType();
 			case SBOMPackage.NAMESPACE__IS_SOUP:
@@ -364,10 +335,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
 				getRequiredComponent().clear();
 				getRequiredComponent().addAll((Collection<? extends Component>)newValue);
-				return;
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
-				getOwnedProperty().clear();
-				getOwnedProperty().addAll((Collection<? extends Property>)newValue);
 				return;
 			case SBOMPackage.NAMESPACE__TYPE:
 				setType((NamespaceType)newValue);
@@ -399,9 +366,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
 				getRequiredComponent().clear();
 				return;
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
-				getOwnedProperty().clear();
-				return;
 			case SBOMPackage.NAMESPACE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
@@ -430,8 +394,6 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 				return ownedComponent != null && !ownedComponent.isEmpty();
 			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
 				return requiredComponent != null && !requiredComponent.isEmpty();
-			case SBOMPackage.NAMESPACE__OWNED_PROPERTY:
-				return ownedProperty != null && !ownedProperty.isEmpty();
 			case SBOMPackage.NAMESPACE__TYPE:
 				return type != TYPE_EDEFAULT;
 			case SBOMPackage.NAMESPACE__IS_SOUP:
