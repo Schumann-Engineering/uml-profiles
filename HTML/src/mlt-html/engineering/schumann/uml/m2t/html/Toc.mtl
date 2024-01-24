@@ -119,3 +119,25 @@ post(trim())]
 	.replaceAll('/', '')
 	.replaceAll('\\+', '')
 /]
+
+
+[query public TOC_getTOC(
+	devNull	: OclAny
+) : Sequence(Sequence(String)) = 
+	invoke(
+		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+		'getToc()',
+		Sequence {}
+	)
+/]
+
+
+[query public TOC_init(
+	devNull	: OclAny
+) : OclVoid = 
+	invoke(
+		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+		'initToc()',
+		Sequence {}
+	)
+/]

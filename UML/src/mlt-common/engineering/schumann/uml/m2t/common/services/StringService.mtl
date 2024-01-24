@@ -62,6 +62,9 @@
 [query public padRightUnsafe(str : OclAny, length : Integer, padding : String) : String
 	= invoke('engineering.schumann.uml.m2t.common.services.StringServiceImpl', 'padRight(java.lang.String, java.lang.Integer, java.lang.String)', Sequence{str, length, padding}) /]
 
+[query public repeat(str : String, count : Integer) : String
+	= invoke('engineering.schumann.uml.m2t.common.services.StringServiceImpl', 'repeat(java.lang.String, java.lang.Integer)', Sequence{str, count}) /]
+
 [query public replaceEachRepeatedly(str :OclAny, pattern : String, value : String) : String
 	= invoke('engineering.schumann.uml.m2t.common.services.StringServiceImpl', 'replaceEachRepeatedly(java.lang.String, java.lang.String, java.lang.String)', Sequence{str, pattern, value}) /]
 

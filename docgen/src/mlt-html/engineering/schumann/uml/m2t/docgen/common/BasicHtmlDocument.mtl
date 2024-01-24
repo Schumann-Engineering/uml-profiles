@@ -10,6 +10,9 @@ extends engineering::schumann::uml::m2t::html::Html
 
 [import engineering::schumann::uml::m2t::sbom::html::css::Component /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::css::Scope /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
 
 
 
@@ -46,4 +49,26 @@ overrides HTML_START
 		[CSS_ADDON() /]
 	</head>
 	<body>
+	[TOC_init()/]
+[/template]
+
+
+[template public HTML_TOC(
+	devNull	: OclAny
+)]
+	[html_PAGE_begin('toc') /]
+		<p class="toc-title">
+			Table of Contents
+		</p>
+
+		<pre>
+[for (TOC_getTOC()->select(at(2).toInteger() >= 2))]
+	[let name  : String  = self->at(1)]
+	[let level : Integer = self->at(2).toInteger()]
+	['....'.repeat(level - 2) /][TOC_link( name ) /]
+	[/let]
+	[/let]
+[/for]
+		</pre>
+	[html_PAGE_end('toc') /]
 [/template]

@@ -58,19 +58,31 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [HTML_START('Cybersecurity Research Report')/]
 	[CoverPage_Chapter_print()/]
 
-	[Introduction_Chapter_print()/]
+	[let content : String = generateDocumentContent()]
 
-	[BasicInformation_Chapter_print()/]
+	[HTML_TOC() /]
 
-	[ImplementationProcess_Chapter_print()/]
-
-	[VulnerabilityAssessment_Chapter_print()/]
-
-	[Conclusion_Chapter_print()/]
-
-	[Appendix_Chapter_print()/]
+	[content /]
+	[/let]
 [HTML_END()/]
 [/file]
+[/template]
+
+
+[template private generateDocumentContent(
+	this 	: NamedElement
+)]
+[Introduction_Chapter_print()/]
+
+[BasicInformation_Chapter_print()/]
+
+[ImplementationProcess_Chapter_print()/]
+
+[VulnerabilityAssessment_Chapter_print()/]
+
+[Conclusion_Chapter_print()/]
+
+[Appendix_Chapter_print()/]
 [/template]
 
 

@@ -217,4 +217,20 @@ public class StringServiceImpl {
 		// === RESULT
 		return result;
 	}
+	
+	
+	public static String repeat(
+			String input,
+			Integer count
+	)
+	{
+		// === BODY ===
+		var result = "";
+		
+		for (int i=0; i<count; i++)
+			result += input;
+		
+		// === RESULT ===
+		return result;
+	}
 }

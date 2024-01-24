@@ -69,17 +69,28 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [HTML_START('Product Security Characteristics')/]
 	[CoverPage_Chapter_print()/]
 
-	[Introduction_Chapter_print()/]
+	[let content : String = generateDocumentContent()]
 
-	[BasicInformation_Chapter_print()/]
+	[HTML_TOC() /]
 
-	[ProductArchitecture_Chapter_print()/]
-
-	[SecurityCapabilities_Chapter_print()/]
+	[content /]
+	[/let]
 [HTML_END()/]
 [/file]
 [/template]
 
+
+[template private generateDocumentContent(
+	this 	: NamedElement
+)]
+[Introduction_Chapter_print()/]
+
+[BasicInformation_Chapter_print()/]
+
+[ProductArchitecture_Chapter_print()/]
+
+[SecurityCapabilities_Chapter_print()/]
+[/template]
 
 [comment
 	====================

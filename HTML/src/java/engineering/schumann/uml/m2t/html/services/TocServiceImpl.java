@@ -1,25 +1,53 @@
 package engineering.schumann.uml.m2t.html.services;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
+
 public class TocServiceImpl {
-	private class Entry {
+	public class Entry extends BasicEObjectImpl {
 		public String name = null;
 		
 		public int level = 0;
 		
 		@Override
 		public String toString() {
-			return String.format("'%s', level %d", name, level);
+			return String.format("'%s' (level %d)", name, level);
 		}
+		
+		public String eGet(
+			String featureName
+		)
+		throws
+			Exception
+		{
+			// === GUARDS ===
+			if (featureName == null)
+				throw new IllegalArgumentException("feature name is null");
+			if (featureName.isBlank())
+				throw new IllegalArgumentException("feature name is blank");
+			
+			// === BODY ===
+			switch (featureName.trim().toLowerCase())
+			{
+				case "name": return name;
+				case "level": return Integer.toString(level);
+			
+				default:
+					throw new IllegalArgumentException(String.format("feature '%s' does not exist", featureName));					
+			}
+			
+		}
+		
 	}
 	
 	
-	private final static Stack<Entry> Breadcrumbs = new Stack<Entry>();
+	private List<Entry> TableOfContents = new ArrayList<Entry>();
 	
-	// private final static TocServiceImpl INSTANCE = new TocServiceImpl(); 
+	private Stack<Entry> Breadcrumbs = new Stack<Entry>();
 	
 	
 	protected Entry createEntry() { return new Entry(); }
@@ -105,6 +133,8 @@ public class TocServiceImpl {
 		
 		// finally add the entry
 		Breadcrumbs.push(newEntry);
+		// also add it to TOC. With this, we are automatically getting the list of entries. :)
+		TableOfContents.add(newEntry);
 	}
 	
 	
@@ -144,5 +174,23 @@ public class TocServiceImpl {
 		
 		// === RESULT ===
 		return entries;
+	}
+
+
+	public List<List<String>> getToc()
+	{
+		var result = new ArrayList<List<String>>();
+		
+		for (var entry : TableOfContents)
+			result.add(Arrays.asList( entry.name, Integer.toString(entry.level)));
+		
+		return result;
+	}
+	
+	
+	public void initToc()
+	{
+		TableOfContents.clear();
+		Breadcrumbs.clear();
 	}
 }

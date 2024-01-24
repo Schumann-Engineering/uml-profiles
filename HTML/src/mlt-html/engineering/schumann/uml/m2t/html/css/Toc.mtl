@@ -10,6 +10,13 @@
   * TABLE OF CONTENTS
   * ========================================
   * ======================================== **/
+.toc-title {
+	font-size:				12pt !important;
+	font-weight: 			bold !important;
+	text-transform:			uppercase !important;
+}
+
+
 body {
 	counter-reset: H1 H2 H3 H4 H5 H6 !important;
 }
