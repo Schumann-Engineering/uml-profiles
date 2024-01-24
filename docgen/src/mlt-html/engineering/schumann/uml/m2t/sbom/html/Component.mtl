@@ -25,6 +25,10 @@
 			[printAsTableRowVertical() /]
 		</tbody>
 	</table>
+
+	<p class="breadcrumbs" style="text-align: right !important">
+		[TOC_link(name + '-overview', 'back to Overview') /]
+	</p>
 </div>
 [/template]
 
@@ -33,10 +37,9 @@
 	this : Component
 )]
 <tr>
-	<td style="text-align: center">[TOC_link( name, printName()) /]</td>
+	<td style="text-align: center">[TOC_link( name, printName()) /][TOC_anchor(name + '-overview') /]</td>
 	<td style="text-align: center">[type /]</td>
 	<td style="text-align: center">[printVersion() /]</td>
-	<td style="text-align: center">[classificationIec62304 /]</td>
 	<td style="text-align: center">[classificationIec81001_5_1 /]</td>
 </tr>
 [comment ownedComponent.printAsTableRowHorizontal() /]
@@ -56,11 +59,13 @@
 	<th>Type</th>
 	<td>[type /]</td>
 </tr>
-[comment classification /]
-<tr>
-	<th>IEC 62304 Classification</th>
-	<td>[classificationIec62304 /]</td>
-</tr>
+[comment IEC 62304 classification /]
+[comment]
+	<tr>
+		<th>IEC 62304 Classification</th>
+		<td>[classificationIec62304 /]</td>
+	</tr>
+[/comment]
 <tr>
 	<th>IEC 81001-5-1 Classification</th>
 	<td>[classificationIec81001_5_1 /]</td>
