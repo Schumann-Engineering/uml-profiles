@@ -10,23 +10,73 @@
   * PAGE SETUP
   * ========================================
   * ======================================== **/
-@page {
-	/* set page size = DIN A4*/
-    size:				a4 portrait; 
-}
-
-@page landscape {
-	size:				a4 landscape;
-}
-
 html {
 	margin:				1.5cm auto;
-    max-width:			21cm;
+    min-width:			21cm;
+	max-width:			21cm;
+	width:				21cm;
+	font-family: 		Roboto !important;
 	font-size:			10pt;
 }
 
 div .page-break {
 	margin-top:			2cm;
 	margin-bottom:		2cm;
+}
+
+
+/* ==========
+ * PAGE
+ * ========== */
+.document-page {
+	page-break-before:	always !important;
+}
+
+/* Same as MaterialDesign.card */
+@media screen {
+	.document-page {
+		display: 			inline-block;
+		box-shadow: 		0 1px 2px 0 rgba(0,0,0,.15);
+		padding:			10px;
+		position: 			relative;
+		margin-bottom: 		50px;
+		transition: 		all .2s ease-in-out;
+		width:				100%;
+		min-height:			29.7cm;
+	}
+	
+	.document-page:hover {
+		box-shadow: 		0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		margin-bottom: 		54px;
+	}
+}
+
+@media print {
+    @page { /* Page structure. */
+		/* set page size = DIN A4*/
+	    size:				a4 portrait;
+        margin-left:		1.5cm !important;
+        margin-right:		1.5cm !important;
+        margin-top:			0.5cm !important;
+        margin-bottom:		0.5cm !important;
+		width:				21cm;
+    }
+
+	@page landscape {
+		size:				a4 landscape;
+	}
+
+    a:link, a:visited, a { /* Links. */
+        color: black !important;
+        text-decoration: none !important;
+    }
+
+	.document-page {
+		display: 			inline-block;
+		padding:			2mm !important;
+		position: 			relative;
+		width:				100% !important;
+		min-height:			28.7cm !important;
+	}
 }
 [/template]

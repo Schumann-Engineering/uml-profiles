@@ -5,9 +5,22 @@
 
 
 [template public html_PAGE_begin(
-	devNull	: Element
+	devNull				: Element
+)][html_PAGE_begin('') /][/template]
+
+
+[template public html_PAGE_begin(
+	devNull				: Element,
+	additionalClass		: String
+)][html_PAGE_begin(additionalClass, '') /][/template]
+
+
+[template public html_PAGE_begin(
+	devNull				: Element,
+	additionalClass		: String,
+	additionalAttribute	: String
 )]
-<div class="document-page">
+<div class="document-page [additionalClass/]" [additionalAttribute/]>
 [/template]
 [template public html_PAGE_end(
 	devNull	: Element

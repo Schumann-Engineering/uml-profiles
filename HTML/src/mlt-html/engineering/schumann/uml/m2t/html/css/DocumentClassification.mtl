@@ -1,0 +1,61 @@
+[comment encoding = UTF-8 /]
+[module DocumentClassification('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_DOCUMENT_CLASSIFICATION(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * DOCUMENT CLASSIFICATION
+  * ========================================
+  * ======================================== **/
+.document-page {
+	background-repeat: 	no-repeat;
+    background-size: 	cover;
+}
+
+.document-classification {
+	position: 			absolute !important;
+	bottom: 			0mm !important;
+	left:				0mm !important;
+	width: 				100% !important;
+	height: 			3cm !important;
+}
+
+
+.document-classification p {
+	text-align: 		center !important; 
+	font-weight: 		bold !important;
+	margin:				2mm !important;
+}
+
+.document-classification p:nth-child(1) {
+	font-size: 			30pt !important; 
+	text-transform:		uppercase !important;
+}
+
+.document-classification p:nth-child(2) {
+	font-size: 			10pt !important;
+}
+
+.document-classification-strictly-confidential {
+	background-image:	url("../../_snippets/Document Classification/STRICTLY CONFIDENTIAL.svg");
+}
+
+.document-classification-internal {
+	background-image:	url("../../_snippets/Document Classification/INTERNAL.svg");
+}
+
+.document-classification-confidential-internal {
+	background-image:	url("../../_snippets/Document Classification/CONFIDENTIAL INTERNAL.svg");
+}
+
+.document-classification-confidential-external {
+	background-image:	url("../../_snippets/Document Classification/CONFIDENTIAL EXTERNAL.svg");
+}
+
+.document-classification-public {
+	background-image:	url("../../_snippets/Document Classification/PUBLIC.svg");
+}
+[/template]

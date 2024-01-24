@@ -3,6 +3,7 @@
 
 
 [import engineering::schumann::uml::m2t::html::css::Boxes /]
+[import engineering::schumann::uml::m2t::html::css::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::css::ExternalTheme /]
 [import engineering::schumann::uml::m2t::html::css::List /]
 [import engineering::schumann::uml::m2t::html::css::MaterialDesign /]
@@ -40,6 +41,10 @@
 
 <style type="text/css">
 	[CSS_BOXES() /]
+</style>
+
+<style type="text/css">
+	[CSS_DOCUMENT_CLASSIFICATION() /]
 </style>
 [/template]
 

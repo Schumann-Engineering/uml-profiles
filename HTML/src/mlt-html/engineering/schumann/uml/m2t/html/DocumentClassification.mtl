@@ -1,0 +1,54 @@
+[comment encoding = UTF-8 /]
+[module DocumentClassification(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public DOC_Classiciation_CONFIDENTIAL(
+	devNull 		: OclAny
+)]
+<div class="document-classification">
+	<p>CONFIDENTIAL</p>
+	<p>for employees only. No access control list applies.</p>
+</div>
+[/template]
+
+
+[template public DOC_Classiciation_CONFIDENTIAL_INTERNAL(
+	devNull 		: OclAny
+)]
+<div class="document-classification">
+	<p>CONFIDENTIAL INTERNAL</p>
+	<p>for employees, contractors and authorities only</p>
+</div>
+[/template]
+
+
+[template public DOC_Classiciation_CONFIDENTIAL_EXTERNAL(
+	devNull 		: OclAny
+)]
+<div class="document-classification">
+	<p>CONFIDENTIAL EXTERNAL</p>
+	<p>for employees, contractors, partners and authorities only</p>
+</div>
+[/template]
+
+
+[template public DOC_Classiciation_PUBLIC(
+	devNull 		: OclAny
+)]
+<div class="document-classification">
+	<p>PUBLIC</p>
+	<p>© Copyright, all rights reserved</p>
+</div>
+[/template]
+
+
+[template public DOC_Classiciation_STRICTLY_CONFIDENTIAL(
+	devNull 		: OclAny
+)]
+<div class="document-classification">
+	<p>STRICTLY CONFIDENTIAL</p>
+	<p>for employees only. Access control list applies.</p>
+</div>
+[/template]

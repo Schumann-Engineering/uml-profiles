@@ -16,6 +16,7 @@ extends engineering::schumann::uml::m2t::html::Html
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
@@ -109,7 +110,9 @@ overrides HTML_START
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin() /]
+[html_PAGE_begin('document-classification-public')/]
+	[DOC_Classiciation_PUBLIC() /]
+
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
@@ -152,14 +155,6 @@ overrides HTML_START
 				<li>notified body</li>
 				<li>risk manangers</li>
 			</ul>
-		[TOC_Section_end() /]
-		
-		[TOC_Section_begin('Document Classification') /]
-			<p>
-				This document is classified as:<br/>
-				<b>PUBLIC</b> = Free to publicate or redistribute without changes.
-			</p>
-			[html_NOTE_Start() /]Copyright still aplies.[html_NOTE_End() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]

@@ -18,17 +18,6 @@ ORIGINAL-DESC: Style obsidian-notes to look like academic papers when exported a
 DESC: modified academic export to be more "pleasing to the eye" and fixing some issues with tables 
 AUTH: Janek Schumann
 */
-@media print {
-
-    /* Document-wide. ---------------------------------------------------------------------- */
-    @page { /* Page structure. */
-        margin: 2cm !important;
-    }
-    a:link, a:visited, a { /* Links. */
-        color: black !important;
-        text-decoration: none !important;
-    }
-}
 
 /* Main body of text. ------------------------------------------------------------------ */
 body {

@@ -11,33 +11,6 @@
   * ========================================
   * ======================================== **/
 /* ==========
- * PAGE
- * ========== */
-.document-page {
-	page-break-before:	always !important;
-}
-
-/* Same as MaterialDesign.card */
-@media screen {
-	.document-page {
-		display: 			inline-block;
-		box-shadow: 		0 1px 2px 0 rgba(0,0,0,.15);
-		padding:			10px;
-		position: 			relative;
-		margin-bottom: 		50px;
-		transition: 		all .2s ease-in-out;
-		width:				100%;
-		min-height:			29.7cm;
-	}
-	
-	.document-page:hover {
-		box-shadow: 		0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-		margin-bottom: 		54px;
-	}
-}
-
-
-/* ==========
  * TITLE
  * ========== */
 .document-title h1,

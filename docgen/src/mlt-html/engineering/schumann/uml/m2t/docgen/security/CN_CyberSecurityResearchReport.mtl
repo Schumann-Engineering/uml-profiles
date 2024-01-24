@@ -29,6 +29,7 @@
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
+[import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -79,7 +80,9 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('document-classification-confidential-internal')/]
+	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
+
 	[TOC_Title_begin('Cyber Security Research Report') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
@@ -114,13 +117,6 @@
 				<li>regulatory authorities</li>
 				<li>notified body</li>
 			</ul>
-		[TOC_Section_end() /]
-		
-		[TOC_Section_begin('Document Classification') /]
-			<p>
-				This document is classified as:<br/>
-				<b>CONFIDENTIAL</b> = for target eyes only.
-			</p>
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]

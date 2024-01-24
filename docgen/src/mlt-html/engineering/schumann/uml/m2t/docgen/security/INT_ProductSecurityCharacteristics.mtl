@@ -36,6 +36,7 @@
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -86,7 +87,9 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin()/]
+[html_PAGE_begin('document-classification-confidential-internal')/]
+	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
+
 	[TOC_Title_begin('Product Security Characteristics') /]
 		[this.printScope(true, true) /]
 	[TOC_Title_end() /]
@@ -123,14 +126,6 @@
 				<li>notified body</li>
 				<li>risk manangers</li>
 			</ul>
-		[TOC_Section_end() /]
-		
-		[TOC_Section_begin('Document Classification') /]
-			<p>
-				This document is classified as:<br/>
-				<b>PUBLIC</b> = Free to publicate or redistribute without changes.
-			</p>
-			[html_NOTE_Start()/]Copyright still aplies.[html_NOTE_End()/]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
