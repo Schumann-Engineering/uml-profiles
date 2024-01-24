@@ -31,7 +31,6 @@
 	text-align:			left !important;
 }
 
-
 .box-note:before,
 .box-tip:before,
 .box-tbd:before,
@@ -109,6 +108,9 @@
 .box-tbd:before {
 	content:			'⚠ TO-BE-DONE (TBD)';
 }
+.cover-page .box-tbd {
+	background-color:	rgba(238, 49, 36, 1.0);
+}
 
 
 .box-ansi-notice {
@@ -120,6 +122,9 @@
 .box-ansi-notice:before {
 	content:			'Notice';
 }
+.cover-page .box-ansi-notice {
+	background-color:	rgba(0, 137, 207, 1.0);
+}
 
 .box-ansi-warning {
 	background-color:	rgba(255, 221, 0, 0.5);
@@ -129,6 +134,9 @@
 }
 .box-ansi-warning:before {
 	content:			'⚠ Warning';
+}
+.cover-page .box-ansi-warning {
+	background-color:	rgba(255, 221, 0, 1.0);
 }
 
 .box-ansi-caution {
@@ -140,6 +148,9 @@
 .box-ansi-caution:before {
 	content:			'⚠ Caution';
 }
+.cover-page .box-ansi-caution {
+	background-color:	rgba(245, 145, 29, 1.0);
+}
 
 .box-ansi-danger {
  	background-color: 	rgba(238, 49, 36, 0.5); 
@@ -150,7 +161,9 @@
 .box-ansi-danger:before {
 	content:			'⚠ Danger';
 }
-
+.cover-page .box-ansi-danger {
+	background-color:	rgba(238, 49, 36, 1.0);
+}
 
 /* quotes */
 blockquote, q {

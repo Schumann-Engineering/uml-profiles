@@ -2,7 +2,9 @@
 [module INT_ProductSecurityCharacteristics(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
+]
 
 
 [**
@@ -87,7 +89,7 @@
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin('cover page', 'document-classification-confidential-internal')/]
+[html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
 
 	[TOC_Title_begin('Product Security Characteristics') /]

@@ -4,7 +4,7 @@
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/sbom/1'
 )
-extends engineering::schumann::uml::m2t::html::Html
+extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 ]
 
 
@@ -23,40 +23,6 @@ extends engineering::schumann::uml::m2t::html::Html
 [import engineering::schumann::uml::m2t::html::Toc /]
 
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
-[import engineering::schumann::uml::m2t::sbom::html::css::Component /]
-
-
-
-[comment @Override engineering.schumann.uml.m2t.html.Html.CSS_ADDON /]
-[template public CSS_ADDON(
-	devNull : OclAny
-)
-overrides CSS_ADDON
-]
-<style type="text/css">
-	[CSS_SBOM_COMPONENT() /]
-</style>
-[/template]
-
-
-[template public HTML_START(
-	devNull : OclAny,
-	title	: String
-)
-overrides HTML_START
-]
-[XHTML_DOCTYPE_STRICT() /]
-[XHTML_START()/]
-	<head>
-		<title>[title /]</title>
-
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-		[CSS() /]
-		[CSS_ADDON() /]
-	</head>
-	<body>
-[/template]
 
 
 [template public generateDocument_INT_SbomReport(
@@ -110,7 +76,7 @@ overrides HTML_START
 [template private CoverPage_Chapter_print(
 	this : NamedElement
 )]
-[html_PAGE_begin('cover page', 'document-classification-public')/]
+[html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]

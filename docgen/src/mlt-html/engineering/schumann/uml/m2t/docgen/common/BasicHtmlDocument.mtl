@@ -1,0 +1,49 @@
+[comment encoding = UTF-8 /]
+[module BasicHtmlDocument(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/sbom/1'
+)
+extends engineering::schumann::uml::m2t::html::Html
+]
+
+
+[import engineering::schumann::uml::m2t::sbom::html::css::Component /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::css::Scope /]
+
+
+
+[comment @Override engineering.schumann.uml.m2t.html.Html.CSS_ADDON /]
+[template public CSS_ADDON(
+	devNull : OclAny
+)
+overrides CSS_ADDON
+]
+<style type="text/css">
+	[CSS_SBOM_COMPONENT() /]
+</style>
+
+<style type="text/css">
+	[CSS_CSMN_SCOPE() /]
+</style>
+[/template]
+
+
+[template public HTML_START(
+	devNull : OclAny,
+	title	: String
+)
+overrides HTML_START
+]
+[XHTML_DOCTYPE_STRICT() /]
+[XHTML_START()/]
+	<head>
+		<title>[title /]</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		[CSS() /]
+		[CSS_ADDON() /]
+	</head>
+	<body>
+[/template]

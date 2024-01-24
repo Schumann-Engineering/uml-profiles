@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module Scope('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_CSMN_SCOPE(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * CSMN > SCOPE
+  * ========================================
+  * ======================================== **/
+.cover-page .csmn-scope {
+	position: 				absolute !important;
+	top:					75% !important;
+}
+[/template]
