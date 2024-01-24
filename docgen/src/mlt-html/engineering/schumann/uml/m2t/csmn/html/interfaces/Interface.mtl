@@ -20,10 +20,12 @@ None
 [else]
 <table>
 	<thead>
-		<th style="text-align: center; width: 15%;">System Element</th>
-		<th style="text-align: center; width: 15%;">Security Zone</th>
-		<th style="text-align: center; width: 15%;">PRODUCT INTERFACE</th>
-		<th style="text-align: center; width: 55%;">PRODUCT INTERFACE Characteristics</th>
+		<tr>
+			<th style="text-align: center; width: 15%;">System Element</th>
+			<th style="text-align: center; width: 15%;">Security Zone</th>
+			<th style="text-align: center; width: 15%;">PRODUCT INTERFACE</th>
+			<th style="text-align: center; width: 55%;">PRODUCT INTERFACE Characteristics</th>
+		</tr>
 	</thead>
 	<tbody>
 [for (interface : Port | interfaces->sortedBy(name))]

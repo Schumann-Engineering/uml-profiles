@@ -13,7 +13,6 @@
 	this : NamedElement
 ) 
 ? (this.csmn_hasUsageCharacteristic())
-post(trim())
 {
 	characteristic : UsageCharacteristic = this.csmn_usageCharacteristic();
 }]
@@ -24,10 +23,12 @@ post(trim())
 [template public print(
 	this : UsageCharacteristic
 )
-post(trim())]
+]
 <p>
 	<b><i>Usage Characteristic</i></b>
-<p>
+</p>
+[if ((this.usageType <> null and this.usageType <> UsageType::Unspecified) or (this.intendedUserGroup <> null and this.intendedUserGroup->size() > 0))]
+
 <ul>
 [comment usage type & usage spec/]
 [if (this.usageType <> null and this.usageType <> UsageType::Unspecified)]
@@ -36,7 +37,7 @@ post(trim())]
 		[if (this.usageSpec <> null)]
 		<br/>
 		[html_NOTE_Start()/]
-		[this.usageSpec /]
+			[this.usageSpec /]
 		[html_NOTE_End()/]
 		[/if]
 	</li>
@@ -53,4 +54,5 @@ post(trim())]
 	</li>
 [/if]
 </ul>
+[/if]
 [/template]

@@ -108,3 +108,13 @@
 )]
 [']]>'/]
 [/template]
+
+
+[query public _toHtml(
+	input : String
+) : String =
+	input
+		.replaceAll('<br>', '<br/>')
+		.replaceAll('&', '&amp;')
+		.replaceAll('&amp;amp;', '&amp;')
+/]

@@ -320,21 +320,22 @@
 	
 	<p>
 		For a list of network security capabilities, see document
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Security Capabilities',
-					'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-				)/]
-			</li>
-			<li>
-				[html_Document_Ref(
-					'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-				)/]
-			</li>
-		</ul>
 	</p>
+
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Security Capabilities',
+				'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
+			)/]
+		</li>
+		<li>
+			[html_Document_Ref(
+				'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
+			)/]
+		</li>
+	</ul>
 [TOC_Section_end() /]
 [/template]
 
@@ -351,6 +352,7 @@
 	[html_NO_PRINT_start() /]
 		[html_NOTE_Start() /]
 			includes
+
 			<ul>
 				<li>application software</li>
 				<li>system software</li>
@@ -374,28 +376,29 @@
 
 	[html_NOTE_Start() /]
 		Not every development environment supports the automated creation of a SBOM.<br/>
-		In such a case, the SBOM is written by hand.</br>
+		In such a case, the SBOM is written by hand.<br/>
 		This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
 	[html_NOTE_End() /]
 
 	<p>
 		For a list of Off-the-shelf Software, see document
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'Software',
-					'Software Bill of Material (SBOM)'
-				)/]
-			</li>
-			<li>
-				[html_Document_Ref(
-					'Software Bill of Material (SBOM)'
-				)/]
-			</li>
-		</ul>
 	</p>
+
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'Software',
+				'Software Bill of Material (SBOM)'
+			)/]
+		</li>
+		<li>
+			[html_Document_Ref(
+				'Software Bill of Material (SBOM)'
+			)/]
+		</li>
+	</ul>
 [TOC_Section_end() /]
 [/template]
 
@@ -411,15 +414,21 @@
 [TOC_Section_begin('Security patches') /]
 	[html_NO_PRINT_start() /]
 		[html_NOTE_Start() /]
-			Provide a list of network security patches (including essential software and external software environment), specifying:
+			<p>
+				Provide a list of network security patches (including essential software and external software environment), specifying:
+			</p>
+
 			<ul>
 				<li>name</li>
 				<li>complete version</li>
 				<li>release date</li>
 			</ul>
-			of the network security patches.
-			
-			Additional documents can be attached.
+
+			<p>
+				of the network security patches.
+				
+				Additional documents can be attached.
+			</p>
 		[html_NOTE_End() /]
 	[html_NO_PRINT_end() /]
 	
@@ -693,37 +702,38 @@
 	
 	<p>
 		For a list of data assets, see documents:
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'ASSETS which are Data Assets'
-				)/]
-			    [html_NOTE_Start() /]
-					For each asset, the following information is included:
-					<table class="table-2-columns">
-						<thead>
-							<tr>
-								<th>Column</th>
-								<th>Content</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<th>ASSET</th>
-								<td>Name of the asset</td>
-							</tr>
-							<tr>
-								<th>ASSET CHARACTERISTICS</th>
-								<td>List characteristics of the ASSET</td>
-							</tr>
-						</tbody>
-					</table>
-				[html_NOTE_End() /]
-			</li>
-		</ul>
 	</p>
+
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'ASSETS which are Data Assets'
+			)/]
+		    [html_NOTE_Start() /]
+				For each asset, the following information is included:
+				<table class="table-2-columns">
+					<thead>
+						<tr>
+							<th>Column</th>
+							<th>Content</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th>ASSET</th>
+							<td>Name of the asset</td>
+						</tr>
+						<tr>
+							<th>ASSET CHARACTERISTICS</th>
+							<td>List characteristics of the ASSET</td>
+						</tr>
+					</tbody>
+				</table>
+			[html_NOTE_End() /]
+		</li>
+	</ul>
 [TOC_SubSection_end() /]
 [/template]
 
@@ -750,70 +760,74 @@
 	
 	<p>
 		For a list of data flows, see document
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'Interface Connections'
-				)/]
-				[html_NOTE_Start() /]
-					For each connection to or from a system interface, the following information is included:
-					<table class="table-2-columns">
-						<thead>
-							<tr>
-								<th>Column</th>
-								<th>Content</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Supplier & Zone</td>
-								<td>Element of the Product Architecture and its designated Security Zone</td>
-							</tr>
-							<tr>
-								<td>Supplier Interface</td>
-								<td>The interface involved on the supplier side providing assets</td>
-							</tr>
-							<tr>
-								<td>Asset Flow ←</td>
-								<td>Assets flowing from client to supplier</td>
-							</tr>
-							<tr>
-								<td>CONNECTION</td>
-								<td>Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
-							</tr>
-							<tr>
-								<td>Asset Flow →</td>
-								<td>Assets flowing from supplier to client</td>
-							</tr>
-							<tr>
-								<td>Client Interface</td>
-								<td>The interface involved on the client side consuming assets</td>
-							</tr>
-							<tr>
-								<td>Client & Zone</td>
-								<td>Element of the Product Architecture and its designated Security Zone</td>
-							</tr>
-							<tr>
-								<td>CONENCTION Characteristics</td>
-								<td>Characteristics of the connection. This can consist of many different things:
-									<ul>
-										<li>Purpose: Purpose of the connection</li>
-										<li>Type: e.g. Information, Material, Energy, Mechanical</li>
-										<li>Direction: Uni-Directional or Bi-Directional</li>
-										<li>Real-Time: Is real-time information exchanged?</li>
-										<li>OSI- & TCP-Layers: standards and protocols used according to international layer models</li>
-										<li>...</li>
-									</ul>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				[html_NOTE_End() /]
-			</li>
-		</ul>
 	</p>
+
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'Interface Connections'
+			)/]
+			[html_NOTE_Start() /]
+				<p>
+					For each connection to or from a system interface, the following information is included:
+				</p>
+
+				<table class="table-2-columns">
+					<thead>
+						<tr>
+							<th>Column</th>
+							<th>Content</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Supplier &amp; Zone</td>
+							<td>Element of the Product Architecture and its designated Security Zone</td>
+						</tr>
+						<tr>
+							<td>Supplier Interface</td>
+							<td>The interface involved on the supplier side providing assets</td>
+						</tr>
+						<tr>
+							<td>Asset Flow ←</td>
+							<td>Assets flowing from client to supplier</td>
+						</tr>
+						<tr>
+							<td>CONNECTION</td>
+							<td>Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
+						</tr>
+						<tr>
+							<td>Asset Flow →</td>
+							<td>Assets flowing from supplier to client</td>
+						</tr>
+						<tr>
+							<td>Client Interface</td>
+							<td>The interface involved on the client side consuming assets</td>
+						</tr>
+						<tr>
+							<td>Client &amp; Zone</td>
+							<td>Element of the Product Architecture and its designated Security Zone</td>
+						</tr>
+						<tr>
+							<td>CONENCTION Characteristics</td>
+							<td>Characteristics of the connection. This can consist of many different things:
+								<ul>
+									<li>Purpose: Purpose of the connection</li>
+									<li>Type: e.g. Information, Material, Energy, Mechanical</li>
+									<li>Direction: Uni-Directional or Bi-Directional</li>
+									<li>Real-Time: Is real-time information exchanged?</li>
+									<li>OSI- &amp; TCP-Layers: standards and protocols used according to international layer models</li>
+									<li>...</li>
+								</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			[html_NOTE_End() /]
+		</li>
+	</ul>
 [TOC_SubSection_end() /]
 [/template]
 
@@ -909,63 +923,63 @@
 		The product has <b><i>NO</i></b> network ports.
 		[else]
 		The product has <b><i>[networkPorts->size() /]</i></b> network ports:
-		<ul>
-			[let publicPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::public)]
-			<li>
-				[if (publicPorts->size() = 0)]
-				<b>NONE</b> usable by HDO.
-				[else]
-				<b>[publicPorts->size() /]</b> usable by HDO:
-				<ul>
-				[for (publicPorts)]
-					<li>
-						[self.name /]
-						[self.printComment() /]
-					</li>
-				[/for]
-				</ul>
-				[/if]
-			</li>
-			[/let]
-
-			[let devicePorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::_package)]
-			<li>
-				[if (devicePorts->size() = 0)]
-				<b>NONE</b> used by device "internaly".
-				[else]
-				<b>[devicePorts->size() /]</b> usable by device "internaly":
-				<ul>
-				[for (devicePorts)]
-					<li>
-						[self.name /]
-						[self.printComment() /]
-					</li>
-				[/for]
-				</ul>
-				[/if]
-			</li>
-			[/let]
-
-			[let vendorPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::protected)]
-			<li>
-				[if (vendorPorts->size() = 0)]
-				<b>NONE</b> usable by vendor.
-				[else]
-				<b>[vendorPorts->size() /]</b> usable by vendor:
-				<ul>
-				[for (vendorPorts)]
-					<li>
-						[self.name /]
-						[self.printComment() /]
-					</li>
-				[/for]
-				</ul>
-				[/if]
-			</li>
-			[/let]
-		</ul>
-		[/if]
 	</p>
+	<ul>
+		[let publicPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::public)]
+		<li>
+			[if (publicPorts->size() = 0)]
+			<b>NONE</b> usable by HDO.
+			[else]
+			<b>[publicPorts->size() /]</b> usable by HDO:
+			<ul>
+			[for (publicPorts)]
+				<li>
+					[self.name /]
+					[self.printComment() /]
+				</li>
+			[/for]
+			</ul>
+			[/if]
+		</li>
+		[/let]
+
+		[let devicePorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::_package)]
+		<li>
+			[if (devicePorts->size() = 0)]
+			<b>NONE</b> used by device "internaly".
+			[else]
+			<b>[devicePorts->size() /]</b> usable by device "internaly":
+			<ul>
+			[for (devicePorts)]
+				<li>
+					[self.name /]
+					[self.printComment() /]
+				</li>
+			[/for]
+			</ul>
+			[/if]
+		</li>
+		[/let]
+
+		[let vendorPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::protected)]
+		<li>
+			[if (vendorPorts->size() = 0)]
+			<b>NONE</b> usable by vendor.
+			[else]
+			<b>[vendorPorts->size() /]</b> usable by vendor:
+			<ul>
+			[for (vendorPorts)]
+				<li>
+					[self.name /]
+					[self.printComment() /]
+				</li>
+			[/for]
+			</ul>
+			[/if]
+		</li>
+		[/let]
+	</ul>
+	[/if]
 
 	[if (networkPorts->size() > 0)]
 	<p>
@@ -1083,37 +1097,39 @@
 		</li>
 	</ul>
 	
+	[if (storageMedia->size() = 0)]
 	<p>
-		[if (storageMedia->size() = 0)]
 		The product has <b><i>NO</i></b> storage media.
-		[else]
-		The product has <b><i>[storageMedia->size() /]</i></b> storage media:
-		<ul>
-		[for (storageMedia)]
-			<li>
-				[self.name /]
-			</li>
-		[/for]
-		</ul>
-		[/if]
 	</p>
+	[else]
+	<p>
+		The product has <b><i>[storageMedia->size() /]</i></b> storage media:
+	</p>
+	<ul>
+	[for (storageMedia)]
+		<li>
+			[self.name /]
+		</li>
+	[/for]
+	</ul>
+	[/if]
 
 	[if (storageMedia->size() > 0)]
 	<p>
 		For a list of storage media, see document
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'PRODUCT INTERFACEs which are Storage Media'
-				)/]
-			    [html_NOTE_Start() /]
-					This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
-				[html_NOTE_End() /]
-			</li>
-		</ul>
 	</p>
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'PRODUCT INTERFACEs which are Storage Media'
+			)/]
+		    [html_NOTE_Start() /]
+				This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
+			[html_NOTE_End() /]
+		</li>
+	</ul>
 	[/if]
 	[/let]
 [TOC_SubSection_end() /]
@@ -1159,31 +1175,33 @@
 	
 	<p>
 		The product has <b><i>[if (wirelessInterfaces->size() > 0)][wirelessInterfaces->size() /][else]NO[/if]</i></b> wireless interfaces[if (wirelessInterfaces->size() > 0)]:[else].[/if]
-		<ul>
-		[for (wirelessInterfaces)]
-			<li>
-				[self.name /]
-			</li>
-		[/for]
-		</ul>
 	</p>
+	[if (wirelessInterfaces->size() > 0)]
+	<ul>
+	[for (wirelessInterfaces)]
+		<li>
+			[self.name /]
+		</li>
+	[/for]
+	</ul>
+	[/if]
 
 	[if (wirelessInterfaces->size() > 0)]
 	<p>
 		For a list of wireless interfaces, see document
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Product Security Characteristics',
-					'Product Architecture',
-					'List of PRODUCT INTERFACE'
-				)/]
-			    [html_NOTE_Start() /]
-					This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
-				[html_NOTE_End() /]
-			</li>
-		</ul>
 	</p>
+	<ul>
+		<li>
+			[html_Document_Ref(
+				'Product Security Characteristics',
+				'Product Architecture',
+				'List of PRODUCT INTERFACE'
+			)/]
+		    [html_NOTE_Start() /]
+				This list states characteristics and requirements in the column "PRODUCT INTERFACE Characteristics".
+			[html_NOTE_End() /]
+		</li>
+	</ul>
 	[/if]
 	[/let]
 [TOC_SubSection_end() /]

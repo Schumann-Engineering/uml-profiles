@@ -27,11 +27,26 @@
 
 .box {
 	margin:				5mm 2mm 5mm 2mm;
+	padding:			2mm;
+	text-align:			left !important;
 }
+
+
+.box-note:before,
+.box-tip:before,
+.box-tbd:before,
+.box-ansi-notice:before,
+.box-ansi-caution:before,
+.box-ansi-warning:before,
+.box-ansi-danger:before {
+	display: block;
+	font-weight:		bold !important;
+	text-transform:		uppercase;
+} 
 
 .box-header {
 	font-weight:		bold;
-	font-transform:		capitalize;
+	font-transform:		uppercase;
 }
 
 .box-content {
@@ -54,6 +69,9 @@
 	border-radius: 		5px;
 	color: 				#000000;
 }
+.box-note:before {
+	content:			'📝 Note';
+}
 
 .box-info {
 	background-color: 	#FCFCFC;
@@ -70,6 +88,9 @@
 	border-radius: 		5px;
 	color: 				#000000;
 }
+.box-tip:before {
+	content:			'💡 Tip';
+}
 
 .box-task {
 	background-color:	#FCFCFC;
@@ -85,12 +106,19 @@
 	padding: 			5px; 
 	color: 				#FFFFFF;"
 }
+.box-tbd:before {
+	content:			'⚠ TO-BE-DONE (TBD)';
+}
+
 
 .box-ansi-notice {
 	background-color:	rgba(0, 137, 207, 0.5);
 	border-left:		6px solid #000000;
 	padding: 			5px;
 	color:				#000000;
+}
+.box-ansi-notice:before {
+	content:			'Notice';
 }
 
 .box-ansi-warning {
@@ -99,6 +127,9 @@
 	padding: 			5px;
 	color: 				#000000;
 }
+.box-ansi-warning:before {
+	content:			'⚠ Warning';
+}
 
 .box-ansi-caution {
 	background-color:	rgba(245, 145, 29, 0.5);
@@ -106,12 +137,18 @@
 	padding: 			5px; 
 	color: 				#000000;
 }
+.box-ansi-caution:before {
+	content:			'⚠ Caution';
+}
 
 .box-ansi-danger {
  	background-color: 	rgba(238, 49, 36, 0.5); 
 	border-left: 		6px solid #000000;
 	padding: 5px; 
 	color: #FFFFFF;
+}
+.box-ansi-danger:before {
+	content:			'⚠ Danger';
 }
 
 

@@ -228,47 +228,49 @@
 			[TOC_SubSection_begin('Definition')/]
 				<p>
 					A PRODUCT INTERFACE
-					<ul>
-						<li>can be directly used by an operator of the product</li>
-						<li>is a technical interface which is being exposed by the top-most level of system components in the system architecture</li>
-					</ul>
-				<p>
+				</p>
+
+				<ul>
+					<li>can be directly used by an operator of the product</li>
+					<li>is a technical interface which is being exposed by the top-most level of system components in the system architecture</li>
+				</ul>
 				
 				<p>
 					There are different types of PRODUCT INTERFACE:
-					<ol>
-						<li>
-							<b>NETWORK INTERFACE</b><br/>
-				    		is an interface to directly connect to a networked infrastructure<br/>
-				    		<br/>
-				    		<i>Examples</i>: Bluetooth, ZigBee, Ethernet, WLAN
-						</li>
-						<li>
-							<b>NON-NETWORK INTERFACE</b><br/>
-						    is an electronic data interchange interface<br/>
-						    <br/>
-						    <i>Examples</i>: touch screen, USB port, RS-232 port
-						</li>
-						<li>
-							<b>STORAGE MEDIA</b><br/>
-						    is used for writing or retrieving data from a (mostly) non-volatile data storage.
-						    <br/>
-						    <i>Examples</i>: SD card, USB mass storage device, CF card
-						</li>
-						<li>
-							<b>MATERIAL INTERFACE</b><br/>
-						    provides or receives physical material.<br/>
-						    <br/>
-						    <i>Examples</i>: flow of air
-						</li>
-						<li>
-							<b>ENERGY INTERFACE</b><br/>
-						    provides or receives any form of energy like electricity, light or sound.<br/>
-						    <br/>
-						    <i>Examples</i>: power plugs, alarm light, speaker
-						</li>
-					</ol>
 				</p>
+
+				<ol>
+					<li>
+						<b>NETWORK INTERFACE</b><br/>
+			    		is an interface to directly connect to a networked infrastructure<br/>
+			    		<br/>
+			    		<i>Examples</i>: Bluetooth, ZigBee, Ethernet, WLAN
+					</li>
+					<li>
+						<b>NON-NETWORK INTERFACE</b><br/>
+					    is an electronic data interchange interface<br/>
+					    <br/>
+					    <i>Examples</i>: touch screen, USB port, RS-232 port
+					</li>
+					<li>
+						<b>STORAGE MEDIA</b><br/>
+					    is used for writing or retrieving data from a (mostly) non-volatile data storage.
+					    <br/>
+					    <i>Examples</i>: SD card, USB mass storage device, CF card
+					</li>
+					<li>
+						<b>MATERIAL INTERFACE</b><br/>
+					    provides or receives physical material.<br/>
+					    <br/>
+					    <i>Examples</i>: flow of air
+					</li>
+					<li>
+						<b>ENERGY INTERFACE</b><br/>
+					    provides or receives any form of energy like electricity, light or sound.<br/>
+					    <br/>
+					    <i>Examples</i>: power plugs, alarm light, speaker
+					</li>
+				</ol>
 			[TOC_SubSection_end() /]
 				
 [html_PAGE_end()/]
@@ -328,10 +330,16 @@
 		/]
 [html_PAGE_begin()/]
 		[TOC_Section_begin('Interface connections') /]
-			[TOC_SubSection_begin('Definition')/]		
-				An INTERFACE CONNECTION
-						<li>is a link from one interface to another
-						<li>describes use-case specific characteristics between those interfaces, e.g. which protocol is used
+			[TOC_SubSection_begin('Definition')/]
+				<p>
+					An INTERFACE CONNECTION
+				</p>
+
+				<ul>
+						<li>is a link from one interface to another</li>
+						<li>describes use-case specific characteristics between those interfaces, e.g. which protocol is used</li>
+				</ul>
+
 				[TOC_SubSection_begin('List of INTERFACE CONNECTION')/]
 				
 				[TOC_SubSubSection_begin('INTERFACE CONNECTION for Network interfaces') /]
@@ -388,67 +396,72 @@
 		[TOC_Section_begin('Assets') /]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
-					An ASSET <br/>
-					<blockquote cite="http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/">
-						Anything that has value to the organization, its business operations and their continuity, including Information resources that support the organization's mission.
-					</blockquote>
-					(source: EU ENISA Glossary, term G3 'Asset', [html_getLink('http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/')/])<br />
-					(source: ISO/IEC PDTR 13335-1, [html_getLink('https://www.iso.org/standard/80585.html')/])
+					An ASSET
 				</p>
-				
+
+				<blockquote cite="http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/">
+						<p>
+							Anything that has value to the organization, its business operations and their continuity, including Information resources that support the organization's mission.
+						</p>
+						<div class="cite-source">EU ENISA Glossary, term G3 'Asset', <a href="http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/">http://www.enisa.europa.eu/act/rm/cr/risk-management-inventory/glossary/</a></div>
+						<div class="cite-source">ISO/IEC PDTR 13335-1, <a href="https://www.iso.org/standard/80585.html">https://www.iso.org/standard/80585.html</a></div>
+				</blockquote>
+
 				<p>
 					There are different types of ASSETS:
-					<ol>
-						<li>
-							<b>CREDENTIALS</b><br/>
-							Special kind of data holding passwords or cryptographic keys.<br/>
-							<br/>
-							<i>Examples</i>: Username and password, private key, WLAN key<br/>
-						</li>
-						<li>
-							<b>ENERGY</b><br/>
-							Received or provided physical energy in various forms, like electricity, light, sound or radiation.<br/>
-							<br/>
-							<i>Examples</i>: Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
-						</li>
-						<li>
-							<b>DATA</b><br/>
-							Digital (raw) data stored and transfered.<br/>
-						    <br/>
-						    <i>Examples</i>: Log files, configuration, software, medical data
-						</li>
-						<li>
-							<b>INFORMATION</b><br/>
-							Information is interpreted data. By means of interpretation, data becomes information.<br/>
-						    <br/>
-						    <i>Examples</i>: Alarm, diagnosis
-						</li>
-						<li>
-							<b>MATERIAL</b><br/>
-						    provides or receives physical material.<br/>
-						    <br/>
-						    <i>Examples</i>: flow of air
-						</li>
-						<li>
-							<b>MECHANICAL</b><br/>
-						    <br/>
-						    <i>Examples</i>: power plugs, alarm light, speaker
-						</li>
-						<li>
-							<b>SIGNAL</b><br/>
-							<blockquote>
-								<ul>
-									<li>a gesture, action, or sound that is used to convey information or instructions, typically by prearrangement between the parties concerned.</li>
-							    	<li>an indication of a situation.</li>
-							    	<li>an event or statement that provides the impulse for an occurrence.</li>
-							    	<li>an electrical impulse or radio wave transmitted or received.</li>
-								</ul>
-							</blockquote>
-						    (source: Oxford English Dictionary)<br/>
-							<br/>
-							<i>Examples</i>: radio waves, user input, light impulse.
-						</li>
 				</p>
+
+				<ol>
+					<li>
+						<b>CREDENTIALS</b><br/>
+						Special kind of data holding passwords or cryptographic keys.<br/>
+						<br/>
+						<i>Examples</i>: Username and password, private key, WLAN key<br/>
+					</li>
+					<li>
+						<b>ENERGY</b><br/>
+						Received or provided physical energy in various forms, like electricity, light, sound or radiation.<br/>
+						<br/>
+						<i>Examples</i>: Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
+					</li>
+					<li>
+						<b>DATA</b><br/>
+						Digital (raw) data stored and transfered.<br/>
+					    <br/>
+					    <i>Examples</i>: Log files, configuration, software, medical data
+					</li>
+					<li>
+						<b>INFORMATION</b><br/>
+						Information is interpreted data. By means of interpretation, data becomes information.<br/>
+					    <br/>
+					    <i>Examples</i>: Alarm, diagnosis
+					</li>
+					<li>
+						<b>MATERIAL</b><br/>
+					    provides or receives physical material.<br/>
+					    <br/>
+					    <i>Examples</i>: flow of air
+					</li>
+					<li>
+						<b>MECHANICAL</b><br/>
+					    <br/>
+					    <i>Examples</i>: power plugs, alarm light, speaker
+					</li>
+					<li>
+						<b>SIGNAL</b><br/>
+						<blockquote>
+							<ul>
+								<li>a gesture, action, or sound that is used to convey information or instructions, typically by prearrangement between the parties concerned.</li>
+						    	<li>an indication of a situation.</li>
+						    	<li>an event or statement that provides the impulse for an occurrence.</li>
+						    	<li>an electrical impulse or radio wave transmitted or received.</li>
+							</ul>
+						</blockquote>
+					    (source: Oxford English Dictionary)<br/>
+						<br/>
+						<i>Examples</i>: radio waves, user input, light impulse.
+					</li>
+				</ol>
 			[TOC_SubSection_end()/]
 [html_PAGE_end()/]
 	
@@ -524,20 +537,21 @@
 	
 		[html_NOTE_Start() /]
 			Not every development environment supports the automated creation of a SBOM.<br/>
-			In such a case, the SBOM is written by hand.</br>
+			In such a case, the SBOM is written by hand.<br/>
 			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
 		[html_NOTE_End() /]
 	
 		<p>
 			For a list of Off-the-shelf Software, see document
-			<ul>
-				<li>
-					[html_Document_Ref(
-						'Software Bill of Material (SBOM)'
-					)/]
-				</li>
-			</ul>
 		</p>
+
+		<ul>
+			<li>
+				[html_Document_Ref(
+					'Software Bill of Material (SBOM)'
+				)/]
+			</li>
+		</ul>
 	[TOC_SubSubSection_end() /]
 [TOC_SubSection_end() /]
 [/template]
@@ -615,5 +629,5 @@
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 	[TOC_Chapter_end() /]
-[html_PAGE_begin()/]
+[html_PAGE_end()/]
 [/template]

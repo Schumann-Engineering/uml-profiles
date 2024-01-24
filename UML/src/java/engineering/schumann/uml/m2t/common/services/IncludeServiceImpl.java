@@ -62,8 +62,10 @@ public class IncludeServiceImpl {
 			var htmlRenderer = HtmlRenderer.builder()
 			        .extensions(renderExtensions)
 			        .build();
-			result = htmlRenderer.render(markdown);
+			result = htmlRenderer.render(markdown); 
 			
+			// beautify
+			result = result.replaceAll("<br>", "<br/>");
 		}
 
 		// === SUCCESS ===

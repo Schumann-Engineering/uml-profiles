@@ -28,10 +28,14 @@ post(trim())
 											->asOrderedSet();
 }]
 [if (connections->size() = 0)]
-None
+<p>
+	None
+</p>
 [else]
 [for (connections)]
-<b>Connection "[name/]"</b>
+<p>
+	<b>Connection "[name/]"</b>
+</p>
 
 [self.printConnectionAsTable() /]
 [if (startNewPage)]

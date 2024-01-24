@@ -19,12 +19,13 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::ConnectionCharacteristic /]
 
 [import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::html::Html /]
 
 
 [template public printCharacteristics(
 	this : Element
 )
-post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
+post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n')._toHtml())
 ]
 [comment
 	PRIMARY CHARACTERISTICS

@@ -16,5 +16,6 @@
 )]<img
 	src="[DIRECTORY_URI_IMAGES(UUID) /][product.productName/]-Product_Architecture_Diagram_([product.model/]).svg"
 	title="Product Architecture Diagram"
+	alt="Diagram showing the product architecture with system elements, environment, security zone and user groups and their interactions"
 	width="100%"
 />[/template]
