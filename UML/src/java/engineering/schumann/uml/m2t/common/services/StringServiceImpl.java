@@ -239,8 +239,10 @@ public class StringServiceImpl {
 			String input
 	)
 	{
-		var result = replaceEachRepeatedly(input, "\n\n", "\n");
-		result = replaceEachRepeatedly(result, "\t\t\n", "");
+		var result = input;
+		result = replaceEachRepeatedly(input, " \n", "\n");
+		result = replaceEachRepeatedly(result, "\t\n", "\n");
+		result = replaceEachRepeatedly(result, "\n\n", "\n");
 		result = replaceEachRepeatedly(result, "\t\n", "");
 		result = replaceEachRepeatedly(result, "\r\n\r\n", "\r\n");
 		
