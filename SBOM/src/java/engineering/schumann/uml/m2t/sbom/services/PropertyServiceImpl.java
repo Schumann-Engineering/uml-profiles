@@ -149,8 +149,7 @@ public class PropertyServiceImpl {
 				
 			case "license":
 			case "selected license":
-				namespace.getLicense().clear();
-				namespace.getLicense().add(propertyValue);
+				namespace.setLicense(propertyValue);
 				break;
 				
 			case "name":

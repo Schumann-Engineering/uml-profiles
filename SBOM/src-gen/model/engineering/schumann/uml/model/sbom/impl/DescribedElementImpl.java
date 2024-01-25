@@ -4,18 +4,10 @@ package engineering.schumann.uml.model.sbom.impl;
 
 import engineering.schumann.uml.model.sbom.DescribedElement;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
-
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,14 +66,24 @@ public abstract class DescribedElementImpl extends NamedElementImpl implements D
 	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getLicense() <em>License</em>}' attribute list.
+	 * The default value of the '{@link #getLicense() <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLicense()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> license;
+	protected static final String LICENSE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLicense() <em>License</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLicense()
+	 * @generated
+	 * @ordered
+	 */
+	protected String license = LICENSE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,11 +156,21 @@ public abstract class DescribedElementImpl extends NamedElementImpl implements D
 	 * @generated
 	 */
 	@Override
-	public EList<String> getLicense() {
-		if (license == null) {
-			license = new EDataTypeUniqueEList<String>(String.class, this, SBOMPackage.DESCRIBED_ELEMENT__LICENSE);
-		}
+	public String getLicense() {
 		return license;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLicense(String newLicense) {
+		String oldLicense = license;
+		license = newLicense;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.DESCRIBED_ELEMENT__LICENSE, oldLicense, license));
 	}
 
 	/**
@@ -195,8 +207,7 @@ public abstract class DescribedElementImpl extends NamedElementImpl implements D
 				setDescription((String)newValue);
 				return;
 			case SBOMPackage.DESCRIBED_ELEMENT__LICENSE:
-				getLicense().clear();
-				getLicense().addAll((Collection<? extends String>)newValue);
+				setLicense((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,7 +228,7 @@ public abstract class DescribedElementImpl extends NamedElementImpl implements D
 				setDescription(DESCRIPTION_EDEFAULT);
 				return;
 			case SBOMPackage.DESCRIBED_ELEMENT__LICENSE:
-				getLicense().clear();
+				setLicense(LICENSE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -236,7 +247,7 @@ public abstract class DescribedElementImpl extends NamedElementImpl implements D
 			case SBOMPackage.DESCRIBED_ELEMENT__DESCRIPTION:
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SBOMPackage.DESCRIBED_ELEMENT__LICENSE:
-				return license != null && !license.isEmpty();
+				return LICENSE_EDEFAULT == null ? license != null : !LICENSE_EDEFAULT.equals(license);
 		}
 		return super.eIsSet(featureID);
 	}

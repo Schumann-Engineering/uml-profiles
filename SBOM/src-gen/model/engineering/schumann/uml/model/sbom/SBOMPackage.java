@@ -305,7 +305,7 @@ public interface SBOMPackage extends EPackage {
 	int DESCRIBED_ELEMENT__DESCRIPTION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' attribute list.
+	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -423,7 +423,7 @@ public interface SBOMPackage extends EPackage {
 	int NAMESPACE__DESCRIPTION = DESCRIBED_ELEMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' attribute list.
+	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -595,7 +595,7 @@ public interface SBOMPackage extends EPackage {
 	int COMPONENT__DESCRIPTION = NAMESPACE__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' attribute list.
+	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1013,7 +1013,7 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM__DESCRIPTION = NAMESPACE__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>License</b></em>' attribute list.
+	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1494,10 +1494,10 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getDescribedElement_Description();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.model.sbom.DescribedElement#getLicense <em>License</em>}'.
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.model.sbom.DescribedElement#getLicense <em>License</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>License</em>'.
+	 * @return the meta object for the attribute '<em>License</em>'.
 	 * @see engineering.schumann.uml.model.sbom.DescribedElement#getLicense()
 	 * @see #getDescribedElement()
 	 * @generated
@@ -2021,7 +2021,7 @@ public interface SBOMPackage extends EPackage {
 		EAttribute DESCRIBED_ELEMENT__DESCRIPTION = eINSTANCE.getDescribedElement_Description();
 
 		/**
-		 * The meta object literal for the '<em><b>License</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>License</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

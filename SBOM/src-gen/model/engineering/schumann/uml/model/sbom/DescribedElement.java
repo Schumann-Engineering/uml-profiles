@@ -2,8 +2,6 @@
  */
 package engineering.schumann.uml.model.sbom;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Described Element</b></em>'.
@@ -76,19 +74,29 @@ public interface DescribedElement extends NamedElement {
 	void setDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>License</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>License</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>License</em>' attribute list.
+	 * @return the value of the '<em>License</em>' attribute.
+	 * @see #setLicense(String)
 	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getDescribedElement_License()
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<String> getLicense();
+	String getLicense();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.DescribedElement#getLicense <em>License</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>License</em>' attribute.
+	 * @see #getLicense()
+	 * @generated
+	 */
+	void setLicense(String value);
 
 } // DescribedElement
