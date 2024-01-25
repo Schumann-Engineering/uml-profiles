@@ -6,8 +6,11 @@
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::sbom::common::Component /]
+[import engineering::schumann::uml::m2t::sbom::common::Namespace /]
 [import engineering::schumann::uml::m2t::sbom::html::Property /]
 [import engineering::schumann::uml::m2t::sbom::text::NamespaceType /]
+[import engineering::schumann::uml::m2t::sbom::text::RelationshipType /]
 [import engineering::schumann::uml::m2t::html::Toc /]
 
 
@@ -107,6 +110,24 @@
 		<ul>
 		[for (ownedComponent->sortedBy(name))]
 			<li>[TOC_link(name, _toString()) /]</li>
+		[/for]
+		</ul>
+		[/if]
+	</td>
+</tr>
+[comment relationships /]
+<tr>
+	<th>Relationships</th>
+	<td>
+		[if (relationship()->isEmpty())]
+		none
+		[else]
+		<ul>
+		[for (relationshipOutgoing())]
+			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target.name._toString()) /]</li>
+		[/for]
+		[for (relationshipIncoming())]
+			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source.name._toString()) /]</li>
 		[/for]
 		</ul>
 		[/if]
