@@ -14,7 +14,7 @@
 	this : Component
 )]
 <div class="sbom-component">
-	[getBreadcrumbs(2) /]
+	[getBreadcrumbsHtml(2) /]
 
 	<p>
 		[TOC_anchor(name, '<b>' + name + '</b>') /]
@@ -27,7 +27,7 @@
 	</table>
 
 	<p class="breadcrumbs" style="text-align: right !important">
-		[TOC_link(name + '-overview', 'back to Overview') /]
+		[TOC_link('back to Overview', name + '-overview') /]
 	</p>
 </div>
 [/template]

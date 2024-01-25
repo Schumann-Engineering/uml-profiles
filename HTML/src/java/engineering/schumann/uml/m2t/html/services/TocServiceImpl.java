@@ -8,8 +8,13 @@ import java.util.Stack;
 import org.eclipse.emf.ecore.impl.BasicEObjectImpl;
 
 public class TocServiceImpl {
+	public final static String DEFAULT_BREADCRUMBS_DELIMITER = " > ";
+	
+	
 	public class Entry extends BasicEObjectImpl {
 		public String name = null;
+		
+		public String id = null;
 		
 		public int level = 0;
 		
@@ -17,31 +22,6 @@ public class TocServiceImpl {
 		public String toString() {
 			return String.format("'%s' (level %d)", name, level);
 		}
-		
-		public String eGet(
-			String featureName
-		)
-		throws
-			Exception
-		{
-			// === GUARDS ===
-			if (featureName == null)
-				throw new IllegalArgumentException("feature name is null");
-			if (featureName.isBlank())
-				throw new IllegalArgumentException("feature name is blank");
-			
-			// === BODY ===
-			switch (featureName.trim().toLowerCase())
-			{
-				case "name": return name;
-				case "level": return Integer.toString(level);
-			
-				default:
-					throw new IllegalArgumentException(String.format("feature '%s' does not exist", featureName));					
-			}
-			
-		}
-		
 	}
 	
 	
@@ -55,14 +35,16 @@ public class TocServiceImpl {
 	
 	
 	public void Add(
-		String name,
-		Integer level
+		String	name,
+		String	id,
+		Integer	level
 	)
 	throws
 		Exception
 	{
 		var newEntry = new Entry(); //INSTANCE.createEntry();
 		newEntry.level = level;
+		newEntry.id = id;
 		newEntry.name = name;
 		
 		Add(newEntry);
@@ -131,10 +113,26 @@ public class TocServiceImpl {
 					newEntry.level
 				));
 		
+		// GUARD: ensure id is set, otherwise automatically determine it based on stack
+		if (newEntry.id == null || newEntry.id.isBlank() )
+		{
+			// FIXME: the assumption is, that a document only has 1 level 1 entry = title. we should ignore that for breadcrumbs. Hence, we start with level 2
+			var breadcrumbs = toList(2);
+			breadcrumbs.add(newEntry.name);
+			newEntry.id = String.join(DEFAULT_BREADCRUMBS_DELIMITER, breadcrumbs);
+		}
+		
 		// finally add the entry
 		Breadcrumbs.push(newEntry);
 		// also add it to TOC. With this, we are automatically getting the list of entries. :)
 		TableOfContents.add(newEntry);
+	}
+	
+	
+	@Override
+	public String toString()
+	{ 
+		return toString(DEFAULT_BREADCRUMBS_DELIMITER); 
 	}
 	
 	
@@ -161,12 +159,11 @@ public class TocServiceImpl {
 		Integer minimumLevel
 	)
 	{
-		// === GUARDS ===
-		if (Breadcrumbs.isEmpty())
-			return null;
-		
 		// === BODY ===
 		var entries = new ArrayList<String>();
+
+		if (Breadcrumbs.isEmpty())
+			return entries;
 		
 		for (var entry : Breadcrumbs)
 			if (entry.level >= minimumLevel)
@@ -175,14 +172,48 @@ public class TocServiceImpl {
 		// === RESULT ===
 		return entries;
 	}
+	
+	
+	public List<String> toListSkipLast(
+		Integer minimumLevel
+	)
+	{
+		return toListSkipLastN(minimumLevel, 1);
+	}
+	
+	
+	public List<String> toListSkipLastN(
+		Integer minimumLevel,
+		Integer skipCount
+	)
+	{
+		// === BODY ===
+		var entries = new ArrayList<String>();
 
-
+		if (Breadcrumbs.isEmpty())
+			return entries;
+		
+		for (int i=0; i<Breadcrumbs.size() - Math.max(0,  skipCount); i++)
+		{
+			var entry = Breadcrumbs.get(i);
+			
+			if (entry.level >= minimumLevel)
+				entries.add(entry.name);
+		}
+		
+		// === RESULT ===
+		return entries;
+	}
 	public List<List<String>> getToc()
 	{
 		var result = new ArrayList<List<String>>();
 		
 		for (var entry : TableOfContents)
-			result.add(Arrays.asList( entry.name, Integer.toString(entry.level)));
+			result.add(Arrays.asList(
+				entry.name, 
+				entry.id,
+				Integer.toString(entry.level)
+			));
 		
 		return result;
 	}

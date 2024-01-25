@@ -62,10 +62,12 @@ overrides HTML_START
 		</p>
 
 		<pre>
-[for (TOC_getTOC()->select(at(2).toInteger() >= 2))]
+[for (TOC_getTOC()->select(at(3).toInteger() >= 2))]
 	[let name  : String  = self->at(1)]
-	[let level : Integer = self->at(2).toInteger()]
-	['....'.repeat(level - 2) /][TOC_link( name ) /]
+	[let id  : String  = self->at(2)]
+	[let level : Integer = self->at(3).toInteger()]
+	['....'.repeat(level - 2) /][TOC_link( name, id ) /]
+	[/let]
 	[/let]
 	[/let]
 [/for]

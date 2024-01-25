@@ -595,7 +595,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 					[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS('1')) /]
 				[TOC_SubSubSection_end() /]
 				
-				[TOC_SubSubSection_begin(' Covered capabilities') /]
+				[TOC_SubSubSection_begin('Covered capabilities') /]
 					<p>
 						MDS2 covers the following capabilities:
 					</p>

@@ -98,7 +98,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	[html_ANSI_CAUTION_Start() /]
 		This document is the human readable representation of the SBOM.
-		However, only the machine readable SBOM is "valid".
+		The authoritive source is the digital, machine readable SBOM.
 		This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
 	[html_ANSI_CAUTION_End() /]
 [html_PAGE_end('cover page') /]
@@ -231,6 +231,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 )]
 [TOC_Section_begin('Overview') /]
 	<p>
+		The following table shows all components present. Details for each component will be provided in later sections.
+	</p>
+
+	[sbom.printAsTable() /]
+
+	<p>
 		Each component is classified according to IEC 81001-5-1:
 	</p>
 
@@ -247,13 +253,6 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		'width: 100%'
 	) /]
 
-	<p>
-		The following table shows all components present. Details for each component will be provided in later sections.
-	</p>
-
-	[html_PAGE_BREAK('overview') /]
-
-	[sbom.printAsTable() /]
 [TOC_Section_end() /]
 [/template]
 

@@ -5,13 +5,27 @@
 [template private TOC_Header(
 	title   : String,
 	level	: Integer
-)]<h[level/] id="[title.toHtmlId()/]" class="document-title">[title /]</h[level/]>
-[addBreadcrumb(title, level)/]
+)
+post(trim())]
+[addAutoBreadcrumb(title, level)/]
+<h[level/] id="[getBreadcrumbsRaw(2).toHtmlId()/]">[title /]</h[level/]>
+[getBreadcrumbsHtmlSkipLast(2) /]
+[/template]
+
+
+[template private TOC_HeaderWithId(
+	title   : String,
+	id		: String,
+	level	: Integer
+)
+post(trim())]
+[addBreadcrumb(title, id, level)/]
+<h[level/] id="[id.toHtmlId()/]">[title /]</h[level/]>
 [/template]
 
 
 [template public TOC_Title_begin(
-	title   : String
+	title   	: String
 )][TOC_Header(title, 1) /][/template]
 [template public TOC_Title_end(
 	devNull : Element
@@ -51,33 +65,108 @@
 
 
 [template private addBreadcrumb(
-	title : String,
-	level : Integer
+	title   : String,
+	id		: String,
+	level   : Integer
 )
 post(trim())][invoke(
 	'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
-	'Add(java.lang.String, java.lang.Integer)',
+	'Add(java.lang.String, java.lang.String, java.lang.Integer)',
 	Sequence {
 		title,
+		id,
 		level
 	}
 )
 /][/template]
 
 
-[template public getBreadcrumbs(
+[template private addAutoBreadcrumb(
+	title   : String,
+	level   : Integer
+)
+post(trim())]
+[invoke(
+	'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+	'Add(java.lang.String, java.lang.String, java.lang.Integer)',
+	Sequence {
+		title,
+		null,
+		level
+	}
+)
+/]
+[/template]
+
+
+[template public getBreadcrumbsHtml(
 	minLevel : Integer
 )
 post(trim())]
+[let breadcrumbs : String = _getBreadcrumbsHtml(2)]
+[if (breadcrumbs <> '')]
 <p class="breadcrumbs">
-	[for (invoke(
+	<i>back to</i> [breadcrumbs /]
+</p>
+[/if]
+[/let]
+[/template]
+
+
+[template public getBreadcrumbsHtmlSkipLast(
+	minLevel : Integer
+)
+post(trim())]
+[let breadcrumbs : String = _getBreadcrumbsHtmlSkipLast(2).trim()]
+[if (breadcrumbs <> '')]
+<p class="breadcrumbs">
+	<i>back to</i> [breadcrumbs /]
+</p>
+[/if]
+[/let]
+[/template]
+
+
+[template private _getBreadcrumbsHtml(
+	minLevel : Integer
+)
+post(trim())]
+[for (invoke(
 		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
 		'toList(java.lang.Integer)',
 		Sequence {
 			minLevel
 		}
 	)) separator(' &gt; ')][TOC_link(self.toString())/][/for]
-</p>
+[/template]
+
+
+[template private _getBreadcrumbsHtmlSkipLast(
+	minLevel : Integer
+)
+post(trim())]
+[for (invoke(
+		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+		'toListSkipLastN(java.lang.Integer, java.lang.Integer)',
+		Sequence {
+			minLevel,
+			1
+		}
+	)) separator(' &gt; ')][TOC_link(self.toString())/][/for]
+[/template]
+
+
+[template public getBreadcrumbsRaw(
+	minLevel : Integer
+)
+post(trim())]
+[for (invoke(
+			'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
+			'toList(java.lang.Integer)',
+			Sequence {
+				minLevel
+			}
+		)) separator(' > ')][self /][/for]
 [/template]
 
 
@@ -87,8 +176,8 @@ post(trim())]
 
 
 [template public TOC_link(
-	anchor	: String,
-	text	: String
+	text	: String,
+	anchor	: String
 )]<a class="breadcrumb" href="#[anchor.toHtmlId() /]">[text /]</a>[/template]
 
 
@@ -106,18 +195,23 @@ post(trim())]
 [query public toHtmlId(
 	text : String
 ) : String =
-	'link-' + 
+	'id-link-' + 
 	text
-	.replaceAll(' ', '-')
-	.replaceAll('<br/>', '-')
-	.replaceAll('<br>', '-')
-	.replaceAll('\\(', '')
-	.replaceAll('\\)', '')
-	.replaceAll('\\[', '')
-	.replaceAll('\\]', '')
-	.replaceAll('\\\\', '')
-	.replaceAll('/', '')
-	.replaceAll('\\+', '')
+	.replaceAll(' ', 		'')
+	.replaceAll('<br/>', 	'')
+	.replaceAll('<br>', 	'')
+	.replaceAll('>', 		'__')
+	.replaceAll('<', 		'')
+	.replaceAll('&amp;',	'-')
+	.replaceAll('\\$',		'')
+	.replaceAll('\\(',		'')
+	.replaceAll('\\)',		'')
+	.replaceAll('\\[',		'')
+	.replaceAll('\\]',		'')
+	.replaceAll('\\\\',		'')
+	.replaceAll('/',		'')
+	.replaceAll('\\+',		'')
+	.toLower()
 /]
 
 

@@ -55,13 +55,11 @@ h4:before {
 /* ==========
  * TITLE
  * ========== */
-.document-title h1,
 h1 {
 	margin-top:				2cm !important;
 	margin-bottom: 			5cm !important;
 }
 
-.document-title h1,
 h1 {
 	font-size: 				60pt !important;
 	font-weight:			bold !important;
