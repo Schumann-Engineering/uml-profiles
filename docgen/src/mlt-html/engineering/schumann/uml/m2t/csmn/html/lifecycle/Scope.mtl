@@ -13,7 +13,10 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
 [import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+[import engineering::schumann::uml::m2t::standards::text::IEC_62304 /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
 
 
 [template public printScope(
@@ -107,23 +110,50 @@ post(trim())
 	</tr>
 [comment CPE /]
 	<tr>
-		<th>CPE</th>
+		<th>CPE Part<br/>NIST IR 7695</th>
 [for (product : Product | products)]
 		<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][product.csmn_html_getCpeLinkForFirmware(self)/][/for]</td>
 [/for]
 	</tr>
 [comment IEC 62304 software safety class /]
 	<tr>
-		<th>IEC 62304 Software Safety Class</th>
+		<th>Software Safety Class<br/>IEC 62304 </th>
 [for (product : Product | products)]
-		<td>[getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Class.IEC62304') /]</td>
+[let iec62304Class : String = getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Class.IEC62304')]
+		<td>
+			<p>
+				Class [iec62304Class /]
+			</p>
+			<p>
+				[iec_62304_Class_toString(iec62304Class) /]
+			</p>
+		</td>
+[/let]
 [/for]
 	</tr>
 [comment (chinese???) Cybersecurity class ??? /]
 	<tr>
-		<th>Cybersecurity safety class</th>
+		<th>
+			Software Security Level<br/>China
+			[html_NOTE_Start() /]
+				<blockquote>
+					<p>
+						The minor, medium and severe levels correspond to the A, B, and C levels defined in YY/T 0664 (aka IEC 62304), respectively.
+					</p>
+				</blockquote>
+			[html_NOTE_End() /]
+		</th>
 [for (product : Product | products)]
-		<td>[getProperty('ANNOTATION.Product.Model.' + product.model + '.Software.Class.Cybersec') /]</td>
+[let level : String = China_getSoftwareSecurityLevel()]
+		<td>
+			<p>
+				Level [level /]
+			<p>
+			<p>
+				[China_Software_Security_Level_toString(level) /]
+			</p>
+		</td>
+[/let]
 [/for]
 	</tr>
 </table>

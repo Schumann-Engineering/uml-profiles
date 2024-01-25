@@ -62,17 +62,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	this : NamedElement
 )
 ? (this.csmn_isScoped())
+{
+	documentTitle	: String	= 'Product Security Characteristics';
+}
 ]
 [setEnv('DOCUMENT_NAME',        'INT_ProductSecurityCharacteristics') /]
 [setEnv('DOCUMENT_EXTENSION',   'html') /]
 
 [file (FILE_URI_DOCUMENT('1'), false, 'UTF-8')]
-[HTML_START('Product Security Characteristics')/]
+[HTML_START(documentTitle)/]
 	[CoverPage_Chapter_print()/]
 
 	[let content : String = generateDocumentContent()]
 
-	[HTML_TOC() /]
+	[HTML_TOC(documentTitle) /]
 
 	[content /]
 	[/let]

@@ -38,6 +38,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
 
 
 [template public generateDocument_CN_CyberSecurityResearchReport(
@@ -51,17 +52,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 [template private generateDocument_CN_CyberSecurityResearchReport(
 	this : NamedElement
-)]
+)
+{
+	documentTitle	: String	= 'Cybersecurity Research Report';
+}]
 [setEnv('DOCUMENT_NAME',        'CN_CyberSecurityResearchReport') /]
 [setEnv('DOCUMENT_EXTENSION',   'html') /]
 
 [file (FILE_URI_DOCUMENT('2'), false, 'UTF-8')]
-[HTML_START('Cybersecurity Research Report')/]
+[HTML_START(documentTitle)/]
 	[CoverPage_Chapter_print()/]
 
 	[let content : String = generateDocumentContent()]
 
-	[HTML_TOC() /]
+	[HTML_TOC(documentTitle) /]
 
 	[content /]
 	[/let]
@@ -249,19 +253,6 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [TOC_Section_begin('Data Architecture') /]
 	[comment
 		....................
-		APPLICABLE DOCUMENTS
-		....................
-	/]
-	[TOC_SubSection_begin('Applicable Documents') /]
-		<ul>
-			<li>Product Security Characteristics</li>
-			<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
-			[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		</ul>
-	[TOC_SubSection_end() /]
-
-	[comment
-		....................
 		DIAGRAM
 		....................
 	/]
@@ -310,6 +301,19 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 	[DataFlow_SubSection_print() /]
+
+	[comment
+		....................
+		APPLICABLE DOCUMENTS
+		....................
+	/]
+	[TOC_SubSection_begin('Applicable Documents') /]
+		<ul>
+			<li>Product Security Characteristics</li>
+			<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
+			[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		</ul>
+	[TOC_SubSection_end() /]
 [TOC_Section_end() /]
 [/template]
 
@@ -493,6 +497,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template private ImplementationProcess_Chapter_print(
 	this : NamedElement
 )]
+[html_PAGE_begin('implementation process') /]
 [TOC_Chapter_begin('Implementation Process') /]
 	
 	[comment
@@ -500,6 +505,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		RISK MANAGEMENT
 		--------------------
 	/]
+[comment html_PAGE_begin('risk management') /]
 	[TOC_Section_begin('Risk Management') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start() /]
@@ -511,20 +517,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_NOTE_End() /]
 		[html_NO_PRINT_end() /]
 		
+		[comment TOC_SubSection_begin('Description') /]
+		[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
+
 		[TOC_SubSection_begin('Applicable Documents') /]
 			[protectedArea('Risk Management > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
-		
-		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
+[html_PAGE_end('risk management') /]
 	
 	[comment
 		--------------------
 		REQIOREMENT SPECIFICATION
 		--------------------
 	/]
+[html_PAGE_begin('requirements specification') /]
 	[TOC_Section_begin('Requirements Specification') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start() /]
@@ -532,20 +540,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_TASK_End() /]
 		[html_NO_PRINT_end() /]
 		
+		[comment TOC_SubSection_begin('Description') /]
+		[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS('2'))/]
+		[comment TOC_SubSection_end() /]
+		
 		[TOC_SubSection_begin('Applicable Documents') /]
 			[protectedArea('Requirements Specification > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
-		
-		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS('2'))/]
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
+[html_PAGE_end('requirements specification') /]
 	
 	[comment
 		--------------------
 		VERIFICATION & VALIDATION
 		--------------------
 	/]
+[html_PAGE_begin('verification and validation') /]
 	[TOC_Section_begin('Verification and Validation') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start() /]
@@ -558,20 +568,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_TASK_End() /]
 		[html_NO_PRINT_end() /]
 		
+		[comment TOC_SubSection_begin('Description') /]
+		[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS('2')) /]	
+		[comment TOC_SubSection_end() /]
+		
 		[TOC_SubSection_begin('Applicable Documents') /]
 			[protectedArea('Verification and Validation > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
-		
-		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS('2')) /]	
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
+[html_PAGE_end('verification and validation') /]
 	
 	[comment
 		--------------------
 		TRACEABILITY
 		--------------------
 	/]
+[html_PAGE_begin('traceability analysis') /]
 	[TOC_Section_begin('Traceability analysis') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start() /]
@@ -579,20 +591,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_TASK_End() /]
 		[html_NO_PRINT_end() /]
 		
+		[comment TOC_SubSection_begin('Description') /]
+		[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
+		
 		[TOC_SubSection_begin('Applicable Documents') /]
 			[protectedArea('Traceability > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
-		
-		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
+[html_PAGE_end('traceability analysis') /]
 	
 	[comment
 		--------------------
 		MAINTENANCE PLAN
 		--------------------
 	/]
+[html_PAGE_begin('maintenance plan') /]
 	[TOC_Section_begin('Maintenance Plan') /]
 		[html_NO_PRINT_start() /]
 			[html_TASK_Start() /]
@@ -600,16 +614,59 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				Provide a flowchart for emergency response to cybersecurity incidents and describe relevant activities based on the diagram; Or provide emergency response plan documents for network security incidents. 
 			[html_TASK_End() /]
 		[html_NO_PRINT_end() /]
+
+[let level : String = China_getSoftwareSecurityLevel()]
+		[TOC_SubSection_begin('Overview') /]
+			<p>
+				The following is being provided:
+			</p>
+
+			<table class="table-3-columns table-centered">
+				<thead>
+					<tr>
+						<th>Information</th>
+						<th>Provided</th>
+						<th>Reason</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Notification Plan</td>
+						<td>[html_checkbox(true) /]</td>
+						<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+					</tr>
+					<tr>
+						<td>Security Incident Handling</td>
+						<td>[html_checkbox(level <> 'Low') /]</td>
+						<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+					</tr>
+				</tbody>
+			</table>
+		[TOC_SubSection_end() /]
+
+		[TOC_SubSection_begin('Notification Plan') /]
+			[comment class A, B, C /]
+			[protectedArea('Maintenance Plan > Notification Plan', DIRECTORY_URI_SNIPPETS('2')) /]
+		[TOC_SubSection_end() /]
+
+		[TOC_SubSection_begin('Security Incident Handling') /]
+[if (level = 'Low')]
+			<p>
+				Product has Software Security Level [level/]. No Security Incident Handling required.
+			</p>
+[else]
+			[comment class B, C /]
+			[protectedArea('Maintenance Plan > Security Incident Handling', DIRECTORY_URI_SNIPPETS('2')) /]
+[/if]
+		[TOC_SubSection_end() /]
+[/let]
 		
 		[TOC_SubSection_begin('Applicable Documents') /]
 			[protectedArea('Maintenance Plan > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
-		
-		[TOC_SubSection_begin('Description') /]
-			[protectedArea('Maintenance Plan > Description', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
+[html_PAGE_end('implementation process') /]
 [/template]
 
 
@@ -624,17 +681,93 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [TOC_Chapter_begin('Vulnerability Assessment') /]
 	[html_NO_PRINT_start() /]
 		[html_TASK_Start() /]
-			Provide self-assessment reports on network security vulnerabilities and network security vulnerability assessment reports issued by network security assessment agencies, clarify maintenance plans for known remaining vulnerabilities, and ensure that the overall remaining risks of the product are acceptable. 
+			<ul>
+				<li>Level Low: Clarify the total number of known vulnerabilities and the number of remaining vulnerabilities according to vulnerability levels</li>
+				<li>Level Medium: Provide a self-assessment report on network security vulnerabilities, clarifying the total number of known vulnerabilities and the remaining known vulnerabilities according to vulnerability levels.</li>
+				<li>Level High: Provide network security vulnerability self-assessment reports, network security vulnerability assessment reports issued by network security assessment agencies, and clarify maintenance plans for known remaining vulnerabilities.</li>
+			<ul>
 		[html_TASK_End() /]
 	[html_NO_PRINT_end() /]
+
+[let level : String = China_getSoftwareSecurityLevel()]
+	[TOC_Section_begin('Overview') /]
+		<p>
+			The following is being provided:
+		</p>
+
+			<table class="table-3-columns table-centered">
+			<thead>
+				<tr>
+					<th>Information</th>
+					<th>Provided</th>
+					<th>Reason</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>List of Known Vulnerabilities</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>List of Residual Vulnerabilities</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Security Self-Assessment Report</td>
+					<td>[html_checkbox(level <> 'Low') /]</td>
+					<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Pentest Report</td>
+					<td>[html_checkbox(level = 'High') /]</td>
+					<td>Required for Level High.<br/>Level is [level /]</td>
+				</tr>
+			</tbody>
+		</table>
+	[TOC_Section_end() /]
 	
+	[comment TOC_Section_begin('Description') /]
+	[protectedArea('Vulnerability Assessment > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+	[comment TOC_Section_end() /]
+
+	[comment Class A, B, C /]
+	[TOC_Section_begin('List of Known Vulnerabilities') /]
+		[protectedArea('Vulnerability Assessment > List of Known Vulnerabilities', DIRECTORY_URI_SNIPPETS('2')) /]
+	[TOC_Section_end() /]
+
+	[comment Class A, B, C /]
+	[TOC_Section_begin('List of Residual Vulnerabilities') /]
+		[protectedArea('Vulnerability Assessment > List of Residual Vulnerabilities', DIRECTORY_URI_SNIPPETS('2')) /]
+	[TOC_Section_end() /]
+
+	[comment Class B, C /]
+	[TOC_Section_begin('Security Self-Assessment Report') /]
+[if (level = 'Low')]
+		<p>
+			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
+		</p>
+[else]
+		[protectedArea('Vulnerability Assessment > Security Self-Assessment Report', DIRECTORY_URI_SNIPPETS('2')) /]
+[/if]
+	[TOC_Section_end() /]
+
+	[comment Class C /]
+	[TOC_Section_begin('Pentest Report') /]
+[if (level <> 'High')]
+		<p>
+			Product has Software Security Level of [level /]. No Pentest required.
+		</p>
+[else]
+		[protectedArea('Vulnerability Assessment > Pentest Report', DIRECTORY_URI_SNIPPETS('2')) /]
+[/if]
+	[TOC_Section_end() /]
+
 	[TOC_Section_begin('Applicable Documents') /]
 		[protectedArea('Vulnerability Assessment > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
 	[TOC_Section_end() /]
-	
-	[TOC_Section_begin('Description') /]
-		[protectedArea('Vulnerability Assessment > Description', DIRECTORY_URI_SNIPPETS('2')) /]
-	[TOC_Section_end() /]
+[/let]
 [TOC_Chapter_end() /]
 [/template]
 
@@ -655,12 +788,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_TASK_End()/]
 		[html_NO_PRINT_end() /]
 		
+		[comment TOC_Section_begin('Description') /]
+		[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_Section_end() /]
+		
 		[TOC_Section_begin('Applicable Documents') /]
 			[protectedArea('Conclusion > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_Section_end() /]
-		
-		[TOC_Section_begin('Description') /]
-			[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]

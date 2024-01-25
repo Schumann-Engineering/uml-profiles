@@ -226,12 +226,12 @@ post(trim())]
 /]
 
 
-[query public TOC_init(
-	devNull	: OclAny
-) : OclVoid = 
-	invoke(
+[template public TOC_init(
+	devNull	: String
+)
+post(trim())
+][invoke(
 		'engineering.schumann.uml.m2t.html.services.TocServiceImpl',
 		'initToc()',
 		Sequence {}
-	)
-/]
+	)/][/template]

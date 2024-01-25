@@ -49,12 +49,12 @@ overrides HTML_START
 		[CSS_ADDON() /]
 	</head>
 	<body>
-	[TOC_init()/]
+	[TOC_init(title)/]
 [/template]
 
 
 [template public HTML_TOC(
-	devNull	: OclAny
+	docTitle : String
 )]
 	[html_PAGE_begin('toc') /]
 		<p class="toc-title">

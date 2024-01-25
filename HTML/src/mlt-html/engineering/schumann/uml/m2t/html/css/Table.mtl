@@ -101,4 +101,10 @@ table.table-5-columns td:nth-child(5) {
 	width:				16%;
 	text-align:			left;
 }
+
+table.table-centered tr,
+table.table-centered th,
+table.table-centered td {
+	text-align:			center !important;
+}
 [/template]
