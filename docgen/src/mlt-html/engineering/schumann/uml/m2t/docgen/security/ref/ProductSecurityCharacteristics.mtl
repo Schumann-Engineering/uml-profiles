@@ -1,0 +1,159 @@
+[comment encoding = UTF-8 /]
+[module ProductSecurityCharacteristics(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+
+
+[template public DocRef_Asset(
+	section	: String
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Product Architecture',
+	section
+)/]
+[html_NOTE_Start() /]
+	For each asset, the following information is included:
+	<table class="table-2-columns">
+		<thead>
+			<tr>
+				<th>Column</th>
+				<th>Content</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>ASSET</th>
+				<td>Name of the asset</td>
+			</tr>
+			<tr>
+				<th>ASSET CHARACTERISTICS</th>
+				<td>List characteristics of the ASSET</td>
+			</tr>
+		</tbody>
+	</table>
+[html_NOTE_End() /]
+[/template]
+
+
+[template public DocRef_Connection(
+	section	: String
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Product Architecture',
+	section
+)/]
+[html_NOTE_Start() /]
+	<p>
+		For each connection to or from a system interface, the following information is included:
+	</p>
+
+	<table class="table-2-columns">
+		<thead>
+			<tr>
+				<th>Column</th>
+				<th>Content</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Supplier &amp; Zone</td>
+				<td>Element of the Product Architecture and its designated Security Zone</td>
+			</tr>
+			<tr>
+				<td>Supplier Interface</td>
+				<td>The interface involved on the supplier side providing assets</td>
+			</tr>
+			<tr>
+				<td>Asset Flow ←</td>
+				<td>Assets flowing from client to supplier</td>
+			</tr>
+			<tr>
+				<td>CONNECTION</td>
+				<td>Name of the connection between supplier interface and client interface as shown in Product Architecture diagram</td>
+			</tr>
+			<tr>
+				<td>Asset Flow →</td>
+				<td>Assets flowing from supplier to client</td>
+			</tr>
+			<tr>
+				<td>Client Interface</td>
+				<td>The interface involved on the client side consuming assets</td>
+			</tr>
+			<tr>
+				<td>Client &amp; Zone</td>
+				<td>Element of the Product Architecture and its designated Security Zone</td>
+			</tr>
+			<tr>
+				<td>CONENCTION Characteristics</td>
+				<td>Characteristics of the connection. This can consist of many different things:
+					<ul>
+						<li>Purpose: Purpose of the connection</li>
+						<li>Type: e.g. Information, Material, Energy, Mechanical</li>
+						<li>Direction: Uni-Directional or Bi-Directional</li>
+						<li>Real-Time: Is real-time information exchanged?</li>
+						<li>OSI- &amp; TCP-Layers: standards and protocols used according to international layer models</li>
+						<li>...</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+[html_NOTE_End() /]
+[/template]
+
+
+[template public DocRef_Interfaces(
+	section	: String
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Product Architecture',
+	section
+)/]
+[html_NOTE_Start() /]
+	For each interface, the following information is included:
+	<table class="table-2-columns">
+		<thead>
+			<tr>
+				<th>Column</th>
+				<th>Content</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>System Element</th>
+				<td>Element of the Product Architecture</td>
+			</tr>
+			<tr>
+				<th>Security Zone</th>
+				<td>Security Zone of the System Element</td>
+			</tr>
+			<tr>
+				<th>PRODUCT INTERFACE</th>
+				<td>Name of the product interface within the Product Architecture</td>
+			</tr>
+			<tr>
+				<th>PRODUCT INTERFACE Characteristics</th>
+				<td>Characteristics of the interface. This can consist of many different things:
+					<ul>
+						<li>Purpose:   Purpose of the interface</li>
+						<li>Type:      Technical nature of the interface</li>
+						<li>Connector: Physical connector or interface</li>
+						<li>Access:    Who has access to the interface</li>
+						<li>Bandwidth: Bandwidth of digital interfaces</li>
+						<li>Firewall:  Properties of a firewall, if present</li>
+						<li>...</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+[html_NOTE_End() /]
+[/template]
