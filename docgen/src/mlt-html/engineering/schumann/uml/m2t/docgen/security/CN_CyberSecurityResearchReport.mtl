@@ -69,7 +69,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	[HTML_TOC(documentTitle) /]
 
-	[content /]
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { content }) /]
 	[/let]
 [HTML_END()/]
 [/file]

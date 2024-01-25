@@ -39,6 +39,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_MDS2 /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
@@ -78,7 +79,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	[HTML_TOC(documentTitle) /]
 
-	[content /]
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { content }) /]
 	[/let]
 [HTML_END()/]
 [/file]
@@ -222,6 +226,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			DIAGRAM
 			--------------------
 		/]
+[comment html_PAGE_begin('diagram')/]
 		[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
 		[this.TOC_Section_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
 		
@@ -229,7 +234,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			
 		[this.TOC_Section_end()/]
 		[/for]
-[html_PAGE_end('product architecture-1')/]
+[html_PAGE_end('diagram')/]
 	
 		[comment
 			--------------------
@@ -238,6 +243,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		/]
 [html_PAGE_begin('product interfaces')/]
 		[TOC_Section_begin('Product interfaces') /]
+			[comment
+				....................
+				PRODUCT INTERFACES > DEFINITION
+				....................
+			/]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
 					A PRODUCT INTERFACE
@@ -285,39 +295,76 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 					</li>
 				</ol>
 			[TOC_SubSection_end() /]
-				
 [html_PAGE_end('product interfaces')/]
+
+			[comment
+				....................
+				PRODUCT INTERFACES > List of Interfaces
+				....................
+			/]
 [html_PAGE_begin('network interfaces')/]
 			[TOC_SubSection_begin('List of PRODUCT INTERFACE')/]
+				[comment
+					....................
+					network interfaces
+					....................
+				/]
+[comment html_PAGE_begin('network interfaces')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Network interfaces') /]
 					[printInterfaceAsTable( interfaces->csmn_networkPort() )/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('network interfaces')/]
 			
+
+				[comment
+					....................
+					non-network interfaces
+					....................
+				/]
 [html_PAGE_begin('non-netowrk interfaces')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Non-Network interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_nonNetworkPort() )/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('non-netowrk interfaces')/]
 				
+				[comment
+					....................
+					storage media
+					....................
+				/]
 [html_PAGE_begin('storage media')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Storage Media') /]			
 					[printInterfaceAsTable( interfaces->csmn_storagePort() )/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('storage media')/]
 				
+				[comment
+					....................
+					material
+					....................
+				/]
 [html_PAGE_begin('material')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Material interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_materialPort() )/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('material')/]
 				
+				[comment
+					....................
+					energy
+					....................
+				/]
 [html_PAGE_begin('energy')/]
 				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Energy interfaces') /]			
 					[printInterfaceAsTable( interfaces->csmn_energyPort() )/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('energy')/]
 				
+				[comment
+					....................
+					other
+					....................
+				/]
 				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
 				[if (otherInterfaces->size() > 0)]
 [html_PAGE_begin('other ports')/]
@@ -343,6 +390,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		/]
 [html_PAGE_begin('connections')/]
 		[TOC_Section_begin('Interface connections') /]
+			[comment
+				....................
+				Definition
+				....................
+			/]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
 					An INTERFACE CONNECTION
@@ -360,30 +412,55 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('connections')/]
 				
+				[comment
+					....................
+					non-network connections
+					....................
+				/]
 [html_PAGE_begin('non-network connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Non-Network interfaces') /]
 					[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('non-network connections')/]
 				
+				[comment
+					....................
+					storage connections
+					....................
+				/]
 [html_PAGE_begin('storage connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Storage Media') /]
 					[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('storage connections')/]
 				
+				[comment
+					....................
+					material connections
+					....................
+				/]
 [html_PAGE_begin('material connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Material interfaces') /]
 					[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('material connections')/]
 				
+				[comment
+					....................
+					energy connections
+					....................
+				/]
 [html_PAGE_begin('energy connections')/]
 				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Energy interfaces') /]
 					[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable(true)/]
 				[TOC_SubSubSection_end() /]
 [html_PAGE_end('energy connections')/]
 				
+				[comment
+					....................
+					other connections
+					....................
+				/]
 				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
 				[if (otherInterfaces->size() > 0)]
 [html_PAGE_begin('other connections')/]
@@ -407,6 +484,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		/]
 [html_PAGE_begin('assets')/]
 		[TOC_Section_begin('Assets') /]
+			[comment
+				....................
+				Definition
+				....................
+			/]
 			[TOC_SubSection_begin('Definition')/]
 				<p>
 					An ASSET
@@ -478,37 +560,72 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[TOC_SubSection_end()/]
 [html_PAGE_end('assets')/]
 	
+				[comment
+					....................
+					credential asset
+					....................
+				/]
 [html_PAGE_begin('credential assets')/]
 			[TOC_SubSection_begin('List of ASSETs')/]
 				[TOC_SubSubSection_begin('ASSETs which are Credential Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials )/]
 [html_PAGE_end('credential assets')/]
-				
+	
+				[comment
+					....................
+					energy asset
+					....................
+				/]
 [html_PAGE_begin('energy assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Energy Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy )/]
 [html_PAGE_end('energy assets')/]
 				
+				[comment
+					....................
+					data asset
+					....................
+				/]
 [html_PAGE_begin('data assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Data Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Data )/]
 [html_PAGE_end('data assets')/]
-				
+
+				[comment
+					....................
+					information asset
+					....................
+				/]
 [html_PAGE_begin('information assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Information Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Information )/]
 [html_PAGE_end('information assets')/]
-				
+
+				[comment
+					....................
+					material asset
+					....................
+				/]
 [html_PAGE_begin('material assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Material Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Material )/]
 [html_PAGE_end('material assets')/]
 				
+				[comment
+					....................
+					mechanical asset
+					....................
+				/]
 [html_PAGE_begin('mechanical assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Mechanical Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical )/]
 [html_PAGE_end('mechanical')/]
-				
+
+				[comment
+					....................
+					signal asset
+					....................
+				/]
 [html_PAGE_begin('signal assets')/]
 				[TOC_SubSubSection_begin('ASSETs which are Signal Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal )/]
@@ -529,9 +646,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[TOC_Section_begin('Software') /]
 			[SBOM_SubSection_print() /]
 		[TOC_Section_end() /]
+[html_PAGE_end('software')/]
 	
 	[TOC_Chapter_end() /]
-[html_PAGE_end('software')/]
+[comment html_PAGE_end('product architecture')/]
 [/template]
 
 
@@ -583,10 +701,16 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			MDS2
 			--------------------
 		/]
+[comment html_PAGE_begin('MDS2')/]
 		[TOC_Section_begin('Manufacturer Disclosure Statement for Medical Device Security (MDS2) (IEC TR 80001-2-2 et. al.)') /]
 			[comment TOC_SubSection_begin('Declaration')/]
 			[html_INFO_Start()/]see applicable document(s)[html_INFO_End()/]
 			[comment TOC_SubSection_end()/]
+
+
+			[TOC_SubSection_begin('Applicable Documents')/]
+				[DocRef_MDS2() /]
+			[TOC_SubSection_end()/]
 
 			[TOC_SubSection_begin('Background')/]
 				[TOC_SubSubSection_begin('Covered standards') /]
@@ -610,12 +734,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				[TOC_SubSubSection_end() /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
+[html_PAGE_end('MDS2')/]
 		
 		[comment
 			--------------------
 			CAPABILITY SECURITY LEVEL
 			--------------------
 		/]
+[html_PAGE_begin('SL-C')/]
 		[TOC_Section_begin('Capability Security Level (SL-C) (IEC 60601-4-5)') /]
 			[comment TOC_SubSection_begin('Declaration')/]
 			[html_TBD() /]
@@ -625,12 +751,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				!['[['/]IEC 60601-4-5 - capability Security Level (SL-C)[']]'/]
 			[TOC_SubSection_end()/]			
 		[TOC_Section_end()/]
+[html_PAGE_end('SL-C')/]
 		
 		[comment
 			--------------------
 			TARGET SECURITY LEVEL
 			--------------------
 		/]
+[html_PAGE_begin('SL-T')/]
 		[TOC_Section_begin('Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)') /]
 			[comment TOC_SubSection_begin('Declaration')/]
 			[html_TBD() /]
@@ -640,6 +768,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				!['[['/]IEC 60601-4-5 - target Security Level (SL-T)[']]'/]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
+[comment html_PAGE_end('SL-T')/]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('security capabilities')/]
 [/template]

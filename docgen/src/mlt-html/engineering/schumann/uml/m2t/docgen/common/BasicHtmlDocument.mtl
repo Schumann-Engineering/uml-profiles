@@ -23,11 +23,11 @@ extends engineering::schumann::uml::m2t::html::Html
 overrides CSS_ADDON
 ]
 <style type="text/css">
-	[CSS_SBOM_COMPONENT() /]
+[CSS_SBOM_COMPONENT() /]
 </style>
 
 <style type="text/css">
-	[CSS_CSMN_SCOPE() /]
+[CSS_CSMN_SCOPE() /]
 </style>
 [/template]
 
@@ -45,8 +45,8 @@ overrides HTML_START
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		[CSS() /]
-		[CSS_ADDON() /]
+[CSS() /]
+[CSS_ADDON() /]
 	</head>
 	<body>
 	[TOC_init(title)/]

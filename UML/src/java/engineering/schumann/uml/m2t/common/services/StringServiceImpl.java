@@ -233,4 +233,17 @@ public class StringServiceImpl {
 		// === RESULT ===
 		return result;
 	}
+	
+	
+	public static String fixAcceleoOutput(
+			String input
+	)
+	{
+		var result = replaceEachRepeatedly(input, "\n\n", "\n");
+		result = replaceEachRepeatedly(result, "\t\t\n", "");
+		result = replaceEachRepeatedly(result, "\t\n", "");
+		result = replaceEachRepeatedly(result, "\r\n\r\n", "\r\n");
+		
+		return result;
+	}
 }

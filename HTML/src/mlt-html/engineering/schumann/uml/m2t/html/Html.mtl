@@ -16,35 +16,35 @@
 	devNull : OclAny
 )]
 <style type="text/css">
-	[CSS_EXTERNAL_THEME() /]
+[CSS_EXTERNAL_THEME() /]
 </style>
 
 <style type="text/css">
-	[CSS_PAGE_SETUP() /]
+[CSS_PAGE_SETUP() /]
 </style>
 
 <style type="text/css">
-	[CSS_TABLE() /]
+[CSS_TABLE() /]
 </style>
 
 <style type="text/css">
-	[CSS_TOC() /]
+[CSS_TOC() /]
 </style>
 
 <style type="text/css">
-	[CSS_LIST() /]
+[CSS_LIST() /]
 </style>
 
 <style type="text/css">
-	[CSS_MATERIAL_DESIGN() /]
+[CSS_MATERIAL_DESIGN() /]
 </style>
 
 <style type="text/css">
-	[CSS_BOXES() /]
+[CSS_BOXES() /]
 </style>
 
 <style type="text/css">
-	[CSS_DOCUMENT_CLASSIFICATION() /]
+[CSS_DOCUMENT_CLASSIFICATION() /]
 </style>
 [/template]
 
@@ -65,8 +65,8 @@
 
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-		[CSS() /]
-		[CSS_ADDON() /]
+[CSS() /]
+[CSS_ADDON() /]
 	</head>
 	<body>
 [/template]

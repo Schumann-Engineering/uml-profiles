@@ -21,6 +21,7 @@ post(trim())]
 post(trim())]
 [addBreadcrumb(title, id, level)/]
 <h[level/] id="[id.toHtmlId()/]">[title /]</h[level/]>
+[getBreadcrumbsHtmlSkipLast(2) /]
 [/template]
 
 
@@ -35,6 +36,10 @@ post(trim())]
 [template public TOC_Chapter_begin(
 	title   : String
 )][TOC_Header(title, 2) /][/template]
+[template public TOC_Chapter_begin(
+	title   : String,
+	id		: String
+)][TOC_HeaderWithId(title, id, 2) /][/template]
 [template public TOC_Chapter_end(
 	devNull : Element
 )][/template]
@@ -43,6 +48,10 @@ post(trim())]
 [template public TOC_Section_begin(
 	title   : String
 )][TOC_Header(title, 3) /][/template]
+[template public TOC_Section_begin(
+	title   : String,
+	id		: String
+)][TOC_HeaderWithId(title, id, 3) /][/template]
 [template public TOC_Section_end(
 	devNull : Element
 )][/template]
@@ -51,6 +60,10 @@ post(trim())]
 [template public TOC_SubSection_begin(
 	title   : String
 )][TOC_Header(title, 4) /][/template]
+[template public TOC_SubSection_begin(
+	title   : String,
+	id		: String
+)][TOC_HeaderWithId(title, id, 4) /][/template]
 [template public TOC_SubSection_end(
 	devNull : Element
 )][/template]
@@ -59,6 +72,10 @@ post(trim())]
 [template public TOC_SubSubSection_begin(
 	title   : String
 )][TOC_Header(title, 5) /][/template]
+[template public TOC_SubSubSection_begin(
+	title   : String,
+	id		: String
+)][TOC_HeaderWithId(title, id, 4) /][/template]
 [template public TOC_SubSubSection_end(
 	devNull : Element
 )][/template]

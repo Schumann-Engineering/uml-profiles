@@ -148,7 +148,7 @@ post(trim())
 		<td>
 			<p>
 				Level [level /]
-			<p>
+			</p>
 			<p>
 				[China_Software_Security_Level_toString(level) /]
 			</p>

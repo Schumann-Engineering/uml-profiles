@@ -64,7 +64,7 @@
 
 
 [template public html_TBD(devNull : OclAny)]
-<div class="box box-tbd" />
+<div class="box box-tbd"></div>
 [/template]
 
 

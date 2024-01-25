@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[module Ref_MDS2(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+
+
+[template public DocRef_MDS2(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
+)/]
+[/template]
