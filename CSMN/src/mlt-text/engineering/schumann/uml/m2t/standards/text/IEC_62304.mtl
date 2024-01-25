@@ -1,0 +1,20 @@
+[comment encoding = UTF-8 /]
+[module IEC_62304(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public iec_62304_Class_toString(
+	this : String
+) : String =
+		 if (this = null) then 'ERROR: IEC 62304 class is null'
+	else if (this.toLower() = 'a') then 'No injury or damage to health is possible'
+	else if (this.toLower() = 'b') then 'Non-SERIOUS INJURY is possible'
+	else if (this.toLower() = 'c') then 'Death or SERIOUS INJURY is possible'
+	else 'ERROR: unknown IEC 62304 class: "' + this + '"'
+	endif
+	endif
+	endif
+	endif
+/]
