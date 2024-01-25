@@ -4,6 +4,7 @@
 
 
 [import engineering::schumann::uml::m2t::sbom::common::System /]
+[import engineering::schumann::uml::m2t::sbom::common::Component /]
 
 
 [query public hasSbom(
@@ -27,6 +28,39 @@
 			includePaths
 		}
 	)
+/]
+
+
+[query public license(
+	this			: Sbom
+) : OrderedSet(String) =
+	this.ownedSystem.license
+	->union(this.ownedSystem.ownedComponent.license)
+	->excluding(null)
+	->excluding('')
+	->asOrderedSet()
+/]
+
+
+[query private license(
+	this			: Component
+) : OrderedSet(String) =
+	Set(String) {}
+	->including(license)
+	->union(this.ownedComponent.license)
+	->excluding(null)
+	->excluding('')
+	->asOrderedSet()
+/]
+
+
+[query public allComponentsWithicense(
+	this			: Sbom,
+	needle			: String
+) : Set(Component) =
+	allComponents()
+	->select(c : Component | needle.equalsIgnoreCase(c.license))
+	->asSet() 
 /]
 
 
@@ -57,8 +91,9 @@
 [query public allComponents(
 	this : Sbom
 ) : Set(Component) =
-	Set(Component) {}
+	Set(Namespace) {}
 	->union(ownedSystem)
 	->union(ownedSystem.allComponents())
+	->filter(Component)
 	->asSet()
 /]

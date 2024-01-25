@@ -9,8 +9,9 @@
 [query public allComponents(
 	this : System
 ) : Set(Component) =
-	Set(Component) {}
+	Set(Namespace) {}
 	->union(ownedComponent)
 	->union(ownedComponent.allComponents())
+	->filter(Component)
 	->asSet()
 /]
