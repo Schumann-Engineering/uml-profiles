@@ -40,6 +40,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_MDS2 /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
@@ -134,7 +135,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
 			</p>
 	
-			[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
+			[LegalRef_IMDRF_STED_Cybersec() /]
+			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Target audience') /]
@@ -264,34 +266,59 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 				<ol>
 					<li>
-						<b>NETWORK INTERFACE</b><br/>
-			    		is an interface to directly connect to a networked infrastructure<br/>
-			    		<br/>
-			    		<i>Examples</i>: Bluetooth, ZigBee, Ethernet, WLAN
+						<p>
+							<b>NETWORK INTERFACE</b>
+						</p>
+						<p>
+			    			is an interface to directly connect to a networked infrastructure
+						</p>
+					    [html_EXAMPLE_Start() /]
+			    		Bluetooth, ZigBee, Ethernet, WLAN
+					    [html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>NON-NETWORK INTERFACE</b><br/>
-					    is an electronic data interchange interface<br/>
-					    <br/>
-					    <i>Examples</i>: touch screen, USB port, RS-232 port
+						<p>
+							<b>NON-NETWORK INTERFACE</b>
+						</p>
+						<p>
+					    	is an electronic data interchange interface
+						</p>
+					    [html_EXAMPLE_Start() /]
+					    touch screen, USB port, RS-232 port
+					    [html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>STORAGE MEDIA</b><br/>
-					    is used for writing or retrieving data from a (mostly) non-volatile data storage.
-					    <br/>
-					    <i>Examples</i>: SD card, USB mass storage device, CF card
+						<p>
+							<b>STORAGE MEDIA</b>
+						</p>
+						<p>
+					    	is used for writing or retrieving data from a (mostly) non-volatile data storage.
+						</p>
+					    [html_EXAMPLE_Start() /]
+					    SD card, USB mass storage device, CF card
+					    [html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>MATERIAL INTERFACE</b><br/>
-					    provides or receives physical material.<br/>
-					    <br/>
-					    <i>Examples</i>: flow of air
+						<p>
+							<b>MATERIAL INTERFACE</b>
+						</p>
+						<p>
+					    	provides or receives physical material.
+						</p>
+					    [html_EXAMPLE_Start() /]
+					    flow of air
+					    [html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>ENERGY INTERFACE</b><br/>
-					    provides or receives any form of energy like electricity, light or sound.<br/>
-					    <br/>
-					    <i>Examples</i>: power plugs, alarm light, speaker
+						<p>
+							<b>ENERGY INTERFACE</b>
+						</p>
+						<p>
+					    	provides or receives any form of energy like electricity, light or sound.
+						</p>
+					    [html_EXAMPLE_Start() /]
+					    power plugs, alarm light, speaker
+					    [html_EXAMPLE_End() /]
 					</li>
 				</ol>
 			[TOC_SubSection_end() /]
@@ -508,42 +535,73 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 				<ol>
 					<li>
-						<b>CREDENTIALS</b><br/>
-						Special kind of data holding passwords or cryptographic keys.<br/>
-						<br/>
-						<i>Examples</i>: Username and password, private key, WLAN key<br/>
+						<p>
+							<b>CREDENTIALS</b>
+						</p>
+						<p>
+							Special kind of data holding passwords or cryptographic keys.
+						</p>
+						[html_EXAMPLE_Start() /]
+						Username and password, private key, WLAN key
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>ENERGY</b><br/>
-						Received or provided physical energy in various forms, like electricity, light, sound or radiation.<br/>
-						<br/>
-						<i>Examples</i>: Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
+						<p>
+							<b>ENERGY</b>
+						</p>
+						<p>
+							Received or provided physical energy in various forms, like electricity, light, sound or radiation.
+						</p>
+						[html_EXAMPLE_Start() /]
+						Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>DATA</b><br/>
-						Digital (raw) data stored and transfered.<br/>
-					    <br/>
-					    <i>Examples</i>: Log files, configuration, software, medical data
+						<p>
+							<b>DATA</b>
+						</p>
+						<p>
+							Digital (raw) data stored and transfered.
+						</p>
+						[html_EXAMPLE_Start() /]
+					    Log files, configuration, software, medical data
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>INFORMATION</b><br/>
-						Information is interpreted data. By means of interpretation, data becomes information.<br/>
-					    <br/>
-					    <i>Examples</i>: Alarm, diagnosis
+						<p>
+							<b>INFORMATION</b>
+						</p>
+						<p>
+							Information is interpreted data. By means of interpretation, data becomes information.
+						</p>
+						[html_EXAMPLE_Start() /]
+					    Alarm, diagnosis
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>MATERIAL</b><br/>
-					    provides or receives physical material.<br/>
-					    <br/>
-					    <i>Examples</i>: flow of air
+						<p>
+							<b>MATERIAL</b>
+						</p>
+						<p>
+					    	provides or receives physical material.
+						</p>
+						[html_EXAMPLE_Start() /]
+					    flow of air
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>MECHANICAL</b><br/>
-					    <br/>
-					    <i>Examples</i>: power plugs, alarm light, speaker
+						<p>
+							<b>MECHANICAL</b>
+						</p>
+
+						[html_EXAMPLE_Start() /]
+					    power plugs, alarm light, speaker
+						[html_EXAMPLE_End() /]
 					</li>
 					<li>
-						<b>SIGNAL</b><br/>
+						<p>
+							<b>SIGNAL</b>
+						</p>
 						<blockquote>
 							<ul>
 								<li>a gesture, action, or sound that is used to convey information or instructions, typically by prearrangement between the parties concerned.</li>
@@ -551,10 +609,13 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 						    	<li>an event or statement that provides the impulse for an occurrence.</li>
 						    	<li>an electrical impulse or radio wave transmitted or received.</li>
 							</ul>
+							<p class="cite-source">
+								Oxford English Dictionary
+							</p>
 						</blockquote>
-					    (source: Oxford English Dictionary)<br/>
-						<br/>
-						<i>Examples</i>: radio waves, user input, light impulse.
+						[html_EXAMPLE_Start() /]
+						radio waves, user input, light impulse.
+						[html_EXAMPLE_End() /]
 					</li>
 				</ol>
 			[TOC_SubSection_end()/]
@@ -662,11 +723,17 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		Off-the-shelf software is managed though Software Bill of Material (SBOM).
 	</p>
 
-	[html_NOTE_Start() /]
-		Not every development environment supports the automated creation of a SBOM.<br/>
-		In such a case, the SBOM is written by hand.<br/>
-		This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
-	[html_NOTE_End() /]
+	[html_INFO_Start() /]
+		<p>
+			Not every development environment supports the automated creation of a SBOM.
+		</p>
+		<p>
+			In such a case, the SBOM is written by hand.
+		</p>
+		<p>
+			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
+		</p>
+	[html_INFO_End() /]
 
 	<p>
 		For a list of Off-the-shelf Software, see document

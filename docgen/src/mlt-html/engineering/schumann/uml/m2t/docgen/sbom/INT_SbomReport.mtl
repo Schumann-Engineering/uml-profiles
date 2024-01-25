@@ -13,6 +13,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
@@ -141,13 +142,8 @@ post(trim())]
 				This documents describe the software bill of material (SBOM) of the product(s) in scope.
 			</p>
 	
-			[html_INFO_Start() /]
-				<b>IMDRF STED:</b> It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).
-			[html_INFO_End() /]
-
-			[html_INFO_Start() /]
-				<b>China:</b> This document covers the requirements of "Medical device cybersecurity registration review guiding principles (2022 revised edition)" (医疗器械网络安全注册审查指导原则 2022年修订版)
-			[html_INFO_End() /]
+			[LegalRef_IMDRF_STED_Cybersec() /]
+			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Target audience') /]

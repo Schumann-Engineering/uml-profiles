@@ -30,7 +30,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_MDS2 /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
@@ -129,7 +131,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
 			</p>
 	
-			[html_INFO_Start()/]It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).[html_INFO_End()/]
+			[LegalRef_IMDRF_STED_Cybersec() /]
+			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Target audience') /]
@@ -348,17 +351,19 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		APPLICABLE DOCUMENTS
 		....................
 	/]
-[html_PAGE_begin('data architecture > applicable documents') /]
-	[TOC_SubSection_begin('Applicable Documents') /]
-		<ul>
-			<li>Product Security Characteristics</li>
-			<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
-			[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		</ul>
-	[TOC_SubSection_end() /]
-[html_PAGE_end('data architecture > applicable documents') /]
+[comment]
+	[html_PAGE_begin('data architecture > applicable documents') /]
+		[TOC_SubSection_begin('Applicable Documents') /]
+			<ul>
+				<li>Product Security Characteristics</li>
+				<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
+				[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+			</ul>
+		[TOC_SubSection_end() /]
+	[html_PAGE_end('data architecture > applicable documents') /]
+[/comment]
 [TOC_Section_end() /]
-[html_PAGE_begin('data architecture (end)') /]
+[html_PAGE_end('data architecture') /]
 [/template]
 
 
@@ -383,18 +388,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	<ul>
 		<li>
-			[html_Document_Ref(
-				'Product Security Characteristics',
-				'Security Capabilities',
-				'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-			)/]
+			[DocRef_Characteristics_MDS2() /]
 		</li>
 		<li>
-			[html_Document_Ref(
-				'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-			)/]
+			[DocRef_MDS2() /]
 		</li>
 	</ul>
+
+	[html_TIP_Start() /]
+		<p>
+			MDS2 covers the following capabilities:
+		</p>
+		[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('2')) /]
+	[html_TIP_End() /]
+
 [TOC_Section_end() /]
 [/template]
 
@@ -434,9 +441,15 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start() /]
-		Not every development environment supports the automated creation of a SBOM.<br/>
-		In such a case, the SBOM is written by hand.<br/>
-		This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
+		<p>
+			Not every development environment supports the automated creation of a SBOM.
+		</p>
+		<p>
+			In such a case, the SBOM is written by hand.
+		</p>
+		<p>
+			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
+		</p>
 	[html_NOTE_End() /]
 
 	<p>
@@ -558,9 +571,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[comment TOC_SubSection_end() /]
 
-		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Risk Management > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
+		[comment TOC_SubSection_begin('Applicable Documents') /]
+		<p><b>Applicable Documents</b></p>
+		[protectedArea('Risk Management > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
 	
@@ -581,9 +595,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS('2'))/]
 		[comment TOC_SubSection_end() /]
 		
-		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Requirements Specification > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
+		<p><b>Applicable Documents</b></p>
+		[comment TOC_SubSection_begin('Applicable Documents') /]
+		[protectedArea('Requirements Specification > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
 	
@@ -609,9 +624,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS('2')) /]	
 		[comment TOC_SubSection_end() /]
 		
-		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Verification and Validation > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
+		<p><b>Applicable Documents</b></p>
+		[comment TOC_SubSection_begin('Applicable Documents') /]
+		[protectedArea('Verification and Validation > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
 	
@@ -632,9 +648,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS('2')) /]
 		[comment TOC_SubSection_end() /]
 		
-		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Traceability > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
+		<p><b>Applicable Documents</b></p>
+		[comment TOC_SubSection_begin('Applicable Documents') /]
+		[protectedArea('Traceability > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
 	
@@ -653,33 +670,43 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 
 [let level : String = China_getSoftwareSecurityLevel()]
-		[TOC_SubSection_begin('Overview') /]
-			<p>
-				The following is being provided:
-			</p>
+		[comment TOC_SubSection_begin('Overview') /]
+		<p>
+			The following is being provided:
+		</p>
 
-			<table class="table-3-columns table-centered">
-				<thead>
-					<tr>
-						<th>Information</th>
-						<th>Provided</th>
-						<th>Reason</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Notification Plan</td>
-						<td>[html_checkbox(true) /]</td>
-						<td>Required for Level Low or higher.<br/>Level is [level /]</td>
-					</tr>
-					<tr>
-						<td>Security Incident Handling</td>
-						<td>[html_checkbox(level <> 'Low') /]</td>
-						<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
-					</tr>
-				</tbody>
-			</table>
+		<table class="table-3-columns table-centered">
+			<thead>
+				<tr>
+					<th>Information</th>
+					<th>Provided</th>
+					<th>Reason</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Software Maintenance Plan</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Notification Plan</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Security Incident Handling</td>
+					<td>[html_checkbox(level <> 'Low') /]</td>
+					<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+				</tr>
+			</tbody>
+		</table>
+		[comment TOC_SubSection_end() /]
+
+		[TOC_SubSection_begin('Software Maintenance Plan') /]
+			[protectedArea('Maintenance Plan > Software Maintenance Plan', DIRECTORY_URI_SNIPPETS('2')) /]
 		[TOC_SubSection_end() /]
+		
 
 		[TOC_SubSection_begin('Notification Plan') /]
 			[comment class A, B, C /]
@@ -697,10 +724,6 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [/if]
 		[TOC_SubSection_end() /]
 [/let]
-		
-		[TOC_SubSection_begin('Applicable Documents') /]
-			[protectedArea('Maintenance Plan > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
 [html_PAGE_end('implementation process') /]
@@ -715,6 +738,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template private VulnerabilityAssessment_Chapter_print(
 	this : NamedElement
 )]
+[html_PAGE_begin('vulnerablity assessment') /]
 [TOC_Chapter_begin('Vulnerability Assessment') /]
 	[html_NO_PRINT_start() /]
 		[html_TASK_Start() /]
@@ -727,47 +751,53 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[html_NO_PRINT_end() /]
 
 [let level : String = China_getSoftwareSecurityLevel()]
-	[TOC_Section_begin('Overview') /]
-		<p>
-			The following is being provided:
-		</p>
+	[comment TOC_Section_begin('Overview') /]
+	<p>
+		The following is being provided:
+	</p>
 
-			<table class="table-3-columns table-centered">
-			<thead>
-				<tr>
-					<th>Information</th>
-					<th>Provided</th>
-					<th>Reason</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>List of Known Vulnerabilities</td>
-					<td>[html_checkbox(true) /]</td>
-					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
-				</tr>
-				<tr>
-					<td>List of Residual Vulnerabilities</td>
-					<td>[html_checkbox(true) /]</td>
-					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
-				</tr>
-				<tr>
-					<td>Security Self-Assessment Report</td>
-					<td>[html_checkbox(level <> 'Low') /]</td>
-					<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
-				</tr>
-				<tr>
-					<td>Pentest Report</td>
-					<td>[html_checkbox(level = 'High') /]</td>
-					<td>Required for Level High.<br/>Level is [level /]</td>
-				</tr>
-			</tbody>
-		</table>
-	[TOC_Section_end() /]
-	
-	[comment TOC_Section_begin('Description') /]
-	[protectedArea('Vulnerability Assessment > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		<table class="table-3-columns table-centered">
+		<thead>
+			<tr>
+				<th>Information</th>
+				<th>Provided</th>
+				<th>Reason</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Vulnerability Management Plan</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>List of Known Vulnerabilities</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>List of Residual Vulnerabilities</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>Security Self-Assessment Report</td>
+				<td>[html_checkbox(level <> 'Low') /]</td>
+				<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>Pentest Report</td>
+				<td>[html_checkbox(level = 'High') /]</td>
+				<td>Required for Level High.<br/>Level is [level /]</td>
+			</tr>
+		</tbody>
+	</table>
 	[comment TOC_Section_end() /]
+	
+
+	[TOC_Section_begin('Vulnerability Management Plan') /]
+	[	protectedArea('Vulnerability Assessment > Vulnerability Management Plan', DIRECTORY_URI_SNIPPETS('2')) /]
+	[TOC_Section_end() /]
 
 	[comment Class A, B, C /]
 	[TOC_Section_begin('List of Known Vulnerabilities') /]
@@ -787,6 +817,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		</p>
 [else]
 		[protectedArea('Vulnerability Assessment > Security Self-Assessment Report', DIRECTORY_URI_SNIPPETS('2')) /]
+
+		<p><b>Applicable Documents</b></p>
+		<ul>
+			<li>[DocRef_MDS2() /]</li>
+		</ul>
 [/if]
 	[TOC_Section_end() /]
 
@@ -800,12 +835,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[protectedArea('Vulnerability Assessment > Pentest Report', DIRECTORY_URI_SNIPPETS('2')) /]
 [/if]
 	[TOC_Section_end() /]
-
-	[TOC_Section_begin('Applicable Documents') /]
-		[protectedArea('Vulnerability Assessment > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-	[TOC_Section_end() /]
 [/let]
 [TOC_Chapter_end() /]
+[html_PAGE_end('vulnerablity assessment') /]
 [/template]
 
 
@@ -825,13 +857,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[html_TASK_End()/]
 		[html_NO_PRINT_end() /]
 		
-		[comment TOC_Section_begin('Description') /]
-		[protectedArea('Conclusion > Description', DIRECTORY_URI_SNIPPETS('2')) /]
+		[comment TOC_Section_begin('Conclusion') /]
+		[protectedArea('Conclusion > Conclusion', DIRECTORY_URI_SNIPPETS('2')) /]
 		[comment TOC_Section_end() /]
-		
-		[TOC_Section_begin('Applicable Documents') /]
-			[protectedArea('Conclusion > Applicable Documents', DIRECTORY_URI_SNIPPETS('2')) /]
-		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]
 [/template]
@@ -958,12 +986,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NOTE_Start() /]
 		<ul>
 			<li>
-				<b>Transmission Protocol</b><br/>
-		  		The transmission protocols commonly used in medical devices are HL7、DICOM. General transmission protocols, such as TCP/IP、UDP、HTTP、HTTPS （based on standard IETF RFC 2616, RFC 2818） may also be used. Data transmission via SD card or U disk (storage format is ZIP file/compressed file according to standard ISO/IEC 21320-1:2015
+				<p>
+					<b>Transmission Protocol</b>
+				</p>
+				<p>
+			  		The transmission protocols commonly used in medical devices are HL7、DICOM. General transmission protocols, such as TCP/IP、UDP、HTTP、HTTPS （based on standard IETF RFC 2616, RFC 2818） may also be used. Data transmission via SD card or U disk (storage format is ZIP file/compressed file according to standard ISO/IEC 21320-1:2015
+				</p>
 			</li>
 			<li>
-				<b>Data Interface Type</b><br/>
-		  		commonly used wired interface have USB、RS232、RS485、CAN、RJ45; wireless communication methods have Bluetooth, wifi, Zigbee, RFID and various cellular wireless network.）
+				<p>
+					<b>Data Interface Type</b>
+				</p>
+				<p>
+			  		commonly used wired interface have USB、RS232、RS485、CAN、RJ45; wireless communication methods have Bluetooth, wifi, Zigbee, RFID and various cellular wireless network.）
+				</p>
 			</li>
 		</ul>
 		[html_NOTE_End() /]

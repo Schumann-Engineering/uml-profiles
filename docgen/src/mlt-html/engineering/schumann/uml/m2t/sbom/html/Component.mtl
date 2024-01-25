@@ -108,9 +108,9 @@
 		<p>
 			[TOC_link( license ) /]
 		</p>
-		[html_NOTE_Start() /]
+		[html_INFO_Start() /]
 			This license is the one "forwarded" to customers. There might be more licenses available by the vendor. However, the declared license was selected / is used.
-		[html_NOTE_End() /]
+		[html_INFO_End() /]
 	</td>
 </tr>
 [/if]

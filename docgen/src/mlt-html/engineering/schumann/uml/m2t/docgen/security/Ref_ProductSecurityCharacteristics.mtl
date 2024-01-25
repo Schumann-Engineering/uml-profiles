@@ -17,7 +17,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_NOTE_Start() /]
+[html_TIP_Start() /]
 	For each asset, the following information is included:
 	<table class="table-2-columns">
 		<thead>
@@ -37,7 +37,7 @@
 			</tr>
 		</tbody>
 	</table>
-[html_NOTE_End() /]
+[html_TIP_End() /]
 [/template]
 
 
@@ -49,7 +49,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_NOTE_Start() /]
+[html_TIP_Start() /]
 	<p>
 		For each connection to or from a system interface, the following information is included:
 	</p>
@@ -105,7 +105,7 @@
 			</tr>
 		</tbody>
 	</table>
-[html_NOTE_End() /]
+[html_TIP_End() /]
 [/template]
 
 
@@ -117,7 +117,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_NOTE_Start() /]
+[html_TIP_Start() /]
 	For each interface, the following information is included:
 	<table class="table-2-columns">
 		<thead>
@@ -155,7 +155,18 @@
 			</tr>
 		</tbody>
 	</table>
-[html_NOTE_End() /]
+[html_TIP_End() /]
+[/template]
+
+
+[template public DocRef_Characteristics_MDS2(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Security Capabilities',
+	'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
+)/]
 [/template]
 
 

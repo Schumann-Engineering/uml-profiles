@@ -1,0 +1,27 @@
+[comment encoding = UTF-8 /]
+[module Ref_Regulatory(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+
+
+[template public LegalRef_IMDRF_STED_Cybersec(
+	devNull	: OclAny
+)]
+[html_INFO_Start()/]
+It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-In Vitro Diagnostic Device Market Authorization Table of Contents (nlVD MA ToC)" of the Summary Technical Documentation (STED).
+[html_INFO_End()/]
+[/template]
+
+
+[template public LegalRef_China_Cybersec(
+	devNull	: OclAny
+)]
+[html_INFO_Start() /]
+	<b>China:</b> This document covers the requirements of "Medical device cybersecurity registration review guiding principles (2022 revised edition)" (医疗器械网络安全注册审查指导原则 2022年修订版)
+[html_INFO_End() /]
+[/template]

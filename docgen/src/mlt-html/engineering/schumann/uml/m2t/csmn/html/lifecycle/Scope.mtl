@@ -135,13 +135,6 @@ post(trim())
 	<tr>
 		<th>
 			Software Security Level<br/>China
-			[html_NOTE_Start() /]
-				<blockquote>
-					<p>
-						The minor, medium and severe levels correspond to the A, B, and C levels defined in YY/T 0664 (aka IEC 62304), respectively.
-					</p>
-				</blockquote>
-			[html_NOTE_End() /]
 		</th>
 [for (product : Product | products)]
 [let level : String = China_getSoftwareSecurityLevel()]
@@ -152,6 +145,16 @@ post(trim())
 			<p>
 				[China_Software_Security_Level_toString(level) /]
 			</p>
+			[html_INFO_Start() /]
+				<blockquote>
+					<p>
+						The minor, medium and severe levels correspond to the A, B, and C levels defined in YY/T 0664 (aka IEC 62304), respectively.
+					</p>
+					<p class="cite-source">
+						"Medical device cybersecurity registration review guiding principles (2022 revised edition)" (医疗器械网络安全注册审查指导原则 2022年修订版)
+					</p>
+				</blockquote>
+			[html_INFO_End() /]
 		</td>
 [/let]
 [/for]
