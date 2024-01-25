@@ -72,7 +72,7 @@
   * ANSI Z535.6 
   * ====================== **/]
 [template public html_ANSI_NOTICE_Start(devNull : OclAny)]
-<div class="box box-ansi-notice">
+<div class="box box-ansi box-ansi-notice">
 [/template]
 [template public html_ANSI_NOTICE_End(devNull : OclAny)]
 </div>
@@ -80,7 +80,7 @@
 
 
 [template public html_ANSI_CAUTION_Start(devNull : OclAny)]
-<div class="box box-ansi-caution">
+<div class="box box-ansi box-ansi-caution">
 [/template]
 [template public html_ANSI_CAUTION_End(devNull : OclAny)]
 </div>
@@ -88,7 +88,7 @@
 
 
 [template public html_ANSI_WARNING_Start(devNull : OclAny)]
-<div class="box box-ansi-warning">
+<div class="box box-ansi box-ansi-warning">
 [/template]
 [template public html_ANSI_WARNING_End(devNull : OclAny)]
 </div>
@@ -96,7 +96,7 @@
 
 
 [template public html_ANSI_DANGER_Start(devNull : OclAny)]
-<div class="box box-ansi-danger">
+<div class="box box-ansi box-ansi-danger">
 [/template]
 [template public html_ANSI_DANGER_End(devNull : OclAny)]
 </div>

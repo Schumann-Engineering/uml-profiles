@@ -112,7 +112,7 @@ post(trim())]
 			The authoritive source is the digital, machine readable SBOM.
 		</p>
 		<p>
-			This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
+			This document is provided for convenience of reviews and audits only and should not be used to derive information about the product.
 		</p>
 	[html_ANSI_CAUTION_End() /]
 
