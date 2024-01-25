@@ -201,8 +201,9 @@ public class ManifestParserServiceImpl {
 		 */
 		for (var relationshipMeta : relationships)
 		{
-			// map
 			var source = relationshipMeta.getKey();
+
+			// map target string -> component object 
 			var targetName = relationshipMeta.getValue()[2];
 			if (!components.containsKey(targetName))
 				throw new Exception("couldn't find component '" + targetName + "' in relationship '" + String.join("\t", relationshipMeta.getValue()) + "'");
@@ -212,7 +213,7 @@ public class ManifestParserServiceImpl {
 			// create relationship
 			var relationship = SBOMFactoryImpl.eINSTANCE.createRelationship();			
 			// ... source
-			relationship.setSource(lastComponent);
+			relationship.setSource(source);
 			// ... relationship type
 			PropertyServiceImpl.SetType(relationship, relationshipMeta.getValue()[1]);
 			if (relationship.getType() == RelationshipType.IS_REQUIRED_BY)
@@ -222,6 +223,16 @@ public class ManifestParserServiceImpl {
 				
 				// add to component
 				source.getRequiredComponent().add((Component)target);
+			}
+			if (relationship.getType() == RelationshipType.REQUIRES)
+			{
+				if (!(target instanceof Component))
+					throw new Exception("expected a Component, but found '" + target.eClass().getName() + "' for target '" + targetName + "'");
+				if (!(source instanceof Component))
+					throw new Exception("expected a Component, but found '" + source.eClass().getName() + "' for target '" + source.getName() + "'");
+				
+				// add to component
+				((Component)target).getRequiredComponent().add((Component)source);
 			}
 			// ... target
 			relationship.setTarget(target);
