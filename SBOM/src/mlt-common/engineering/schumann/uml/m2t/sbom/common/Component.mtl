@@ -24,7 +24,23 @@
 		Set{}
 	else
 		sbom
-		.ownedRelationship->select( r : Relationship | r.source = this)
+		.ownedRelationship->select( r : Relationship | r.source = this or r.target = this)
 		->asSet()
 	endif
+/]
+
+
+[query public relationshipOutgoing(
+	this : Component
+) : Set(Relationship) =
+	relationship()
+	->select( r : Relationship | r.source = this )
+/]
+
+
+[query public relationshipIncoming(
+	this : Component
+) : Set(Relationship) =
+	relationship()
+	->select( r : Relationship | r.target = this )
 /]

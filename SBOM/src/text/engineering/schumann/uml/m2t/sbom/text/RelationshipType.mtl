@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module RelationshipType(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[query public sbom_toString(
+	type : RelationshipType
+) : String =
+	     if (type = RelationshipType::contains) 		then 'contains'
+	else if (type = RelationshipType::describes) 		then 'describes'
+	else if (type = RelationshipType::isContainedBy)	then 'is contained by'
+	else if (type = RelationshipType::isDescribedBy)	then 'is described by'
+	else if (type = RelationshipType::isRequiredBy) 	then 'is required by'
+	else if (type = RelationshipType::requires) 		then 'requires'
+	else if (type = RelationshipType::runs) 			then 'runs'
+	else if (type = RelationshipType::runsOn)			then 'runs on'
+	else 'ERROR: unknown NamespaceType'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public sbom_invert(
+	type : RelationshipType
+) : RelationshipType =
+	     if (type = RelationshipType::contains) 		then RelationshipType::isContainedBy
+	else if (type = RelationshipType::describes) 		then RelationshipType::isDescribedBy
+	else if (type = RelationshipType::isContainedBy)	then RelationshipType::contains
+	else if (type = RelationshipType::isDescribedBy)	then RelationshipType::describes
+	else if (type = RelationshipType::isRequiredBy) 	then RelationshipType::requires
+	else if (type = RelationshipType::requires) 		then RelationshipType::isRequiredBy
+	else if (type = RelationshipType::runs) 			then RelationshipType::runsOn
+	else if (type = RelationshipType::runsOn)			then RelationshipType::runs
+	else RelationshipType::Unknown
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
