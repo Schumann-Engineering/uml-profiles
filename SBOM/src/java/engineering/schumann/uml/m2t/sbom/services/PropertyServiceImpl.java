@@ -415,6 +415,10 @@ public class PropertyServiceImpl {
 				namespace.getLicense().add(propertyValue);
 				break;
 				
+			case "name":
+				namespace.setName(propertyValue);
+				break;
+				
 			case "ref":
 			case "reference":
 				namespace.getReference().add(propertyValue);
