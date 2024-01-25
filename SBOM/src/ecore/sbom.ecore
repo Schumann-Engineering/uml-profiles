@@ -55,9 +55,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="NamespaceType">
     <eLiterals name="Application"/>
-    <eLiterals name="Firmware" value="1"/>
+    <eLiterals name="OperatingSystemDeviceSoftware" value="1"/>
     <eLiterals name="Hardware" value="2"/>
-    <eLiterals name="Library" value="3"/>
+    <eLiterals name="ApplicationLibrary" value="3"/>
     <eLiterals name="OperatingSystem" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Iec81001_5_1_Classification">

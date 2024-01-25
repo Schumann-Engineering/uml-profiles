@@ -7,6 +7,7 @@
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::sbom::html::Property /]
+[import engineering::schumann::uml::m2t::sbom::text::NamespaceType /]
 [import engineering::schumann::uml::m2t::html::Toc /]
 
 
@@ -38,7 +39,8 @@
 )]
 <tr>
 	<td style="text-align: center">[TOC_link( name, printName()) /][TOC_anchor(name + '-overview') /]</td>
-	<td style="text-align: center">[type /]</td>
+	<td style="text-align: center">[type.sbom_toStringAsCpeFull() /]</td>
+	<td style="text-align: center">[type.sbom_toString() /]</td>
 	<td style="text-align: center">[printVersion() /]</td>
 	<td style="text-align: center">[classificationIec81001_5_1 /]</td>
 </tr>
@@ -54,20 +56,25 @@
 	<th>Name</th>
 	<td>[printName() /]</td>
 </tr>
+[comment CPE type /]
+<tr>
+	<th>CPE part<br/>NIST IR 7695</th>
+	<td>[type.sbom_toStringAsCpeFull() /]</td>
+</tr>
 [comment type /]
 <tr>
 	<th>Type</th>
-	<td>[type /]</td>
+	<td>[type.sbom_toString() /]</td>
 </tr>
 [comment IEC 62304 classification /]
 [comment]
 	<tr>
-		<th>IEC 62304 Classification</th>
+		<th>Classification<br/>IEC 62304</th>
 		<td>[classificationIec62304 /]</td>
 	</tr>
 [/comment]
 <tr>
-	<th>IEC 81001-5-1 Classification</th>
+	<th>Classification<br/>IEC 81001-5-1</th>
 	<td>[classificationIec81001_5_1 /]</td>
 </tr>
 [comment version /]

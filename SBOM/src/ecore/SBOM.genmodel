@@ -37,9 +37,9 @@
       disposableProviderFactory="true" ecorePackage="sbom.ecore#/">
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//NamespaceType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Application"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Firmware"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/OperatingSystemDeviceSoftware"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Hardware"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Library"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/ApplicationLibrary"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/OperatingSystem"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//Iec81001_5_1_Classification">

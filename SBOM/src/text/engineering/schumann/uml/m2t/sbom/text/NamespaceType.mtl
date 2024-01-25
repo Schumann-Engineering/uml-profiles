@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[module NamespaceType(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[query public sbom_toString(
+	type : NamespaceType
+) : String =
+	     if (type = NamespaceType::Application) 					then 'Application'
+	else if (type = NamespaceType::ApplicationLibrary) 				then 'Library'
+	else if (type = NamespaceType::Hardware) 						then 'Hardware'
+	else if (type = NamespaceType::OperatingSystem) 				then 'Operating System'
+	else if (type = NamespaceType::OperatingSystemDeviceSoftware) 	then 'Device Software'
+	else 'ERROR: unknown NamespaceType'
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public sbom_toStringAsCpe(
+	type : NamespaceType
+) : String =
+	     if (type = NamespaceType::Application) 					then 'a'
+	else if (type = NamespaceType::ApplicationLibrary) 				then 'a'
+	else if (type = NamespaceType::Hardware) 						then 'h'
+	else if (type = NamespaceType::OperatingSystem) 				then 'o'
+	else if (type = NamespaceType::OperatingSystemDeviceSoftware) 	then 'o'
+	else 'ERROR: unknown NamespaceType'
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public sbom_toStringAsCpeFull(
+	type : NamespaceType
+) : String =
+	     if (type = NamespaceType::Application) 					then 'a = Application'
+	else if (type = NamespaceType::ApplicationLibrary) 				then 'a = Application'
+	else if (type = NamespaceType::Hardware) 						then 'h = Hardware'
+	else if (type = NamespaceType::OperatingSystem) 				then 'o = Operating System'
+	else if (type = NamespaceType::OperatingSystemDeviceSoftware) 	then 'o = Operating System'
+	else 'ERROR: unknown NamespaceType'
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

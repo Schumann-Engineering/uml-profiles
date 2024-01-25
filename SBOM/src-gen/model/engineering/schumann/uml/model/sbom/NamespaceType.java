@@ -29,16 +29,14 @@ public enum NamespaceType implements Enumerator {
 	APPLICATION(0, "Application", "Application"),
 
 	/**
-	 * The '<em><b>Firmware</b></em>' literal object.
+	 * The '<em><b>Operating System Device Software</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FIRMWARE_VALUE
+	 * @see #OPERATING_SYSTEM_DEVICE_SOFTWARE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	FIRMWARE(1, "Firmware", "Firmware"),
-
-	/**
+	OPERATING_SYSTEM_DEVICE_SOFTWARE(1, "OperatingSystemDeviceSoftware", "OperatingSystemDeviceSoftware"), /**
 	 * The '<em><b>Hardware</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,16 +47,14 @@ public enum NamespaceType implements Enumerator {
 	HARDWARE(2, "Hardware", "Hardware"),
 
 	/**
-	 * The '<em><b>Library</b></em>' literal object.
+	 * The '<em><b>Application Library</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LIBRARY_VALUE
+	 * @see #APPLICATION_LIBRARY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	LIBRARY(3, "Library", "Library"),
-
-	/**
+	APPLICATION_LIBRARY(3, "ApplicationLibrary", "ApplicationLibrary"), /**
 	 * The '<em><b>Operating System</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -80,15 +76,15 @@ public enum NamespaceType implements Enumerator {
 	public static final int APPLICATION_VALUE = 0;
 
 	/**
-	 * The '<em><b>Firmware</b></em>' literal value.
+	 * The '<em><b>Operating System Device Software</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #FIRMWARE
-	 * @model name="Firmware"
+	 * @see #OPERATING_SYSTEM_DEVICE_SOFTWARE
+	 * @model name="OperatingSystemDeviceSoftware"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FIRMWARE_VALUE = 1;
+	public static final int OPERATING_SYSTEM_DEVICE_SOFTWARE_VALUE = 1;
 
 	/**
 	 * The '<em><b>Hardware</b></em>' literal value.
@@ -102,15 +98,15 @@ public enum NamespaceType implements Enumerator {
 	public static final int HARDWARE_VALUE = 2;
 
 	/**
-	 * The '<em><b>Library</b></em>' literal value.
+	 * The '<em><b>Application Library</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #LIBRARY
-	 * @model name="Library"
+	 * @see #APPLICATION_LIBRARY
+	 * @model name="ApplicationLibrary"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIBRARY_VALUE = 3;
+	public static final int APPLICATION_LIBRARY_VALUE = 3;
 
 	/**
 	 * The '<em><b>Operating System</b></em>' literal value.
@@ -132,9 +128,9 @@ public enum NamespaceType implements Enumerator {
 	private static final NamespaceType[] VALUES_ARRAY =
 		new NamespaceType[] {
 			APPLICATION,
-			FIRMWARE,
+			OPERATING_SYSTEM_DEVICE_SOFTWARE,
 			HARDWARE,
-			LIBRARY,
+			APPLICATION_LIBRARY,
 			OPERATING_SYSTEM,
 		};
 
@@ -193,9 +189,9 @@ public enum NamespaceType implements Enumerator {
 	public static NamespaceType get(int value) {
 		switch (value) {
 			case APPLICATION_VALUE: return APPLICATION;
-			case FIRMWARE_VALUE: return FIRMWARE;
+			case OPERATING_SYSTEM_DEVICE_SOFTWARE_VALUE: return OPERATING_SYSTEM_DEVICE_SOFTWARE;
 			case HARDWARE_VALUE: return HARDWARE;
-			case LIBRARY_VALUE: return LIBRARY;
+			case APPLICATION_LIBRARY_VALUE: return APPLICATION_LIBRARY;
 			case OPERATING_SYSTEM_VALUE: return OPERATING_SYSTEM;
 		}
 		return null;

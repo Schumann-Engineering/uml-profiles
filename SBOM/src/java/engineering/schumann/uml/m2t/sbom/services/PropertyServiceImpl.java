@@ -541,7 +541,10 @@ public class PropertyServiceImpl {
 			case "f":
 			case "firmware":
 			case "fw":
-				namespace.setType(NamespaceType.FIRMWARE);
+			case "devicesoftware":
+			case "device software":
+			case "device-software":
+				namespace.setType(NamespaceType.OPERATING_SYSTEM_DEVICE_SOFTWARE);
 				break;
 
 			case "h":
@@ -552,7 +555,7 @@ public class PropertyServiceImpl {
 
 			case "lib":
 			case "library":
-				namespace.setType(NamespaceType.LIBRARY);
+				namespace.setType(NamespaceType.APPLICATION_LIBRARY);
 				break;
 
 			case "o":

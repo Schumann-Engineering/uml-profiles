@@ -12,13 +12,14 @@
 [template public printAsTable(
 	this : Sbom
 )]
-<table class="table-4-columns">
+<table class="table-5-columns">
 	<thead>
 		<tr>
 			<th>Component Name</th>
-			<th>Component Type</th>
+			<th>CPE Part<br/>NIST IR 7695</th>
+			<th>Type</th>
 			<th>Version</th>
-			<th>IEC 81001-1-5<br/>classification</th>
+			<th>Classification<br/>IEC 81001-1-5</th>
 		</tr>
 	</thead>
 
@@ -36,11 +37,11 @@
 [/template]
 
 
-[template public printFirmware(
+[template public printOperatingSystemAndFirmware(
 	sbom : Sbom
 )
 {
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Firmware and isSOUP = false);
+	components : Set(Component) = sbom.allComponents()->select((type = NamespaceType::OperatingSystemDeviceSoftware or type = NamespaceType::OperatingSystem) and isSOUP = false);
 }]
 [if (components->isEmpty())]
 <p>
@@ -88,7 +89,7 @@
 	sbom : Sbom
 )
 {
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Library and isSOUP = false);
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::ApplicationLibrary and isSOUP = false);
 }]
 [if (components->isEmpty())]
 <p>

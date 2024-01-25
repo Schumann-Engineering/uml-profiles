@@ -852,9 +852,9 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		// Initialize enums and add enum literals
 		initEEnum(namespaceTypeEEnum, NamespaceType.class, "NamespaceType");
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.APPLICATION);
-		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.FIRMWARE);
+		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.OPERATING_SYSTEM_DEVICE_SOFTWARE);
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.HARDWARE);
-		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.LIBRARY);
+		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.APPLICATION_LIBRARY);
 		addEEnumLiteral(namespaceTypeEEnum, NamespaceType.OPERATING_SYSTEM);
 
 		initEEnum(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.class, "Iec81001_5_1_Classification");

@@ -77,9 +77,9 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="__IOQsLk1Ee6X4rbk2n4SSQ" name="NamespaceType">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BkgF4Lk2Ee6X4rbk2n4SSQ" name="Application"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A28cULk2Ee6X4rbk2n4SSQ" name="Firmware"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A28cULk2Ee6X4rbk2n4SSQ" name="OperatingSystemDeviceSoftware"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AEfrsLk2Ee6X4rbk2n4SSQ" name="Hardware"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yv5xsLlMEe6X4rbk2n4SSQ" name="Library"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yv5xsLlMEe6X4rbk2n4SSQ" name="ApplicationLibrary"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CZRKsLk2Ee6X4rbk2n4SSQ" name="OperatingSystem"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZFDWMLkiEe6SsLsmepNrCg" name="Relationship">
