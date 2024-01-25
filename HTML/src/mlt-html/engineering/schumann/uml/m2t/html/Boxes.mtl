@@ -11,24 +11,16 @@
 [/template]
 
 
-[template public html_EXAMPLE_Start(devNull : OclAny)][html_INFO_Start('EXAMPLE') /][/template]
-[template public html_EXAMPLE_Start(devNull : OclAny, text : String)]
+[template public html_EXAMPLE_Start(devNull : OclAny)]
 <div class="box box-example">
-	<span class="box-header">
-		<b>[text/]</b>
-	</span>
 [/template]
 [template public html_EXAMPLE_End(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_INFO_Start(devNull : OclAny)][html_INFO_Start('INFO') /][/template]
-[template public html_INFO_Start(devNull : OclAny, text : String)]
+[template public html_INFO_Start(devNull : OclAny)]
 <div class="box box-info">
-	<span class="box-header">
-		<b>ℹ [text/]</b>
-	</span>
 [/template]
 [template public html_INFO_End(devNull : OclAny)]
 </div>
@@ -51,12 +43,8 @@
 [/template]
 
 
-[template public html_TASK_Start(devNull : OclAny)][html_TASK_Start('TASK') /][/template]
-[template public html_TASK_Start(devNull : OclAny, text : String)]
+[template public html_TASK_Start(devNull : OclAny)]
 <div class="box box-task">
-	<span class="box-header">
-		<b>👷‍♀️ [text/]</b>
-	</span>
 [/template]
 [template public html_TASK_End(devNull : OclAny)]
 </div>

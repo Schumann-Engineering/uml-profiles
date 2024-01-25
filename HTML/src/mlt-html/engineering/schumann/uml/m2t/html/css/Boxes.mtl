@@ -48,9 +48,12 @@
 	text-transform:		uppercase;
 }
 
+.box-example:before,
+.box-info:before,
 .box-note:before,
+.box-tbd:before,
 .box-tip:before,
-.box-tbd:before {
+.box-task:before {
 	display: 			block;
 	font-weight:		bold !important;
 	text-transform:		uppercase;
@@ -74,6 +77,9 @@
 	padding: 			5px;
 	border-radius: 		5px;
 	color: 				#000000;
+}
+.box-example:before {
+	content:			'🗨 Example';
 }
 
 /* ====================
@@ -100,6 +106,9 @@
 	border-radius: 		5px;
 	color: 				#000000;
 }
+.box-info:before {
+	content:			'ℹ Info';
+}
 
 /* ====================
  * TIP
@@ -124,6 +133,9 @@
 	padding: 			5px;
 	border-radius: 		5px;
 	color: #000000;
+}
+.box-task:before {
+	content:			'👷 Task'
 }
 
 /* ====================
@@ -185,5 +197,16 @@ blockquote, q {
 	background-color:	#F0F0F0 !important;
 	border-left:		6px solid #000000 !important;
 	padding:			10px !important;
+}
+
+blockquote .cite-source,
+q .cite-source {
+
+}
+.cite-source:before {
+	content:			'(source: ';
+}
+.cite-source:after {
+	content:			')';
 }
 [/template]
