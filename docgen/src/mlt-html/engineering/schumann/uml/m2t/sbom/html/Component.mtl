@@ -100,6 +100,20 @@
 	<th>Description</th>
 	<td>[description /]</td>
 </tr>
+[comment license /]
+[if (license <> null and license <> '')]
+<tr>
+	<th>License</th>
+	<td>
+		<p>
+			[TOC_link( license ) /]
+		</p>
+		[html_NOTE_Start() /]
+			This license is the one "forwarded" to customers. There might be more licenses available by the vendor. However, the declared license was selected / is used.
+		[html_NOTE_End() /]
+	</td>
+</tr>
+[/if]
 [comment owned components /]
 <tr>
 	<th>Sub-Components</th>

@@ -20,6 +20,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::html::Toc /]
 
@@ -76,12 +77,15 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template private generateDocumentContent(
 	this 	: Sbom,
 	owner	: NamedElement
-)]
+)
+post(trim())]
 [owner.Introduction_Chapter_print() /]
 
 [owner.BasicInformation_Chapter_print() /]
 
 [owner.SoftwareComponents_Chapter_print(this) /]
+
+[owner.Appendix_Licenses_print(this) /]
 [/template]
 
 
@@ -101,10 +105,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[TOC_Title_end() /]
 
 	[html_ANSI_CAUTION_Start() /]
-		This document is the human readable representation of the SBOM.
-		The authoritive source is the digital, machine readable SBOM.
-		This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
+		<p>
+			This document is the human readable representation of the SBOM.
+		</p>
+		<p>
+			The authoritive source is the digital, machine readable SBOM.
+		</p>
+		<p>
+			This document is provided for convience of reviews and audits only and should not be used to derive information about the product.
+		</p>
 	[html_ANSI_CAUTION_End() /]
+
+	[html_ANSI_NOTICE_Start() /]
+		The SBOM is provided in SPDX as well as CycloneDX format.
+	[html_ANSI_NOTICE_End() /]
 [html_PAGE_end('cover page') /]
 [/template]
 
@@ -196,6 +210,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[TOC_Chapter_end() /]
 [html_PAGE_end('basic information') /]
 [/template]
+
 
 [comment
 	====================
@@ -463,4 +478,44 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	[sbom.print3rdParty() /]
 [TOC_Section_end() /]
+[/template]
+
+
+[comment
+	====================
+	APPENDIX
+	====================
+/]
+[template private Appendix_Licenses_print(
+	this : NamedElement,
+	sbom : Sbom
+)
+{
+	licenses : OrderedSet(String) = sbom.license();
+}]
+[if (not licenses->isEmpty())]
+[html_PAGE_begin('appendix a') /]
+	[TOC_Chapter_begin('Appendix A - Licenses') /]
+
+	[for (licenses)]
+	[if (i > 1)]
+[html_PAGE_end() /]
+[html_PAGE_begin(self) /]
+	[/if]
+		[self.TOC_Section_begin() /]
+		[self.TOC_anchor() /]
+		<p>
+			<b>COMPONENTS</b> with this license:
+		</p>
+		<ul>
+		[for (sbom.allComponentsWithicense(self))]
+			<li>[TOC_link(name, name._toString()) /]</li>
+		[/for]
+		</ul>
+
+		[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('4')) /]
+		[this.TOC_Section_end() /]
+	[/for]
+[html_PAGE_end('appendix - a') /]
+[/if]
 [/template]
