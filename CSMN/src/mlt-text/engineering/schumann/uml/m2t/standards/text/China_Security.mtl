@@ -1,0 +1,71 @@
+[comment encoding = UTF-8 /]
+[module China_Security(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+
+
+[query public China_Software_Security_Level_toString(
+	this : String
+) : String =
+		 if (this = null) then 'ERROR: China Software Security level is null'
+	else if (this.toLower() = 'a' or this.toLower() = 'low'		or this.toLower() = 'minor')	then 'the software is unlikely to cause harm'
+	else if (this.toLower() = 'b' or this.toLower() = 'medium'	or this.toLower() = 'moderate')	then 'the software may directly or indirectly cause minor (not serious) damage'
+	else if (this.toLower() = 'c' or this.toLower() = 'high'	or this.toLower() = 'severe')	then 'the software may cause harm. Serious injury or death, directly or indirectly'
+	else 'ERROR: unknown China Security class: "' + this + '"'
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public China_getSoftwareSecurityLevel(
+	this : NamedElement
+) : String = 
+	let classList	: Set(String)	= this.China_getSoftwareSecurityLevels() in
+		 if (classList = null or classList->isEmpty())		then 'ERROR: China Software Security level is null for "' + this + '"'
+	else if (classList->exists(c : String | c = 'High'))	then 'High'
+	else if (classList->exists(c : String | c = 'Medium'))	then 'Medium'
+	else if (classList->exists(c : String | c = 'Low'))		then 'Low'
+	else
+		'ERROR: could not determine China Software Security level for "' + this + '"'
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public China_getSoftwareSecurityLevels(
+	this : NamedElement
+) : Set(String) = 
+	let products	: Set(Product)	= this.csmn_scope().csmn_productInScope() in
+		products.China_getSoftwareSecurityLevel()->asSet()		
+/]
+
+
+[query public China_normalizeSoftwareSecurityLevel(
+	this : String
+) : String = 
+		 if (this = null) then 'ERROR: China Software Security level is null'
+	else if (this.toLower() = 'a' or this.toLower() = 'low'		or this.toLower() = 'minor')	then 'Low'
+	else if (this.toLower() = 'b' or this.toLower() = 'medium'	or this.toLower() = 'moderate')	then 'Medium'
+	else if (this.toLower() = 'c' or this.toLower() = 'high'	or this.toLower() = 'severe')	then 'High'
+	else 'ERROR: unknown China Security class: "' + this + '"'
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public China_getSoftwareSecurityLevel(
+	this : Product
+) : String =
+	getProperty('ANNOTATION.Product.Model.' + this.model + '.Software.Class.Cybersec.China')
+/]
