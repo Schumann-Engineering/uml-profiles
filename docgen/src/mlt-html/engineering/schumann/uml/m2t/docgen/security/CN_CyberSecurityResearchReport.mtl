@@ -28,6 +28,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
@@ -228,11 +229,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	<table class="table-2-columns">
 		<tr>
 			<th>Manufacturer</th>
-			<td>[getProperty('META_VENDOR_NAME') /]</td>
+			<td>[VENDOR_NAME() /]</td>
 		</tr>
 		<tr>
 			<th>Registrant address</th>
-			<td>[getProperty('META_VENDOR_ADDRESS') /]</td>
+			<td>[VENDOR_ADDRESS() /]</td>
 		</tr>
 	</table>
 [TOC_Section_end() /]
@@ -974,9 +975,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[let vendorPorts : Set(Port) = networkPorts->select(visibility = VisibilityKind::protected)]
 		<li>
 			[if (vendorPorts->size() = 0)]
-			<b>NONE</b> usable by vendor.
+			<b>NONE</b> usable by [VENDOR_NAME() /].
 			[else]
-			<b>[vendorPorts->size() /]</b> usable by vendor:
+			<b>[vendorPorts->size() /]</b> usable by [VENDOR_NAME() /]:
 			<ul>
 			[for (vendorPorts)]
 				<li>

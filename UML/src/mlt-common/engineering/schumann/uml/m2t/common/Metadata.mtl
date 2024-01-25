@@ -1,0 +1,45 @@
+[comment encoding = UTF-8 /]
+[module Metadata('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+
+
+[query public VENDOR_NAME(
+	this 	: OclAny
+) : String =
+	VENDOR_NAME('(ERROR: "META_VENDOR_NAME" not set)')
+/]
+
+
+[query public VENDOR_NAME(
+	this 	: OclAny,
+	default	: String
+) : String =
+	let value : String = getProperty('META_VENDOR_NAME') in
+	if (value <> null) then
+		value
+	else
+		default
+	endif
+/]
+
+
+[query public VENDOR_ADDRESS(
+	this 	: OclAny
+) : String =
+	VENDOR_ADDRESS('(ERROR: "META_VENDOR_ADDRESS" not set)')
+/]
+
+
+[query public VENDOR_ADDRESS(
+	this 	: OclAny,
+	default	: String
+) : String =
+	let value : String = getProperty('META_VENDOR_ADDRESS') in
+	if (value <> null) then
+		value
+	else
+		default
+	endif
+/]

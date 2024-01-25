@@ -13,6 +13,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
@@ -144,6 +145,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			[TERMS_START() /]
 				[TERM_SECURITY_CPE() /]
 				[TERM_SECURITY_CVE() /]
+				[TERM_SOFTWARE_COTS() /]
+				[TERM_SOFTWARE_FOSS() /]
+				[TERM_SOFTWARE_OSS() /]
+				[TERM_SOFTWARE_OTS() /]
 				[TERM_HEALTHCARE_HDO() /]
 			[TERMS_END() /]
 		[TOC_Section_end() /]
@@ -272,7 +277,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start() /]
-		developed by product's vendor
+		developed by [VENDOR_NAME() /]
 	[html_NOTE_End() /]
 
 	[html_TIP_Start()/]
@@ -299,7 +304,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start() /]
-		developed by product's vendor <b>or</b> a 3rd party
+		developed by [VENDOR_NAME() /] <b>or</b> a 3rd party
 	[html_NOTE_End() /]
 
 	[sbom.printOperatingSystems() /]
@@ -322,7 +327,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start() /]
-		developed by product's vendor
+		developed by [VENDOR_NAME() /]
 	[html_NOTE_End() /]
 
 	[html_TIP_Start()/]
@@ -349,7 +354,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start()/]
-		Includes only libraries by the vendor. Libraries from 3rd parties are listed in a separate section later.
+		Includes only libraries by [VENDOR_NAME() /]. Libraries from 3rd parties are listed in a separate section later.
 	[html_NOTE_End()/]
 
 	[sbom.printLibraries() /]
@@ -372,7 +377,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 
 	[html_NOTE_Start()/]
-		Includes everything developed by a 3rd party and <b>NOT</b> by the vendor. For operating systems, see list above.
+		Includes everything developed by a 3rd party and <b>NOT</b> by [VENDOR_NAME() /]. For operating systems, see list above.
 	[html_NOTE_End()/]
 
 	[sbom.print3rdParty() /]

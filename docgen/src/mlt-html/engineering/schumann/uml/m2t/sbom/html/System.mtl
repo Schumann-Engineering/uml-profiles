@@ -4,6 +4,7 @@
 )]
 
 
+[import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::sbom::html::Component /]
 
 
@@ -21,13 +22,13 @@
 </tr>
 [if (vendorComponents->size() > 0)]
 <tr>
-	<th colspan="5" style="text-align: center;">by vendor</th>
+	<th colspan="5" style="text-align: center;">by [VENDOR_NAME() /]</th>
 </tr>
 [vendorComponents.printAsTableRowHorizontal() /]
 [/if]
 [if (otherComponents->size() > 0)]
 <tr>
-	<th colspan="5" style="text-align: center;">by 3rd party</th>
+	<th colspan="5" style="text-align: center;">by 3rd party: C(OTS) / FOSS</th>
 </tr>
 [otherComponents.printAsTableRowHorizontal() /]
 [/if]
