@@ -28,8 +28,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
-[import engineering::schumann::uml::m2t::docgen::security::ref::ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_ProductSecurityCharacteristics /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
@@ -441,17 +442,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	<ul>
 		<li>
-			[html_Document_Ref(
-				'Product Security Characteristics',
-				'Product Architecture',
-				'Software',
-				'Software Bill of Material (SBOM)'
-			)/]
+			[DocRef_Characteristics_Sbom() /]
 		</li>
 		<li>
-			[html_Document_Ref(
-				'Software Bill of Material (SBOM)'
-			)/]
+			[DocRef_Sbom_OTS() /]
 		</li>
 	</ul>
 [TOC_Section_end() /]
@@ -890,7 +884,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	<ul>
 		<li>
-			[DocRef_Asset('ASSETS which are Data Assets') /]
+			[DocRef_Characteristics_Asset('ASSETS which are Data Assets') /]
 		</li>
 	</ul>
 [TOC_SubSection_end() /]
@@ -923,7 +917,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	<ul>
 		<li>
-			[DocRef_Connection('Interface Connections') /]
+			[DocRef_Characteristics_Connection('Interface Connections') /]
 		</li>
 	</ul>
 [TOC_SubSection_end() /]
@@ -1085,7 +1079,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 	<ul>
 		<li>
-			[DocRef_Interfaces('PRODUCT INTERFACEs which are Network interfaces') /]
+			[DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Network interfaces') /]
 		</li>
 	</ul>
 	[/if]
@@ -1175,7 +1169,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 	<ul>
 		<li>
-			[DocRef_Interfaces('PRODUCT INTERFACEs which are Storage Media') /]
+			[DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Storage Media') /]
 		</li>
 	</ul>
 	[/if]
@@ -1240,7 +1234,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	</p>
 	<ul>
 		<li>
-			[DocRef_Interfaces('List of PRODUCT INTERFACE') /]
+			[DocRef_Characteristics_Interfaces('List of PRODUCT INTERFACE') /]
 		</li>
 	</ul>
 	[/if]

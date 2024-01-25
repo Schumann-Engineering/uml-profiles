@@ -1,0 +1,18 @@
+[comment encoding = UTF-8 /]
+[module Ref_SbomReport(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+
+
+[template public DocRef_Sbom_OTS(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Software Bill of Material (SBOM)'
+	'Software Components',
+	'Software from 3rd Party / C(OTS) / (F)OSS'
+)/]
+[/template]

@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module ProductSecurityCharacteristics(
+[module Ref_ProductSecurityCharacteristics(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
 )]
@@ -9,7 +9,7 @@
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 
 
-[template public DocRef_Asset(
+[template public DocRef_Characteristics_Asset(
 	section	: String
 )]
 [html_Document_Ref(
@@ -41,7 +41,7 @@
 [/template]
 
 
-[template public DocRef_Connection(
+[template public DocRef_Characteristics_Connection(
 	section	: String
 )]
 [html_Document_Ref(
@@ -109,7 +109,7 @@
 [/template]
 
 
-[template public DocRef_Interfaces(
+[template public DocRef_Characteristics_Interfaces(
 	section	: String
 )]
 [html_Document_Ref(
@@ -156,4 +156,16 @@
 		</tbody>
 	</table>
 [html_NOTE_End() /]
+[/template]
+
+
+[template public DocRef_Characteristics_Sbom(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Product Architecture',
+	'Software',
+	'Software Bill of Material (SBOM)'
+)/]
 [/template]

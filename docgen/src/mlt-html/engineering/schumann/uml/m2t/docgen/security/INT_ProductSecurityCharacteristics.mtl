@@ -37,6 +37,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
+[import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::security::Images /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
@@ -538,32 +539,30 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	this : NamedElement
 )]
 [TOC_SubSection_begin('Software Bill of Material (SBOM)')/]
+	[comment TOC_SubSubSection_begin('Declaration') /]
+	<p>
+		Off-the-shelf software is managed though Software Bill of Material (SBOM).
+	</p>
+
+	[html_NOTE_Start() /]
+		Not every development environment supports the automated creation of a SBOM.<br/>
+		In such a case, the SBOM is written by hand.<br/>
+		This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
+	[html_NOTE_End() /]
+
+	<p>
+		For a list of Off-the-shelf Software, see document
+	</p>
+
+	<ul>
+		<li>
+			[DocRef_Sbom_OTS() /]
+		</li>
+	</ul>
+	[comment TOC_SubSubSection_end() /]
+
 	[TOC_SubSubSection_begin('Applicable Documents') /]
-
-	[TOC_SubSubSection_end() /]
-
-	[TOC_SubSubSection_begin('Declaration') /]
-		<p>
-			Off-the-shelf software is managed though Software Bill of Material (SBOM).
-		</p>
-	
-		[html_NOTE_Start() /]
-			Not every development environment supports the automated creation of a SBOM.<br/>
-			In such a case, the SBOM is written by hand.<br/>
-			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
-		[html_NOTE_End() /]
-	
-		<p>
-			For a list of Off-the-shelf Software, see document
-		</p>
-
-		<ul>
-			<li>
-				[html_Document_Ref(
-					'Software Bill of Material (SBOM)'
-				)/]
-			</li>
-		</ul>
+		[html_TBD() /]
 	[TOC_SubSubSection_end() /]
 [TOC_SubSection_end() /]
 [/template]
@@ -585,7 +584,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 		[TOC_Section_begin('Manufacturer Disclosure Statement for Medical Device Security (MDS2) (IEC TR 80001-2-2 et. al.)') /]
-			[TOC_SubSection_begin('Definition')/]
+			[comment TOC_SubSection_begin('Declaration')/]
+			[html_INFO_Start()/]see applicable document(s)[html_INFO_End()/]
+			[comment TOC_SubSection_end()/]
+
+			[TOC_SubSection_begin('Background')/]
 				[TOC_SubSubSection_begin('Covered standards') /]
 					<p>
 						MDS2 is a standardized form under ANSI/AAMI HN1:2019 for reporting security capabilities of a medical device.
@@ -606,10 +609,6 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 					[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('1')) /]
 				[TOC_SubSubSection_end() /]
 			[TOC_SubSection_end()/]
-			
-			[TOC_SubSection_begin('Declaration')/]
-				[html_INFO_Start()/]see applicable document(s)[html_INFO_End()/]
-			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 		
 		[comment
@@ -618,13 +617,13 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 		[TOC_Section_begin('Capability Security Level (SL-C) (IEC 60601-4-5)') /]
-			[TOC_SubSection_begin('Definition')/]
+			[comment TOC_SubSection_begin('Declaration')/]
+			[html_TBD() /]
+			[comment TOC_SubSection_end()/]
+
+			[TOC_SubSection_begin('Background')/]
 				!['[['/]IEC 60601-4-5 - capability Security Level (SL-C)[']]'/]
-			[TOC_SubSection_end()/]
-			
-			[TOC_SubSection_begin('Declaration')/]
-	[html_TBD() /]
-			[TOC_SubSection_end()/]
+			[TOC_SubSection_end()/]			
 		[TOC_Section_end()/]
 		
 		[comment
@@ -633,11 +632,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 		[TOC_Section_begin('Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)') /]
-			[TOC_SubSection_begin('Definition')/]
+			[comment TOC_SubSection_begin('Declaration')/]
+			[html_TBD() /]
+			[comment TOC_SubSection_end()/]
+
+			[TOC_SubSection_begin('Background')/]
 				!['[['/]IEC 60601-4-5 - target Security Level (SL-T)[']]'/]
-			[TOC_SubSection_end()/]
-		
-			[TOC_SubSection_begin('Declaration')/]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 	[TOC_Chapter_end() /]
