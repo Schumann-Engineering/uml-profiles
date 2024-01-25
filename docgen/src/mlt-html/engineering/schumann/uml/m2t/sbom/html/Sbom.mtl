@@ -56,7 +56,7 @@
 	sbom : Sbom
 )
 {
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::OperatingSystem);
+	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::OperatingSystem and isSOUP = false);
 }]
 [if (components->isEmpty())]
 <p>
@@ -104,7 +104,7 @@
 	sbom : Sbom
 )
 {
-	components : Set(Component) = sbom.allComponents()->select(type <> NamespaceType::OperatingSystem and isSOUP);
+	components : Set(Component) = sbom.allComponents()->select(isSOUP);
 }]
 [if (components->isEmpty())]
 <p>

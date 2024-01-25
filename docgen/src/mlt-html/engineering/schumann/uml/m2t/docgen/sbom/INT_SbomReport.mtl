@@ -203,19 +203,21 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [html_PAGE_end('software components') /]
 
 [html_PAGE_begin('firmware') /]
-		[SoftwareComponent_Firmware_Section_print(sbom) /]
+		[TOC_Section_begin('By ' + VENDOR_NAME()) /]
+			[SoftwareComponent_Firmware_SubSection_print(sbom) /]
 [html_PAGE_end('firmware') /]
 
 [html_PAGE_begin('operating system') /]
-		[SoftwareComponent_OperatingSystem_Section_print(sbom) /]
+			[SoftwareComponent_OperatingSystem_SubSection_print(sbom) /]
 [html_PAGE_end('operating system') /]
 
 [html_PAGE_begin('application') /]
-		[SoftwareComponent_Application_Section_print(sbom) /]
+			[SoftwareComponent_Application_SubSection_print(sbom) /]
 [html_PAGE_end('application') /]
 
 [html_PAGE_begin('library') /]
-		[SoftwareComponent_Library_Section_print(sbom) /]
+			[SoftwareComponent_Library_SubSection_print(sbom) /]
+		[TOC_Section_end() /]
 [html_PAGE_end('library') /]
 
 [html_PAGE_begin('3rdparty') /]
@@ -264,14 +266,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 [comment
 	--------------------
-	SOFTWARE COMPONENTS > Firmware
+	SOFTWARE COMPONENTS > vendor > Firmware
 	--------------------
 /]
-[template private SoftwareComponent_Firmware_Section_print(
+[template private SoftwareComponent_Firmware_SubSection_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[TOC_Section_begin('Firmware') /]
+[TOC_SubSection_begin('Firmware') /]
 	<p>
 		The following lists the firmware included in the software.
 	</p>
@@ -285,43 +287,43 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[html_TIP_End()/]
 
 	[sbom.printFirmware() /]
-[TOC_Section_end() /]
+[TOC_SubSection_end() /]
 [/template]
 
 
 [comment
 	--------------------
-	SOFTWARE COMPONENTS > Operating System
+	SOFTWARE COMPONENTS > vendor > Operating System
 	--------------------
 /]
-[template private SoftwareComponent_OperatingSystem_Section_print(
+[template private SoftwareComponent_OperatingSystem_SubSection_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[TOC_Section_begin('Operating System') /]
+[TOC_SubSection_begin('Operating System') /]
 	<p>
 		The following lists the operating systems included in the software.
 	</p>
 
 	[html_NOTE_Start() /]
-		developed by [VENDOR_NAME() /] <b>or</b> a 3rd party
+		developed by [VENDOR_NAME() /].
 	[html_NOTE_End() /]
 
 	[sbom.printOperatingSystems() /]
-[TOC_Section_end() /]
+[TOC_SubSection_end() /]
 [/template]
 
 
 [comment
 	--------------------
-	SOFTWARE COMPONENTS > Application
+	SOFTWARE COMPONENTS > vendor > Application
 	--------------------
 /]
-[template private SoftwareComponent_Application_Section_print(
+[template private SoftwareComponent_Application_SubSection_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[TOC_Section_begin('Applications') /]
+[TOC_SubSection_begin('Applications') /]
 	<p>
 		The following lists the applications included in the software.
 	</p>
@@ -335,7 +337,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[html_TIP_End()/]
 
 	[sbom.printApplications() /]
-[TOC_Section_end() /]
+[TOC_SubSection_end() /]
 [/template]
 
 
@@ -344,11 +346,11 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	SOFTWARE COMPONENTS > Library
 	--------------------
 /]
-[template private SoftwareComponent_Library_Section_print(
+[template private SoftwareComponent_Library_SubSection_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[TOC_Section_begin('Libraries') /]
+[TOC_SubSection_begin('Libraries') /]
 	<p>
 		The following lists the libraries included in the software.
 	</p>
@@ -358,26 +360,26 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[html_NOTE_End()/]
 
 	[sbom.printLibraries() /]
-[TOC_Section_end() /]
+[TOC_SubSection_end() /]
 [/template]
 
 
 [comment
 	--------------------
-	SOFTWARE COMPONENTS > 3rd Party
+	SOFTWARE COMPONENTS > 3rd Party / C(OTS) / (F)OSS
 	--------------------
 /]
 [template private SoftwareComponent_3rdParty_Section_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[TOC_Section_begin('3rd Party') /]
+[TOC_Section_begin('3rd Party / C(OTS) / (F)OSS') /]
 	<p>
 		The following lists components (applications, firmware, libraries etc.).
 	</p>
 
 	[html_NOTE_Start()/]
-		Includes everything developed by a 3rd party and <b>NOT</b> by [VENDOR_NAME() /]. For operating systems, see list above.
+		Includes everything developed by a 3rd party, i.e. C(OTS) and (F)OSS, and <b>NOT</b> by [VENDOR_NAME() /].
 	[html_NOTE_End()/]
 
 	[sbom.print3rdParty() /]
