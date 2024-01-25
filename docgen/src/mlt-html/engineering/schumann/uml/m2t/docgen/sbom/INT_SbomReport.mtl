@@ -325,57 +325,53 @@ post(trim())]
 	[TOC_SubSection_end() /]
 
 	[TOC_SubSection_begin('NIST IR 7695 - Operating System')/]
-		[html_NOTE_Start() /]
-			<blocckquote>
-				<p>
-					Operating System: 
-					A computer program, implemented in either software or firmware, which acts as an intermediary between users of a computer and the computer hardware. 
-					The purpose of an operating system is to provide an environment in which a user can execute applications.
-				</p>
-	
-				<div class="cite-source">
-					National Institue of Standards and Technology (NIST) - U.S. Department of Commerce,
-					"Common Platform Enumeration: Naming Specification Version 2.3",
-					section 2.1. "Definitions",
-					<a href="https://csrc.nist.gov/pubs/ir/7695/final">NIST IR 7695</a>
-				</div>
-			</blockquote> 
-
+		<blockquote>
 			<p>
-				This definition also applies to software running on a embedded device. Such a software is often not a dedicated product in its own rights. In addition, it often comes with an operating system enrichted by custom user interface and functionality.
+				Operating System: 
+				A computer program, implemented in either software or firmware, which acts as an intermediary between users of a computer and the computer hardware. 
+				The purpose of an operating system is to provide an environment in which a user can execute applications.
 			</p>
 
-			<p>
-				Such an embedded software is donated by NIST IR 7695 as "operating system". The list above distinguish this use-case to "Device Software" as well.
-			</p>
-		[html_NOTE_End() /]
+			<div class="cite-source">
+				National Institue of Standards and Technology (NIST) - U.S. Department of Commerce,
+				"Common Platform Enumeration: Naming Specification Version 2.3",
+				section 2.1. "Definitions",
+				<a href="https://csrc.nist.gov/pubs/ir/7695/final">NIST IR 7695</a>
+			</div>
+		</blockquote> 
+
+		<p>
+			This definition also applies to software running on a embedded device. Such a software is often not a dedicated product in its own rights. In addition, it often comes with an operating system enrichted by custom user interface and functionality.
+		</p>
+
+		<p>
+			Such an embedded software is donated by NIST IR 7695 as "operating system". The list above distinguish this use-case to "Device Software" as well.
+		</p>
 	[TOC_SubSection_end() /]
 
 	[TOC_SubSection_begin('NIST IR 7695 - Application')/]
-		[html_NOTE_Start() /]
-			<blocckquote>
-				<p>
-					Application:
-					A system for collecting, saving, processing, and presenting data by means of a computer (ISO 19770-2:4.1.1).
-					The term application is generally used when referring to a component of software that can be executed. The terms application and software application are often used synonymously. 
-				</p>
-	
-				<div class="cite-source">
-					National Institue of Standards and Technology (NIST) - U.S. Department of Commerce,
-					"Common Platform Enumeration: Naming Specification Version 2.3",
-					section 2.1. "Definitions",
-					<a href="https://csrc.nist.gov/pubs/ir/7695/final">NIST IR 7695</a>
-				</div>
-			</blockquote> 
-
+		<blockquote>
 			<p>
-				This definition also applies to libraries which cannot be executables standalone. Such libraries are used very often from the C(OTS) and (F)OSS realm.
+				Application:
+				A system for collecting, saving, processing, and presenting data by means of a computer (ISO 19770-2:4.1.1).
+				The term application is generally used when referring to a component of software that can be executed. The terms application and software application are often used synonymously. 
 			</p>
 
-			<p>
-				Libaries is donated by NIST IR 7695 as "Application". The list above distinguish this use-case to "Library" as well.
-			</p>
-		[html_NOTE_End() /]
+			<div class="cite-source">
+				National Institue of Standards and Technology (NIST) - U.S. Department of Commerce,
+				"Common Platform Enumeration: Naming Specification Version 2.3",
+				section 2.1. "Definitions",
+				<a href="https://csrc.nist.gov/pubs/ir/7695/final">NIST IR 7695</a>
+			</div>
+		</blockquote> 
+
+		<p>
+			This definition also applies to libraries which cannot be executables standalone. Such libraries are used very often from the C(OTS) and (F)OSS realm.
+		</p>
+
+		<p>
+			Libaries is donated by NIST IR 7695 as "Application". The list above distinguish this use-case to "Library" as well.
+		</p>
 	[TOC_SubSection_end() /]
 [TOC_Section_end() /]
 [/template]

@@ -22,66 +22,66 @@ AUTH: Janek Schumann
 /* Main body of text. ------------------------------------------------------------------ */
 body {
 	tab-size: 4 !important;
-	--code-background: white !important;
-	--code-normal: black !important;
+	--code-background: 	white !important;
+	--code-normal: 		black !important;
 }
 p {
-	font-family: Roboto !important;
-	font-size: 10pt !important;
-	text-align: justify !important;
-	line-height: 1.2 !important;
-	margin-top: 5px !important;
+	font-family: 		Roboto !important;
+	font-size: 			10pt !important;
+	text-align: 		justify !important;
+	line-height: 		1.2 !important;
+	margin-top: 		5px !important;
 }
 strong {
-	font-weight: bold !important;
+	font-weight: 		bold !important;
 }
 
 /* Credits. ---------------------------------------------------- */
 
 del { /* Credits, i.e. author information. */
-	font-family: Roboto !important;
-	display: block !important;
-	text-align: center !important;
-	font-size: 10pt !important;
-	text-decoration: none;
-	margin-top: 8px !important;
-	padding-bottom: 10px !important;
+	font-family: 		Roboto !important;
+	display: 			block !important;
+	text-align: 		center !important;
+	font-size: 			10pt !important;
+	text-decoration: 	none;
+	margin-top: 		8px !important;
+	padding-bottom: 	10px !important;
 }
 
 /* Code and math blocks. --------------------------------------------------------------- */
 pre { /* background and border of block. */
-	background-color: #fff !important;
-	border-style: dashed !important;
-	border-radius: 0px !important;
-	border-width: 1px 0px !important;
-	border-color: darkgray !important;
-	line-height: 1 !important;
+	background-color: 	#fff !important;
+	border-style: 		dashed !important;
+	border-radius: 		0px !important;
+	border-width: 		1px 0px !important;
+	border-color: 		darkgray !important;
+	line-height: 		1 !important;
 }
 code {
-	font-family: "Latin Modern Mono" !important;
-	font-size: 10pt !important;
-	color: #292929 !important;
+	font-family: 		"Latin Modern Mono" !important;
+	font-size: 			10pt !important;
+	color: 				#292929 !important;
 }
 mjx-math {
-	font-size: 90% !important;
+	font-size: 			90% !important;
 }
 math-block {
-	page-break-before: avoid !important;
+	page-break-before:	avoid !important;
 }
 
 /* Figures. ---------------------------------------------------------------------------- */
 svg, img {
-	display: block !important;
+	display: 			block !important;
 	/* filter: invert(100%) !important; */
-	page-break-inside: avoid !important;
-	page-break-after: avoid !important;
-	margin: 10px auto 5px !important;
+	page-break-inside: 	avoid !important;
+	page-break-after: 	avoid !important;
+	margin: 			10px auto 5px !important;
 }
 figcaption {
-	font-family: Roboto !important;
-	text-align: center !important;
-	margin-bottom: 16px !important;
-	font-size: 8pt !important;
+	font-family: 		Roboto !important;
+	text-align: 		center !important;
+	margin-bottom: 		16px !important;
+	font-size: 			8pt !important;
 }
 
 /* Tables. ----------------------------------------------------------------------------- */
@@ -89,54 +89,54 @@ table, pre {
 	page-break-inside: avoid !important;
 }
 table {
-	font-family: Roboto !important;
-	font-size: 10pt !important;
-	text-align: center !important;
-	margin: 10px auto 5px !important;
-	border-top: 1px solid #292929 !important;
-	border-bottom: 1px solid #292929 !important;
+	font-family: 		Roboto !important;
+	font-size: 			10pt !important;
+	text-align: 		center !important;
+	margin: 			10px auto 5px !important;
+	border-top: 		1px solid #292929 !important;
+	border-bottom: 		1px solid #292929 !important;
 }
 th { /* Table headers. */
-	background-color: lightgray !important;
-	color: black !important;
-	font-weight: normal !important;
-	border: none !important;
-	border-bottom: 1px solid darkgray !important;
-	padding: 2px 5px !important;
+	background-color: 	lightgray !important;
+	color: 				black !important;
+	font-weight: 		normal !important;
+	border: none 		!important;
+	border-bottom: 		1px solid darkgray !important;
+	padding: 			2px 5px !important;
 }
 td {
 	border: none !important;
-	padding: 2px 5px !important;
+	padding: 			2px 5px !important;
 }
 
 /* Lists ------------------------------------------------------------------------------- */
 ul, ol, dl {
-	page-break-before: avoid !important;
-	font-family: Roboto !important;
-	font-size: 11pt !important;
-	line-height: 1.1 !important;
-	margin-top: 0px !important;
-	padding-top: 0px !important;
+	page-break-before:	avoid !important;
+	font-family: 		Roboto !important;
+	font-size: 			10pt !important;
+	line-height: 		1.1 !important;
+	margin-top: 		0px !important;
+	padding-top: 		0px !important;
 }
 
 /* Horizontal separator. --------------------------------------------------------------- */
 hr { /* Manual page-break using "---". */
-	border: none !important;
-	border-top: 0px solid lightgray !important;
-	page-break-after: always !important;
+	border: 			none !important;
+	border-top: 		0px solid lightgray !important;
+	page-break-after: 	always !important;
 }
 
 /* Additional settings. ---------------------------------------------------------------- */
 blockquote {
-	display: block !important;
-	text-align: center !important;
-	font-size: 10pt !important;
-	color: black !important;
-	border: none !important;
-	padding: 0px !important;
-	margin: 5px auto !important;
+	display: 			block !important;
+	text-align: 		center !important;
+	font-size: 			10pt !important;
+	color:				black !important;
+	border: 			none !important;
+	padding: 			0px !important;
+	margin: 			5px auto !important;
 }
 .mermaid { /* Inline diagrams. */
-	color: black !important;
+	color: 				black !important;
 }
 [/template]
