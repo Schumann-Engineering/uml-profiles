@@ -25,6 +25,7 @@ public interface Sbom extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Owned System</b></em>' containment reference list.
 	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.System}.
+	 * It is bidirectional and its opposite is '{@link engineering.schumann.uml.model.sbom.System#getSbom <em>Sbom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned System</em>' containment reference list isn't clear,
@@ -33,7 +34,8 @@ public interface Sbom extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned System</em>' containment reference list.
 	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getSbom_OwnedSystem()
-	 * @model containment="true" required="true" ordered="false"
+	 * @see engineering.schumann.uml.model.sbom.System#getSbom
+	 * @model opposite="sbom" containment="true" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<engineering.schumann.uml.model.sbom.System> getOwnedSystem();
@@ -41,6 +43,7 @@ public interface Sbom extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Owned Relationship</b></em>' containment reference list.
 	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Relationship}.
+	 * It is bidirectional and its opposite is '{@link engineering.schumann.uml.model.sbom.Relationship#getSbom <em>Sbom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Relationship</em>' containment reference list isn't clear,
@@ -49,7 +52,8 @@ public interface Sbom extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Relationship</em>' containment reference list.
 	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getSbom_OwnedRelationship()
-	 * @model containment="true" ordered="false"
+	 * @see engineering.schumann.uml.model.sbom.Relationship#getSbom
+	 * @model opposite="sbom" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Relationship> getOwnedRelationship();

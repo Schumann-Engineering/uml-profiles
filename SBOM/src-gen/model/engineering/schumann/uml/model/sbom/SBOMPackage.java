@@ -658,13 +658,31 @@ public interface SBOMPackage extends EPackage {
 	int COMPONENT__CLASSIFICATION_IEC62304 = NAMESPACE__CLASSIFICATION_IEC62304;
 
 	/**
+	 * The feature id for the '<em><b>Owner</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__OWNER = NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Required By</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT__REQUIRED_BY = NAMESPACE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 0;
+	int COMPONENT_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Component</em>' class.
@@ -768,13 +786,22 @@ public interface SBOMPackage extends EPackage {
 	int RELATIONSHIP__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Sbom</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP__SBOM = 3;
+
+	/**
 	 * The number of structural features of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP_FEATURE_COUNT = 3;
+	int RELATIONSHIP_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Relationship</em>' class.
@@ -1049,13 +1076,22 @@ public interface SBOMPackage extends EPackage {
 	int SYSTEM__CLASSIFICATION_IEC62304 = NAMESPACE__CLASSIFICATION_IEC62304;
 
 	/**
+	 * The feature id for the '<em><b>Sbom</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SYSTEM__SBOM = NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SYSTEM_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 0;
+	int SYSTEM_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>System</em>' class.
@@ -1326,6 +1362,28 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getComponent();
+
+	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.model.sbom.Component#getOwner <em>Owner</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Owner</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Component#getOwner()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_Owner();
+
+	/**
+	 * Returns the meta object for the reference list '{@link engineering.schumann.uml.model.sbom.Component#getRequiredBy <em>Required By</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Required By</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Component#getRequiredBy()
+	 * @see #getComponent()
+	 * @generated
+	 */
+	EReference getComponent_RequiredBy();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Namespace <em>Namespace</em>}'.
@@ -1630,6 +1688,17 @@ public interface SBOMPackage extends EPackage {
 	EAttribute getRelationship_Type();
 
 	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.model.sbom.Relationship#getSbom <em>Sbom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Sbom</em>'.
+	 * @see engineering.schumann.uml.model.sbom.Relationship#getSbom()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EReference getRelationship_Sbom();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.Sbom <em>Sbom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1670,6 +1739,17 @@ public interface SBOMPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSystem();
+
+	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.model.sbom.System#getSbom <em>Sbom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Sbom</em>'.
+	 * @see engineering.schumann.uml.model.sbom.System#getSbom()
+	 * @see #getSystem()
+	 * @generated
+	 */
+	EReference getSystem_Sbom();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.model.sbom.MetadataLibrary <em>Metadata Library</em>}'.
@@ -1839,6 +1919,22 @@ public interface SBOMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMPONENT = eINSTANCE.getComponent();
+
+		/**
+		 * The meta object literal for the '<em><b>Owner</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__OWNER = eINSTANCE.getComponent_Owner();
+
+		/**
+		 * The meta object literal for the '<em><b>Required By</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT__REQUIRED_BY = eINSTANCE.getComponent_RequiredBy();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.NamespaceImpl <em>Namespace</em>}' class.
@@ -2077,6 +2173,14 @@ public interface SBOMPackage extends EPackage {
 		EAttribute RELATIONSHIP__TYPE = eINSTANCE.getRelationship_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Sbom</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONSHIP__SBOM = eINSTANCE.getRelationship_Sbom();
+
+		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.SbomImpl <em>Sbom</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2111,6 +2215,14 @@ public interface SBOMPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SYSTEM = eINSTANCE.getSystem();
+
+		/**
+		 * The meta object literal for the '<em><b>Sbom</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SYSTEM__SBOM = eINSTANCE.getSystem_Sbom();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.model.sbom.impl.MetadataLibraryImpl <em>Metadata Library</em>}' class.

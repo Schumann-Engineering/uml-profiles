@@ -223,6 +223,26 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getComponent_Owner() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComponent_RequiredBy() {
+		return (EReference)componentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getNamespace() {
 		return namespaceEClass;
 	}
@@ -503,6 +523,16 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getRelationship_Sbom() {
+		return (EReference)relationshipEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSbom() {
 		return sbomEClass;
 	}
@@ -535,6 +565,16 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 	@Override
 	public EClass getSystem() {
 		return systemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSystem_Sbom() {
+		return (EReference)systemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -697,6 +737,8 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 
 		// Create classes and their features
 		componentEClass = createEClass(COMPONENT);
+		createEReference(componentEClass, COMPONENT__OWNER);
+		createEReference(componentEClass, COMPONENT__REQUIRED_BY);
 
 		namespaceEClass = createEClass(NAMESPACE);
 		createEReference(namespaceEClass, NAMESPACE__OWNED_COMPONENT);
@@ -731,12 +773,14 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		createEReference(relationshipEClass, RELATIONSHIP__SOURCE);
 		createEReference(relationshipEClass, RELATIONSHIP__TARGET);
 		createEAttribute(relationshipEClass, RELATIONSHIP__TYPE);
+		createEReference(relationshipEClass, RELATIONSHIP__SBOM);
 
 		sbomEClass = createEClass(SBOM);
 		createEReference(sbomEClass, SBOM__OWNED_SYSTEM);
 		createEReference(sbomEClass, SBOM__OWNED_RELATIONSHIP);
 
 		systemEClass = createEClass(SYSTEM);
+		createEReference(systemEClass, SYSTEM__SBOM);
 
 		metadataLibraryEClass = createEClass(METADATA_LIBRARY);
 		createEReference(metadataLibraryEClass, METADATA_LIBRARY__ARTIFACT_META);
@@ -796,10 +840,12 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComponent_Owner(), this.getNamespace(), this.getNamespace_OwnedComponent(), "owner", null, 0, 1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getComponent_RequiredBy(), this.getNamespace(), this.getNamespace_RequiredComponent(), "requiredBy", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNamespace_OwnedComponent(), this.getComponent(), null, "ownedComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamespace_RequiredComponent(), this.getComponent(), null, "requiredComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNamespace_OwnedComponent(), this.getComponent(), this.getComponent_Owner(), "ownedComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getNamespace_RequiredComponent(), this.getComponent(), this.getComponent_RequiredBy(), "requiredComponent", null, 0, -1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_Type(), this.getNamespaceType(), "type", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_IsSOUP(), ecorePackage.getEBoolean(), "isSOUP", "true", 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getNamespace_ClassificationIec81001_5_1(), this.getIec81001_5_1_Classification(), "classificationIec81001_5_1", null, 1, 1, Namespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -830,12 +876,14 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		initEReference(getRelationship_Source(), this.getNamedElement(), null, "source", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRelationship_Target(), this.getNamedElement(), null, "target", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRelationship_Type(), this.getRelationshipType(), "type", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRelationship_Sbom(), this.getSbom(), this.getSbom_OwnedRelationship(), "sbom", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(sbomEClass, Sbom.class, "Sbom", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSbom_OwnedSystem(), this.getSystem(), null, "ownedSystem", null, 1, -1, Sbom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSbom_OwnedRelationship(), this.getRelationship(), null, "ownedRelationship", null, 0, -1, Sbom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSbom_OwnedSystem(), this.getSystem(), this.getSystem_Sbom(), "ownedSystem", null, 1, -1, Sbom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSbom_OwnedRelationship(), this.getRelationship(), this.getRelationship_Sbom(), "ownedRelationship", null, 0, -1, Sbom.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(systemEClass, engineering.schumann.uml.model.sbom.System.class, "System", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSystem_Sbom(), this.getSbom(), this.getSbom_OwnedSystem(), "sbom", null, 1, 1, engineering.schumann.uml.model.sbom.System.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(metadataLibraryEClass, MetadataLibrary.class, "MetadataLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMetadataLibrary_ArtifactMeta(), this.getArtifactMetadata(), this.getArtifactMetadata_Library(), "artifactMeta", null, 0, -1, MetadataLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

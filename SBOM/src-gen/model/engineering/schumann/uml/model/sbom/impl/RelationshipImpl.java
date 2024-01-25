@@ -7,13 +7,16 @@ import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 
+import engineering.schumann.uml.model.sbom.Sbom;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl#getSource <em>Source</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl#getType <em>Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.impl.RelationshipImpl#getSbom <em>Sbom</em>}</li>
  * </ul>
  *
  * @generated
@@ -199,6 +203,93 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 	 * @generated
 	 */
 	@Override
+	public Sbom getSbom() {
+		if (eContainerFeatureID() != SBOMPackage.RELATIONSHIP__SBOM) return null;
+		return (Sbom)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSbom(Sbom newSbom, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newSbom, SBOMPackage.RELATIONSHIP__SBOM, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSbom(Sbom newSbom) {
+		if (newSbom != eInternalContainer() || (eContainerFeatureID() != SBOMPackage.RELATIONSHIP__SBOM && newSbom != null)) {
+			if (EcoreUtil.isAncestor(this, newSbom))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newSbom != null)
+				msgs = ((InternalEObject)newSbom).eInverseAdd(this, SBOMPackage.SBOM__OWNED_RELATIONSHIP, Sbom.class, msgs);
+			msgs = basicSetSbom(newSbom, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SBOMPackage.RELATIONSHIP__SBOM, newSbom, newSbom));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetSbom((Sbom)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				return basicSetSbom(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				return eInternalContainer().eInverseRemove(this, SBOMPackage.SBOM__OWNED_RELATIONSHIP, Sbom.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SBOMPackage.RELATIONSHIP__SOURCE:
@@ -209,6 +300,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return basicGetTarget();
 			case SBOMPackage.RELATIONSHIP__TYPE:
 				return getType();
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				return getSbom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -229,6 +322,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return;
 			case SBOMPackage.RELATIONSHIP__TYPE:
 				setType((RelationshipType)newValue);
+				return;
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				setSbom((Sbom)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -251,6 +347,9 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 			case SBOMPackage.RELATIONSHIP__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				setSbom((Sbom)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -269,6 +368,8 @@ public class RelationshipImpl extends MinimalEObjectImpl.Container implements Re
 				return target != null;
 			case SBOMPackage.RELATIONSHIP__TYPE:
 				return type != TYPE_EDEFAULT;
+			case SBOMPackage.RELATIONSHIP__SBOM:
+				return getSbom() != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link engineering.schumann.uml.model.sbom.Relationship#getSource <em>Source</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Relationship#getTarget <em>Target</em>}</li>
  *   <li>{@link engineering.schumann.uml.model.sbom.Relationship#getType <em>Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.model.sbom.Relationship#getSbom <em>Sbom</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.model.sbom.SBOMPackage#getRelationship()
@@ -103,5 +104,33 @@ public interface Relationship extends EObject {
 	 * @generated
 	 */
 	void setType(RelationshipType value);
+
+	/**
+	 * Returns the value of the '<em><b>Sbom</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link engineering.schumann.uml.model.sbom.Sbom#getOwnedRelationship <em>Owned Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sbom</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sbom</em>' container reference.
+	 * @see #setSbom(Sbom)
+	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getRelationship_Sbom()
+	 * @see engineering.schumann.uml.model.sbom.Sbom#getOwnedRelationship
+	 * @model opposite="ownedRelationship" required="true" transient="false" ordered="false"
+	 * @generated
+	 */
+	Sbom getSbom();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.model.sbom.Relationship#getSbom <em>Sbom</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sbom</em>' container reference.
+	 * @see #getSbom()
+	 * @generated
+	 */
+	void setSbom(Sbom value);
 
 } // Relationship

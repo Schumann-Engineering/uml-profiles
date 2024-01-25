@@ -3,6 +3,9 @@
 )/]
 
 
+[import engineering::schumann::uml::m2t::sbom::common::Namespace /]
+
+
 [query public allComponents(
 	this : Component
 ) : Set(Component) =
@@ -10,4 +13,18 @@
 	->union(ownedComponent)
 	->union(ownedComponent.allComponents())
 	->asSet()
+/]
+
+
+[query public relationship(
+	this : Component
+) : Set(Relationship) =
+	let sbom : Sbom = sbom_sbom() in
+	if (sbom = null) then
+		Set{}
+	else
+		sbom
+		.ownedRelationship->select( r : Relationship | r.source = this)
+		->asSet()
+	endif
 /]

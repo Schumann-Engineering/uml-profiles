@@ -29,6 +29,7 @@ public interface Namespace extends DescribedElement {
 	/**
 	 * Returns the value of the '<em><b>Owned Component</b></em>' containment reference list.
 	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Component}.
+	 * It is bidirectional and its opposite is '{@link engineering.schumann.uml.model.sbom.Component#getOwner <em>Owner</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Component</em>' containment reference list isn't clear,
@@ -37,7 +38,8 @@ public interface Namespace extends DescribedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Component</em>' containment reference list.
 	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace_OwnedComponent()
-	 * @model containment="true" ordered="false"
+	 * @see engineering.schumann.uml.model.sbom.Component#getOwner
+	 * @model opposite="owner" containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<Component> getOwnedComponent();
@@ -45,6 +47,7 @@ public interface Namespace extends DescribedElement {
 	/**
 	 * Returns the value of the '<em><b>Required Component</b></em>' reference list.
 	 * The list contents are of type {@link engineering.schumann.uml.model.sbom.Component}.
+	 * It is bidirectional and its opposite is '{@link engineering.schumann.uml.model.sbom.Component#getRequiredBy <em>Required By</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Required Component</em>' reference list isn't clear,
@@ -53,7 +56,8 @@ public interface Namespace extends DescribedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Component</em>' reference list.
 	 * @see engineering.schumann.uml.model.sbom.SBOMPackage#getNamespace_RequiredComponent()
-	 * @model ordered="false"
+	 * @see engineering.schumann.uml.model.sbom.Component#getRequiredBy
+	 * @model opposite="requiredBy" ordered="false"
 	 * @generated
 	 */
 	EList<Component> getRequiredComponent();

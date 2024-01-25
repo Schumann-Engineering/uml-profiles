@@ -14,8 +14,7 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -80,7 +79,7 @@ public class SbomImpl extends NamedElementImpl implements Sbom {
 	@Override
 	public EList<engineering.schumann.uml.model.sbom.System> getOwnedSystem() {
 		if (ownedSystem == null) {
-			ownedSystem = new EObjectContainmentEList<engineering.schumann.uml.model.sbom.System>(engineering.schumann.uml.model.sbom.System.class, this, SBOMPackage.SBOM__OWNED_SYSTEM);
+			ownedSystem = new EObjectContainmentWithInverseEList<engineering.schumann.uml.model.sbom.System>(engineering.schumann.uml.model.sbom.System.class, this, SBOMPackage.SBOM__OWNED_SYSTEM, SBOMPackage.SYSTEM__SBOM);
 		}
 		return ownedSystem;
 	}
@@ -93,9 +92,26 @@ public class SbomImpl extends NamedElementImpl implements Sbom {
 	@Override
 	public EList<Relationship> getOwnedRelationship() {
 		if (ownedRelationship == null) {
-			ownedRelationship = new EObjectContainmentEList<Relationship>(Relationship.class, this, SBOMPackage.SBOM__OWNED_RELATIONSHIP);
+			ownedRelationship = new EObjectContainmentWithInverseEList<Relationship>(Relationship.class, this, SBOMPackage.SBOM__OWNED_RELATIONSHIP, SBOMPackage.RELATIONSHIP__SBOM);
 		}
 		return ownedRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SBOMPackage.SBOM__OWNED_SYSTEM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedSystem()).basicAdd(otherEnd, msgs);
+			case SBOMPackage.SBOM__OWNED_RELATIONSHIP:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedRelationship()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

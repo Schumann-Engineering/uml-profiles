@@ -4,12 +4,17 @@
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
     <details key="originalName" value="SBOM"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Namespace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Namespace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//Namespace" eOpposite="#//Namespace/ownedComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredBy" ordered="false"
+        upperBound="-1" eType="#//Namespace" eOpposite="#//Namespace/requiredComponent"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true" eSuperTypes="#//DescribedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComponent" ordered="false"
-        upperBound="-1" eType="#//Component" containment="true"/>
+        upperBound="-1" eType="#//Component" containment="true" eOpposite="#//Component/owner"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredComponent" ordered="false"
-        upperBound="-1" eType="#//Component"/>
+        upperBound="-1" eType="#//Component" eOpposite="#//Component/requiredBy"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
         eType="#//NamespaceType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSOUP" ordered="false"
@@ -77,6 +82,8 @@
         lowerBound="1" eType="#//NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
         eType="#//RelationshipType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sbom" ordered="false" lowerBound="1"
+        eType="#//Sbom" eOpposite="#//Sbom/ownedRelationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
     <eLiterals name="Unknown"/>
@@ -91,11 +98,14 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sbom" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSystem" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//System" containment="true"/>
+        lowerBound="1" upperBound="-1" eType="#//System" containment="true" eOpposite="#//System/sbom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRelationship" ordered="false"
-        upperBound="-1" eType="#//Relationship" containment="true"/>
+        upperBound="-1" eType="#//Relationship" containment="true" eOpposite="#//Relationship/sbom"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Namespace"/>
+  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Namespace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sbom" ordered="false" lowerBound="1"
+        eType="#//Sbom" eOpposite="#//Sbom/ownedSystem"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetadataLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifactMeta" ordered="false"
         upperBound="-1" eType="#//ArtifactMetadata" containment="true" eOpposite="#//ArtifactMetadata/library"/>

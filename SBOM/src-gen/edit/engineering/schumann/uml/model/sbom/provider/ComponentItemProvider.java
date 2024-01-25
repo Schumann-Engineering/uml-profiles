@@ -5,12 +5,14 @@ package engineering.schumann.uml.model.sbom.provider;
 
 import engineering.schumann.uml.model.sbom.Component;
 
+import engineering.schumann.uml.model.sbom.SBOMPackage;
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
@@ -41,8 +43,31 @@ public class ComponentItemProvider extends NamespaceItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addRequiredByPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Required By feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addRequiredByPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Component_requiredBy_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Component_requiredBy_feature", "_UI_Component_type"),
+				 SBOMPackage.Literals.COMPONENT__REQUIRED_BY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**

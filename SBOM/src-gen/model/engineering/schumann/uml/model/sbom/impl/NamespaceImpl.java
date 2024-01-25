@@ -20,9 +20,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -171,7 +170,7 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	@Override
 	public EList<Component> getOwnedComponent() {
 		if (ownedComponent == null) {
-			ownedComponent = new EObjectContainmentEList<Component>(Component.class, this, SBOMPackage.NAMESPACE__OWNED_COMPONENT);
+			ownedComponent = new EObjectContainmentWithInverseEList<Component>(Component.class, this, SBOMPackage.NAMESPACE__OWNED_COMPONENT, SBOMPackage.COMPONENT__OWNER);
 		}
 		return ownedComponent;
 	}
@@ -184,7 +183,7 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	@Override
 	public EList<Component> getRequiredComponent() {
 		if (requiredComponent == null) {
-			requiredComponent = new EObjectResolvingEList<Component>(Component.class, this, SBOMPackage.NAMESPACE__REQUIRED_COMPONENT);
+			requiredComponent = new EObjectWithInverseResolvingEList.ManyInverse<Component>(Component.class, this, SBOMPackage.NAMESPACE__REQUIRED_COMPONENT, SBOMPackage.COMPONENT__REQUIRED_BY);
 		}
 		return requiredComponent;
 	}
@@ -286,11 +285,30 @@ public abstract class NamespaceImpl extends DescribedElementImpl implements Name
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedComponent()).basicAdd(otherEnd, msgs);
+			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredComponent()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case SBOMPackage.NAMESPACE__OWNED_COMPONENT:
 				return ((InternalEList<?>)getOwnedComponent()).basicRemove(otherEnd, msgs);
+			case SBOMPackage.NAMESPACE__REQUIRED_COMPONENT:
+				return ((InternalEList<?>)getRequiredComponent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

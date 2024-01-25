@@ -63,7 +63,12 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/describes"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/isDescribedBy"/>
     </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Component"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Component">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//Component/owner"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/requiredBy"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sbom.ecore#//Namespace">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/ownedComponent"/>
@@ -102,6 +107,8 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Relationship/target"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Relationship/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//Relationship/sbom"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Sbom">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -109,7 +116,10 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedRelationship"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//System"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//System">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//System/sbom"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//MetadataLibrary">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//MetadataLibrary/artifactMeta"/>
