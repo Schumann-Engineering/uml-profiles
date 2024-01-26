@@ -5,6 +5,26 @@
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
 
 
+[query public VENDOR_ADDRESS(
+	this 	: OclAny
+) : String =
+	VENDOR_ADDRESS('(ERROR: "META_VENDOR_ADDRESS" not set)')
+/]
+
+
+[query public VENDOR_ADDRESS(
+	this 	: OclAny,
+	default	: String
+) : String =
+	let value : String = getProperty('META_VENDOR_ADDRESS') in
+	if (value <> null) then
+		value
+	else
+		default
+	endif
+/]
+
+
 [query public VENDOR_NAME(
 	this 	: OclAny
 ) : String =
@@ -25,18 +45,18 @@
 /]
 
 
-[query public VENDOR_ADDRESS(
+[query public VENDOR_WEBSITE(
 	this 	: OclAny
 ) : String =
-	VENDOR_ADDRESS('(ERROR: "META_VENDOR_ADDRESS" not set)')
+	VENDOR_NAME('(ERROR: "META_VENDOR_WEBSITE" not set)')
 /]
 
 
-[query public VENDOR_ADDRESS(
+[query public VENDOR_WEBSITE(
 	this 	: OclAny,
 	default	: String
 ) : String =
-	let value : String = getProperty('META_VENDOR_ADDRESS') in
+	let value : String = getProperty('META_VENDOR_WEBSITE') in
 	if (value <> null) then
 		value
 	else
