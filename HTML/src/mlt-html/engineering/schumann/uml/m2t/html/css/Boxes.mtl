@@ -25,13 +25,24 @@
 	}
 }
 
-.box {
+.box,
+.box-info,
+.box-example,
+.box-note,
+.box-warn,
+.box-task,
+.box-tbd,
+.box-tip {
 	margin:				5mm 2mm 5mm 2mm;
 	padding:			2mm;
 	text-align:			left !important;
 }
 
-.box-ansi {
+.box-ansi,
+.box-ansi-notice,
+.box-ansi-caution,
+.box-ansi-warning,
+.box-ansi-danger {
 	background-color:	white !important;
 	border:				2px solid #000000;
 	margin:				5mm 2mm 5mm 2mm;
@@ -39,7 +50,11 @@
 	text-align:			left !important;
 }
 
-.box-ansi:before {
+.box-ansi:before,
+.box-ansi-notice:before,
+.box-ansi-caution:before,
+.box-ansi-warning:before,
+.box-ansi-danger:before {
 	margin: 			-5px !important;
 	padding: 			2mm !important;
 	margin-bottom:		2mm !important;
