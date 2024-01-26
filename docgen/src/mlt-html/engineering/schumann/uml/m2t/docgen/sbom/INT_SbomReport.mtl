@@ -21,6 +21,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Link /]
 [import engineering::schumann::uml::m2t::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::html::Toc /]
@@ -88,6 +89,8 @@ post(trim())]
 [owner.BasicInformation_Chapter_print() /]
 
 [owner.SoftwareComponents_Chapter_print(this) /]
+
+[owner.VulnerabilityDisclosure_Chapter_print(this) /]
 
 [owner.Appendix_Licenses_print(this) /]
 [/template]
@@ -481,6 +484,36 @@ post(trim())]
 	APPENDIX
 	====================
 /]
+[template private VulnerabilityDisclosure_Chapter_print(
+	this : NamedElement,
+	sbom : Sbom
+)]
+[html_PAGE_begin('vulnerability disclosure') /]
+[TOC_Chapter_begin('Vulnerability disclosure') /]
+	[html_ANSI_NOTICE_Start() /]
+		<p>
+			Vulnerabilities aren't disclosed in this document due to their nature of evolving over time.
+		</p>
+
+		<p>
+			For current vulnerability information, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
+		</p>
+	[html_ANSI_NOTICE_End() /]
+
+	[html_INFO_Start() /]
+		[html_Link('Vulnerability Exploitability eXchange (VEX)', 'https://cyclonedx.org/capabilities/vex/') /] as well as [html_Link('Common Security Advisory Framework (CSAF)', 'https://oasis-open.github.io/csaf-documentation/index.html') /] are used for machine readable and automatable monitoring of evolving threats. 
+	[html_INFO_End() /]
+[TOC_Chapter_end() /]
+[html_PAGE_end('vulnerability disclosure') /]
+[/template]
+
+
+
+[comment
+	====================
+	APPENDIX
+	====================
+/]
 [template private Appendix_Licenses_print(
 	this : NamedElement,
 	sbom : Sbom
@@ -490,27 +523,27 @@ post(trim())]
 }]
 [if (not licenses->isEmpty())]
 [html_PAGE_begin('appendix a') /]
-	[TOC_Chapter_begin('Appendix A - Licenses') /]
+[TOC_Chapter_begin('Appendix A - Licenses') /]
 
-	[for (licenses)]
-	[if (i > 1)]
+[for (licenses)]
+[if (i > 1)]
 [html_PAGE_end() /]
 [html_PAGE_begin(self) /]
-	[/if]
-		[self.TOC_Section_begin() /]
-		[self.TOC_anchor() /]
-		<p>
-			<b>COMPONENTS</b> with this license:
-		</p>
-		<ul>
-		[for (sbom.allComponentsWithicense(self))]
-			<li>[TOC_link(name, name._toString()) /]</li>
-		[/for]
-		</ul>
-
-		[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('4')) /]
-		[this.TOC_Section_end() /]
+[/if]
+	[self.TOC_Section_begin() /]
+	[self.TOC_anchor() /]
+	<p>
+		<b>COMPONENTS</b> with this license:
+	</p>
+	<ul>
+	[for (sbom.allComponentsWithicense(self))]
+		<li>[TOC_link(name, name._toString()) /]</li>
 	[/for]
+	</ul>
+
+	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('4')) /]
+	[this.TOC_Section_end() /]
+[/for]
 [html_PAGE_end('appendix - a') /]
 [/if]
 [/template]

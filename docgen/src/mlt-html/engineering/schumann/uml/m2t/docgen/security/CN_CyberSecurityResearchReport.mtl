@@ -261,6 +261,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			<th>Registrant address</th>
 			<td>[VENDOR_ADDRESS() /]</td>
 		</tr>
+		<tr>
+			<th>Registrant website</th>
+			<td>[VENDOR_WEBSITE() /]</td>
+		</tr>
 	</table>
 [TOC_Section_end() /]
 [/template]
