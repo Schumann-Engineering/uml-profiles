@@ -90,7 +90,7 @@ post(trim())]
 
 [owner.SoftwareComponents_Chapter_print(this) /]
 
-[owner.VulnerabilityDisclosure_Chapter_print(this) /]
+[owner.VulnerabilityHandling_Chapter_print(this) /]
 
 [owner.Appendix_Licenses_print(this) /]
 [/template]
@@ -484,27 +484,41 @@ post(trim())]
 	APPENDIX
 	====================
 /]
-[template private VulnerabilityDisclosure_Chapter_print(
+[template private VulnerabilityHandling_Chapter_print(
 	this : NamedElement,
 	sbom : Sbom
 )]
-[html_PAGE_begin('vulnerability disclosure') /]
-[TOC_Chapter_begin('Vulnerability disclosure') /]
-	[html_ANSI_NOTICE_Start() /]
-		<p>
-			Vulnerabilities aren't disclosed in this document due to their nature of evolving over time.
-		</p>
+[html_PAGE_begin('vulnerability handling') /]
+[TOC_Chapter_begin('Vulnerability handling') /]
+	[TOC_Section_begin('Vulnerability reporting') /]
+		[html_ANSI_NOTICE_Start() /]
+			<p>
+				Vulnerabilities can be reported by anyone through various channels. 
+			</p>
+	
+			<p>
+				For contact and reporting procedure details, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
+			</p>
+		[html_ANSI_NOTICE_End() /]
+	[TOC_Section_end() /]
 
-		<p>
-			For current vulnerability information, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
-		</p>
-	[html_ANSI_NOTICE_End() /]
-
-	[html_INFO_Start() /]
-		[html_Link('Vulnerability Exploitability eXchange (VEX)', 'https://cyclonedx.org/capabilities/vex/') /] as well as [html_Link('Common Security Advisory Framework (CSAF)', 'https://oasis-open.github.io/csaf-documentation/index.html') /] are used for machine readable and automatable monitoring of evolving threats. 
-	[html_INFO_End() /]
+	[TOC_Section_begin('Vulnerability disclosure') /]
+		[html_ANSI_NOTICE_Start() /]
+			<p>
+				Vulnerabilities aren't disclosed in this document due to their nature of evolving over time.
+			</p>
+	
+			<p>
+				For current vulnerability information, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
+			</p>
+		[html_ANSI_NOTICE_End() /]
+	
+		[html_INFO_Start() /]
+			[html_Link('Vulnerability Exploitability eXchange (VEX)', 'https://cyclonedx.org/capabilities/vex/') /] as well as [html_Link('Common Security Advisory Framework (CSAF)', 'https://oasis-open.github.io/csaf-documentation/index.html') /] are used for machine readable and automatable monitoring of evolving threats. 
+		[html_INFO_End() /]
+	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
-[html_PAGE_end('vulnerability disclosure') /]
+[html_PAGE_end('vulnerability handling') /]
 [/template]
 
 
