@@ -16,3 +16,35 @@
 	'Software from 3rd Party / C(OTS) / (F)OSS'
 )/]
 [/template]
+
+
+[template public DocRef_Sbom_Vulnerability_Handling(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Software Bill of Material (SBOM)'
+	'Vulnerability handling'
+)/]
+[/template]
+
+
+[template public DocRef_Sbom_Vulnerability_Reporting(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Software Bill of Material (SBOM)'
+	'Vulnerability handling',
+	'Vulnerability reporting'
+)/]
+[/template]
+
+
+[template public DocRef_Sbom_Vulnerability_Disclosure(
+	devNull	: OclAny
+)]
+[html_Document_Ref(
+	'Software Bill of Material (SBOM)'
+	'Vulnerability handling',
+	'Vulnerability disclosure'
+)/]
+[/template]
