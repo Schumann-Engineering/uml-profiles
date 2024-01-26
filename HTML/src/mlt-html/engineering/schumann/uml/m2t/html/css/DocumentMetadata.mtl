@@ -1,0 +1,25 @@
+[comment encoding = UTF-8 /]
+[module DocumentMetadata('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_DOCUMENT_METADATA(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * DOCUMENT METADATA
+  * ========================================
+  * ======================================== **/
+.document-timestamp {
+	position: 			absolute !important;
+	bottom: 			5mm !important;
+	right:				5mm !important;
+}
+
+
+.document-timestamp p {
+	text-align: 		right !important; 
+	font-weight: 		bold !important;
+	margin:				2mm !important;
+}
+[/template]

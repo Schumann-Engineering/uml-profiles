@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module DocumentMetadata(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public DOC_Timestamp(
+	devNull	: OclAny
+)]
+<div class="document-timestamp">
+	<p>[invoke(
+		'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+		'getCurrentDateTime()',
+		Sequence{}
+		) /]</p>
+</div>
+[/template]
