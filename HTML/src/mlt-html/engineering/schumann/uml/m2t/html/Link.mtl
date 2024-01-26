@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module Link('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public html_Link(
+	href	: String
+)][html_Link(href, href) /][/template]
+
+
+[template public html_Link(
+	href	: String,
+	text	: String
+)]<a href="[href /]">[text /]</a>[/template]
