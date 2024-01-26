@@ -736,6 +736,9 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	[html_INFO_End() /]
 
 	<p>
+		<b>Applicable Documents</b>
+	</p>
+	<p>
 		For a list of Off-the-shelf Software, see document
 	</p>
 
@@ -745,10 +748,6 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		</li>
 	</ul>
 	[comment TOC_SubSubSection_end() /]
-
-	[TOC_SubSubSection_begin('Applicable Documents') /]
-		[html_TBD() /]
-	[TOC_SubSubSection_end() /]
 [TOC_SubSection_end() /]
 [/template]
 
