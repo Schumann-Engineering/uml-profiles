@@ -19,6 +19,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::html::DocumentMetadata /]
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::Link /]
@@ -106,6 +107,7 @@ post(trim())]
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
+	[DOC_Timestamp() /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
 		[this.printScope(true, true) /]

@@ -43,6 +43,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::html::DocumentMetadata /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -112,6 +113,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
+	[DOC_Timestamp() /]
 
 	[TOC_Title_begin('Product Security Characteristics') /]
 		[this.printScope(true, true) /]
