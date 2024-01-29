@@ -736,7 +736,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 				<li>Level Low: Clarify the total number of known vulnerabilities and the number of remaining vulnerabilities according to vulnerability levels</li>
 				<li>Level Medium: Provide a self-assessment report on network security vulnerabilities, clarifying the total number of known vulnerabilities and the remaining known vulnerabilities according to vulnerability levels.</li>
 				<li>Level High: Provide network security vulnerability self-assessment reports, network security vulnerability assessment reports issued by network security assessment agencies, and clarify maintenance plans for known remaining vulnerabilities.</li>
-			<ul>
+			</ul>
 		[html_TASK_End() /]
 	[html_NO_PRINT_end() /]
 

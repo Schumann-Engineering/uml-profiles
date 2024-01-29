@@ -75,7 +75,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		'fixAcceleoOutput(java.lang.String)',
 		Sequence { content }) /]
 	[/let]
-[HTML_END() /]
+	
+[comment HTML_END() /]
+	</body>
+</html>
 [/file]
 [/template]
 
@@ -546,8 +549,8 @@ post(trim())]
 [html_PAGE_end() /]
 [html_PAGE_begin(self) /]
 [/if]
-	[self.TOC_Section_begin() /]
-	[self.TOC_anchor() /]
+	[TOC_Section_begin('license ' + self) /]
+	[TOC_anchor(self) /]
 	<p>
 		<b>COMPONENTS</b> with this license:
 	</p>
