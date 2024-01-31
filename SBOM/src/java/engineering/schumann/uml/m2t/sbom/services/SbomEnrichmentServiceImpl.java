@@ -6,9 +6,23 @@ import engineering.schumann.uml.model.sbom.Sbom;
 
 public class SbomEnrichmentServiceImpl {
 	public static void EnrichSbom(
+			Sbom sbom
+	) {
+		EnrichSbom(sbom, LibraryServiceImpl.LIBRARY);
+	}
+	
+	
+	public static void EnrichSbom(
 			Sbom sbom,
 			MetadataLibrary metadata
 	) {
+		// === GUARDS ===
+		if (sbom == null)
+			return;
+		if (metadata == null)
+			return;
+		
+		// === BODY ===
 		sbom.eAllContents().forEachRemaining( c -> {
 			// only process NamedElement to have name and version
 			if (!(c instanceof Namespace))
@@ -18,6 +32,10 @@ public class SbomEnrichmentServiceImpl {
 			
 			EnrichSbom(element, metadata);
 		});
+		
+		
+		// === RESULT ===
+		// none
 	}
 
 	
@@ -26,12 +44,23 @@ public class SbomEnrichmentServiceImpl {
 			MetadataLibrary metadata
 	)
 	{
+		// === GUARDS ===
+		if (element == null)
+			return;
+		if (metadata == null)
+			return;
+		
+		
+		// === BODY ===
 		// try to find artifact matching element
 		var artifact = ArtifactMetaServiceImpl.FindArtifact(element, metadata);
 		if (artifact == null)
 			return;
 		
-		System.out.println("enriching element '" + element.getName() + "' with metadata");
+		System.out.println(String.format(
+				"INFO: [SBOM] enriching element '%s' with metadata",
+				element.getName()
+			));
 		
 		// copy all properties from metadata to element
 		for (var property : artifact.getOwnedProperty())
@@ -95,8 +124,16 @@ public class SbomEnrichmentServiceImpl {
 			}
 			catch (Exception e)
 			{
-				System.err.println("ERROR while enrichting element '" + element.getName() + "': " + e.getMessage());
+				System.err.println(String.format(
+						"ERROR: [SBOM] while enrichting element '%s': %s",
+						element.getName(),
+						e.getMessage()
+					));
 			}
+			
+			
+			// === RESULT ===
+			// none
 		}
 	}
 }

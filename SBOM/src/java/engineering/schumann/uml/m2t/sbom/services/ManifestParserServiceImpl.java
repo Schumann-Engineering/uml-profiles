@@ -1,6 +1,6 @@
 package engineering.schumann.uml.m2t.sbom.services;
 
-import java.io.IOException;
+import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.AbstractMap;
@@ -20,79 +20,87 @@ public class ManifestParserServiceImpl {
 	public static final List<String> MANIFEST_EXTENSIONS = Arrays.asList(".manifest", ".sbom.manifest");
 
 	
-	public static Boolean hasSbomManifest(
-			String		locator
-	) throws Exception
+	public static Boolean canHandle(
+			File sbomFile
+	)
 	{
-		return hasSbomManifest(locator, FileServiceImpl.EMPTY_PATH_LIST);
+		// === GUARDS ===
+		if (sbomFile == null)
+			return false;
+		if (!sbomFile.exists())
+			return false;
+		if (!sbomFile.isFile())
+			return false;
+		
+		// === BODY ===
+		for (var extension : MANIFEST_EXTENSIONS)
+			if (sbomFile.getPath().toLowerCase().endsWith(extension))
+				return true;		
+		
+		// === FAIL ===
+		return false;
 	}
 	
 	
-	public static Boolean hasSbomManifest(
+	public static String findSbomFileName(
 			String		locator,
 			Object		pathsObj
 	)
 	{
 		try
 		{
-			return FileServiceImpl.resolveFilename(locator, pathsObj, MANIFEST_EXTENSIONS, false) != null;
+			return FileServiceImpl.resolveFilename(
+					locator, 
+					pathsObj, 
+					MANIFEST_EXTENSIONS, 
+					false,
+					true
+			);
 		}
 		catch (Exception e)
 		{
-			return false;
+			return null;
 		}
 	}
 	
 	
 	public static Sbom loadSbomManifest(
-			String		locator
-	) throws Exception
-	{
-		return loadSbomManifest(locator, FileServiceImpl.EMPTY_PATH_LIST);
-	}
-	
-	
-	public static Sbom loadSbomManifest(
-			String		locator,
-			Object		pathsObj
-	) throws Exception, IOException
+			File		sbomFile
+	)
 	{
 		// === GUARDS ===
+		if (!canHandle(sbomFile))
+			return null;
 		
 		// === BODY ===
-		// resolve filename
-		var filename = FileServiceImpl.resolveFilename(locator, pathsObj, MANIFEST_EXTENSIONS, true);
-		
-		// read file
-		var manifest = Files.readString(Path.of(filename));
-		var result = parseSbomManifest(manifest);
-		
-		/*
-		 * enrich, if possible
-		 */
 		try
 		{
-			var metadata = LibraryServiceImpl.ReadSbomLibrary(locator, pathsObj);
-			if (metadata != null)
-			{
-				System.out.println("found SBOM metadata database. Proceeding with enrichment.");
-				
-				SbomEnrichmentServiceImpl.EnrichSbom(result, metadata);
-			}
-		}
-		catch (IOException e)
-		{
-			System.err.println("couldn't find SBOM metadata database. Proceeding without enrichment! (error: " + e.getMessage() + ")");
-		}
+			var fileName = sbomFile.getCanonicalPath();
+			
+			// read file
+			System.out.println(String.format(
+					"INFO: reading SBOM-Manifest file '%s'",
+					fileName
+				));
+			var manifest = Files.readString(Path.of(fileName));
+			var result = parseSbomManifest(manifest);
 
-		// === RESULT ===
-		return result;		
+			// === SUCCESS ===
+			return result;
+		}
+		catch (Exception e)
+		{
+			// === FAIL ===
+			return null;
+		}
 	}
 	
 
 	public static Sbom parseSbomManifest(
 			String content
-	) throws Exception
+	)
+	throws
+		Exception
 	{
 		// === GUARDS ===
 		if (content == null)

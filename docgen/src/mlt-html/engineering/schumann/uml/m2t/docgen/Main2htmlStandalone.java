@@ -128,8 +128,8 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
                 
                 // NASTY HACK: this does not work in multi-threaded environments
                 // the main issue: accessing generator settings from a template is not possible. :(
-                EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
-                EnvironmentServiceImpl.INSTANCE.setProperty(EnvironmentServiceImpl.OUTPUT_DIR, folder.getCanonicalPath());
+                EnvironmentServiceImpl.INSTANCE.setEnvironmentVariable(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
+                EnvironmentServiceImpl.INSTANCE.setEnvironmentVariable(EnvironmentServiceImpl.OUTPUT_DIR, folder.getCanonicalPath());
                 
    			 	// GO TIME!
                 generator.doGenerate(new BasicMonitor());

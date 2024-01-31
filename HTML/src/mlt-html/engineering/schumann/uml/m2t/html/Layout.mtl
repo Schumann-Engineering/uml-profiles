@@ -26,7 +26,8 @@
 [html_PAGE_end(id + '-pre-end') /]
 <div class="document-page[if (additionalClass <> null and additionalClass.trim() <> '')] [additionalClass.trim() /][/if]"[if (additionalAttribute <> null and additionalAttribute.trim() <> '')] [additionalAttribute.trim()/][/if]>
 [invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 'setProperty(java.lang.String, java.lang.String)', 
+		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
+		'setEnvironmentVariable(java.lang.String, java.lang.String)', 
 		Sequence{
 			'__PAGE_IS_OPEN__',
 			'1'
@@ -49,7 +50,8 @@
 </div>
 [/if]
 [invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 'setProperty(java.lang.String, java.lang.String)', 
+		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
+		'setEnvironmentVariable(java.lang.String, java.lang.String)', 
 		Sequence{
 			'__PAGE_IS_OPEN__',
 			'0'

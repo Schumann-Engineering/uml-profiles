@@ -1,0 +1,92 @@
+[comment encoding = UTF-8 /]
+[module FileName.csmn(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
+
+
+[query public CSMN_SCOPE(
+	this	: NamedElement
+) : Scope =
+	if (this.csmn_hasValidScope()) then
+		this.csmn_scope()
+	else
+		null
+	endif
+/]
+
+
+[query public CSMN_PRODUCTS(
+	this	: NamedElement
+) : Set(Product) =
+	let scope : Scope = CSMN_SCOPE() in
+	if (scope = null) then
+		null
+	else
+		scope.csmn_productInScope()
+	endif
+/]
+
+
+[query public CSMN_PRODUCT(
+	this	: NamedElement
+) : Product =
+	let products : Set(Product) = CSMN_PRODUCTS() in
+	if (products = null or products->size() = 0) then
+		null
+	else
+		products->asSequence()->first()
+	endif
+/]
+
+
+[query public CSMN_PRODUCT_MODEL(
+	this	: NamedElement
+) : String =
+	let product : Product = CSMN_PRODUCT() in
+	if (product = null) then
+		'ERROR-No-Product'
+	else
+		product.model
+	endif
+/]
+
+
+[query public CSMN_PRODUCT_NAME(
+	this	: NamedElement
+) : String =
+	let product : Product = CSMN_PRODUCT() in
+	if (product = null) then
+		'ERROR-No-Product'
+	else
+		product.productName
+	endif
+/]
+
+
+[query public CSMN_PRODUCT_SOFTWAREVERSIONS(
+	this	: NamedElement
+) : Set(String) =
+	let product : Product = CSMN_PRODUCT() in
+	if (product = null) then
+		null
+	else
+		product.softwareVersion
+	endif
+/]
+
+
+[query public CSMN_PRODUCT_SOFTWAREVERSION(
+	this	: NamedElement
+) : String =
+	let softwareVersions : Set(String) = CSMN_PRODUCT_SOFTWAREVERSIONS() in
+	if (softwareVersions = null or softwareVersions->size() = 0) then
+		'ERROR-No-SoftwareVersion'
+	else
+		softwareVersions->csmn_filterInScopeAsSoftwareVersion()->asSequence()->first()
+	endif
+/]

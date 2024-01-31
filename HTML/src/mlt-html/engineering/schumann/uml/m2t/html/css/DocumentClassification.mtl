@@ -40,22 +40,22 @@
 }
 
 .document-classification-strictly-confidential {
-	background-image:	url("../../_snippets/Document Classification/STRICTLY CONFIDENTIAL.svg");
+	background-image:	url("_assets/Document Classification/STRICTLY CONFIDENTIAL.svg");
 }
 
 .document-classification-internal {
-	background-image:	url("../../_snippets/Document Classification/INTERNAL.svg");
+	background-image:	url("_assets/Document Classification/INTERNAL.svg");
 }
 
 .document-classification-confidential-internal {
-	background-image:	url("../../_snippets/Document Classification/CONFIDENTIAL INTERNAL.svg");
+	background-image:	url("_assets/Document Classification/CONFIDENTIAL INTERNAL.svg");
 }
 
 .document-classification-confidential-external {
-	background-image:	url("../../_snippets/Document Classification/CONFIDENTIAL EXTERNAL.svg");
+	background-image:	url("_assets/Document Classification/CONFIDENTIAL EXTERNAL.svg");
 }
 
 .document-classification-public {
-	background-image:	url("../../_snippets/Document Classification/PUBLIC.svg");
+	background-image:	url("_assets/Document Classification/PUBLIC.svg");
 }
 [/template]

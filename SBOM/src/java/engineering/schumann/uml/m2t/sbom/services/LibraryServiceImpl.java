@@ -27,12 +27,36 @@ public class LibraryServiceImpl {
 	
 	public final static String DEFAULT_METADATA_LIBRARY_NAME = "sbom-metadata-database";
 
+	public static MetadataLibrary LIBRARY = null;
+	
+	
+	public static void LoadSbomLibrary()
+	{
+		try
+		{
+			LIBRARY = ReadSbomLibrary();
+			
+			// === SUCCESS ===
+			System.out.println("INFO: loaded SBOM library");
+		}
+		catch (Exception e)
+		{
+			// === SUCCESS ===
+			System.err.println(String.format(
+					"ERROR: failed to load SBOM library: %s",
+					e.getMessage()
+				));
+		}
+	}
 	
 	public static MetadataLibrary ReadSbomLibrary(
 	) 
 	throws
 		Exception
 	{		
+		if (LIBRARY != null)
+			return LIBRARY;
+		
 		return ReadSbomLibrary(DEFAULT_METADATA_LIBRARY_NAME, FileServiceImpl.EMPTY_PATH_LIST);
 	}
 
@@ -42,7 +66,7 @@ public class LibraryServiceImpl {
 	) 
 	throws
 		Exception
-	{		
+	{				
 		return ReadSbomLibrary(name, FileServiceImpl.EMPTY_PATH_LIST);
 	}
 	
@@ -62,7 +86,10 @@ public class LibraryServiceImpl {
 		if (filename == null)
 			filename = FileServiceImpl.resolveFilename(DEFAULT_METADATA_LIBRARY_NAME, pathsObj, LIBRARY_FILE_EXTENSIONS, false);
 		if (filename == null)
-			throw new Exception("Could not find SBOM Metadata Library file for '" + name + "'");
+			throw new Exception(String.format(
+					"Could not find SBOM Metadata Library file for '%s'",
+					name
+				));
 		
 		// read workbook from file
 		var factory = new XSSFWorkbookFactory();

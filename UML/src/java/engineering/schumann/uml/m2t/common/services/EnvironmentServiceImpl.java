@@ -27,14 +27,7 @@ public class EnvironmentServiceImpl {
 	 * Property "Properties" which hold a key-value index of key to property
 	 */
 	private Properties m_Properties = new Properties();
-	
-	
-	public String getEnvironmentVariable(
-			String key
-	) throws IndexOutOfBoundsException
-	{
-		return getEnvironmentVariable(key, null);
-	}	
+
 	
 	/**
 	 * Returns the environment variable defined by key. Throws an exception if no such variable exists.  
@@ -49,13 +42,31 @@ public class EnvironmentServiceImpl {
 	{
 		// check if key exists locally
 		if (m_Properties.containsKey(key))
+		{
+			if (!key.startsWith("__"))
+			{
+				System.out.println(String.format(
+					"DEBUG: [Env] retrieved environment variable '%s': %s",
+					key,
+					m_Properties.getProperty(key)
+				));
+				System.out.flush();
+			}
+				
 			return m_Properties.getProperty(key);
+		}
 		
 		// check global instance
 		if (this != INSTANCE)
 			return INSTANCE.getEnvironmentVariable(key, _default);
 		
 		// nope
+		System.out.println(String.format(
+				"DEBUG: environment property '%s' is not set. Using provided default '%s'",
+				key,
+				_default
+			));
+		
 		return _default;
 	}
 	
@@ -117,16 +128,30 @@ public class EnvironmentServiceImpl {
 	}
 	
 	
-	public void setProperty(
+	public void setEnvironmentVariable(
 		String key,
 		String value
 	)
 	{
+		if (key == null)
+			return;
+		if (key.trim() == "")
+			return;
+		
+		if (!key.startsWith("__"))
+		{
+			System.out.println(String.format(
+					"DEBUG: [Env] setting '%s' to '%s'",
+					key,
+					value
+				));
+			System.out.flush();
+		}
 		m_Properties.setProperty(key, value);		
 	}
 	
 	
-	public void setPropertyIfNotExist(
+	public void setEnvironmentVariableIfNotExists(
 		String key,
 		String value
 	)
@@ -172,7 +197,7 @@ public class EnvironmentServiceImpl {
 			return false;
 		
 		// get value
-		String value = getEnvironmentVariable(key).trim().toLowerCase();
+		String value = getEnvironmentVariable(key, "").trim().toLowerCase();
 
 		// === RETURN ===
 		return StringServiceImpl.IsTrue(value);

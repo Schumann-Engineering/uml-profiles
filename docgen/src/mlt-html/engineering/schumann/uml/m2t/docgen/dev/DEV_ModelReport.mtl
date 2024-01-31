@@ -8,11 +8,11 @@
 
 [**
  * ====================
- * DOCUMENT: 	Product Security Characteristics
+ * DOCUMENT: 	Model Report
  * REALM:    	(development)
  * CONTENT:  	iterates model to show debug information
  * PROFILES: 	./.
- * UUID:		0
+ * UUID:		5d20db90-3c4d-4f61-998c-76a84a5ab679
  * ====================
  **/]
 
@@ -25,10 +25,10 @@
 [template public generateDocument_DEV_ModelTestReport(
 	this : Model
 )]
-[setEnv('DOCUMENT_NAME',        this.name + ' (test-report)') /]
-[setEnv('DOCUMENT_EXTENSION',   'md') /]
+[setEnv('DOCUMENT_NAME',        	'DEV_ModelReport (' + this.name + ')',	'5d20db90-3c4d-4f61-998c-76a84a5ab679') /]
+[setEnv('DOCUMENT_EXTENSION',   	'md',									'5d20db90-3c4d-4f61-998c-76a84a5ab679') /]
 
-[file (FILE_URI_DOCUMENT('0'), false, 'UTF-8')]
+[file (FILE_URI_DOCUMENT('5d20db90-3c4d-4f61-998c-76a84a5ab679'), false, 'UTF-8')]
 # Self-test
 
 ## Profiles

@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module FileName.sbom(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+
+
+[query public FILE_SBOM_URI(
+	this			: NamedElement,
+	UUID			: String,
+	product			: Product,
+	softwareVersion	: String
+) : String =
+	let propertyValue : String = getProperty('DIR_SBOM', Sequence{ this.name, product.model, softwareVersion }) in
+	if (propertyValue <> null) then
+		propertyValue
+	else
+		this.name + '-' + product.model + '-' + softwareVersion
+	endif
+/]

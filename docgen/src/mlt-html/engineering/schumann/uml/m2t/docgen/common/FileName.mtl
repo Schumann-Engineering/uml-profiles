@@ -1,8 +1,12 @@
 [comment encoding = UTF-8 /]
-[module FileName('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module FileName(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
 
 
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::docgen::common::FileName.csmn /]
 
 
 [comment]
@@ -24,7 +28,7 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'DIRECTORY_NAME_SNIPPETS', '_snippets')
+	env('DIRECTORY_NAME_SNIPPETS', '_snippets', UUID)
 /]
 
 
@@ -32,7 +36,7 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'DIRECTORY_NAME_IMAGES', '_images')
+	env('DIRECTORY_NAME_IMAGES', '_images', UUID)
 /]
 
 
@@ -40,9 +44,51 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'DIRECTORY_NAME_DOCUMENT', this.eClass().name + PATH_SEPARATOR(UUID) + this.name)
+	env('DIRECTORY_NAME_DOCUMENT', DIRECTORY_NAME_DOCUMENT_DEFAULT(UUID), UUID)
 /]
 
+
+[query private DIRECTORY_NAME_DOCUMENT_DEFAULT(
+	this	: NamedElement,
+	UUID	: String
+) : String =
+	let default : String = this.eClass().name + PATH_SEPARATOR(UUID) + this.name in 
+	let scope : Scope = CSMN_SCOPE() in
+	if (scope = null) then
+		default		
+	else
+		let product : Product = CSMN_PRODUCT() in
+		if (product = null) then
+			default
+		else
+			CSMN_PRODUCT_NAME() + PATH_SEPARATOR(UUID) + 
+			'#export' + PATH_SEPARATOR(UUID) + 
+			CSMN_PRODUCT_MODEL() + '-' + CSMN_PRODUCT_SOFTWAREVERSION()
+		endif
+	endif
+/]
+
+
+[query public DIRECTORY_URI_FILES(
+	this	: NamedElement,
+	UUID	: String
+) : Sequence(String) =
+	Sequence(String)
+	{
+		DIRECTORY_NAME_DOCUMENT(UUID)
+		+ PATH_SEPARATOR(UUID),
+
+		PATH_SEPARATOR(UUID)
+		+ CSMN_PRODUCT_NAME()
+		+ PATH_SEPARATOR(UUID)
+		+ DOCUMENT_NAME(UUID)
+		+ PATH_SEPARATOR(UUID),
+
+		PATH_SEPARATOR(UUID)
+		+ CSMN_PRODUCT_NAME()
+		+ PATH_SEPARATOR(UUID)
+	}
+/]
 
 [query public DIRECTORY_URI_SNIPPETS(
 	this	: NamedElement,
@@ -55,6 +101,25 @@ each file would need a new engine / run.
 		+ DIRECTORY_NAME_SNIPPETS(UUID)
 	    + PATH_SEPARATOR(UUID)
 		+ DOCUMENT_NAME(UUID)
+		+ PATH_SEPARATOR(UUID),
+
+		DIRECTORY_NAME_DOCUMENT(UUID)
+		+ PATH_SEPARATOR(UUID)
+		+ DIRECTORY_NAME_SNIPPETS(UUID)
+	    + PATH_SEPARATOR(UUID),
+
+		PATH_SEPARATOR(UUID)
+		+ CSMN_PRODUCT_NAME()
+		+ PATH_SEPARATOR(UUID)
+		+ DIRECTORY_NAME_SNIPPETS(UUID)
+		+ PATH_SEPARATOR(UUID)
+		+ DOCUMENT_NAME(UUID)
+		+ PATH_SEPARATOR(UUID),
+
+		PATH_SEPARATOR(UUID)
+		+ CSMN_PRODUCT_NAME()
+		+ PATH_SEPARATOR(UUID)
+		+ DIRECTORY_NAME_SNIPPETS(UUID)
 		+ PATH_SEPARATOR(UUID),
 
 		DIRECTORY_NAME_SNIPPETS(UUID)
@@ -76,7 +141,7 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'DOCUMENT_EXTENSION', 'txt')
+	env('DOCUMENT_EXTENSION', 'txt', UUID)
 /]
 
 
@@ -84,7 +149,7 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'DOCUMENT_NAME', this.name)
+	env('DOCUMENT_NAME', this.name, UUID)
 /]
 
 
@@ -92,7 +157,7 @@ each file would need a new engine / run.
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'FILE_EXTENSION_SEPARATOR', '.')
+	env('FILE_EXTENSION_SEPARATOR', SYSTEM_FILE_EXTENSION_SEPARATOR(), UUID)
 /]
 
 
@@ -114,9 +179,23 @@ each file would need a new engine / run.
 /]
 
 
-[query private PATH_SEPARATOR(
+[query public PATH_SEPARATOR(
 	this 	: NamedElement,
 	UUID	: String
 ) : String =
-	envVariable(UUID, 'PATH_SEPARATOR', '/')
+	env('PATH_SEPARATOR', SYSTEM_PATH_SEPARATOR(), UUID)
+/]
+
+
+[query public SYSTEM_PATH_SEPARATOR(
+	devNull	: OclAny
+) : String = 
+	'\\'
+/]
+
+
+[query public SYSTEM_FILE_EXTENSION_SEPARATOR(
+	devNull	: OclAny
+) : String = 
+	'.'
 /]

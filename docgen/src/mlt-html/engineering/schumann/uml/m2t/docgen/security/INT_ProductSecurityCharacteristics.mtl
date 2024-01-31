@@ -13,7 +13,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
  * REALM:    	International
  * CONTENT:  	describes a product based on CSMN annotations
  * PROFILES: 	CSMN
- * UUID:		1
+ * UUID:		5b3cec7d-362f-4051-8a95-411bf9579f70
  * ====================
  **/]
 
@@ -38,7 +38,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::docgen::sbom::Ref_SbomReport /]
-[import engineering::schumann::uml::m2t::docgen::security::Images /]
+[import engineering::schumann::uml::m2t::docgen::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_MDS2 /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
@@ -56,9 +56,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template public generateDocument_INT_ProductSecurityCharacteristics(
 	this : Model
 )]
-	[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
+[setEnv('DOCUMENT_NAME',        	'INT_ProductSecurityCharacteristics',	'5b3cec7d-362f-4051-8a95-411bf9579f70') /]
+[setEnv('DOCUMENT_EXTENSION',   	'html',									'5b3cec7d-362f-4051-8a95-411bf9579f70') /]
+
+[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
 [pkg.generateDocument_INT_ProductSecurityCharacteristics() /]
-	[/for]
+[/for]
 [/template]
 
 
@@ -70,10 +73,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	documentTitle	: String	= 'Product Security Characteristics';
 }
 ]
-[setEnv('DOCUMENT_NAME',        'INT_ProductSecurityCharacteristics') /]
-[setEnv('DOCUMENT_EXTENSION',   'html') /]
-
-[file (FILE_URI_DOCUMENT('1'), false, 'UTF-8')]
+[file (FILE_URI_DOCUMENT('5b3cec7d-362f-4051-8a95-411bf9579f70'), false, 'UTF-8')]
 [HTML_START(documentTitle)/]
 	[CoverPage_Chapter_print()/]
 
@@ -791,14 +791,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 					<p>
 						The following standards are covered by MDS2:
 					</p>
-					[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS('1')) /]
+					[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS('5b3cec7d-362f-4051-8a95-411bf9579f70')) /]
 				[TOC_SubSubSection_end() /]
 				
 				[TOC_SubSubSection_begin('Covered capabilities') /]
 					<p>
 						MDS2 covers the following capabilities:
 					</p>
-					[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('1')) /]
+					[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('5b3cec7d-362f-4051-8a95-411bf9579f70')) /]
 				[TOC_SubSubSection_end() /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]

@@ -7,27 +7,30 @@
 [import engineering::schumann::uml::m2t::sbom::common::Component /]
 
 
-[query public hasSbom(
-	devNull			: OclAny,
-	locator			: String
-) : Boolean  =
-	hasSbom(locator, Sequence(String) { } )
-/]
-
-
-[query public hasSbom(
+[query public findSbomFileName(
 	devNull			: OclAny,
 	locator			: String,
 	includePaths	: Sequence(String)
-) : Boolean  =
+) : String  =
 	invoke(
 		'engineering.schumann.uml.m2t.sbom.services.SbomServiceImpl',
-		'hasSbom(java.lang.String, java.lang.Object)', 
+		'findSbomFileName(java.lang.String, java.lang.Object)', 
 		Sequence{
 			locator,
 			includePaths
 		}
 	)
+/]
+
+
+[query public loadSbomLibrary(
+	devNull			: OclAny
+) : OclVoid =
+	invoke(
+		'engineering.schumann.uml.m2t.sbom.services.LibraryServiceImpl',
+		'LoadSbomLibrary()', 
+		Sequence{
+		})
 /]
 
 
@@ -64,25 +67,40 @@
 /]
 
 
-[query public readSbom(
-	devNull			: OclAny,
-	locator			: String
-) : Sbom  =
-	readSbom(locator, Sequence(String) { } )
-/]
+[comment]
+	[query public loadSbom(
+		devNull			: OclAny,
+		locator			: String
+	) : Sbom  =
+		loadSbom(locator, Sequence(String) { } )
+	/]
+	
+	
+	[query public loadSbom(
+		devNull			: OclAny,
+		locator			: String,
+		includePaths	: Sequence(String)
+	) : Sbom  =
+		invoke(
+			'engineering.schumann.uml.m2t.sbom.services.SbomServiceImpl',
+			'loadSbom(java.lang.String, java.lang.Object)', 
+			Sequence{
+				locator,
+				includePaths
+			})
+	/]
+[/comment]
 
 
-[query public readSbom(
+[query public loadSbom(
 	devNull			: OclAny,
-	locator			: String,
-	includePaths	: Sequence(String)
+	fileName		: String
 ) : Sbom  =
 	invoke(
 		'engineering.schumann.uml.m2t.sbom.services.SbomServiceImpl',
-		'loadSbom(java.lang.String, java.lang.Object)', 
+		'loadSbom(java.lang.String)', 
 		Sequence{
-			locator,
-			includePaths
+			fileName
 		}
 	)
 /]

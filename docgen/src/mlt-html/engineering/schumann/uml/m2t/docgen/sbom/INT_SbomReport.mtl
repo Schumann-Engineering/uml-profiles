@@ -8,11 +8,23 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 ]
 
 
+[**
+ * ====================
+ * DOCUMENT: 	Software Bill of Material (SBOM)
+ * REALM:    	International
+ * CONTENT:  	converts a SBOM into a human readable and audible format
+ * PROFILES: 	./.
+ * UUID:		7ccd9aab-f38d-47dc-9997-fa473002a1d5 
+ * ====================
+ **/]
+
+
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::common::FileName.sbom /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
@@ -38,11 +50,17 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	products		: Set(Product)		= this.csmn_scope().csmn_productInScope();
 }
 ]
+[setEnv('DOCUMENT_NAME',        	'INT_SbomReport',	'7ccd9aab-f38d-47dc-9997-fa473002a1d5 ') /]
+[setEnv('DOCUMENT_EXTENSION',   	'html',				'7ccd9aab-f38d-47dc-9997-fa473002a1d5 ') /]
+
+[loadSbomLibrary() /]
 [for (product : Product | products)]
 [for (softwareVersion : String | product.softwareVersion)]
-[let sbomFilename : String = this.name + '-' + product.model + '-' + softwareVersion]
-[if (hasSbom(sbomFilename))]
-[let sbom : Sbom = readSbom(sbomFilename)]
+[let sbomFileName : String = findSbomFileName(
+	this.FILE_SBOM_URI('7ccd9aab-f38d-47dc-9997-fa473002a1d5 ', product, softwareVersion),
+	this.DIRECTORY_URI_FILES('7ccd9aab-f38d-47dc-9997-fa473002a1d5 '))]
+[if (sbomFileName <> null)]
+[let sbom : Sbom = loadSbom(sbomFileName)]
 [sbom.generateDocument_INT_SbomReport(this) /]
 [/let]
 [/if]
@@ -53,16 +71,13 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template public generateDocument_INT_SbomReport(
-	this : Sbom,
-	owner : NamedElement
+	this	: Sbom,
+	owner	: NamedElement
 )
 {
 	documentTitle	: String	= 'Software Bill of Material (SBOM)';
 }]
-[setEnv('DOCUMENT_NAME',        'INT_SbomReport') /]
-[setEnv('DOCUMENT_EXTENSION',   'html') /]
-
-[file (owner.FILE_URI_DOCUMENT('4'), false, 'UTF-8')]
+[file (owner.FILE_URI_DOCUMENT('7ccd9aab-f38d-47dc-9997-fa473002a1d5 '), false, 'UTF-8')]
 [HTML_START(documentTitle) /]
 	[owner.CoverPage_Chapter_print() /]
 
@@ -560,7 +575,7 @@ post(trim())]
 	[/for]
 	</ul>
 
-	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('4')) /]
+	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('7ccd9aab-f38d-47dc-9997-fa473002a1d5 ')) /]
 	[this.TOC_Section_end() /]
 [/for]
 [html_PAGE_end('appendix - a') /]

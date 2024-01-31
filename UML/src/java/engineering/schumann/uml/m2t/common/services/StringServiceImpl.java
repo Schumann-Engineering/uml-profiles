@@ -18,6 +18,9 @@ public class StringServiceImpl {
 	 */
 	public static Boolean IsTrue(String str)
 	{		
+		if (str == null)
+			return false;
+		
 		// check for true cases
 		for (String trueValue : TRUE_VALUES)
 			if (trueValue.equals(str))
