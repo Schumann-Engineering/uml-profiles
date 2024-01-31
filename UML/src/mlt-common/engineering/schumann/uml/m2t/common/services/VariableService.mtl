@@ -2,7 +2,9 @@
 [module VariableService('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
 
-[query public loadEnvironment(fileName : String) : OclVoid =
+[query public loadEnvironment(
+	fileName : String
+) : OclVoid =
 	invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
 		'loadEnvironment(java.lang.String)', 
@@ -41,9 +43,9 @@
 
 
 [query public env(
-	key 	: String, 
-	default : String,
-	scope 	: String 
+	key 		: String, 
+	default 	: String,
+	_context	: String 
 ) : String =
 	invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
@@ -73,10 +75,10 @@
 
 
 [query public env(
-	key 	: String,
-	default : String,
-	params	: Sequence(String),
-	scope 	: String 
+	key 		: String,
+	default 	: String,
+	params		: Sequence(String),
+	_context : String 
 ) : String =
 	invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
@@ -127,7 +129,20 @@
 /]
 
 
-[query public hasError() : Boolean 
+[query public env_clearErrors(
+	_context	: String
+) : Boolean 
+	= invoke(
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'clearErrors()', 
+		Sequence{
+		})
+/]
+
+
+[query public env_hasError(
+	_context	: String
+) : Boolean 
 	= invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
 		'hasError()', 
@@ -136,10 +151,36 @@
 /]
 
 
-[query public lastError() : String =
+[query public env_lastError(
+	_context	: String
+) : String =
 	invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
 		'lastError()',
+		Sequence{
+		})
+/]
+
+
+[query public env_addError(
+	errorMessage	: String,
+	_context	: String
+) : Sequence(String) =
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'addError(java.lang.String)',
+		Sequence{
+			errorMessage
+		})
+/]
+
+
+[query public env_getErrors(
+	_context	: String
+) : Sequence(String) =
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'getErrors()',
 		Sequence{
 		})
 /]
@@ -160,9 +201,9 @@
 
 
 [query public setEnv(
-	key 	: String,
-	value	: String,
-	UUID	: String
+	key 		: String,
+	value		: String,
+	_context	: String
 ) : String =
 	invoke(
 		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',

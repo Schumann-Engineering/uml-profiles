@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.MessageFormat;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -23,6 +24,9 @@ public class VariableServiceImpl {
 	 * Constant "Last Error Key" (key in properties map which stores last error which occured)
 	 */
 	private static final String LAST_ERROR_KEY = "__LAST_ERROR__";
+	
+	
+	private List<String> m_ErrorList = new ArrayList<String>();
 
 	
 	/**
@@ -30,6 +34,32 @@ public class VariableServiceImpl {
 	 */
 	private Properties m_Properties = new Properties();
 
+	
+	public void clearErrors()
+	{
+		m_ErrorList.clear();
+	}
+
+	
+	public void addError(
+			String errorMessage
+	)
+	{
+		m_ErrorList.add(errorMessage);
+		m_Properties.put(LAST_ERROR_KEY, errorMessage);
+		System.out.println(String.format(
+				"DEBUG: [Env] an error was logged: %s",
+				errorMessage
+		));
+		
+		
+		System.out.println(String.format(
+				"DEBUG: [Env] %d errors logged so far",
+				m_ErrorList.size()
+			));
+		System.out.flush();
+	}
+	
 	
 	public String getVariable(
 			String key
@@ -92,12 +122,12 @@ public class VariableServiceImpl {
 		 */
 		if (result == null)
 		{
-			// nope
-			System.out.println(String.format(
-					"DEBUG: [Variable] DEFAULT: '%s' is '%s'",
-					key,
-					_default
-				));
+			if (!key.startsWith("__"))
+				System.out.println(String.format(
+						"DEBUG: [Variable] DEFAULT: '%s' is '%s'",
+						key,
+						_default
+					));
 			
 			result = _default;
 		}
@@ -147,10 +177,11 @@ public class VariableServiceImpl {
 		{
 			System.err.println("FAIL: loading of property file '" + fileName + "'");
 			
-			m_Properties.put(
-					LAST_ERROR_KEY, 
-					"Couldn't load properties from file '" + fileName + "'. Error: " + e.getMessage()
-			);
+			addError(String.format(
+					"Couldn't load properties from file '%s'. Error: %s",
+					fileName,
+					e.getMessage()
+			));
 		}
 		
 		
@@ -221,7 +252,7 @@ public class VariableServiceImpl {
 	 */
 	public Boolean hasError()
 	{
-		return m_Properties.containsKey(LAST_ERROR_KEY);
+		return !m_ErrorList.isEmpty();
 	}
 	
 	
@@ -230,8 +261,14 @@ public class VariableServiceImpl {
 		if (!hasError())
 			return null;
 		
-		return m_Properties.getProperty( LAST_ERROR_KEY );
+		return m_ErrorList.get(m_ErrorList.size() - 1);
 	}
+	
+	
+	public List<String> getErrors()
+	{
+		return m_ErrorList;
+	}	
 	
 
 	/**
