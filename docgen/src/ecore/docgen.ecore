@@ -32,8 +32,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayText" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="child" ordered="false"
-        upperBound="-1" eType="#//TocEntry" containment="true" eOpposite="#//TocEntry/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="child" upperBound="-1"
+        eType="#//TocEntry" containment="true" eOpposite="#//TocEntry/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
         eType="#//TocEntry" eOpposite="#//TocEntry/child"/>
   </eClassifiers>

@@ -38,7 +38,7 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xnKwAMBHEe6J2ZYSA98_lA" name="displayText">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_j10DgMBIEe6J2ZYSA98_lA" name="child" type="_tb964MBHEe6J2ZYSA98_lA" aggregation="composite" association="_j1xnQMBIEe6J2ZYSA98_lA">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j10DgMBIEe6J2ZYSA98_lA" name="child" type="_tb964MBHEe6J2ZYSA98_lA" isOrdered="true" aggregation="composite" association="_j1xnQMBIEe6J2ZYSA98_lA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j10DgcBIEe6J2ZYSA98_lA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j10DgsBIEe6J2ZYSA98_lA" value="*"/>
       </ownedAttribute>

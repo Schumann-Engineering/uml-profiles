@@ -90,7 +90,7 @@ public interface TocEntry extends EObject {
 	 * @return the value of the '<em>Child</em>' containment reference list.
 	 * @see engineering.schumann.uml.docgen.DocGenPackage#getTocEntry_Child()
 	 * @see engineering.schumann.uml.docgen.TocEntry#getParent
-	 * @model opposite="parent" containment="true" ordered="false"
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
 	EList<TocEntry> getChild();
