@@ -1,0 +1,23 @@
+[module DocGenService(
+	'http://schumann.engineering/docgen/1',
+	'http://schumann.engineering/csmn/1'
+)/]
+
+
+[query public getContext(
+	umlElement		: OclAny,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
+) : Context  =
+	invoke(
+		'engineering.schumann.uml.m2t.docgen.services.DocGenServiceImpl',
+		'createContext(java.lang.Object, engineering.schumann.uml.profile.csmn.Product, java.lang.String, java.lang.String)', 
+		Sequence{
+			umlElement,
+			product,
+			softwareVersion,
+			templateUUID
+		}
+	)
+/]

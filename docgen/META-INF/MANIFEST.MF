@@ -26,5 +26,8 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: engineering.schumann.uml.m2t.docgen
+Export-Package: engineering.schumann.uml.docgen,
+ engineering.schumann.uml.docgen.impl,
+ engineering.schumann.uml.docgen.util,
+ engineering.schumann.uml.m2t.docgen
 
