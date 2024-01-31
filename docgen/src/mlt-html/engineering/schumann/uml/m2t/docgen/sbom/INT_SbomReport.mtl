@@ -27,7 +27,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::docgen::common::FileName.sbom /]
 [import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentClassification /]
@@ -48,20 +48,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 ? (this.csmn_isScoped())
 {
 	products		: Set(Product)		= this.csmn_scope().csmn_productInScope();
+	templateUUID	: String			= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
 }
 ]
-[setEnv('DOCUMENT_NAME',        	'INT_SbomReport',	'7ccd9aab-f38d-47dc-9997-fa473002a1d5 ') /]
-[setEnv('DOCUMENT_EXTENSION',   	'html',				'7ccd9aab-f38d-47dc-9997-fa473002a1d5 ') /]
+[setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [loadSbomLibrary() /]
 [for (product : Product | products)]
 [for (softwareVersion : String | product.softwareVersion)]
 [let sbomFileName : String = findSbomFileName(
-	this.FILE_SBOM_URI('7ccd9aab-f38d-47dc-9997-fa473002a1d5 ', product, softwareVersion),
-	this.DIRECTORY_URI_FILES('7ccd9aab-f38d-47dc-9997-fa473002a1d5 '))]
+	this.SBOM_File_URI(product, softwareVersion, templateUUID),
+	this.DocGen_Directory_URI(product, softwareVersion, templateUUID))]
 [if (sbomFileName <> null)]
 [let sbom : Sbom = loadSbom(sbomFileName)]
-[sbom.generateDocument_INT_SbomReport(this) /]
+[sbom.generateDocument_INT_SbomReport(this, product, softwareVersion, templateUUID) /]
 [/let]
 [/if]
 [/let]
@@ -71,17 +71,20 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template public generateDocument_INT_SbomReport(
-	this	: Sbom,
-	owner	: NamedElement
+	this			: Sbom,
+	owner			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )
 {
-	documentTitle	: String	= 'Software Bill of Material (SBOM)';
+	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
 }]
-[file (owner.FILE_URI_DOCUMENT('7ccd9aab-f38d-47dc-9997-fa473002a1d5 '), false, 'UTF-8')]
+[file (owner.DocGen_File_URI(product, softwareVersion, templateUUID), false, 'UTF-8')]
 [HTML_START(documentTitle) /]
-	[owner.CoverPage_Chapter_print() /]
+	[owner.CoverPage_Chapter_print(templateUUID) /]
 
-	[let content : String = generateDocumentContent(owner)]
+	[let content : String = generateDocumentContent(owner, product, softwareVersion, templateUUID)]
 
 	[HTML_TOC(documentTitle) /]
 
@@ -99,19 +102,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template private generateDocumentContent(
-	this 	: Sbom,
-	owner	: NamedElement
+	this 			: Sbom,
+	owner			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )
 post(trim())]
-[owner.Introduction_Chapter_print() /]
+[owner.Introduction_Chapter_print(templateUUID) /]
 
-[owner.BasicInformation_Chapter_print() /]
+[owner.BasicInformation_Chapter_print(templateUUID) /]
 
-[owner.SoftwareComponents_Chapter_print(this) /]
+[owner.SoftwareComponents_Chapter_print(this, templateUUID) /]
 
-[owner.VulnerabilityHandling_Chapter_print(this) /]
+[owner.VulnerabilityHandling_Chapter_print(this, templateUUID) /]
 
-[owner.Appendix_Licenses_print(this) /]
+[owner.Appendix_Licenses_print(this, product, softwareVersion, templateUUID) /]
 [/template]
 
 
@@ -121,7 +127,8 @@ post(trim())]
 	====================
 /]
 [template private CoverPage_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
@@ -156,7 +163,8 @@ post(trim())]
 	====================
 /]
 [template private Introduction_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('introduction') /]
 	[TOC_Chapter_begin('Introduction') /]
@@ -208,7 +216,8 @@ post(trim())]
 	====================
 /]
 [template private BasicInformation_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('basic information') /]
 	[TOC_Chapter_begin('Basic information') /]
@@ -240,34 +249,35 @@ post(trim())]
 	====================
 /]
 [template private SoftwareComponents_Chapter_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [html_PAGE_begin('software components') /]
 	[TOC_Chapter_begin('Software Components') /]
-		[SoftwareComponent_Overview_Section_print(sbom) /]
+		[SoftwareComponent_Overview_Section_print(sbom, templateUUID) /]
 [html_PAGE_end('software components') /]
 
 [html_PAGE_begin('definitions') /]
-		[SoftwareComponent_Definitions_Section_print(sbom) /]
+		[SoftwareComponent_Definitions_Section_print(sbom, templateUUID) /]
 [html_PAGE_end('definitions') /]
 
 [html_PAGE_begin('os and firmware') /]
 		[TOC_Section_begin('Software from ' + VENDOR_NAME()) /]
-			[SoftwareComponent_Firmware_SubSection_print(sbom) /]
+			[SoftwareComponent_Firmware_SubSection_print(sbom, templateUUID) /]
 [html_PAGE_end('os and firmware') /]
 
 [html_PAGE_begin('application') /]
-			[SoftwareComponent_Application_SubSection_print(sbom) /]
+			[SoftwareComponent_Application_SubSection_print(sbom, templateUUID) /]
 [html_PAGE_end('application') /]
 
 [html_PAGE_begin('library') /]
-			[SoftwareComponent_Library_SubSection_print(sbom) /]
+			[SoftwareComponent_Library_SubSection_print(sbom, templateUUID) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('library') /]
 
 [html_PAGE_begin('3rdparty') /]
-		[SoftwareComponent_3rdParty_Section_print(sbom) /]
+		[SoftwareComponent_3rdParty_Section_print(sbom, templateUUID) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('3rdparty') /]
 [/template]
@@ -279,8 +289,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_Overview_Section_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Overview') /]
 	<p>
@@ -298,8 +309,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_Definitions_Section_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Definitions') /]
 	[TOC_SubSection_begin('IEC 81001-5-1 Classification')/]
@@ -405,8 +417,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_Firmware_SubSection_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Operating System and Firmware') /]
 	<p>
@@ -432,8 +445,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_Application_SubSection_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Applications') /]
 	<p>
@@ -459,8 +473,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_Library_SubSection_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Libraries') /]
 	<p>
@@ -482,8 +497,9 @@ post(trim())]
 	--------------------
 /]
 [template private SoftwareComponent_3rdParty_Section_print(
-	this : NamedElement,
-	sbom : Sbom
+	this			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Software from 3rd Party / C(OTS) / (F)OSS') /]
 	<p>
@@ -505,8 +521,9 @@ post(trim())]
 	====================
 /]
 [template private VulnerabilityHandling_Chapter_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	templateUUID	: String
 )]
 [html_PAGE_begin('vulnerability handling') /]
 [TOC_Chapter_begin('Vulnerability handling') /]
@@ -549,8 +566,11 @@ post(trim())]
 	====================
 /]
 [template private Appendix_Licenses_print(
-	this : NamedElement,
-	sbom : Sbom
+	this 			: NamedElement,
+	sbom 			: Sbom,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )
 {
 	licenses : OrderedSet(String) = sbom.license();
@@ -575,7 +595,7 @@ post(trim())]
 	[/for]
 	</ul>
 
-	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS('7ccd9aab-f38d-47dc-9997-fa473002a1d5 ')) /]
+	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[this.TOC_Section_end() /]
 [/for]
 [html_PAGE_end('appendix - a') /]

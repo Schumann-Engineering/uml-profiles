@@ -1,6 +1,6 @@
 [comment encoding = UTF-8 /]
 [module PackageableElement('http://www.eclipse.org/uml2/5.0.0/UML')/]
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::uml::common::NamedElement /]
 [import engineering::schumann::uml::m2t::uml::common::Namespace /]
 

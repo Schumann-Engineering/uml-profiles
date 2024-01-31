@@ -2,6 +2,8 @@ package engineering.schumann.uml.m2t.common.services;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Properties;
 
 /**
@@ -10,8 +12,8 @@ import java.util.Properties;
  * @author Janek Schumann
  * 
  */
-public class EnvironmentServiceImpl {
-	public static final EnvironmentServiceImpl INSTANCE = new EnvironmentServiceImpl();
+public class VariableServiceImpl {
+	public static final VariableServiceImpl INSTANCE = new VariableServiceImpl();
 	
 	public static final String MODEL_URI = "__GLOBAL__.MODEL_URI";
 	
@@ -29,45 +31,93 @@ public class EnvironmentServiceImpl {
 	private Properties m_Properties = new Properties();
 
 	
+	public String getVariable(
+			String key
+	) throws IndexOutOfBoundsException
+	{
+		return getVariable(key, null, null);
+	}
+
+	
+	public String getVariable(
+			String key,
+			String _default
+	) throws IndexOutOfBoundsException
+	{
+		return getVariable(key, _default, null);
+	}
+	
+	
 	/**
 	 * Returns the environment variable defined by key. Throws an exception if no such variable exists.  
 	 * 
 	 * @param key
 	 * @return Value of environment variable defined by key. 
 	 */
-	public String getEnvironmentVariable(
+	public String getVariable(
 			String key,
-			String _default
-	) throws IndexOutOfBoundsException
+			String _default,
+			Object paramsObj
+	)
+	throws
+		IndexOutOfBoundsException,
+		IllegalArgumentException
 	{
+		// === SETUP ===
+		String result = null;
+		
+		// === BODY ===
 		// check if key exists locally
 		if (m_Properties.containsKey(key))
 		{
 			if (!key.startsWith("__"))
 			{
 				System.out.println(String.format(
-					"DEBUG: [Env] retrieved environment variable '%s': %s",
+					"DEBUG: [Variable] FOUND: '%s' is %s",
 					key,
 					m_Properties.getProperty(key)
 				));
 				System.out.flush();
 			}
 				
-			return m_Properties.getProperty(key);
+			result = m_Properties.getProperty(key);
+		}
+		// check global instance
+		else if (this != INSTANCE)
+			result = INSTANCE.getVariable(key, _default);
+		
+		
+		/*
+		 * use default
+		 */
+		if (result == null)
+		{
+			// nope
+			System.out.println(String.format(
+					"DEBUG: [Variable] DEFAULT: '%s' is '%s'",
+					key,
+					_default
+				));
+			
+			result = _default;
 		}
 		
-		// check global instance
-		if (this != INSTANCE)
-			return INSTANCE.getEnvironmentVariable(key, _default);
 		
-		// nope
-		System.out.println(String.format(
-				"DEBUG: environment property '%s' is not set. Using provided default '%s'",
-				key,
-				_default
-			));
+		/*
+		 * replace parameter, if any
+		 */
+		if (paramsObj != null)
+		{
+			if (!(paramsObj instanceof ArrayList))
+				throw new IllegalArgumentException("List<String> expected as parameter 'params' Got: " + paramsObj.getClass().getName());
+			@SuppressWarnings("unchecked")
+			var params = (ArrayList<String>)paramsObj;
+			
+			result = MessageFormat.format(result, params.toArray(new Object[0]));
+		}
 		
-		return _default;
+		// === RESULT ===
+		return result;
 	}
 	
 	
@@ -128,7 +178,7 @@ public class EnvironmentServiceImpl {
 	}
 	
 	
-	public void setEnvironmentVariable(
+	public void setVariable(
 		String key,
 		String value
 	)
@@ -141,7 +191,7 @@ public class EnvironmentServiceImpl {
 		if (!key.startsWith("__"))
 		{
 			System.out.println(String.format(
-					"DEBUG: [Env] setting '%s' to '%s'",
+					"DEBUG: [Variable] SET: '%s' to '%s'",
 					key,
 					value
 				));
@@ -151,7 +201,7 @@ public class EnvironmentServiceImpl {
 	}
 	
 	
-	public void setEnvironmentVariableIfNotExists(
+	public void setVariableIfNotExists(
 		String key,
 		String value
 	)
@@ -197,7 +247,7 @@ public class EnvironmentServiceImpl {
 			return false;
 		
 		// get value
-		String value = getEnvironmentVariable(key, "").trim().toLowerCase();
+		String value = getVariable(key, "").trim().toLowerCase();
 
 		// === RETURN ===
 		return StringServiceImpl.IsTrue(value);

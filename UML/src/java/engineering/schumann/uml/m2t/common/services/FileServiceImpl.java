@@ -37,16 +37,16 @@ public class FileServiceImpl {
 	)
 	throws
 		IOException,
-		Exception
+		IllegalArgumentException
 	{
 		// === GUARDS ===
 		if (locator == null || locator.isBlank())
-			throw new Exception("locator not provided");
+			throw new IllegalArgumentException("locator not provided");
 		if (pathsObj == null)
-			throw new Exception("paths not provided");
+			throw new IllegalArgumentException("paths not provided");
 		
 		if (!(pathsObj instanceof ArrayList))
-			throw new Exception("List<String> expected as parameter 'pathsObj' Got: " + pathsObj.getClass().getName());
+			throw new IllegalArgumentException("List<String> expected as parameter 'pathsObj' Got: " + pathsObj.getClass().getName());
 		
 		// === BODY ===
 		/* -----------
@@ -315,8 +315,8 @@ public class FileServiceImpl {
 	{
 		// === SETUP ===
 		var result = new ArrayList<String>();
-		var outputDir = EnvironmentServiceImpl.INSTANCE.getEnvironmentVariable(EnvironmentServiceImpl.OUTPUT_DIR, null);
-		var modelUri = EnvironmentServiceImpl.INSTANCE.getEnvironmentVariable(EnvironmentServiceImpl.MODEL_URI, null);
+		var outputDir = VariableServiceImpl.INSTANCE.getVariable(VariableServiceImpl.OUTPUT_DIR);
+		var modelUri = VariableServiceImpl.INSTANCE.getVariable(VariableServiceImpl.MODEL_URI);
 		
 
 		// === BODY ===

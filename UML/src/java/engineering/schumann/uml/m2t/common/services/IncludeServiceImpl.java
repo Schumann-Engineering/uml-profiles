@@ -35,7 +35,12 @@ public class IncludeServiceImpl {
 		// resolve filename
 		@SuppressWarnings("unchecked")
 		var extensions = (ArrayList<String>)extensionsObj;
-		var filename = FileServiceImpl.resolveFilename(name, pathsObj, extensions, true);
+		var filename = FileServiceImpl.resolveFilename(name, pathsObj, extensions, false);
+		
+		if (filename == null)
+			// === FAIL ===
+			return null;
+		
 			
 		/* -----------
 		 * read file

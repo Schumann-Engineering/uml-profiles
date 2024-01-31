@@ -1,7 +1,7 @@
 [comment encoding = UTF-8 /]
 [module NamedElement('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 [comment Joins a list of strings together /]
 [query public _join(elements : Sequence(String), separator : String) : String =

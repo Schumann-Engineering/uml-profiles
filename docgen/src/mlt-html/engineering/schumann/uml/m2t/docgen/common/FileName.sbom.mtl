@@ -5,20 +5,19 @@
 )]
 
 
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 
 
-[query public FILE_SBOM_URI(
+[query public SBOM_File_URI(
 	this			: NamedElement,
-	UUID			: String,
 	product			: Product,
-	softwareVersion	: String
+	softwareVersion	: String,
+	templateUUID	: String
 ) : String =
-	let propertyValue : String = getProperty('DIR_SBOM', Sequence{ this.name, product.model, softwareVersion }) in
-	if (propertyValue <> null) then
-		propertyValue
-	else
-		this.name + '-' + product.model + '-' + softwareVersion
-	endif
+	env('SBOM.Input.Director',
+		this.name + '-' + product.model + '-' + softwareVersion,
+		Sequence{ this.name, product.model, softwareVersion },
+		templateUUID
+	)
 /]

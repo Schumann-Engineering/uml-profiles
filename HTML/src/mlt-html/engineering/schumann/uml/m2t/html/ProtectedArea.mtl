@@ -2,12 +2,23 @@
 [module ProtectedArea('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
+[import engineering::schumann::uml::m2t::html::Boxes /]
+
+
 [template public protectedArea(
 	devNull 		: OclAny,
 	name    		: String,
 	includePaths	: Sequence(String)
-)]
-	[_protectedArea(name, includePaths) /]
+)
+post(trim())
+{
+	includeContent	: String = _protectedArea(name, includePaths);
+}]
+[if (includeContent = null)]
+[html_TBD('Content for "' + name + '" does not exist (yet) <i>OR</i> could not be found.') /]
+[else]
+[includeContent.trim() /]
+[/if]
 [/template]
 
 

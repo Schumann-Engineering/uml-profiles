@@ -52,7 +52,14 @@
 
 
 [template public html_TBD(devNull : OclAny)]
-<div class="box-tbd"></div>
+[html_TBD('TO-BE-DONE') /]
+[/template]
+[template public html_TBD(devNull : OclAny, reason : String)]
+<div class="box-tbd">
+	<p>
+		[reason /]
+	</p>
+</div>
 [/template]
 
 

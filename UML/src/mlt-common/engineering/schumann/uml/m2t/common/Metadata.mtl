@@ -2,7 +2,7 @@
 [module Metadata('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
 [query public VENDOR_ADDRESS(

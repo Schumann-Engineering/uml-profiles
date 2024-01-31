@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.resource.URIConverter;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
 import engineering.schumann.uml.m2t.common.services.AcceleoGeneratorHelper;
-import engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl;
+import engineering.schumann.uml.m2t.common.services.VariableServiceImpl;
 import engineering.schumann.uml.model.sbom.SBOMFactory;
 import engineering.schumann.uml.model.sbom.SBOMPackage;
 import engineering.schumann.uml.profile.csmn.CSMNFactory;
@@ -128,8 +128,8 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
                 
                 // NASTY HACK: this does not work in multi-threaded environments
                 // the main issue: accessing generator settings from a template is not possible. :(
-                EnvironmentServiceImpl.INSTANCE.setEnvironmentVariable(EnvironmentServiceImpl.MODEL_URI, modelURI.devicePath());
-                EnvironmentServiceImpl.INSTANCE.setEnvironmentVariable(EnvironmentServiceImpl.OUTPUT_DIR, folder.getCanonicalPath());
+                VariableServiceImpl.INSTANCE.setVariable(VariableServiceImpl.MODEL_URI, modelURI.devicePath());
+                VariableServiceImpl.INSTANCE.setVariable(VariableServiceImpl.OUTPUT_DIR, folder.getCanonicalPath());
                 
    			 	// GO TIME!
                 generator.doGenerate(new BasicMonitor());

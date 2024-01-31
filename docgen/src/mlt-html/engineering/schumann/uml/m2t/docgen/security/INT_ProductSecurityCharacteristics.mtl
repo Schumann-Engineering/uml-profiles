@@ -33,7 +33,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
@@ -55,29 +55,44 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 [template public generateDocument_INT_ProductSecurityCharacteristics(
 	this : Model
-)]
-[setEnv('DOCUMENT_NAME',        	'INT_ProductSecurityCharacteristics',	'5b3cec7d-362f-4051-8a95-411bf9579f70') /]
-[setEnv('DOCUMENT_EXTENSION',   	'html',									'5b3cec7d-362f-4051-8a95-411bf9579f70') /]
+)
+{
+	templateUUID	: String = '5b3cec7d-362f-4051-8a95-411bf9579f70';
+}]
+[setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
-[pkg.generateDocument_INT_ProductSecurityCharacteristics() /]
+[let scope : Scope = pkg.csmn_scope()]
+[for (product : Product | scope.csmn_productInScope())]
+[if (product.softwareVersion->isEmpty())]
+[pkg.generateDocument_INT_ProductSecurityCharacteristics(product, 'any', templateUUID) /]
+[else]
+[for (softwareVersion : String | product.softwareVersion)]
+[pkg.generateDocument_INT_ProductSecurityCharacteristics(product, softwareVersion, templateUUID) /]
+[/for]
+[/if]
+[/for]
+[/let]
 [/for]
 [/template]
 
 
 [template private generateDocument_INT_ProductSecurityCharacteristics(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )
 ? (this.csmn_isScoped())
 {
-	documentTitle	: String	= 'Product Security Characteristics';
+	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Product Security Characteristics');
 }
 ]
-[file (FILE_URI_DOCUMENT('5b3cec7d-362f-4051-8a95-411bf9579f70'), false, 'UTF-8')]
+[file (DocGen_File_URI(product, softwareVersion, templateUUID), false, 'UTF-8')]
 [HTML_START(documentTitle)/]
-	[CoverPage_Chapter_print()/]
+	[CoverPage_Chapter_print(templateUUID)/]
 
-	[let content : String = generateDocumentContent()]
+	[let content : String = generateDocumentContent(product, softwareVersion, templateUUID)]
 
 	[HTML_TOC(documentTitle) /]
 
@@ -92,15 +107,18 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template private generateDocumentContent(
-	this 	: NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
-[Introduction_Chapter_print()/]
+[Introduction_Chapter_print(templateUUID)/]
 
-[BasicInformation_Chapter_print()/]
+[BasicInformation_Chapter_print(templateUUID)/]
 
-[ProductArchitecture_Chapter_print()/]
+[ProductArchitecture_Chapter_print(product, softwareVersion, templateUUID)/]
 
-[SecurityCapabilities_Chapter_print()/]
+[SecurityCapabilities_Chapter_print(product, softwareVersion, templateUUID)/]
 [/template]
 
 [comment
@@ -109,7 +127,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private CoverPage_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
@@ -128,7 +147,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private Introduction_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('introduction')/]
 	[TOC_Chapter_begin('Introduction') /]
@@ -177,7 +197,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private BasicInformation_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('basic information')/]
 	[TOC_Chapter_begin('Basic information') /]
@@ -214,7 +235,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private ProductArchitecture_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
 [let interfaces : Set(Port) = systemElements.ownedElement->filter(Port)->select(csmn_hasInterfaceCharacteristic())->oclAsSet()->flatten()->csmn_filterInScope()]
@@ -234,7 +258,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
 		[this.TOC_Section_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
 		
-			[this.html_IMG_ProductArchitectureDiagram('1', product) /]
+			[this.html_IMG_ProductArchitectureDiagram(product, softwareVersion, templateUUID) /]
 			
 		[this.TOC_Section_end()/]
 		[/for]
@@ -707,7 +731,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		
 [html_PAGE_begin('software')/]
 		[TOC_Section_begin('Software') /]
-			[SBOM_SubSection_print() /]
+			[SBOM_SubSection_print(templateUUID) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('software')/]
 	
@@ -717,7 +741,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template private SBOM_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Software Bill of Material (SBOM)')/]
 	[comment TOC_SubSubSection_begin('Declaration') /]
@@ -760,7 +785,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private SecurityCapabilities_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('security capabilities')/]
 	[TOC_Chapter_begin('Security capabilities') /]
@@ -791,14 +819,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 					<p>
 						The following standards are covered by MDS2:
 					</p>
-					[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS('5b3cec7d-362f-4051-8a95-411bf9579f70')) /]
+					[protectedArea('MDS2 > Covered Standards', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 				[TOC_SubSubSection_end() /]
 				
 				[TOC_SubSubSection_begin('Covered capabilities') /]
 					<p>
 						MDS2 covers the following capabilities:
 					</p>
-					[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('5b3cec7d-362f-4051-8a95-411bf9579f70')) /]
+					[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 				[TOC_SubSubSection_end() /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]

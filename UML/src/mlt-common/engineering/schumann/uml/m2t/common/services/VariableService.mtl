@@ -1,10 +1,10 @@
 [comment encoding = UTF-8 /]
-[module EnvironmentService('http://www.eclipse.org/uml2/5.0.0/UML')/]
+[module VariableService('http://www.eclipse.org/uml2/5.0.0/UML')/]
 
 
 [query public loadEnvironment(fileName : String) : OclVoid =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
 		'loadEnvironment(java.lang.String)', 
 		Sequence{
 			fileName
@@ -46,11 +46,45 @@
 	scope 	: String 
 ) : String =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 
-		'getEnvironmentVariable(java.lang.String, java.lang.String)',
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
+		'getVariable(java.lang.String, java.lang.String, java.lang.Object)',
 		Sequence{
 			key,
-			defaultValue(key, default)
+			defaultValue(key, default),
+			null
+		})
+/]
+
+
+[query public env(
+	key 	: String,
+	default : String,
+	params	: Sequence(String)
+) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
+		'getVariable(java.lang.String, java.lang.String, java.lang.Object)',
+		Sequence{
+			key,
+			defaultValue(key, default),
+			params
+		})
+/]
+
+
+[query public env(
+	key 	: String,
+	default : String,
+	params	: Sequence(String),
+	scope 	: String 
+) : String =
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
+		'getVariable(java.lang.String, java.lang.String, java.lang.Object)',
+		Sequence{
+			key,
+			defaultValue(key, default),
+			params
 		})
 /]
 
@@ -85,7 +119,7 @@
 	key 	: String
 ) : Boolean = 
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl', 
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl', 
 		'exists(java.lang.String)', 
 		Sequence{
 			key
@@ -95,7 +129,7 @@
 
 [query public hasError() : Boolean 
 	= invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
 		'hasError()', 
 		Sequence{
 		})
@@ -104,7 +138,7 @@
 
 [query public lastError() : String =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
 		'lastError()',
 		Sequence{
 		})
@@ -116,8 +150,8 @@
 	value	: String
 ) : String =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
-		'setEnvironmentVariable(java.lang.String, java.lang.String)', 
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'setVariable(java.lang.String, java.lang.String)', 
 		Sequence{
 			key,
 			value
@@ -131,8 +165,8 @@
 	UUID	: String
 ) : String =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
-		'setEnvironmentVariable(java.lang.String, java.lang.String)', 
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'setVariable(java.lang.String, java.lang.String)', 
 		Sequence{
 			key,
 			value
@@ -145,8 +179,8 @@
 	value	: String
 ) : String =
 	invoke(
-		'engineering.schumann.uml.m2t.common.services.EnvironmentServiceImpl',
-		'setEnvironmentVariableIfNotExist(java.lang.String, java.lang.String)', 
+		'engineering.schumann.uml.m2t.common.services.VariableServiceImpl',
+		'setVariableIfNotExist(java.lang.String, java.lang.String)', 
 		Sequence{
 			key,
 			value

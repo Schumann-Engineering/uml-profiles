@@ -19,7 +19,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [import engineering::schumann::uml::m2t::common::Metadata /]
-[import engineering::schumann::uml::m2t::common::services::EnvironmentService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
@@ -48,27 +48,42 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 [template public generateDocument_CN_CyberSecurityResearchReport(
 	this : Model
-)]
-[setEnv('DOCUMENT_NAME',        	'CN_CyberSecurityResearchReport',	'1145613c-bd93-4c19-b613-4b65e2ab8999') /]
-[setEnv('DOCUMENT_EXTENSION',   	'html',								'1145613c-bd93-4c19-b613-4b65e2ab8999') /]
+)
+{
+	templateUUID	: String	= '1145613c-bd93-4c19-b613-4b65e2ab8999';
+}]
+[setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
-[pkg.generateDocument_CN_CyberSecurityResearchReport() /]
+[let scope : Scope = pkg.csmn_scope()]
+[for (product : Product | scope.csmn_productInScope())]
+[if (product.softwareVersion->isEmpty())]
+[pkg.generateDocument_CN_CyberSecurityResearchReport(product, 'any', templateUUID) /]
+[else]
+[for (softwareVersion : String | product.softwareVersion)]
+[pkg.generateDocument_CN_CyberSecurityResearchReport(product, softwareVersion, templateUUID) /]
+[/for]
+[/if]
+[/for]
+[/let]
 [/for]
 [/template]
 
 
 [template private generateDocument_CN_CyberSecurityResearchReport(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )
 {
-	documentTitle	: String	= 'Cybersecurity Research Report';
+	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
 }]
-[file (FILE_URI_DOCUMENT('1145613c-bd93-4c19-b613-4b65e2ab8999'), false, 'UTF-8')]
+[file (DocGen_File_URI(product, softwareVersion, templateUUID), false, 'UTF-8')]
 [HTML_START(documentTitle)/]
-	[CoverPage_Chapter_print()/]
+	[CoverPage_Chapter_print(templateUUID)/]
 
-	[let content : String = generateDocumentContent()]
+	[let content : String = generateDocumentContent(product, softwareVersion, templateUUID)]
 
 	[HTML_TOC(documentTitle) /]
 
@@ -83,19 +98,22 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 
 [template private generateDocumentContent(
-	this 	: NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
-[Introduction_Chapter_print()/]
+[Introduction_Chapter_print(templateUUID)/]
 
-[BasicInformation_Chapter_print()/]
+[BasicInformation_Chapter_print(product, softwareVersion, templateUUID)/]
 
-[ImplementationProcess_Chapter_print()/]
+[ImplementationProcess_Chapter_print(product, softwareVersion, templateUUID)/]
 
-[VulnerabilityAssessment_Chapter_print()/]
+[VulnerabilityAssessment_Chapter_print(product, softwareVersion, templateUUID)/]
 
-[Conclusion_Chapter_print()/]
+[Conclusion_Chapter_print(product, softwareVersion, templateUUID)/]
 
-[Appendix_Chapter_print()/]
+[Appendix_Chapter_print(product, softwareVersion, templateUUID)/]
 [/template]
 
 
@@ -105,7 +123,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private CoverPage_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
@@ -124,7 +143,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private Introduction_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [html_PAGE_begin('introduction')/]
 	[TOC_Chapter_begin('Introduction') /]
@@ -170,7 +190,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private BasicInformation_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('basic information')/]
 	[TOC_Chapter_begin('Basic Information') /]
@@ -181,7 +204,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [comment html_PAGE_begin('registrant') /]
-		[Registrant_Section_print() /]
+		[Registrant_Section_print(templateUUID) /]
 [html_PAGE_end('registrant') /]
 		
 		[comment
@@ -201,7 +224,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [html_PAGE_begin('data architecture') /]
-		[DataArchitecture_Section_print()/]
+		[DataArchitecture_Section_print(product, softwareVersion, templateUUID)/]
 [html_PAGE_end('data architecture') /]
 		
 		[comment
@@ -210,7 +233,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [html_PAGE_begin('network security') /]
-		[NetworkSecurityCapabilities_Section_print() /]
+		[NetworkSecurityCapabilities_Section_print(product, softwareVersion, templateUUID) /]
 [html_PAGE_end('network security') /]
 		
 		[comment
@@ -219,7 +242,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [html_PAGE_begin('security patches') /]
-		[SecurityPatches_Section_print() /]
+		[SecurityPatches_Section_print(product, softwareVersion, templateUUID) /]
 [html_PAGE_end('security patches') /]
 		
 		[comment
@@ -228,7 +251,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [html_PAGE_begin('security software') /]
-		[SecuritySoftware_Section_print() /]
+		[SecuritySoftware_Section_print(product, softwareVersion, templateUUID) /]
 [html_PAGE_end('security software') /]
 	
 		
@@ -238,7 +261,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			--------------------
 		/]
 [html_PAGE_begin('OTS') /]
-		[OTS_Section_print() /]
+		[OTS_Section_print(templateUUID) /]
 	[TOC_Chapter_end() /]
 [comment html_PAGE_end('OTS') /]
 [html_PAGE_end('basic information')/]
@@ -251,7 +274,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private Registrant_Section_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Registrant') /]
 	<table class="table-2-columns">
@@ -278,7 +302,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private DataArchitecture_Section_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Data Architecture') /]
 
@@ -288,7 +315,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [comment TOC_SubSection_begin('data architecture > Description') /]
-	[protectedArea('Data Architecture > Description', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+	[protectedArea('Data Architecture > Description', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > description') /]
 
@@ -298,7 +325,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [comment html_PAGE_begin('data architecture > description') /]
-	[Diagram_SubSection_print() /]
+	[Diagram_SubSection_print(product, softwareVersion, templateUUID) /]
 [html_PAGE_end('data architecture > diagram') /]
 
 	[comment
@@ -313,7 +340,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [html_PAGE_begin('data architecture > network interfaces') /]
-	[NetworkInterfaces_SubSection_print() /]
+	[NetworkInterfaces_SubSection_print(templateUUID) /]
 [html_PAGE_end('data architecture > network interfaces') /]
 	
 	[comment
@@ -322,7 +349,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [html_PAGE_begin('data architecture > storage media') /]
-	[StorageMedia_SubSection_print() /]
+	[StorageMedia_SubSection_print(templateUUID) /]
 [html_PAGE_end('data architecture > storage media') /]
 
 	[comment
@@ -331,7 +358,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [html_PAGE_begin('data architecture > wireless device') /]
-	[WirelessDevice_SubSection_print() /]	
+	[WirelessDevice_SubSection_print(templateUUID) /]	
 [html_PAGE_end('data architecture > wireless device') /]
 	
 	[comment
@@ -340,7 +367,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [html_PAGE_begin('data architecture > data assets') /]
-	[DataAssets_SubSection_print() /]
+	[DataAssets_SubSection_print(templateUUID) /]
 [html_PAGE_end('data architecture > data assets') /]
 	
 	[comment
@@ -349,7 +376,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		....................
 	/]
 [html_PAGE_begin('data architecture > data flow') /]
-	[DataFlow_SubSection_print() /]
+	[DataFlow_SubSection_print(templateUUID) /]
 [html_PAGE_end('data architecture > data flow') /]
 
 	[comment
@@ -363,7 +390,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			<ul>
 				<li>Product Security Characteristics</li>
 				<li>Manufacturer Disclosure Statement for Medical Device Security (MDS2)</li>
-				[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+				[protectedArea('Data Architecture > Applicable Documents', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 			</ul>
 		[TOC_SubSection_end() /]
 	[html_PAGE_end('data architecture > applicable documents') /]
@@ -379,7 +406,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private NetworkSecurityCapabilities_Section_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Network security capabilities') /]
 	[html_NO_PRINT_start() /]
@@ -405,7 +435,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		<p>
 			MDS2 covers the following capabilities:
 		</p>
-		[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('MDS2 > Covered Capabilities', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[html_TIP_End() /]
 
 [TOC_Section_end() /]
@@ -418,7 +448,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private OTS_Section_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Off-the-shelf Software (OTS)') /]
 	[html_NO_PRINT_start() /]
@@ -484,7 +515,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private SecurityPatches_Section_print(
-	this : NamedElement
+	this			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Security patches') /]
 	[html_NO_PRINT_start() /]
@@ -507,7 +541,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NOTE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Patches', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+	[protectedArea('Security > Security Patches', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -519,7 +553,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private SecuritySoftware_Section_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [TOC_Section_begin('Security Software') /]
 	[html_NO_PRINT_start() /]
@@ -544,7 +581,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_EXAMPLE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Software', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+	[protectedArea('Security > Security Software', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -555,7 +592,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private ImplementationProcess_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('implementation process') /]
 [TOC_Chapter_begin('Implementation Process') /]
@@ -578,7 +618,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Risk Management > Description', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
@@ -597,7 +637,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999'))/]
+		[protectedArea('Requirements Specification > Description', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID))/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
@@ -621,7 +661,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]	
+		[protectedArea('Verification and Validation > Description', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -640,7 +680,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Traceability > Description', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
@@ -694,13 +734,13 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[comment TOC_SubSection_end() /]
 
 		[TOC_SubSection_begin('Software Maintenance Plan') /]
-			[protectedArea('Maintenance Plan > Software Maintenance Plan', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+			[protectedArea('Maintenance Plan > Software Maintenance Plan', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 		[TOC_SubSection_end() /]
 		
 
 		[TOC_SubSection_begin('Notification Plan') /]
 			[comment class A, B, C /]
-			[protectedArea('Maintenance Plan > Notification Plan', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+			[protectedArea('Maintenance Plan > Notification Plan', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 		[TOC_SubSection_end() /]
 
 		[TOC_SubSection_begin('Security Incident Handling') /]
@@ -710,7 +750,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			</p>
 [else]
 			[comment class B, C /]
-			[protectedArea('Maintenance Plan > Security Incident Handling', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+			[protectedArea('Maintenance Plan > Security Incident Handling', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 [/if]
 		[TOC_SubSection_end() /]
 [/let]
@@ -726,7 +766,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private VulnerabilityAssessment_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('vulnerablity assessment') /]
 [TOC_Chapter_begin('Vulnerability Assessment') /]
@@ -786,7 +829,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	
 
 	[TOC_Section_begin('Vulnerability Management Plan') /]
-		[protectedArea('Vulnerability Assessment > Vulnerability Management Plan', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Vulnerability Assessment > Vulnerability Management Plan', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 
 		[DocRef_Sbom_Vulnerability_Reporting() /]
 		[DocRef_Sbom_Vulnerability_Disclosure() /]
@@ -794,12 +837,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 
 	[comment Class A, B, C /]
 	[TOC_Section_begin('List of Known Vulnerabilities') /]
-		[protectedArea('Vulnerability Assessment > List of Known Vulnerabilities', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Vulnerability Assessment > List of Known Vulnerabilities', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[TOC_Section_end() /]
 
 	[comment Class A, B, C /]
 	[TOC_Section_begin('List of Residual Vulnerabilities') /]
-		[protectedArea('Vulnerability Assessment > List of Residual Vulnerabilities', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Vulnerability Assessment > List of Residual Vulnerabilities', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[TOC_Section_end() /]
 
 	[comment Class B, C /]
@@ -809,7 +852,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
 		</p>
 [else]
-		[protectedArea('Vulnerability Assessment > Security Self-Assessment Report', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Vulnerability Assessment > Security Self-Assessment Report', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 
 		<p><b>Applicable Documents</b></p>
 		<ul>
@@ -825,7 +868,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 			Product has Software Security Level of [level /]. No Pentest required.
 		</p>
 [else]
-		[protectedArea('Vulnerability Assessment > Pentest Report', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Vulnerability Assessment > Pentest Report', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 [/if]
 	[TOC_Section_end() /]
 [/let]
@@ -840,7 +883,10 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private Conclusion_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('conclusion')/]
 	[TOC_Chapter_begin('Conclusion') /]
@@ -851,7 +897,7 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_Section_begin('Conclusion') /]
-		[protectedArea('Conclusion > Conclusion', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Conclusion > Conclusion', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 		[comment TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]
@@ -864,11 +910,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	====================
 /]
 [template private Appendix_Chapter_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [html_PAGE_begin('appendix')/]
 	[TOC_Chapter_begin('Appendix') /]
-		[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS('1145613c-bd93-4c19-b613-4b65e2ab8999')) /]
+		[protectedArea('Appendix', DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('appendix')/]
 [/template]
@@ -880,7 +929,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	....................
 /]
 [template private DataAssets_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Data (Assets)') /]
 	[html_NO_PRINT_start() /]
@@ -921,7 +971,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	....................
 /]
 [template private DataFlow_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Data (Asset) Flow') /]
 	[html_NO_PRINT_start() /]
@@ -954,12 +1005,15 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	--------------------
 /]
 [template private Diagram_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	product			: Product,
+	softwareVersion	: String,
+	templateUUID	: String
 )]
 [for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
 [this.TOC_SubSection_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
 
-	[this.html_IMG_ProductArchitectureDiagram('1145613c-bd93-4c19-b613-4b65e2ab8999', product) /]
+	[this.html_IMG_ProductArchitectureDiagram(product, softwareVersion, templateUUID) /]
 	
 [this.TOC_SubSection_end()/]
 [/for]
@@ -972,7 +1026,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	....................
 /]
 [template private NetworkInterfaces_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Network Interfaces') /]
 	[html_NO_PRINT_start() /]
@@ -1126,7 +1181,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	....................
 /]
 [template private StorageMedia_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Storage Media') /]
 	[html_NO_PRINT_start() /]
@@ -1216,7 +1272,8 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 	....................
 /]
 [template private WirelessDevice_SubSection_print(
-	this : NamedElement
+	this 			: NamedElement,
+	templateUUID	: String
 )]
 [TOC_SubSection_begin('Wireless Device') /]
 	[html_NO_PRINT_start() /]
