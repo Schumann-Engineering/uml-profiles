@@ -2,6 +2,7 @@
 [module DEV_ModelReport(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1',
 	'http://www.eclipse.org/emf/2002/Ecore'
 )]
 
@@ -20,17 +21,19 @@
 [import engineering::schumann::uml::m2t::uml::test::Profile /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
 
 [template public generateDocument_DEV_ModelTestReport(
 	this : Model
 )
 {
-	templateUUID	: String = '5d20db90-3c4d-4f61-998c-76a84a5ab679';
+	templateUUID	: String	= '5d20db90-3c4d-4f61-998c-76a84a5ab679';
+	_context		: Context	= getContext(this, null, null, templateUUID);
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'md') /]
 
-[file (DocGen_File_URI(null, null, templateUUID), false, 'UTF-8')]
+[file (DocGen_File_URI(_context), false, 'UTF-8')]
 # Self-test
 
 ## Profiles

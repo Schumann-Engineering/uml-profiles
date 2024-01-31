@@ -11,6 +11,11 @@
 [import engineering::schumann::uml::m2t::html::css::Layout /]
 [import engineering::schumann::uml::m2t::html::css::Table /]
 [import engineering::schumann::uml::m2t::html::css::Toc /]
+[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Layout /]
 
 
 [template protected CSS(
@@ -54,14 +59,10 @@
 [/template]
 
 
-[template public CSS_ADDON(
-	devNull : OclAny
-)][/template]
-
-
-[template public HTML_START(
-	devNull : OclAny,
-	title	: String
+[template protected HTML_START_HEAD_BEGIN(
+	devNull 		: OclAny,
+	title			: String,
+	_context	: String
 )]
 [XHTML_DOCTYPE_STRICT() /]
 [XHTML_START()/]
@@ -71,43 +72,63 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 [CSS() /]
-[CSS_ADDON() /]
+[/template]
+
+
+[template public HTML_START(
+	devNull 		: OclAny,
+	title			: String,
+	_context	: String
+)]
+[HTML_START_HEAD_BEGIN(title, _context) /]
+[HTML_START_HEAD_END(_context) /]
+[/template]
+
+
+[template protected HTML_START_HEAD_END(
+	devNull 	: OclAny,
+	_context	: String
+)]
 	</head>
 	<body>
+		[env_clearErrors(_context) /]
+		[TOC_init(_context)/]
 [/template]
 
 
 [template public HTML_END(
-	devNull : OclAny
+	devNull 	: OclAny,
+	_context	: String
 )]
+[env_clearErrors(_context) /]
 	</body>
 </html>
 [/template]
 
 
 [template public HTML_DOCTYPE_STRICT(
-	devNull : OclAny
+	devNull 	: OclAny
 )]
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 [/template]
 
 
 [template public XHTML_DOCTYPE_STRICT(
-	devNull : OclAny
+	devNull 	: OclAny
 )]
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 [/template]
 
 
 [template public XHTML_START(
-	devNull : OclAny
+	devNull 	: OclAny
 )]
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 [/template]
 
 
 [template public CDATA_start(
-	devNull : OclAny
+	devNull 	: OclAny
 )]
 ['<![CDATA['/]
 [/template]
@@ -117,6 +138,53 @@
 	devNull : OclAny
 )]
 [']]>'/]
+[/template]
+
+
+[template public HTML_PAGE_TOC(
+	devNull 		: OclAny,
+	docTitle 		: String,
+	_context	: String
+)]
+[html_PAGE_begin('__toc__') /]
+	<p class="toc-title">
+		Table of Contents
+	</p>
+
+	<pre>
+[for (TOC_getTOC()->select(at(3).toInteger() >= 2))]
+	[let name  : String  = self->at(1)]
+	[let id  : String  = self->at(2)]
+	[let level : Integer = self->at(3).toInteger()]
+	['....'.repeat(level - 2) /][TOC_link( name, id ) /]
+	[/let]
+	[/let]
+	[/let]
+[/for]
+	</pre>
+[html_PAGE_end('__toc__') /]
+[/template]
+
+
+[template public HTML_PAGE_ERRORS(
+	devNull 	: OclAny,
+	_context	: String
+)]
+[if (env_hasError(_context))]
+[html_PAGE_begin('__errors__') /]
+	[html_ANSI_DANGER_Start()/]
+		<p>
+			There were errors while generating this document!
+		</p>
+	[html_ANSI_DANGER_End() /]
+
+	<ul>
+		[for (env_getErrors(_context))]
+		<li>[self /]</li>
+		[/for]	
+	</ul>
+[html_PAGE_end('__errors__') /]
+[/if]
 [/template]
 
 

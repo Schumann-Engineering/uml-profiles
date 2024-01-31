@@ -1,21 +1,28 @@
 [comment encoding = UTF-8 /]
-[module ProtectedArea('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module ProtectedArea(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
 
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
-[template public protectedArea(
+[template protected protectedArea(
 	devNull 		: OclAny,
 	name    		: String,
-	includePaths	: Sequence(String)
+	includePaths	: Sequence(String),
+	templateUUID	: String
 )
 post(trim())
 {
 	includeContent	: String = _protectedArea(name, includePaths);
 }]
 [if (includeContent = null)]
-[html_TBD('Content for "' + name + '" does not exist (yet) <i>OR</i> could not be found.') /]
+[let errorMessage : String = 'Content for "' + name + '" does not exist (yet) <i>OR</i> could not be found.']
+[html_TBD(errorMessage) /]
+[env_addError(errorMessage, templateUUID) /]
+[/let]
 [else]
 [includeContent.trim() /]
 [/if]

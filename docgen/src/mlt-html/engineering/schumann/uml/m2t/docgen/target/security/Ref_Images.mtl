@@ -1,7 +1,8 @@
 [comment encoding = UTF-8 /]
 [module Ref_Images(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
 )]
 
 
@@ -11,11 +12,9 @@
 
 [template public html_IMG_ProductArchitectureDiagram(
 	this			: NamedElement,
-	product 		: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 )]<img
-	src="[DIRECTORY_URI_IMAGES(product, softwareVersion, templateUUID) /][product.productName/]-Product_Architecture_Diagram_([product.model/]).svg"
+	src="[DIRECTORY_URI_IMAGES(_context) /][_context.productName/]-Product_Architecture_Diagram_([_context.productModel/]).svg"
 	title="Product Architecture Diagram"
 	alt="Diagram showing the product architecture with system elements, environment, security zone and user groups and their interactions"
 	width="100%"

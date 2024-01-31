@@ -1,7 +1,8 @@
 [comment encoding = UTF-8 /]
 [module FileName(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
 )]
 
 
@@ -27,107 +28,89 @@ each file would need a new engine / run.
 	this 			: NamedElement,
 	key				: String,
 	default			: String,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : String = 
-	if (product <> null) then
-		env(
-			key,
-			default,
-			Sequence(String){ product.productName, product.model, softwareVersion }
-		)
-	else
-		env(
-			key,
-			default,
-			Sequence(String){ null, null, softwareVersion }
-		)
-	endif
+	env(
+		key,
+		default,
+		Sequence(String){ _context.productName, _context.productModel, _context.softwareVersion }
+	)
 /]	
 
 
 [query private DIRECTORY_NAME_SNIPPETS(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String
+	_context		: Context
 ) : String =
 	env2(
 		'DocGen.Output.Directory.Snippets',
 		'_snippets',
-		product, softwareVersion, null
+		_context
 	)
 /]
 
 
 [query private DIRECTORY_NAME_SNIPPETS_COMMON(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String
+	_context		: Context
 ) : String =
 	env2(
 		'DocGen.Output.Directory.Snippets.common',
 		'_common',
-		product, softwareVersion, null
+		_context
 	)
 /]
 
 
 [query private DIRECTORY_NAME_IMAGES(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String
+	_context		: Context
 ) : String =
 	env2(
 		'DocGen.Output.Directory.Images',
-		this.name + '-' + product.model + '-' + softwareVersion,
-		product, softwareVersion, null
+		this.name + '-' + _context.productModel + '-' + _context.softwareVersion,
+		_context
 	)
 /]
 
 
 [query private DocGen_Directory_Name(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : String =
 	env2(
-		templateUUID + '.Output.Directory',
-		DIRECTORY_NAME_DEFAULT(product, softwareVersion),
-		product, softwareVersion, templateUUID
+		_context.templateUUID + '.Output.Directory',
+		DIRECTORY_NAME_DEFAULT(_context),
+		_context
 	)
 /]
 
 
 [query private DIRECTORY_NAME_DEFAULT(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String
+	_context		: Context
 ) : String =
 	env2(
 		'DocGen.Output.Directory',
 		this.eClass().name + PATH_SEPARATOR() + this.name,
-		product, softwareVersion, null
+		_context
 	)
 /]
 
 
 [query public DocGen_Directory_URI(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : Sequence(String) =
 	Sequence(String)
 	{
-		DocGen_Directory_Name(product, softwareVersion, templateUUID)
+		DocGen_Directory_Name(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
 		+ CSMN_PRODUCT_NAME()
 		+ PATH_SEPARATOR()
-		+ DocGen_File_Part_Name(templateUUID)
+		+ DocGen_File_Part_Name(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
@@ -138,65 +121,63 @@ each file would need a new engine / run.
 
 [query public DIRECTORY_URI_SNIPPETS(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : Sequence(String) =
 	Sequence(String)
 	{
-		DocGen_Directory_Name(product, softwareVersion, templateUUID)
+		DocGen_Directory_Name(_context)
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 	    + PATH_SEPARATOR()
-		+ DocGen_File_Part_Name(templateUUID)
+		+ DocGen_File_Part_Name(_context)
 		+ PATH_SEPARATOR(),
 
-		DocGen_Directory_Name(product, softwareVersion, templateUUID)
+		DocGen_Directory_Name(_context)
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 	    + PATH_SEPARATOR(),
 
-		DocGen_Directory_Name(product, softwareVersion, templateUUID)
+		DocGen_Directory_Name(_context)
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 	    + PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
 		+ CSMN_PRODUCT_NAME()
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
-		+ DocGen_File_Part_Name(templateUUID)
+		+ DocGen_File_Part_Name(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
 		+ CSMN_PRODUCT_NAME()
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
-		+ DocGen_File_Part_Title(templateUUID)
+		+ DocGen_File_Part_Title(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
 		+ CSMN_PRODUCT_NAME()
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
 		+ CSMN_PRODUCT_NAME()
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS_COMMON(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
 		+ PATH_SEPARATOR(),
 
-		DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR(),
 
-		DIRECTORY_NAME_SNIPPETS(product, softwareVersion)
+		DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS_COMMON(product, softwareVersion)
+		+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
 		+ PATH_SEPARATOR()
 	}
 /]
@@ -204,21 +185,19 @@ each file would need a new engine / run.
 
 [query public DIRECTORY_URI_IMAGES(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : String =
-	DIRECTORY_NAME_IMAGES(product, softwareVersion)
+	DIRECTORY_NAME_IMAGES(_context)
     + PATH_SEPARATOR()
 /]
 
 
 [query private DocGen_File_Part_Extension(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 ) : String =
 	env(
-		templateUUID + '.Output.Extension', 
+		_context.templateUUID + '.Output.Extension', 
 		'txt'
 	)
 /]
@@ -226,10 +205,10 @@ each file would need a new engine / run.
 
 [query private DocGen_File_Part_Name(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 ) : String =
 	env(
-		templateUUID + '.Output.FileName', 
+		_context.templateUUID + '.Output.FileName', 
 		this.name
 	)
 /]
@@ -237,10 +216,10 @@ each file would need a new engine / run.
 
 [query private DocGen_File_Part_Title(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 ) : String =
 	env(
-		templateUUID + '.Output.Title', 
+		_context.templateUUID + '.Output.Title', 
 		this.name
 	)
 /]
@@ -258,25 +237,22 @@ each file would need a new engine / run.
 
 [query private DocGen_File_FileName(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
+
 ) : String =
-	DocGen_File_Part_Name(templateUUID)
+	DocGen_File_Part_Name(_context)
 	+ FILE_EXTENSION_SEPARATOR()
-	+ DocGen_File_Part_Extension(templateUUID)
+	+ DocGen_File_Part_Extension(_context)
 /]
 
 
 [query public DocGen_File_URI(
 	this 			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 ) : String = 
-	DocGen_Directory_Name(product, softwareVersion, templateUUID)
+	DocGen_Directory_Name(_context)
 	+ PATH_SEPARATOR()
-	+ DocGen_File_FileName(product, softwareVersion, templateUUID) 
+	+ DocGen_File_FileName(_context) 
 /]
 
 

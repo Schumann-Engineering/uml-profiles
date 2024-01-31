@@ -15,7 +15,7 @@
 	softwareVersion	: String,
 	templateUUID	: String
 ) : String =
-	env('SBOM.Input.Director',
+	env('SBOM.Input.Directory',
 		this.name + '-' + product.model + '-' + softwareVersion,
 		Sequence{ this.name, product.model, softwareVersion },
 		templateUUID

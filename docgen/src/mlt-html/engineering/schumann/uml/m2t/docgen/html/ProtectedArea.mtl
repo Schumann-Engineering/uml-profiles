@@ -1,0 +1,17 @@
+[comment encoding = UTF-8 /]
+[module ProtectedArea(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)
+extends engineering::schumann::uml::m2t::html::ProtectedArea
+]
+
+
+[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+
+
+[template public protectedArea(
+	devNull 		: NamedElement,
+	locator			: String,
+	_context		: Context
+)][protectedArea( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )/][/template]

@@ -2,10 +2,9 @@
 [module INT_SbomReport(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
-	'http://schumann.engineering/sbom/1'
-)
-extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
-]
+	'http://schumann.engineering/sbom/1',
+	'http://schumann.engineering/docgen/1'
+)]
 
 
 [**
@@ -19,13 +18,14 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
  **/]
 
 
+[import engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument /]
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName /]
 [import engineering::schumann::uml::m2t::docgen::common::FileName.sbom /]
-[import engineering::schumann::uml::m2t::docgen::security::Ref_Regulatory /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
@@ -35,11 +35,12 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::Link /]
-[import engineering::schumann::uml::m2t::html::ProtectedArea /]
+[import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::html::Toc /]
 
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
+[import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
 
 [template public generateDocument_INT_SbomReport(
@@ -56,14 +57,16 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [loadSbomLibrary() /]
 [for (product : Product | products)]
 [for (softwareVersion : String | product.softwareVersion)]
+[let _context : Context = getContext(this, product, softwareVersion, templateUUID)]
 [let sbomFileName : String = findSbomFileName(
 	this.SBOM_File_URI(product, softwareVersion, templateUUID),
-	this.DocGen_Directory_URI(product, softwareVersion, templateUUID))]
+	this.DocGen_Directory_URI(_context))]
 [if (sbomFileName <> null)]
 [let sbom : Sbom = loadSbom(sbomFileName)]
-[sbom.generateDocument_INT_SbomReport(this, product, softwareVersion, templateUUID) /]
+[sbom.generateDocument_INT_SbomReport(this, _context) /]
 [/let]
 [/if]
+[/let]
 [/let]
 [/for]
 [/for]
@@ -73,30 +76,27 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template public generateDocument_INT_SbomReport(
 	this			: Sbom,
 	owner			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 )
 {
-	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
+	documentTitle	: String	= env(_context.templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
 }]
-[file (owner.DocGen_File_URI(product, softwareVersion, templateUUID), false, 'UTF-8')]
-[HTML_START(documentTitle) /]
-	[owner.CoverPage_Chapter_print(templateUUID) /]
+[file (owner.DocGen_File_URI(_context), false, 'UTF-8')]
+[HTML_START(documentTitle, _context) /]
+	[owner.CoverPage_Chapter_print(_context) /]
 
-	[let content : String = generateDocumentContent(owner, product, softwareVersion, templateUUID)]
+	[let content : String = generateDocumentContent(owner, _context)]
+	[HTML_PAGE_ERRORS(_context)/]
 
-	[HTML_TOC(documentTitle) /]
+	[HTML_PAGE_TOC(documentTitle, _context) /]
 
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
 		'fixAcceleoOutput(java.lang.String)',
 		Sequence { content }) /]
-	[/let]
 	
-[comment HTML_END() /]
-	</body>
-</html>
+	[/let]
+[HTML_END(_context)/]
 [/file]
 [/template]
 
@@ -104,20 +104,18 @@ extends engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument
 [template private generateDocumentContent(
 	this 			: Sbom,
 	owner			: NamedElement,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 )
 post(trim())]
-[owner.Introduction_Chapter_print(templateUUID) /]
+[owner.Introduction_Chapter_print(_context) /]
 
-[owner.BasicInformation_Chapter_print(templateUUID) /]
+[owner.BasicInformation_Chapter_print(_context) /]
 
-[owner.SoftwareComponents_Chapter_print(this, templateUUID) /]
+[owner.SoftwareComponents_Chapter_print(this, _context) /]
 
-[owner.VulnerabilityHandling_Chapter_print(this, templateUUID) /]
+[owner.VulnerabilityHandling_Chapter_print(this, _context) /]
 
-[owner.Appendix_Licenses_print(this, product, softwareVersion, templateUUID) /]
+[owner.Appendix_Licenses_print(this, _context) /]
 [/template]
 
 
@@ -128,7 +126,7 @@ post(trim())]
 /]
 [template private CoverPage_Chapter_print(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
@@ -164,7 +162,7 @@ post(trim())]
 /]
 [template private Introduction_Chapter_print(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 )]
 [html_PAGE_begin('introduction') /]
 	[TOC_Chapter_begin('Introduction') /]
@@ -217,7 +215,7 @@ post(trim())]
 /]
 [template private BasicInformation_Chapter_print(
 	this 			: NamedElement,
-	templateUUID	: String
+	_context		: Context
 )]
 [html_PAGE_begin('basic information') /]
 	[TOC_Chapter_begin('Basic information') /]
@@ -251,33 +249,33 @@ post(trim())]
 [template private SoftwareComponents_Chapter_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [html_PAGE_begin('software components') /]
 	[TOC_Chapter_begin('Software Components') /]
-		[SoftwareComponent_Overview_Section_print(sbom, templateUUID) /]
+		[SoftwareComponent_Overview_Section_print(sbom, _context) /]
 [html_PAGE_end('software components') /]
 
 [html_PAGE_begin('definitions') /]
-		[SoftwareComponent_Definitions_Section_print(sbom, templateUUID) /]
+		[SoftwareComponent_Definitions_Section_print(sbom, _context) /]
 [html_PAGE_end('definitions') /]
 
 [html_PAGE_begin('os and firmware') /]
 		[TOC_Section_begin('Software from ' + VENDOR_NAME()) /]
-			[SoftwareComponent_Firmware_SubSection_print(sbom, templateUUID) /]
+			[SoftwareComponent_Firmware_SubSection_print(sbom, _context) /]
 [html_PAGE_end('os and firmware') /]
 
 [html_PAGE_begin('application') /]
-			[SoftwareComponent_Application_SubSection_print(sbom, templateUUID) /]
+			[SoftwareComponent_Application_SubSection_print(sbom, _context) /]
 [html_PAGE_end('application') /]
 
 [html_PAGE_begin('library') /]
-			[SoftwareComponent_Library_SubSection_print(sbom, templateUUID) /]
+			[SoftwareComponent_Library_SubSection_print(sbom, _context) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('library') /]
 
 [html_PAGE_begin('3rdparty') /]
-		[SoftwareComponent_3rdParty_Section_print(sbom, templateUUID) /]
+		[SoftwareComponent_3rdParty_Section_print(sbom, _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('3rdparty') /]
 [/template]
@@ -291,7 +289,7 @@ post(trim())]
 [template private SoftwareComponent_Overview_Section_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_Section_begin('Overview') /]
 	<p>
@@ -311,7 +309,7 @@ post(trim())]
 [template private SoftwareComponent_Definitions_Section_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_Section_begin('Definitions') /]
 	[TOC_SubSection_begin('IEC 81001-5-1 Classification')/]
@@ -419,7 +417,7 @@ post(trim())]
 [template private SoftwareComponent_Firmware_SubSection_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_SubSection_begin('Operating System and Firmware') /]
 	<p>
@@ -447,7 +445,7 @@ post(trim())]
 [template private SoftwareComponent_Application_SubSection_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_SubSection_begin('Applications') /]
 	<p>
@@ -475,7 +473,7 @@ post(trim())]
 [template private SoftwareComponent_Library_SubSection_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_SubSection_begin('Libraries') /]
 	<p>
@@ -499,7 +497,7 @@ post(trim())]
 [template private SoftwareComponent_3rdParty_Section_print(
 	this			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [TOC_Section_begin('Software from 3rd Party / C(OTS) / (F)OSS') /]
 	<p>
@@ -523,7 +521,7 @@ post(trim())]
 [template private VulnerabilityHandling_Chapter_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	templateUUID	: String
+	_context		: Context
 )]
 [html_PAGE_begin('vulnerability handling') /]
 [TOC_Chapter_begin('Vulnerability handling') /]
@@ -568,9 +566,7 @@ post(trim())]
 [template private Appendix_Licenses_print(
 	this 			: NamedElement,
 	sbom 			: Sbom,
-	product			: Product,
-	softwareVersion	: String,
-	templateUUID	: String
+	_context		: Context
 )
 {
 	licenses : OrderedSet(String) = sbom.license();
@@ -595,7 +591,7 @@ post(trim())]
 	[/for]
 	</ul>
 
-	[this.protectedArea('Licenses > ' + self, this.DIRECTORY_URI_SNIPPETS(product, softwareVersion, templateUUID)) /]
+	[this.protectedArea('Licenses > ' + self, _context) /]
 	[this.TOC_Section_end() /]
 [/for]
 [html_PAGE_end('appendix - a') /]
