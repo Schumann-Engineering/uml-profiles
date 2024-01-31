@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link engineering.schumann.uml.docgen.Context#getSoftwareVersion <em>Software Version</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getTemplateUUID <em>Template UUID</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getUUID <em>UUID</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getDocumentTitle <em>Document Title</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.docgen.DocGenPackage#getContext()
@@ -181,5 +182,31 @@ public interface Context extends EObject {
 	 * @generated
 	 */
 	void setUUID(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Document Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Document Title</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Document Title</em>' attribute.
+	 * @see #setDocumentTitle(String)
+	 * @see engineering.schumann.uml.docgen.DocGenPackage#getContext_DocumentTitle()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getDocumentTitle();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.docgen.Context#getDocumentTitle <em>Document Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Document Title</em>' attribute.
+	 * @see #getDocumentTitle()
+	 * @generated
+	 */
+	void setDocumentTitle(String value);
 
 } // Context

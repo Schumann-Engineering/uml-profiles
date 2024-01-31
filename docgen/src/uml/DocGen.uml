@@ -26,17 +26,54 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_vJYg8MAxEe6J2ZYSA98_lA" name="UUID">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_C3MXQMBREe6arp2ZPgthIg" name="documentTitle">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tb964MBHEe6J2ZYSA98_lA" name="TocEntry">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_wHNZIMBHEe6J2ZYSA98_lA" name="id">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_45UVsMBMEe6J2ZYSA98_lA"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xnKwAMBHEe6J2ZYSA98_lA" name="displayText">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_0EUu8MBHEe6J2ZYSA98_lA" name="parent" type="_tb964MBHEe6J2ZYSA98_lA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_110hwMBHEe6J2ZYSA98_lA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j10DgMBIEe6J2ZYSA98_lA" name="child" type="_tb964MBHEe6J2ZYSA98_lA" aggregation="composite" association="_j1xnQMBIEe6J2ZYSA98_lA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_j10DgcBIEe6J2ZYSA98_lA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_j10DgsBIEe6J2ZYSA98_lA" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j10qkMBIEe6J2ZYSA98_lA" name="parent" type="_tb964MBHEe6J2ZYSA98_lA" association="_j1xnQMBIEe6J2ZYSA98_lA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mZhWYMBIEe6J2ZYSA98_lA"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_2D8LYMBJEe6J2ZYSA98_lA" name="depth" bodyCondition="_9qYYUMBJEe6J2ZYSA98_lA" isQuery="true">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_9qYYUMBJEe6J2ZYSA98_lA" name="TocEntry_depth_query" constrainedElement="_2D8LYMBJEe6J2ZYSA98_lA">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_NSqUwMBKEe6J2ZYSA98_lA" name="body">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+            <language>OCL</language>
+            <body>if (parent = null) then&#xD;
+	1&#xD;
+else&#xD;
+	parent.depth() + 1&#xD;
+endif</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6R8c4MBJEe6J2ZYSA98_lA" name="return value" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_lbuUkMBMEe6J2ZYSA98_lA" name="id" isQuery="true">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oYkgMMBMEe6J2ZYSA98_lA" name="return value" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-o680MBMEe6J2ZYSA98_lA" name="delimiter">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_j1xnQMBIEe6J2ZYSA98_lA" memberEnd="_j10DgMBIEe6J2ZYSA98_lA _j10qkMBIEe6J2ZYSA98_lA">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1zccMBIEe6J2ZYSA98_lA" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j1zcccBIEe6J2ZYSA98_lA" key="nature" value="UML_Nature"/>
+      </eAnnotations>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_xY_zIMAxEe6J2ZYSA98_lA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_xZF5wMAxEe6J2ZYSA98_lA" source="http://www.eclipse.org/uml2/2.0.0/UML">

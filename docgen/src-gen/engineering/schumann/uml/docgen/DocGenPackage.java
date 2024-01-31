@@ -123,13 +123,22 @@ public interface DocGenPackage extends EPackage {
 	int CONTEXT__UUID = 5;
 
 	/**
+	 * The feature id for the '<em><b>Document Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__DOCUMENT_TITLE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Context</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 6;
+	int CONTEXT_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -301,6 +310,17 @@ public interface DocGenPackage extends EPackage {
 	EAttribute getContext_UUID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.docgen.Context#getDocumentTitle <em>Document Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Document Title</em>'.
+	 * @see engineering.schumann.uml.docgen.Context#getDocumentTitle()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EAttribute getContext_DocumentTitle();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.docgen.TocEntry <em>Toc Entry</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,6 +474,14 @@ public interface DocGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT__UUID = eINSTANCE.getContext_UUID();
+
+		/**
+		 * The meta object literal for the '<em><b>Document Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT__DOCUMENT_TITLE = eINSTANCE.getContext_DocumentTitle();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.docgen.impl.TocEntryImpl <em>Toc Entry</em>}' class.

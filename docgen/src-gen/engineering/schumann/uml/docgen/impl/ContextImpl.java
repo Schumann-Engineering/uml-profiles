@@ -24,6 +24,7 @@ import engineering.schumann.uml.docgen.DocGenPackage;
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getSoftwareVersion <em>Software Version</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getTemplateUUID <em>Template UUID</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getUUID <em>UUID</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getDocumentTitle <em>Document Title</em>}</li>
  * </ul>
  *
  * @generated
@@ -148,6 +149,26 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	 * @ordered
 	 */
 	protected String uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOCUMENT_TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String documentTitle = DOCUMENT_TITLE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -315,6 +336,29 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	 * @generated
 	 */
 	@Override
+	public String getDocumentTitle() {
+		return documentTitle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDocumentTitle(String newDocumentTitle) {
+		String oldDocumentTitle = documentTitle;
+		documentTitle = newDocumentTitle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocGenPackage.CONTEXT__DOCUMENT_TITLE, oldDocumentTitle, documentTitle));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case DocGenPackage.CONTEXT__UML_ELEMENT:
@@ -329,6 +373,8 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 				return getTemplateUUID();
 			case DocGenPackage.CONTEXT__UUID:
 				return getUUID();
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				return getDocumentTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,6 +404,9 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 				return;
 			case DocGenPackage.CONTEXT__UUID:
 				setUUID((String)newValue);
+				return;
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				setDocumentTitle((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -389,6 +438,9 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 			case DocGenPackage.CONTEXT__UUID:
 				setUUID(UUID_EDEFAULT);
 				return;
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				setDocumentTitle(DOCUMENT_TITLE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,6 +465,8 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 				return TEMPLATE_UUID_EDEFAULT == null ? templateUUID != null : !TEMPLATE_UUID_EDEFAULT.equals(templateUUID);
 			case DocGenPackage.CONTEXT__UUID:
 				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				return DOCUMENT_TITLE_EDEFAULT == null ? documentTitle != null : !DOCUMENT_TITLE_EDEFAULT.equals(documentTitle);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -439,6 +493,8 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 		result.append(templateUUID);
 		result.append(", UUID: ");
 		result.append(uuid);
+		result.append(", documentTitle: ");
+		result.append(documentTitle);
 		result.append(')');
 		return result.toString();
 	}

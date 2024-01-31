@@ -172,6 +172,16 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getContext_DocumentTitle() {
+		return (EAttribute)contextEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTocEntry() {
 		return tocEntryEClass;
 	}
@@ -272,6 +282,7 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		createEAttribute(contextEClass, CONTEXT__SOFTWARE_VERSION);
 		createEAttribute(contextEClass, CONTEXT__TEMPLATE_UUID);
 		createEAttribute(contextEClass, CONTEXT__UUID);
+		createEAttribute(contextEClass, CONTEXT__DOCUMENT_TITLE);
 
 		tocEntryEClass = createEClass(TOC_ENTRY);
 		createEAttribute(tocEntryEClass, TOC_ENTRY__ID);
@@ -319,6 +330,7 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		initEAttribute(getContext_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_TemplateUUID(), ecorePackage.getEString(), "templateUUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_UUID(), ecorePackage.getEString(), "UUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContext_DocumentTitle(), ecorePackage.getEString(), "documentTitle", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tocEntryEClass, TocEntry.class, "TocEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTocEntry_Id(), ecorePackage.getEString(), "id", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

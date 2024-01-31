@@ -39,6 +39,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/softwareVersion"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/templateUUID"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/UUID"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/documentTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="docgen.ecore#//TocEntry">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/id.1"/>
