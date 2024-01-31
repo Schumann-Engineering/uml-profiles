@@ -4,6 +4,7 @@ package engineering.schumann.uml.docgen;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -169,13 +170,22 @@ public interface DocGenPackage extends EPackage {
 	int TOC_ENTRY__DISPLAY_TEXT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * The feature id for the '<em><b>Child</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY__PARENT = 2;
+	int TOC_ENTRY__CHILD = 2;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOC_ENTRY__PARENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>Toc Entry</em>' class.
@@ -184,7 +194,25 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY_FEATURE_COUNT = 3;
+	int TOC_ENTRY_FEATURE_COUNT = 4;
+
+	/**
+	 * The operation id for the '<em>Depth</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOC_ENTRY___DEPTH = 0;
+
+	/**
+	 * The operation id for the '<em>Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOC_ENTRY___ID__STRING = 1;
 
 	/**
 	 * The number of operations of the '<em>Toc Entry</em>' class.
@@ -193,7 +221,7 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY_OPERATION_COUNT = 0;
+	int TOC_ENTRY_OPERATION_COUNT = 2;
 
 
 	/**
@@ -305,15 +333,46 @@ public interface DocGenPackage extends EPackage {
 	EAttribute getTocEntry_DisplayText();
 
 	/**
-	 * Returns the meta object for the reference '{@link engineering.schumann.uml.docgen.TocEntry#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the containment reference list '{@link engineering.schumann.uml.docgen.TocEntry#getChild <em>Child</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent</em>'.
+	 * @return the meta object for the containment reference list '<em>Child</em>'.
+	 * @see engineering.schumann.uml.docgen.TocEntry#getChild()
+	 * @see #getTocEntry()
+	 * @generated
+	 */
+	EReference getTocEntry_Child();
+
+	/**
+	 * Returns the meta object for the container reference '{@link engineering.schumann.uml.docgen.TocEntry#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
 	 * @see engineering.schumann.uml.docgen.TocEntry#getParent()
 	 * @see #getTocEntry()
 	 * @generated
 	 */
 	EReference getTocEntry_Parent();
+
+	/**
+	 * Returns the meta object for the '{@link engineering.schumann.uml.docgen.TocEntry#depth() <em>Depth</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Depth</em>' operation.
+	 * @see engineering.schumann.uml.docgen.TocEntry#depth()
+	 * @generated
+	 */
+	EOperation getTocEntry__Depth();
+
+	/**
+	 * Returns the meta object for the '{@link engineering.schumann.uml.docgen.TocEntry#id(java.lang.String) <em>Id</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Id</em>' operation.
+	 * @see engineering.schumann.uml.docgen.TocEntry#id(java.lang.String)
+	 * @generated
+	 */
+	EOperation getTocEntry__Id__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -423,12 +482,36 @@ public interface DocGenPackage extends EPackage {
 		EAttribute TOC_ENTRY__DISPLAY_TEXT = eINSTANCE.getTocEntry_DisplayText();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Child</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TOC_ENTRY__CHILD = eINSTANCE.getTocEntry_Child();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TOC_ENTRY__PARENT = eINSTANCE.getTocEntry_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Depth</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TOC_ENTRY___DEPTH = eINSTANCE.getTocEntry__Depth();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation TOC_ENTRY___ID__STRING = eINSTANCE.getTocEntry__Id__String();
 
 	}
 

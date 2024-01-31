@@ -19,11 +19,20 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" iD="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TocEntry">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="depth" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="if (parent = null) then&#xD;&#xA;&#x9;1&#xD;&#xA;else&#xD;&#xA;&#x9;parent.depth() + 1&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="id" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="delimiter" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayText" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="child" ordered="false"
+        upperBound="-1" eType="#//TocEntry" containment="true" eOpposite="#//TocEntry/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" ordered="false"
-        eType="#//TocEntry"/>
+        eType="#//TocEntry" eOpposite="#//TocEntry/child"/>
   </eClassifiers>
 </ecore:EPackage>

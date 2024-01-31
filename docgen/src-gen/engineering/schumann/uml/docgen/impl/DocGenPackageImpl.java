@@ -9,6 +9,7 @@ import engineering.schumann.uml.docgen.DocGenPackage;
 import engineering.schumann.uml.docgen.TocEntry;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
@@ -201,8 +202,38 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getTocEntry_Parent() {
+	public EReference getTocEntry_Child() {
 		return (EReference)tocEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTocEntry_Parent() {
+		return (EReference)tocEntryEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTocEntry__Depth() {
+		return tocEntryEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getTocEntry__Id__String() {
+		return tocEntryEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -245,7 +276,10 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		tocEntryEClass = createEClass(TOC_ENTRY);
 		createEAttribute(tocEntryEClass, TOC_ENTRY__ID);
 		createEAttribute(tocEntryEClass, TOC_ENTRY__DISPLAY_TEXT);
+		createEReference(tocEntryEClass, TOC_ENTRY__CHILD);
 		createEReference(tocEntryEClass, TOC_ENTRY__PARENT);
+		createEOperation(tocEntryEClass, TOC_ENTRY___DEPTH);
+		createEOperation(tocEntryEClass, TOC_ENTRY___ID__STRING);
 	}
 
 	/**
@@ -287,9 +321,15 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		initEAttribute(getContext_UUID(), ecorePackage.getEString(), "UUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tocEntryEClass, TocEntry.class, "TocEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTocEntry_Id(), ecorePackage.getEString(), "id", null, 1, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTocEntry_Id(), ecorePackage.getEString(), "id", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getTocEntry_DisplayText(), ecorePackage.getEString(), "displayText", null, 1, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTocEntry_Parent(), this.getTocEntry(), null, "parent", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTocEntry_Child(), this.getTocEntry(), this.getTocEntry_Parent(), "child", null, 0, -1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTocEntry_Parent(), this.getTocEntry(), this.getTocEntry_Child(), "parent", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getTocEntry__Depth(), ecorePackage.getEInt(), "depth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		EOperation op = initEOperation(getTocEntry__Id__String(), ecorePackage.getEString(), "id", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "delimiter", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
