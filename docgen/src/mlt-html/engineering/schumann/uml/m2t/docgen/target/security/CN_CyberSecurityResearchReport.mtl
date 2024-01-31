@@ -41,7 +41,7 @@
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
-[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::standards::text::China_Security /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
@@ -52,19 +52,20 @@
 )
 {
 	templateUUID	: String	= '1145613c-bd93-4c19-b613-4b65e2ab8999';
+	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
 [let scope : Scope = pkg.csmn_scope()]
 [for (product : Product | scope.csmn_productInScope())]
-[if (product.softwareVersion->isEmpty())]
-[let _context : Context = getContext(this, product, 'any', templateUUID)]
+[if (product.softwareVersion->size() = 0)]
+[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID)]
 [pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
 [/let]
 [else]
 [for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, templateUUID)]
+[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID)]
 [pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
 [/let]
 [/for]
@@ -78,18 +79,18 @@
 [template private generateDocument_CN_CyberSecurityResearchReport(
 	this 			: NamedElement,
 	_context		: Context
-)
-{
-	documentTitle	: String	= env(_context.templateUUID + '.Output.Title', 'Cybersecurity Research Report');
-}]
+)]
 [file (DocGen_File_URI(_context), false, 'UTF-8')]
-[HTML_START(documentTitle, _context)/]
+[HTML_START(_context)/]
 	[CoverPage_Chapter_print(_context)/]
 
 	[let content : String = generateDocumentContent(_context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
-	[HTML_PAGE_TOC(documentTitle, _context) /]
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { HTML_PAGE_TOC(_context) }) /]
 
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',

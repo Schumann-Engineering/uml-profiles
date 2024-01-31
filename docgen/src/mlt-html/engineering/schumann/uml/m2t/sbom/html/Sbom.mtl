@@ -43,7 +43,7 @@
 {
 	components : Set(Component) = sbom.allComponents()->select((type = NamespaceType::OperatingSystemDeviceSoftware or type = NamespaceType::OperatingSystem) and isSOUP = false);
 }]
-[if (components->isEmpty())]
+[if (components->size() = 0)]
 <p>
 	(None)
 </p>
@@ -59,7 +59,7 @@
 {
 	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::OperatingSystem and isSOUP = false);
 }]
-[if (components->isEmpty())]
+[if (components->size() = 0)]
 <p>
 	(None)
 </p>
@@ -75,7 +75,7 @@
 {
 	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Application and isSOUP = false);
 }]
-[if (components->isEmpty())]
+[if (components->size() = 0)]
 <p>
 	(None)
 </p>
@@ -91,7 +91,7 @@
 {
 	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::ApplicationLibrary and isSOUP = false);
 }]
-[if (components->isEmpty())]
+[if (components->size() = 0)]
 <p>
 	(None)
 </p>
@@ -107,7 +107,7 @@
 {
 	components : Set(Component) = sbom.allComponents()->select(isSOUP);
 }]
-[if (components->isEmpty())]
+[if (components->size() = 0)]
 <p>
 	(None)
 </p>

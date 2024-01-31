@@ -2,23 +2,22 @@
  */
 package engineering.schumann.uml.docgen.impl;
 
-import engineering.schumann.uml.docgen.DocGenPackage;
-import engineering.schumann.uml.docgen.TocEntry;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import engineering.schumann.uml.docgen.DocGenPackage;
+import engineering.schumann.uml.docgen.TocEntry;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,34 +27,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getId <em>Id</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getIdSuffix <em>Id Suffix</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getDisplayText <em>Display Text</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getChild <em>Child</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.TocEntryImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEntry {
 	/**
-	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The default value of the '{@link #getIdSuffix() <em>Id Suffix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIdSuffix()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String ID_EDEFAULT = null;
+	protected static final String ID_SUFFIX_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * The cached value of the '{@link #getIdSuffix() <em>Id Suffix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getId()
+	 * @see #getIdSuffix()
 	 * @generated
 	 * @ordered
 	 */
-	protected String id = ID_EDEFAULT;
+	protected String idSuffix = ID_SUFFIX_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDisplayText() <em>Display Text</em>}' attribute.
@@ -88,6 +88,26 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	protected EList<TocEntry> child;
 
 	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -109,14 +129,11 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
-	public String getId() {
-		if (id == null)
-			return getDisplayText();
-		else
-			return id;
+	public String getIdSuffix() {
+		return idSuffix;
 	}
 
 	/**
@@ -125,11 +142,24 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	 * @generated
 	 */
 	@Override
-	public void setId(String newId) {
-		String oldId = id;
-		id = newId;
+	public void setIdSuffix(String newIdSuffix) {
+		String oldIdSuffix = idSuffix;
+		idSuffix = newIdSuffix;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DocGenPackage.TOC_ENTRY__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, DocGenPackage.TOC_ENTRY__ID_SUFFIX, oldIdSuffix, idSuffix));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public String getId() {
+		if (id == null)
+			id = org.eclipse.emf.ecore.util.EcoreUtil.generateUUID();
+		
+		return id + (idSuffix == null ? "" : idSuffix);
 	}
 
 	/**
@@ -226,18 +256,6 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public String id(String delimiter) {
-		if (getParent() != null)
-			return getParent().id(delimiter) + delimiter + getId();
-		else
-			return getId();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -292,14 +310,16 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocGenPackage.TOC_ENTRY__ID:
-				return getId();
+			case DocGenPackage.TOC_ENTRY__ID_SUFFIX:
+				return getIdSuffix();
 			case DocGenPackage.TOC_ENTRY__DISPLAY_TEXT:
 				return getDisplayText();
 			case DocGenPackage.TOC_ENTRY__CHILD:
 				return getChild();
 			case DocGenPackage.TOC_ENTRY__PARENT:
 				return getParent();
+			case DocGenPackage.TOC_ENTRY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,8 +333,8 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocGenPackage.TOC_ENTRY__ID:
-				setId((String)newValue);
+			case DocGenPackage.TOC_ENTRY__ID_SUFFIX:
+				setIdSuffix((String)newValue);
 				return;
 			case DocGenPackage.TOC_ENTRY__DISPLAY_TEXT:
 				setDisplayText((String)newValue);
@@ -338,8 +358,8 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocGenPackage.TOC_ENTRY__ID:
-				setId(ID_EDEFAULT);
+			case DocGenPackage.TOC_ENTRY__ID_SUFFIX:
+				setIdSuffix(ID_SUFFIX_EDEFAULT);
 				return;
 			case DocGenPackage.TOC_ENTRY__DISPLAY_TEXT:
 				setDisplayText(DISPLAY_TEXT_EDEFAULT);
@@ -362,14 +382,16 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocGenPackage.TOC_ENTRY__ID:
-				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
+			case DocGenPackage.TOC_ENTRY__ID_SUFFIX:
+				return ID_SUFFIX_EDEFAULT == null ? idSuffix != null : !ID_SUFFIX_EDEFAULT.equals(idSuffix);
 			case DocGenPackage.TOC_ENTRY__DISPLAY_TEXT:
 				return DISPLAY_TEXT_EDEFAULT == null ? displayText != null : !DISPLAY_TEXT_EDEFAULT.equals(displayText);
 			case DocGenPackage.TOC_ENTRY__CHILD:
 				return child != null && !child.isEmpty();
 			case DocGenPackage.TOC_ENTRY__PARENT:
 				return getParent() != null;
+			case DocGenPackage.TOC_ENTRY__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,8 +406,6 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 		switch (operationID) {
 			case DocGenPackage.TOC_ENTRY___DEPTH:
 				return depth();
-			case DocGenPackage.TOC_ENTRY___ID__STRING:
-				return id((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -400,10 +420,12 @@ public class TocEntryImpl extends MinimalEObjectImpl.Container implements TocEnt
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
+		result.append(" (idSuffix: ");
+		result.append(idSuffix);
 		result.append(", displayText: ");
 		result.append(displayText);
+		result.append(", id: ");
+		result.append(id);
 		result.append(')');
 		return result.toString();
 	}

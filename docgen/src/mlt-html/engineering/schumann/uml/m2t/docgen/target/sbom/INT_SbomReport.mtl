@@ -37,7 +37,7 @@
 [import engineering::schumann::uml::m2t::html::Link /]
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
-[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
 
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
@@ -50,6 +50,7 @@
 {
 	products		: Set(Product)		= this.csmn_scope().csmn_productInScope();
 	templateUUID	: String			= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
+	documentTitle	: String			= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
 }
 ]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
@@ -57,9 +58,9 @@
 [loadSbomLibrary() /]
 [for (product : Product | products)]
 [for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, templateUUID)]
+[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID)]
 [let sbomFileName : String = findSbomFileName(
-	this.SBOM_File_URI(product, softwareVersion, templateUUID),
+	this.SBOM_File_URI(_context),
 	this.DocGen_Directory_URI(_context))]
 [if (sbomFileName <> null)]
 [let sbom : Sbom = loadSbom(sbomFileName)]
@@ -77,18 +78,18 @@
 	this			: Sbom,
 	owner			: NamedElement,
 	_context		: Context
-)
-{
-	documentTitle	: String	= env(_context.templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
-}]
+)]
 [file (owner.DocGen_File_URI(_context), false, 'UTF-8')]
-[HTML_START(documentTitle, _context) /]
+[HTML_START(_context) /]
 	[owner.CoverPage_Chapter_print(_context) /]
 
 	[let content : String = generateDocumentContent(owner, _context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
-	[HTML_PAGE_TOC(documentTitle, _context) /]
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { HTML_PAGE_TOC(_context) }) /]
 
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
@@ -571,7 +572,7 @@ post(trim())]
 {
 	licenses : OrderedSet(String) = sbom.license();
 }]
-[if (not licenses->isEmpty())]
+[if (licenses->size() > 0)]
 [html_PAGE_begin('appendix a') /]
 [TOC_Chapter_begin('Appendix A - Licenses') /]
 

@@ -14,10 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getId <em>Id</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getIdSuffix <em>Id Suffix</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getDisplayText <em>Display Text</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getChild <em>Child</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getParent <em>Parent</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.TocEntry#getId <em>Id</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.docgen.DocGenPackage#getTocEntry()
@@ -25,6 +26,32 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface TocEntry extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Id Suffix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id Suffix</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id Suffix</em>' attribute.
+	 * @see #setIdSuffix(String)
+	 * @see engineering.schumann.uml.docgen.DocGenPackage#getTocEntry_IdSuffix()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	String getIdSuffix();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.docgen.TocEntry#getIdSuffix <em>Id Suffix</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id Suffix</em>' attribute.
+	 * @see #getIdSuffix()
+	 * @generated
+	 */
+	void setIdSuffix(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Id</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,22 +61,11 @@ public interface TocEntry extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
 	 * @see engineering.schumann.uml.docgen.DocGenPackage#getTocEntry_Id()
-	 * @model ordered="false"
+	 * @model required="true" changeable="false" ordered="false"
 	 * @generated
 	 */
 	String getId();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.docgen.TocEntry#getId <em>Id</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
-	 * @generated
-	 */
-	void setId(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Display Text</b></em>' attribute.
@@ -137,13 +153,5 @@ public interface TocEntry extends EObject {
 	 * @generated
 	 */
 	int depth();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" delimiterRequired="true" delimiterOrdered="false"
-	 * @generated
-	 */
-	String id(String delimiter);
 
 } // TocEntry

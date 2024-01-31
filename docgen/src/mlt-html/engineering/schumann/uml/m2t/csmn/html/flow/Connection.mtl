@@ -97,7 +97,7 @@ post(trim())
 [comment Flow ← /]
 	<tr>
 		<th style="text-align: right">Asset Flow<br/>Supplier ← Client</th>
-		<td style="text-align: left">[if (supplierFlow->isEmpty())]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+		<td style="text-align: left">[if (supplierFlow->size() = 0)]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
 	</tr>
 [comment ===CONNECTION=== /]
 	<tr>
@@ -107,7 +107,7 @@ post(trim())
 [comment Flow → /]
 	<tr>
 		<th style="text-align: right">Asset Flow<br/>Supplier → Client</th>
-		<td style="text-align: left">[if (clientFlow->isEmpty())]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
+		<td style="text-align: left">[if (clientFlow->size() = 0)]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
 	</tr>
 [comment Interface /]
 	<tr>

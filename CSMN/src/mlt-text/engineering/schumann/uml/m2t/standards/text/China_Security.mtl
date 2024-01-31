@@ -28,7 +28,7 @@
 	this : NamedElement
 ) : String = 
 	let classList	: Set(String)	= this.China_getSoftwareSecurityLevels() in
-		 if (classList = null or classList->isEmpty())		then 'ERROR: China Software Security level is null for "' + this + '"'
+		 if (classList = null or classList->size() = 0)		then 'ERROR: China Software Security level is null for "' + this + '"'
 	else if (classList->exists(c : String | c = 'High'))	then 'High'
 	else if (classList->exists(c : String | c = 'Medium'))	then 'Medium'
 	else if (classList->exists(c : String | c = 'Low'))		then 'Low'

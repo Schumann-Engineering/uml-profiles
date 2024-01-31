@@ -12,7 +12,7 @@
   * ======================================== **/
 .cover-page .csmn-scope {
 	position: 				absolute !important;
-	top:					75% !important;
+	bottom:					4cm !important;
 	width:					20.5cm !important;
 }
 [/template]

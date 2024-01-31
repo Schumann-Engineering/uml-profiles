@@ -42,16 +42,14 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/documentTitle"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="docgen.ecore#//TocEntry">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/id.1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/idSuffix"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/displayText"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference docgen.ecore#//TocEntry/child"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference docgen.ecore#//TocEntry/parent"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/id"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="docgen.ecore#//TocEntry/depth"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="docgen.ecore#//TocEntry/id">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="docgen.ecore#//TocEntry/id/delimiter"/>
-      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -31,9 +31,9 @@
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tb964MBHEe6J2ZYSA98_lA" name="TocEntry">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_wHNZIMBHEe6J2ZYSA98_lA" name="id">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_wHNZIMBHEe6J2ZYSA98_lA" name="idSuffix">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_45UVsMBMEe6J2ZYSA98_lA"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PknfkMBmEe6arp2ZPgthIg"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xnKwAMBHEe6J2ZYSA98_lA" name="displayText">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -44,6 +44,9 @@
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_j10qkMBIEe6J2ZYSA98_lA" name="parent" type="_tb964MBHEe6J2ZYSA98_lA" association="_j1xnQMBIEe6J2ZYSA98_lA">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mZhWYMBIEe6J2ZYSA98_lA"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_WJBAsMBmEe6arp2ZPgthIg" name="id" isReadOnly="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_2D8LYMBJEe6J2ZYSA98_lA" name="depth" bodyCondition="_9qYYUMBJEe6J2ZYSA98_lA" isQuery="true">
         <ownedRule xmi:type="uml:Constraint" xmi:id="_9qYYUMBJEe6J2ZYSA98_lA" name="TocEntry_depth_query" constrainedElement="_2D8LYMBJEe6J2ZYSA98_lA">
@@ -59,14 +62,6 @@ endif</body>
         </ownedRule>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_6R8c4MBJEe6J2ZYSA98_lA" name="return value" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_lbuUkMBMEe6J2ZYSA98_lA" name="id" isQuery="true">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_oYkgMMBMEe6J2ZYSA98_lA" name="return value" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_-o680MBMEe6J2ZYSA98_lA" name="delimiter">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

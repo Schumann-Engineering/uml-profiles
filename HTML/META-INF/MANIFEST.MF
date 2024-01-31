@@ -20,6 +20,5 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: engineering.schumann.uml.m2t.html,
- engineering.schumann.uml.m2t.html.services
+Export-Package: engineering.schumann.uml.m2t.html
 

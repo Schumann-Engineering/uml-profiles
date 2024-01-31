@@ -29,7 +29,8 @@
 )
 {
 	templateUUID	: String	= '5d20db90-3c4d-4f61-998c-76a84a5ab679';
-	_context		: Context	= getContext(this, null, null, templateUUID);
+	documentTitle	: String = env(templateUUID + '.Output.Title', 'DEV Model Report');
+	_context		: Context	= getContext(this, null, null, documentTitle, templateUUID);
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'md') /]
 

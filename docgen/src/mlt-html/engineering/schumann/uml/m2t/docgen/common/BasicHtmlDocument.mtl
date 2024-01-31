@@ -11,11 +11,20 @@ extends engineering::schumann::uml::m2t::html::Html
 
 [import engineering::schumann::uml::m2t::sbom::html::css::Component /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::css::Scope /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::html::css::Toc /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
 
 
 [template protected CSS_ADDON(
 	devNull : OclAny
-)]
+)
+post(trim())]
+<style type="text/css">
+[CSS_TOC() /]
+</style>
+
 <style type="text/css">
 [CSS_SBOM_COMPONENT() /]
 </style>
@@ -28,28 +37,21 @@ extends engineering::schumann::uml::m2t::html::Html
 
 [template public HTML_START(
 	devNull 		: OclAny,
-	title			: String,
 	_context		: Context
-)]
-[HTML_START_HEAD_BEGIN(title, _context.UUID) /]
+)
+post(trim())]
+[HTML_START_HEAD_BEGIN(_context.documentTitle, _context.UUID) /]
 [CSS_ADDON() /]
 [HTML_START_HEAD_END(_context.UUID) /]
-[/template]
-
-
-[template public HTML_PAGE_TOC(
-	devNull 		: OclAny,
-	title			: String,
-	_context		: Context
-)]
-[HTML_PAGE_TOC(title, _context.UUID) /]
+[TOC_clear(_context)/]
 [/template]
 
 
 [template public HTML_END(
 	devNull			: OclAny,
 	_context		: Context
-)]
+)
+post(trim())]
 [HTML_END(_context.UUID) /]
 [/template]
 
@@ -57,6 +59,47 @@ extends engineering::schumann::uml::m2t::html::Html
 [template public HTML_PAGE_ERRORS(
 	devNull			: OclAny,
 	_context		: Context
-)]
+)
+post(trim())]
 [HTML_PAGE_ERRORS(_context.UUID)/]
+[/template]
+
+
+[template public HTML_PAGE_TOC(
+	devNull 	: OclAny,
+	_context	: Context
+)
+post(trim())
+{
+	toc	: TocEntry = invoke(
+		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'getToc()',
+		Sequence {}
+	).oclAsType(TocEntry);
+}]
+[if (toc <> null and toc.child->size() > 0)]
+[html_PAGE_begin('__toc__') /]
+	<p class="toc-title">
+		Table of Contents
+	</p>
+
+	<pre>
+[for (toc.child)]
+[_TocEntry_print(_context).trim() /]
+[/for]
+	</pre>
+[html_PAGE_end('__toc__') /]
+[/if]
+[/template]
+
+
+[template private _TocEntry_print(
+	this		: TocEntry,
+	_context	: Context
+)
+post(trim())]
+['....'.repeat(depth() - 2) /][TOC_link() /]
+[for (child)]
+[_TocEntry_print(_context).trim() /]
+[/for]
 [/template]

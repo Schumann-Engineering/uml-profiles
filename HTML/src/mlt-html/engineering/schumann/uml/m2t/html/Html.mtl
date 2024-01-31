@@ -10,9 +10,6 @@
 [import engineering::schumann::uml::m2t::html::css::MaterialDesign /]
 [import engineering::schumann::uml::m2t::html::css::Layout /]
 [import engineering::schumann::uml::m2t::html::css::Table /]
-[import engineering::schumann::uml::m2t::html::css::Toc /]
-[import engineering::schumann::uml::m2t::html::Toc /]
-[import engineering::schumann::uml::m2t::common::services::StringService /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -31,10 +28,6 @@
 
 <style type="text/css">
 [CSS_TABLE() /]
-</style>
-
-<style type="text/css">
-[CSS_TOC() /]
 </style>
 
 <style type="text/css">
@@ -92,7 +85,6 @@
 	</head>
 	<body>
 		[env_clearErrors(_context) /]
-		[TOC_init(_context)/]
 [/template]
 
 
@@ -141,31 +133,6 @@
 [/template]
 
 
-[template public HTML_PAGE_TOC(
-	devNull 		: OclAny,
-	docTitle 		: String,
-	_context	: String
-)]
-[html_PAGE_begin('__toc__') /]
-	<p class="toc-title">
-		Table of Contents
-	</p>
-
-	<pre>
-[for (TOC_getTOC()->select(at(3).toInteger() >= 2))]
-	[let name  : String  = self->at(1)]
-	[let id  : String  = self->at(2)]
-	[let level : Integer = self->at(3).toInteger()]
-	['....'.repeat(level - 2) /][TOC_link( name, id ) /]
-	[/let]
-	[/let]
-	[/let]
-[/for]
-	</pre>
-[html_PAGE_end('__toc__') /]
-[/template]
-
-
 [template public HTML_PAGE_ERRORS(
 	devNull 	: OclAny,
 	_context	: String
@@ -188,11 +155,22 @@
 [/template]
 
 
-[query public _toHtml(
+[query public _htmlToXHtml(
 	input : String
 ) : String =
 	input
-		.replaceAll('<br>', '<br/>')
-		.replaceAll('&', '&amp;')
-		.replaceAll('&amp;amp;', '&amp;')
+		.replaceAll('<br>', 		'<br/>')
+		.replaceAll('<hr>', 		'<hr/>')
+		.replaceAll('&', 			'&amp;')
+		.replaceAll('&amp;amp;', 	'&amp;')
+/]
+
+
+[query public _htmlToText(
+	input : String
+) : String =
+	input
+		._htmlToXHtml()
+		.replaceAll('<br/>', 	' ')
+		.replaceAll('<hr/>', 	' ')
 /]

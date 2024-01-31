@@ -74,7 +74,7 @@ post(trim())
 }]
 <tr>
 [comment ASSET /]
-	<td>[asset.name._toHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]</td>
+	<td>[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]</td>
 [comment ASSET Characteristics /]
 	<td>[asset.printCharacteristics()/]</td> 
 </tr>
@@ -89,7 +89,7 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-[asset.mardown_icon() /]&nbsp;[this.name._toHtml() /]
+[asset.mardown_icon() /]&nbsp;[this.name._htmlToXHtml() /]
 [/template]
 
 
@@ -101,7 +101,7 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-«[asset.assetType /]»&nbsp;[this.name._toHtml() /]
+«[asset.assetType /]»&nbsp;[this.name._htmlToXHtml() /]
 [/template]
 
 
@@ -109,5 +109,5 @@ post(trim())
 	this : Asset
 )
 post(trim())]
-<img src="icon_Asset_[this.assetType.toString().replaceAll(' ', '')._toHtml() /].png[']]'/]" width="16px" />
+<img src="icon_Asset_[this.assetType.toString().replaceAll(' ', '')._htmlToXHtml() /].png[']]'/]" width="16px" />
 [/template]

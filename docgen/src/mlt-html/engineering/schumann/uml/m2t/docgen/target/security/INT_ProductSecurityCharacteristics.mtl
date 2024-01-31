@@ -49,7 +49,7 @@
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::html::Table /]
-[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import org::w3c::xhtml::Link /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
@@ -59,19 +59,20 @@
 )
 {
 	templateUUID	: String = '5b3cec7d-362f-4051-8a95-411bf9579f70';
+	documentTitle	: String = env(templateUUID + '.Output.Title', 'Product Security Characteristics');
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
 [let scope : Scope = pkg.csmn_scope()]
 [for (product : Product | scope.csmn_productInScope())]
-[if (product.softwareVersion->isEmpty())]
-[let _context : Context = getContext(this, product, 'any', templateUUID)]
+[if (product.softwareVersion->size() = 0)]
+[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID)]
 [pkg.generateDocument_INT_ProductSecurityCharacteristics(_context) /]
 [/let]
 [else]
 [for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, templateUUID)]
+[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID)]
 [pkg.generateDocument_INT_ProductSecurityCharacteristics(_context) /]
 [/let]
 [/for]
@@ -87,18 +88,18 @@
 	_context		: Context
 )
 ? (this.csmn_isScoped())
-{
-	documentTitle	: String	= env(_context.templateUUID + '.Output.Title', 'Product Security Characteristics');
-}
 ]
 [file (DocGen_File_URI(_context), false, 'UTF-8')]
-[HTML_START(documentTitle, _context)/]
+[HTML_START(_context)/]
 	[CoverPage_Chapter_print(_context)/]
 
 	[let content : String = generateDocumentContent(_context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
-	[HTML_PAGE_TOC(documentTitle, _context) /]
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { HTML_PAGE_TOC(_context) }) /]
 
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
@@ -842,7 +843,7 @@
 			[comment TOC_SubSection_end()/]
 
 			[TOC_SubSection_begin('Background')/]
-				!['[['/]IEC 60601-4-5 - capability Security Level (SL-C)[']]'/]
+				[html_TBD('IMAGE: IEC 60601-4-5 - capability Security Level (SL-C)') /]
 			[TOC_SubSection_end()/]			
 		[TOC_Section_end()/]
 [html_PAGE_end('SL-C')/]
@@ -859,7 +860,7 @@
 			[comment TOC_SubSection_end()/]
 
 			[TOC_SubSection_begin('Background')/]
-				!['[['/]IEC 60601-4-5 - target Security Level (SL-T)[']]'/]
+				[html_TBD('IMAGE: IEC 60601-4-5 - target Security Level (SL-T)') /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 [comment html_PAGE_end('SL-T')/]

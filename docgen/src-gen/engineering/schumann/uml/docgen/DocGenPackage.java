@@ -161,13 +161,13 @@ public interface DocGenPackage extends EPackage {
 	int TOC_ENTRY = 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Id Suffix</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY__ID = 0;
+	int TOC_ENTRY__ID_SUFFIX = 0;
 
 	/**
 	 * The feature id for the '<em><b>Display Text</b></em>' attribute.
@@ -197,13 +197,22 @@ public interface DocGenPackage extends EPackage {
 	int TOC_ENTRY__PARENT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TOC_ENTRY__ID = 4;
+
+	/**
 	 * The number of structural features of the '<em>Toc Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY_FEATURE_COUNT = 4;
+	int TOC_ENTRY_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Depth</em>' operation.
@@ -215,22 +224,13 @@ public interface DocGenPackage extends EPackage {
 	int TOC_ENTRY___DEPTH = 0;
 
 	/**
-	 * The operation id for the '<em>Id</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TOC_ENTRY___ID__STRING = 1;
-
-	/**
 	 * The number of operations of the '<em>Toc Entry</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TOC_ENTRY_OPERATION_COUNT = 2;
+	int TOC_ENTRY_OPERATION_COUNT = 1;
 
 
 	/**
@@ -331,6 +331,17 @@ public interface DocGenPackage extends EPackage {
 	EClass getTocEntry();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.docgen.TocEntry#getIdSuffix <em>Id Suffix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id Suffix</em>'.
+	 * @see engineering.schumann.uml.docgen.TocEntry#getIdSuffix()
+	 * @see #getTocEntry()
+	 * @generated
+	 */
+	EAttribute getTocEntry_IdSuffix();
+
+	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.docgen.TocEntry#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -383,16 +394,6 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getTocEntry__Depth();
-
-	/**
-	 * Returns the meta object for the '{@link engineering.schumann.uml.docgen.TocEntry#id(java.lang.String) <em>Id</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Id</em>' operation.
-	 * @see engineering.schumann.uml.docgen.TocEntry#id(java.lang.String)
-	 * @generated
-	 */
-	EOperation getTocEntry__Id__String();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -494,6 +495,14 @@ public interface DocGenPackage extends EPackage {
 		EClass TOC_ENTRY = eINSTANCE.getTocEntry();
 
 		/**
+		 * The meta object literal for the '<em><b>Id Suffix</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TOC_ENTRY__ID_SUFFIX = eINSTANCE.getTocEntry_IdSuffix();
+
+		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -532,14 +541,6 @@ public interface DocGenPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation TOC_ENTRY___DEPTH = eINSTANCE.getTocEntry__Depth();
-
-		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation TOC_ENTRY___ID__STRING = eINSTANCE.getTocEntry__Id__String();
 
 	}
 

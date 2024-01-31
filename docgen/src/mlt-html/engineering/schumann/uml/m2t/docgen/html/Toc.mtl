@@ -1,0 +1,194 @@
+[comment encoding = UTF-8 /]
+[module Toc(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::html::Html /]
+
+
+[template private TOC_Header(
+	title   : String,
+	level	: Integer
+)
+post(trim())]
+[_addBreadcrumb(title, level)/]
+<h[level/] id="[Toc_currentId()/]">[title /]</h[level/]>
+[DocGen_breadcrumbs_toHtml() /]
+[/template]
+
+
+[template public Toc_currentId()
+post(trim())]
+[let currentToc : TocEntry = 	invoke(
+		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'getLastEntry()',
+		Sequence {}
+	)]
+[currentToc.id.toHtmlId() /]
+[/let]
+[/template]
+
+
+[template public Toc_currentBreadcrumbs_Html()]
+[let currentToc : TocEntry = 	invoke(
+		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'getLastEntry()',
+		Sequence {}
+	)]
+[TOC_linkParentOnly(currentToc) /]
+[/let]
+[/template]
+
+
+[template public TOC_Title_begin(
+	title   	: String
+) post(trim())][TOC_Header(title, 1) /][/template]
+[template public TOC_Title_end(
+	devNull : Element
+) post(trim())][/template]
+
+
+[template public TOC_Chapter_begin(
+	title   : String
+)][TOC_Header(title, 2) /][/template]
+[template public TOC_Chapter_end(
+	devNull : Element
+) post(trim())][/template]
+
+
+[template public TOC_Section_begin(
+	title   : String
+)][TOC_Header(title, 3) /][/template]
+[template public TOC_Section_end(
+	devNull : Element
+) post(trim())][/template]
+
+
+[template public TOC_SubSection_begin(
+	title   : String
+)][TOC_Header(title, 4) /][/template]
+[template public TOC_SubSection_end(
+	devNull : Element
+) post(trim())][/template]
+
+
+[template public TOC_SubSubSection_begin(
+	title   : String
+) post(trim())][TOC_Header(title, 5) /][/template]
+[template public TOC_SubSubSection_end(
+	devNull : Element
+) post(trim())][/template]
+
+
+[template private _addBreadcrumb(
+	title   : String,
+	level   : Integer
+)
+post(trim())]
+[invoke(
+	'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+	'Add(java.lang.String, java.lang.Integer)',
+	Sequence {
+		title,
+		level
+	}
+)
+/]
+[/template]
+
+
+[template public DocGen_breadcrumbs_toHtml()
+post(trim())
+{
+	breadcrumbs : String = Toc_currentBreadcrumbs_Html();
+}]
+[if (breadcrumbs <> null and breadcrumbs <> '')]
+<p class="breadcrumbs">
+	<i>back to</i> [breadcrumbs /]
+</p>
+[/if]
+[/template]
+
+
+[template public TOC_link(
+	this	: TocEntry
+)
+post(trim())][if (this <> null)][TOC_link(this.displayText, this.id) /][/if][/template]
+
+
+[template public TOC_linkParentOnly(
+	this	: TocEntry
+)
+post(trim())][if (this <> null and this.depth() > 2)][this.parent.TOC_linkWithoutParent()/][/if][/template]
+
+
+[template public TOC_linkWithoutParent(
+	this	: TocEntry
+)
+post(trim())][if (this <> null and this.depth() > 2)][this.parent.TOC_linkWithoutParent()/] &gt; [/if][if (this <> null and this.depth() > 1)][TOC_link() /][/if][/template]
+
+
+[template public TOC_link(
+	text	: String
+) post(trim())][TOC_link(text, text) /][/template]
+
+
+[template public TOC_link(
+	text	: String,
+	anchor	: String
+) post(trim())]<a class="breadcrumb" href="#[anchor.toHtmlId() /]">[text._htmlToText() /]</a>[/template]
+
+
+[template public TOC_anchor(
+	anchor	: String
+) post(trim())][TOC_anchor(anchor, '') /][/template]
+
+
+[template public TOC_anchor(
+	anchor	: String,
+	text	: String
+) post(trim())]<a id="[anchor.toHtmlId() /]">[text._htmlToText() /]</a>[/template]
+
+[query public toHtmlId(
+	text : String
+) : String =
+	'id-' + 
+	text
+	.replaceAll(' ', 		'')
+	.replaceAll('_', 		'')
+	.replaceAll('<br/>', 	'')
+	.replaceAll('<br>', 	'')
+	.replaceAll('&amp;',	'-')
+	.replaceAll('\\$',		'')
+	.replaceAll('\\(',		'')
+	.replaceAll('\\)',		'')
+	.replaceAll('\\[',		'')
+	.replaceAll('\\]',		'')
+	.replaceAll('\\\\',		'')
+	.replaceAll('/',		'')
+	.replaceAll('\\+',		'')
+	.replaceAll(TOC_DELIMITER(), '__')
+	.replaceAll('>', 		'')
+	.replaceAll('<', 		'')
+	.toLower()
+/]
+
+
+[template public TOC_clear(
+	_context	: Context
+)
+post(trim())
+][invoke(
+		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'clearToc()',
+		Sequence {}
+	)/][/template]
+
+
+[query public TOC_DELIMITER()
+: String =
+	env('SYSTEM_TOC_SEPARATOR', '>').trim()
+/]

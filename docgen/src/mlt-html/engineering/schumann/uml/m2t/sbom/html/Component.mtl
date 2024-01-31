@@ -11,14 +11,14 @@
 [import engineering::schumann::uml::m2t::sbom::html::Property /]
 [import engineering::schumann::uml::m2t::sbom::text::NamespaceType /]
 [import engineering::schumann::uml::m2t::sbom::text::RelationshipType /]
-[import engineering::schumann::uml::m2t::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
 
 
 [template public printAsTable(
 	this : Component
 )]
 <div class="sbom-component">
-	[getBreadcrumbsHtml(2) /]
+	[DocGen_breadcrumbs_toHtml() /]
 
 	<p>
 		[TOC_anchor(name, '<b>' + name + '</b>') /]
@@ -118,7 +118,7 @@
 <tr>
 	<th>Sub-Components</th>
 	<td>
-		[if (ownedComponent->isEmpty())]
+		[if (ownedComponent->size() = 0)]
 		none
 		[else]
 		<ul>
@@ -133,7 +133,7 @@
 <tr>
 	<th>Relationships</th>
 	<td>
-		[if (relationship()->isEmpty())]
+		[if (relationship()->size() = 0)]
 		none
 		[else]
 		<ul>
@@ -149,7 +149,7 @@
 </tr>
 [comment references /]
 [comment]
-			[if (not reference->isEmpty())]
+			[if (reference->->size() > 0)]
 			<tr>
 				<th colspan="2">References</th>
 			</tr>
@@ -161,7 +161,7 @@
 			[/if]
 [/comment]
 [comment properties /]
-[if (not ownedProperty->isEmpty())]
+[if (ownedProperty->size() > 0)]
 <tr>
 	<th colspan="2">additional properties</th>
 </tr>

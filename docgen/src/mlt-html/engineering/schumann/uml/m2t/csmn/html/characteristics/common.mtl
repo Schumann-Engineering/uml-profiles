@@ -25,7 +25,7 @@
 [template public printCharacteristics(
 	this : Element
 )
-post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n')._toHtml())
+post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n')._htmlToXHtml())
 ]
 [comment
 	PRIMARY CHARACTERISTICS
