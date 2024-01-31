@@ -31,6 +31,15 @@ public interface DocGenFactory extends EFactory {
 	Context createContext();
 
 	/**
+	 * Returns a new object of class '<em>Toc Entry</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Toc Entry</em>'.
+	 * @generated
+	 */
+	TocEntry createTocEntry();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

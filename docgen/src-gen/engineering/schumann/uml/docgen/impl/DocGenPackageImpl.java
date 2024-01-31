@@ -6,10 +6,12 @@ import engineering.schumann.uml.docgen.Context;
 import engineering.schumann.uml.docgen.DocGenFactory;
 import engineering.schumann.uml.docgen.DocGenPackage;
 
+import engineering.schumann.uml.docgen.TocEntry;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -25,6 +27,13 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	private EClass contextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tocEntryEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -162,6 +171,46 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getTocEntry() {
+		return tocEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTocEntry_Id() {
+		return (EAttribute)tocEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTocEntry_DisplayText() {
+		return (EAttribute)tocEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTocEntry_Parent() {
+		return (EReference)tocEntryEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public DocGenFactory getDocGenFactory() {
 		return (DocGenFactory)getEFactoryInstance();
 	}
@@ -192,6 +241,11 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		createEAttribute(contextEClass, CONTEXT__SOFTWARE_VERSION);
 		createEAttribute(contextEClass, CONTEXT__TEMPLATE_UUID);
 		createEAttribute(contextEClass, CONTEXT__UUID);
+
+		tocEntryEClass = createEClass(TOC_ENTRY);
+		createEAttribute(tocEntryEClass, TOC_ENTRY__ID);
+		createEAttribute(tocEntryEClass, TOC_ENTRY__DISPLAY_TEXT);
+		createEReference(tocEntryEClass, TOC_ENTRY__PARENT);
 	}
 
 	/**
@@ -231,6 +285,11 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		initEAttribute(getContext_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_TemplateUUID(), ecorePackage.getEString(), "templateUUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_UUID(), ecorePackage.getEString(), "UUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(tocEntryEClass, TocEntry.class, "TocEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTocEntry_Id(), ecorePackage.getEString(), "id", null, 1, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getTocEntry_DisplayText(), ecorePackage.getEString(), "displayText", null, 1, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTocEntry_Parent(), this.getTocEntry(), null, "parent", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

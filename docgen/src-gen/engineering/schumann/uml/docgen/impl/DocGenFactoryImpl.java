@@ -57,6 +57,7 @@ public class DocGenFactoryImpl extends EFactoryImpl implements DocGenFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case DocGenPackage.CONTEXT: return createContext();
+			case DocGenPackage.TOC_ENTRY: return createTocEntry();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -71,6 +72,17 @@ public class DocGenFactoryImpl extends EFactoryImpl implements DocGenFactory {
 	public Context createContext() {
 		ContextImpl context = new ContextImpl();
 		return context;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TocEntry createTocEntry() {
+		TocEntryImpl tocEntry = new TocEntryImpl();
+		return tocEntry;
 	}
 
 	/**

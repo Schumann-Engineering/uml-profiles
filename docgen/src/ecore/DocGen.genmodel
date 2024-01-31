@@ -40,5 +40,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/templateUUID"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/UUID"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="docgen.ecore#//TocEntry">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/id"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/displayText"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference docgen.ecore#//TocEntry/parent"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
