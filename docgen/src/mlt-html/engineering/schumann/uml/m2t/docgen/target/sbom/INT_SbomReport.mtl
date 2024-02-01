@@ -50,7 +50,7 @@
 {
 	products		: Set(Product)	= this.csmn_scope().csmn_productInScope();
 	templateUUID	: String		= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
-	templateVersion	: String		= '0.1 (2024-01)';
+	templateVersion	: String		= '0.1';
 	documentTitle	: String		= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
 }
 ]

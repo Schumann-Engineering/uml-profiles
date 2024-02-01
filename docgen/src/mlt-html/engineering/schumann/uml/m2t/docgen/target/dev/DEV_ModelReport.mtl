@@ -29,7 +29,7 @@
 )
 {
 	templateUUID	: String	= '5d20db90-3c4d-4f61-998c-76a84a5ab679';
-	templateVersion	: String	= '0.1 (2024-01)';
+	templateVersion	: String	= '0.1';
 	documentTitle	: String	= env(templateUUID + '.Output.Title', 'DEV Model Report');
 	_context		: Context	= getContext(this, null, null, documentTitle, templateUUID, templateVersion);
 }]

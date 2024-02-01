@@ -59,7 +59,7 @@
 )
 {
 	templateUUID	: String = '5b3cec7d-362f-4051-8a95-411bf9579f70';
-	templateVersion	: String = '0.1 (2024-01)';
+	templateVersion	: String = '0.1';
 	documentTitle	: String = env(templateUUID + '.Output.Title', 'Product Security Characteristics');
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]

@@ -52,7 +52,7 @@
 )
 {
 	templateUUID	: String	= '1145613c-bd93-4c19-b613-4b65e2ab8999';
-	templateVersion	: String	= '0.1 (2024-01)';
+	templateVersion	: String	= '0.1';
 	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]

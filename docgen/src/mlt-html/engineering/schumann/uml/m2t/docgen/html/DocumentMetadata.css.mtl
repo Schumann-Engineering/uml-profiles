@@ -13,7 +13,7 @@
 .document-footer {
 	position: 			absolute !important;
 	bottom: 			5mm !important;
-	right:				5mm !important;
+	width:				20.5cm !important;
 }
 
 
@@ -25,9 +25,9 @@
 
 
 .cover-page h1 {
-	position:			absolute !important;
-	top:				5cm !important;
-	text-align: center !important;
-    width: 100% !important;
+	position:			relative !important;
+	top:				2cm !important;
+	text-align: 		center !important;
+    width: 				100% !important;
 }
 [/template]
