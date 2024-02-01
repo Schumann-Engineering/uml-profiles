@@ -7,20 +7,47 @@
 [import engineering::schumann::uml::m2t::csmn::common::CommonPlatformEnumerationType /]
 
 
-[query public nist_cpe(
-	type : CommonPlatformEnumerationType,
-	vendor : String,
-	product : String
+[query private _nist_cpe(
+	type	: CommonPlatformEnumerationType,
+	vendor	: String,
+	product	: String
 ) : String =
 	'cpe:2.3:' + type.csmn_toCpeTypePart() + ':' + vendor.toLower() + ':' + product.toLower()
 /]
 
 
-[query public nist_cpe(
-	type : CommonPlatformEnumerationType,
-	vendor : String,
-	product : String,
-	model : String
+[query private _nist_cpe(
+	type	: CommonPlatformEnumerationType,
+	vendor	: String,
+	product	: String,
+	model	: String
 ) : String =
-	nist_cpe(type, vendor, product) + ':' + model
+	_nist_cpe(type, vendor, product) + ':' + model
+/]
+
+
+[query public nist_cpe(
+	type	: CommonPlatformEnumerationType,
+	vendor	: String,
+	product	: String
+) : String =
+	_nist_cpe(type, vendor, product)._nist_escapeCpe()
+/]
+
+
+[query public nist_cpe(
+	type	: CommonPlatformEnumerationType,
+	vendor	: String,
+	product	: String,
+	model	: String
+) : String =
+	_nist_cpe(type, vendor, product, model)._nist_escapeCpe()
+/]
+
+
+[query private _nist_escapeCpe(
+	input	: String
+) : String =
+	input
+	.replaceAll('\\+', '\\\\+')
 /]
