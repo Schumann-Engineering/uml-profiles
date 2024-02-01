@@ -29,5 +29,7 @@ Eclipse-LazyStart: true
 Export-Package: engineering.schumann.uml.docgen,
  engineering.schumann.uml.docgen.impl,
  engineering.schumann.uml.docgen.util,
- engineering.schumann.uml.m2t.docgen
+ engineering.schumann.uml.m2t.docgen,
+ engineering.schumann.uml.m2t.docgen.html.services,
+ engineering.schumann.uml.m2t.docgen.services
 
