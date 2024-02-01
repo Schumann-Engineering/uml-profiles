@@ -32784,6 +32784,9 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_t_0sXKpCEe6Gq7xaYvprpg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_t_0sXapCEe6Gq7xaYvprpg" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ZusvsMDvEe6RU9Hl_RJL_Q" name="type" type="_sPIEMK73Ee6Xvf8k-UmT0A">
+        <defaultValue xmi:type="uml:InstanceValue" xmi:id="_hXYYUMDvEe6RU9Hl_RJL_Q" name="default value" type="_sPIEMK73Ee6Xvf8k-UmT0A" instance="_7ER6kK73Ee6Xvf8k-UmT0A"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_t_0sXqpCEe6Gq7xaYvprpg" memberEnd="_t_zeM6pCEe6Gq7xaYvprpg _t_0sYapCEe6Gq7xaYvprpg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_t_0sX6pCEe6Gq7xaYvprpg" source="org.eclipse.papyrus">

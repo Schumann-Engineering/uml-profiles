@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link engineering.schumann.uml.profile.csmn.Product#getUdiDi <em>Udi Di</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Product#getUdiDiBase <em>Udi Di Base</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Product#getSoftwareVersion <em>Software Version</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.Product#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProduct()
@@ -90,5 +91,35 @@ public interface Product extends CommonPlatformEnumeration {
 	 * @generated
 	 */
 	EList<String> getSoftwareVersion();
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The default value is <code>"Hardware"</code>.
+	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
+	 * @see #setType(CommonPlatformEnumerationType)
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getProduct_Type()
+	 * @model default="Hardware" required="true" ordered="false"
+	 * @generated
+	 */
+	CommonPlatformEnumerationType getType();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.Product#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(CommonPlatformEnumerationType value);
 
 } // Product

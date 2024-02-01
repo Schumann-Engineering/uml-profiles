@@ -131,6 +131,8 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="#//CommonPlatformEnumerationType" defaultValueLiteral="Hardware"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommonPlatformEnumeration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformType" ordered="false"

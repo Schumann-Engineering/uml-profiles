@@ -22,7 +22,7 @@
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.ProductSoftware /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName.sbom /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
@@ -135,7 +135,7 @@ post(trim())]
 	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
-		[this.printScope(_context, true, true) /]
+		[this.printScope(_context) /]
 	[TOC_Title_end() /]
 
 	[html_ANSI_CAUTION_Start() /]
@@ -191,7 +191,7 @@ post(trim())]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
-			[this.printScope(true, false) /]
+			[this.printScope(_context) /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Abbreviations') /]
@@ -223,22 +223,22 @@ post(trim())]
 	[TOC_Chapter_begin('Basic information') /]
 		[comment
 			--------------------
-			HARDWARE
-			--------------------
-		/]
-		[TOC_Section_begin('Hardware') /]
-			[printScope(false, true) /]
-		[TOC_Section_end() /]
-	
-		[comment
-			--------------------
 			SOFTWARE
 			--------------------
 		/]
-		[TOC_Section_begin('Software') /]
-			[printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+		[TOC_Section_begin('Software') /]			
+			[comment printScopeAsSoftware(_context ) /]
 		[TOC_Section_end() /]
-	[TOC_Chapter_end() /]
+
+		[comment
+			--------------------
+			HARDWARE
+			--------------------
+		/]
+		[TOC_Section_begin('Hardware Environment') /]
+			[comment printScope(false, true) /]
+		[TOC_Section_end() /]
+[TOC_Chapter_end() /]
 [html_PAGE_end('basic information') /]
 [/template]
 

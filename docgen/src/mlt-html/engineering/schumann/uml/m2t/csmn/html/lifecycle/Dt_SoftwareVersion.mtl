@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module Dt_SoftwareVersion(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://www.eclipse.org/uml2/5.0.0/Types',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+[import engineering::schumann::uml::m2t::uml::services::StereotypeService /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::csmn::common::CpeCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+[import engineering::schumann::uml::m2t::standards::text::IEC_62304 /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
+
+

@@ -701,13 +701,22 @@ public interface CSMNPackage extends EPackage {
 	int PRODUCT__SOFTWARE_VERSION = COMMON_PLATFORM_ENUMERATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT__TYPE = COMMON_PLATFORM_ENUMERATION_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRODUCT_FEATURE_COUNT = COMMON_PLATFORM_ENUMERATION_FEATURE_COUNT + 3;
+	int PRODUCT_FEATURE_COUNT = COMMON_PLATFORM_ENUMERATION_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Product</em>' class.
@@ -2436,6 +2445,17 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getProduct_SoftwareVersion();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Product#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Product#getType()
+	 * @see #getProduct()
+	 * @generated
+	 */
+	EAttribute getProduct_Type();
+
+	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.profile.csmn.CommonPlatformEnumeration <em>Common Platform Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3929,6 +3949,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PRODUCT__SOFTWARE_VERSION = eINSTANCE.getProduct_SoftwareVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRODUCT__TYPE = eINSTANCE.getProduct_Type();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.impl.CommonPlatformEnumerationImpl <em>Common Platform Enumeration</em>}' class.

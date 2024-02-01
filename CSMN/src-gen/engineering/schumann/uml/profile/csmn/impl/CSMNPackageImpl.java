@@ -886,6 +886,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getProduct_Type() {
+		return (EAttribute)productEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCommonPlatformEnumeration() {
 		return commonPlatformEnumerationEClass;
 	}
@@ -2028,6 +2038,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(productEClass, PRODUCT__UDI_DI);
 		createEAttribute(productEClass, PRODUCT__UDI_DI_BASE);
 		createEAttribute(productEClass, PRODUCT__SOFTWARE_VERSION);
+		createEAttribute(productEClass, PRODUCT__TYPE);
 
 		commonPlatformEnumerationEClass = createEClass(COMMON_PLATFORM_ENUMERATION);
 		createEAttribute(commonPlatformEnumerationEClass, COMMON_PLATFORM_ENUMERATION__PLATFORM_TYPE);
@@ -2244,6 +2255,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getProduct_UdiDi(), ecorePackage.getEString(), "udiDi", null, 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getProduct_UdiDiBase(), ecorePackage.getEString(), "udiDiBase", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getProduct_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getProduct_Type(), this.getCommonPlatformEnumerationType(), "type", "Hardware", 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(commonPlatformEnumerationEClass, CommonPlatformEnumeration.class, "CommonPlatformEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommonPlatformEnumeration_PlatformType(), this.getCommonPlatformEnumerationType(), "platformType", "Unspecified", 1, 1, CommonPlatformEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

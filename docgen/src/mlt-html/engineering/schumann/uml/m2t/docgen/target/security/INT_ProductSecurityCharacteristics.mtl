@@ -28,7 +28,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::assets::Asset /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.Product /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
@@ -139,7 +139,7 @@
 	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Product Security Characteristics') /]
-		[this.printScope(_context, false, true) /]
+		[this.printScope(_context) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]
 [/template]
@@ -179,7 +179,7 @@
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
-			[this.printScope(true, false) /]
+			[this.printScope(_context) /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Abbreviations') /]
@@ -212,7 +212,7 @@
 			--------------------
 		/]
 		[TOC_Section_begin('Hardware versions') /]
-			[this.printScope(false, true) /]
+			[this.printScope(_context) /]
 		[TOC_Section_end() /]
 	
 		[comment
@@ -225,7 +225,7 @@
 				As of writing the following software versions have been released:
 			</p>
 		
-			[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+			[comment this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('basic information')/]

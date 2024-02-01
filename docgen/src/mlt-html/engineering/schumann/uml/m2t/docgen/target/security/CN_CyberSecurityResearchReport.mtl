@@ -26,7 +26,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.Product /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
@@ -135,7 +135,7 @@
 	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Cyber Security Research Report') /]
-		[this.printScope(_context, false, true) /]
+		[this.printScope(_context) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]
 [/template]
@@ -173,7 +173,7 @@
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
-			[this.printScope(true, false) /]
+			[this.printScope(_context) /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Abbreviations') /]
@@ -216,7 +216,7 @@
 		/]
 [html_PAGE_begin('software information') /]
 		[TOC_Section_begin('Software information') /] 
-			[this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+			[comment this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('software information') /]
 		

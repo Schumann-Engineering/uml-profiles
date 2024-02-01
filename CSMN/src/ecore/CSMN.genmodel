@@ -288,6 +288,7 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Product/udiDi"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Product/udiDiBase"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Product/softwareVersion"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Product/type"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//CommonPlatformEnumeration">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//CommonPlatformEnumeration/platformType"/>
