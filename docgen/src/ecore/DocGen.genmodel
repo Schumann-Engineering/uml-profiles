@@ -3,8 +3,8 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
     modelDirectory="/docgen/src-gen" modelPluginID="docgen" modelName="engineering.schumann.uml.docgen"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.uml2.uml.ecore.importer"
-    bundleManifest="false" complianceLevel="17.0" copyrightFields="false" operationReflection="true"
-    importOrganizing="true">
+    bundleManifest="false" complianceLevel="17.0" copyrightFields="false" usedGenPackages="../../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../../CSMN/src/ecore/CSMN.genmodel#//csmn ../../../org.eclipse.uml2.types/model/Types.genmodel#//types ../../../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
     <details key="DUPLICATE_FEATURES" value="DISCARD"/>
@@ -33,13 +33,16 @@
   <genPackages xsi:type="genmodel:GenPackage" prefix="DocGen" basePackage="engineering.schumann.uml"
       disposableProviderFactory="true" ecorePackage="docgen.ecore#/">
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="docgen.ecore#//Context">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/umlElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/UUID"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/documentTitle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference docgen.ecore#//Context/product"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/productName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/productModel"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/softwareVersion"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/templateUUID"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/UUID"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/documentTitle"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/templateVersion"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//Context/umlElement"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="docgen.ecore#//TocEntry">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute docgen.ecore#//TocEntry/idSuffix"/>

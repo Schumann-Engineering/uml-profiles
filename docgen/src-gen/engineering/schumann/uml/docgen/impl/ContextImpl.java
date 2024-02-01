@@ -3,12 +3,15 @@
 package engineering.schumann.uml.docgen.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import engineering.schumann.uml.docgen.Context;
 import engineering.schumann.uml.docgen.DocGenPackage;
+import engineering.schumann.uml.profile.csmn.Product;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,37 +21,69 @@ import engineering.schumann.uml.docgen.DocGenPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getUmlElement <em>Uml Element</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getUUID <em>UUID</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getDocumentTitle <em>Document Title</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getProduct <em>Product</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getProductName <em>Product Name</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getProductModel <em>Product Model</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getSoftwareVersion <em>Software Version</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getTemplateUUID <em>Template UUID</em>}</li>
- *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getUUID <em>UUID</em>}</li>
- *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getDocumentTitle <em>Document Title</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getTemplateVersion <em>Template Version</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.impl.ContextImpl#getUmlElement <em>Uml Element</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ContextImpl extends MinimalEObjectImpl.Container implements Context {
 	/**
-	 * The default value of the '{@link #getUmlElement() <em>Uml Element</em>}' attribute.
+	 * The default value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUmlElement()
+	 * @see #getUUID()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Object UML_ELEMENT_EDEFAULT = null;
+	protected static final String UUID_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUmlElement() <em>Uml Element</em>}' attribute.
+	 * The cached value of the '{@link #getUUID() <em>UUID</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUmlElement()
+	 * @see #getUUID()
 	 * @generated
 	 * @ordered
 	 */
-	protected Object umlElement = UML_ELEMENT_EDEFAULT;
+	protected String uuid = UUID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DOCUMENT_TITLE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDocumentTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected String documentTitle = DOCUMENT_TITLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProduct() <em>Product</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProduct()
+	 * @generated
+	 * @ordered
+	 */
+	protected Product product;
 
 	/**
 	 * The default value of the '{@link #getProductName() <em>Product Name</em>}' attribute.
@@ -131,44 +166,44 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	protected String templateUUID = TEMPLATE_UUID_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUUID() <em>UUID</em>}' attribute.
+	 * The default value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUUID()
+	 * @see #getTemplateVersion()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String UUID_EDEFAULT = null;
+	protected static final String TEMPLATE_VERSION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUUID() <em>UUID</em>}' attribute.
+	 * The cached value of the '{@link #getTemplateVersion() <em>Template Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUUID()
+	 * @see #getTemplateVersion()
 	 * @generated
 	 * @ordered
 	 */
-	protected String uuid = UUID_EDEFAULT;
+	protected String templateVersion = TEMPLATE_VERSION_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * The default value of the '{@link #getUmlElement() <em>Uml Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDocumentTitle()
+	 * @see #getUmlElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DOCUMENT_TITLE_EDEFAULT = null;
+	protected static final Object UML_ELEMENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDocumentTitle() <em>Document Title</em>}' attribute.
+	 * The cached value of the '{@link #getUmlElement() <em>Uml Element</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDocumentTitle()
+	 * @see #getUmlElement()
 	 * @generated
 	 * @ordered
 	 */
-	protected String documentTitle = DOCUMENT_TITLE_EDEFAULT;
+	protected Object umlElement = UML_ELEMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -307,6 +342,29 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getTemplateVersion() {
+		return templateVersion;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTemplateVersion(String newTemplateVersion) {
+		String oldTemplateVersion = templateVersion;
+		templateVersion = newTemplateVersion;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocGenPackage.CONTEXT__TEMPLATE_VERSION, oldTemplateVersion, templateVersion));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	@Override
@@ -359,10 +417,73 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	 * @generated
 	 */
 	@Override
+	public Product getProduct() {
+		return product;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetProduct(Product newProduct, NotificationChain msgs) {
+		Product oldProduct = product;
+		product = newProduct;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DocGenPackage.CONTEXT__PRODUCT, oldProduct, newProduct);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setProduct(Product newProduct) {
+		if (newProduct != product) {
+			NotificationChain msgs = null;
+			if (product != null)
+				msgs = ((InternalEObject)product).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DocGenPackage.CONTEXT__PRODUCT, null, msgs);
+			if (newProduct != null)
+				msgs = ((InternalEObject)newProduct).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DocGenPackage.CONTEXT__PRODUCT, null, msgs);
+			msgs = basicSetProduct(newProduct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DocGenPackage.CONTEXT__PRODUCT, newProduct, newProduct));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case DocGenPackage.CONTEXT__PRODUCT:
+				return basicSetProduct(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DocGenPackage.CONTEXT__UML_ELEMENT:
-				return getUmlElement();
+			case DocGenPackage.CONTEXT__UUID:
+				return getUUID();
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				return getDocumentTitle();
+			case DocGenPackage.CONTEXT__PRODUCT:
+				return getProduct();
 			case DocGenPackage.CONTEXT__PRODUCT_NAME:
 				return getProductName();
 			case DocGenPackage.CONTEXT__PRODUCT_MODEL:
@@ -371,10 +492,10 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 				return getSoftwareVersion();
 			case DocGenPackage.CONTEXT__TEMPLATE_UUID:
 				return getTemplateUUID();
-			case DocGenPackage.CONTEXT__UUID:
-				return getUUID();
-			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
-				return getDocumentTitle();
+			case DocGenPackage.CONTEXT__TEMPLATE_VERSION:
+				return getTemplateVersion();
+			case DocGenPackage.CONTEXT__UML_ELEMENT:
+				return getUmlElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -387,8 +508,14 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DocGenPackage.CONTEXT__UML_ELEMENT:
-				setUmlElement(newValue);
+			case DocGenPackage.CONTEXT__UUID:
+				setUUID((String)newValue);
+				return;
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				setDocumentTitle((String)newValue);
+				return;
+			case DocGenPackage.CONTEXT__PRODUCT:
+				setProduct((Product)newValue);
 				return;
 			case DocGenPackage.CONTEXT__PRODUCT_NAME:
 				setProductName((String)newValue);
@@ -402,11 +529,11 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 			case DocGenPackage.CONTEXT__TEMPLATE_UUID:
 				setTemplateUUID((String)newValue);
 				return;
-			case DocGenPackage.CONTEXT__UUID:
-				setUUID((String)newValue);
+			case DocGenPackage.CONTEXT__TEMPLATE_VERSION:
+				setTemplateVersion((String)newValue);
 				return;
-			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
-				setDocumentTitle((String)newValue);
+			case DocGenPackage.CONTEXT__UML_ELEMENT:
+				setUmlElement(newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -420,8 +547,14 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DocGenPackage.CONTEXT__UML_ELEMENT:
-				setUmlElement(UML_ELEMENT_EDEFAULT);
+			case DocGenPackage.CONTEXT__UUID:
+				setUUID(UUID_EDEFAULT);
+				return;
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				setDocumentTitle(DOCUMENT_TITLE_EDEFAULT);
+				return;
+			case DocGenPackage.CONTEXT__PRODUCT:
+				setProduct((Product)null);
 				return;
 			case DocGenPackage.CONTEXT__PRODUCT_NAME:
 				setProductName(PRODUCT_NAME_EDEFAULT);
@@ -435,11 +568,11 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 			case DocGenPackage.CONTEXT__TEMPLATE_UUID:
 				setTemplateUUID(TEMPLATE_UUID_EDEFAULT);
 				return;
-			case DocGenPackage.CONTEXT__UUID:
-				setUUID(UUID_EDEFAULT);
+			case DocGenPackage.CONTEXT__TEMPLATE_VERSION:
+				setTemplateVersion(TEMPLATE_VERSION_EDEFAULT);
 				return;
-			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
-				setDocumentTitle(DOCUMENT_TITLE_EDEFAULT);
+			case DocGenPackage.CONTEXT__UML_ELEMENT:
+				setUmlElement(UML_ELEMENT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -453,8 +586,12 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DocGenPackage.CONTEXT__UML_ELEMENT:
-				return UML_ELEMENT_EDEFAULT == null ? umlElement != null : !UML_ELEMENT_EDEFAULT.equals(umlElement);
+			case DocGenPackage.CONTEXT__UUID:
+				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
+			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
+				return DOCUMENT_TITLE_EDEFAULT == null ? documentTitle != null : !DOCUMENT_TITLE_EDEFAULT.equals(documentTitle);
+			case DocGenPackage.CONTEXT__PRODUCT:
+				return product != null;
 			case DocGenPackage.CONTEXT__PRODUCT_NAME:
 				return PRODUCT_NAME_EDEFAULT == null ? productName != null : !PRODUCT_NAME_EDEFAULT.equals(productName);
 			case DocGenPackage.CONTEXT__PRODUCT_MODEL:
@@ -463,10 +600,10 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 				return SOFTWARE_VERSION_EDEFAULT == null ? softwareVersion != null : !SOFTWARE_VERSION_EDEFAULT.equals(softwareVersion);
 			case DocGenPackage.CONTEXT__TEMPLATE_UUID:
 				return TEMPLATE_UUID_EDEFAULT == null ? templateUUID != null : !TEMPLATE_UUID_EDEFAULT.equals(templateUUID);
-			case DocGenPackage.CONTEXT__UUID:
-				return UUID_EDEFAULT == null ? uuid != null : !UUID_EDEFAULT.equals(uuid);
-			case DocGenPackage.CONTEXT__DOCUMENT_TITLE:
-				return DOCUMENT_TITLE_EDEFAULT == null ? documentTitle != null : !DOCUMENT_TITLE_EDEFAULT.equals(documentTitle);
+			case DocGenPackage.CONTEXT__TEMPLATE_VERSION:
+				return TEMPLATE_VERSION_EDEFAULT == null ? templateVersion != null : !TEMPLATE_VERSION_EDEFAULT.equals(templateVersion);
+			case DocGenPackage.CONTEXT__UML_ELEMENT:
+				return UML_ELEMENT_EDEFAULT == null ? umlElement != null : !UML_ELEMENT_EDEFAULT.equals(umlElement);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -481,8 +618,10 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (umlElement: ");
-		result.append(umlElement);
+		result.append(" (UUID: ");
+		result.append(uuid);
+		result.append(", documentTitle: ");
+		result.append(documentTitle);
 		result.append(", productName: ");
 		result.append(productName);
 		result.append(", productModel: ");
@@ -491,10 +630,10 @@ public class ContextImpl extends MinimalEObjectImpl.Container implements Context
 		result.append(softwareVersion);
 		result.append(", templateUUID: ");
 		result.append(templateUUID);
-		result.append(", UUID: ");
-		result.append(uuid);
-		result.append(", documentTitle: ");
-		result.append(documentTitle);
+		result.append(", templateVersion: ");
+		result.append(templateVersion);
+		result.append(", umlElement: ");
+		result.append(umlElement);
 		result.append(')');
 		return result.toString();
 	}

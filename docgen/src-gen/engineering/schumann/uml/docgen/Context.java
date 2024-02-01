@@ -2,6 +2,7 @@
  */
 package engineering.schumann.uml.docgen;
 
+import engineering.schumann.uml.profile.csmn.Product;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,13 +14,15 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link engineering.schumann.uml.docgen.Context#getUmlElement <em>Uml Element</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getUUID <em>UUID</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getDocumentTitle <em>Document Title</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getProduct <em>Product</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getProductName <em>Product Name</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getProductModel <em>Product Model</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getSoftwareVersion <em>Software Version</em>}</li>
  *   <li>{@link engineering.schumann.uml.docgen.Context#getTemplateUUID <em>Template UUID</em>}</li>
- *   <li>{@link engineering.schumann.uml.docgen.Context#getUUID <em>UUID</em>}</li>
- *   <li>{@link engineering.schumann.uml.docgen.Context#getDocumentTitle <em>Document Title</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getTemplateVersion <em>Template Version</em>}</li>
+ *   <li>{@link engineering.schumann.uml.docgen.Context#getUmlElement <em>Uml Element</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.docgen.DocGenPackage#getContext()
@@ -158,6 +161,32 @@ public interface Context extends EObject {
 	void setTemplateUUID(String value);
 
 	/**
+	 * Returns the value of the '<em><b>Template Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Template Version</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Template Version</em>' attribute.
+	 * @see #setTemplateVersion(String)
+	 * @see engineering.schumann.uml.docgen.DocGenPackage#getContext_TemplateVersion()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getTemplateVersion();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.docgen.Context#getTemplateVersion <em>Template Version</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Template Version</em>' attribute.
+	 * @see #getTemplateVersion()
+	 * @generated
+	 */
+	void setTemplateVersion(String value);
+
+	/**
 	 * Returns the value of the '<em><b>UUID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -208,5 +237,31 @@ public interface Context extends EObject {
 	 * @generated
 	 */
 	void setDocumentTitle(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Product</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Product</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Product</em>' containment reference.
+	 * @see #setProduct(Product)
+	 * @see engineering.schumann.uml.docgen.DocGenPackage#getContext_Product()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	Product getProduct();
+
+	/**
+	 * Sets the value of the '{@link engineering.schumann.uml.docgen.Context#getProduct <em>Product</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Product</em>' containment reference.
+	 * @see #getProduct()
+	 * @generated
+	 */
+	void setProduct(Product value);
 
 } // Context

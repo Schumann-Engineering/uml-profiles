@@ -69,58 +69,13 @@ public interface DocGenPackage extends EPackage {
 	int CONTEXT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Uml Element</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__UML_ELEMENT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Product Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__PRODUCT_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Product Model</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__PRODUCT_MODEL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Software Version</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__SOFTWARE_VERSION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Template UUID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTEXT__TEMPLATE_UUID = 4;
-
-	/**
 	 * The feature id for the '<em><b>UUID</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__UUID = 5;
+	int CONTEXT__UUID = 0;
 
 	/**
 	 * The feature id for the '<em><b>Document Title</b></em>' attribute.
@@ -129,7 +84,70 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT__DOCUMENT_TITLE = 6;
+	int CONTEXT__DOCUMENT_TITLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Product</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__PRODUCT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Product Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__PRODUCT_NAME = 3;
+
+	/**
+	 * The feature id for the '<em><b>Product Model</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__PRODUCT_MODEL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Software Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__SOFTWARE_VERSION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Template UUID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__TEMPLATE_UUID = 6;
+
+	/**
+	 * The feature id for the '<em><b>Template Version</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__TEMPLATE_VERSION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Uml Element</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTEXT__UML_ELEMENT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Context</em>' class.
@@ -138,7 +156,7 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTEXT_FEATURE_COUNT = 7;
+	int CONTEXT_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Context</em>' class.
@@ -299,6 +317,17 @@ public interface DocGenPackage extends EPackage {
 	EAttribute getContext_TemplateUUID();
 
 	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.docgen.Context#getTemplateVersion <em>Template Version</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Template Version</em>'.
+	 * @see engineering.schumann.uml.docgen.Context#getTemplateVersion()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EAttribute getContext_TemplateVersion();
+
+	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.docgen.Context#getUUID <em>UUID</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,6 +348,17 @@ public interface DocGenPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContext_DocumentTitle();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link engineering.schumann.uml.docgen.Context#getProduct <em>Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Product</em>'.
+	 * @see engineering.schumann.uml.docgen.Context#getProduct()
+	 * @see #getContext()
+	 * @generated
+	 */
+	EReference getContext_Product();
 
 	/**
 	 * Returns the meta object for class '{@link engineering.schumann.uml.docgen.TocEntry <em>Toc Entry</em>}'.
@@ -469,6 +509,14 @@ public interface DocGenPackage extends EPackage {
 		EAttribute CONTEXT__TEMPLATE_UUID = eINSTANCE.getContext_TemplateUUID();
 
 		/**
+		 * The meta object literal for the '<em><b>Template Version</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTEXT__TEMPLATE_VERSION = eINSTANCE.getContext_TemplateVersion();
+
+		/**
 		 * The meta object literal for the '<em><b>UUID</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -483,6 +531,14 @@ public interface DocGenPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTEXT__DOCUMENT_TITLE = eINSTANCE.getContext_DocumentTitle();
+
+		/**
+		 * The meta object literal for the '<em><b>Product</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTEXT__PRODUCT = eINSTANCE.getContext_Product();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.docgen.impl.TocEntryImpl <em>Toc Entry</em>}' class.

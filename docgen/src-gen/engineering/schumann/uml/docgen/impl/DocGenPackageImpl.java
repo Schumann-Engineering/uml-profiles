@@ -7,13 +7,17 @@ import engineering.schumann.uml.docgen.DocGenFactory;
 import engineering.schumann.uml.docgen.DocGenPackage;
 
 import engineering.schumann.uml.docgen.TocEntry;
+import engineering.schumann.uml.profile.csmn.CSMNPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.eclipse.uml2.types.TypesPackage;
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,6 +86,12 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		CSMNPackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		UMLPackage.eINSTANCE.eClass();
+
 		// Create package meta-data objects
 		theDocGenPackage.createPackageContents();
 
@@ -113,7 +123,7 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 */
 	@Override
 	public EAttribute getContext_UmlElement() {
-		return (EAttribute)contextEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)contextEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -123,26 +133,6 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 */
 	@Override
 	public EAttribute getContext_ProductName() {
-		return (EAttribute)contextEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContext_ProductModel() {
-		return (EAttribute)contextEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContext_SoftwareVersion() {
 		return (EAttribute)contextEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -152,7 +142,7 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContext_TemplateUUID() {
+	public EAttribute getContext_ProductModel() {
 		return (EAttribute)contextEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -162,7 +152,7 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContext_UUID() {
+	public EAttribute getContext_SoftwareVersion() {
 		return (EAttribute)contextEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -172,8 +162,48 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContext_DocumentTitle() {
+	public EAttribute getContext_TemplateUUID() {
 		return (EAttribute)contextEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContext_TemplateVersion() {
+		return (EAttribute)contextEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContext_UUID() {
+		return (EAttribute)contextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContext_DocumentTitle() {
+		return (EAttribute)contextEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContext_Product() {
+		return (EReference)contextEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -276,13 +306,15 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 
 		// Create classes and their features
 		contextEClass = createEClass(CONTEXT);
-		createEAttribute(contextEClass, CONTEXT__UML_ELEMENT);
+		createEAttribute(contextEClass, CONTEXT__UUID);
+		createEAttribute(contextEClass, CONTEXT__DOCUMENT_TITLE);
+		createEReference(contextEClass, CONTEXT__PRODUCT);
 		createEAttribute(contextEClass, CONTEXT__PRODUCT_NAME);
 		createEAttribute(contextEClass, CONTEXT__PRODUCT_MODEL);
 		createEAttribute(contextEClass, CONTEXT__SOFTWARE_VERSION);
 		createEAttribute(contextEClass, CONTEXT__TEMPLATE_UUID);
-		createEAttribute(contextEClass, CONTEXT__UUID);
-		createEAttribute(contextEClass, CONTEXT__DOCUMENT_TITLE);
+		createEAttribute(contextEClass, CONTEXT__TEMPLATE_VERSION);
+		createEAttribute(contextEClass, CONTEXT__UML_ELEMENT);
 
 		tocEntryEClass = createEClass(TOC_ENTRY);
 		createEAttribute(tocEntryEClass, TOC_ENTRY__ID_SUFFIX);
@@ -316,6 +348,9 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CSMNPackage theCSMNPackage = (CSMNPackage)EPackage.Registry.INSTANCE.getEPackage(CSMNPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -324,13 +359,15 @@ public class DocGenPackageImpl extends EPackageImpl implements DocGenPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContext_UmlElement(), ecorePackage.getEJavaObject(), "umlElement", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContext_UUID(), ecorePackage.getEString(), "UUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContext_DocumentTitle(), ecorePackage.getEString(), "documentTitle", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getContext_Product(), theCSMNPackage.getProduct(), null, "product", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_ProductName(), ecorePackage.getEString(), "productName", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_ProductModel(), ecorePackage.getEString(), "productModel", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getContext_TemplateUUID(), ecorePackage.getEString(), "templateUUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContext_UUID(), ecorePackage.getEString(), "UUID", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getContext_DocumentTitle(), ecorePackage.getEString(), "documentTitle", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContext_TemplateVersion(), ecorePackage.getEString(), "templateVersion", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getContext_UmlElement(), ecorePackage.getEJavaObject(), "umlElement", null, 1, 1, Context.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(tocEntryEClass, TocEntry.class, "TocEntry", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTocEntry_IdSuffix(), ecorePackage.getEString(), "idSuffix", null, 0, 1, TocEntry.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

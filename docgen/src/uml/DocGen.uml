@@ -4,9 +4,19 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_Qd2nwMAxEe6J2ZYSA98_lA">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_S-KBUMAxEe6J2ZYSA98_lA" name="Context">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_mFqdsMAxEe6J2ZYSA98_lA" name="umlElement">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_RdNg0MDSEe6arp2ZPgthIg">
+      <importedPackage xmi:type="uml:Profile" href="pathmap://CSMN/profile/CSMN.profile.uml#_Sv9oAKTMEe6ULIx8cDHqqA"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Class" xmi:id="_S-KBUMAxEe6J2ZYSA98_lA" name="Context" visibility="protected">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_vJYg8MAxEe6J2ZYSA98_lA" name="UUID">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_C3MXQMBREe6arp2ZPgthIg" name="documentTitle">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_DnbcwMDSEe6arp2ZPgthIg" name="product">
+        <type xmi:type="uml:DataType" href="pathmap://CSMN/profile/CSMN.profile.uml#_t_0sVapCEe6Gq7xaYvprpg"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_W2WvwMDSEe6arp2ZPgthIg"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_qOc4AMAxEe6J2ZYSA98_lA" name="productName">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -23,11 +33,11 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_t2xCgMAxEe6J2ZYSA98_lA" name="templateUUID">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_vJYg8MAxEe6J2ZYSA98_lA" name="UUID">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_15KEAMDTEe6arp2ZPgthIg" name="templateVersion">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_C3MXQMBREe6arp2ZPgthIg" name="documentTitle">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_mFqdsMAxEe6J2ZYSA98_lA" name="umlElement">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaObject"/>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_tb964MBHEe6J2ZYSA98_lA" name="TocEntry">
