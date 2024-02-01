@@ -105,7 +105,7 @@ post(trim())
 {
 	breadcrumbs : String = Toc_currentBreadcrumbs_Html();
 }]
-[if (breadcrumbs <> null and breadcrumbs <> '')]
+[if (breadcrumbs <> null and breadcrumbs.trim() <> '')]
 <p class="breadcrumbs">
 	<i>back to</i> [breadcrumbs /]
 </p>
