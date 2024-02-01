@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module DocumentClassification('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module DocumentClassification.css('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
 [template public CSS_DOCUMENT_CLASSIFICATION(
@@ -17,7 +17,7 @@
 
 .document-classification {
 	position: 			absolute !important;
-	bottom: 			0mm !important;
+	top: 				5mm !important;
 	left:				0mm !important;
 	width: 				100% !important;
 	height: 			3cm !important;

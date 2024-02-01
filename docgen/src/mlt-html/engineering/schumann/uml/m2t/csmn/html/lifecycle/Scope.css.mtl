@@ -1,16 +1,18 @@
 [comment encoding = UTF-8 /]
-[module List('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module Scope.css('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
-[template public CSS_LIST(
+[template public CSS_CSMN_SCOPE(
 	devNull : OclAny
 )]
 /** ========================================
   * ========================================
-  * LIST
+  * CSMN > SCOPE
   * ========================================
   * ======================================== **/
-ul, dl, ol {
-	text-align:			left;
+.cover-page .csmn-scope {
+	position: 				absolute !important;
+	bottom:					4cm !important;
+	width:					20.5cm !important;
 }
 [/template]

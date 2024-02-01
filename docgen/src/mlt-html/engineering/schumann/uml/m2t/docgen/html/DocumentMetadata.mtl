@@ -1,0 +1,35 @@
+[comment encoding = UTF-8 /]
+[module DocumentMetadata(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[template public DOC_Footer(
+	_context	: Context
+)
+post(trim())]
+<div class="document-footer">
+	<table class="table-2-columns">
+		<tr>
+			<th>Template ID</th>
+			<td>[_context.templateUUID /]</td>
+		</tr>
+		<tr>
+			<th>Template Version</th>
+			<td>[_context.templateVersion /]</td>
+		</tr>
+		<tr>
+			<th>Document date</th>
+			<td>[invoke(
+					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+					'getCurrentDateTime()',
+					Sequence{}
+					) /]</td>
+		</tr>
+		<tr>
+			<td colspan="2">This document was automatically generated</td>
+		</tr>
+	</table>
+</div>
+[/template]

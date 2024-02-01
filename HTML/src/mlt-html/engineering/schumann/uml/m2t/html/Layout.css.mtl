@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module Layout('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module Layout.css('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
 [template public CSS_PAGE_SETUP(

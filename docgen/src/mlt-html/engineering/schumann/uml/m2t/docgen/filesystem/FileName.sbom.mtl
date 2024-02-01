@@ -4,12 +4,11 @@
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/docgen/1'
 )
-extends engineering::schumann::uml::m2t::docgen::common::FileName
+extends engineering::schumann::uml::m2t::docgen::filesystem::FileName
 ]
 
 
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
 
 
 [query public SBOM_File_URI(

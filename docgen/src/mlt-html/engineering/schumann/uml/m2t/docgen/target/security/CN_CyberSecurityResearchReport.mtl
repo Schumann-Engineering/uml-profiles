@@ -17,7 +17,7 @@
  **/]
 
 
-[import engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument /]
+[import engineering::schumann::uml::m2t::docgen::html::BasicHtmlDocument /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
@@ -27,7 +27,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
@@ -35,8 +35,8 @@
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
-[import engineering::schumann::uml::m2t::html::DocumentClassification /]
-[import engineering::schumann::uml::m2t::html::DocumentMetadata /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -52,6 +52,7 @@
 )
 {
 	templateUUID	: String	= '1145613c-bd93-4c19-b613-4b65e2ab8999';
+	templateVersion	: String	= '0.1 (2024-01)';
 	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
@@ -60,12 +61,12 @@
 [let scope : Scope = pkg.csmn_scope()]
 [for (product : Product | scope.csmn_productInScope())]
 [if (product.softwareVersion->size() = 0)]
-[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID)]
+[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID, templateVersion)]
 [pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
 [/let]
 [else]
 [for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID)]
+[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID, templateVersion)]
 [pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
 [/let]
 [/for]
@@ -131,10 +132,10 @@
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
-	[DOC_Timestamp() /]
+	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Cyber Security Research Report') /]
-		[this.printScope(true, true) /]
+		[this.printScope(_context, false, true) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]
 [/template]

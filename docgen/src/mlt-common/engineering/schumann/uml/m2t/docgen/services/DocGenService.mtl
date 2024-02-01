@@ -9,17 +9,19 @@
 	product			: Product,
 	softwareVersion	: String,
 	documentTitle	: String,
-	templateUUID	: String
+	templateUUID	: String,
+	templateVersion	: String
 ) : Context  =
 	invoke(
 		'engineering.schumann.uml.m2t.docgen.services.DocGenServiceImpl',
-		'createContext(java.lang.Object, engineering.schumann.uml.profile.csmn.Product, java.lang.String, java.lang.String, java.lang.String)', 
+		'createContext(java.lang.Object, engineering.schumann.uml.profile.csmn.Product, java.lang.String, java.lang.String, java.lang.String, java.lang.String)', 
 		Sequence{
 			umlElement,
 			product,
 			softwareVersion,
 			documentTitle,
-			templateUUID
+			templateUUID,
+			templateVersion
 		}
 	)
 /]

@@ -1,8 +1,5 @@
 package engineering.schumann.uml.m2t.docgen.html.services;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import engineering.schumann.uml.docgen.DocGenFactory;
 import engineering.schumann.uml.docgen.TocEntry;
 

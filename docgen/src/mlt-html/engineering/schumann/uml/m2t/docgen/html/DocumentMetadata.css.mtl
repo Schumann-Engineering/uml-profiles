@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module DocumentMetadata('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module DocumentMetadata.css('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
 [template public CSS_DOCUMENT_METADATA(
@@ -10,16 +10,24 @@
   * DOCUMENT METADATA
   * ========================================
   * ======================================== **/
-.document-timestamp {
+.document-footer {
 	position: 			absolute !important;
 	bottom: 			5mm !important;
 	right:				5mm !important;
 }
 
 
-.document-timestamp p {
+.document-footer p {
 	text-align: 		right !important; 
 	font-weight: 		bold !important;
 	margin:				2mm !important;
+}
+
+
+.cover-page h1 {
+	position:			absolute !important;
+	top:				5cm !important;
+	text-align: center !important;
+    width: 100% !important;
 }
 [/template]

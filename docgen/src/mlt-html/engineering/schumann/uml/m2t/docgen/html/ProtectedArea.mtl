@@ -7,7 +7,7 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 ]
 
 
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 
 
 [template public protectedArea(

@@ -18,20 +18,20 @@
  **/]
 
 
-[import engineering::schumann::uml::m2t::docgen::common::BasicHtmlDocument /]
+[import engineering::schumann::uml::m2t::docgen::html::BasicHtmlDocument /]
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
-[import engineering::schumann::uml::m2t::docgen::common::FileName.sbom /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName.sbom /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
-[import engineering::schumann::uml::m2t::html::DocumentClassification /]
-[import engineering::schumann::uml::m2t::html::DocumentMetadata /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata /]
 [import engineering::schumann::uml::m2t::html::Image /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::Link /]
@@ -48,9 +48,10 @@
 )
 ? (this.csmn_isScoped())
 {
-	products		: Set(Product)		= this.csmn_scope().csmn_productInScope();
-	templateUUID	: String			= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
-	documentTitle	: String			= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
+	products		: Set(Product)	= this.csmn_scope().csmn_productInScope();
+	templateUUID	: String		= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
+	templateVersion	: String		= '0.1 (2024-01)';
+	documentTitle	: String		= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
 }
 ]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
@@ -58,7 +59,7 @@
 [loadSbomLibrary() /]
 [for (product : Product | products)]
 [for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID)]
+[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID, templateVersion)]
 [let sbomFileName : String = findSbomFileName(
 	this.SBOM_File_URI(_context),
 	this.DocGen_Directory_URI(_context))]
@@ -131,10 +132,10 @@ post(trim())]
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
 	[DOC_Classiciation_PUBLIC() /]
-	[DOC_Timestamp() /]
+	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
-		[this.printScope(true, true) /]
+		[this.printScope(_context, true, true) /]
 	[TOC_Title_end() /]
 
 	[html_ANSI_CAUTION_Start() /]

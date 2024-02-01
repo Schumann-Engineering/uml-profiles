@@ -6,7 +6,7 @@
 )]
 
 
-[import engineering::schumann::uml::m2t::docgen::common::FileName /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::html::Image /]
 
 

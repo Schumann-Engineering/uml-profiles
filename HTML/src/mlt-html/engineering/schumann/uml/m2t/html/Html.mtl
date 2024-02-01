@@ -2,14 +2,12 @@
 [module Html('http://www.eclipse.org/uml2/5.0.0/UML')]
 
 
-[import engineering::schumann::uml::m2t::html::css::Boxes /]
-[import engineering::schumann::uml::m2t::html::css::DocumentClassification /]
-[import engineering::schumann::uml::m2t::html::css::DocumentMetadata /]
-[import engineering::schumann::uml::m2t::html::css::ExternalTheme /]
-[import engineering::schumann::uml::m2t::html::css::List /]
-[import engineering::schumann::uml::m2t::html::css::MaterialDesign /]
-[import engineering::schumann::uml::m2t::html::css::Layout /]
-[import engineering::schumann::uml::m2t::html::css::Table /]
+[import engineering::schumann::uml::m2t::html::Boxes.css /]
+[import engineering::schumann::uml::m2t::html::ExternalTheme.css /]
+[import engineering::schumann::uml::m2t::html::List.css /]
+[import engineering::schumann::uml::m2t::html::MaterialDesign.css /]
+[import engineering::schumann::uml::m2t::html::Layout.css /]
+[import engineering::schumann::uml::m2t::html::Table.css /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -40,14 +38,6 @@
 
 <style type="text/css">
 [CSS_BOXES() /]
-</style>
-
-<style type="text/css">
-[CSS_DOCUMENT_CLASSIFICATION() /]
-</style>
-
-<style type="text/css">
-[CSS_DOCUMENT_METADATA() /]
 </style>
 [/template]
 

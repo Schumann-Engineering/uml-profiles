@@ -10,7 +10,8 @@ public class DocGenServiceImpl {
 		Product product,
 		String softwareVersion,
 		String documentTitle,
-		String templateUUID
+		String templateUUID,
+		String templateVersion
 	)
 	{
 		// === SETUP ===
@@ -20,18 +21,21 @@ public class DocGenServiceImpl {
 		result.setUmlElement(umlElement);
 		if (product != null)
 		{
+			result.setProduct(product);
 			result.setProductModel(product.getModel());
 			result.setProductName(product.getProductName());
 		}
 		result.setSoftwareVersion(softwareVersion);
 		result.setDocumentTitle(documentTitle);
 		result.setTemplateUUID(templateUUID);
+		result.setTemplateVersion(templateVersion);
 		
 		System.out.println(String.format(
-				"DEBUG: [Context] CREATED: id=%s, title=%s (template=%s), product=%s, model=%s, sw=%s", 
+				"DEBUG: [Context] CREATED: id=%s, title=%s (template=%s; version=%s), product=%s, model=%s, sw=%s", 
 				result.getUUID(),
 				result.getDocumentTitle(),
 				result.getTemplateUUID(),
+				result.getTemplateVersion(),
 				result.getProductName(),
 				result.getProductModel(),
 				result.getSoftwareVersion()

@@ -9,11 +9,16 @@ extends engineering::schumann::uml::m2t::html::Html
 ]
 
 
-[import engineering::schumann::uml::m2t::sbom::html::css::Component /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::css::Scope /]
-[import engineering::schumann::uml::m2t::html::Layout /]
+[comment Templates & Queries /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
-[import engineering::schumann::uml::m2t::docgen::html::css::Toc /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[comment CSS /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.css /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification.css /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata.css /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc.css /]
+[import engineering::schumann::uml::m2t::sbom::html::Component.css /]
+[comment Services /]
 [import engineering::schumann::uml::m2t::common::services::StringService /]
 
 
@@ -21,6 +26,14 @@ extends engineering::schumann::uml::m2t::html::Html
 	devNull : OclAny
 )
 post(trim())]
+<style type="text/css">
+[CSS_DOCUMENT_CLASSIFICATION() /]
+</style>
+
+<style type="text/css">
+[CSS_DOCUMENT_METADATA() /]
+</style>
+
 <style type="text/css">
 [CSS_TOC() /]
 </style>
