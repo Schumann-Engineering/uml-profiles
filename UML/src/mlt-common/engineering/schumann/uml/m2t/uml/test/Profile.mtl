@@ -6,25 +6,29 @@
 
 
 [comment runs through the profile applications and "pre-loads" them /]
-[template public testProfiles(
+[template public test_UML_Profiles(
 	model : Model
 ) post(trim())]
 [for (profile : ProfileApplication | model.profileApplication)]
-- [profile.appliedProfile.name /]
-	- URI = [profile.appliedProfile.URI/]
+- *PROFILE* "[profile.appliedProfile.name /]"
+	- name          = [profile.appliedProfile.name/]
+	- FQN           = [profile.appliedProfile.qualifiedName/]
+	- URI           = [profile.appliedProfile.URI/]
 	[if (profile.appliedProfile.eIsProxy())]
 	- **ERROR**: COULD NOT LOAD PROFILE!
 	[/if]
 [/for][/template]
 
 
-[template public testStereotypes(
+[template public test_UML_Stereotypes(
 	this : Model
 )]
-[for (this._allStereotypedElements())]
-[self/]
-- stereotypes:    [self.hasStereotypes()/]
-- [self.getAppliedStereotypes().qualifiedName /]
-- [self._hasStereotype('CSMN::Scope') /]
+[for (this._allStereotypedElements()->filter(NamedElement))]
+- *ELEMENT* "[self.name/]"
+	- FQN			= [self.qualifiedName /]
+    - isStereotyped = [self.hasStereotypes()/]
+[for (self.getAppliedStereotypes())]
+    - stereotype    = [qualifiedName /]
+[/for]
 [/for]
 [/template]
