@@ -34,8 +34,8 @@
 	CSMN
 	====================
 /]
-[comment generateDocument_INT_ProductSecurityCharacteristics() /]
-[comment generateDocument_CN_CyberSecurityResearchReport() /]
+[generateDocument_INT_ProductSecurityCharacteristics() /]
+[generateDocument_CN_CyberSecurityResearchReport() /]
 
 
 [comment
@@ -43,7 +43,7 @@
 	SBOM
 	====================
 /]
-[comment generateDocument_INT_SbomReport() /]
+[generateDocument_INT_SbomReport() /]
 [/template]
 
 

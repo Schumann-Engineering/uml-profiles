@@ -19,3 +19,14 @@
 	alt="Diagram showing the product architecture with system elements, environment, security zone and user groups and their interactions"
 	width="100%"
 />[/template]
+
+
+[template public html_IMG_ProductArchitectureDiagramLegend(
+	this			: NamedElement,
+	_context		: Context
+)]<div><img
+	src="[DIRECTORY_URI_ASSETS_HTML(_context) /]/CMNS/CMNS-legend.svg"
+	title="CMNS legend"
+	alt="Legend explaining each diagram element shown in CMNS and DfD notation"
+	style="max-height: 4cm !important; float: right !important; margin-top: 5mm !important;"
+/></div>[/template]

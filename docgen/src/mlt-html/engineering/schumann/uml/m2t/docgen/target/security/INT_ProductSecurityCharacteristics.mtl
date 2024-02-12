@@ -78,7 +78,7 @@
 			[comment iterate over all software version of the system element /]
 			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion)]
 				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
-[productElement.generateDocument_INT_ProductSecurityCharacteristics( _context) /]
+[productElement.generateDocument_INT_ProductSecurityCharacteristics(_context) /]
 				[/let]
 			[/for]
 		[/for]
@@ -260,13 +260,34 @@
 			--------------------
 		/]
 [comment html_PAGE_begin('diagram')/]
-		[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
-		[this.TOC_Section_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
+		[if (_context.product <> null)]
+		[this.TOC_Section_begin('Overview ' + _context.product.productName + ' (model ' + _context.product.model + ')') /]
 		
+			<p>
+				The following diagram shows a system architecture overview.
+				It contains system elements of the product, product interfaces as well as environment elements and user groups.
+				It also show the flow of information, material and energy.
+				In addition, security boundaries are shown.
+			</p>
+
+			[html_INFO_Start()/]
+			<p>
+				The following sections will describe each element in detail.
+			</p>
+			[html_INFO_End()/]
+
 			[this.html_IMG_ProductArchitectureDiagram(_context) /]
+
+			[this.html_IMG_ProductArchitectureDiagramLegend(_context) /]
 			
 		[this.TOC_Section_end()/]
-		[/for]
+		[else]
+		[html_ANSI_DANGER_Start()/]
+			<p>
+				no product match found!
+			</p>
+		[html_ANSI_DANGER_End()/]
+		[/if]
 [html_PAGE_end('diagram')/]
 	
 		[comment
@@ -840,34 +861,34 @@
 			CAPABILITY SECURITY LEVEL
 			--------------------
 		/]
+[comment]
 [html_PAGE_begin('SL-C')/]
 		[TOC_Section_begin('Capability Security Level (SL-C) (IEC 60601-4-5)') /]
-			[comment TOC_SubSection_begin('Declaration')/]
 			[html_TBD() /]
-			[comment TOC_SubSection_end()/]
 
 			[TOC_SubSection_begin('Background')/]
 				[html_TBD('IMAGE: IEC 60601-4-5 - capability Security Level (SL-C)') /]
 			[TOC_SubSection_end()/]			
 		[TOC_Section_end()/]
 [html_PAGE_end('SL-C')/]
+[/comment]
 		
 		[comment
 			--------------------
 			TARGET SECURITY LEVEL
 			--------------------
 		/]
+[comment]
 [html_PAGE_begin('SL-T')/]
 		[TOC_Section_begin('Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)') /]
-			[comment TOC_SubSection_begin('Declaration')/]
 			[html_TBD() /]
-			[comment TOC_SubSection_end()/]
 
 			[TOC_SubSection_begin('Background')/]
 				[html_TBD('IMAGE: IEC 60601-4-5 - target Security Level (SL-T)') /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
-[comment html_PAGE_end('SL-T')/]
+[html_PAGE_end('SL-T')/]
+[/comment]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('security capabilities')/]
 [/template]
