@@ -38,6 +38,7 @@
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
@@ -101,6 +102,8 @@
 	[let content : String = generateDocumentContent(_context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
+	[QM_PAGE_Signatory(_context) /]
+
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
 		'fixAcceleoOutput(java.lang.String)',
@@ -139,7 +142,7 @@
 	_context		: Context
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
-	[DOC_Classiciation_CONFIDENTIAL_INTERNAL() /]
+	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
 	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Product Security Characteristics') /]

@@ -53,6 +53,7 @@
 [import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
 [import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata /]
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
@@ -123,6 +124,8 @@
 	[let content : String = productElement.generateDocumentContent(this, _context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
+	[QM_PAGE_Signatory(_context) /]
+
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
 		'fixAcceleoOutput(java.lang.String)',
@@ -167,7 +170,7 @@ post(trim())]
 	_context		: Context
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
-	[DOC_Classiciation_PUBLIC() /]
+	[DOC_Classification_PUBLIC(_context) /]
 	[DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
