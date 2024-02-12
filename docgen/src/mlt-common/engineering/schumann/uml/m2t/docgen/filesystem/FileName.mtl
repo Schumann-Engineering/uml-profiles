@@ -146,13 +146,13 @@ each file would need a new engine / run.
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 		+ DocGen_File_Part_Name(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 	}
 /]
@@ -181,7 +181,7 @@ each file would need a new engine / run.
 	    + PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
@@ -189,7 +189,7 @@ each file would need a new engine / run.
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
@@ -197,13 +197,13 @@ each file would need a new engine / run.
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR(),
 
 		PATH_SEPARATOR()
-		+ CSMN_PRODUCT_NAME()
+		+ _context.product.productName
 		+ PATH_SEPARATOR()
 		+ DIRECTORY_NAME_SNIPPETS(_context)
 		+ PATH_SEPARATOR()
