@@ -1,0 +1,59 @@
+[module VersionService(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)/]
+
+
+[query public isEqual(
+	needle : String, 
+	haystack : String
+) : Boolean = 
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VersionServiceImpl',
+		'isEqual(java.lang.String, java.lang.String)',
+		Sequence{
+			needle,
+			haystack
+	})
+/]
+
+
+[query public isNewer(
+	needle : String, 
+	haystack : String
+) : Boolean = 
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VersionServiceImpl',
+		'isNewer(java.lang.String, java.lang.String)',
+		Sequence{
+			needle,
+			haystack
+	})
+/]
+
+
+[query public isOlder(
+	needle : String, 
+	haystack : String
+) : Boolean = 
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VersionServiceImpl',
+		'isOlder(java.lang.String, java.lang.String)',
+		Sequence{
+			needle,
+			haystack
+	})
+/]
+
+
+[query public compareVersions(
+	needle : String, 
+	haystack : String
+) : Integer = 
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.VersionServiceImpl',
+		'compareVersions(java.lang.String, java.lang.String)',
+		Sequence{
+			needle,
+			haystack
+	})
+/]

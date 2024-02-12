@@ -1,0 +1,29 @@
+[comment encoding = UTF-8 /]
+[module Product.OperatingSystem(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+
+
+[query public csmn_softwareVersion(
+	this : Component
+) : String =
+	let scopeConstraint : ScopeConstraint = csmn_scopeConstraint() in
+	if (scopeConstraint <> null) then
+		if (scopeConstraint.softwareConstraint->notEmpty()) then
+			if (scopeConstraint.softwareConstraint->size() = 1) then
+				let softwareConstraint : SoftwareConstraint = scopeConstraint.softwareConstraint->asSequence()->first() in
+				softwareConstraint.softwareVersion
+			else
+				'ERROR-component-has-more-than-1-SoftwareConstraint'
+			endif
+		else
+			'ERROR-component-has-no-SoftwareConstraint'
+		endif
+	else
+		'ERROR-component-has-no-ScopeConstraint'
+	endif
+/]

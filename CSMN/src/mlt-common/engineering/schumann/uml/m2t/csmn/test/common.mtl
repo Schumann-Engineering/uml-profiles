@@ -7,6 +7,7 @@
 
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product.OperatingSystem /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
@@ -34,7 +35,7 @@
 			<li>Product: <b>[p.productName /]</b> (type: [p.platformType /], model: [p.model/], UDI: [p.udiDi /])
 				<ul>
 [for (os : Component | p.csmn_allOperatingSystem(e))]
-					<li>OS: <b>[os.name /]</b> (version: [os.csmn_scopeConstraint().softwareConstraint.softwareVersion /])</li>
+					<li>OS: <b>[os.name /]</b> (version: [os.csmn_softwareVersion() /])</li>
 [/for]
 				</ul>
 			</li>

@@ -1,0 +1,71 @@
+[comment encoding = UTF-8 /]
+[module Product.OperatingSystem(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product.OperatingSystem /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Dt_SoftwareVersion /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::common::services::VersionService /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+
+
+[template public printOperatingSystems(
+	this		: NamedElement,
+	_context	: Context
+)
+post(trim())
+{
+	operatingSystems : OrderedSet(Component) = _context.product.csmn_allOperatingSystem(this)->sortedBy(name);
+}]
+[operatingSystems->_printScope_TableHeader() /]
+	[operatingSystems._printScope_TableRow(_context) /]
+[operatingSystems->_printScope_TableFooter() /]
+[/template]
+
+
+[template private _printScope_TableHeader(
+	operatingSystems		: OrderedSet(Component)
+)]
+<table class="table-4-columns">
+	<thead>
+		<tr>
+			<th>Version</th>
+			<th>Name</th>
+			<th>Release Date</th>
+			<th>CPE</th>
+		</tr>
+	</thead>
+	<tbody>
+[/template]
+
+
+[template private _printScope_TableRow(
+	os			: Component,
+	_context	: Context
+)]
+[let softwareVersion : String = os.csmn_softwareVersion()]
+[if (isOlder(softwareVersion, _context.softwareVersion) or
+     isEqual(softwareVersion, _context.softwareVersion))]
+<tr>
+	<td style="text-align: center !important;">[softwareVersion /]</td>
+	<td style="text-align: center !important;">[os.name /]</td>
+	<td style="text-align: center !important;">[_context.csmn_ReleaseDate(softwareVersion) /]</td>
+	<td style="text-align: center !important;">[_context.product.csmn_html_getCpeLinkForFirmware(softwareVersion) /]</td<
+</tr>
+[/if]
+[/let]
+[/template]
+
+
+[template private _printScope_TableFooter(
+	operatingSystems		: OrderedSet(Component)
+)]
+	</tbody>
+</table>
+[/template]
