@@ -17,6 +17,10 @@
   * DOCUMENT CLASSIFICATION
   * ========================================
   * ======================================== **/
+.cover-page div {
+	position:			relative;
+}
+
 .document-classification {
 	background-repeat: 	no-repeat;
     background-size: 	cover;
@@ -33,6 +37,7 @@
 	left:				0.0cm !important;
 	width: 				100% !important;
 	height: 			3.0cm !important;
+	z-index:			0;
 }
 
 
