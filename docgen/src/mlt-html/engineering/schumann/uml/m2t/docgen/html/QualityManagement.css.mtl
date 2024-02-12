@@ -25,6 +25,7 @@
 
 .qm-footer table,
 .qm-header table {
+	background-color:	white;
 	width:				100% !important;
 }
 
@@ -37,26 +38,28 @@
 
 
 .qm-title {
-	margin:				2cm !important;
-	width:				100%;
-	text-align:			center;
+	text-align:			center !important;
+	position:			relative;
+	top:				3cm;
+	height:				12cm;
+	width:				20.5cm;
+	font-size:			60pt !important;
+	font-weight:		bold !important;
+	display:			flex;
+	align-items:		center;
 }
 
 table.qm-signatory {
-	width:				15cm !important;
+	position:			relative;
+	top:				50%;
+	width:				20.5cm !important;
+	left:				3mm;
 }
 
 @media print {
 	.qm-header,
 	.qm-footer {
-		position:		fixed !important;
-	}
-}
-
-@page :first {
-	.qm-header,
-	.qm-footer {
-		display:		none !important;
+		position:		static !important;
 	}
 }
 [/template]

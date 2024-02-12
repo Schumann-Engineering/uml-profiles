@@ -29,7 +29,7 @@
 			<th>Model</th>
 			<td>[_context.product.model /]</td>
 			<th>Doc. Version</th>
-			<td>1.0</td>
+			<td>[_context.softwareVersion /]</td>
 		</tr>
 		<tr>
 			<th>Doc Title</th>
@@ -111,15 +111,16 @@ post(trim())
 )
 post(trim())
 {
-	role : String = getProperty(_context.templateUUID +  '.Signatory.' + type + '.' + index + '.role');
-	name : String = getProperty(_context.templateUUID +  '.Signatory.' + type + '.' + index + '.name');
+	role : String = getProperty(_context.templateUUID +  '.QM.' + type + '.' + index + '.role');
+	name : String = getProperty(_context.templateUUID +  '.QM.' + type + '.' + index + '.name');
+	sig  : String = getProperty(_context.templateUUID +  '.QM.' + type + '.' + index + '.signature')
 }]
 [if (role <> null and role.trim() <> '')]
 <tr>
-	<td>[type.toUpperFirst() /]</td>
-	<td>[role /]</td>
-	<td>[name /]</td>
-	<td>&nbsp;</td>
+	<td style="text-align: center !important; width: 4cm;">[type.toUpperFirst() /]</td>
+	<td style="width: 4cm;">[role /]</td>
+	<td style="width: 4cm;">[name /]</td>
+	<td style="width: 8.5cm; height: 2cm;">[sig /]</td>
 </tr>
 [/if]
 [/template]

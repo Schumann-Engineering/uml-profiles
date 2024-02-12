@@ -142,7 +142,7 @@
 )]
 [html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
 	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
-	[DOC_Footer(_context) /]
+	[comment DOC_Footer(_context) /]
 
 	[TOC_Title_begin('Cyber Security Research Report') /]
 		[this.printScope(_context) /]

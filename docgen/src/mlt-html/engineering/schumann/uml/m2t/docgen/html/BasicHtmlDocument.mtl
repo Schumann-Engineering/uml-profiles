@@ -21,6 +21,7 @@ extends engineering::schumann::uml::m2t::html::Html
 [import engineering::schumann::uml::m2t::sbom::html::Component.css /]
 [comment Services /]
 [import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
 [template protected CSS_ADDON(
@@ -59,6 +60,16 @@ post(trim())]
 	_context		: Context
 )
 post(trim())]
+[setEnv('DOC_date', invoke(
+					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+					'getCurrentDate()',
+					Sequence{}
+					).oclAsType(String)) /]
+[setEnv('DOC_time', invoke(
+					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+					'getCurrentTime()',
+					Sequence{}
+					).oclAsType(String)) /]
 [HTML_START_HEAD_BEGIN(_context.documentTitle, _context.UUID) /]
 [CSS_ADDON(_context) /]
 [HTML_START_HEAD_END(_context.UUID) /]
