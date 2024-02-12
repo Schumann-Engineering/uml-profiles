@@ -15,7 +15,7 @@ html {
     min-width:			21cm;
 	max-width:			21cm;
 	width:				21cm;
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	font-size:			10pt;
 }
 

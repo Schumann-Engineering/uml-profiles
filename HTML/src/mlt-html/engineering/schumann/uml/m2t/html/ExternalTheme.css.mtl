@@ -26,7 +26,7 @@ body {
 	--code-normal: 		black !important;
 }
 p {
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	font-size: 			10pt !important;
 	text-align: 		justify !important;
 	line-height: 		1.2 !important;
@@ -39,7 +39,7 @@ strong {
 /* Credits. ---------------------------------------------------- */
 
 del { /* Credits, i.e. author information. */
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	display: 			block !important;
 	text-align: 		center !important;
 	font-size: 			10pt !important;
@@ -78,7 +78,7 @@ svg, img {
 	margin: 			10px auto 5px !important;
 }
 figcaption {
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	text-align: 		center !important;
 	margin-bottom: 		16px !important;
 	font-size: 			8pt !important;
@@ -89,7 +89,7 @@ table, pre {
 	page-break-inside: avoid !important;
 }
 table {
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	font-size: 			10pt !important;
 	text-align: 		center !important;
 	margin: 			10px auto 5px !important;
@@ -112,7 +112,7 @@ td {
 /* Lists ------------------------------------------------------------------------------- */
 ul, ol, dl {
 	page-break-before:	avoid !important;
-	font-family: 		Roboto !important;
+	font-family: 		Roboto, Helvetica !important;
 	font-size: 			10pt !important;
 	line-height: 		1.1 !important;
 	margin-top: 		0px !important;
