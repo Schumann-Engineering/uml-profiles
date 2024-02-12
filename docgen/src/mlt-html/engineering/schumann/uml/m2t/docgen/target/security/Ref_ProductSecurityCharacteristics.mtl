@@ -9,6 +9,17 @@
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
 
 
+[template public DocRef_Characteristics_Diagram(
+	devNull : OclAny
+)]
+[html_Document_Ref(
+	'Product Security Characteristics',
+	'Product Architecture',
+	'Overview'
+)/]
+[/template]
+
+
 [template public DocRef_Characteristics_Asset(
 	section	: String
 )]

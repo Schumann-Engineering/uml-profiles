@@ -28,6 +28,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
@@ -226,7 +227,11 @@
 		/]
 [html_PAGE_begin('software information') /]
 		[TOC_Section_begin('Software information') /] 
-			[comment this.printScopeAsSoftware( CommonPlatformEnumerationType::Firmware ) /]
+			<p>
+				As of writing the following software versions have been released:
+			</p>
+		
+			[printOperatingSystems(_context) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('software information') /]
 		
@@ -326,6 +331,14 @@
 	/]
 [comment TOC_SubSection_begin('data architecture > Description') /]
 	[protectedArea('Data Architecture > Description', _context) /]
+
+	<p>
+		For a diagram showing the product and its interfaces as well as interaction with the environment, see document
+	</p>
+
+	<ul>
+		<li>[DocRef_Characteristics_Diagram() /]</li>
+	</ul>
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > description') /]
 
