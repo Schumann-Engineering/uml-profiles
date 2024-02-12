@@ -1,0 +1,62 @@
+[comment encoding = UTF-8 /]
+[module QualityManagement.css('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public CSS_QUALITY_MANAGEMENT(
+	devNull : OclAny
+)]
+/** ========================================
+  * ========================================
+  * QUALITY MANAGEMENT
+  * ========================================
+  * ======================================== **/
+.qm-footer {
+	position: 			absolute !important;
+	bottom: 			5mm !important;
+	width:				20.5cm !important;
+}
+
+.qm-header {
+	position: 			absolute !important;
+	top: 				5mm !important;
+	width:				20.5cm !important;
+}
+
+
+.qm-footer table,
+.qm-header table {
+	width:				100% !important;
+}
+
+.qm-footer td,
+.qm-footer th,
+.qm-header td,
+.qm-header th {
+	width:				25% !important;
+}
+
+
+.qm-title {
+	margin:				2cm !important;
+	width:				100%;
+	text-align:			center;
+}
+
+table.qm-signatory {
+	width:				15cm !important;
+}
+
+@media print {
+	.qm-header,
+	.qm-footer {
+		position:		fixed !important;
+	}
+}
+
+@page :first {
+	.qm-header,
+	.qm-footer {
+		display:		none !important;
+	}
+}
+[/template]

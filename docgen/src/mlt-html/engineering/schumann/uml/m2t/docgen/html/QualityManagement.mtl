@@ -1,0 +1,125 @@
+[comment encoding = UTF-8 /]
+[module QualityManagement(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[comment UML profile /]
+[comment ... common /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+[comment ... services /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+
+
+[template public QM_PAGE_Header(
+	_context	: Context
+)]
+<header class="qm-header">
+	<table>
+		<tr>
+			<th>Product</th>
+			<td>[_context.product.productName /]</td>
+			<th>Doc. ID</th>
+			<td>[getProperty('ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.' + _context.templateUUID ) /]</td>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<td>[_context.product.model /]</td>
+			<th>Doc. Version</th>
+			<td>1.0</td>
+		</tr>
+		<tr>
+			<th>Doc Title</th>
+			<td colspan="3">[_context.documentTitle /]</td>
+		</tr>
+	</table>
+</header>
+[/template]
+
+
+[template public QM_PAGE_Footer(
+	_context	: Context
+)]
+<footer class="qm-footer">
+	<table>
+		<tr>
+			<th             style="width: 25% !important">Document date</th>
+			<td colspan="3" style="width: 75% !important">[env('DOC_date') /]</td>
+		</tr>
+		<tr>
+			<td colspan="2" style="width: 50% !important">&#169; Copyright by [VENDOR_NAME() /]</td>
+			<td colspan="2" style="width: 50% !important">[env('DOC_Classification', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
+		</tr>
+	</table>
+</footer>
+[/template]
+
+
+[template public QM_PAGE_Signatory(
+	_context	: Context
+)]
+[html_PAGE_begin('signatory page')/]
+	[QM_PAGE_Header(_context) /]
+
+	<p class="qm-title">
+		[_context.documentTitle /]
+	</p>
+
+	[QM_SignatureTable(_context) /]
+
+	[QM_PAGE_Footer(_context) /]
+[html_PAGE_end('signatory page')/]
+[/template]
+
+
+[template private QM_SignatureTable(
+	_context	: Context
+)
+post(trim())
+]
+<table class="qm-signatory">
+	<thead>
+		<tr>
+			<th>Role in Doc.</th>
+			<th>Role in Org.</th>
+			<th>Name</th>
+			<th>Signature</th>
+		</tr>
+	</thead>
+	<tbody>
+		[for (Sequence(Integer) { 1, 2, 3, 4, 5, 6, 7, 8 })]			
+		[_context.QM_SignatureTable_Row('author', self) /]
+		[/for]
+		[for (Sequence(Integer) { 1, 2, 3, 4, 5, 6, 7, 8 })]			
+		[_context.QM_SignatureTable_Row('reviewer', self) /]
+		[/for]
+		[for (Sequence(Integer) { 1, 2, 3, 4, 5, 6, 7, 8 })]			
+		[_context.QM_SignatureTable_Row('approver', self) /]
+		[/for]
+	</tbody>
+</table>
+[/template]
+
+
+[template private QM_SignatureTable_Row(
+	_context	: Context,
+	type		: String,
+	index		: Integer
+)
+post(trim())
+{
+	role : String = getProperty(_context.templateUUID +  '.Signatory.' + type + '.' + index + '.role');
+	name : String = getProperty(_context.templateUUID +  '.Signatory.' + type + '.' + index + '.name');
+}]
+[if (role <> null and role.trim() <> '')]
+<tr>
+	<td>[type.toUpperFirst() /]</td>
+	<td>[role /]</td>
+	<td>[name /]</td>
+	<td>&nbsp;</td>
+</tr>
+[/if]
+[/template]

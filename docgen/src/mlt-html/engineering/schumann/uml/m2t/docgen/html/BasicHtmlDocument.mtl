@@ -16,6 +16,7 @@ extends engineering::schumann::uml::m2t::html::Html
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.css /]
 [import engineering::schumann::uml::m2t::docgen::html::DocumentClassification.css /]
 [import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata.css /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement.css /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc.css /]
 [import engineering::schumann::uml::m2t::sbom::html::Component.css /]
 [comment Services /]
@@ -45,6 +46,10 @@ post(trim())]
 
 <style type="text/css">
 [CSS_CSMN_SCOPE() /]
+</style>
+
+<style type="text/css">
+[CSS_QUALITY_MANAGEMENT() /]
 </style>
 [/template]
 
