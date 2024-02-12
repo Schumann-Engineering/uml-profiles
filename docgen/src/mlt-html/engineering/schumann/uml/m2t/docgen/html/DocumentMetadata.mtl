@@ -5,27 +5,32 @@
 )]
 
 
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+
+
 [template public DOC_Footer(
 	_context	: Context
 )
 post(trim())]
+[setEnv('DOC_date', invoke(
+					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+					'getCurrentDate()',
+					Sequence{}
+					).oclAsType(String)) /]
+[setEnv('DOC_time', invoke(
+					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+					'getCurrentTime()',
+					Sequence{}
+					).oclAsType(String)) /]
 <div class="document-footer">
 	<table class="table-2-columns">
 		<tr>
 			<th>Document date</th>
-			<td>[invoke(
-					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
-					'getCurrentDateTime()',
-					Sequence{}
-					) /]</td>
+			<td>[env('DOC_date') /], [env('DOC_time')/]</td>
 		</tr>
 		<tr>
 			<th>Template Version</th>
-			<td>[_context.templateVersion /] ([invoke(
-					'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
-					'getCurrentDate()',
-					Sequence{}
-					) /])</td>
+			<td>[_context.templateVersion /] ([env('DOC_date') /])</td>
 		</tr>
 		<tr>
 			<th>Template ID</th>
