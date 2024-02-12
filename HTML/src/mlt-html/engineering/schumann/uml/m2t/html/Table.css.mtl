@@ -45,7 +45,7 @@ tbody tr:nth-child(even) {
 /* === any === */
 table td:nth-child(1) {
 	width:				20%;
-	text-align:			right;
+	text-align:			left;
 }
 
 /* === 2 columns === */

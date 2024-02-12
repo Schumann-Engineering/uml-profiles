@@ -14,6 +14,24 @@
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
+[template public QM_DOC_start(
+	devNull		: OclAny
+)]
+<table>
+<thead><tr><td><div class="qm-header-placeholder"></div></td></tr></thead>
+<tbody><tr><td>
+[/template]
+
+
+[template public QM_DOC_end(
+	devNull		: OclAny
+)]
+</td></tr></tbody>
+<tfoot><tr><td><div class="qm-footer-placeholder"></div></td></tr></tfoot>
+</table>
+[/template]
+
+
 [template public QM_PAGE_Header(
 	_context	: Context
 )]

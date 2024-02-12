@@ -11,20 +11,20 @@
   * ========================================
   * ======================================== **/
 html {
-	margin:				1.5cm auto;
-    min-width:			21cm;
-	max-width:			21cm;
-	width:				21cm;
-	font-family: 		Roboto, Helvetica !important;
-	font-size:			10pt;
+	margin:					1.5cm auto;
+    min-width:				21cm;
+	max-width:				21cm;
+	width:					21cm;
+	font-family: 			Roboto, Helvetica !important;
+	font-size:				10pt;
 }
 
 div.page-break {
-	margin-top:			2cm;
-	margin-bottom:		2cm;
+	margin-top:				2cm;
+	margin-bottom:			2cm;
 	
-	page-break-after:	always !important;
-	break-after:		page !important;
+	page-break-after:		always !important;
+	break-after:			page !important;
 }
 
 
@@ -32,8 +32,8 @@ div.page-break {
  * PAGE
  * ========== */
 .document-page {
-	page-break-before:	always !important;
-	break-before:		page !important;
+	page-break-before:		always !important;
+	break-before:			page !important;
 }
 
 /* Same as MaterialDesign.card */
@@ -78,7 +78,7 @@ div.page-break {
 	.document-page {
 		padding:			2mm !important;
 		width:				100% !important;
-		min-height:			28.7cm !important;
+		/*min-height:			28.7cm !important;*/
 	}
 }
 [/template]

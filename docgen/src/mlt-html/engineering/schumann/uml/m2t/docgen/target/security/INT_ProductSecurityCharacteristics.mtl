@@ -141,7 +141,7 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('cover page', 'cover-page document-classification-confidential-internal')/]
+[html_PAGE_begin('cover page', 'cover-page')/]
 	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
 	[comment DOC_Footer(_context) /]
 

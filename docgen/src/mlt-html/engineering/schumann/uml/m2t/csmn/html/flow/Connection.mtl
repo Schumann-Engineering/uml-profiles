@@ -82,17 +82,35 @@ post(trim())
 [comment Supplier /]
 	<tr>
 		<th style="text-align: right">Supplier Element</th>
-		<td style="text-align: left">[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /][/for]</td>
+		<td style="text-align: left">
+			<ol>
+			[for (suppliers.owner.oclAsType(NamedElement))]
+				<li>[self.name /]</li>
+			[/for]
+			</ol>
+		</td>
 	</tr>
 [comment Supplier Security Zone /]
 	<tr>
 		<th style="text-align: right">Supplier Element's Security Zone</th>
-		<td style="text-align: left">[for (suppliers.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+		<td style="text-align: left">
+			<ol>
+				[for (suppliers.owner.oclAsType(NamedElement))]
+				<li>[if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if]</li>
+			[/for]
+			</ol>
+		</td>
 	</tr>
 [comment Interface /]
 	<tr>
 		<th style="text-align: right">Supplier Interface</th>
-		<td style="text-align: left">[for (suppliers) separator('<hr/>')][self.name /][/for]</td>
+		<td style="text-align: left">
+			<ol>
+			[for (suppliers)]
+				<li>[self.name /]</li>
+			[/for]
+			</ol>
+		</td>
 	</tr>
 [comment Flow ← /]
 	<tr>

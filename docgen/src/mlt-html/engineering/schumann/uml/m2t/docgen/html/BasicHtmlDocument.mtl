@@ -12,6 +12,7 @@ extends engineering::schumann::uml::m2t::html::Html
 [comment Templates & Queries /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [comment CSS /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.css /]
 [import engineering::schumann::uml::m2t::docgen::html::DocumentClassification.css /]
@@ -74,6 +75,7 @@ post(trim())]
 [CSS_ADDON(_context) /]
 [HTML_START_HEAD_END(_context.UUID) /]
 [TOC_clear(_context)/]
+[QM_DOC_start() /]
 [/template]
 
 
@@ -82,6 +84,7 @@ post(trim())]
 	_context		: Context
 )
 post(trim())]
+[QM_DOC_end() /]
 [HTML_END(_context.UUID) /]
 [/template]
 

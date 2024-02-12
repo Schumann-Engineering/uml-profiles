@@ -86,22 +86,22 @@ figcaption {
 
 /* Tables. ----------------------------------------------------------------------------- */
 table, pre {
-	page-break-inside: avoid !important;
+	page-break-inside: 	avoid !important;
 }
 table {
 	font-family: 		Roboto, Helvetica !important;
 	font-size: 			10pt !important;
 	text-align: 		center !important;
 	margin: 			10px auto 5px !important;
-	border-top: 		1px solid #292929 !important;
-	border-bottom: 		1px solid #292929 !important;
+/*	border-top: 		1px solid #292929 !important; */
+/*	border-bottom: 		1px solid #292929 !important; */
 }
 th { /* Table headers. */
 	background-color: 	lightgray !important;
 	color: 				black !important;
 	font-weight: 		normal !important;
-	border: none 		!important;
-	border-bottom: 		1px solid darkgray !important;
+	border: 			none 		!important;
+/*	border-bottom: 		1px solid darkgray !important; */
 	padding: 			2px 5px !important;
 }
 td {

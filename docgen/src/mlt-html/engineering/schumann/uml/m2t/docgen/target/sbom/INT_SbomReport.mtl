@@ -169,7 +169,7 @@ post(trim())]
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('cover page', 'cover-page document-classification-public')/]
+[html_PAGE_begin('cover page', 'cover-page')/]
 	[DOC_Classification_PUBLIC(_context) /]
 	[comment DOC_Footer(_context) /]
 

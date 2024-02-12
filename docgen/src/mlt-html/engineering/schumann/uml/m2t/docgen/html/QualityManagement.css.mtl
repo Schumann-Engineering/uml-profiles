@@ -10,29 +10,31 @@
   * QUALITY MANAGEMENT
   * ========================================
   * ======================================== **/
-.qm-footer {
-	position: 			absolute !important;
-	bottom: 			5mm !important;
-	width:				20.5cm !important;
-}
-
 .qm-header {
 	position: 			absolute !important;
 	top: 				5mm !important;
 	width:				20.5cm !important;
+	border-bottom:		1px solid #000000;
+}
+
+.qm-footer {
+	position: 			absolute !important;
+	bottom: 			5mm !important;
+	width:				20.5cm !important;
+	border-top:			1px solid #000000;
 }
 
 
-.qm-footer table,
-.qm-header table {
+.qm-header table,
+.qm-footer table {
 	background-color:	white;
 	width:				100% !important;
 }
 
-.qm-footer td,
-.qm-footer th,
 .qm-header td,
-.qm-header th {
+.qm-header th,
+.qm-footer td,
+.qm-footer th {
 	width:				25% !important;
 }
 
@@ -57,9 +59,14 @@ table.qm-signatory {
 }
 
 @media print {
+	.qm-header-placeholder,
+	.qm-footer-placeholder {
+		height: 		3cm;
+	}
+
 	.qm-header,
 	.qm-footer {
-		position:		static !important;
+		position:		fixed !important;
 	}
 }
 [/template]
