@@ -12,7 +12,8 @@
 	devNull 		: Element,
 	_context		: Context
 )]
-[setEnv('DOC_Classification', 'CONFIDENTIAL') /]
+[setEnv('DOC_Classification',		'CONFIDENTIAL') /]
+[setEnv('DOC_Classification_Color',	'#0000FF') /]
 <div class="document-classification document-classification-confidential">
 	<p>CONFIDENTIAL</p>
 	<p>for employees only. No access control list applies.</p>
@@ -24,7 +25,8 @@
 	devNull 		: Element,
 	_context		: Context
 )]
-[setEnv('DOC_Classification', 'CONFIDENTIAL INTERNAL') /]
+[setEnv('DOC_Classification', 		'CONFIDENTIAL INTERNAL') /]
+[setEnv('DOC_Classification_Color',	'#FFD800') /]
 <div class="document-classification document-classification-confidential-internal">
 	<p>CONFIDENTIAL INTERNAL</p>
 	<p>for employees, contractors and authorities only</p>
@@ -36,7 +38,8 @@
 	devNull 		: Element,
 	_context		: Context
 )]
-[setEnv('DOC_Classification', 'CONFIDENTIAL EXTERNAL') /]
+[setEnv('DOC_Classification', 		'CONFIDENTIAL EXTERNAL') /]
+[setEnv('DOC_Classification_Color',	'#00FF00') /]
 <div class="document-classification document-classification-confidential-external">
 	<p>CONFIDENTIAL EXTERNAL</p>
 	<p>for employees, contractors, partners and authorities only</p>
@@ -48,7 +51,8 @@
 	devNull 		: Element,
 	_context		: Context
 )]
-[setEnv('DOC_Classification', 'PUBLIC') /]
+[setEnv('DOC_Classification', 		'PUBLIC') /]
+[setEnv('DOC_Classification_Color',	'#F0F0F0') /]
 <div class="document-classification document-classification-public">
 	<p>PUBLIC</p>
 	<p>© Copyright, all rights reserved</p>
@@ -60,7 +64,8 @@
 	devNull 		: Element,
 	_context		: Context
 )]
-[setEnv('DOC_Classification', 'STRICTLY CONFIDENTIAL') /]
+[setEnv('DOC_Classification',		'STRICTLY CONFIDENTIAL') /]
+[setEnv('DOC_Classification_Color',	'#FF0000') /]
 <div class="document-classification document-classification-strictly-confidential">
 	<p>STRICTLY CONFIDENTIAL</p>
 	<p>for employees only. Access control list applies.</p>

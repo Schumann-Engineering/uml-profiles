@@ -64,12 +64,12 @@
 <footer class="qm-footer">
 	<table>
 		<tr>
-			<th             style="width: 25% !important">Document date</th>
-			<td colspan="3" style="width: 75% !important">[env('DOC_date') /]</td>
+			<th             style="width: 25% !important;">Document date</th>
+			<td colspan="3" style="width: 75% !important;">[env('DOC_date') /]</td>
 		</tr>
 		<tr>
-			<td colspan="2" style="width: 50% !important">&#169; Copyright by [VENDOR_NAME() /]</td>
-			<td colspan="2" style="width: 50% !important">[env('DOC_Classification', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
+			<td colspan="2" style="width: 50% !important;">&#169; Copyright by [VENDOR_NAME() /]</td>
+			<td colspan="2" style="width: 50% !important; background-color: [env('DOC_Classification_Color') /];">[env('DOC_Classification', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
 		</tr>
 	</table>
 </footer>
