@@ -45,6 +45,7 @@ import engineering.schumann.uml.profile.csmn.SecurityLevel;
 import engineering.schumann.uml.profile.csmn.SecurityZone;
 import engineering.schumann.uml.profile.csmn.SizeUnitOfMeasure;
 import engineering.schumann.uml.profile.csmn.Size_T;
+import engineering.schumann.uml.profile.csmn.SoftwareConstraint;
 import engineering.schumann.uml.profile.csmn.SpeedUnitOfMeasurement;
 import engineering.schumann.uml.profile.csmn.StorageCharacteristic;
 import engineering.schumann.uml.profile.csmn.StorageType;
@@ -290,6 +291,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass softwareConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum userTypeEEnum = null;
 
 	/**
@@ -508,6 +516,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EReference getSystemElement_Base_Component() {
 		return (EReference)systemElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSystemElement_PlatformType() {
+		return (EAttribute)systemElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -876,26 +894,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getProduct_SoftwareVersion() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProduct_Type() {
-		return (EAttribute)productEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getCommonPlatformEnumeration() {
 		return commonPlatformEnumerationEClass;
 	}
@@ -966,7 +964,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getScopeConstraint_Constraint() {
+	public EReference getScopeConstraint_ProductConstraint() {
 		return (EReference)scopeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -978,6 +976,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EAttribute getScopeConstraint_ConstraintType() {
 		return (EAttribute)scopeConstraintEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getScopeConstraint_SoftwareConstraint() {
+		return (EReference)scopeConstraintEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -998,16 +1006,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EAttribute getProductConstraint_Model() {
 		return (EAttribute)productConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getProductConstraint_SoftwareVersion() {
-		return (EAttribute)productConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1766,6 +1764,26 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getSoftwareConstraint() {
+		return softwareConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSoftwareConstraint_SoftwareVersion() {
+		return (EAttribute)softwareConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getUserType() {
 		return userTypeEEnum;
 	}
@@ -1991,6 +2009,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		// Create classes and their features
 		systemElementEClass = createEClass(SYSTEM_ELEMENT);
 		createEReference(systemElementEClass, SYSTEM_ELEMENT__BASE_COMPONENT);
+		createEAttribute(systemElementEClass, SYSTEM_ELEMENT__PLATFORM_TYPE);
 
 		userEClass = createEClass(USER);
 		createEReference(userEClass, USER__BASE_COMPONENT);
@@ -2037,8 +2056,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		productEClass = createEClass(PRODUCT);
 		createEAttribute(productEClass, PRODUCT__UDI_DI);
 		createEAttribute(productEClass, PRODUCT__UDI_DI_BASE);
-		createEAttribute(productEClass, PRODUCT__SOFTWARE_VERSION);
-		createEAttribute(productEClass, PRODUCT__TYPE);
 
 		commonPlatformEnumerationEClass = createEClass(COMMON_PLATFORM_ENUMERATION);
 		createEAttribute(commonPlatformEnumerationEClass, COMMON_PLATFORM_ENUMERATION__PLATFORM_TYPE);
@@ -2048,12 +2065,15 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		scopeConstraintEClass = createEClass(SCOPE_CONSTRAINT);
 		createEReference(scopeConstraintEClass, SCOPE_CONSTRAINT__BASE_NAMED_ELEMENT);
-		createEReference(scopeConstraintEClass, SCOPE_CONSTRAINT__CONSTRAINT);
+		createEReference(scopeConstraintEClass, SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT);
 		createEAttribute(scopeConstraintEClass, SCOPE_CONSTRAINT__CONSTRAINT_TYPE);
+		createEReference(scopeConstraintEClass, SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT);
 
 		productConstraintEClass = createEClass(PRODUCT_CONSTRAINT);
 		createEAttribute(productConstraintEClass, PRODUCT_CONSTRAINT__MODEL);
-		createEAttribute(productConstraintEClass, PRODUCT_CONSTRAINT__SOFTWARE_VERSION);
+
+		softwareConstraintEClass = createEClass(SOFTWARE_CONSTRAINT);
+		createEAttribute(softwareConstraintEClass, SOFTWARE_CONSTRAINT__SOFTWARE_VERSION);
 
 		assetEClass = createEClass(ASSET);
 		createEReference(assetEClass, ASSET__BASE_NAMED_ELEMENT);
@@ -2147,13 +2167,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(usageCharacteristicEClass, USAGE_CHARACTERISTIC__USAGE_TYPE);
 
 		// Create enums
+		commonPlatformEnumerationTypeEEnum = createEEnum(COMMON_PLATFORM_ENUMERATION_TYPE);
 		userTypeEEnum = createEEnum(USER_TYPE);
 		connectionTypeEEnum = createEEnum(CONNECTION_TYPE);
 		directionOfPrimaryFlowEEnum = createEEnum(DIRECTION_OF_PRIMARY_FLOW);
 		directionTypeEEnum = createEEnum(DIRECTION_TYPE);
 		sizeUnitOfMeasureEEnum = createEEnum(SIZE_UNIT_OF_MEASURE);
 		speedUnitOfMeasurementEEnum = createEEnum(SPEED_UNIT_OF_MEASUREMENT);
-		commonPlatformEnumerationTypeEEnum = createEEnum(COMMON_PLATFORM_ENUMERATION_TYPE);
 		scopeConstraintTypeEEnum = createEEnum(SCOPE_CONSTRAINT_TYPE);
 		assetTypeEEnum = createEEnum(ASSET_TYPE);
 		energyTypeEEnum = createEEnum(ENERGY_TYPE);
@@ -2208,6 +2228,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(systemElementEClass, SystemElement.class, "SystemElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystemElement_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 0, 1, SystemElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getSystemElement_PlatformType(), this.getCommonPlatformEnumerationType(), "platformType", "Hardware", 1, 1, SystemElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(userEClass, User.class, "User", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUser_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 0, 1, User.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2254,8 +2275,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEClass(productEClass, Product.class, "Product", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProduct_UdiDi(), ecorePackage.getEString(), "udiDi", null, 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getProduct_UdiDiBase(), ecorePackage.getEString(), "udiDiBase", null, 0, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getProduct_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, -1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getProduct_Type(), this.getCommonPlatformEnumerationType(), "type", "Hardware", 1, 1, Product.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(commonPlatformEnumerationEClass, CommonPlatformEnumeration.class, "CommonPlatformEnumeration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCommonPlatformEnumeration_PlatformType(), this.getCommonPlatformEnumerationType(), "platformType", "Unspecified", 1, 1, CommonPlatformEnumeration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2265,12 +2284,15 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		initEClass(scopeConstraintEClass, ScopeConstraint.class, "ScopeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getScopeConstraint_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, ScopeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getScopeConstraint_Constraint(), this.getProductConstraint(), null, "constraint", null, 1, -1, ScopeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getScopeConstraint_ProductConstraint(), this.getProductConstraint(), null, "productConstraint", null, 0, -1, ScopeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getScopeConstraint_ConstraintType(), this.getScopeConstraintType(), "constraintType", "Added", 1, 1, ScopeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getScopeConstraint_SoftwareConstraint(), this.getSoftwareConstraint(), null, "softwareConstraint", null, 0, -1, ScopeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(productConstraintEClass, ProductConstraint.class, "ProductConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProductConstraint_Model(), ecorePackage.getEString(), "model", null, 1, 1, ProductConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getProductConstraint_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 0, -1, ProductConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(softwareConstraintEClass, SoftwareConstraint.class, "SoftwareConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSoftwareConstraint_SoftwareVersion(), ecorePackage.getEString(), "softwareVersion", null, 1, 1, SoftwareConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assetEClass, Asset.class, "Asset", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAsset_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2364,6 +2386,13 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getUsageCharacteristic_UsageType(), this.getUsageType(), "usageType", null, 0, 1, UsageCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
+		initEEnum(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.class, "CommonPlatformEnumerationType");
+		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.UNSPECIFIED);
+		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.APPLICATION);
+		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.FIRMWARE);
+		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.HARDWARE);
+		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.OPERATING_SYSTEM);
+
 		initEEnum(userTypeEEnum, UserType.class, "UserType");
 		addEEnumLiteral(userTypeEEnum, UserType.GENERIC);
 		addEEnumLiteral(userTypeEEnum, UserType.ADMINISTRATOR);
@@ -2407,13 +2436,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.MEGABIT);
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.KILOBIT);
 		addEEnumLiteral(speedUnitOfMeasurementEEnum, SpeedUnitOfMeasurement.BAUD);
-
-		initEEnum(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.class, "CommonPlatformEnumerationType");
-		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.UNSPECIFIED);
-		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.APPLICATION);
-		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.FIRMWARE);
-		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.HARDWARE);
-		addEEnumLiteral(commonPlatformEnumerationTypeEEnum, CommonPlatformEnumerationType.OPERATING_SYSTEM);
 
 		initEEnum(scopeConstraintTypeEEnum, ScopeConstraintType.class, "ScopeConstraintType");
 		addEEnumLiteral(scopeConstraintTypeEEnum, ScopeConstraintType.ADDED);

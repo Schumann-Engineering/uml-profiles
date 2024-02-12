@@ -124,6 +124,10 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 				return createProductConstraintAdapter();
 			}
 			@Override
+			public Adapter caseSoftwareConstraint(SoftwareConstraint object) {
+				return createSoftwareConstraintAdapter();
+			}
+			@Override
 			public Adapter caseAsset(Asset object) {
 				return createAssetAdapter();
 			}
@@ -624,6 +628,20 @@ public class CSMNAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createUsageCharacteristicAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link engineering.schumann.uml.profile.csmn.SoftwareConstraint <em>Software Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see engineering.schumann.uml.profile.csmn.SoftwareConstraint
+	 * @generated
+	 */
+	public Adapter createSoftwareConstraintAdapter() {
 		return null;
 	}
 

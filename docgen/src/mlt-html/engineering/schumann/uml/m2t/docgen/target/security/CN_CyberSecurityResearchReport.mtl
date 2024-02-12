@@ -24,6 +24,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.Product /]
@@ -47,32 +48,38 @@
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
 
+[**
+ * IMPORTANT: Generation is *per product*
+ ** /]
 [template public generateDocument_CN_CyberSecurityResearchReport(
 	this : Model
 )
 {
-	templateUUID	: String	= '1145613c-bd93-4c19-b613-4b65e2ab8999';
-	templateVersion	: String	= '0.1';
-	documentTitle	: String	= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
+	templateUUID		: String			= '1145613c-bd93-4c19-b613-4b65e2ab8999';
+	templateVersion		: String			= '0.1';
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report');
+
+	productElements		: Set(Package) 		= this.allOwnedElements()
+												->filter(Package)
+												->select( p : Package | p.csmn_isScoped() );
+
+	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
-[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
-[let scope : Scope = pkg.csmn_scope()]
-[for (product : Product | scope.csmn_productInScope())]
-[if (product.softwareVersion->size() = 0)]
-[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID, templateVersion)]
-[pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
-[/let]
-[else]
-[for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID, templateVersion)]
-[pkg.generateDocument_CN_CyberSecurityResearchReport(_context) /]
-[/let]
-[/for]
-[/if]
-[/for]
-[/let]
+[for (productElement : NamedElement | productElements)]
+	[comment iterate over products /]
+	[for (product : Product | productElement.csmn_scope().csmn_productInScope())]
+		[comment find all Components/SystemElements which constraint/match product /]
+		[for (os : Component | softwareElements->select(csmn_isMatch(product)))]
+			[comment iterate over all software version of the system element /]
+			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion)]
+				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
+[productElement.generateDocument_CN_CyberSecurityResearchReport( _context) /]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
 [/for]
 [/template]
 

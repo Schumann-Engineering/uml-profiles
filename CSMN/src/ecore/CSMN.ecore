@@ -7,6 +7,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="SystemElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformType" ordered="false"
+        lowerBound="1" eType="#//CommonPlatformEnumerationType" defaultValueLiteral="Hardware"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CommonPlatformEnumerationType">
+    <eLiterals name="Unspecified"/>
+    <eLiterals name="Application" value="1"/>
+    <eLiterals name="Firmware" value="2"/>
+    <eLiterals name="Hardware" value="3"/>
+    <eLiterals name="OperatingSystem" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="User">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
@@ -129,10 +138,6 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="udiDiBase" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
-        eType="#//CommonPlatformEnumerationType" defaultValueLiteral="Hardware"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CommonPlatformEnumeration">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformType" ordered="false"
@@ -144,30 +149,27 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="CommonPlatformEnumerationType">
-    <eLiterals name="Unspecified"/>
-    <eLiterals name="Application" value="1"/>
-    <eLiterals name="Firmware" value="2"/>
-    <eLiterals name="Hardware" value="3"/>
-    <eLiterals name="OperatingSystem" value="4"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScopeConstraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//ProductConstraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productConstraint" ordered="false"
+        upperBound="-1" eType="#//ProductConstraint" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" ordered="false"
         lowerBound="1" eType="#//ScopeConstraintType" defaultValueLiteral="Added"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="softwareConstraint" ordered="false"
+        upperBound="-1" eType="#//SoftwareConstraint" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProductConstraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="model" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ScopeConstraintType">
     <eLiterals name="Added"/>
     <eLiterals name="Removed" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SoftwareConstraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="softwareVersion" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Asset">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_NamedElement" ordered="false"

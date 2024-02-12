@@ -14,7 +14,7 @@
 	this			: NamedElement,
 	_context		: Context
 )]<img
-	src="[DIRECTORY_URI_IMAGES(_context) /][_context.productName/]-Product_Architecture_Diagram_([_context.productModel/]).svg"
+	src="[DIRECTORY_URI_IMAGES_HTML(_context) /][_context.productName/]-Product_Architecture_Diagram_([_context.productModel/]).svg"
 	title="Product Architecture Diagram"
 	alt="Diagram showing the product architecture with system elements, environment, security zone and user groups and their interactions"
 	width="100%"

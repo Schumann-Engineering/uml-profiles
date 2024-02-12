@@ -34,8 +34,8 @@
 	CSMN
 	====================
 /]
-[generateDocument_INT_ProductSecurityCharacteristics() /]
-[generateDocument_CN_CyberSecurityResearchReport() /]
+[comment generateDocument_INT_ProductSecurityCharacteristics() /]
+[comment generateDocument_CN_CyberSecurityResearchReport() /]
 
 
 [comment
@@ -43,10 +43,7 @@
 	SBOM
 	====================
 /]
-[for (this.allOwnedElements()->filter(Package))]
-	[generateDocument_INT_SbomReport() /]
-[/for]
-
+[comment generateDocument_INT_SbomReport() /]
 [/template]
 
 

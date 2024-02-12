@@ -8,27 +8,75 @@
 [comment runs through the profile applications and "pre-loads" them /]
 [template public test_UML_Profiles(
 	model : Model
-) post(trim())]
+) post(trim())
+{
+	profiles : Set(ProfileApplication) = model.profileApplication;
+}]
+[if (profiles->notEmpty())]
+<table border="1" style="width: 100%;">
+	<thead>
+		<tr>
+			<th style="text-align: center; width: 20%;">Name</th>
+			<th style="text-align: center; width: 20%;">FQN</th>
+			<th style="text-align: center; width: 40%;">URI</th>
+			<th style="text-align: center; width: 20%;">Comment</th>
+		</tr>
+	</thead>
+	<tbody>
 [for (profile : ProfileApplication | model.profileApplication)]
-- *PROFILE* "[profile.appliedProfile.name /]"
-	- name          = [profile.appliedProfile.name/]
-	- FQN           = [profile.appliedProfile.qualifiedName/]
-	- URI           = [profile.appliedProfile.URI/]
-	[if (profile.appliedProfile.eIsProxy())]
-	- **ERROR**: COULD NOT LOAD PROFILE!
-	[/if]
-[/for][/template]
+		<tr>
+ 			<td style="text-align: center;">[profile.appliedProfile.name /]</td>
+ 			<td style="text-align: center;">[profile.appliedProfile.qualifiedName /]</td>
+ 			<td style="text-align: center;">[profile.appliedProfile.URI /]</td>
+ 			<td style="text-align: center;">
+[if (profile.appliedProfile.eIsProxy())]
+				<b>ERROR</b>: COULD NOT LOAD PROFILE!
+[/if]
+			</td>
+		</tr>
+[/for]
+	</tbody>
+</table>
+[else]
+<p>
+	<b>ERROR: none found</b>
+</p>
+[/if]
+[/template]
 
 
 [template public test_UML_Stereotypes(
 	this : Model
-)]
-[for (this._allStereotypedElements()->filter(NamedElement))]
-- *ELEMENT* "[self.name/]"
-	- FQN			= [self.qualifiedName /]
-    - isStereotyped = [self.hasStereotypes()/]
+)
+{
+	elements : Set(NamedElement) = this._allStereotypedElements()->filter(NamedElement);
+}]
+[if (elements->notEmpty())]
+<table border="1" style="width: 100%;">
+	<thead>
+		<tr>
+			<th style="text-align: center; width: 20%;">Name</th>
+			<th style="text-align: center; width: 20%;">FQN</th>
+			<th style="text-align: center; width: 60%;">Stereotype</th>
+		</tr>
+	</thead>
+	<tbody>
+[for (elements)]
+		<tr>
+ 			<td style="text-align: center;">[name/]</td>
+ 			<td style="text-align: center;">[qualifiedName /]</td>
+ 			<td style="text-align: left;"><ul>
 [for (self.getAppliedStereotypes())]
-    - stereotype    = [qualifiedName /]
+    			<li>[qualifiedName /]</li>
 [/for]
+			</ul></td>
+		</tr>
 [/for]
+	</tbody>
+</table>
+[else]
+<p>
+	<b>ERROR: none found</p>
+</p>
+[/if]
 [/template]

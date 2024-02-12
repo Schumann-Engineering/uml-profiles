@@ -66,27 +66,3 @@
 		product.productName
 	endif
 /]
-
-
-[query public CSMN_PRODUCT_SOFTWAREVERSIONS(
-	this	: NamedElement
-) : Set(String) =
-	let product : Product = CSMN_PRODUCT() in
-	if (product = null) then
-		null
-	else
-		product.softwareVersion
-	endif
-/]
-
-
-[query public CSMN_PRODUCT_SOFTWAREVERSION(
-	this	: NamedElement
-) : String =
-	let softwareVersions : Set(String) = CSMN_PRODUCT_SOFTWAREVERSIONS() in
-	if (softwareVersions = null or softwareVersions->size() = 0) then
-		'ERROR-No-SoftwareVersion'
-	else
-		softwareVersions->csmn_filterInScopeAsSoftwareVersion()->asSequence()->first()
-	endif
-/]

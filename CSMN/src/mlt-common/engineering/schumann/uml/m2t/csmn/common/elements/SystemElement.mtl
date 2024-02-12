@@ -16,9 +16,27 @@
 /]
 
 
+[query public csmn_allOperatingSystem(
+	this : Element
+) : Set(Component) =
+	this
+	.csmn_allSystemElement()
+	->select(csmn_systemElement().platformType = CommonPlatformEnumerationType::OperatingSystem)
+	->asSet()
+/]
+
+
 [query public csmn_isSystemElement(
 	this : Component
 ) : Boolean =
 	this
 	._hasStereotype('CSMN::SystemElement')
+/]
+
+
+[query public csmn_systemElement(
+	this : Component
+) : SystemElement =
+	this
+	._getStereotypeInstance('CSMN::SystemElement')
 /]

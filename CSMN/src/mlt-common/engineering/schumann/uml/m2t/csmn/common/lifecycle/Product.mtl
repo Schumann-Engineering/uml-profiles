@@ -5,6 +5,8 @@
 )]
 
 
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_Model /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
 [import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
@@ -34,15 +36,6 @@
 /]
 
 
-[query public csmn_hasSoftwareVersionInScope(
-	this : Product
-) : Boolean = 
-	this
-	.csmn_softwareVersionInScope()
-	->size() > 0
-/]
-
-
 [query public csmn_hasValidScope(
 	this : Set(Product)
 ) : Boolean =
@@ -60,18 +53,27 @@
 	this : Product
 ) : Boolean =
 	if (this <> null) then
-		this.model.csmn_hasValidScopeAsModel() and
-		this.softwareVersion->csmn_hasValidScopeAsSoftwareVersion()
+		this.model.csmn_hasValidScopeAsModel()
 	else
 		true
 	endif
 /]
 
 
-[query public csmn_softwareVersionInScope(
-	this : Product
-) : Set(String) =
-	this
-	.softwareVersion
-	->csmn_filterInScopeAsSoftwareVersion()
+[query public csmn_allOperatingSystem(
+	this 		: Product,
+	_context	: Element
+) : Set(Component) =
+	if (this <> null and _context <> null) then
+		let os : Set(Component) = _context.csmn_allOperatingSystem() in
+		if (os->notEmpty()) then
+			os
+			->select(csmn_isMatch(this))
+			->asSet()
+		else
+			Set{}
+		endif
+	else
+		null
+	endif
 /]

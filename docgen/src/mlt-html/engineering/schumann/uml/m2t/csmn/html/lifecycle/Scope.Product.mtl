@@ -49,6 +49,7 @@ post(trim())]
 	[products->_printScope_TableRow_Model(forceModel) /]
 	[products->_printScope_TableRow_UDI() /]
 	[products->_printScope_TableRow_UDIBase() /]
+	[products->_printScope_TableRow_CPE() /]
 [products->_printScope_TableFooter() /]
 [/template]
 
@@ -78,11 +79,11 @@ post(trim())]
 <tr>
 	<th>Type</th>
 [for (products)]
-	<td>[type /]&nbsp;/&nbsp;
-[if (type = CommonPlatformEnumerationType::Hardware)]Hardware (Device)
-[elseif (type = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
-[elseif (type = CommonPlatformEnumerationType::Application)]Software (Application)
-[elseif (type = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
+	<td>[platformType /]&nbsp;/&nbsp;
+[if (platformType = CommonPlatformEnumerationType::Hardware)]Hardware (Device)
+[elseif (platformType = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
+[elseif (platformType = CommonPlatformEnumerationType::Application)]Software (Application)
+[elseif (platformType = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
 [else][html_ANSI_WARNING_Start()/]Unknown[html_ANSI_WARNING_End()/]
 [/if]
 [/for]
@@ -131,38 +132,15 @@ post(trim())]
 [/template]
 
 
-[template private _printScope_TableRow_SoftwareVersion(
-	products				: OrderedSet(Product),
-	forceSoftwareVersion	: String,
-	shallPrint				: Boolean
-)]
-[if (shallPrint)]
-<tr>
-	<th>Software release</th>
-[if (forceSoftwareVersion = null)]
-[for (products)]
-	<td>[for (csmn_softwareVersionInScope()) separator ('<br/>')][self/][/for]</td>
-[/for]
-[else]
-	<td>[forceSoftwareVersion /]</td>
-[/if]
-</tr>
-[/if]
-[/template]
-
-
 [template private _printScope_TableRow_CPE(
-	products				: OrderedSet(Product),
-	shallPrint				: Boolean
+	products				: OrderedSet(Product)
 )]
-[if (shallPrint)]
 <tr>
 	<th>CPE</th>
 [for (products)]
 	<td>[csmn_html_getCpeLink()/]</td>
 [/for]
 </tr>
-[/if]
 [/template]
 
 

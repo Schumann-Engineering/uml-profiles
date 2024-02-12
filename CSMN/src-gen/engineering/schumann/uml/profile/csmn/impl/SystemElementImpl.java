@@ -3,6 +3,7 @@
 package engineering.schumann.uml.profile.csmn.impl;
 
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
+import engineering.schumann.uml.profile.csmn.CommonPlatformEnumerationType;
 import engineering.schumann.uml.profile.csmn.SystemElement;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -24,6 +25,7 @@ import org.eclipse.uml2.uml.Component;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.SystemElementImpl#getBase_Component <em>Base Component</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.SystemElementImpl#getPlatformType <em>Platform Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -38,6 +40,25 @@ public class SystemElementImpl extends MinimalEObjectImpl.Container implements S
 	 * @ordered
 	 */
 	protected Component base_Component;
+
+	/**
+	 * The default value of the '{@link #getPlatformType() <em>Platform Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final CommonPlatformEnumerationType PLATFORM_TYPE_EDEFAULT = CommonPlatformEnumerationType.HARDWARE;
+	/**
+	 * The cached value of the '{@link #getPlatformType() <em>Platform Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPlatformType()
+	 * @generated
+	 * @ordered
+	 */
+	protected CommonPlatformEnumerationType platformType = PLATFORM_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,11 +125,36 @@ public class SystemElementImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated
 	 */
 	@Override
+	public CommonPlatformEnumerationType getPlatformType() {
+		return platformType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPlatformType(CommonPlatformEnumerationType newPlatformType) {
+		CommonPlatformEnumerationType oldPlatformType = platformType;
+		platformType = newPlatformType == null ? PLATFORM_TYPE_EDEFAULT : newPlatformType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.SYSTEM_ELEMENT__PLATFORM_TYPE, oldPlatformType, platformType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CSMNPackage.SYSTEM_ELEMENT__BASE_COMPONENT:
 				if (resolve) return getBase_Component();
 				return basicGetBase_Component();
+			case CSMNPackage.SYSTEM_ELEMENT__PLATFORM_TYPE:
+				return getPlatformType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,6 +169,9 @@ public class SystemElementImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case CSMNPackage.SYSTEM_ELEMENT__BASE_COMPONENT:
 				setBase_Component((Component)newValue);
+				return;
+			case CSMNPackage.SYSTEM_ELEMENT__PLATFORM_TYPE:
+				setPlatformType((CommonPlatformEnumerationType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +188,9 @@ public class SystemElementImpl extends MinimalEObjectImpl.Container implements S
 			case CSMNPackage.SYSTEM_ELEMENT__BASE_COMPONENT:
 				setBase_Component((Component)null);
 				return;
+			case CSMNPackage.SYSTEM_ELEMENT__PLATFORM_TYPE:
+				setPlatformType(PLATFORM_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -153,8 +205,26 @@ public class SystemElementImpl extends MinimalEObjectImpl.Container implements S
 		switch (featureID) {
 			case CSMNPackage.SYSTEM_ELEMENT__BASE_COMPONENT:
 				return base_Component != null;
+			case CSMNPackage.SYSTEM_ELEMENT__PLATFORM_TYPE:
+				return platformType != PLATFORM_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (platformType: ");
+		result.append(platformType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SystemElementImpl

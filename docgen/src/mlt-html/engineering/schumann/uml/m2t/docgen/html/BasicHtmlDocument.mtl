@@ -23,11 +23,12 @@ extends engineering::schumann::uml::m2t::html::Html
 
 
 [template protected CSS_ADDON(
-	devNull : OclAny
+	devNull 	: NamedElement,
+	_context	: Context
 )
 post(trim())]
 <style type="text/css">
-[CSS_DOCUMENT_CLASSIFICATION() /]
+[CSS_DOCUMENT_CLASSIFICATION(_context) /]
 </style>
 
 <style type="text/css">
@@ -49,12 +50,12 @@ post(trim())]
 
 
 [template public HTML_START(
-	devNull 		: OclAny,
+	devNull 		: NamedElement,
 	_context		: Context
 )
 post(trim())]
 [HTML_START_HEAD_BEGIN(_context.documentTitle, _context.UUID) /]
-[CSS_ADDON() /]
+[CSS_ADDON(_context) /]
 [HTML_START_HEAD_END(_context.UUID) /]
 [TOC_clear(_context)/]
 [/template]

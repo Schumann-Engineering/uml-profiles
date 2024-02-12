@@ -28,7 +28,8 @@ post(trim())]
 [html_NOTE_Start()/]
 [comment type /]
 [this.constraintType /] with
-[for (this.constraint) separator('\n')][self.print() /][/for]
+[if (this.productConstraint->notEmpty())][for (this.productConstraint) separator('\n')][self.print() /][/for][/if]
+[if (this.softwareConstraint->notEmpty())][for (this.softwareConstraint) separator('\n')][self.print() /][/for][/if]
 [html_NOTE_End()/]
 [/template]
 
@@ -37,5 +38,13 @@ post(trim())]
 	this : ProductConstraint
 )
 post(trim())]
-▪ model [this.model /][for (this.softwareVersion) before('; SW') separator(', ')][self/][/for]
+▪ model [this.model /]
+[/template]
+
+
+[template private print(
+	this : SoftwareConstraint
+)
+post(trim())]
+▪ SW [this.softwareVersion /]
 [/template]

@@ -7,6 +7,7 @@ import engineering.schumann.uml.profile.csmn.ProductConstraint;
 import engineering.schumann.uml.profile.csmn.ScopeConstraint;
 import engineering.schumann.uml.profile.csmn.ScopeConstraintType;
 
+import engineering.schumann.uml.profile.csmn.SoftwareConstraint;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -34,8 +35,9 @@ import org.eclipse.uml2.uml.NamedElement;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl#getBase_NamedElement <em>Base Named Element</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl#getProductConstraint <em>Product Constraint</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl#getConstraintType <em>Constraint Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.ScopeConstraintImpl#getSoftwareConstraint <em>Software Constraint</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,14 +54,14 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 	protected NamedElement base_NamedElement;
 
 	/**
-	 * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' containment reference list.
+	 * The cached value of the '{@link #getProductConstraint() <em>Product Constraint</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConstraint()
+	 * @see #getProductConstraint()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ProductConstraint> constraint;
+	protected EList<ProductConstraint> productConstraint;
 
 	/**
 	 * The default value of the '{@link #getConstraintType() <em>Constraint Type</em>}' attribute.
@@ -80,6 +82,16 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected ScopeConstraintType constraintType = CONSTRAINT_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSoftwareConstraint() <em>Software Constraint</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSoftwareConstraint()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SoftwareConstraint> softwareConstraint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -146,11 +158,11 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
-	public EList<ProductConstraint> getConstraint() {
-		if (constraint == null) {
-			constraint = new EObjectContainmentEList<ProductConstraint>(ProductConstraint.class, this, CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT);
+	public EList<ProductConstraint> getProductConstraint() {
+		if (productConstraint == null) {
+			productConstraint = new EObjectContainmentEList<ProductConstraint>(ProductConstraint.class, this, CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT);
 		}
-		return constraint;
+		return productConstraint;
 	}
 
 	/**
@@ -182,10 +194,25 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@Override
+	public EList<SoftwareConstraint> getSoftwareConstraint() {
+		if (softwareConstraint == null) {
+			softwareConstraint = new EObjectContainmentEList<SoftwareConstraint>(SoftwareConstraint.class, this, CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT);
+		}
+		return softwareConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT:
-				return ((InternalEList<?>)getConstraint()).basicRemove(otherEnd, msgs);
+			case CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT:
+				return ((InternalEList<?>)getProductConstraint()).basicRemove(otherEnd, msgs);
+			case CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT:
+				return ((InternalEList<?>)getSoftwareConstraint()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -201,10 +228,12 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 			case CSMNPackage.SCOPE_CONSTRAINT__BASE_NAMED_ELEMENT:
 				if (resolve) return getBase_NamedElement();
 				return basicGetBase_NamedElement();
-			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT:
-				return getConstraint();
+			case CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT:
+				return getProductConstraint();
 			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT_TYPE:
 				return getConstraintType();
+			case CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT:
+				return getSoftwareConstraint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -221,12 +250,16 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 			case CSMNPackage.SCOPE_CONSTRAINT__BASE_NAMED_ELEMENT:
 				setBase_NamedElement((NamedElement)newValue);
 				return;
-			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT:
-				getConstraint().clear();
-				getConstraint().addAll((Collection<? extends ProductConstraint>)newValue);
+			case CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT:
+				getProductConstraint().clear();
+				getProductConstraint().addAll((Collection<? extends ProductConstraint>)newValue);
 				return;
 			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT_TYPE:
 				setConstraintType((ScopeConstraintType)newValue);
+				return;
+			case CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT:
+				getSoftwareConstraint().clear();
+				getSoftwareConstraint().addAll((Collection<? extends SoftwareConstraint>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -243,11 +276,14 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 			case CSMNPackage.SCOPE_CONSTRAINT__BASE_NAMED_ELEMENT:
 				setBase_NamedElement((NamedElement)null);
 				return;
-			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT:
-				getConstraint().clear();
+			case CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT:
+				getProductConstraint().clear();
 				return;
 			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT_TYPE:
 				setConstraintType(CONSTRAINT_TYPE_EDEFAULT);
+				return;
+			case CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT:
+				getSoftwareConstraint().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -263,10 +299,12 @@ public class ScopeConstraintImpl extends MinimalEObjectImpl.Container implements
 		switch (featureID) {
 			case CSMNPackage.SCOPE_CONSTRAINT__BASE_NAMED_ELEMENT:
 				return base_NamedElement != null;
-			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT:
-				return constraint != null && !constraint.isEmpty();
+			case CSMNPackage.SCOPE_CONSTRAINT__PRODUCT_CONSTRAINT:
+				return productConstraint != null && !productConstraint.isEmpty();
 			case CSMNPackage.SCOPE_CONSTRAINT__CONSTRAINT_TYPE:
 				return constraintType != CONSTRAINT_TYPE_EDEFAULT;
+			case CSMNPackage.SCOPE_CONSTRAINT__SOFTWARE_CONSTRAINT:
+				return softwareConstraint != null && !softwareConstraint.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

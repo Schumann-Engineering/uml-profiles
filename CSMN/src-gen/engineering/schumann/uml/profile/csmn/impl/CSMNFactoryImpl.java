@@ -71,6 +71,7 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 			case CSMNPackage.COMMON_PLATFORM_ENUMERATION: return createCommonPlatformEnumeration();
 			case CSMNPackage.SCOPE_CONSTRAINT: return createScopeConstraint();
 			case CSMNPackage.PRODUCT_CONSTRAINT: return createProductConstraint();
+			case CSMNPackage.SOFTWARE_CONSTRAINT: return createSoftwareConstraint();
 			case CSMNPackage.ASSET: return createAsset();
 			case CSMNPackage.ASSET_LIBRARY: return createAssetLibrary();
 			case CSMNPackage.ENERGY_CHARACTERISTIC: return createEnergyCharacteristic();
@@ -99,6 +100,8 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
+			case CSMNPackage.COMMON_PLATFORM_ENUMERATION_TYPE:
+				return createCommonPlatformEnumerationTypeFromString(eDataType, initialValue);
 			case CSMNPackage.USER_TYPE:
 				return createUserTypeFromString(eDataType, initialValue);
 			case CSMNPackage.CONNECTION_TYPE:
@@ -111,8 +114,6 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return createSizeUnitOfMeasureFromString(eDataType, initialValue);
 			case CSMNPackage.SPEED_UNIT_OF_MEASUREMENT:
 				return createSpeedUnitOfMeasurementFromString(eDataType, initialValue);
-			case CSMNPackage.COMMON_PLATFORM_ENUMERATION_TYPE:
-				return createCommonPlatformEnumerationTypeFromString(eDataType, initialValue);
 			case CSMNPackage.SCOPE_CONSTRAINT_TYPE:
 				return createScopeConstraintTypeFromString(eDataType, initialValue);
 			case CSMNPackage.ASSET_TYPE:
@@ -152,6 +153,8 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
+			case CSMNPackage.COMMON_PLATFORM_ENUMERATION_TYPE:
+				return convertCommonPlatformEnumerationTypeToString(eDataType, instanceValue);
 			case CSMNPackage.USER_TYPE:
 				return convertUserTypeToString(eDataType, instanceValue);
 			case CSMNPackage.CONNECTION_TYPE:
@@ -164,8 +167,6 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return convertSizeUnitOfMeasureToString(eDataType, instanceValue);
 			case CSMNPackage.SPEED_UNIT_OF_MEASUREMENT:
 				return convertSpeedUnitOfMeasurementToString(eDataType, instanceValue);
-			case CSMNPackage.COMMON_PLATFORM_ENUMERATION_TYPE:
-				return convertCommonPlatformEnumerationTypeToString(eDataType, instanceValue);
 			case CSMNPackage.SCOPE_CONSTRAINT_TYPE:
 				return convertScopeConstraintTypeToString(eDataType, instanceValue);
 			case CSMNPackage.ASSET_TYPE:
@@ -514,6 +515,17 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	public UsageCharacteristic createUsageCharacteristic() {
 		UsageCharacteristicImpl usageCharacteristic = new UsageCharacteristicImpl();
 		return usageCharacteristic;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SoftwareConstraint createSoftwareConstraint() {
+		SoftwareConstraintImpl softwareConstraint = new SoftwareConstraintImpl();
+		return softwareConstraint;
 	}
 
 	/**

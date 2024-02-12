@@ -1,9 +1,16 @@
 [comment encoding = UTF-8 /]
-[module DocumentClassification.css('http://www.eclipse.org/uml2/5.0.0/UML')]
+[module DocumentClassification.css(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 
 
 [template public CSS_DOCUMENT_CLASSIFICATION(
-	devNull : OclAny
+	this		: NamedElement,
+	_context	: Context
 )]
 /** ========================================
   * ========================================
@@ -40,22 +47,22 @@
 }
 
 .document-classification-strictly-confidential {
-	background-image:	url("_assets/Document Classification/STRICTLY CONFIDENTIAL.svg");
+	background-image:	url("[DIRECTORY_URI_ASSETS_HTML(_context) /]/Document Classification/STRICTLY CONFIDENTIAL.svg");
 }
 
 .document-classification-internal {
-	background-image:	url("_assets/Document Classification/INTERNAL.svg");
+	background-image:	url("[DIRECTORY_URI_ASSETS_HTML(_context) /]/Document Classification/INTERNAL.svg");
 }
 
 .document-classification-confidential-internal {
-	background-image:	url("_assets/Document Classification/CONFIDENTIAL INTERNAL.svg");
+	background-image:	url("[DIRECTORY_URI_ASSETS_HTML(_context) /]/Document Classification/CONFIDENTIAL INTERNAL.svg");
 }
 
 .document-classification-confidential-external {
-	background-image:	url("_assets/Document Classification/CONFIDENTIAL EXTERNAL.svg");
+	background-image:	url("[DIRECTORY_URI_ASSETS_HTML(_context) /]/Document Classification/CONFIDENTIAL EXTERNAL.svg");
 }
 
 .document-classification-public {
-	background-image:	url("_assets/Document Classification/PUBLIC.svg");
+	background-image:	url("[DIRECTORY_URI_ASSETS_HTML(_context) /]/Document Classification/PUBLIC.svg");
 }
 [/template]

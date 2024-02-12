@@ -92,11 +92,11 @@ post(trim())
 <tr>
 	<th>Type</th>
 [for (products)]
-	<td>[type /]&nbsp;/&nbsp;
-[if (type = CommonPlatformEnumerationType::Hardware)]Hardware (Device)
-[elseif (type = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
-[elseif (type = CommonPlatformEnumerationType::Application)]Software (Application)
-[elseif (type = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
+	<td>[platformType /]&nbsp;/&nbsp;
+[if (platformType = CommonPlatformEnumerationType::Hardware)]Hardware (Device)
+[elseif (platformType = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
+[elseif (platformType = CommonPlatformEnumerationType::Application)]Software (Application)
+[elseif (platformType = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
 [else][html_ANSI_WARNING_Start()/]Unknown[html_ANSI_WARNING_End()/]
 [/if]
 [/for]

@@ -58,28 +58,31 @@
 	this : Model
 )
 {
-	templateUUID	: String = '5b3cec7d-362f-4051-8a95-411bf9579f70';
-	templateVersion	: String = '0.1';
-	documentTitle	: String = env(templateUUID + '.Output.Title', 'Product Security Characteristics');
+	templateUUID		: String 			= '5b3cec7d-362f-4051-8a95-411bf9579f70';
+	templateVersion		: String 			= '0.1';
+	documentTitle		: String 			= env(templateUUID + '.Output.Title', 'Product Security Characteristics');
+
+	productElements		: Set(NamedElement)	= this.allOwnedElements()
+												->filter(NamedElement)
+												->select( e : NamedElement | e.csmn_isScoped() );
+
+	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
-[for (pkg : Package | this.allOwnedElements()->filter(Package)->select( p : Package | p.csmn_isScoped() ))]
-[let scope : Scope = pkg.csmn_scope()]
-[for (product : Product | scope.csmn_productInScope())]
-[if (product.softwareVersion->size() = 0)]
-[let _context : Context = getContext(this, product, 'any', documentTitle, templateUUID, templateVersion)]
-[pkg.generateDocument_INT_ProductSecurityCharacteristics(_context) /]
-[/let]
-[else]
-[for (softwareVersion : String | product.softwareVersion)]
-[let _context : Context = getContext(this, product, softwareVersion, documentTitle, templateUUID, templateVersion)]
-[pkg.generateDocument_INT_ProductSecurityCharacteristics(_context) /]
-[/let]
-[/for]
-[/if]
-[/for]
-[/let]
+[for (productElement : NamedElement | productElements)]
+	[comment iterate over products /]
+	[for (product : Product | productElement.csmn_scope().csmn_productInScope())]
+		[comment find all Components/SystemElements which constraint/match product /]
+		[for (os : Component | softwareElements->select(csmn_isMatch(product)))]
+			[comment iterate over all software version of the system element /]
+			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion)]
+				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
+[productElement.generateDocument_INT_ProductSecurityCharacteristics( _context) /]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
 [/for]
 [/template]
 

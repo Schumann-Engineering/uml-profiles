@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+
+
+[template public test_CSMN_ScopedElement(
+	this : Model
+)
+{
+	elements : Set(NamedElement) = csmn_allScopedElement();
+}]
+<p>
+	<b>none [elements->size() /] scoped elements</b>
+</p>
+
+[if (elements->notEmpty())]
+<table border="1" width="100%">
+	<thead>
+		<tr>
+			<th rowspan="2" style="text-align: center; width: 20%;">Name</th>
+			<th colspan="4" style="text-align: center; width: 80%;">Product</th>
+		</tr>
+		<tr>
+			<th style="text-align: center; width: 20%;">Name</th>
+			<th style="text-align: center; width: 20%;">Type</th>
+			<th style="text-align: center; width: 20%;">Model</th>
+			<th style="text-align: center; width: 20%;">UDI</th>
+		</tr>
+	</thead>
+	<tbody>
+[for (element : NamedElement | elements)]
+[let products : Set(Product) = csmn_scope().product]
+[for (products)]
+		<tr>
+[if (i = 0)]
+			<td rowspan="[products->size()/]" style="text-align: center;">[element.name /]</td>
+[/if]
+			<td style="text-align: center;">[productName /]</td>
+        	<td style="text-align: center;">[platformType /]</td>
+        	<td style="text-align: center;">[model /]</td>
+        	<td style="text-align: center;">[udiDi /]</td>
+		</tr>
+[/for]
+[/let]
+[/for]
+	</tbody>
+</table>
+[/if]
+[/template]

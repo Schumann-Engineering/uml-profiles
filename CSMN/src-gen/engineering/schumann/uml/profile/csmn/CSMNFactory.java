@@ -283,6 +283,15 @@ public interface CSMNFactory extends EFactory {
 	UsageCharacteristic createUsageCharacteristic();
 
 	/**
+	 * Returns a new object of class '<em>Software Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Software Constraint</em>'.
+	 * @generated
+	 */
+	SoftwareConstraint createSoftwareConstraint();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

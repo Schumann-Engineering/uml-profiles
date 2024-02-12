@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module common(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+
+
+[template public test_CSMN_ProductToOperatingSystemMatch(
+	this : Model
+)
+{
+	scopedElements	: Set(NamedElement)	= csmn_allScopedElement();
+	operatingSystem	: Set(Component)	= csmn_allOperatingSystem();
+}]
+<ul>
+	<li>found <b>[scopedElements->size()  /]</b> scoped elements</li>
+	<li>found <b>[operatingSystem->size() /]</b> operating systems</li>
+</ul>
+
+[if (scopedElements->notEmpty() and operatingSystem->notEmpty())]
+<ul>
+[for (e : NamedElement | scopedElements)]
+	<li><b>[e.name /]</b>
+		<ul>
+[let scope : Scope = e.csmn_scope()]
+[for (p : Product | scope.product)]
+			<li>Product: <b>[p.productName /]</b> (type: [p.platformType /], model: [p.model/], UDI: [p.udiDi /])
+				<ul>
+[for (os : Component | p.csmn_allOperatingSystem(e))]
+					<li>OS: <b>[os.name /]</b> (version: [os.csmn_scopeConstraint().softwareConstraint.softwareVersion /])</li>
+[/for]
+				</ul>
+			</li>
+[/for]
+[/let]
+		</ul>
+	</li>
+[/for]
+</ul>
+[/if]
+[/template]

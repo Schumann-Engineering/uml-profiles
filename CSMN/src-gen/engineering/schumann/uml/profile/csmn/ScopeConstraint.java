@@ -18,8 +18,9 @@ import org.eclipse.uml2.uml.NamedElement;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.ScopeConstraint#getBase_NamedElement <em>Base Named Element</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.ScopeConstraint#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.ScopeConstraint#getProductConstraint <em>Product Constraint</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.ScopeConstraint#getConstraintType <em>Constraint Type</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.ScopeConstraint#getSoftwareConstraint <em>Software Constraint</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getScopeConstraint()
@@ -54,20 +55,20 @@ public interface ScopeConstraint extends EObject {
 	void setBase_NamedElement(NamedElement value);
 
 	/**
-	 * Returns the value of the '<em><b>Constraint</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Product Constraint</b></em>' containment reference list.
 	 * The list contents are of type {@link engineering.schumann.uml.profile.csmn.ProductConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Constraint</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Product Constraint</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Constraint</em>' containment reference list.
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getScopeConstraint_Constraint()
-	 * @model containment="true" required="true" ordered="false"
+	 * @return the value of the '<em>Product Constraint</em>' containment reference list.
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getScopeConstraint_ProductConstraint()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<ProductConstraint> getConstraint();
+	EList<ProductConstraint> getProductConstraint();
 
 	/**
 	 * Returns the value of the '<em><b>Constraint Type</b></em>' attribute.
@@ -98,5 +99,21 @@ public interface ScopeConstraint extends EObject {
 	 * @generated
 	 */
 	void setConstraintType(ScopeConstraintType value);
+
+	/**
+	 * Returns the value of the '<em><b>Software Constraint</b></em>' containment reference list.
+	 * The list contents are of type {@link engineering.schumann.uml.profile.csmn.SoftwareConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Software Constraint</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Software Constraint</em>' containment reference list.
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getScopeConstraint_SoftwareConstraint()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<SoftwareConstraint> getSoftwareConstraint();
 
 } // ScopeConstraint

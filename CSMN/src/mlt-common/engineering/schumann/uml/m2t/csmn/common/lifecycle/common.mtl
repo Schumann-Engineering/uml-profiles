@@ -9,6 +9,17 @@
 [import engineering::schumann::uml::m2t::common::services::PropertyFileService /]
 
 
+[query public csmn_allScopedElement(
+	this : Element
+) : OrderedSet(NamedElement) =
+	this
+	.allOwnedElements()
+	->filter(NamedElement)
+	->select( e : NamedElement | e.csmn_isScoped())
+	->sortedBy(name)
+/]
+
+
 [query public csmn_filterInScope(
 	this : Set(NamedElement)
 ) : Set(NamedElement) =
@@ -71,4 +82,82 @@
 		this.csmn_hasScope() and 
 		this.csmn_hasValidScope()
 	)
+/]
+
+
+[query public csmn_isMatch(
+	this 		: NamedElement,
+	candidate	: NamedElement
+) : Boolean =
+	if (this.csmn_hasScope()) then
+		let scope : Scope = this.csmn_scope() in
+		if (scope.product->notEmpty() and candidate.csmn_hasScopeConstraint()) then
+			let scopeConstraint	: ScopeConstraint = candidate.csmn_scopeConstraint() in
+			csmn_isMatch(scope, scopeConstraint)
+		else
+			false
+		endif
+	else
+		false
+	endif
+/]
+
+
+[query public csmn_isMatch(
+	this 		: NamedElement,
+	product		: Product
+) : Boolean =
+	if (this.csmn_hasScopeConstraint()) then
+		let scopeConstraint	: ScopeConstraint = this.csmn_scopeConstraint() in
+		csmn_isMatch(product, scopeConstraint)
+	else
+		false
+	endif
+/]
+
+[query public csmn_isMatch(
+	scope			: Scope,
+	scopeConstraint	: ScopeConstraint
+) : Boolean =
+	if (scope <> null and
+		scope.product->notEmpty() and
+		scopeConstraint <> null and
+		scopeConstraint.productConstraint->notEmpty()
+	) then
+		scope.product->one(csmn_isMatch(scopeConstraint))
+	else
+		false
+	endif
+/]
+
+
+[query public csmn_isMatch(
+	product			: Product,
+	scopeConstraint	: ScopeConstraint
+) : Boolean =
+	if (product <> null and
+		scopeConstraint <> null and
+		scopeConstraint.productConstraint->notEmpty()
+	) then
+		let needle		: Bag(String) = product.model.trim().toLowerCase()->asBag() in
+		let haystack	: Bag(String) = scopeConstraint.productConstraint.model.trim().toLowerCase()->asBag() in
+		haystack->intersection(needle)->notEmpty()
+	else
+		false
+	endif
+/]
+
+
+[query public csmn_isMatch(
+	product			: Product,
+	scopedElement	: NamedElement
+) : Boolean =
+	if (product <> null and
+		scopedElement <> null
+	) then
+		let scopeConstraint : ScopeConstraint = scopedElement.csmn_scopeConstraint() in
+		csmn_isMatch(product, scopeConstraint)
+	else
+		false
+	endif
 /]

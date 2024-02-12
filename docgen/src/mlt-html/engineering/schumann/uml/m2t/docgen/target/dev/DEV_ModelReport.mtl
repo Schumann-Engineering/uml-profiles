@@ -19,6 +19,10 @@
 
 
 [import engineering::schumann::uml::m2t::uml::test::Profile /]
+[import engineering::schumann::uml::m2t::csmn::test::common /]
+[import engineering::schumann::uml::m2t::csmn::test::Scope /]
+[import engineering::schumann::uml::m2t::csmn::test::SystemElement /]
+
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
@@ -33,22 +37,69 @@
 	documentTitle	: String	= env(templateUUID + '.Output.Title', 'DEV Model Report');
 	_context		: Context	= getContext(this, null, null, documentTitle, templateUUID, templateVersion);
 }]
-[setEnv(templateUUID + '.Output.Extension',   	'md') /]
+[setEnv(templateUUID + '.Output.Extension',   	'html') /]
 
 [file (DocGen_File_URI(_context), false, 'UTF-8')]
-# Self-test
+<html>
+	<body>
+		<h1>Self-test</h1>
 
-## Profiles
+[comment
+ * ====================
+ * UML Profile
+ * ====================
+ /]
+		<h2>UML</h2>
 
-[this.testProfiles() /]
+		<h3>Profiles</h3>
+		
+		[this.test_UML_Profiles() /]
+		
+		<h3>All Stereotyped elements</h3>
+		
+		[this.test_UML_Stereotypes() /]
+		
+		<h3>Stereotype::Icons</h3>
+		
+		skipped
+		[comment test_StereotypeIcons() /]
 
-## Stereotypes
 
-[this.testStereotypes() /]
+[comment
+ * ====================
+ * CSMN Profile
+ * ====================
+ /]
+		<h2>CSMN</h2>
 
-## Stereotype::Icons
+		<h3>Elements</h3>
+		
+		<h4>All System Elements</h4>
+		
+		[test_CSMN_SystemElement() /]
+		
+		<h4>Operating Systems</h4>
+		
+		[test_CSMN_OperatingSystem() /]
+		
+		<h3>Scope</h3>
+		
+		<h4>All Scoped Elements (incl. product)</h4>
+		
+		[test_CSMN_ScopedElement() /]
+		
+		<h4>Products and their OS</h4>
+		
+		[test_CSMN_ProductToOperatingSystemMatch() /]
+	</body>
+</html>
+[/file]
+[/template]
 
 
+[template private test_StereotypeIcons(
+	this : Model
+)]
 [for (profile : Profile | this.profileApplication.appliedProfile)]
 - ***PROFILE***: [profile/]
 [for (stereotype : Stereotype | profile.ownedElement->filter(Stereotype)->select(s : Stereotype | s.icon->size() > 0 and s.icon->one(format = 'Papyrus')))]
@@ -70,6 +121,4 @@
 [/for]
 [/for]
 [/for]
-
-[/file]
 [/template]

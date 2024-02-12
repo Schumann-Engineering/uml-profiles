@@ -43,7 +43,7 @@ each file would need a new engine / run.
 	_context		: Context
 ) : String =
 	env2(
-		'DocGen.Output.Directory.Snippets',
+		'DocGen.Input.Directory.Snippets',
 		'_snippets',
 		_context
 	)
@@ -55,22 +55,60 @@ each file would need a new engine / run.
 	_context		: Context
 ) : String =
 	env2(
-		'DocGen.Output.Directory.Snippets.common',
+		'DocGen.Input.Directory.Snippets.common',
 		'_common',
 		_context
 	)
 /]
 
 
-[query private DIRECTORY_NAME_IMAGES(
+[query private DIRECTORY_NAME_IMAGES_INPUT(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	env2(
+		'DocGen.Input.Directory.Images',
+		'_images',
+		_context
+	)
+/]
+
+
+[query private DIRECTORY_NAME_IMAGES_OUTPUT(
 	this 			: NamedElement,
 	_context		: Context
 ) : String =
 	env2(
 		'DocGen.Output.Directory.Images',
-		this.name + '-' + _context.productModel + '-' + _context.softwareVersion,
+		'_images',
 		_context
 	)
+/]
+
+
+[query private DIRECTORY_NAME_IMAGES_HTML(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	env2(
+		'DocGen.Html.Directory.Images',
+		'_images',
+		_context
+	)
+	.replaceAll('\\', '/')
+/]
+
+
+[query private DIRECTORY_NAME_ASSETS_HTML(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	env2(
+		'DocGen.Html.Directory.Assets',
+		'_assets',
+		_context
+	)
+	.replaceAll('\\\\', '/')
 /]
 
 
@@ -183,12 +221,39 @@ each file would need a new engine / run.
 /]
 
 
-[query public DIRECTORY_URI_IMAGES(
+[query public DIRECTORY_URI_IMAGES_INPUT(
 	this 			: NamedElement,
 	_context		: Context
 ) : String =
-	DIRECTORY_NAME_IMAGES(_context)
+	DIRECTORY_NAME_IMAGES_INPUT(_context)
     + PATH_SEPARATOR()
+/]
+
+
+[query public DIRECTORY_URI_IMAGES_OUTPUT(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	DIRECTORY_NAME_IMAGES_OUTPUT(_context)
+    + PATH_SEPARATOR()
+/]
+
+
+[query public DIRECTORY_URI_IMAGES_HTML(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	DIRECTORY_NAME_IMAGES_HTML(_context)
+    + '/'
+/]
+
+
+[query public DIRECTORY_URI_ASSETS_HTML(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	DIRECTORY_NAME_ASSETS_HTML(_context)
+    + '/'
 /]
 
 
@@ -246,10 +311,16 @@ each file would need a new engine / run.
 /]
 
 
+[comment
+	#FIXME: UNCLEAR, why we need to query the UUID once to get a valid result next time around ¯\_(ツ)_/¯.
+	        otherwise null / invalid is returned.
+/]
 [query public DocGen_File_URI(
 	this 			: NamedElement,
 	_context		: Context
 ) : String = 
+	let dummyCall : String = _context.templateUUID in
+
 	DocGen_Directory_Name(_context)
 	+ PATH_SEPARATOR()
 	+ DocGen_File_FileName(_context) 

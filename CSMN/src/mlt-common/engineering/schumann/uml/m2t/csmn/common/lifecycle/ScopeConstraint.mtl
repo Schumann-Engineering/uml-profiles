@@ -6,6 +6,7 @@
 
 [import engineering::schumann::uml::m2t::uml::common::Element /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ProductConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::SoftwareConstraint /]
 [import engineering::schumann::uml::m2t::common::services::PropertyFileService /]
 
 
@@ -44,7 +45,11 @@
 			true
 		else
 			this
-			.constraint
+			.productConstraint
+			->csmn_hasValidScope()
+			and
+			this
+			.softwareConstraint
 			->csmn_hasValidScope()
 		endif
 	else
