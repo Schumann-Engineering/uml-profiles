@@ -22,7 +22,7 @@ body {
 }
 /* Header styling and automatic numbering. --------------------------------------------- */
 h1, h2, h3, h4, h5 {
-	font-family: 			Roboto !important;
+	font-family: 			Roboto, Helvetica !important;
 	color: 					black !important;
 	font-size: 				12pt !important;
 	font-weight: 			bold !important;
