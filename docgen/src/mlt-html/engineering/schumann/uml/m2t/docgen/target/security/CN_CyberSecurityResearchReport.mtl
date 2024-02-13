@@ -145,7 +145,7 @@
 	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
 	[comment DOC_Footer(_context) /]
 
-	[TOC_Title_begin('Cyber Security Research Report') /]
+	[TOC_Title_begin(_context.documentTitle) /]
 		[this.printScope(_context) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]

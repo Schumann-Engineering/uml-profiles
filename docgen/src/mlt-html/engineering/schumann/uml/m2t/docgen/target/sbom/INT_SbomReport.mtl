@@ -70,7 +70,7 @@
 {
 	templateUUID		: String			= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
 	templateVersion		: String			= '0.1';
-	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM)');
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM) Report');
 
 	productElements		: Set(Package) 		= this.allOwnedElements()
 												->filter(Package)
@@ -173,7 +173,7 @@ post(trim())]
 	[DOC_Classification_PUBLIC(_context) /]
 	[comment DOC_Footer(_context) /]
 
-	[TOC_Title_begin('Software<br/>Bill of Material<br/>(SBOM)') /]
+	[TOC_Title_begin(_context.documentTitle) /]
 		[this.printScope(_context) /]
 	[TOC_Title_end() /]
 
