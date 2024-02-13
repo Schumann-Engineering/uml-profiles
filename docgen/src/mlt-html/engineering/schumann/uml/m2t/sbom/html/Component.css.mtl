@@ -16,4 +16,9 @@
 	page-break-inside:		avoid !important;
 	break-inside:			avoid !important;
 }
+
+.sbom-ntia-minimum {
+	color:					#FF0000 !important;
+	text-weight:			bold;
+}
 [/template]

@@ -12,6 +12,8 @@
 [import engineering::schumann::uml::m2t::sbom::text::NamespaceType /]
 [import engineering::schumann::uml::m2t::sbom::text::RelationshipType /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
 [template public printAsTable(
@@ -56,7 +58,7 @@
 )]
 [comment name /]
 <tr>
-	<th>Name</th>
+	<th class="sbom-ntia-minimum">Name</th>
 	<td>[printName() /]</td>
 </tr>
 [comment CPE type /]
@@ -82,17 +84,17 @@
 </tr>
 [comment version /]
 <tr>
-	<th>Version</th>
+	<th class="sbom-ntia-minimum">Version</th>
 	<td>[printVersion() /]</td>
 </tr>
 [comment supplier /]
 <tr>
-	<th>Supplier</th>
+	<th class="sbom-ntia-minimum">Supplier</th>
 	<td>[printSupplier() /]</td>
 </tr>
 [comment summary /]
 <tr>
-	<th>summary</th>
+	<th>Summary</th>
 	<td>[summary /]</td>
 </tr>
 [comment description /]
@@ -131,7 +133,7 @@
 </tr>
 [comment relationships /]
 <tr>
-	<th>Relationships</th>
+	<th class="sbom-ntia-minimum">Relationships</th>
 	<td>
 		[if (relationship()->size() = 0)]
 		none
@@ -147,6 +149,16 @@
 		[/if]
 	</td>
 </tr>
+[comment author /]
+<tr>
+	<th class="sbom-ntia-minimum">Author of SBOM data</th>
+	<td>[VENDOR_NAME()/] (data from external sources is vetted and enhanced)</td>
+</tr>
+[comment timestampl /]
+<tr>
+	<th class="sbom-ntia-minimum">Timestamp of SBOM data</th>
+	<td>[env('DOC_date') /], [env('DOC_time') /]</td>
+</tr>
 [comment references /]
 [comment]
 			[if (reference->->size() > 0)]
@@ -161,7 +173,7 @@
 			[/if]
 [/comment]
 [comment properties /]
-[if (ownedProperty->size() > 0)]
+[if (ownedProperty->select(not key.startsWith('('))->size() > 0)]
 <tr>
 	<th colspan="2">additional properties</th>
 </tr>

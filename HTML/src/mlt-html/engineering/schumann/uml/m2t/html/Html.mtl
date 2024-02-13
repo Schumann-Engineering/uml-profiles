@@ -145,6 +145,16 @@
 [/template]
 
 
+[query public _formattedTextToXHtml(
+	input : String
+) : String =
+	input
+		.replaceAll('\r',			'')
+		.replaceAll('\n',			'<br/>')
+		._htmlToXHtml()
+/]
+
+
 [query public _htmlToXHtml(
 	input : String
 ) : String =

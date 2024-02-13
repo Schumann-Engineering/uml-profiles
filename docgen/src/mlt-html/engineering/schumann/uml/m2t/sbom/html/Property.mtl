@@ -5,6 +5,8 @@
 
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Html /]
+
 
 
 [template public printAsTableRowVertical(
@@ -15,7 +17,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_INFO_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_INFO_End()/]
 	</td>
 </tr>
@@ -30,7 +32,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_NOTE_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_NOTE_End()/]
 	</td>
 </tr>
@@ -45,7 +47,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_TIP_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_TIP_End()/]
 	</td>
 </tr>
@@ -60,7 +62,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_TBD()/]
-		[value /]
+		[value._formattedTextToXHtml() /]
 	</td>
 </tr>
 [/template]
@@ -74,7 +76,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_ANSI_NOTICE_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_ANSI_NOTICE_End()/]
 	</td>
 </tr>
@@ -89,7 +91,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_ANSI_CAUTION_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_ANSI_CAUTION_End()/]
 	</td>
 </tr>
@@ -104,7 +106,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_ANSI_WARNING_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_ANSI_WARNING_End()/]
 	</td>
 </tr>
@@ -119,7 +121,7 @@
 <tr>
 	<td colspan="2" style="text-align: center">
 		[html_ANSI_DANGER_Start()/]
-			[value /]
+			[value._formattedTextToXHtml() /]
 		[html_ANSI_DANGER_End()/]
 	</td>
 </tr>
@@ -128,10 +130,28 @@
 
 [template public printAsTableRowVertical(
 	this : Property
-)]
+)
+? (key.startsWith('*'))
+]
 <tr>
-	<th>[key /]</th>
-	<td>[value /]</td>
+	<th class="sbom-ntia-minimum">[key.substring(2) /]</th>
+	<td>[value._formattedTextToXHtml() /]</td>
 </tr>
 [/template]
 
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (not key.startsWith('('))
+]
+<tr>
+	<th>[key /]</th>
+	<td>[value._formattedTextToXHtml() /]</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)][/template]
