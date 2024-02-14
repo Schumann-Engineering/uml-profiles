@@ -6,6 +6,8 @@
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Html /]
+[import org::w3c::xhtml::Link /]
+[import gov::nist::nvd::vuln::CommonVulnerabilitiesExposures /]
 
 
 
@@ -124,6 +126,36 @@
 			[value._formattedTextToXHtml() /]
 		[html_ANSI_DANGER_End()/]
 	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.toLower().contains('purl'))
+]
+<tr>
+	<th class="sbom-ntia-minimum">«ID» PURL</th>
+	<td>
+		<ul>
+[for (value.tokenize('\n'))]
+			<li>[_formattedTextToXHtml() /]</li>
+[/for]
+		</ul>
+	</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.toLower().contains('cpe'))
+]
+<tr>
+	<th class="sbom-ntia-minimum">«ID» CPE</th>
+	<td>[html_getLink( value, value.nist_getCpeLink() ) /]</td>
 </tr>
 [/template]
 
