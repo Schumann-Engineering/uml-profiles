@@ -38,10 +38,11 @@
 
 [template public TERM_SECURITY_CPE(devNull : OclAny)][TERM('CPE', 'Common Platform Enumeration')/][/template]
 [template public TERM_SECURITY_CVE(devNull : OclAny)][TERM('CVE', 'Common Vulnerabilities and Exposures')/][/template]
+
 [template public TERM_SOFTWARE_COTS(devNull : OclAny)][TERM('COTS', 'Commercial Off-the-Shelf Software')/][/template]
 [template public TERM_SOFTWARE_FOSS(devNull : OclAny)][TERM('FOSS', 'Free Open Source Software')/][/template]
 [template public TERM_SOFTWARE_OSS(devNull : OclAny)][TERM('OSS', 'Open Source Software')/][/template]
 [template public TERM_SOFTWARE_OTS(devNull : OclAny)][TERM('OTS', 'Off-the-Shelf Software')/][/template]
-
+[template public TERM_SOFTWARE_PURL(devNull : OclAny)][TERM('PURL', 'Uniform Resource Locator')/][/template]
 
 [template public TERM_HEALTHCARE_HDO(devNull : OclAny)][TERM('HDO', 'Health Delivering Organization')/][/template]
