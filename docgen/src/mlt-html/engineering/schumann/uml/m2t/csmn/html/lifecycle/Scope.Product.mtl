@@ -79,13 +79,14 @@ post(trim())]
 <tr>
 	<th>Type</th>
 [for (products)]
-	<td>[platformType /]&nbsp;/&nbsp;
-[if (platformType = CommonPlatformEnumerationType::Hardware)]Hardware (Device)
+	<td>
+[if (platformType = CommonPlatformEnumerationType::Hardware)]Hardware / Device
 [elseif (platformType = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
 [elseif (platformType = CommonPlatformEnumerationType::Application)]Software (Application)
 [elseif (platformType = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
 [else][html_ANSI_WARNING_Start()/]Unknown[html_ANSI_WARNING_End()/]
 [/if]
+	</td>
 [/for]
 </tr>
 [/template]
