@@ -36,7 +36,7 @@
 	_context	: Context
 )]
 <header class="qm-header">
-	<table>
+	<table border="1">
 		<tr>
 			<th>Product</th>
 			<td>[_context.product.productName /]</td>
@@ -62,10 +62,11 @@
 	_context	: Context
 )]
 <footer class="qm-footer">
-	<table>
+	<table border="1">
 		<tr>
 			<th             style="width: 25% !important;">Document date</th>
-			<td colspan="3" style="width: 75% !important;">[env('DOC_date') /]</td>
+			<td             style="width: 25% !important;">[env('DOC_date') /]</td>
+			<td colspan="2" style="width: 50% !important;">&nbsp;</td>
 		</tr>
 		<tr>
 			<td colspan="2" style="width: 50% !important;">&#169; Copyright by [VENDOR_NAME() /]</td>
@@ -98,7 +99,7 @@
 )
 post(trim())
 ]
-<table class="qm-signatory">
+<table class="qm-signatory" border="1">
 	<thead>
 		<tr>
 			<th>Role in Doc.</th>
