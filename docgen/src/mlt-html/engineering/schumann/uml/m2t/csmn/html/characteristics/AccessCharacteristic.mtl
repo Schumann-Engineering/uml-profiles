@@ -2,7 +2,9 @@
 [module AccessCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::AccessCharacteristic /]
@@ -27,9 +29,8 @@ post(trim())
 	this : AccessCharacteristic
 )
 post(trim())]
-<p>
-	<b><i>Access Characteristic</i></b>
-</p>
+[printCharacteristicTitle('Access properties') /]
+
 <ul>
 [if (this.mechanicalLevel <> null and this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
 	<li>

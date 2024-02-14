@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module GenericCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template protected printCharacteristicTitle(
+	title	: String
+)]
+<p>
+	<b><i>[title /]</i></b>
+</p>
+[/template]

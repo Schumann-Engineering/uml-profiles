@@ -2,7 +2,9 @@
 [module OsiCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::OsiCharacteristic /]
@@ -25,51 +27,71 @@
 	this : OsiCharacteristic
 )
 post(trim())]
-<p>
-	<b><i>OSI-Layer Characteristic</i></b>
-</p>
+[printCharacteristicTitle('OSI-Layer') /]
+
 <ul>
 [comment 7 = Application /]
+	<li>
+		<i>Layer 7 (Application)</i>: 
 [if (this.application._hasContent())]
-	<li>
-		<i>Layer 7 (Application)</i>: [this.application /]
-	</li>
+		[this.application /]
+[else]
+		./.
 [/if]
+	</li>
 [comment 6 = Presentation /]
+	<li>
+		<i>Layer 6 (Presentation)</i>:
 [if (this.presentation._hasContent())]
-	<li>
-		<i>Layer 6 (Presentation)</i>: [this.presentation/]
-	</li>
+		[this.presentation/]
+[else]
+		./.
 [/if]
+	</li>
 [comment 5 = Session /]
+	<li>
+		<i>Layer 5 (Session)</i>:
 [if (this.session._hasContent())]
-	<li>
-		<i>Layer 5 (Session)</i>: [this.session /]
-	</li>
+		[this.session /]
+[else]
+		./.
 [/if]
+	</li>
 [comment 4 = Transport /]
+	<li>
+		<i>Layer 4 (Transport)</i>:
 [if (this.transport._hasContent())]
-	<li>
-		<i>Layer 4 (Transport)</i>: [this.transport /]
-	</li>
+		[this.transport /]
+[else]
+		./.
 [/if]
+	</li>
 [comment 3 = Network /]
+	<li>
+		<i>Layer 3 (Network)</i>: 
 [if (this.network._hasContent())]
-	<li>
-		<i>Layer 3 (Network)</i>: [this.network /]
-	</li>
+		[this.network /]
+[else]
+		./.
 [/if]
+	</li>
 [comment 2 = Data Link /]
+	<li>
+		<i>Layer 2 (Data Link)</i>:
 [if (this.dataLink._hasContent())]
-	<li>
-		<i>Layer 2 (Data Link)</i>: [this.dataLink /]
-	</li>
+		[this.dataLink /]
+[else]
+		./.
 [/if]
+	</li>
 [comment 1 = Physical /]
-[if (this.physical._hasContent())]
 	<li>
-		<i>Layer 1 (Physical)</i>: [this.physical /]
-	</li>
+		<i>Layer 1 (Physical)</i>:
+[if (this.physical._hasContent())]
+		[this.physical /]
+[else]
+		./.
 [/if]
+	</li>
 </ul>
 [/template]

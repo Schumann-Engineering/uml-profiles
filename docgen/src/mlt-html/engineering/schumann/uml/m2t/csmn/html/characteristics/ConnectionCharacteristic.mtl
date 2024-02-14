@@ -2,7 +2,9 @@
 [module ConnectionCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::flow::Connection /]
@@ -27,12 +29,14 @@
 post(trim())]
 [comment purpose /]
 [if (not this.purpose._isNullOrEmpty())]
+[printCharacteristicTitle('Connection purpose') /]
+
 <p>
-	<b><i>Purpose</i></b>
-	<br/>
 	[this.purpose /]
 </p>
 [/if]
+
+[printCharacteristicTitle('Connection properties') /]
 <ul>
 [comment connectionType /]
 	<li>

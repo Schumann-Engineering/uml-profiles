@@ -2,7 +2,9 @@
 [module StorageCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::StorageCharacteristic /]
@@ -38,9 +40,8 @@ post(trim())
 	this : StorageCharacteristic
 )
 post(trim())]
-<p>
-	<b><i>Storage Characteristic</i></b>
-</p>
+[printCharacteristicTitle('Storage properties') /]
+
 <ul>
 [if (this.storageName.hasContent())]
 	<li>

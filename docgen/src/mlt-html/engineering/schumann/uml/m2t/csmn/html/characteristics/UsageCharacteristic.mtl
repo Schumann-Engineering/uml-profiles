@@ -2,7 +2,9 @@
 [module UsageCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::UsageCharacteristic /]
@@ -24,9 +26,8 @@
 	this : UsageCharacteristic
 )
 ]
-<p>
-	<b><i>Usage Characteristic</i></b>
-</p>
+[printCharacteristicTitle('Usage properties') /]
+
 [if ((this.usageType <> null and this.usageType <> UsageType::Unspecified) or (this.intendedUserGroup <> null and this.intendedUserGroup->size() > 0))]
 
 <ul>

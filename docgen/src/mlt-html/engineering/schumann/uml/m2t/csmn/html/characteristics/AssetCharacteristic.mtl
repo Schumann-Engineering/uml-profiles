@@ -2,7 +2,9 @@
 [module AssetCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
@@ -28,17 +30,17 @@ post(trim())
 post(trim())]
 [comment spec /]
 [if (not this.assetSpec._isNullOrEmpty())]
+[printCharacteristicTitle('Asset specification') /]
 <p>
-	<b><i>Specification</i></b>
-	<br/>
 	[this.assetSpec /]
 </p>
 [/if]
-<ul>
+
 [if (this.assetType <> null and this.assetType <> AssetType::Unspecified)]
-	<li>
-		<i>Type</i>: [this.assetType.csmn_toString() /]
-	</li>
-[/if]
+[printCharacteristicTitle('Asset properties') /]
+
+<ul>
+	<li><i>Type</i>: [this.assetType.csmn_toString() /]</li>
 </ul>
+[/if]
 [/template]

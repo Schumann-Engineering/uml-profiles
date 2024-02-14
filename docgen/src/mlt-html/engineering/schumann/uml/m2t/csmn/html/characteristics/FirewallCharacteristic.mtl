@@ -2,7 +2,9 @@
 [module FirewallCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::FirewallCharacteristic /]
@@ -24,12 +26,9 @@ post(trim())
 	this : FirewallCharacteristic
 )
 post(trim())]
-<p>
-	<b><i>Firewall Characteristic</i></b>
-</p>
+[printCharacteristicTitle('Firewall properties') /]
+
 <ul>
-	<li>
-		Port is firewalled
-	</li>
+	<li>Port is firewalled</li>
 </ul>
 [/template]

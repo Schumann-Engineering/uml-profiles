@@ -2,7 +2,9 @@
 [module InterfaceCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
@@ -28,11 +30,12 @@
 ? (this <> null)
 post(trim())]
 [comment purpose /]
+[printCharacteristicTitle('Interface purpose') /]
 <p>
-	<b><i>Purpose</i></b>
-	<br/>
 	[this.purpose/]
 </p>
+
+[printCharacteristicTitle('Interface properties') /]
 <ul>
 [comment type /]
 [if (this.interfaceType <> null and this.interfaceType <> InterfaceType::Unspecified)]

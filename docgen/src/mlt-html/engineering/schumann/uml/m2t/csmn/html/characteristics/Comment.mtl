@@ -2,7 +2,9 @@
 [module Comment(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::uml::common::Comment /]
@@ -16,9 +18,8 @@
 post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
 ]
 [if (this.ownedComment->size() > 0 and this.ownedComment->one(not _isEmpty()))]
-<p>
-	<b><i>COMMENT</i></b>
-</p>
+[printCharacteristicTitle('COMMENT') /]
+
 [for (eComment : Comment | this.ownedComment)]
 [if (not eComment._isEmpty())]
 [for (eComment.stripComment()) separator ('\n')]  [self/][/for]

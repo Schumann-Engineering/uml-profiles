@@ -2,7 +2,9 @@
 [module BandwidthCharacteristic(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
-)]
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::BandwidthCharacteristic /]
@@ -36,9 +38,9 @@ post(trim())
 	this : BandwidthCharacteristic
 )
 post(trim())]
-<p>
-	<b><i>Bandwidth Characteristic:</i></b>
-	<br/>
-	[this.bandwidth.size /] [this.bandwidth.unit /]
-</p>
+[printCharacteristicTitle('Bandwidth properties') /]
+
+<ul>
+	<li>[this.bandwidth.size /] [this.bandwidth.unit /]</li>
+</ul>
 [/template]
