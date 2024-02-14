@@ -27,7 +27,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope.Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
@@ -146,7 +146,7 @@
 	[comment DOC_Footer(_context) /]
 
 	[TOC_Title_begin(_context.documentTitle) /]
-		[this.printScope(_context) /]
+		[this.printScopeForProduct(_context) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]
 [/template]
@@ -184,7 +184,7 @@
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Scope') /]
-			[this.printScope(_context) /]
+			[this.printScopeForProduct(_context) /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_begin('Abbreviations') /]

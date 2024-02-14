@@ -1,0 +1,224 @@
+[comment encoding = UTF-8 /]
+[module Scope(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+[import engineering::schumann::uml::m2t::uml::services::StereotypeService /]
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::csmn::common::CpeCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import gov::nist::nvd::vuln::CommonPlatformEnumeration /]
+[import gov::nist::nvd::vuln::CommonVulnerabilitiesExposures /]
+[import engineering::schumann::uml::m2t::standards::text::IEC_62304 /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
+[import org::w3c::xhtml::Link /]
+
+
+[template public printScopeForProduct(
+	this			: NamedElement,
+	_context		: Context
+)
+post(trim())]
+[_printScope_TableHeader(_context) /]
+	[_printScope_TableRow_Name(_context) /]
+	[_printScope_TableRow_Type(_context) /]
+	[_printScope_TableRow_Model(_context) /]
+	[_printScope_TableRow_UDI(_context) /]
+	[_printScope_TableRow_UDIBase(_context) /]
+	[_printScope_TableRow_CPE(_context) /]
+[_printScope_TableFooter(_context) /]
+[/template]
+
+
+[template public printScopeForSoftware(
+	this			: NamedElement,
+	_context		: Context
+)
+post(trim())
+{
+	productIsNotSoftwareAlready : Boolean = _context.product.platformType = CommonPlatformEnumerationType::Hardware; 
+}
+]
+[if (productIsNotSoftwareAlready)]
+[_printScope_TableHeader(_context) /]
+	[_printScope_TableRow_NameForSoftware(_context) /]
+	[_printScope_TableRow_SoftwareVersion(_context) /]
+	[_printScope_TableRow_CPEforSoftware(_context) /]
+[_printScope_TableFooter(_context) /]
+[else]
+[_printScopeForProduct(_context)/]
+[/if]
+[/template]
+
+
+[template protected _printScope_TableHeader(
+	this			: NamedElement,
+	_context		: Context
+)]
+<table class="csmn-scope table-2-columns">
+[/template]
+
+
+[template protected _printScope_TableRow_Divider(
+	this			: NamedElement,
+	title			: String
+)]
+<tr>
+	<th colspan="2">[title /]</th>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_Name(
+	this			: NamedElement,
+	_context		: Context
+)
+{
+	product			: Product = _context.product;
+}
+]
+<tr>
+	<th>Product / Trade name</th>
+	<td>[product.productName /]</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_NameForSoftware(
+	this			: NamedElement,
+	_context		: Context
+)
+{
+	product			: Product = _context.product;
+}
+]
+<tr>
+	<th>Software name</th>
+	<td>
+[if (product.platformType = CommonPlatformEnumerationType::Hardware)][product.productName /] Firmware
+[elseif (product.platformType = CommonPlatformEnumerationType::Application)][product.productName /]
+[else][html_ANSI_WARNING_Start()/]SBOM not defined for [product.productName /][html_ANSI_WARNING_End()/]
+[/if]
+	</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_Type(
+	this			: NamedElement,
+	_context		: Context
+)
+{
+	product			: Product = _context.product;
+}]
+<tr>
+	<th>Type</th>
+	<td>
+[if (product.platformType = CommonPlatformEnumerationType::Hardware)]Hardware / Device
+[elseif (product.platformType = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
+[elseif (product.platformType = CommonPlatformEnumerationType::Application)]Software (Application)
+[elseif (product.platformType = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
+[else][html_ANSI_WARNING_Start()/]Unknown[html_ANSI_WARNING_End()/]
+[/if]
+	</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_Model(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>Model / Version /<br/>Part Number (PN)</th>
+	<td>[_context.product.model /]</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_UDI(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>UDI-DI / GTIN</th>
+	<td>[_context.product.udiDi /]</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_UDIBase(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>Base-UDI-DI / GMN</th>
+	<td>[_context.product.udiDiBase /]</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_SoftwareVersion(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>Software release</th>
+	<td>[_context.softwareVersion /]</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_CPE(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>CPE</th>
+	<td>
+		[_context.product.csmn_html_getCpeLink()/]
+	</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableRow_CPEforSoftware(
+	this			: NamedElement,
+	_context		: Context
+)]
+<tr>
+	<th>CPE</th>
+	<td>
+		[let cpeString : String = cpeForSoftware(_context)]
+		[html_getLink( cpeString, cpeString.nist_getCpeLink() ) /]
+		[/let]
+	</td>
+</tr>
+[/template]
+
+
+[template protected _printScope_TableFooter(
+	this			: NamedElement,
+	_context		: Context
+)]
+</table>
+[/template]
+
+
+[query private cpeForSoftware(
+	_context		: Context
+) : String =
+	nist_cpe(
+		CommonPlatformEnumerationType::OperatingSystem,
+		_context.product.vendorName,
+		_context.product.productName + '_firmware',
+		_context.softwareVersion
+	)
+/]
