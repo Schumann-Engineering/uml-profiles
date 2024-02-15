@@ -1,0 +1,13 @@
+[module UuidService(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)/]
+
+
+[template public generateUUID()
+post(trim())
+][invoke(
+	'engineering.schumann.uml.m2t.common.services.UuidServiceImpl', 
+	'GenerateUuid()',
+	Sequence{
+	})
+/][/template]
