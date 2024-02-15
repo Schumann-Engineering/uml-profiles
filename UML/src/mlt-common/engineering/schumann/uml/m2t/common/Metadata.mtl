@@ -8,58 +8,39 @@
 [query public VENDOR_ADDRESS(
 	this 	: OclAny
 ) : String =
-	VENDOR_ADDRESS('(ERROR: "META_VENDOR_ADDRESS" not set)')
-/]
-
-
-[query public VENDOR_ADDRESS(
-	this 	: OclAny,
-	default	: String
-) : String =
-	let value : String = getProperty('META_VENDOR_ADDRESS') in
-	if (value <> null) then
-		value
-	else
-		default
-	endif
+	VENDOR_detail('META_VENDOR_ADDRESS')
 /]
 
 
 [query public VENDOR_NAME(
 	this 	: OclAny
 ) : String =
-	VENDOR_NAME('(ERROR: "META_VENDOR_NAME" not set)')
-/]
-
-
-[query public VENDOR_NAME(
-	this 	: OclAny,
-	default	: String
-) : String =
-	let value : String = getProperty('META_VENDOR_NAME') in
-	if (value <> null) then
-		value
-	else
-		default
-	endif
+	VENDOR_detail('META_VENDOR_NAME')
 /]
 
 
 [query public VENDOR_WEBSITE(
 	this 	: OclAny
 ) : String =
-	VENDOR_NAME('(ERROR: "META_VENDOR_WEBSITE" not set)')
+	VENDOR_detail('META_VENDOR_WEBSITE')
 /]
 
 
-[query public VENDOR_WEBSITE(
-	this 	: OclAny,
-	default	: String
+[query public VENDOR_EMAIL(
+	this 	: OclAny
 ) : String =
-	let value : String = getProperty('META_VENDOR_WEBSITE') in
+	VENDOR_detail('META_VENDOR_EMAIL')
+/]
+
+
+[query private VENDOR_detail(
+	this 	: OclAny,
+	key		: String
+) : String =
+	let value : String = getProperty(key) in
 	if (value <> null) then
 		value
 	else
-		default
+		'(ERROR: "' + key + '" not set)'
 	endif
 /]
