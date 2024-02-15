@@ -272,9 +272,14 @@ each file would need a new engine / run.
 	this 			: NamedElement,
 	_context		: Context
 ) : String =
-	env(
-		_context.templateUUID + '.Output.FileName', 
-		this.name
+	env2(
+		'ANNOTATION.Product.Model.' + _context.product.model + '.Document.FileName.' + _context.templateUUID,
+		env2(
+			_context.templateUUID + '.Output.FileName', 
+			this.name,
+			_context
+		),
+		_context
 	)
 /]
 
