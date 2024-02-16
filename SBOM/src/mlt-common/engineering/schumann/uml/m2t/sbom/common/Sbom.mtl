@@ -60,9 +60,9 @@
 [query public allComponentsWithicense(
 	this			: Sbom,
 	needle			: String
-) : Set(Component) =
+) : Set(Namespace) =
 	allComponents()
-	->select(c : Component | needle.equalsIgnoreCase(c.license))
+	->select(c : Namespace | needle.equalsIgnoreCase(c.license))
 	->asSet() 
 /]
 
@@ -108,7 +108,7 @@
 
 [query public allComponents(
 	this : Sbom
-) : Set(Component) =
+) : Set(Namespace) =
 	Set(Namespace) {}
 	->union(ownedSystem)
 	->union(ownedSystem.allComponents())

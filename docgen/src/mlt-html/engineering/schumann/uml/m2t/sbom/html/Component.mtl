@@ -17,7 +17,7 @@
 
 
 [template public printAsTable(
-	this : Component
+	this : Namespace
 )]
 <div class="sbom-component">
 	[DocGen_breadcrumbs_toHtml() /]
@@ -40,7 +40,7 @@
 
 
 [template public printAsTableRowHorizontal(
-	this : Component
+	this : Namespace
 )]
 <tr>
 	<td style="text-align: center">[TOC_link( name, printName()) /][TOC_anchor(name + '-overview') /]</td>
@@ -54,7 +54,7 @@
 
 
 [template public printAsTableRowVertical(
-	this : Component
+	this : Namespace
 )]
 [comment name /]
 <tr>
@@ -183,7 +183,7 @@
 
 
 [template public printName(
-	this : Component
+	this : Namespace
 )
 ? (name = null or name.trim().size() = 0)
 ]
@@ -194,12 +194,12 @@
 
 
 [template public printName(
-	this : Component
+	this : Namespace
 )][name /][/template]
 
 
 [template public printSupplier(
-	this : Component
+	this : Namespace
 )
 ? (supplier = null or supplier.trim().size() = 0)
 ]
@@ -210,14 +210,14 @@
 
 
 [template public printSupplier(
-	this : Component
+	this : Namespace
 )]
 [supplier /]
 [/template]
 
 
 [template public printVersion(
-	this : Component
+	this : Namespace
 )
 ? (version = null or version.trim().size() = 0)
 ]
@@ -228,7 +228,7 @@
 
 
 [template public printVersion(
-	this : Component
+	this : Namespace
 )
 ? (version.trim() = '*' or version.trim() = '-')
 ]
@@ -239,14 +239,14 @@
 
 
 [template public printVersion(
-	this : Component
+	this : Namespace
 )]
 [version /]
 [/template]
 
 
 [query public _toString(
-	this : Component
+	this : Namespace
 ) : String =
 	'«' + type + '» ' + name + ' (' + version + ')' 
 /]

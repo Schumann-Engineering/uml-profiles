@@ -9,21 +9,20 @@
 
 
 [template public printAsTableRowHorizontal(
-	this : System
+	this 		: System,
+	ignoreList	: Set(NamespaceType)
 )
 {
 	components			: OrderedSet(Component)	= this.ownedComponent->sortedBy(name);
 
-	vendorComponents	: Set(Component)		= components->select(isSOUP = false);
-	otherComponents 	: Set(Component)		= components->select(isSOUP = true);
+	vendorComponents	: OrderedSet(Component)	= components->select(isSOUP = false and ignoreList->excludes(type))->sortedBy(name);
+	otherComponents 	: OrderedSet(Component)	= components->select(isSOUP = true and ignoreList->excludes(type))->sortedBy(name);
 }]
-<tr>
-	<th colspan="5">«System, [type /]» [name /] version [version /]</th>
-</tr>
-[if (vendorComponents->size() > 0)]
 <tr>
 	<th colspan="5" style="text-align: center;">by [VENDOR_NAME() /]</th>
 </tr>
+[printAsTableRowHorizontal() /]
+[if (vendorComponents->size() > 0)]
 [vendorComponents.printAsTableRowHorizontal() /]
 [/if]
 [if (otherComponents->size() > 0)]

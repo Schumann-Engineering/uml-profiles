@@ -10,7 +10,8 @@
 
 
 [template public printAsTable(
-	this : Sbom
+	this 		: Sbom,
+	ignoreList	: Set(NamespaceType)
 )]
 <table class="table-5-columns">
 	<thead>
@@ -24,94 +25,112 @@
 	</thead>
 
 	<tbody>
-		[printAsTableRowHorizontal() /]
+		[printAsTableRowHorizontal(ignoreList) /]
+	</tbody>
+</table>
+[/template]
+
+
+[template public printAsTable(
+	this : System,
+	ignoreList	: Set(NamespaceType)
+)]
+<table class="table-5-columns">
+	<thead>
+		<tr>
+			<th>Component Name</th>
+			<th>CPE Part<br/>NIST IR 7695</th>
+			<th>Type</th>
+			<th>Version</th>
+			<th>Classification<br/>IEC 81001-1-5</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		[printAsTableRowHorizontal(ignoreList) /]
 	</tbody>
 </table>
 [/template]
 
 
 [template public printAsTableRowHorizontal(
-	this : Sbom
+	this 		: Sbom,
+	ignoreList	: Set(NamespaceType)
 )]
-[ownedSystem.printAsTableRowHorizontal() /]
+[ownedSystem.printAsTableRowHorizontal(ignoreList) /]
+[/template]
+
+
+[template private printSelectedComponents(
+	sbom 		: Sbom,
+	selectList	: Set(NamespaceType),
+	ignoreList	: Set(NamespaceType),
+	soupSelect	: Boolean
+)
+{
+	components : Set(Namespace) = sbom
+									.allComponents()
+									->select(
+										(selectList = null or selectList->includes(type)) and
+										(ignoreList = null or ignoreList->excludes(type)) and
+										isSOUP = soupSelect
+									);
+}]
+[if (components->size() = 0)]
+<p>
+	(None)
+</p>
+[else]
+[components.printAsTable() /]
+[/if]
 [/template]
 
 
 [template public printOperatingSystemAndFirmware(
-	sbom : Sbom
-)
-{
-	components : Set(Component) = sbom.allComponents()->select((type = NamespaceType::OperatingSystemDeviceSoftware or type = NamespaceType::OperatingSystem) and isSOUP = false);
-}]
-[if (components->size() = 0)]
-<p>
-	(None)
-</p>
-[else]
-[components.printAsTable() /]
-[/if]
-[/template]
+	sbom 		: Sbom,
+	ignoreList	: Set(NamespaceType)
+)][printSelectedComponents(
+	Set{ NamespaceType::OperatingSystemDeviceSoftware, NamespaceType::OperatingSystem },
+	ignoreList,
+	false
+) /][/template]
 
 
 [template public printOperatingSystems(
-	sbom : Sbom
-)
-{
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::OperatingSystem and isSOUP = false);
-}]
-[if (components->size() = 0)]
-<p>
-	(None)
-</p>
-[else]
-[components.printAsTable() /]
-[/if]
-[/template]
+	sbom 		: Sbom,
+	ignoreList	: Set(NamespaceType)
+)][printSelectedComponents(
+	Set{ NamespaceType::OperatingSystem, NamespaceType::OperatingSystem },
+	ignoreList,
+	false
+) /][/template]
 
 
 [template public printApplications(
-	sbom : Sbom
-)
-{
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::Application and isSOUP = false);
-}]
-[if (components->size() = 0)]
-<p>
-	(None)
-</p>
-[else]
-[components.printAsTable() /]
-[/if]
-[/template]
+	sbom : Sbom,
+	ignoreList	: Set(NamespaceType)
+)][printSelectedComponents(
+	Set{ NamespaceType::Application },
+	ignoreList,
+	false
+) /][/template]
 
 
 [template public printLibraries(
-	sbom : Sbom
-)
-{
-	components : Set(Component) = sbom.allComponents()->select(type = NamespaceType::ApplicationLibrary and isSOUP = false);
-}]
-[if (components->size() = 0)]
-<p>
-	(None)
-</p>
-[else]
-[components.printAsTable() /]
-[/if]
-[/template]
+	sbom : Sbom,
+	ignoreList	: Set(NamespaceType)
+)][printSelectedComponents(
+	Set{ NamespaceType::ApplicationLibrary },
+	ignoreList,
+	false
+) /][/template]
 
 
 [template public print3rdParty(
-	sbom : Sbom
-)
-{
-	components : Set(Component) = sbom.allComponents()->select(isSOUP);
-}]
-[if (components->size() = 0)]
-<p>
-	(None)
-</p>
-[else]
-[components.printAsTable() /]
-[/if]
-[/template]
+	sbom : Sbom,
+	ignoreList	: Set(NamespaceType)
+)][printSelectedComponents(
+	null,
+	ignoreList,
+	true
+) /][/template]
