@@ -30,3 +30,15 @@
 	alt="Legend explaining each diagram element shown in CMNS and DfD notation"
 	style="max-height: 4cm !important; float: right !important; margin-top: 5mm !important;"
 /></div>[/template]
+
+
+
+[template public html_IMG_IEC_81001_5_SOFTWARE_ITEM_Classification(
+	this			: NamedElement,
+	_context		: Context
+)]<div><img
+	src="[DIRECTORY_URI_ASSETS_HTML(_context) /]/IEC 81001-5-1/IEC 81001-5-1 SOFTWARE ITEM classification.svg"
+	title="IEC 81001-5-1 SOFTWARE ITEM classification"
+	alt="overview and comparison of IEC 81001-5-1 SOFTWARE ITEM classification"
+	width="100%"
+/></div>[/template]
