@@ -103,12 +103,15 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected ElementImpl() {
 		super();
-	}
 
+		// set the ID to a generated UUID
+		setId(org.eclipse.emf.ecore.util.EcoreUtil.generateUUID());
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
