@@ -25,7 +25,9 @@
 [template public printAsTable(
 	this 		: Set(Component),
 	ignoreList	: Set(ComponentType)
-)]
+)
+post(trim())
+]
 <table class="table-5-columns">
 	<thead>
 		<tr>
@@ -45,13 +47,18 @@
 
 
 [template public printAsTable(
-	this : Component
-)]
+	this				: Component,
+	printBreadcrumbs	: Boolean
+)
+post(trim())
+]
 <div class="sbom-component">
+[if (printBreadcrumbs)]
 	[DocGen_breadcrumbs_toHtml() /]
+[/if]
 
 	<p>
-		[TOC_anchor(name, '<b>' + name + '</b>') /]
+		[TOC_anchor(_toHtmlAnchor(), '<b>' + name + '</b>') /]
 	</p>
 	
 	<table class="table-2-columns">
@@ -61,7 +68,7 @@
 	</table>
 
 	<p class="breadcrumbs" style="text-align: right !important">
-		[TOC_link('back to Overview', name + '-overview') /]
+		[TOC_link('back to Overview', _toHtmlAnchor4Overview()) /]
 	</p>
 </div>
 [/template]
@@ -78,11 +85,13 @@
 	this 		: Component,
 	ignoreList	: Set(ComponentType)
 )
+post(trim())
 {
 	components			: OrderedSet(Component)	= this.ownedComponent->sortedBy(name);
 
 	vendorComponents	: OrderedSet(Component)	= components->select(isSOUP = false and ignoreList->excludes(type))->sortedBy(name);
 	otherComponents 	: OrderedSet(Component)	= components->select(isSOUP = true and ignoreList->excludes(type))->sortedBy(name);
+	runtimeEnvironment	: OrderedSet(Component) = components->select(type = ComponentType::Device or type = ComponentType::Container or type = ComponentType::Platform)->sortedBy(name);
 }]
 <tr>
 	<th colspan="5" style="text-align: center;">by [VENDOR_NAME() /]</th>
@@ -97,14 +106,22 @@
 </tr>
 [otherComponents.printAsTableRowHorizontal() /]
 [/if]
+[if (runtimeEnvironment->notEmpty())]
+<tr>
+	<th colspan="5" style="text-align: center;">runtime environment</th>
+</tr>
+[runtimeEnvironment.printAsTableRowHorizontal() /]
+[/if]
 [/template]
 
 
 [template public printAsTableRowHorizontal(
 	this		: Component
-)]
+)
+post(trim())
+]
 <tr>
-	<td style="text-align: center">[TOC_link( name, printName()) /][TOC_anchor(name + '-overview') /]</td>
+	<td style="text-align: center">[TOC_link( name, _toHtmlAnchor()) /][TOC_anchor(_toHtmlAnchor4Overview()) /]</td>
 	<td style="text-align: center">[type.sbom_toStringAsCpeFull() /]</td>
 	<td style="text-align: center">[type.sbom_toString() /]</td>
 	<td style="text-align: center">[printVersion() /]</td>
@@ -122,7 +139,9 @@
  */]
 [template public printAsTableRowVertical(
 	this		: Component
-)]
+)
+post(trim())
+]
 [comment name /]
 <tr>
 	<th class="sbom-ntia-minimum">Name</th>
@@ -207,10 +226,10 @@
 		[else]
 		<ul>
 		[for (sbom_relationshipOutgoing())]
-			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target.name._toString()) /]</li>
+			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target._toHtmlAnchor()) /]</li>
 		[/for]
 		[for (sbom_relationshipIncoming())]
-			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source.name._toString()) /]</li>
+			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source._toHtmlAnchor()) /]</li>
 		[/for]
 		</ul>
 		[/if]
@@ -261,6 +280,7 @@
 	this		: Component
 )
 ? (name = null or name.trim().size() = 0)
+post(trim())
 ]
 [html_ANSI_WARNING_Start()/]
 	name not allowed to be empty.<br/>Reason: NTIA minimum field
@@ -270,13 +290,18 @@
 
 [template public printName(
 	this		: Component
-)][name /][/template]
+)
+post(trim())
+]
+[name /]
+[/template]
 
 
 [template public printSupplier(
 	this		: Component
 )
 ? (supplier = null or supplier.trim().size() = 0)
+post(trim())
 ]
 [html_ANSI_WARNING_Start()/]
 	supplier not allowed to be empty.<br/>Reason: NTIA minimum field
@@ -286,7 +311,9 @@
 
 [template public printSupplier(
 	this 		: Component
-)]
+)
+post(trim())
+]
 [supplier /]
 [/template]
 
@@ -295,6 +322,7 @@
 	this		: Component
 )
 ? (version = null or version.trim().size() = 0)
+post(trim())
 ]
 [html_ANSI_WARNING_Start()/]
 	version not allowed to be empty.<br/>Reason: NTIA minimum field
@@ -306,6 +334,7 @@
 	this 		: Component
 )
 ? (version.trim() = '*' or version.trim() = '-')
+post(trim())
 ]
 [html_ANSI_WARNING_Start()/]
 	version not allowed to be generic (* or -).<br/>Reason: NTIA minimum field
@@ -315,7 +344,9 @@
 
 [template public printVersion(
 	this 		: Component
-)]
+)
+post(trim())
+]
 [version /]
 [/template]
 
@@ -324,4 +355,18 @@
 	this 		: Component
 ) : String =
 	'«' + type + '» ' + name + ' (' + version + ')' 
+/]
+
+
+[query public _toHtmlAnchor(
+	this		: Element
+) : String =
+	'ref-sbom-' + id
+/]
+
+
+[query public _toHtmlAnchor4Overview(
+	this		: Element
+) : String =
+	_toHtmlAnchor() + '-overviewTable'
 /]

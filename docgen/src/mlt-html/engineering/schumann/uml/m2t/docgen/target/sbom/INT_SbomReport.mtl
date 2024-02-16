@@ -311,6 +311,14 @@ post(trim())]
 		[SoftwareComponent_3rdParty_Section_print(sbom, _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('3rdparty') /]
+
+[html_PAGE_begin('runtime environment') /]
+	[TOC_Chapter_begin('Runtime Environment') /]
+		[RuntimeEnvironment_Container_Section_print(sbom, _context) /]
+		[RuntimeEnvironment_Device_Section_print(sbom, _context) /]
+		[RuntimeEnvironment_Platform_Section_print(sbom, _context) /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end('runtime environment') /]
 [/template]
 
 
@@ -460,7 +468,11 @@ post(trim())]
 		Firmware is any software run on an embedded system, no matter if it runs on a field programable gate array (FPGA), micro controller (uC), digital signal processor (DSP), or general purpose computational unit (CPU).
 	[html_TIP_End()/]
 
-	[sbom.printOperatingSystemAndFirmware(Set{ ComponentType::Device }) /]
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::OperatingSystem, ComponentType::Firmware },
+		Set{ ComponentType::Device },
+		false
+	) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -488,7 +500,11 @@ post(trim())]
 		An application is any executable. Libraries used by such an application will be listed in a separate section later.
 	[html_TIP_End()/]
 
-	[sbom.printApplications(Set{ ComponentType::Device }) /]
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::Application },
+		Set{ ComponentType::Device },
+		false
+	) /]) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -512,7 +528,11 @@ post(trim())]
 		Includes only libraries by [VENDOR_NAME() /]. Libraries from 3rd parties are listed in a separate section later.
 	[html_NOTE_End()/]
 
-	[sbom.printLibraries(Set{ ComponentType::Device }) /]
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::Library },
+		Set{ ComponentType::Device },
+		false
+	) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -536,7 +556,83 @@ post(trim())]
 		Includes everything developed by a 3rd party, i.e. C(OTS) and (F)OSS, and <b>NOT</b> by [VENDOR_NAME() /].
 	[html_NOTE_End()/]
 
-	[sbom.print3rdParty(Set{ ComponentType::Device }) /]
+	[sbom.printSelectedComponents(
+		null,
+		Set{ ComponentType::Device },
+		true
+	)/]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	RUNTIME ENVIRONMENT > Container
+	--------------------
+/]
+[template private RuntimeEnvironment_Container_Section_print(
+	this			: NamedElement,
+	sbom 			: Sbom,
+	_context		: Context
+)]
+[TOC_Section_begin('Virtualization') /]
+	<p>
+		The following lists virtualization environments (e.g. Java JVM, OS Hypervisors) the software relies on to run.
+	</p>
+
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::Container },
+		null,
+		null
+	) /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	RUNTIME ENVIRONMENT > Device
+	--------------------
+/]
+[template private RuntimeEnvironment_Device_Section_print(
+	this			: NamedElement,
+	sbom 			: Sbom,
+	_context		: Context
+)]
+[TOC_Section_begin('Devices') /]
+	<p>
+		The following lists devices which the software runs on or controls.
+	</p>
+
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::Device },
+		null,
+		null
+	) /]
+[TOC_Section_end() /]
+[/template]
+
+
+[comment
+	--------------------
+	RUNTIME ENVIRONMENT > Platform
+	--------------------
+/]
+[template private RuntimeEnvironment_Platform_Section_print(
+	this			: NamedElement,
+	sbom 			: Sbom,
+	_context		: Context
+)]
+[TOC_Section_begin('Platform') /]
+	<p>
+		The following lists platforms the software supports to run on.
+	</p>
+
+	[sbom.printSelectedComponents(
+		Set{ ComponentType::Platform },
+		null,
+		null
+	) /]
 [TOC_Section_end() /]
 [/template]
 

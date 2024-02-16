@@ -18,7 +18,9 @@
 [template public printAsTable(
 	this 		: Sbom,
 	ignoreList	: Set(ComponentType)
-)]
+)
+post(trim())
+]
 <table class="table-5-columns">
 	<thead>
 		<tr>
@@ -37,77 +39,30 @@
 [/template]
 
 
-[template private printSelectedComponents(
+[template public printSelectedComponents(
 	sbom 		: Sbom,
 	selectList	: Set(ComponentType),
 	ignoreList	: Set(ComponentType),
 	soupSelect	: Boolean
 )
+post(trim())
 {
 	components : OrderedSet(Component) = sbom
 									.sbom_allComponents()
 									->select(
 										(selectList = null or selectList->includes(type)) and
 										(ignoreList = null or ignoreList->excludes(type)) and
-										isSOUP = soupSelect
+										(soupSelect = null or isSOUP = soupSelect)
 									)
 									->sortedBy(name);
 }]
-[if (components->size() = 0)]
+[if (components->notEmpty())]
+[for (components)]
+[printAsTable(i > 1) /]
+[/for]
+[else]
 <p>
 	(None)
 </p>
-[else]
-[components.printAsTable() /]
 [/if]
 [/template]
-
-
-[template public printOperatingSystemAndFirmware(
-	sbom 		: Sbom,
-	ignoreList	: Set(ComponentType)
-)][printSelectedComponents(
-	Set{ ComponentType::OperatingSystem, ComponentType::Firmware },
-	ignoreList,
-	false
-) /][/template]
-
-
-[template public printOperatingSystems(
-	sbom 		: Sbom,
-	ignoreList	: Set(ComponentType)
-)][printSelectedComponents(
-	Set{ ComponentType::OperatingSystem },
-	ignoreList,
-	false
-) /][/template]
-
-
-[template public printApplications(
-	sbom 		: Sbom,
-	ignoreList	: Set(ComponentType)
-)][printSelectedComponents(
-	Set{ ComponentType::Application },
-	ignoreList,
-	false
-) /][/template]
-
-
-[template public printLibraries(
-	sbom 		: Sbom,
-	ignoreList	: Set(ComponentType)
-)][printSelectedComponents(
-	Set{ ComponentType::Library },
-	ignoreList,
-	false
-) /][/template]
-
-
-[template public print3rdParty(
-	sbom 		: Sbom,
-	ignoreList	: Set(ComponentType)
-)][printSelectedComponents(
-	null,
-	ignoreList,
-	true
-) /][/template]
