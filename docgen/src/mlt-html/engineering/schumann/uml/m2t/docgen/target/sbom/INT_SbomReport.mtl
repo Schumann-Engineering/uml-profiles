@@ -504,7 +504,7 @@ post(trim())]
 		Set{ ComponentType::Application },
 		Set{ ComponentType::Device },
 		false
-	) /]) /]
+	) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -560,7 +560,7 @@ post(trim())]
 		null,
 		Set{ ComponentType::Device },
 		true
-	)/]
+	) /]
 [TOC_Section_end() /]
 [/template]
 
