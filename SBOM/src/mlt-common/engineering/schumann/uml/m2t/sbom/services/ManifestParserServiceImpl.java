@@ -110,6 +110,7 @@ public class ManifestParserServiceImpl {
 		var result = SBOMFactoryImpl.eINSTANCE.createSbom();
 		var system = SBOMFactoryImpl.eINSTANCE.createComponent();
 		result.getOwnedComponent().add(system);
+		system.setOwningSbom(result);
 		
 		var components = new HashMap<String, Component>();
 		var relationships = new ArrayList<AbstractMap.SimpleEntry<Component, String[]>>();
