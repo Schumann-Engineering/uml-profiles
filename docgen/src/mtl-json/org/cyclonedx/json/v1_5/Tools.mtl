@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module Tools(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[template public cycloneDX_tool_meta_wr_sbom(
+	devNull	: OclAny
+)
+post(trim())
+]
+{
+	[comment
+		Specifies the type of component. For software components, classify as application if no more specific appropriate classification is available or cannot be determined for the component.
+	/]
+	"type":	"application",
+	[comment
+		The name of the component. This will often be a shortened, single name of the component. Examples: commons-lang3 and jquery
+	/]
+	"name":	"meta-wr-sbom"					
+}
+[/template]

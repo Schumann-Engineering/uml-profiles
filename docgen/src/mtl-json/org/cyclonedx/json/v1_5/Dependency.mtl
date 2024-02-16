@@ -1,0 +1,108 @@
+[comment encoding = UTF-8 /]
+[module Dependency(
+	'http://schumann.engineering/sbom/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::sbom::common::Sbom /]
+[import engineering::schumann::uml::m2t::sbom::common::Component /]
+[import org::cyclonedx::json::v1_5::ComponentType /]
+[import org::cyclonedx::json::v1_5::Dt_Reference /]
+
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+
+
+[template public cycloneDX_json_dependencies(
+	this		: Sbom,
+	_context	: Context
+)
+post(trim())
+]
+['['/]
+[for (this.sbom_allComponents()->select(type <> ComponentType::Device)) separator (',')]
+	[cycloneDX_json_dependency() /]
+[/for]
+[']'/]
+[/template]
+
+
+[template public cycloneDX_json_dependency(
+	this				: Component
+)
+post(trim())
+{
+	containedRel	: Set(String) =	sbom_relationshipOutgoing()
+										->select( 
+											type = RelationshipType::contains
+										)
+										.target
+										.cycloneDX_reference()
+										->flatten()
+										->asSet()
+										;
+	requiredRel		: Set(String) =	sbom_relationshipOutgoing()
+										->select( 
+											type = RelationshipType::requires
+										)
+										.target
+										.cycloneDX_reference()
+										->flatten()
+										->asSet()
+										;
+	requiredComp	: Set(String) =	this
+										.requiredComponent
+										.cycloneDX_reference()
+										->flatten()
+										->asSet()
+										;
+	containedComp	: Set(String) =	this
+										.ownedComponent
+										.cycloneDX_reference()
+										->flatten()
+										->asSet()
+										;
+	dependencies	: Set(String) =	Set(String){}
+									->union(containedRel)
+									->union(requiredRel)
+									->union(containedComp)
+									->union(requiredComp)
+										;
+}
+]
+{
+	[comment
+		References a component by the components bom-ref attribute
+	/]
+	"ref":	"[cycloneDX_reference() /]"
+[if (dependencies->notEmpty())]
+	,
+	[comment
+		The bom-ref identifiers of the components that are dependencies of this dependency object.
+	/]
+	"dependsOn":	[dependencies->cycloneDX_json_dependencies() /]
+[/if]	
+}
+[/template]
+
+
+[template public cycloneDX_json_dependencies(
+	this		: Set(String)
+)
+post(trim())
+]
+['['/]
+[for (this) separator (',')]
+	[cycloneDX_json_dependency() /]
+[/for]
+[']'/]
+[/template]
+
+
+[template public cycloneDX_json_dependency(
+	this		: String
+)
+post(trim())
+]
+"[this /]"
+[/template]

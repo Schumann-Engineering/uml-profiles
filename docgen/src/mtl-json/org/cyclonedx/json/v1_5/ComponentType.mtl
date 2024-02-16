@@ -1,0 +1,35 @@
+[comment encoding = UTF-8 /]
+[module ComponentType(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[query public toCycloneDxComponentType(
+	type : ComponentType
+) : String =
+	     if (type = ComponentType::Application) 			then 'application'
+	else if (type = ComponentType::Framework) 				then 'framework'
+	else if (type = ComponentType::Library) 				then 'library'
+	else if (type = ComponentType::Container) 				then 'container'
+	else if (type = ComponentType::Platform) 				then 'platform'
+	else if (type = ComponentType::OperatingSystem) 		then 'operating-system'
+	else if (type = ComponentType::Device) 					then 'device'
+	else if (type = ComponentType::DeviceDriver) 			then 'device-driver'
+	else if (type = ComponentType::Firmware) 				then 'firmware'
+	else if (type = ComponentType::File) 					then 'file'
+	else if (type = ComponentType::MachineLearningModel) 	then 'machine-learning-model'
+	else if (type = ComponentType::Data) 					then 'data'
+	else 'ERROR: unknown ComponentType ' + type 
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

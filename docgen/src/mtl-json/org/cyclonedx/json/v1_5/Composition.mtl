@@ -1,0 +1,46 @@
+[comment encoding = UTF-8 /]
+[module Composition(
+	'http://schumann.engineering/sbom/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::sbom::common::Sbom /]
+[import engineering::schumann::uml::m2t::sbom::common::Component /]
+[import org::cyclonedx::json::v1_5::ComponentType /]
+[import org::cyclonedx::json::v1_5::Dt_Reference /]
+
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+
+
+[template public cycloneDX_json_compositions(
+	this		: Sbom,
+	_context	: Context
+)
+post(trim())
+]
+['['/]
+[for (component : Component | this.ownedComponent.sbom_allComponents()->select(type <> ComponentType::Device)) separator (',')]
+	[cycloneDX_json_composition(true) /]
+[/for]
+[']'/]
+[/template]
+
+
+[template public cycloneDX_json_composition(
+	this				: Component,
+	printSubComponents	: Boolean
+)
+post(trim())
+]
+{
+	[comment
+		Specifies an aggregate type that describe how complete a relationship is.
+	/]
+	"aggregate":	"incomplete_first_party_only",
+	[comment
+
+	/]
+	"
+}
+[/template]

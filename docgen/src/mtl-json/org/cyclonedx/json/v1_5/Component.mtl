@@ -1,0 +1,217 @@
+[comment encoding = UTF-8 /]
+[module Component(
+	'http://schumann.engineering/sbom/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::sbom::common::Sbom /]
+[import engineering::schumann::uml::m2t::sbom::common::Component /]
+[import org::cyclonedx::json::v1_5::ComponentType /]
+[import org::cyclonedx::json::v1_5::Dt_Reference /]
+
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+
+
+[template public cycloneDX_json_rootComponent(
+	this		: Sbom,
+	_context	: Context
+)
+post(trim())
+{
+	rootComponent	: Component =	this
+									.ownedComponent
+									->asSequence()
+									->first()
+									;
+}
+]
+[rootComponent.cycloneDX_json_component(false) /]
+[/template]
+
+
+[template public cycloneDX_json_components(
+	this		: Sbom,
+	_context	: Context
+)
+post(trim())
+]
+['['/]
+[for (component : Component | this.ownedComponent.sbom_allComponents()->select(type <> ComponentType::Device)) separator (',')]
+	[component.cycloneDX_json_component(true) /]
+[/for]
+[']'/]
+[/template]
+
+
+[template public cycloneDX_json_component(
+	this				: Component,
+	printSubComponents	: Boolean
+)
+post(trim())
+{
+	properties		: Set(Property) =			ownedProperty->select(not key.startsWith('('));
+	cpe				: String =					properties
+												->select(p : Property | p.key.toLower().contains('cpe'))
+												->asSequence()
+												->first()
+												.value
+												;
+	purl			: String = 					properties
+												->select(p : Property | p.key.toLower().contains('purl'))
+												->asSequence()
+												->first()
+												.value
+												;
+	subComponents	: OrderedSet(Component) =	ownedComponent
+												->select(
+													type <> ComponentType::Device
+												)
+												->sortedBy(name)
+												;
+}
+]
+{
+	[comment
+		Specifies the type of component. For software components, classify as application if no more specific appropriate classification is available or cannot be determined for the component.
+	/]
+	"type":			"[this.type.toCycloneDxComponentType() /]",
+	[comment
+		An optional identifier which can be used to reference the component elsewhere in the BOM. Every bom-ref MUST be unique within the BOM.
+	/]
+	"bom-ref": 		"[cycloneDX_reference()/]",
+	[comment
+		The organization that supplied the component. The supplier may often be the manufacturer, but may also be a distributor or repackager.
+	/]
+	"supplier":		{
+		"name":	"[supplier /]"
+[if (false)]
+#TODO
+		"url":	"",
+[/if]
+	},
+	[comment
+		The person(s) or organization(s) that authored the component
+	/]
+	"author":		"[supplier /]",
+	[comment
+		The person(s) or organization(s) that published the component
+	/]
+	"publisher":	"[supplier /]",
+	[comment
+		The grouping name or identifier. This will often be a shortened, single name of the company or project that produced the component, or the source package or domain name. Whitespace and special characters should be avoided. Examples include: apache, org.apache.commons, and apache.org.
+	/]
+[if (false)]
+#TODO
+	"group":		"",
+[/if]
+	[comment
+		The name of the component. This will often be a shortened, single name of the component. Examples: commons-lang3 and jquery
+	/]
+	"name":			"[name /]",
+	[comment
+		The component version. The version should ideally comply with semantic versioning but is not enforced.
+	/]
+	"version":		"[version /]",
+	[comment
+		Specifies a description for the component
+	/]
+[if (description <> null and description.trim() <> '')]
+	"description":	"[description /]",
+[/if]
+	[comment
+		Specifies the scope of the component. If scope is not specified, 'required' scope SHOULD be assumed by the consumer of the BOM.
+	/]
+	"scope":		"required",
+	[comment
+	/]
+[if (false)]
+#TODO
+	"hashes" ['['/]
+	
+	[']'/],
+[/if]
+	[comment
+		EITHER (list of SPDX licenses and/or named licenses) OR (tuple of one SPDX License Expression)
+	/]
+	[comment
+		ONLY ONE LICENSE, THE ONE WE USE!
+
+		DO NOT LIST ALL LICENSES POSSIBLE!
+	/]
+[if (license <> null and license <> '')]
+	"licenses": ['['/]
+		{
+			"license": { "id": "[license /]" }
+		}
+	[']'/],
+[/if]
+	[comment
+		A copyright notice informing users of the underlying claims to copyright ownership in a published work.
+	/]
+[if (false)]
+#TODO
+	"copyright": 	"",
+[/if]
+	[comment
+		Specifies a well-formed CPE name that conforms to the CPE 2.2 or 2.3 specification. See https://nvd.nist.gov/products/cpe
+	/]
+[if (not cpe.oclIsInvalid() and cpe <> null and cpe.trim() <> '')]
+	"cpe": 			"[cpe
+						.replaceEachRepeatedly('\\', '\\\\')
+					 	/]",
+[/if]
+	[comment
+		Specifies the package-url (purl). The purl, if specified, MUST be valid and conform to the specification defined at: https://github.com/package-url/purl-spec
+	/]
+[if (not purl.oclIsInvalid() and purl <> null and purl.trim() <> '')]
+	"purl": 		"[purl
+						.replaceAll('\r.*', '')
+						.replaceAll('\n.*', '')
+						/]",
+[/if]
+	[comment
+		Specifies metadata and content for ISO-IEC 19770-2 Software Identification (SWID) Tags.
+	/]
+[if (false)]
+#TODO
+	"swid"
+[/if]
+	[comment
+		A list of software and hardware components included in the parent component. This is not a dependency tree. It provides a way to specify a hierarchical representation of component assemblies, similar to system → subsystem → parts assembly in physical supply chains.
+	/]
+[if (printSubComponents and subComponents->notEmpty())]
+	"components": ['['/]
+		[for (subComponent : Component | subComponents) separator(',\n')]
+		[subComponent.cycloneDX_json_component(true) /]
+		[/for]
+	[']'/],
+[/if]
+	[comment
+		Provides the ability to document evidence collected through various forms of extraction or analysis.
+	/]
+[if (false)]
+#TODO
+	"evidence"
+[/if]
+	[comment
+		Provides the ability to document properties in a name-value store. This provides flexibility to include data not officially supported in the standard without having to use additional namespaces or create extensions. Unlike key-value stores, properties support duplicate names, each potentially having different values. Property names of interest to the general public are encouraged to be registered in the CycloneDX Property Taxonomy. Formal registration is OPTIONAL.
+	/]
+[if (properties->notEmpty())]
+	"properties": ['['/]
+		[for (properties) separator(',\n')]
+		{
+			"name": 	"[key
+							.replaceAll('\\*', '')
+							/]",
+			"value":	"[value 
+							.replaceAll('\r', '')
+							.replaceAll('\n', ' & ')
+							.replaceEachRepeatedly('\\', '\\\\')
+							/]"
+		}
+		[/for]
+	[']'/]
+[/if]
+}
+[/template]

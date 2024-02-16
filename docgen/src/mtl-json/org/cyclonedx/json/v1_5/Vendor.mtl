@@ -1,0 +1,61 @@
+[comment encoding = UTF-8 /]
+[module Vendor(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)]
+
+
+[import engineering::schumann::uml::m2t::common::Metadata /]
+
+
+[template public cycloneDX_ref_vendor(
+	devNull	: OclAny,
+	type	: String
+)
+post(trim())
+]
+{
+	[comment
+		An optional identifier which can be used to reference the object elsewhere in the BOM. Every bom-ref MUST be unique within the BOM.
+	/]
+	"bom-ref":	"ref-[type /]-bom",
+	[comment
+		The name of the organization
+	/]
+	"name":		"[VENDOR_NAME() /]",
+	[comment
+		The URL of the organization. Multiple URLs are allowed.
+	/]
+	"url":		['['/]
+		"[VENDOR_WEBSITE() /]"
+	[']'/],
+	[comment
+		A contact at the organization. Multiple contacts are allowed.
+	/]
+	"contact":	['['/]
+		[cycloneDX_ref_vendor_contact('ref-' + type + '-contact') /]
+	[']'/]
+}
+[/template]
+
+
+[template public cycloneDX_ref_vendor_contact(
+	devNull	: OclAny,
+	bomRef	: String
+)
+post(trim())
+]
+{
+	[comment
+		An optional identifier which can be used to reference the object elsewhere in the BOM. Every bom-ref MUST be unique within the BOM.
+	/]
+	"bom-ref":	"[bomRef /]",
+	[comment
+		The name of a contact
+	/]
+	"name":		"[VENDOR_NAME() /]",
+	[comment
+		The email address of the contact.
+	/]
+	"email":	"[VENDOR_EMAIL() /]"
+}
+[/template]

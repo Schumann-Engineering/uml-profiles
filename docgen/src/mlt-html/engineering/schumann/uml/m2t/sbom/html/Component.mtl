@@ -206,14 +206,14 @@ post(trim())
 <tr>
 	<th>Sub-Components</th>
 	<td>
-		[if (ownedComponent->size() = 0)]
-		none
-		[else]
+		[if (ownedComponent->notEmpty())]
 		<ul>
 		[for (ownedComponent->sortedBy(name))]
 			<li>[TOC_link(name, _toString()) /]</li>
 		[/for]
 		</ul>
+		[else]
+		none
 		[/if]
 	</td>
 </tr>
@@ -221,9 +221,7 @@ post(trim())
 <tr>
 	<th class="sbom-ntia-minimum">Relationships</th>
 	<td>
-		[if (sbom_relationship()->size() = 0)]
-		none
-		[else]
+		[if (sbom_relationship()->notEmpty())]
 		<ul>
 		[for (sbom_relationshipOutgoing())]
 			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target._toHtmlAnchor()) /]</li>
@@ -232,6 +230,8 @@ post(trim())
 			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source._toHtmlAnchor()) /]</li>
 		[/for]
 		</ul>
+		[else]
+		none
 		[/if]
 	</td>
 </tr>
@@ -259,7 +259,7 @@ post(trim())
 			[/if]
 [/comment]
 [comment properties /]
-[if (ownedProperty->select(not key.startsWith('('))->size() > 0)]
+[if (ownedProperty->select(not key.startsWith('('))->notEmpty())]
 <tr>
 	<th colspan="2">additional properties</th>
 </tr>

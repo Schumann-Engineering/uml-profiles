@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module Dt_Reference(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[query public cycloneDX_reference(
+	this		: Element
+) : String = 
+	'bom-ref-' + id
+/]

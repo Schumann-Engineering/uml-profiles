@@ -9,6 +9,7 @@
 [import engineering::schumann::uml::m2t::docgen::target::security::CN_CyberSecurityResearchReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::INT_ProductSecurityCharacteristics /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::INT_SbomReport /]
+[import engineering::schumann::uml::m2t::docgen::target::sbom::JSON_CycloneDX /]
 
 
 [**
@@ -24,9 +25,16 @@
 [comment
 	====================
 	DEV
+
+	MUST BE FIRST!
+	it "loads" the profiles. For unknown reasons, profiles and proxies don't resolve
+	correctly. This report fixes that by brute-forcing the loading.
 	====================
 /]
 [generateDocument_DEV_ModelTestReport() /]
+
+
+[generateFile_JSON_CycloneDX_1_5() /]
 
 
 [comment
@@ -44,6 +52,7 @@
 	====================
 /]
 [generateDocument_INT_SbomReport() /]
+
 [/template]
 
 

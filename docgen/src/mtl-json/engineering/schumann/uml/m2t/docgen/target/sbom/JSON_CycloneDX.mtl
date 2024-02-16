@@ -1,0 +1,207 @@
+[comment encoding = UTF-8 /]
+[module JSON_CycloneDX(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/sbom/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	Software Bill of Material (SBOM)
+ * REALM:    	International
+ * CONTENT:  	converts a SBOM into a human readable and audible format
+ * PROFILES: 	./.
+ * UUID:		7ccd9aab-f38d-47dc-9997-fa473002a1d5 
+ * ====================
+ **/]
+
+[comment CSMN profile /]
+[comment ... common /]
+[import engineering::schumann::uml::m2t::csmn::common::CommonPlatformEnumerationType /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+
+[comment SBOM profile /]
+[comment ... common /]
+[import engineering::schumann::uml::m2t::sbom::common::Sbom /]
+
+[comment UML profile /]
+[comment ... common /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+[comment ... services /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+
+[comment DocGen /]
+[comment ... common /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName.sbom /]
+[comment ... services /]
+[import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
+[comment ... CycloneDX /]
+[import org::cyclonedx::json::v1_5::common /]
+[import org::cyclonedx::json::v1_5::Component /]
+[import org::cyclonedx::json::v1_5::Composition /]
+[import org::cyclonedx::json::v1_5::Dependency /]
+[import org::cyclonedx::json::v1_5::Tools /]
+[import org::cyclonedx::json::v1_5::Vendor /]
+
+
+[**
+ * IMPORTANT: Generation is *per software system* of a product
+ ** /]
+[template public generateFile_JSON_CycloneDX_1_5(
+	this : Model
+)
+{
+	templateUUID		: String			= '38dce280-981e-4dcc-8ff3-de2490bab33e';
+	templateVersion		: String			= '0.1';
+
+	productElements		: Set(Package) 		= this.allOwnedElements()
+												->filter(Package)
+												->select( p : Package | p.csmn_isScoped() );
+	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
+}]
+[setEnv(templateUUID + '.Output.Extension',   	'json') /]
+
+[loadSbomLibrary() /]
+
+[for (productElement : NamedElement | productElements)]
+	[comment iterate over products /]
+	[for (product : Product | productElement.csmn_scope().csmn_productInScope())]
+		[comment find all Components/SystemElements which constraint/match product /]
+		[for (os : Component | softwareElements->select(csmn_isMatch(product)))]
+			[comment iterate over all software version of the system element /]
+			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion)]
+				[comment
+					BEWARE: this is a SBOM!
+					It can only be created for software, not hardware.
+					Hence we use the OS instead of the product here
+				/]
+				[let _context : Context = os.getContext(product, softwareVersion, null, templateUUID, templateVersion)]
+				[let sbomFileName : String = findSbomFileName(
+					this.SBOM_File_URI(_context),
+					this.DocGen_Directory_URI(_context))]
+				[if (sbomFileName <> null)]
+					[let sbom : Sbom = loadSbom(sbomFileName)]
+[sbom.generateFile_JSON_CycloneDX_1_5(productElement, os, _context) /]
+					[/let]
+				[/if]
+				[/let]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
+[/for]
+[/template]
+
+
+[template public generateFile_JSON_CycloneDX_1_5(
+	this			: Sbom,
+	productElement	: NamedElement,
+	softwareElement	: NamedElement,
+	_context		: Context
+)]
+[file (productElement.DocGen_File_URI(_context), false, 'UTF-8')]
+{
+	[cycloneDX_jsonSchema() /],
+	[cycloneDX_bomFormat() /],
+	[cycloneDX_specVersion() /],
+	[cycloneDX_serialNumber() /],
+	[cycloneDX_version('1') /],
+	[cycloneDX_metadata(_context) /],
+	[cycloneDX_components(_context) /],
+	[cycloneDX_dependencies(_context) /]
+	[comment cycloneDX_compositions(_context) /]
+}
+[/file]
+[/template]
+
+
+[template private cycloneDX_metadata(
+	this			: Sbom,
+	_context		: Context
+)
+post(trim())
+]
+[comment
+	Provides additional information about a BOM.
+/]
+"metadata": {
+	[comment
+		The date and time (timestamp) when the BOM was created.
+	/]
+	"timestamp":	"2023-08-30T16:40:00.883Z",
+	[comment
+		The product lifecycle(s) that this BOM represents.
+	/]
+	"lifecycles":	['['/]
+		{ "phase" : "design" }, 
+		{ "phase" : "pre-build" }, 
+		{ "phase" : "build" }, 
+		{ "phase" : "post-build" }
+	[']'/],
+	[comment
+		The tool(s) used in the creation of the BOM.
+	/]
+	"tools":	{
+		[comment
+			A list of software and hardware components used as tools
+		/]
+		"components": ['['/]
+			[cycloneDX_tool_meta_wr_sbom() /]
+		[']'/]
+	},
+	[comment
+		The person(s) who created the BOM. Authors are common in BOMs created through manual processes. BOMs created through automated means may not have authors.
+	/]
+	"authors":	['['/]
+		[cycloneDX_ref_vendor_contact('ref-author-bom') /]
+	[']'/],
+	[comment
+		TBD component
+	/]
+	"component":	[cycloneDX_json_rootComponent(_context) /],
+	[comment
+		The organization that manufactured the component that the BOM describes.
+	/]
+	"manufacture":	[cycloneDX_ref_vendor('manufacturer') /],
+	[comment
+		The organization that supplied the component that the BOM describes. The supplier may often be the manufacturer, but may also be a distributor or repackager.
+	/]
+	"supplier":		[cycloneDX_ref_vendor('supplier') /]
+}
+[/template]
+
+
+[template private cycloneDX_components(
+	this			: Sbom,
+	_context		: Context
+)
+post(trim())
+]
+"components": [cycloneDX_json_components(_context) /]
+[/template]
+
+
+[template private cycloneDX_compositions(
+	this			: Sbom,
+	_context		: Context
+)
+post(trim())
+]
+"compositions": [cycloneDX_json_compositions(_context) /]
+[/template]
+
+
+[template private cycloneDX_dependencies(
+	this			: Sbom,
+	_context		: Context
+)
+post(trim())
+]
+"dependencies": [cycloneDX_json_dependencies(_context) /]
+[/template]
