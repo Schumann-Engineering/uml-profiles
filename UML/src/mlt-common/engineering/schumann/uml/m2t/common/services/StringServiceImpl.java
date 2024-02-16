@@ -212,10 +212,28 @@ public class StringServiceImpl {
 			String replacement
 	)
 	{
+		// === GUARDS ===
+		if (input == null)
+			return null;
+		if (pattern == null)
+			return input;
+		if (replacement == null)
+			return input;
+		
 		// === BODY ===
 		var result = input;
+				
 		while (result.contains(pattern))
+		{
+			// replacing \ with \\ throws an exception... handle this differently
+			if (pattern.equals("\\"))
+			{
+				result = result.replace(pattern, replacement);
+				break;
+			}
+
 			result = result.replaceAll(pattern, replacement);
+		}
 		
 		// === RESULT
 		return result;
