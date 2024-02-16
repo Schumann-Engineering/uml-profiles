@@ -135,7 +135,7 @@
 </tr>
 [comment type /]
 <tr>
-	<th>Type</th>
+	<th>Type<br/>CycloneDX v1.5</th>
 	<td>[type.sbom_toString() /]</td>
 </tr>
 [comment IEC 62304 classification /]
