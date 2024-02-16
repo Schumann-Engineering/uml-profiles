@@ -200,17 +200,23 @@ for information about libraries. All third-party and open source reusable compon
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JP14YLkfEe6SsLsmepNrCg" key="nature" value="UML_Nature"/>
       </eAnnotations>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_jWNc8LkiEe6SsLsmepNrCg" memberEnd="_jWOEALkiEe6SsLsmepNrCg _jWOEA7kiEe6SsLsmepNrCg">
+    <packagedElement xmi:type="uml:Association" xmi:id="_jWNc8LkiEe6SsLsmepNrCg" memberEnd="_jWOEALkiEe6SsLsmepNrCg _jWOEA7kiEe6SsLsmepNrCg" navigableOwnedEnd="_jWOEA7kiEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_jWNc8bkiEe6SsLsmepNrCg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_jWNc8rkiEe6SsLsmepNrCg" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_jWOEA7kiEe6SsLsmepNrCg" name="relationship" type="_ZFDWMLkiEe6SsLsmepNrCg" association="_jWNc8LkiEe6SsLsmepNrCg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_jWOEA7kiEe6SsLsmepNrCg" name="outgoingRelationship" type="_ZFDWMLkiEe6SsLsmepNrCg" association="_jWNc8LkiEe6SsLsmepNrCg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_VjzuUMz9Ee6_4eLDObpdCg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_VkBwwMz9Ee6_4eLDObpdCg" value="*"/>
+      </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_o8YbQLkiEe6SsLsmepNrCg" memberEnd="_o8ZCUrkiEe6SsLsmepNrCg _o8ZpYbkiEe6SsLsmepNrCg">
+    <packagedElement xmi:type="uml:Association" xmi:id="_o8YbQLkiEe6SsLsmepNrCg" memberEnd="_o8ZCUrkiEe6SsLsmepNrCg _o8ZpYbkiEe6SsLsmepNrCg" navigableOwnedEnd="_o8ZpYbkiEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o8ZCULkiEe6SsLsmepNrCg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o8ZCUbkiEe6SsLsmepNrCg" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_o8ZpYbkiEe6SsLsmepNrCg" name="relationship" type="_ZFDWMLkiEe6SsLsmepNrCg" association="_o8YbQLkiEe6SsLsmepNrCg"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_o8ZpYbkiEe6SsLsmepNrCg" name="incomingRelationship" type="_ZFDWMLkiEe6SsLsmepNrCg" association="_o8YbQLkiEe6SsLsmepNrCg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_PqGwAMz9Ee6_4eLDObpdCg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_PqcHMMz9Ee6_4eLDObpdCg" value="*"/>
+      </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_50K3wLkiEe6SsLsmepNrCg" memberEnd="_50Le0rkiEe6SsLsmepNrCg _50Le1bkiEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_50Le0LkiEe6SsLsmepNrCg" source="org.eclipse.papyrus">
@@ -249,6 +255,7 @@ for information about libraries. All third-party and open source reusable compon
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KxDkELo-Ee6ujtVg7h4KZg" name="MAINTAINED"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Lt6N4Lo-Ee6ujtVg7h4KZg" name="SUPPORTED"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MYsQQLo-Ee6ujtVg7h4KZg" name="REQUIRED"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_vR1kAM0DEe6_4eLDObpdCg" name="NotApplicable"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_QG7ckLo-Ee6ujtVg7h4KZg" memberEnd="_QG_G8ro-Ee6ujtVg7h4KZg _QG_G9bo-Ee6ujtVg7h4KZg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QG_G8Lo-Ee6ujtVg7h4KZg" source="org.eclipse.papyrus">

@@ -128,6 +128,7 @@
     <eLiterals name="MAINTAINED"/>
     <eLiterals name="SUPPORTED" value="1"/>
     <eLiterals name="REQUIRED" value="2"/>
+    <eLiterals name="NotApplicable" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Iec62304_Classification">
     <eLiterals name="C"/>

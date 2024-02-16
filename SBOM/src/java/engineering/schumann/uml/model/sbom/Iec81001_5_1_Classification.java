@@ -46,7 +46,15 @@ public enum Iec81001_5_1_Classification implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	REQUIRED(2, "REQUIRED", "REQUIRED");
+	REQUIRED(2, "REQUIRED", "REQUIRED"), /**
+	 * The '<em><b>Not Applicable</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_APPLICABLE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NOT_APPLICABLE(3, "NotApplicable", "NotApplicable");
 
 	/**
 	 * The '<em><b>MAINTAINED</b></em>' literal value.
@@ -82,6 +90,17 @@ public enum Iec81001_5_1_Classification implements Enumerator {
 	public static final int REQUIRED_VALUE = 2;
 
 	/**
+	 * The '<em><b>Not Applicable</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NOT_APPLICABLE
+	 * @model name="NotApplicable"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NOT_APPLICABLE_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Iec81001 51Classification</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +111,7 @@ public enum Iec81001_5_1_Classification implements Enumerator {
 			MAINTAINED,
 			SUPPORTED,
 			REQUIRED,
+			NOT_APPLICABLE,
 		};
 
 	/**
@@ -151,6 +171,7 @@ public enum Iec81001_5_1_Classification implements Enumerator {
 			case MAINTAINED_VALUE: return MAINTAINED;
 			case SUPPORTED_VALUE: return SUPPORTED;
 			case REQUIRED_VALUE: return REQUIRED;
+			case NOT_APPLICABLE_VALUE: return NOT_APPLICABLE;
 		}
 		return null;
 	}

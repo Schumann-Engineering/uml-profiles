@@ -873,6 +873,7 @@ public class SBOMPackageImpl extends EPackageImpl implements SBOMPackage {
 		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.MAINTAINED);
 		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.SUPPORTED);
 		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.REQUIRED);
+		addEEnumLiteral(iec81001_5_1_ClassificationEEnum, Iec81001_5_1_Classification.NOT_APPLICABLE);
 
 		initEEnum(iec62304_ClassificationEEnum, Iec62304_Classification.class, "Iec62304_Classification");
 		addEEnumLiteral(iec62304_ClassificationEEnum, Iec62304_Classification.C);

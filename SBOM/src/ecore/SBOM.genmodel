@@ -53,6 +53,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/MAINTAINED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/SUPPORTED"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/REQUIRED"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/NotApplicable"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//Iec62304_Classification">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec62304_Classification/C"/>

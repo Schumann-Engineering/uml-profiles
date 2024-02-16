@@ -257,6 +257,12 @@ public class PropertyServiceImpl {
 				component.setClassificationIec81001_5_1(Iec81001_5_1_Classification.REQUIRED);
 				break;
 
+			case "./.":
+			case "na":
+			case "n/a":
+			case "not applicable":
+				component.setClassificationIec81001_5_1(Iec81001_5_1_Classification.NOT_APPLICABLE);
+				break;
 				
 			default:
 				throw new Exception("unknown IEC 81001-5-1 classification '" + classification + "'");
