@@ -134,7 +134,12 @@ post(trim())
 	[comment
 		The date and time (timestamp) when the BOM was created.
 	/]
-	"timestamp":	"2023-08-30T16:40:00.883Z",
+	"timestamp":	"[invoke(
+						'engineering.schumann.uml.m2t.common.services.DateTimeServiceImpl',
+						'getCurrentDateTimeRFC3339()',
+						Sequence {
+						}
+					)/]",
 	[comment
 		The product lifecycle(s) that this BOM represents.
 	/]
