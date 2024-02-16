@@ -15,7 +15,7 @@
 	else if (type = RelationshipType::requires) 		then 'requires'
 	else if (type = RelationshipType::runs) 			then 'runs'
 	else if (type = RelationshipType::runsOn)			then 'runs on'
-	else 'ERROR: unknown NamespaceType'
+	else 'ERROR: unknown ComponentType'
 	endif
 	endif
 	endif

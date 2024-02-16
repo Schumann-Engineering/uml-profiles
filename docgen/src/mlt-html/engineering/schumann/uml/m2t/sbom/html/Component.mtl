@@ -7,17 +7,45 @@
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::sbom::common::Component /]
-[import engineering::schumann::uml::m2t::sbom::common::Namespace /]
 [import engineering::schumann::uml::m2t::sbom::html::Property /]
-[import engineering::schumann::uml::m2t::sbom::text::NamespaceType /]
+[import engineering::schumann::uml::m2t::sbom::text::ComponentType /]
 [import engineering::schumann::uml::m2t::sbom::text::RelationshipType /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
+[**
+ * ============================================
+ * ============================================
+ * TABLE
+ * ============================================
+ * ============================================
+ */]
 [template public printAsTable(
-	this : Namespace
+	this 		: Set(Component),
+	ignoreList	: Set(ComponentType)
+)]
+<table class="table-5-columns">
+	<thead>
+		<tr>
+			<th>Component Name</th>
+			<th>CPE Part<br/>NIST IR 7695</th>
+			<th>Type<br/>CycloneDX v1.5</th>
+			<th>Version</th>
+			<th>Classification<br/>IEC 81001-1-5</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		[this.printAsTableRowHorizontal(ignoreList) /]
+	</tbody>
+</table>
+[/template]
+
+
+[template public printAsTable(
+	this : Component
 )]
 <div class="sbom-component">
 	[DocGen_breadcrumbs_toHtml() /]
@@ -39,8 +67,41 @@
 [/template]
 
 
+[**
+ * ============================================
+ * ============================================
+ * ROW (horizontal orientation)
+ * ============================================
+ * ============================================
+ */]
 [template public printAsTableRowHorizontal(
-	this : Namespace
+	this 		: Component,
+	ignoreList	: Set(ComponentType)
+)
+{
+	components			: OrderedSet(Component)	= this.ownedComponent->sortedBy(name);
+
+	vendorComponents	: OrderedSet(Component)	= components->select(isSOUP = false and ignoreList->excludes(type))->sortedBy(name);
+	otherComponents 	: OrderedSet(Component)	= components->select(isSOUP = true and ignoreList->excludes(type))->sortedBy(name);
+}]
+<tr>
+	<th colspan="5" style="text-align: center;">by [VENDOR_NAME() /]</th>
+</tr>
+[printAsTableRowHorizontal() /]
+[if (vendorComponents->size() > 0)]
+[vendorComponents.printAsTableRowHorizontal() /]
+[/if]
+[if (otherComponents->size() > 0)]
+<tr>
+	<th colspan="5" style="text-align: center;">by 3rd party: C(OTS) / FOSS</th>
+</tr>
+[otherComponents.printAsTableRowHorizontal() /]
+[/if]
+[/template]
+
+
+[template public printAsTableRowHorizontal(
+	this		: Component
 )]
 <tr>
 	<td style="text-align: center">[TOC_link( name, printName()) /][TOC_anchor(name + '-overview') /]</td>
@@ -53,8 +114,14 @@
 [/template]
 
 
+
+[**
+ * ============================================
+ * ROW (vertical orientation)
+ * ============================================
+ */]
 [template public printAsTableRowVertical(
-	this : Namespace
+	this		: Component
 )]
 [comment name /]
 <tr>
@@ -135,14 +202,14 @@
 <tr>
 	<th class="sbom-ntia-minimum">Relationships</th>
 	<td>
-		[if (relationship()->size() = 0)]
+		[if (sbom_relationship()->size() = 0)]
 		none
 		[else]
 		<ul>
-		[for (relationshipOutgoing())]
+		[for (sbom_relationshipOutgoing())]
 			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target.name._toString()) /]</li>
 		[/for]
-		[for (relationshipIncoming())]
+		[for (sbom_relationshipIncoming())]
 			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source.name._toString()) /]</li>
 		[/for]
 		</ul>
@@ -182,8 +249,16 @@
 [/template]
 
 
+
+[**
+ * ============================================
+ * ============================================
+ * HELPER 
+ * ============================================
+ * ============================================
+ */]
 [template public printName(
-	this : Namespace
+	this		: Component
 )
 ? (name = null or name.trim().size() = 0)
 ]
@@ -194,12 +269,12 @@
 
 
 [template public printName(
-	this : Namespace
+	this		: Component
 )][name /][/template]
 
 
 [template public printSupplier(
-	this : Namespace
+	this		: Component
 )
 ? (supplier = null or supplier.trim().size() = 0)
 ]
@@ -210,14 +285,14 @@
 
 
 [template public printSupplier(
-	this : Namespace
+	this 		: Component
 )]
 [supplier /]
 [/template]
 
 
 [template public printVersion(
-	this : Namespace
+	this		: Component
 )
 ? (version = null or version.trim().size() = 0)
 ]
@@ -228,7 +303,7 @@
 
 
 [template public printVersion(
-	this : Namespace
+	this 		: Component
 )
 ? (version.trim() = '*' or version.trim() = '-')
 ]
@@ -239,14 +314,14 @@
 
 
 [template public printVersion(
-	this : Namespace
+	this 		: Component
 )]
 [version /]
 [/template]
 
 
 [query public _toString(
-	this : Namespace
+	this 		: Component
 ) : String =
 	'«' + type + '» ' + name + ' (' + version + ')' 
 /]

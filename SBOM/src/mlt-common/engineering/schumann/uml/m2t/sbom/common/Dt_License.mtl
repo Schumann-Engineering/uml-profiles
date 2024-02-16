@@ -1,0 +1,14 @@
+[module Dt_License(
+	'http://schumann.engineering/sbom/1'
+)/]
+
+
+[query public sbom_allLicenses(
+	components : Set(Component)
+) : OrderedSet(String)  =
+	components
+	.license
+	->excluding(null)
+	->excluding('')
+	->asOrderedSet()
+/]

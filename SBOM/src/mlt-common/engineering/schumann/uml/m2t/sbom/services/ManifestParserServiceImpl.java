@@ -11,7 +11,6 @@ import java.util.List;
 
 import engineering.schumann.uml.m2t.common.services.FileServiceImpl;
 import engineering.schumann.uml.model.sbom.Component;
-import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.RelationshipType;
 import engineering.schumann.uml.model.sbom.Sbom;
 import engineering.schumann.uml.model.sbom.impl.SBOMFactoryImpl;
@@ -109,13 +108,13 @@ public class ManifestParserServiceImpl {
 		// === BODY ===
 		// create resource
 		var result = SBOMFactoryImpl.eINSTANCE.createSbom();
-		var system = SBOMFactoryImpl.eINSTANCE.createSystem();
-		result.getOwnedSystem().add(system);
+		var system = SBOMFactoryImpl.eINSTANCE.createComponent();
+		result.getOwnedComponent().add(system);
 		
-		var components = new HashMap<String, Namespace>();
-		var relationships = new ArrayList<AbstractMap.SimpleEntry<Namespace, String[]>>();
+		var components = new HashMap<String, Component>();
+		var relationships = new ArrayList<AbstractMap.SimpleEntry<Component, String[]>>();
 		
-		Namespace lastComponent = null;
+		Component lastComponent = null;
 		var lines = content.split("\n|\r");
 		for (int i=0; i<lines.length; i++)
 		{
@@ -150,7 +149,7 @@ public class ManifestParserServiceImpl {
 
 				// remember relationship for now...
 				// ... we need to resolve the target later after parsing all components
-				relationships.add(new AbstractMap.SimpleEntry<Namespace, String[]>(lastComponent, parts));
+				relationships.add(new AbstractMap.SimpleEntry<Component, String[]>(lastComponent, parts));
 			}
 			/*
 			 * PROPERTY

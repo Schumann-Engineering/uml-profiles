@@ -4,16 +4,6 @@
     <packageImport xmi:type="uml:PackageImport" xmi:id="_NiDw8LkeEe6SsLsmepNrCg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_fVZ2wLkeEe6SsLsmepNrCg" name="Component">
-      <generalization xmi:type="uml:Generalization" xmi:id="_WiTu0LkxEe6X4rbk2n4SSQ" general="_cIaWULkeEe6SsLsmepNrCg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_JP14ZLkfEe6SsLsmepNrCg" name="requiredBy" type="_cIaWULkeEe6SsLsmepNrCg" association="_JP1RULkfEe6SsLsmepNrCg">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RCc5ELkfEe6SsLsmepNrCg"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RCptYLkfEe6SsLsmepNrCg" value="*"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_tQNkw7keEe6SsLsmepNrCg" name="owner" type="_cIaWULkeEe6SsLsmepNrCg" association="_tQMWoLkeEe6SsLsmepNrCg">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7IuzwLkeEe6SsLsmepNrCg"/>
-      </ownedAttribute>
-    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_v8cPkLkgEe6SsLsmepNrCg" name="DescribedElement" isAbstract="true">
       <generalization xmi:type="uml:Generalization" xmi:id="_9fF8QLkgEe6SsLsmepNrCg" general="_o3dw8LkgEe6SsLsmepNrCg"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_bkrFMLkgEe6SsLsmepNrCg" name="summary">
@@ -60,13 +50,13 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_H8HKMLkgEe6SsLsmepNrCg"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_cIaWULkeEe6SsLsmepNrCg" name="Namespace" isAbstract="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_cIaWULkeEe6SsLsmepNrCg" name="Component">
       <generalization xmi:type="uml:Generalization" xmi:id="_4s0VgLkfEe6SsLsmepNrCg" general="_v8cPkLkgEe6SsLsmepNrCg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_tQNkwLkeEe6SsLsmepNrCg" name="ownedComponent" type="_fVZ2wLkeEe6SsLsmepNrCg" aggregation="composite" association="_tQMWoLkeEe6SsLsmepNrCg">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tQNkwLkeEe6SsLsmepNrCg" name="ownedComponent" type="_cIaWULkeEe6SsLsmepNrCg" aggregation="composite" association="_tQMWoLkeEe6SsLsmepNrCg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_tQNkwbkeEe6SsLsmepNrCg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_tQNkwrkeEe6SsLsmepNrCg" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_JP14YbkfEe6SsLsmepNrCg" name="requiredComponent" type="_fVZ2wLkeEe6SsLsmepNrCg" association="_JP1RULkfEe6SsLsmepNrCg">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JP14YbkfEe6SsLsmepNrCg" name="requiredComponent" type="_cIaWULkeEe6SsLsmepNrCg" association="_JP1RULkfEe6SsLsmepNrCg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JP14YrkfEe6SsLsmepNrCg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JP14Y7kfEe6SsLsmepNrCg" value="*"/>
       </ownedAttribute>
@@ -80,19 +70,92 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_l_ttxLo-Ee6ujtVg7h4KZg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_l_ttxbo-Ee6ujtVg7h4KZg" value="1"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_tQNkw7keEe6SsLsmepNrCg" name="owner" type="_cIaWULkeEe6SsLsmepNrCg" association="_tQMWoLkeEe6SsLsmepNrCg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7IuzwLkeEe6SsLsmepNrCg"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_JP14ZLkfEe6SsLsmepNrCg" name="requiredBy" type="_cIaWULkeEe6SsLsmepNrCg" association="_JP1RULkfEe6SsLsmepNrCg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_RCc5ELkfEe6SsLsmepNrCg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RCptYLkfEe6SsLsmepNrCg" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_lhJyQMzxEe6_4eLDObpdCg" name="owningSbom" type="_LNO_4LkkEe6SsLsmepNrCg" association="_lhGH4MzxEe6_4eLDObpdCg">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_lhJyQczxEe6_4eLDObpdCg"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_lhJyQszxEe6_4eLDObpdCg" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yN0SIMzxEe6_4eLDObpdCg" name="getSbom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_3nnoYMzxEe6_4eLDObpdCg" name="result" type="_LNO_4LkkEe6SsLsmepNrCg" direction="return"/>
+      </ownedOperation>
     </packagedElement>
-    <packagedElement xmi:type="uml:Enumeration" xmi:id="__IOQsLk1Ee6X4rbk2n4SSQ" name="NamespaceType">
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BkgF4Lk2Ee6X4rbk2n4SSQ" name="Application"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A28cULk2Ee6X4rbk2n4SSQ" name="OperatingSystemDeviceSoftware"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AEfrsLk2Ee6X4rbk2n4SSQ" name="Hardware"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yv5xsLlMEe6X4rbk2n4SSQ" name="ApplicationLibrary"/>
-      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CZRKsLk2Ee6X4rbk2n4SSQ" name="OperatingSystem"/>
+    <packagedElement xmi:type="uml:Enumeration" xmi:id="__IOQsLk1Ee6X4rbk2n4SSQ" name="ComponentType">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_IHFL0MzvEe6_4eLDObpdCg" annotatedElement="__IOQsLk1Ee6X4rbk2n4SSQ">
+        <body>Specifies the type of component. For software components, classify as application if no more specific appropriate classification is available or cannot be determined for the component.</body>
+      </ownedComment>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_BkgF4Lk2Ee6X4rbk2n4SSQ" name="Application">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_kj180MzuEe6_4eLDObpdCg" annotatedElement="_BkgF4Lk2Ee6X4rbk2n4SSQ">
+          <body>A software application. Refer to https://en.wikipedia.org/wiki/Application_software for information about applications.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A28cULk2Ee6X4rbk2n4SSQ" name="DeviceDriver">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_9AqRAMzuEe6_4eLDObpdCg" annotatedElement="_A28cULk2Ee6X4rbk2n4SSQ">
+          <body>A special type of software that operates or controls a particular type of device. Refer to https://en.wikipedia.org/wiki/Device_driver</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_AEfrsLk2Ee6X4rbk2n4SSQ" name="Device">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_56cG8MzuEe6_4eLDObpdCg" annotatedElement="_AEfrsLk2Ee6X4rbk2n4SSQ">
+          <body>A hardware device such as a processor, or chip-set. A hardware device containing firmware SHOULD include a component for the physical hardware itself, and another component of type 'firmware' or 'operating-system' (whichever is relevant), describing information about the software running on the device.&#xD;
+See also the list of known device properties.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yv5xsLlMEe6X4rbk2n4SSQ" name="Library">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_xSvRUMzuEe6_4eLDObpdCg" annotatedElement="_yv5xsLlMEe6X4rbk2n4SSQ">
+          <body>A software library. Refer to https://en.wikipedia.org/wiki/Library_(computing)&#xD;
+for information about libraries. All third-party and open source reusable components will likely be a library. If the library also has key features of a framework, then it should be classified as a framework. If not, or is unknown, then specifying library is RECOMMENDED.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_CZRKsLk2Ee6X4rbk2n4SSQ" name="OperatingSystem">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_4iVEgMzuEe6_4eLDObpdCg" annotatedElement="_CZRKsLk2Ee6X4rbk2n4SSQ">
+          <body>A software operating system without regard to deployment model (i.e. installed on physical hardware, virtual machine, image, etc) Refer to https://en.wikipedia.org/wiki/Operating_system</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_tAPhYMzuEe6_4eLDObpdCg" name="Framework">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_ujgD4MzuEe6_4eLDObpdCg" annotatedElement="_tAPhYMzuEe6_4eLDObpdCg">
+          <body>A software framework. Refer to https://en.wikipedia.org/wiki/Software_framework for information on how frameworks vary slightly from libraries.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_zSdGUMzuEe6_4eLDObpdCg" name="Container">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_0VWtwMzuEe6_4eLDObpdCg" annotatedElement="_zSdGUMzuEe6_4eLDObpdCg">
+          <body>A packaging and/or runtime format, not specific to any particular technology, which isolates software inside the container from software outside of a container through virtualization technology. Refer to https://en.wikipedia.org/wiki/OS-level_virtualization</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_18eckMzuEe6_4eLDObpdCg" name="Platform">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_3K1GEMzuEe6_4eLDObpdCg" annotatedElement="_18eckMzuEe6_4eLDObpdCg">
+          <body>A runtime environment which interprets or executes software. This may include runtimes such as those that execute bytecode or low-code/no-code application platforms.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_-ApHUMzuEe6_4eLDObpdCg" name="Firmware">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_-xjm4MzuEe6_4eLDObpdCg" annotatedElement="_-ApHUMzuEe6_4eLDObpdCg">
+          <body>A special type of software that provides low-level control over a devices hardware. Refer to https://en.wikipedia.org/wiki/Firmware</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ab8FEMzvEe6_4eLDObpdCg" name="File">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_Eu_1sMzvEe6_4eLDObpdCg" annotatedElement="_Ab8FEMzvEe6_4eLDObpdCg">
+          <body>A computer file. Refer to https://en.wikipedia.org/wiki/Computer_file for information about files.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_A_NxQMzvEe6_4eLDObpdCg" name="MachineLearningModel">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_CAF_cMzvEe6_4eLDObpdCg" annotatedElement="_A_NxQMzvEe6_4eLDObpdCg">
+          <body>A model based on training data that can make predictions or decisions without being explicitly programmed to do so.</body>
+        </ownedComment>
+      </ownedLiteral>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_C3apAMzvEe6_4eLDObpdCg" name="Data">
+        <ownedComment xmi:type="uml:Comment" xmi:id="_DirzkMzvEe6_4eLDObpdCg" annotatedElement="_C3apAMzvEe6_4eLDObpdCg">
+          <body>A collection of discrete values that convey information.</body>
+        </ownedComment>
+      </ownedLiteral>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_ZFDWMLkiEe6SsLsmepNrCg" name="Relationship">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_jWOEALkiEe6SsLsmepNrCg" name="source" type="_o3dw8LkgEe6SsLsmepNrCg" association="_jWNc8LkiEe6SsLsmepNrCg"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_o8ZCUrkiEe6SsLsmepNrCg" name="target" type="_o3dw8LkgEe6SsLsmepNrCg" association="_o8YbQLkiEe6SsLsmepNrCg"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_50Le0rkiEe6SsLsmepNrCg" name="type" type="_tfI0wLkiEe6SsLsmepNrCg" association="_50K3wLkiEe6SsLsmepNrCg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_oArWE7kkEe6SsLsmepNrCg" name="sbom" type="_LNO_4LkkEe6SsLsmepNrCg" association="_oAqvALkkEe6SsLsmepNrCg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="__74qoLknEe6SsLsmepNrCg" name="Property">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_J72TsLkoEe6SsLsmepNrCg" name="key">
@@ -119,17 +182,13 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_LNO_4LkkEe6SsLsmepNrCg" name="Sbom">
       <generalization xmi:type="uml:Generalization" xmi:id="_TD8dcLkkEe6SsLsmepNrCg" general="_o3dw8LkgEe6SsLsmepNrCg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_kxqcYbkkEe6SsLsmepNrCg" name="ownedSystem" type="_BqnuQLkxEe6X4rbk2n4SSQ" aggregation="composite" association="_kxp1ULkkEe6SsLsmepNrCg">
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kxqcY7kkEe6SsLsmepNrCg" value="*"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_oArWELkkEe6SsLsmepNrCg" name="ownedRelationship" type="_ZFDWMLkiEe6SsLsmepNrCg" aggregation="composite" association="_oAqvALkkEe6SsLsmepNrCg">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oArWEbkkEe6SsLsmepNrCg"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oArWErkkEe6SsLsmepNrCg" value="*"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_BqnuQLkxEe6X4rbk2n4SSQ" name="System">
-      <generalization xmi:type="uml:Generalization" xmi:id="_OGG-kLkxEe6X4rbk2n4SSQ" general="_cIaWULkeEe6SsLsmepNrCg"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_kxqcZLkkEe6SsLsmepNrCg" name="sbom" type="_LNO_4LkkEe6SsLsmepNrCg" association="_kxp1ULkkEe6SsLsmepNrCg"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_kxqcYbkkEe6SsLsmepNrCg" name="ownedComponent" type="_cIaWULkeEe6SsLsmepNrCg" aggregation="composite" association="_kxp1ULkkEe6SsLsmepNrCg">
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_kxqcY7kkEe6SsLsmepNrCg" value="*"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_tQMWoLkeEe6SsLsmepNrCg" memberEnd="_tQNkwLkeEe6SsLsmepNrCg _tQNkw7keEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tQM9sLkeEe6SsLsmepNrCg" source="org.eclipse.papyrus">
@@ -163,11 +222,13 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_kxp1UbkkEe6SsLsmepNrCg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_kxqcYLkkEe6SsLsmepNrCg" key="nature" value="UML_Nature"/>
       </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_kxqcZLkkEe6SsLsmepNrCg" name="sbom" type="_LNO_4LkkEe6SsLsmepNrCg" association="_kxp1ULkkEe6SsLsmepNrCg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_oAqvALkkEe6SsLsmepNrCg" memberEnd="_oArWELkkEe6SsLsmepNrCg _oArWE7kkEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_oAqvAbkkEe6SsLsmepNrCg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_oAqvArkkEe6SsLsmepNrCg" key="nature" value="UML_Nature"/>
       </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_oArWE7kkEe6SsLsmepNrCg" name="sbom" type="_LNO_4LkkEe6SsLsmepNrCg" association="_oAqvALkkEe6SsLsmepNrCg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_R8z5cLkoEe6SsLsmepNrCg" memberEnd="_R80ggrkoEe6SsLsmepNrCg _R81HkrkoEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_R80ggLkoEe6SsLsmepNrCg" source="org.eclipse.papyrus">
@@ -243,6 +304,12 @@
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_6cSEsLqjEe6ujtVg7h4KZg" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_6cSEsbqjEe6ujtVg7h4KZg" key="nature" value="UML_Nature"/>
       </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_lhGH4MzxEe6_4eLDObpdCg" memberEnd="_lhJyQMzxEe6_4eLDObpdCg _lhJyQ8zxEe6_4eLDObpdCg">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_lhJLMMzxEe6_4eLDObpdCg" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_lhJLMczxEe6_4eLDObpdCg" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_lhJyQ8zxEe6_4eLDObpdCg" name="component" type="_cIaWULkeEe6SsLsmepNrCg" association="_lhGH4MzxEe6_4eLDObpdCg"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_tBTFYLkmEe6SsLsmepNrCg">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_tBTscLkmEe6SsLsmepNrCg" source="http://www.eclipse.org/uml2/2.0.0/UML">

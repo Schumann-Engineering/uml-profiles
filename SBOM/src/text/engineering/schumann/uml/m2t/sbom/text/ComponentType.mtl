@@ -1,0 +1,97 @@
+[comment encoding = UTF-8 /]
+[module ComponentType(
+	'http://schumann.engineering/sbom/1'
+)]
+
+
+[query public sbom_toString(
+	type : ComponentType
+) : String =
+	     if (type = ComponentType::Application) 			then 'Application'
+	else if (type = ComponentType::Framework) 				then 'Framework'
+	else if (type = ComponentType::Library) 				then 'Library'
+	else if (type = ComponentType::Container) 				then 'Container'
+	else if (type = ComponentType::Platform) 				then 'Platform'
+	else if (type = ComponentType::OperatingSystem) 		then 'Operating System'
+	else if (type = ComponentType::Device) 					then 'Device'
+	else if (type = ComponentType::DeviceDriver) 			then 'Device Driver'
+	else if (type = ComponentType::Firmware) 				then 'Firmware'
+	else if (type = ComponentType::File) 					then 'File'
+	else if (type = ComponentType::MachineLearningModel) 	then 'Machine Learning Model'
+	else if (type = ComponentType::Data) 					then 'Data'
+	else 'ERROR: unknown ComponentType'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public sbom_toStringAsCpe(
+	type : ComponentType
+) : String =
+	     if (type = ComponentType::Application) 			then 'a'
+	else if (type = ComponentType::Framework) 				then 'a'
+	else if (type = ComponentType::Library) 				then 'a'
+	else if (type = ComponentType::Container) 				then 'a'
+	else if (type = ComponentType::Platform) 				then 'a'
+	else if (type = ComponentType::OperatingSystem) 		then 'o'
+	else if (type = ComponentType::Device) 					then 'h'
+	else if (type = ComponentType::DeviceDriver) 			then 'a'
+	else if (type = ComponentType::Firmware) 				then 'o'
+	else if (type = ComponentType::File) 					then './.'
+	else if (type = ComponentType::MachineLearningModel) 	then './.'
+	else if (type = ComponentType::Data) 					then './.'
+	else 'ERROR: unknown ComponentType'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public sbom_toStringAsCpeFull(
+	type : ComponentType
+) : String =
+	     if (type = ComponentType::Application) 			then 'a = application'
+	else if (type = ComponentType::Framework) 				then 'a = application'
+	else if (type = ComponentType::Library) 				then 'a = application'
+	else if (type = ComponentType::Container) 				then 'a = application'
+	else if (type = ComponentType::Platform) 				then 'a = application'
+	else if (type = ComponentType::OperatingSystem) 		then 'o = operating system'
+	else if (type = ComponentType::Device) 					then 'h = hardware'
+	else if (type = ComponentType::DeviceDriver) 			then 'a = application'
+	else if (type = ComponentType::Firmware) 				then 'o = operating system'
+	else if (type = ComponentType::File) 					then './.'
+	else if (type = ComponentType::MachineLearningModel) 	then './.'
+	else if (type = ComponentType::Data) 					then './.'
+	else 'ERROR: unknown ComponentType'
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]

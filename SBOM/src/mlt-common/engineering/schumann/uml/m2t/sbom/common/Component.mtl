@@ -3,44 +3,65 @@
 )/]
 
 
-[import engineering::schumann::uml::m2t::sbom::common::Namespace /]
+[import engineering::schumann::uml::m2t::sbom::common::Dt_License /]
 
 
-[query public allComponents(
-	this : Namespace
+[query public sbom_allComponents(
+	this : Component
 ) : Set(Component) =
 	Set(Component) {}
 	->union(ownedComponent)
-	->union(ownedComponent.allComponents())
+	->union(ownedComponent.sbom_allComponents())
 	->asSet()
 /]
 
 
-[query public relationship(
-	this : Namespace
+[query private sbom_allLicenses(
+	this			: Component
+) : OrderedSet(String) =
+	Set(Component) {}
+	->including(this)
+	->union(sbom_allComponents())
+	->sbom_allLicenses()
+/]
+
+
+[query public sbom_hasSbom(
+	this : Component
+) : Boolean =
+	getSbom() <> null
+/]
+
+
+[query public sbom_relationship(
+	this : Component
 ) : Set(Relationship) =
-	let sbom : Sbom = sbom_sbom() in
+	let sbom : Sbom = getSbom() in
 	if (sbom = null) then
 		Set{}
 	else
 		sbom
-		.ownedRelationship->select( r : Relationship | r.source = this or r.target = this)
+		.ownedRelationship->select(
+			r : Relationship | 
+			r.source = this or 
+			r.target = this
+		)
 		->asSet()
 	endif
 /]
 
 
-[query public relationshipOutgoing(
-	this : Namespace
+[query public sbom_relationshipOutgoing(
+	this : Component
 ) : Set(Relationship) =
-	relationship()
+	sbom_relationship()
 	->select( r : Relationship | r.source = this )
 /]
 
 
-[query public relationshipIncoming(
-	this : Namespace
+[query public sbom_relationshipIncoming(
+	this : Component
 ) : Set(Relationship) =
-	relationship()
+	sbom_relationship()
 	->select( r : Relationship | r.target = this )
 /]

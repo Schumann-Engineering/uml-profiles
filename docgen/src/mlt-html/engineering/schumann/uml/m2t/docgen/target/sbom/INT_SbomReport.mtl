@@ -55,6 +55,7 @@
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
 [comment ... services /]
@@ -325,10 +326,10 @@ post(trim())]
 )]
 [TOC_Section_begin('Overview') /]
 	<p>
-		The following table shows all components present. Details for each component will be provided in later sections.
+		The following table shows all components present for each software system. Details for each component will be provided in later sections.
 	</p>
 
-	[sbom.printAsTable() /]
+	[sbom.printAsTable(Set(ComponentType){ ComponentType::Device }) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -355,12 +356,7 @@ post(trim())]
 			<li><b><i>REQUIRED SOFTWARE</i></b></li>
 		</ul>
 	
-		[html_IMG(
-			'../../_snippets/IEC 81001-5-1/IEC 81001-5-1 SOFTWARE ITEM classification.svg',
-			'IEC 81001-5-1 SOFTWARE ITEM classification',
-			'overview and comparison of IEC 81001-5-1 SOFTWARE ITEM classification',
-			'width: 100%'
-		) /]
+		[html_IMG_IEC_81001_5_SOFTWARE_ITEM_Classification(_context) /]
 	[TOC_SubSection_end() /]
 
 	[TOC_SubSection_begin('NIST IR 7695 - CPE Part')/]
@@ -405,11 +401,11 @@ post(trim())]
 		</blockquote> 
 
 		<p>
-			This definition also applies to software running on a embedded device. Such a software is often not a dedicated product in its own rights. In addition, it often comes with an operating system enrichted by custom user interface and functionality.
+			This definition also applies to software running on an embedded device. Such a software is often not a dedicated product in its own rights. In addition, it often comes with an operating system enrichted by custom user interface and functionality.
 		</p>
 
 		<p>
-			Such an embedded software is donated by NIST IR 7695 as "operating system". The list above distinguish this use-case to "Device Software" as well.
+			Such an embedded software is donated by NIST IR 7695 as "operating system". The list above distinguish this use-case to "Device Software".
 		</p>
 	[TOC_SubSection_end() /]
 
@@ -464,7 +460,7 @@ post(trim())]
 		Firmware is any software run on an embedded system, no matter if it runs on a field programable gate array (FPGA), micro controller (uC), digital signal processor (DSP), or general purpose computational unit (CPU).
 	[html_TIP_End()/]
 
-	[sbom.printOperatingSystemAndFirmware() /]
+	[sbom.printOperatingSystemAndFirmware(Set{ ComponentType::Device }) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -492,7 +488,7 @@ post(trim())]
 		An application is any executable. Libraries used by such an application will be listed in a separate section later.
 	[html_TIP_End()/]
 
-	[sbom.printApplications() /]
+	[sbom.printApplications(Set{ ComponentType::Device }) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -516,7 +512,7 @@ post(trim())]
 		Includes only libraries by [VENDOR_NAME() /]. Libraries from 3rd parties are listed in a separate section later.
 	[html_NOTE_End()/]
 
-	[sbom.printLibraries() /]
+	[sbom.printLibraries(Set{ ComponentType::Device }) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -540,7 +536,7 @@ post(trim())]
 		Includes everything developed by a 3rd party, i.e. C(OTS) and (F)OSS, and <b>NOT</b> by [VENDOR_NAME() /].
 	[html_NOTE_End()/]
 
-	[sbom.print3rdParty() /]
+	[sbom.print3rdParty(Set{ ComponentType::Device }) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -601,7 +597,7 @@ post(trim())]
 	_context		: Context
 )
 {
-	licenses : OrderedSet(String) = sbom.license();
+	licenses : OrderedSet(String) = sbom.sbom_allLicenses();
 }]
 [if (licenses->size() > 0)]
 [html_PAGE_begin('appendix a') /]
@@ -618,7 +614,7 @@ post(trim())]
 		<b>COMPONENTS</b> with this license:
 	</p>
 	<ul>
-	[for (sbom.allComponentsWithicense(self))]
+	[for (sbom.sbom_allComponentsWithicense(self))]
 		<li>[TOC_link(name, name._toString()) /]</li>
 	[/for]
 	</ul>

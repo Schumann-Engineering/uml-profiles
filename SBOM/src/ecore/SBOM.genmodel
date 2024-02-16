@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
-    modelDirectory="/SBOM/src-gen/model" editDirectory="/SBOM/src-gen/edit"
-    editorDirectory="/SBOM/src-gen/editor" modelPluginID="engineering.schumann.uml.model.sbom"
+    modelDirectory="/SBOM/src/java" editDirectory="/SBOM/src/java"
+    editorDirectory="/SBOM/src/java" modelPluginID="engineering.schumann.uml.model.sbom"
     modelName="engineering.schumann.uml.model.sbom" editPluginClass="engineering.schumann.uml.model.sbom.provider.SbomEditPlugin"
     editorPluginClass="engineering.schumann.uml.model.sbom.presentation.SbomEditorPlugin"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.uml2.uml.ecore.importer"
@@ -35,12 +35,19 @@
   <foreignModel>../uml/SBOM.uml</foreignModel>
   <genPackages xsi:type="genmodel:GenPackage" prefix="SBOM" basePackage="engineering.schumann.uml.model"
       disposableProviderFactory="true" ecorePackage="sbom.ecore#/">
-    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//NamespaceType">
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Application"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/OperatingSystemDeviceSoftware"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/Hardware"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/ApplicationLibrary"/>
-      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//NamespaceType/OperatingSystem"/>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//ComponentType">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Application"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/DeviceDriver"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Device"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Library"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/OperatingSystem"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Framework"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Container"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Platform"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Firmware"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/File"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/MachineLearningModel"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//ComponentType/Data"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="sbom.ecore#//Iec81001_5_1_Classification">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//Iec81001_5_1_Classification/MAINTAINED"/>
@@ -63,22 +70,6 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/describes"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="sbom.ecore#//RelationshipType/isDescribedBy"/>
     </genEnums>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Component">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference sbom.ecore#//Component/owner"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/requiredBy"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sbom.ecore#//Namespace">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/ownedComponent"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Namespace/requiredComponent"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/type"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/isSOUP"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/classificationIec81001_5_1"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Namespace/classificationIec62304"/>
-    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="sbom.ecore#//DescribedElement">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//DescribedElement/summary"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//DescribedElement/description"/>
@@ -101,24 +92,35 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/value"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Property/type"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Component">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/ownedComponent"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference sbom.ecore#//Component/owner"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/requiredComponent"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/requiredBy"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Component/type"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Component/isSOUP"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Component/classificationIec81001_5_1"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Component/classificationIec62304"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Component/owningSbom"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="sbom.ecore#//Component/getSbom"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Sbom">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedRelationship"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedComponent"/>
+    </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Relationship">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Relationship/source"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference sbom.ecore#//Relationship/target"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute sbom.ecore#//Relationship/type"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference sbom.ecore#//Relationship/sbom"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//Sbom">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedSystem"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference sbom.ecore#//Sbom/ownedRelationship"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//System">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference sbom.ecore#//System/sbom"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="sbom.ecore#//MetadataLibrary">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"

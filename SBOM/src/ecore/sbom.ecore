@@ -4,27 +4,6 @@
   <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
     <details key="originalName" value="SBOM"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Namespace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
-        eType="#//Namespace" eOpposite="#//Namespace/ownedComponent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredBy" ordered="false"
-        upperBound="-1" eType="#//Namespace" eOpposite="#//Namespace/requiredComponent"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true" eSuperTypes="#//DescribedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComponent" ordered="false"
-        upperBound="-1" eType="#//Component" containment="true" eOpposite="#//Component/owner"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredComponent" ordered="false"
-        upperBound="-1" eType="#//Component" eOpposite="#//Component/requiredBy"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
-        eType="#//NamespaceType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSOUP" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec81001_5_1"
-        ordered="false" lowerBound="1" eType="#//Iec81001_5_1_Classification"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec62304"
-        ordered="false" eType="#//Iec62304_Classification"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DescribedElement" abstract="true" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="summary" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -58,12 +37,92 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="NamespaceType">
-    <eLiterals name="Application"/>
-    <eLiterals name="OperatingSystemDeviceSoftware" value="1"/>
-    <eLiterals name="Hardware" value="2"/>
-    <eLiterals name="ApplicationLibrary" value="3"/>
-    <eLiterals name="OperatingSystem" value="4"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//DescribedElement">
+    <eOperations name="getSbom" ordered="false" lowerBound="1" eType="#//Sbom"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComponent" ordered="false"
+        upperBound="-1" eType="#//Component" containment="true" eOpposite="#//Component/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//Component" eOpposite="#//Component/ownedComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredComponent" ordered="false"
+        upperBound="-1" eType="#//Component" eOpposite="#//Component/requiredBy"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredBy" ordered="false"
+        upperBound="-1" eType="#//Component" eOpposite="#//Component/requiredComponent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
+        eType="#//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSOUP" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec81001_5_1"
+        ordered="false" lowerBound="1" eType="#//Iec81001_5_1_Classification"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classificationIec62304"
+        ordered="false" eType="#//Iec62304_Classification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningSbom" ordered="false"
+        eType="#//Sbom"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComponentType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Specifies the type of component. For software components, classify as application if no more specific appropriate classification is available or cannot be determined for the component."/>
+    </eAnnotations>
+    <eLiterals name="Application">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A software application. Refer to https://en.wikipedia.org/wiki/Application_software for information about applications."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DeviceDriver" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A special type of software that operates or controls a particular type of device. Refer to https://en.wikipedia.org/wiki/Device_driver"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Device" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A hardware device such as a processor, or chip-set. A hardware device containing firmware SHOULD include a component for the physical hardware itself, and another component of type 'firmware' or 'operating-system' (whichever is relevant), describing information about the software running on the device.&#xD;&#xA;See also the list of known device properties."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Library" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A software library. Refer to https://en.wikipedia.org/wiki/Library_(computing)&#xD;&#xA;for information about libraries. All third-party and open source reusable components will likely be a library. If the library also has key features of a framework, then it should be classified as a framework. If not, or is unknown, then specifying library is RECOMMENDED."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="OperatingSystem" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A software operating system without regard to deployment model (i.e. installed on physical hardware, virtual machine, image, etc) Refer to https://en.wikipedia.org/wiki/Operating_system"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Framework" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A software framework. Refer to https://en.wikipedia.org/wiki/Software_framework for information on how frameworks vary slightly from libraries."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Container" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A packaging and/or runtime format, not specific to any particular technology, which isolates software inside the container from software outside of a container through virtualization technology. Refer to https://en.wikipedia.org/wiki/OS-level_virtualization"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Platform" value="7">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A runtime environment which interprets or executes software. This may include runtimes such as those that execute bytecode or low-code/no-code application platforms."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Firmware" value="8">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A special type of software that provides low-level control over a devices hardware. Refer to https://en.wikipedia.org/wiki/Firmware"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="File" value="9">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A computer file. Refer to https://en.wikipedia.org/wiki/Computer_file for information about files."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MachineLearningModel" value="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A model based on training data that can make predictions or decisions without being explicitly programmed to do so."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="Data" value="11">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A collection of discrete values that convey information."/>
+      </eAnnotations>
+    </eLiterals>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Iec81001_5_1_Classification">
     <eLiterals name="MAINTAINED"/>
@@ -75,6 +134,12 @@
     <eLiterals name="B" value="1"/>
     <eLiterals name="A" value="2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sbom" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRelationship" ordered="false"
+        upperBound="-1" eType="#//Relationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComponent" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Component" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relationship">
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
         lowerBound="1" eType="#//NamedElement"/>
@@ -82,8 +147,6 @@
         lowerBound="1" eType="#//NamedElement"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" ordered="false" lowerBound="1"
         eType="#//RelationshipType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sbom" ordered="false" lowerBound="1"
-        eType="#//Sbom" eOpposite="#//Sbom/ownedRelationship"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
     <eLiterals name="Unknown"/>
@@ -95,16 +158,6 @@
     <eLiterals name="runs" value="6"/>
     <eLiterals name="describes" value="7"/>
     <eLiterals name="isDescribedBy" value="8"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Sbom" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSystem" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//System" containment="true" eOpposite="#//System/sbom"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRelationship" ordered="false"
-        upperBound="-1" eType="#//Relationship" containment="true" eOpposite="#//Relationship/sbom"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="System" eSuperTypes="#//Namespace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sbom" ordered="false" lowerBound="1"
-        eType="#//Sbom" eOpposite="#//Sbom/ownedSystem"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetadataLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="artifactMeta" ordered="false"

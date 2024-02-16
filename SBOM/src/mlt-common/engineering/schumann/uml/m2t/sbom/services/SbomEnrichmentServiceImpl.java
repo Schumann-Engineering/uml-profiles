@@ -1,7 +1,7 @@
 package engineering.schumann.uml.m2t.sbom.services;
 
+import engineering.schumann.uml.model.sbom.Component;
 import engineering.schumann.uml.model.sbom.MetadataLibrary;
-import engineering.schumann.uml.model.sbom.Namespace;
 import engineering.schumann.uml.model.sbom.Sbom;
 
 public class SbomEnrichmentServiceImpl {
@@ -24,11 +24,10 @@ public class SbomEnrichmentServiceImpl {
 		
 		// === BODY ===
 		sbom.eAllContents().forEachRemaining( c -> {
-			// only process NamedElement to have name and version
-			if (!(c instanceof Namespace))
+			if (!(c instanceof Component))
 				return;
 			
-			var element = (Namespace)c;
+			var element = (Component)c;
 			
 			EnrichSbom(element, metadata);
 		});
@@ -40,12 +39,12 @@ public class SbomEnrichmentServiceImpl {
 
 	
 	public static void EnrichSbom(
-			Namespace element,
+			Component component,
 			MetadataLibrary metadata
 	)
 	{
 		// === GUARDS ===
-		if (element == null)
+		if (component == null)
 			return;
 		if (metadata == null)
 			return;
@@ -53,13 +52,13 @@ public class SbomEnrichmentServiceImpl {
 		
 		// === BODY ===
 		// try to find artifact matching element
-		var artifact = ArtifactMetaServiceImpl.FindArtifact(element, metadata);
+		var artifact = ArtifactMetaServiceImpl.FindArtifact(component, metadata);
 		if (artifact == null)
 			return;
 		
 		System.out.println(String.format(
 				"INFO: [SBOM] enriching element '%s' with metadata",
-				element.getName()
+				component.getName()
 			));
 		
 		// copy all properties from metadata to element
@@ -88,9 +87,9 @@ public class SbomEnrichmentServiceImpl {
 						// try to find full name instead
 						var fullName = PropertyServiceImpl.GetPropertyValue("full name", artifact.getOwnedProperty(), null);
 						if (fullName != null)
-							element.setName(fullName);
+							component.setName(fullName);
 						else
-							element.setName(value);
+							component.setName(value);
 						break;
 						
 					case "supplier":
@@ -99,7 +98,7 @@ public class SbomEnrichmentServiceImpl {
 						var supplier = SupplierMetaServiceImpl.FindSupplier(value, metadata);
 						if (supplier == null)
 						{
-							element.setSupplier(value);
+							component.setSupplier(value);
 							break;
 						}
 						
@@ -107,7 +106,7 @@ public class SbomEnrichmentServiceImpl {
 						if (supplierName == null)
 							supplierName = PropertyServiceImpl.GetPropertyValue("name", supplier.getOwnedProperty(), value);
 						
-						element.setSupplier(String.format(
+						component.setSupplier(String.format(
 							"%s (address: %s; website: %s)",
 							supplierName,
 							PropertyServiceImpl.GetPropertyValue("address", supplier.getOwnedProperty(), "unknown"),
@@ -118,7 +117,7 @@ public class SbomEnrichmentServiceImpl {
 						
 					default:
 						// use default implementation
-						PropertyServiceImpl.SetProperty(element, key, value);
+						PropertyServiceImpl.SetProperty(component, key, value);
 						break;
 				}			
 			}
@@ -126,7 +125,7 @@ public class SbomEnrichmentServiceImpl {
 			{
 				System.err.println(String.format(
 						"ERROR: [SBOM] while enrichting element '%s': %s",
-						element.getName(),
+						component.getName(),
 						e.getMessage()
 					));
 			}

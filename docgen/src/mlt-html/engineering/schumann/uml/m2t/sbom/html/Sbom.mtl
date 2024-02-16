@@ -5,76 +5,53 @@
 
 
 [import engineering::schumann::uml::m2t::sbom::common::Sbom /]
-[import engineering::schumann::uml::m2t::sbom::html::System /]
 [import engineering::schumann::uml::m2t::sbom::html::Component /]
 
 
+[**
+ * ============================================
+ * ============================================
+ * TABLE
+ * ============================================
+ * ============================================
+ */]
 [template public printAsTable(
 	this 		: Sbom,
-	ignoreList	: Set(NamespaceType)
+	ignoreList	: Set(ComponentType)
 )]
 <table class="table-5-columns">
 	<thead>
 		<tr>
 			<th>Component Name</th>
 			<th>CPE Part<br/>NIST IR 7695</th>
-			<th>Type</th>
+			<th>Type<br/>CycloneDX v1.5</th>
 			<th>Version</th>
 			<th>Classification<br/>IEC 81001-1-5</th>
 		</tr>
 	</thead>
 
 	<tbody>
-		[printAsTableRowHorizontal(ignoreList) /]
+		[ownedComponent->sortedBy(name).printAsTableRowHorizontal(ignoreList) /]
 	</tbody>
 </table>
-[/template]
-
-
-[template public printAsTable(
-	this : System,
-	ignoreList	: Set(NamespaceType)
-)]
-<table class="table-5-columns">
-	<thead>
-		<tr>
-			<th>Component Name</th>
-			<th>CPE Part<br/>NIST IR 7695</th>
-			<th>Type</th>
-			<th>Version</th>
-			<th>Classification<br/>IEC 81001-1-5</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		[printAsTableRowHorizontal(ignoreList) /]
-	</tbody>
-</table>
-[/template]
-
-
-[template public printAsTableRowHorizontal(
-	this 		: Sbom,
-	ignoreList	: Set(NamespaceType)
-)]
-[ownedSystem.printAsTableRowHorizontal(ignoreList) /]
 [/template]
 
 
 [template private printSelectedComponents(
 	sbom 		: Sbom,
-	selectList	: Set(NamespaceType),
-	ignoreList	: Set(NamespaceType),
+	selectList	: Set(ComponentType),
+	ignoreList	: Set(ComponentType),
 	soupSelect	: Boolean
 )
 {
-	components : Set(Namespace) = sbom
-									.allComponents()
+	components : OrderedSet(Component) = sbom
+									.sbom_allComponents()
 									->select(
 										(selectList = null or selectList->includes(type)) and
 										(ignoreList = null or ignoreList->excludes(type)) and
 										isSOUP = soupSelect
-									);
+									)
+									->sortedBy(name);
 }]
 [if (components->size() = 0)]
 <p>
@@ -88,9 +65,9 @@
 
 [template public printOperatingSystemAndFirmware(
 	sbom 		: Sbom,
-	ignoreList	: Set(NamespaceType)
+	ignoreList	: Set(ComponentType)
 )][printSelectedComponents(
-	Set{ NamespaceType::OperatingSystemDeviceSoftware, NamespaceType::OperatingSystem },
+	Set{ ComponentType::OperatingSystem, ComponentType::Firmware },
 	ignoreList,
 	false
 ) /][/template]
@@ -98,37 +75,37 @@
 
 [template public printOperatingSystems(
 	sbom 		: Sbom,
-	ignoreList	: Set(NamespaceType)
+	ignoreList	: Set(ComponentType)
 )][printSelectedComponents(
-	Set{ NamespaceType::OperatingSystem, NamespaceType::OperatingSystem },
+	Set{ ComponentType::OperatingSystem },
 	ignoreList,
 	false
 ) /][/template]
 
 
 [template public printApplications(
-	sbom : Sbom,
-	ignoreList	: Set(NamespaceType)
+	sbom 		: Sbom,
+	ignoreList	: Set(ComponentType)
 )][printSelectedComponents(
-	Set{ NamespaceType::Application },
+	Set{ ComponentType::Application },
 	ignoreList,
 	false
 ) /][/template]
 
 
 [template public printLibraries(
-	sbom : Sbom,
-	ignoreList	: Set(NamespaceType)
+	sbom 		: Sbom,
+	ignoreList	: Set(ComponentType)
 )][printSelectedComponents(
-	Set{ NamespaceType::ApplicationLibrary },
+	Set{ ComponentType::Library },
 	ignoreList,
 	false
 ) /][/template]
 
 
 [template public print3rdParty(
-	sbom : Sbom,
-	ignoreList	: Set(NamespaceType)
+	sbom 		: Sbom,
+	ignoreList	: Set(ComponentType)
 )][printSelectedComponents(
 	null,
 	ignoreList,

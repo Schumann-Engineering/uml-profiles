@@ -3,10 +3,10 @@ package engineering.schumann.uml.m2t.sbom.services;
 import org.eclipse.emf.common.util.EList;
 
 import engineering.schumann.uml.m2t.common.services.StringServiceImpl;
+import engineering.schumann.uml.model.sbom.Component;
+import engineering.schumann.uml.model.sbom.ComponentType;
 import engineering.schumann.uml.model.sbom.Iec62304_Classification;
 import engineering.schumann.uml.model.sbom.Iec81001_5_1_Classification;
-import engineering.schumann.uml.model.sbom.Namespace;
-import engineering.schumann.uml.model.sbom.NamespaceType;
 import engineering.schumann.uml.model.sbom.Property;
 import engineering.schumann.uml.model.sbom.Relationship;
 import engineering.schumann.uml.model.sbom.RelationshipType;
@@ -84,7 +84,7 @@ public class PropertyServiceImpl {
 	
 	
 	public static void SetProperty(
-			Namespace	namespace,
+			Component	component,
 			String		propertyStr
 	)
 	throws
@@ -106,12 +106,12 @@ public class PropertyServiceImpl {
 		var key = propertyStr.substring(0,  delimiterPosition);
 		var value = propertyStr.substring(delimiterPosition+1);
 		
-		SetProperty(namespace, key, value);
+		SetProperty(component, key, value);
 	}
 
 	
 	public static void SetProperty(
-			Namespace	namespace,
+			Component	component,
 			String		propertyName,
 			String		propertyValue
 	)
@@ -125,57 +125,57 @@ public class PropertyServiceImpl {
 		{
 			case "descr":
 			case "description":
-				namespace.setDescription(propertyValue);
+				component.setDescription(propertyValue);
 				break;
 
 			case "issoup":
 			case "is-soup":
 			case "is_soup":
-				namespace.setIsSOUP(StringServiceImpl.IsTrue(propertyValue));
+				component.setIsSOUP(StringServiceImpl.IsTrue(propertyValue));
 				break;
 				
 
 			case "iec 62304":
 			case "iec62304":
 			case "62304":
-				SetIec62304(namespace, propertyValue);
+				SetIec62304(component, propertyValue);
 				break;	
 
 			case "iec 81001-5-1":
 			case "iec81001-5-1":
 			case "81001-5-1":
-				SetIec81001_5_1(namespace, propertyValue);
+				SetIec81001_5_1(component, propertyValue);
 				break;	
 				
 			case "license":
 			case "selected license":
-				namespace.setLicense(propertyValue);
+				component.setLicense(propertyValue);
 				break;
 				
 			case "name":
-				namespace.setName(propertyValue);
+				component.setName(propertyValue);
 				break;
 				
 			case "ref":
 			case "reference":
-				namespace.getReference().add(propertyValue);
+				component.getReference().add(propertyValue);
 				break;
 				
 			case "summary":
 			case "title":
-				namespace.setSummary(propertyValue);
+				component.setSummary(propertyValue);
 				break;
 				
 			case "supplier":
-				namespace.setSupplier(propertyValue);
+				component.setSupplier(propertyValue);
 				break;
 
 			case "type":
-				SetType(namespace, propertyValue);
+				SetType(component, propertyValue);
 				break;	
 
 			case "version":
-				namespace.setVersion(propertyValue);
+				component.setVersion(propertyValue);
 				break;
 			
 			default:
@@ -185,14 +185,14 @@ public class PropertyServiceImpl {
 				genericProperty.setValue(propertyValue);
 				
 				// add to component
-				namespace.getOwnedProperty().add(genericProperty);
+				component.getOwnedProperty().add(genericProperty);
 				break;
 		}
 	}
 	
 	
 	public static void SetIec62304(
-			Namespace namespace,
+			Component component,
 			String classification
 	)
 	throws
@@ -205,7 +205,7 @@ public class PropertyServiceImpl {
 			case "lowrisk":
 			case "low-risk":
 			case "a":
-				namespace.setClassificationIec62304(Iec62304_Classification.A);
+				component.setClassificationIec62304(Iec62304_Classification.A);
 				break;
 
 			case "medium":
@@ -213,7 +213,7 @@ public class PropertyServiceImpl {
 			case "mediumrisk":
 			case "medium-risk":
 			case "b":
-				namespace.setClassificationIec62304(Iec62304_Classification.B);
+				component.setClassificationIec62304(Iec62304_Classification.B);
 				break;
 
 			case "high":
@@ -221,7 +221,7 @@ public class PropertyServiceImpl {
 			case "highrisk":
 			case "high-risk":
 			case "c":
-				namespace.setClassificationIec62304(Iec62304_Classification.C);
+				component.setClassificationIec62304(Iec62304_Classification.C);
 				break;
 
 				
@@ -234,7 +234,7 @@ public class PropertyServiceImpl {
 	
 	
 	public static void SetIec81001_5_1(
-			Namespace namespace,
+			Component component,
 			String classification
 	)
 	throws
@@ -244,17 +244,17 @@ public class PropertyServiceImpl {
 		{
 			case "vendor":
 			case "maintained":
-				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.MAINTAINED);
+				component.setClassificationIec81001_5_1(Iec81001_5_1_Classification.MAINTAINED);
 				break;
 
 			case "sup":
 			case "supported":
-				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.SUPPORTED);
+				component.setClassificationIec81001_5_1(Iec81001_5_1_Classification.SUPPORTED);
 				break;
 
 			case "req":
 			case "required":
-				namespace.setClassificationIec81001_5_1(Iec81001_5_1_Classification.REQUIRED);
+				component.setClassificationIec81001_5_1(Iec81001_5_1_Classification.REQUIRED);
 				break;
 
 				
@@ -265,7 +265,7 @@ public class PropertyServiceImpl {
 
 	
 	public static void SetType(
-			Namespace namespace,
+			Component component,
 			String typeStr
 	)
 	throws
@@ -276,27 +276,49 @@ public class PropertyServiceImpl {
 			case "a":
 			case "app":
 			case "application":
-				namespace.setType(NamespaceType.APPLICATION);
-				break;
-		
-			case "f":
-			case "firmware":
-			case "fw":
-			case "devicesoftware":
-			case "device software":
-			case "device-software":
-				namespace.setType(NamespaceType.OPERATING_SYSTEM_DEVICE_SOFTWARE);
+				component.setType(ComponentType.APPLICATION);
 				break;
 
+			case "container":
+				component.setType(ComponentType.CONTAINER);
+				break;
+
+			case "data":
+				component.setType(ComponentType.DATA);
+				break;
+
+			case "device":
 			case "h":
 			case "hardware":
 			case "hw":
-				namespace.setType(NamespaceType.HARDWARE);
+				component.setType(ComponentType.DEVICE);
 				break;
 
+			case "devicedriver":
+			case "device driver":
+			case "device-driver":
+			case "devicesoftware":
+			case "device software":
+			case "device-software":
+				component.setType(ComponentType.DEVICE_DRIVER);
+				break;
+
+			case "file":
+				component.setType(ComponentType.FILE);
+				break;
+				
+			case "firmware":
+			case "fw":
+				component.setType(ComponentType.FIRMWARE);
+				break;
+
+			case "framework":
+				component.setType(ComponentType.FRAMEWORK);
+				break;
+				
 			case "lib":
 			case "library":
-				namespace.setType(NamespaceType.APPLICATION_LIBRARY);
+				component.setType(ComponentType.LIBRARY);
 				break;
 
 			case "o":
@@ -305,7 +327,18 @@ public class PropertyServiceImpl {
 			case "operating system":
 			case "operating-system":
 			case "operating_system":
-				namespace.setType(NamespaceType.OPERATING_SYSTEM);
+				component.setType(ComponentType.OPERATING_SYSTEM);
+				break;
+
+			case "model":
+			case "machinelearningmodel":
+			case "machine learning model":
+			case "machine-learning-model":
+				component.setType(ComponentType.MACHINE_LEARNING_MODEL);
+				break;
+
+			case "platform":
+				component.setType(ComponentType.PLATFORM);
 				break;
 				
 			default:
