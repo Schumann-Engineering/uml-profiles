@@ -100,6 +100,50 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetType/Mechanical"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetType/Signal"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//AssetFlightLevel">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/UNSPECIFIED"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/Enterprise"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/Product"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/System"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/SubSystem"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetFlightLevel/Component"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//AssetCategory">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/UNSPECIFIED"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Accessory"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/ArchitectureComponent"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Compliance"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Data"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/EnvironmentAndResource"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/EssentialPerformanceFeature"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Feature"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Hardware"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/InfrastructureAndNetwork"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/IntellectualProperty"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Interface"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/InterfacesAndAccess"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/ManufacturingProcess"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/People"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/PrimaryOperatingFunction"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Property"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//AssetCategory/Reputation"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//ProtectionGoal">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Confidentiality"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Integrity"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Availability"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Usability"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Money"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//ProtectionGoal/Legal"/>
+    </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//STRIDE">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/Spoofing"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/Tampering"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/Repudiation"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/InformationDisclosure"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/DenialOfService"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//STRIDE/ElevationOfPrivilege"/>
+    </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//EnergyType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//EnergyType/Unspecified"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//EnergyType/Force"/>
@@ -315,6 +359,10 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//Asset/base_NamedElement"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/assetSpec"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/assetType"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/flightLevel"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/assetCategory"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/protectionGoal"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//Asset/stride"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//AssetLibrary">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

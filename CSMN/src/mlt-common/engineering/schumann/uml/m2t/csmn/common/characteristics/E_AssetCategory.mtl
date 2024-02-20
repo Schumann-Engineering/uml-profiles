@@ -1,0 +1,304 @@
+[comment encoding = UTF-8 /]
+[module E_AssetCategory(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toProtectionGoals(
+	this : AssetCategory
+) : Set(ProtectionGoal) =
+	     if (this = AssetCategory::IntellectualProperty) 		then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Integrity,*/
+/*			ProtectionGoal::Availability,*/
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Reputation) 					then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality, */
+/*			ProtectionGoal::Integrity, */
+/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Property) 					then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality, */
+/*			ProtectionGoal::Integrity, */
+/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::People) 						then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality, */
+/*			ProtectionGoal::Integrity, */
+/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money,
+			ProtectionGoal::Legal
+		}
+	else if (this = AssetCategory::EnvironmentAndResource)	 	then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality, */
+/*			ProtectionGoal::Integrity, */
+/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money,
+			ProtectionGoal::Legal
+		}
+	else if (this = AssetCategory::InfrastructureAndNetwork) 	then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability,
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money,
+			ProtectionGoal::Legal
+		}
+	else if (this = AssetCategory::Compliance) 					then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality, */
+/*			ProtectionGoal::Integrity, */
+/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Usability, */
+			ProtectionGoal::Money,
+			ProtectionGoal::Legal
+		}
+	else if (this = AssetCategory::PrimaryOperatingFunction) 	then	
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Integrity,
+/*			ProtectionGoal::Availability,
+			ProtectionGoal::Usability
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::ManufacturingProcess) 		then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability,
+			ProtectionGoal::Usability
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::EssentialPerformanceFeature) then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Feature) 					then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Accessory) 					then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::ArchitectureComponent) 		then
+		Set(ProtectionGoal) {
+/*			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Data) 						then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::InterfacesAndAccess)			then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Interface)					then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else if (this = AssetCategory::Hardware) 					then
+		Set(ProtectionGoal) {
+			ProtectionGoal::Confidentiality,
+			ProtectionGoal::Integrity,
+			ProtectionGoal::Availability
+/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Money, */
+/*			ProtectionGoal::Legal */
+		}
+	else
+		Set(ProtectionGoal) {
+		}
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[comment
+	==============================
+	CONFIDENTIALITY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Confidentiality(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Confidentiality)
+/]
+
+
+[query public csmn_hasProtectionGoal_Confidentiality(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Confidentiality)
+/]
+
+
+[comment
+	==============================
+	INTEGRITY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Integrity(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Integrity)
+/]
+
+
+[query public csmn_hasProtectionGoal_Integrity(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Integrity)
+/]
+
+
+[comment
+	==============================
+	AVAILABILITY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Availability(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Availability)
+/]
+
+
+[query public csmn_hasProtectionGoal_Availability(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Availability)
+/]
+
+
+[comment
+	==============================
+	USABILITY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Usability(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Usability)
+/]
+
+
+[query public csmn_hasProtectionGoal_Usability(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Usability)
+/]
+
+
+[comment
+	==============================
+	MONEY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Money(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Money)
+/]
+
+
+[query public csmn_hasProtectionGoal_Money(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Money)
+/]
+
+
+[comment
+	==============================
+	LEGAL
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Legal(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Legal)
+/]
+
+
+[query public csmn_hasProtectionGoal_Legal(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Legal)
+/]

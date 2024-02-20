@@ -1,0 +1,156 @@
+[comment encoding = UTF-8 /]
+[module E_STRIDE(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[query public csmn_toSTRIDE(
+	this : ProtectionGoal
+) : Set(STRIDE) =
+	     if (this = ProtectionGoal::Confidentiality)	then
+		Set(STRIDE) {
+			STRIDE::Spoofing,
+/*			STRIDE::Tampering, */
+/*			STRIDE::Repudiation, */
+			STRIDE::InformationDisclosure,
+/*			STRIDE::DenialOfService, */
+			STRIDE::ElevationOfPrivilege
+		}
+	else if (this = ProtectionGoal::Integrity) 			then
+		Set(STRIDE) {
+			STRIDE::Spoofing,
+			STRIDE::Tampering,
+			STRIDE::Repudiation,
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService, */
+			STRIDE::ElevationOfPrivilege
+		}
+	else if (this = ProtectionGoal::Availability) 		then
+		Set(STRIDE) {
+/*			STRIDE::Spoofing, */
+/*			STRIDE::Tampering, */
+			STRIDE::Repudiation,
+/*			STRIDE::InformationDisclosure, */
+			STRIDE::DenialOfService
+/*			STRIDE::ElevationOfPrivilege */
+		}
+	else if (this = ProtectionGoal::Usability) 			then
+		Set(STRIDE) {
+/*			STRIDE::Spoofing, */
+/*			STRIDE::Tampering, */
+/*			STRIDE::Repudiation, */
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService, */
+/*			STRIDE::ElevationOfPrivilege */
+		}
+	else if (this = ProtectionGoal::Money)	 			then
+		Set(STRIDE) {
+/*			STRIDE::Spoofing, */
+/*			STRIDE::Tampering, */
+/*			STRIDE::Repudiation, */
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService, */
+/*			STRIDE::ElevationOfPrivilege */
+		}
+	else if (this = ProtectionGoal::Legal) 				then
+		Set(STRIDE) {
+/*			STRIDE::Spoofing, */
+/*			STRIDE::Tampering, */
+			STRIDE::Repudiation
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService, */
+/*			STRIDE::ElevationOfPrivilege */
+		}
+	else
+		Set(STRIDE) {
+		}
+	endif
+	endif
+	endif
+	endif
+	endif
+	endif
+/]
+
+
+[query public csmn_toSTRIDE(
+	this : Set(ProtectionGoal)
+) : Set(STRIDE) =
+	this
+	.csmn_toSTRIDE()
+	->flatten()
+	->asSet()
+/]
+
+
+[comment
+	==============================
+	SPOOOFING
+	==============================
+/]
+[query public csmn_hasSTRIDE_Spoofing(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::Spoofing)
+/]
+
+
+[comment
+	==============================
+	TAMPERING
+	==============================
+/]
+[query public csmn_hasSTRIDE_Tampering(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::Tampering)
+/]
+
+
+[comment
+	==============================
+	REPUDIATION
+	==============================
+/]
+[query public csmn_hasSTRIDE_Repudiation(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::Repudiation)
+/]
+
+
+[comment
+	==============================
+	INFORMATION DISCLOSURE
+	==============================
+/]
+[query public csmn_hasSTRIDE_InformationDisclosure(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::InformationDisclosure)
+/]
+
+
+[comment
+	==============================
+	DENIAL OF SERVICE
+	==============================
+/]
+[query public csmn_hasSTRIDE_DenialOfService(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::DenialOfService)
+/]
+
+
+[comment
+	==============================
+	ELEVATION OF PRIVILEGE
+	==============================
+/]
+[query public csmn_hasSTRIDE_ElevationOfPrivilege(
+	this : Set(STRIDE)
+) : Boolean =
+	includes(STRIDE::ElevationOfPrivilege)
+/]

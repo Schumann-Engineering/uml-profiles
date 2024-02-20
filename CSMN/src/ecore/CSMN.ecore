@@ -178,6 +178,14 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetType" ordered="false"
         lowerBound="1" eType="#//AssetType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="flightLevel" ordered="false"
+        lowerBound="1" eType="#//AssetFlightLevel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assetCategory" ordered="false"
+        lowerBound="1" eType="#//AssetCategory"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="protectionGoal" ordered="false"
+        upperBound="-1" eType="#//ProtectionGoal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stride" ordered="false"
+        upperBound="-1" eType="#//STRIDE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
     <eLiterals name="Unspecified"/>
@@ -190,6 +198,50 @@
     <eLiterals name="Material" value="7"/>
     <eLiterals name="Mechanical" value="8"/>
     <eLiterals name="Signal" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssetFlightLevel">
+    <eLiterals name="UNSPECIFIED"/>
+    <eLiterals name="Enterprise" value="1"/>
+    <eLiterals name="Product" value="2"/>
+    <eLiterals name="System" value="3"/>
+    <eLiterals name="SubSystem" value="4"/>
+    <eLiterals name="Component" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AssetCategory">
+    <eLiterals name="UNSPECIFIED"/>
+    <eLiterals name="Accessory" value="1"/>
+    <eLiterals name="ArchitectureComponent" value="2"/>
+    <eLiterals name="Compliance" value="3"/>
+    <eLiterals name="Data" value="4"/>
+    <eLiterals name="EnvironmentAndResource" value="5"/>
+    <eLiterals name="EssentialPerformanceFeature" value="6"/>
+    <eLiterals name="Feature" value="7"/>
+    <eLiterals name="Hardware" value="8"/>
+    <eLiterals name="InfrastructureAndNetwork" value="9"/>
+    <eLiterals name="IntellectualProperty" value="10"/>
+    <eLiterals name="Interface" value="11"/>
+    <eLiterals name="InterfacesAndAccess" value="12"/>
+    <eLiterals name="ManufacturingProcess" value="13"/>
+    <eLiterals name="People" value="14"/>
+    <eLiterals name="PrimaryOperatingFunction" value="15"/>
+    <eLiterals name="Property" value="16"/>
+    <eLiterals name="Reputation" value="17"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProtectionGoal">
+    <eLiterals name="Confidentiality"/>
+    <eLiterals name="Integrity" value="1"/>
+    <eLiterals name="Availability" value="2"/>
+    <eLiterals name="Usability" value="3"/>
+    <eLiterals name="Money" value="4"/>
+    <eLiterals name="Legal" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="STRIDE">
+    <eLiterals name="Spoofing"/>
+    <eLiterals name="Tampering" value="1"/>
+    <eLiterals name="Repudiation" value="2"/>
+    <eLiterals name="InformationDisclosure" value="3"/>
+    <eLiterals name="DenialOfService" value="4"/>
+    <eLiterals name="ElevationOfPrivilege" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AssetLibrary">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Package" ordered="false"

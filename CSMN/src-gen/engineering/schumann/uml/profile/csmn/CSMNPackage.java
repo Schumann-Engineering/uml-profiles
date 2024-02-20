@@ -1044,13 +1044,49 @@ public interface CSMNPackage extends EPackage {
 	int ASSET__ASSET_TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Flight Level</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__FLIGHT_LEVEL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Asset Category</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__ASSET_CATEGORY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Protection Goal</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__PROTECTION_GOAL = 5;
+
+	/**
+	 * The feature id for the '<em><b>Stride</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__STRIDE = 6;
+
+	/**
 	 * The number of structural features of the '<em>Asset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_FEATURE_COUNT = 3;
+	int ASSET_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Asset</em>' class.
@@ -1944,6 +1980,46 @@ public interface CSMNPackage extends EPackage {
 	int ASSET_TYPE = 39;
 
 	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.AssetFlightLevel <em>Asset Flight Level</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.AssetFlightLevel
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetFlightLevel()
+	 * @generated
+	 */
+	int ASSET_FLIGHT_LEVEL = 40;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.AssetCategory <em>Asset Category</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.AssetCategory
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetCategory()
+	 * @generated
+	 */
+	int ASSET_CATEGORY = 41;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.ProtectionGoal <em>Protection Goal</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.ProtectionGoal
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProtectionGoal()
+	 * @generated
+	 */
+	int PROTECTION_GOAL = 42;
+
+	/**
+	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.STRIDE <em>STRIDE</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see engineering.schumann.uml.profile.csmn.STRIDE
+	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSTRIDE()
+	 * @generated
+	 */
+	int STRIDE = 43;
+
+	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.EnergyType <em>Energy Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1951,7 +2027,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getEnergyType()
 	 * @generated
 	 */
-	int ENERGY_TYPE = 40;
+	int ENERGY_TYPE = 44;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceConnector <em>Interface Connector</em>}' enum.
@@ -1961,7 +2037,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceConnector()
 	 * @generated
 	 */
-	int INTERFACE_CONNECTOR = 41;
+	int INTERFACE_CONNECTOR = 45;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.InterfaceType <em>Interface Type</em>}' enum.
@@ -1971,7 +2047,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getInterfaceType()
 	 * @generated
 	 */
-	int INTERFACE_TYPE = 42;
+	int INTERFACE_TYPE = 46;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
@@ -1981,7 +2057,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialType()
 	 * @generated
 	 */
-	int MATERIAL_TYPE = 43;
+	int MATERIAL_TYPE = 47;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}' enum.
@@ -1991,7 +2067,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevel()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL = 44;
+	int IEC62443_SECURITY_LEVEL = 48;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443FoundationalRequirementType <em>Iec62443 Foundational Requirement Type</em>}' enum.
@@ -2001,7 +2077,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443FoundationalRequirementType()
 	 * @generated
 	 */
-	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 45;
+	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelType <em>Iec62443 Security Level Type</em>}' enum.
@@ -2011,7 +2087,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelType()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL_TYPE = 46;
+	int IEC62443_SECURITY_LEVEL_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}' enum.
@@ -2021,7 +2097,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getStorageType()
 	 * @generated
 	 */
-	int STORAGE_TYPE = 47;
+	int STORAGE_TYPE = 51;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}' enum.
@@ -2031,7 +2107,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFunctionalAccessLevel()
 	 * @generated
 	 */
-	int FUNCTIONAL_ACCESS_LEVEL = 48;
+	int FUNCTIONAL_ACCESS_LEVEL = 52;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MechanicalAccessLevel <em>Mechanical Access Level</em>}' enum.
@@ -2041,7 +2117,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMechanicalAccessLevel()
 	 * @generated
 	 */
-	int MECHANICAL_ACCESS_LEVEL = 49;
+	int MECHANICAL_ACCESS_LEVEL = 53;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.UsageType <em>Usage Type</em>}' enum.
@@ -2051,7 +2127,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageType()
 	 * @generated
 	 */
-	int USAGE_TYPE = 50;
+	int USAGE_TYPE = 54;
 
 
 	/**
@@ -2621,6 +2697,50 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAsset_AssetType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Asset#getFlightLevel <em>Flight Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Flight Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getFlightLevel()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EAttribute getAsset_FlightLevel();
+
+	/**
+	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.Asset#getAssetCategory <em>Asset Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Asset Category</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getAssetCategory()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EAttribute getAsset_AssetCategory();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.profile.csmn.Asset#getProtectionGoal <em>Protection Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Protection Goal</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getProtectionGoal()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EAttribute getAsset_ProtectionGoal();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.profile.csmn.Asset#getStride <em>Stride</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Stride</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getStride()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EAttribute getAsset_Stride();
 
 	/**
 	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement <em>Base Named Element</em>}'.
@@ -3522,6 +3642,46 @@ public interface CSMNPackage extends EPackage {
 	EEnum getAssetType();
 
 	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.AssetFlightLevel <em>Asset Flight Level</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Asset Flight Level</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AssetFlightLevel
+	 * @generated
+	 */
+	EEnum getAssetFlightLevel();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.AssetCategory <em>Asset Category</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Asset Category</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.AssetCategory
+	 * @generated
+	 */
+	EEnum getAssetCategory();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.ProtectionGoal <em>Protection Goal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Protection Goal</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.ProtectionGoal
+	 * @generated
+	 */
+	EEnum getProtectionGoal();
+
+	/**
+	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.STRIDE <em>STRIDE</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>STRIDE</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.STRIDE
+	 * @generated
+	 */
+	EEnum getSTRIDE();
+
+	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.EnergyType <em>Energy Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4107,6 +4267,38 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSET__ASSET_TYPE = eINSTANCE.getAsset_AssetType();
+
+		/**
+		 * The meta object literal for the '<em><b>Flight Level</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET__FLIGHT_LEVEL = eINSTANCE.getAsset_FlightLevel();
+
+		/**
+		 * The meta object literal for the '<em><b>Asset Category</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET__ASSET_CATEGORY = eINSTANCE.getAsset_AssetCategory();
+
+		/**
+		 * The meta object literal for the '<em><b>Protection Goal</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET__PROTECTION_GOAL = eINSTANCE.getAsset_ProtectionGoal();
+
+		/**
+		 * The meta object literal for the '<em><b>Stride</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ASSET__STRIDE = eINSTANCE.getAsset_Stride();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.
@@ -4829,6 +5021,46 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ASSET_TYPE = eINSTANCE.getAssetType();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.AssetFlightLevel <em>Asset Flight Level</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.AssetFlightLevel
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetFlightLevel()
+		 * @generated
+		 */
+		EEnum ASSET_FLIGHT_LEVEL = eINSTANCE.getAssetFlightLevel();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.AssetCategory <em>Asset Category</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.AssetCategory
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getAssetCategory()
+		 * @generated
+		 */
+		EEnum ASSET_CATEGORY = eINSTANCE.getAssetCategory();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.ProtectionGoal <em>Protection Goal</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.ProtectionGoal
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getProtectionGoal()
+		 * @generated
+		 */
+		EEnum PROTECTION_GOAL = eINSTANCE.getProtectionGoal();
+
+		/**
+		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.STRIDE <em>STRIDE</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see engineering.schumann.uml.profile.csmn.STRIDE
+		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getSTRIDE()
+		 * @generated
+		 */
+		EEnum STRIDE = eINSTANCE.getSTRIDE();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.EnergyType <em>Energy Type</em>}' enum.

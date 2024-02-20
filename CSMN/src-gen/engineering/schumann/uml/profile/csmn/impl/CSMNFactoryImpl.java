@@ -118,6 +118,14 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return createScopeConstraintTypeFromString(eDataType, initialValue);
 			case CSMNPackage.ASSET_TYPE:
 				return createAssetTypeFromString(eDataType, initialValue);
+			case CSMNPackage.ASSET_FLIGHT_LEVEL:
+				return createAssetFlightLevelFromString(eDataType, initialValue);
+			case CSMNPackage.ASSET_CATEGORY:
+				return createAssetCategoryFromString(eDataType, initialValue);
+			case CSMNPackage.PROTECTION_GOAL:
+				return createProtectionGoalFromString(eDataType, initialValue);
+			case CSMNPackage.STRIDE:
+				return createSTRIDEFromString(eDataType, initialValue);
 			case CSMNPackage.ENERGY_TYPE:
 				return createEnergyTypeFromString(eDataType, initialValue);
 			case CSMNPackage.INTERFACE_CONNECTOR:
@@ -171,6 +179,14 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 				return convertScopeConstraintTypeToString(eDataType, instanceValue);
 			case CSMNPackage.ASSET_TYPE:
 				return convertAssetTypeToString(eDataType, instanceValue);
+			case CSMNPackage.ASSET_FLIGHT_LEVEL:
+				return convertAssetFlightLevelToString(eDataType, instanceValue);
+			case CSMNPackage.ASSET_CATEGORY:
+				return convertAssetCategoryToString(eDataType, instanceValue);
+			case CSMNPackage.PROTECTION_GOAL:
+				return convertProtectionGoalToString(eDataType, instanceValue);
+			case CSMNPackage.STRIDE:
+				return convertSTRIDEToString(eDataType, instanceValue);
 			case CSMNPackage.ENERGY_TYPE:
 				return convertEnergyTypeToString(eDataType, instanceValue);
 			case CSMNPackage.INTERFACE_CONNECTOR:
@@ -705,6 +721,86 @@ public class CSMNFactoryImpl extends EFactoryImpl implements CSMNFactory {
 	 * @generated
 	 */
 	public String convertAssetTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssetFlightLevel createAssetFlightLevelFromString(EDataType eDataType, String initialValue) {
+		AssetFlightLevel result = AssetFlightLevel.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAssetFlightLevelToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AssetCategory createAssetCategoryFromString(EDataType eDataType, String initialValue) {
+		AssetCategory result = AssetCategory.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertAssetCategoryToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ProtectionGoal createProtectionGoalFromString(EDataType eDataType, String initialValue) {
+		ProtectionGoal result = ProtectionGoal.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertProtectionGoalToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public STRIDE createSTRIDEFromString(EDataType eDataType, String initialValue) {
+		STRIDE result = STRIDE.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertSTRIDEToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

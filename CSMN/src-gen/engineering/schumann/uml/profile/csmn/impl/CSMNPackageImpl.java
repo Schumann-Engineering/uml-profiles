@@ -4,6 +4,8 @@ package engineering.schumann.uml.profile.csmn.impl;
 
 import engineering.schumann.uml.profile.csmn.AccessCharacteristic;
 import engineering.schumann.uml.profile.csmn.Asset;
+import engineering.schumann.uml.profile.csmn.AssetCategory;
+import engineering.schumann.uml.profile.csmn.AssetFlightLevel;
 import engineering.schumann.uml.profile.csmn.AssetLibrary;
 import engineering.schumann.uml.profile.csmn.AssetType;
 import engineering.schumann.uml.profile.csmn.Bandwidth;
@@ -38,6 +40,7 @@ import engineering.schumann.uml.profile.csmn.MechanicalAccessLevel;
 import engineering.schumann.uml.profile.csmn.OsiCharacteristic;
 import engineering.schumann.uml.profile.csmn.Product;
 import engineering.schumann.uml.profile.csmn.ProductConstraint;
+import engineering.schumann.uml.profile.csmn.ProtectionGoal;
 import engineering.schumann.uml.profile.csmn.Scope;
 import engineering.schumann.uml.profile.csmn.ScopeConstraint;
 import engineering.schumann.uml.profile.csmn.ScopeConstraintType;
@@ -355,6 +358,34 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EEnum assetTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum assetFlightLevelEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum assetCategoryEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum protectionGoalEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum strideEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1026,6 +1057,46 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	@Override
 	public EAttribute getAsset_AssetType() {
 		return (EAttribute)assetEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAsset_FlightLevel() {
+		return (EAttribute)assetEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAsset_AssetCategory() {
+		return (EAttribute)assetEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAsset_ProtectionGoal() {
+		return (EAttribute)assetEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAsset_Stride() {
+		return (EAttribute)assetEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1874,6 +1945,46 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getAssetFlightLevel() {
+		return assetFlightLevelEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getAssetCategory() {
+		return assetCategoryEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getProtectionGoal() {
+		return protectionGoalEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getSTRIDE() {
+		return strideEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getEnergyType() {
 		return energyTypeEEnum;
 	}
@@ -2079,6 +2190,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEReference(assetEClass, ASSET__BASE_NAMED_ELEMENT);
 		createEAttribute(assetEClass, ASSET__ASSET_SPEC);
 		createEAttribute(assetEClass, ASSET__ASSET_TYPE);
+		createEAttribute(assetEClass, ASSET__FLIGHT_LEVEL);
+		createEAttribute(assetEClass, ASSET__ASSET_CATEGORY);
+		createEAttribute(assetEClass, ASSET__PROTECTION_GOAL);
+		createEAttribute(assetEClass, ASSET__STRIDE);
 
 		assetLibraryEClass = createEClass(ASSET_LIBRARY);
 		createEReference(assetLibraryEClass, ASSET_LIBRARY__BASE_PACKAGE);
@@ -2176,6 +2291,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		speedUnitOfMeasurementEEnum = createEEnum(SPEED_UNIT_OF_MEASUREMENT);
 		scopeConstraintTypeEEnum = createEEnum(SCOPE_CONSTRAINT_TYPE);
 		assetTypeEEnum = createEEnum(ASSET_TYPE);
+		assetFlightLevelEEnum = createEEnum(ASSET_FLIGHT_LEVEL);
+		assetCategoryEEnum = createEEnum(ASSET_CATEGORY);
+		protectionGoalEEnum = createEEnum(PROTECTION_GOAL);
+		strideEEnum = createEEnum(STRIDE);
 		energyTypeEEnum = createEEnum(ENERGY_TYPE);
 		interfaceConnectorEEnum = createEEnum(INTERFACE_CONNECTOR);
 		interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
@@ -2298,6 +2417,10 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getAsset_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAsset_AssetSpec(), ecorePackage.getEString(), "assetSpec", null, 0, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAsset_AssetType(), this.getAssetType(), "assetType", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAsset_FlightLevel(), this.getAssetFlightLevel(), "flightLevel", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAsset_AssetCategory(), this.getAssetCategory(), "assetCategory", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAsset_ProtectionGoal(), this.getProtectionGoal(), "protectionGoal", null, 0, -1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getAsset_Stride(), this.getSTRIDE(), "stride", null, 0, -1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assetLibraryEClass, AssetLibrary.class, "AssetLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssetLibrary_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2452,6 +2575,50 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(assetTypeEEnum, AssetType.MATERIAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.MECHANICAL);
 		addEEnumLiteral(assetTypeEEnum, AssetType.SIGNAL);
+
+		initEEnum(assetFlightLevelEEnum, AssetFlightLevel.class, "AssetFlightLevel");
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.UNSPECIFIED);
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.ENTERPRISE);
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.PRODUCT);
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.SYSTEM);
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.SUB_SYSTEM);
+		addEEnumLiteral(assetFlightLevelEEnum, AssetFlightLevel.COMPONENT);
+
+		initEEnum(assetCategoryEEnum, AssetCategory.class, "AssetCategory");
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.UNSPECIFIED);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.ACCESSORY);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.ARCHITECTURE_COMPONENT);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.COMPLIANCE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.DATA);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.ENVIRONMENT_AND_RESOURCE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.ESSENTIAL_PERFORMANCE_FEATURE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.FEATURE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.HARDWARE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.INFRASTRUCTURE_AND_NETWORK);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.INTELLECTUAL_PROPERTY);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.INTERFACE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.INTERFACES_AND_ACCESS);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.MANUFACTURING_PROCESS);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.PEOPLE);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.PRIMARY_OPERATING_FUNCTION);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.PROPERTY);
+		addEEnumLiteral(assetCategoryEEnum, AssetCategory.REPUTATION);
+
+		initEEnum(protectionGoalEEnum, ProtectionGoal.class, "ProtectionGoal");
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.CONFIDENTIALITY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.INTEGRITY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.AVAILABILITY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.USABILITY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.MONEY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.LEGAL);
+
+		initEEnum(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.class, "STRIDE");
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.SPOOFING);
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.TAMPERING);
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.REPUDIATION);
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.INFORMATION_DISCLOSURE);
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.DENIAL_OF_SERVICE);
+		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.ELEVATION_OF_PRIVILEGE);
 
 		initEEnum(energyTypeEEnum, EnergyType.class, "EnergyType");
 		addEEnumLiteral(energyTypeEEnum, EnergyType.UNSPECIFIED);
