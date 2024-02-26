@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Consumer;
 
+import org.apache.poi.ss.usermodel.Row.MissingCellPolicy;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
 
@@ -160,6 +161,16 @@ public class LibraryServiceImpl {
 	    			// store anything from the worksheet as key:value => property
 	    			for (int i=0; i<t.size(); i++)
 	    			{
+	    				// GUARD: header needs column, too
+	    				if (i >= metadata.header.size())
+	    				{
+	    					System.err.println(String.format(
+	    						"[SBOM] found entry without header column, %s",
+	    						t.get(0)
+	    					));
+	    					continue;
+	    				}
+	    				
 	    				var key = metadata.header.get(i);
 	    				var value = t.get(i);
 	    				
@@ -245,6 +256,16 @@ public class LibraryServiceImpl {
 	    			// store anything from the worksheet as key:value => property
 	    			for (int i=0; i<t.size(); i++)
 	    			{
+	    				// GUARD: header needs column, too
+	    				if (i >= metadata.header.size())
+	    				{
+	    					System.err.println(String.format(
+	    						"[SBOM] found entry without header column, %s",
+	    						t.get(0)
+	    					));
+	    					continue;
+	    				}
+	    				
 	    				var property = SBOMFactory.eINSTANCE.createProperty();
 	    				property.setKey(metadata.header.get(i));
 	    				property.setValue(t.get(i));
@@ -282,13 +303,14 @@ public class LibraryServiceImpl {
             /*
              * read row
              */
-            var row = rowIterator.next();
-            var cellIterator = row.cellIterator();
+            var row = rowIterator.next();            
             var values = new ArrayList<String>();
-
-            while (cellIterator.hasNext()) 
+            var lastCellNum = row.getLastCellNum();
+            
+            
+            for (int i=0; i<lastCellNum; i++)
             {
-            	var cell = cellIterator.next();
+            	var cell = row.getCell(i, MissingCellPolicy.RETURN_BLANK_AS_NULL);
             	
             	if (cell == null)
             	{

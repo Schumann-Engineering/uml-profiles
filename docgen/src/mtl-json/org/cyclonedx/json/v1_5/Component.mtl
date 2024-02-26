@@ -199,7 +199,12 @@ post(trim())
 	/]
 [if (properties->notEmpty())]
 	"properties": ['['/]
-		[for (properties) separator(',\n')]
+		[for (properties)]
+[if (not key.isNullOrEmpty() and not value.isNullOrEmpty())]
+[if (i > 0)]
+		,
+[/if]
+
 		{
 			"name": 	"[key
 							.replaceAll('\\*', '')
@@ -210,6 +215,7 @@ post(trim())
 							.replaceEachRepeatedly('\\', '\\\\')
 							/]"
 		}
+[/if]
 		[/for]
 	[']'/]
 [/if]
