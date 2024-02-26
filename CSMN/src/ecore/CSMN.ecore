@@ -262,11 +262,12 @@
   <eClassifiers xsi:type="ecore:EEnum" name="EnergyType">
     <eLiterals name="Unspecified"/>
     <eLiterals name="Force" value="1"/>
-    <eLiterals name="Kinetic" value="2"/>
-    <eLiterals name="Light" value="3"/>
-    <eLiterals name="Power" value="4"/>
-    <eLiterals name="Sound" value="5"/>
-    <eLiterals name="Vibration" value="6"/>
+    <eLiterals name="Heat" value="2"/>
+    <eLiterals name="Kinetic" value="3"/>
+    <eLiterals name="Light" value="4"/>
+    <eLiterals name="Power" value="5"/>
+    <eLiterals name="Sound" value="6"/>
+    <eLiterals name="Vibration" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OsiCharacteristic" eSuperTypes="#//FlowCharacteristic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="application" ordered="false"

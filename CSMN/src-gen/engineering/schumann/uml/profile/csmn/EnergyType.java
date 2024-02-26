@@ -39,6 +39,14 @@ public enum EnergyType implements Enumerator {
 	FORCE(1, "Force", "Force"),
 
 	/**
+	 * The '<em><b>Heat</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HEAT_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	HEAT(2, "Heat", "Heat"), /**
 	 * The '<em><b>Kinetic</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +54,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	KINETIC(2, "Kinetic", "Kinetic"),
+	KINETIC(3, "Kinetic", "Kinetic"),
 
 	/**
 	 * The '<em><b>Light</b></em>' literal object.
@@ -56,7 +64,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LIGHT(3, "Light", "Light"),
+	LIGHT(4, "Light", "Light"),
 
 	/**
 	 * The '<em><b>Power</b></em>' literal object.
@@ -66,7 +74,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POWER(4, "Power", "Power"),
+	POWER(5, "Power", "Power"),
 
 	/**
 	 * The '<em><b>Sound</b></em>' literal object.
@@ -76,7 +84,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SOUND(5, "Sound", "Sound"),
+	SOUND(6, "Sound", "Sound"),
 
 	/**
 	 * The '<em><b>Vibration</b></em>' literal object.
@@ -86,7 +94,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VIBRATION(6, "Vibration", "Vibration");
+	VIBRATION(7, "Vibration", "Vibration");
 
 	/**
 	 * The '<em><b>Unspecified</b></em>' literal value.
@@ -111,6 +119,17 @@ public enum EnergyType implements Enumerator {
 	public static final int FORCE_VALUE = 1;
 
 	/**
+	 * The '<em><b>Heat</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #HEAT
+	 * @model name="Heat"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int HEAT_VALUE = 2;
+
+	/**
 	 * The '<em><b>Kinetic</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,7 +138,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int KINETIC_VALUE = 2;
+	public static final int KINETIC_VALUE = 3;
 
 	/**
 	 * The '<em><b>Light</b></em>' literal value.
@@ -130,7 +149,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LIGHT_VALUE = 3;
+	public static final int LIGHT_VALUE = 4;
 
 	/**
 	 * The '<em><b>Power</b></em>' literal value.
@@ -141,7 +160,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POWER_VALUE = 4;
+	public static final int POWER_VALUE = 5;
 
 	/**
 	 * The '<em><b>Sound</b></em>' literal value.
@@ -152,7 +171,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SOUND_VALUE = 5;
+	public static final int SOUND_VALUE = 6;
 
 	/**
 	 * The '<em><b>Vibration</b></em>' literal value.
@@ -163,7 +182,7 @@ public enum EnergyType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VIBRATION_VALUE = 6;
+	public static final int VIBRATION_VALUE = 7;
 
 	/**
 	 * An array of all the '<em><b>Energy Type</b></em>' enumerators.
@@ -175,6 +194,7 @@ public enum EnergyType implements Enumerator {
 		new EnergyType[] {
 			UNSPECIFIED,
 			FORCE,
+			HEAT,
 			KINETIC,
 			LIGHT,
 			POWER,
@@ -238,6 +258,7 @@ public enum EnergyType implements Enumerator {
 		switch (value) {
 			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case FORCE_VALUE: return FORCE;
+			case HEAT_VALUE: return HEAT;
 			case KINETIC_VALUE: return KINETIC;
 			case LIGHT_VALUE: return LIGHT;
 			case POWER_VALUE: return POWER;

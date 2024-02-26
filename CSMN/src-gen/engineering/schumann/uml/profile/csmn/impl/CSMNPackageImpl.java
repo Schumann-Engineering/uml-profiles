@@ -2623,6 +2623,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEEnum(energyTypeEEnum, EnergyType.class, "EnergyType");
 		addEEnumLiteral(energyTypeEEnum, EnergyType.UNSPECIFIED);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.FORCE);
+		addEEnumLiteral(energyTypeEEnum, EnergyType.HEAT);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.KINETIC);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.LIGHT);
 		addEEnumLiteral(energyTypeEEnum, EnergyType.POWER);
