@@ -33,7 +33,12 @@ each file would need a new engine / run.
 	env(
 		key,
 		default,
-		Sequence(String){ _context.productName, _context.productModel, _context.softwareVersion }
+		Sequence(String){
+			_context.productName,
+			_context.productModel,
+			_context.softwareVersion,
+			DocGen_Document_ID_Prefix(_context)
+		}
 	)
 /]	
 
@@ -272,6 +277,9 @@ each file would need a new engine / run.
 	this 			: NamedElement,
 	_context		: Context
 ) : String =
+	let dummyUUID	: String = _context.templateUUID in
+	let dummyModel	: String = _context.product.model in
+
 	env2(
 		'ANNOTATION.Product.Model.' + _context.product.model + '.Document.FileName.' + _context.templateUUID,
 		env2(
@@ -305,6 +313,19 @@ each file would need a new engine / run.
 /]
 
 
+[query private DocGen_Document_ID_Prefix(
+	this			: NamedElement,
+	_context		: Context
+) : String =
+	let dummyModel : String = _context.product.model in
+
+	env(
+		'ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.prefix',
+		''
+	)
+/]
+
+
 [query private DocGen_File_FileName(
 	this 			: NamedElement,
 	_context		: Context
@@ -324,7 +345,11 @@ each file would need a new engine / run.
 	this 			: NamedElement,
 	_context		: Context
 ) : String = 
-	let dummyCall : String = _context.templateUUID in
+	let dummyTemplateUUID 	: String = _context.templateUUID in
+	let dummyModel			: String = _context.productModel in
+	let dummyModel2			: String = _context.product.model in
+	let dummyName			: String = _context.productName in
+	let dummyName2			: String = _context.product.productName in
 
 	DocGen_Directory_Name(_context)
 	+ PATH_SEPARATOR()
