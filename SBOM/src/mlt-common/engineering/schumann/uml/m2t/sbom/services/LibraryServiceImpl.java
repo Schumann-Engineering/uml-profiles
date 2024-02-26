@@ -164,10 +164,13 @@ public class LibraryServiceImpl {
 	    				// GUARD: header needs column, too
 	    				if (i >= metadata.header.size())
 	    				{
-	    					System.err.println(String.format(
-	    						"[SBOM] found entry without header column, %s",
-	    						t.get(0)
-	    					));
+	    					if (t.get(i) != null)
+		    					System.err.println(String.format(
+		    						"WARN: [SBOM] found entry without header column for '%s': #%d with value '%s'",
+		    						t.get(0),
+		    						i,
+		    						t.get(i)
+		    					));
 	    					continue;
 	    				}
 	    				
@@ -259,10 +262,13 @@ public class LibraryServiceImpl {
 	    				// GUARD: header needs column, too
 	    				if (i >= metadata.header.size())
 	    				{
-	    					System.err.println(String.format(
-	    						"[SBOM] found entry without header column, %s",
-	    						t.get(0)
-	    					));
+	    					if (t.get(i) != null)
+		    					System.err.println(String.format(
+			    						"WARN: [SBOM] found entry without header column for '%s': #%d with value '%s'",
+			    						t.get(0),
+			    						i,
+			    						t.get(i)
+			    					));
 	    					continue;
 	    				}
 	    				
