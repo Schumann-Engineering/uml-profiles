@@ -47,6 +47,7 @@ public class VariableServiceImpl {
 	{
 		m_ErrorList.add(errorMessage);
 		m_Properties.put(LAST_ERROR_KEY, errorMessage);
+		
 		System.out.println(String.format(
 				"DEBUG: [Env] an error was logged: %s",
 				errorMessage
@@ -102,12 +103,14 @@ public class VariableServiceImpl {
 		{
 			if (!key.startsWith("__"))
 			{
+				/*
 				System.out.println(String.format(
 					"DEBUG: [Variable] FOUND: '%s' is %s",
 					key,
 					m_Properties.getProperty(key)
 				));
 				System.out.flush();
+				*/
 			}
 				
 			result = m_Properties.getProperty(key);
@@ -122,12 +125,14 @@ public class VariableServiceImpl {
 		 */
 		if (result == null)
 		{
+			/*
 			if (!key.startsWith("__"))
 				System.out.println(String.format(
 						"DEBUG: [Variable] DEFAULT: '%s' is '%s'",
 						key,
 						_default
 					));
+			*/
 			
 			result = _default;
 		}
@@ -219,6 +224,7 @@ public class VariableServiceImpl {
 		if (key.trim() == "")
 			return;
 		
+		/*
 		if (!key.startsWith("__"))
 		{
 			System.out.println(String.format(
@@ -228,6 +234,8 @@ public class VariableServiceImpl {
 				));
 			System.out.flush();
 		}
+		*/
+		
 		m_Properties.setProperty(key, value);		
 	}
 	

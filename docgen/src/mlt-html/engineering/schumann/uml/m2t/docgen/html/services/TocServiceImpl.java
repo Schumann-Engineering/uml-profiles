@@ -87,12 +87,14 @@ public class TocServiceImpl {
 		// advance
 		m_LastEntry = newEntry;
 		
+		/*
 		System.out.println(String.format(
 				"DEBUG: [Toc] NEW: <h%d> %s",
 				newEntry.depth(),
 				newEntry.getDisplayText()
 			));
 		System.out.flush();
+		*/
 	}
 	
 	
@@ -100,8 +102,10 @@ public class TocServiceImpl {
 	{
 		m_TableOfContentsRoot = null;
 		m_LastEntry = null;
+		/*
 		System.out.println("DEBUG: [Toc] CLEAR");
 		System.out.flush();
+		*/
 	}
 	
 	

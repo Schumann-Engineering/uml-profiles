@@ -5,13 +5,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 import org.commonmark.ext.gfm.tables.TablesExtension;
 import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
 
-public class IncludeServiceImpl {	
-	public static String include(
+public class IncludeServiceImpl {
+	private HashMap<String, String> INCLUDE_CACHE = new HashMap<String, String>();
+	
+	
+	public String include(
 			String		name,
 			Object		pathsObj,
 			Object		extensionsObj
@@ -40,12 +44,19 @@ public class IncludeServiceImpl {
 		if (filename == null)
 			// === FAIL ===
 			return null;
+
+		
+		/* -----------
+		 * check cache
+		 * ----------- */
+		if (INCLUDE_CACHE.containsKey(filename))
+			return INCLUDE_CACHE.get(filename);
 		
 			
 		/* -----------
 		 * read file
 		 * ----------- */
-		System.out.println("INFO: including file '" + name + "' (found in '" + filename + "')");
+		// System.out.println("INFO: including file '" + name + "' (found in '" + filename + "')");
 		var result = Files.readString(Path.of(filename));
 
 		/* -----------
@@ -53,7 +64,7 @@ public class IncludeServiceImpl {
 		 * ----------- */
 		if (filename.endsWith(".md"))
 		{
-			System.out.println("INFO: rendering file '" + name + "' (found in '" + filename + "') as markdown");
+			// System.out.println("INFO: rendering file '" + name + "' (found in '" + filename + "') as markdown");
 			
 			var renderExtensions = Arrays.asList(TablesExtension.create());
 			
@@ -72,6 +83,13 @@ public class IncludeServiceImpl {
 			// beautify
 			result = result.replaceAll("<br>", "<br/>");
 		}
+		
+		
+		/* -----------
+		 * update cache
+		 * ----------- */
+		INCLUDE_CACHE.put(filename, result);
+		
 
 		// === SUCCESS ===
 		return result;
