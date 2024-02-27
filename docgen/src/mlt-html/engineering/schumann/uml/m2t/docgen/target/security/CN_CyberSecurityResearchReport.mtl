@@ -438,7 +438,9 @@
 			Provide Manufacturer Disclosure Statement for Medical Device Security (MDS2)
 		[html_NOTE_End() /]
 	[html_NO_PRINT_end() /]
-	
+
+	[protectedAreaSchema('Network security capabilities', _context) /]	
+
 	<p>
 		For a list of network security capabilities, see document
 	</p>
@@ -494,38 +496,7 @@
 		[html_EXAMPLE_End() /]
 	[html_NO_PRINT_end() /]
 
-	<p>
-		Off-the-shelf software is managed though Software Bill of Material (SBOM).
-	</p>
-
-	[html_NOTE_Start() /]
-		<p>
-			Not every development environment supports the automated creation of a SBOM.
-		</p>
-		<p>
-			In such a case, the SBOM is written by hand.
-		</p>
-		<p>
-			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
-		</p>
-	[html_NOTE_End() /]
-
-	<p>
-		<b>Applicable documents</b>
-	</p>
-
-	<p>
-		For a list of Off-the-shelf Software, see document
-	</p>
-
-	<ul>
-		<li>
-			[DocRef_Characteristics_Sbom() /]
-		</li>
-		<li>
-			[DocRef_Sbom_OTS() /]
-		</li>
-	</ul>
+	[protectedAreaSchema('Off-the-shelf Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -560,7 +531,7 @@
 		[html_NOTE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Patches', _context) /]
+	[protectedAreaSchema('Security Patches', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -598,7 +569,7 @@
 		[html_EXAMPLE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedArea('Security > Security Software', _context) /]
+	[protectedAreaSchema('Security Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -676,7 +647,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedAreaSchema('Verification and Validation', _context) /]	
+		[protectedAreaSchema('Verification and Validation Process', _context) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -747,31 +718,38 @@
 			</tbody>
 		</table>
 		[comment TOC_SubSection_end() /]
+[html_PAGE_end('maintenance plan') /]
 
+[html_PAGE_begin('Software Maintenance Plan') /]
 		[TOC_SubSection_begin('Software Maintenance Plan') /]
-			[protectedArea('Maintenance Plan > Software Maintenance Plan', _context) /]
+			[protectedAreaSchema('Software Maintenance Plan', _context) /]
 		[TOC_SubSection_end() /]
+[html_PAGE_end('Software Maintenance Plan') /]
 		
 
+[html_PAGE_begin('Notification Plan') /]
 		[TOC_SubSection_begin('Notification Plan') /]
 			[comment class A, B, C /]
-			[protectedArea('Maintenance Plan > Notification Plan', _context) /]
+			[protectedAreaSchema('Notification Plan', _context) /]
 		[TOC_SubSection_end() /]
+[html_PAGE_end('Notification Plan') /]
 
-		[TOC_SubSection_begin('Security Incident Handling') /]
+[html_PAGE_begin('Security Incident Handling Process') /]
+		[TOC_SubSection_begin('Security Incident Handling Process') /]
 [if (level = 'Low')]
 			<p>
 				Product has Software Security Level [level/]. No Security Incident Handling required.
 			</p>
 [else]
 			[comment class B, C /]
-			[protectedArea('Maintenance Plan > Security Incident Handling', _context) /]
+			[protectedAreaSchema('Security Incident Handling Process', _context) /]
 [/if]
 		[TOC_SubSection_end() /]
+[html_PAGE_end('Security Incident Handling Process') /]
 [/let]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
-[html_PAGE_end('implementation process') /]
+[comment html_PAGE_end('implementation process') /]
 [/template]
 
 
@@ -839,54 +817,57 @@
 		</tbody>
 	</table>
 	[comment TOC_Section_end() /]
+[html_PAGE_end('vulnerablity assessment') /]
 	
 
+[html_PAGE_begin('Vulnerability Management Plan') /]
 	[TOC_Section_begin('Vulnerability Management Plan') /]
-		[protectedArea('Vulnerability Assessment > Vulnerability Management Plan', _context) /]
-
-		[DocRef_Sbom_Vulnerability_Reporting() /]
-		[DocRef_Sbom_Vulnerability_Disclosure() /]
+		[protectedAreaSchema('Vulnerability Management Plan', _context) /]
 	[TOC_Section_end() /]
+[html_PAGE_end('Vulnerability Management Plan') /]
 
 	[comment Class A, B, C /]
+[html_PAGE_begin('List of Known Vulnerabilities') /]
 	[TOC_Section_begin('List of Known Vulnerabilities') /]
-		[protectedArea('Vulnerability Assessment > List of Known Vulnerabilities', _context) /]
+		[protectedAreaSchema('List of Known Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
+[html_PAGE_end('List of Known Vulnerabilities') /]
 
 	[comment Class A, B, C /]
+[html_PAGE_begin('List of Residual Vulnerabilities') /]
 	[TOC_Section_begin('List of Residual Vulnerabilities') /]
-		[protectedArea('Vulnerability Assessment > List of Residual Vulnerabilities', _context) /]
+		[protectedAreaSchema('List of Residual Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
+[html_PAGE_end('List of Residual Vulnerabilities') /]
 
 	[comment Class B, C /]
+[html_PAGE_begin('Security Self-Assessment Report') /]
 	[TOC_Section_begin('Security Self-Assessment Report') /]
 [if (level = 'Low')]
 		<p>
 			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
 		</p>
 [else]
-		[protectedArea('Vulnerability Assessment > Security Self-Assessment Report', _context) /]
-
-		<p><b>Applicable Documents</b></p>
-		<ul>
-			<li>[DocRef_MDS2() /]</li>
-		</ul>
+		[protectedAreaSchema('Security Self-Assessment Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
+[html_PAGE_end('Security Self-Assessment Report') /]
 
 	[comment Class C /]
+[html_PAGE_begin('Pentest Report') /]
 	[TOC_Section_begin('Pentest Report') /]
 [if (level <> 'High')]
 		<p>
 			Product has Software Security Level of [level /]. No Pentest required.
 		</p>
 [else]
-		[protectedArea('Vulnerability Assessment > Pentest Report', _context) /]
+		[protectedAreaSchema('Pentest Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
+[html_PAGE_end('Pentest Report') /]
 [/let]
 [TOC_Chapter_end() /]
-[html_PAGE_end('vulnerablity assessment') /]
+[comment html_PAGE_end('vulnerablity assessment') /]
 [/template]
 
 
@@ -961,15 +942,7 @@
 		[html_EXAMPLE_End() /]
 	[html_NO_PRINT_end() /]
 	
-	<p>
-		For a list of data assets, see documents:
-	</p>
-
-	<ul>
-		<li>
-			[DocRef_Characteristics_Asset('ASSETS which are Data Assets') /]
-		</li>
-	</ul>
+	[protectedAreaSchema('List of Assets > Data', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -994,16 +967,8 @@
 			</ul>
 		[html_EXAMPLE_End()/]
 	[html_NO_PRINT_end() /]
-	
-	<p>
-		For a list of data flows, see document
-	</p>
 
-	<ul>
-		<li>
-			[DocRef_Characteristics_Connection('Interface Connections') /]
-		</li>
-	</ul>
+	[protectedAreaSchema('List of Assets > Data Flow', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
