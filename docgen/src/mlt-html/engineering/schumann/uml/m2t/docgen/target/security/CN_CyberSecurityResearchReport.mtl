@@ -334,13 +334,6 @@
 [comment TOC_SubSection_begin('data architecture > 1-Description') /]
 	[protectedAreaSchema('Data Architecture', _context) /]
 
-	<p>
-		For a diagram showing the product and its interfaces as well as interaction with the environment, see document
-	</p>
-
-	<ul>
-		<li>[DocRef_Characteristics_Diagram() /]</li>
-	</ul>
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > 1-Description') /]
 
@@ -963,13 +956,9 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[for (product : Product | this.csmn_scope().product->csmn_filterInScope())]
-[this.TOC_SubSection_begin('Overview ' + product.productName + ' (model ' + product.model + ')') /]
-
+[this.TOC_SubSection_begin('Overview ' + _context.product.productName + ' (model ' + _context.product.model + ')') /]
 	[this.html_IMG_ProductArchitectureDiagram(_context) /]
-	
 [this.TOC_SubSection_end()/]
-[/for]
 [/template]
 
 
