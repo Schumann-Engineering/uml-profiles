@@ -63,6 +63,8 @@ public class PropertyServiceImpl {
 			String needle,
 			EList<Property> properties
 	) {
+		var cleanNeedle = RemoveAnnotationsFromPropertyName(needle);
+
 		for (var property : properties)
 		{
 			// match property
@@ -71,7 +73,9 @@ public class PropertyServiceImpl {
 				continue;
 			key = key.trim();
 			
-			if (!key.equalsIgnoreCase(needle))
+			var cleanKey = RemoveAnnotationsFromPropertyName(key);
+			
+			if (!cleanKey.equalsIgnoreCase(cleanNeedle))
 				continue;
 
 			// === SUCCESS ===
@@ -80,6 +84,20 @@ public class PropertyServiceImpl {
 
 		// === RESULT ===
 		return null;
+	}
+	
+	
+	public static String RemoveAnnotationsFromPropertyName(
+			String name
+	) {
+		if (name == null)
+			return name;
+		
+		return name
+				.replaceAll("\\*", "")
+				.replaceAll("\\(", "")
+				.replaceAll("\\)", "")
+				;
 	}
 	
 	
