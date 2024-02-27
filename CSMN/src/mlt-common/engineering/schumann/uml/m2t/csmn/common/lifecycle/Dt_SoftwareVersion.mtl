@@ -45,3 +45,14 @@
 		true
 	endif
 /]
+
+
+[query public csmn_shallGenerateSoftwareVersion(
+	this : String
+) : Boolean =
+	if (this <> null) then
+		this.isContainedInEnvironmentProperty('GENERATE_ONLY.Software.Version', true)
+	else
+		false
+	endif
+/]

@@ -18,3 +18,14 @@
 		true
 	endif
 /]
+
+
+[query public csmn_shallGenerateProductModel(
+	this : String
+) : Boolean =
+	if (this <> null) then
+		this.isContainedInEnvironmentProperty('GENERATE_ONLY.Product.Model', true)
+	else
+		false
+	endif
+/]
