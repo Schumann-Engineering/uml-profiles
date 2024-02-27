@@ -440,27 +440,6 @@
 	[html_NO_PRINT_end() /]
 
 	[protectedAreaSchema('Network security capabilities', _context) /]	
-
-	<p>
-		For a list of network security capabilities, see document
-	</p>
-
-	<ul>
-		<li>
-			[DocRef_Characteristics_MDS2() /]
-		</li>
-		<li>
-			[DocRef_MDS2() /]
-		</li>
-	</ul>
-
-	[html_TIP_Start() /]
-		<p>
-			MDS2 covers the following capabilities:
-		</p>
-		[protectedArea('MDS2 > Covered Capabilities', _context) /]
-	[html_TIP_End() /]
-
 [TOC_Section_end() /]
 [/template]
 
