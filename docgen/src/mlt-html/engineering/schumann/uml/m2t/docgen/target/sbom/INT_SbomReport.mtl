@@ -337,7 +337,15 @@ post(trim())]
 		The following table shows all components present for each software system. Details for each component will be provided in later sections.
 	</p>
 
-	[sbom.printAsTable(Set(ComponentType){ ComponentType::Device }) /]
+	[sbom.printAsTableExclude(Set(ComponentType){ ComponentType::Device }) /]
+[TOC_Section_end() /]
+
+[TOC_Section_begin('Runtime Environment') /]
+	<p>
+		The following table shows the runtime environment of the software.
+	</p>
+
+	[sbom.printAsTableSelect(Set(ComponentType){ ComponentType::Device, ComponentType::Container, ComponentType::Platform }) /]
 [TOC_Section_end() /]
 [/template]
 

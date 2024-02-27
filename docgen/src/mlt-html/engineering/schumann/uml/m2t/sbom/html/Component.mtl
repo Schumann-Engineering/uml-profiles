@@ -23,8 +23,16 @@
  * ============================================
  */]
 [template public printAsTable(
-	this 		: Set(Component),
-	ignoreList	: Set(ComponentType)
+	this 		: Set(Component)
+)
+post(trim())
+]
+[this->sortedBy(name)->printAsTable() /]
+[/template]
+
+
+[template public printAsTable(
+	this 		: OrderedSet(Component)
 )
 post(trim())
 ]
@@ -40,7 +48,7 @@ post(trim())
 	</thead>
 
 	<tbody>
-		[this.printAsTableRowHorizontal(ignoreList) /]
+		[this->printAsTableRowHorizontal() /]
 	</tbody>
 </table>
 [/template]
@@ -82,22 +90,19 @@ post(trim())
  * ============================================
  */]
 [template public printAsTableRowHorizontal(
-	this 		: Component,
-	ignoreList	: Set(ComponentType)
+	this 		: OrderedSet(Component)
 )
 post(trim())
 {
-	components			: OrderedSet(Component)	= this.ownedComponent->sortedBy(name);
-
-	vendorComponents	: OrderedSet(Component)	= components->select(isSOUP = false and ignoreList->excludes(type))->sortedBy(name);
-	otherComponents 	: OrderedSet(Component)	= components->select(isSOUP = true and ignoreList->excludes(type))->sortedBy(name);
-	runtimeEnvironment	: OrderedSet(Component) = components->select(type = ComponentType::Device or type = ComponentType::Container or type = ComponentType::Platform)->sortedBy(name);
+	runtimeTypes		: Set(ComponentType)	= Set(ComponentType) { ComponentType::Device, ComponentType::Container, ComponentType::Platform };
+	vendorComponents	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = false)->sortedBy(name);
+	otherComponents 	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = true )->sortedBy(name);
+	runtimeEnvironment	: OrderedSet(Component) = this->select(runtimeTypes->includes(type)                   )->sortedBy(name);
 }]
+[if (vendorComponents->size() > 0)]
 <tr>
 	<th colspan="5" style="text-align: center;">by [VENDOR_NAME() /]</th>
 </tr>
-[printAsTableRowHorizontal() /]
-[if (vendorComponents->size() > 0)]
 [vendorComponents.printAsTableRowHorizontal() /]
 [/if]
 [if (otherComponents->size() > 0)]

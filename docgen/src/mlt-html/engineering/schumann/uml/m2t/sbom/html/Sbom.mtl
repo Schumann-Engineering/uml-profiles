@@ -15,27 +15,23 @@
  * ============================================
  * ============================================
  */]
-[template public printAsTable(
+[template public printAsTableExclude(
 	this 		: Sbom,
 	ignoreList	: Set(ComponentType)
 )
 post(trim())
 ]
-<table class="table-5-columns">
-	<thead>
-		<tr>
-			<th>Component Name</th>
-			<th>CPE Part<br/>NIST IR 7695</th>
-			<th>Type<br/>CycloneDX v1.5</th>
-			<th>Version</th>
-			<th>Classification<br/>IEC 81001-1-5</th>
-		</tr>
-	</thead>
+[ownedComponent->select(ignoreList->excludes(type))->printAsTable() /]
+[/template]
 
-	<tbody>
-		[ownedComponent->sortedBy(name).printAsTableRowHorizontal(ignoreList) /]
-	</tbody>
-</table>
+
+[template public printAsTableSelect(
+	this 		: Sbom,
+	includeList	: Set(ComponentType)
+)
+post(trim())
+]
+[ownedComponent->select(includeList->includes(type))->printAsTable() /]
 [/template]
 
 
