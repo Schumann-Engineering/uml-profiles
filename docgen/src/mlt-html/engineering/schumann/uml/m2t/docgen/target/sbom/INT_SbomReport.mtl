@@ -347,7 +347,7 @@ post(trim())]
 		The following table shows the runtime environment of the software.
 	</p>
 
-	[comment sbom.printAsTableSelect(Set(ComponentType){ ComponentType::Device, ComponentType::Container, ComponentType::Platform }) /]
+	[sbom.printAsTableSelect(Set(ComponentType){ ComponentType::Device, ComponentType::Container, ComponentType::Platform }) /]
 [TOC_Section_end() /]
 [/template]
 

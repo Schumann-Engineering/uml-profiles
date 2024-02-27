@@ -21,7 +21,7 @@
 )
 post(trim())
 ]
-[ownedComponent->select(ignoreList->excludes(type))->printAsTable() /]
+[sbom_allComponents()->select(ignoreList->excludes(type))->printAsTable() /]
 [/template]
 
 
@@ -31,7 +31,7 @@ post(trim())
 )
 post(trim())
 ]
-[ownedComponent->select(includeList->includes(type))->printAsTable() /]
+[sbom_allComponents()->select(includeList->includes(type))->printAsTable() /]
 [/template]
 
 
