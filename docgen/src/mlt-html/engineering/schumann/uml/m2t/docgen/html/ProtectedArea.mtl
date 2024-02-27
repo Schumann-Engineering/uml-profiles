@@ -31,10 +31,11 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 	_context	: Context
 )
 post(trim())]
-[protectedArea(name + ' > 1-Description', _context)/]
-[protectedAreaOptional(name + ' > 2-Applicable Documents (QMS)', 				'Applicable Documents (QMS)',				'(none)', _context) /]
-[protectedAreaOptional(name + ' > 3-Applicable Documents (product model)', 		'Applicable Documents (product model)',		'(none)', _context) /]
-[protectedAreaOptional(name + ' > 4-Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)', _context) /]
+[protectedArea(        name + ' > Content', 																							_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (QMS)', 					'Applicable Documents (QMS)',				'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (product model)', 		'Applicable Documents (product model)',		'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /]
 [/template]
 
 
@@ -47,7 +48,7 @@ post(trim())]
 )
 post(trim())]
 [let content : String = protectedAreaOptional(name, _context)]
-[if (content <> null)]
+[if (content <> null and content.trim() <> '')]
 <p>
 	<b>[title/]</b>
 </p>
