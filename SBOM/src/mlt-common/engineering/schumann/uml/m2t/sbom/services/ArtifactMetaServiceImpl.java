@@ -14,12 +14,18 @@ public class ArtifactMetaServiceImpl {
 		for (var artifact : metadata.getArtifactMeta())
 		{
 			// try to match name against properties			
-			var namePropert = PropertyServiceImpl.FindProperty("name", artifact.getOwnedProperty(), element.getName());
-			if (namePropert == null)
-				namePropert = PropertyServiceImpl.FindProperty("alias", artifact.getOwnedProperty(), element.getName());
-			if (namePropert == null)
-				namePropert = PropertyServiceImpl.FindProperty("full name", artifact.getOwnedProperty(), element.getName());
-			if (namePropert == null)
+			var nameProperty = PropertyServiceImpl.FindProperty("id", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
+				nameProperty = PropertyServiceImpl.FindProperty("name", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
+				nameProperty = PropertyServiceImpl.FindProperty("alias", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
+				nameProperty = PropertyServiceImpl.FindProperty("full name", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
+				nameProperty = PropertyServiceImpl.FindProperty("device", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
+				nameProperty = PropertyServiceImpl.FindProperty("cpe", artifact.getOwnedProperty(), element.getName());
+			if (nameProperty == null)
 				continue;
 			// at least we have a partial match = candidate
 			result = artifact;
