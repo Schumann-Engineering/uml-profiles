@@ -37,10 +37,33 @@ each file would need a new engine / run.
 			_context.productName,
 			_context.productModel,
 			_context.softwareVersion,
-			DocGen_Document_ID_Prefix(_context)
+			DocGen_Document_ID_Prefix(_context),
+			DocGen_File_Part_Name(_context),
+			_context.documentTitle
 		}
 	)
-/]	
+/]
+
+
+[query protected env3(
+	this 			: NamedElement,
+	key				: String,
+	default			: String,
+	_context		: Context
+) : String = 
+	env(
+		key,
+		default,
+		Sequence(String){
+			_context.productName,
+			_context.productModel,
+			_context.softwareVersion,
+			DocGen_Document_ID_Prefix(_context),
+			'',
+			_context.documentTitle
+		}
+	)
+/]
 
 
 [query private DIRECTORY_NAME_SNIPPETS(
@@ -162,68 +185,103 @@ each file would need a new engine / run.
 	}
 /]
 
+
 [query public DIRECTORY_URI_SNIPPETS(
 	this 			: NamedElement,
 	_context		: Context
 ) : Sequence(String) =
-	Sequence(String)
-	{
-		DocGen_Directory_Name(_context)
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-	    + PATH_SEPARATOR()
-		+ DocGen_File_Part_Name(_context)
-		+ PATH_SEPARATOR(),
-
-		DocGen_Directory_Name(_context)
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-	    + PATH_SEPARATOR(),
-
-		DocGen_Directory_Name(_context)
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-	    + PATH_SEPARATOR(),
-
-		PATH_SEPARATOR()
-		+ _context.product.productName
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR()
-		+ DocGen_File_Part_Name(_context)
-		+ PATH_SEPARATOR(),
-
-		PATH_SEPARATOR()
-		+ _context.product.productName
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR()
-		+ DocGen_File_Part_Title(_context)
-		+ PATH_SEPARATOR(),
-
-		PATH_SEPARATOR()
-		+ _context.product.productName
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR(),
-
-		PATH_SEPARATOR()
-		+ _context.product.productName
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
-		+ PATH_SEPARATOR(),
-
-		DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR(),
-
-		DIRECTORY_NAME_SNIPPETS(_context)
-		+ PATH_SEPARATOR()
-		+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
-		+ PATH_SEPARATOR()
-	}
+	let pathString : String = env2(
+		'DocGen.Input.Directory.Snippets.List',
+		'',
+		_context
+	) in
+	
+	pathString
+	.replaceAll('\r', '')
+	.replaceAll('\n', '')
+	.tokenize(',')
 /]
+
+[comment]
+	[query public DIRECTORY_URI_SNIPPETS_OLD(
+		this 			: NamedElement,
+		_context		: Context
+	) : Sequence(String) =
+		Sequence(String)
+		{
+			DocGen_Directory_Name(_context)
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+		    + PATH_SEPARATOR()
+			+ DocGen_File_Part_Name(_context)
+			+ PATH_SEPARATOR(),
+	
+			DocGen_Directory_Name(_context)
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+		    + PATH_SEPARATOR(),
+	
+			DocGen_Directory_Name(_context)
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+		    + PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DocGen_File_Part_Name(_context)
+			+ PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DocGen_File_Part_Name_SwSpec(_context)
+			+ PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DocGen_File_Part_Name_ModelSpec(_context)
+			+ PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DocGen_File_Part_Title(_context)
+			+ PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR(),
+	
+			PATH_SEPARATOR()
+			+ _context.product.productName
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
+			+ PATH_SEPARATOR(),
+	
+			DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR(),
+	
+			DIRECTORY_NAME_SNIPPETS(_context)
+			+ PATH_SEPARATOR()
+			+ DIRECTORY_NAME_SNIPPETS_COMMON(_context)
+			+ PATH_SEPARATOR()
+		}
+	/]
+[/comment]
 
 
 [query public DIRECTORY_URI_IMAGES_INPUT(
@@ -280,9 +338,9 @@ each file would need a new engine / run.
 	let dummyUUID	: String = _context.templateUUID in
 	let dummyModel	: String = _context.product.model in
 
-	env2(
+	env3(
 		'ANNOTATION.Product.Model.' + _context.product.model + '.Document.FileName.' + _context.templateUUID,
-		env2(
+		env3(
 			_context.templateUUID + '.Output.FileName', 
 			this.name,
 			_context
