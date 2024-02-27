@@ -86,9 +86,9 @@ post(trim())
 post(trim())
 {
 	runtimeTypes		: Set(ComponentType)	= Set(ComponentType) { ComponentType::Device, ComponentType::Container, ComponentType::Platform };
-	vendorComponents	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = false)->sortedBy(name);
-	otherComponents 	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = true )->sortedBy(name);
-	runtimeEnvironment	: OrderedSet(Component) = this->select(runtimeTypes->includes(type)                   )->sortedBy(name);
+	vendorComponents	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = false)->sortedBy(name+':'+version);
+	otherComponents 	: OrderedSet(Component)	= this->select(runtimeTypes->excludes(type) and isSOUP = true )->sortedBy(name+':'+version);
+	runtimeEnvironment	: OrderedSet(Component) = this->select(runtimeTypes->includes(type)                   )->sortedBy(name+':'+version);
 }]
 [if (vendorComponents->size() > 0)]
 <tr>

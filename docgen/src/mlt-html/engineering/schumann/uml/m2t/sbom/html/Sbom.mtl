@@ -50,7 +50,7 @@ post(trim())
 										(ignoreList = null or ignoreList->excludes(type)) and
 										(soupSelect = null or isSOUP = soupSelect)
 									)
-									->sortedBy(name);
+									->sortedBy(name+':'+version);
 }]
 [if (components->notEmpty())]
 [for (components)]
