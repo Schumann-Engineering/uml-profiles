@@ -27,15 +27,6 @@
 )
 post(trim())
 ]
-[this->sortedBy(name)->printAsTable() /]
-[/template]
-
-
-[template public printAsTable(
-	this 		: OrderedSet(Component)
-)
-post(trim())
-]
 <table class="table-5-columns">
 	<thead>
 		<tr>
@@ -48,7 +39,7 @@ post(trim())
 	</thead>
 
 	<tbody>
-		[this->printAsTableRowHorizontal() /]
+		[this->sortedBy(name)->printAsTableRowHorizontal() /]
 	</tbody>
 </table>
 [/template]
