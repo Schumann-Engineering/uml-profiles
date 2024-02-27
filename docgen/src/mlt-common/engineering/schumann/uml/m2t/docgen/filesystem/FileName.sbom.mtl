@@ -15,7 +15,8 @@ extends engineering::schumann::uml::m2t::docgen::filesystem::FileName
 	this			: NamedElement,
 	_context		: Context
 ) : String =
-	env2('SBOM.Input.Directory',
+	env_withAllParams(
+		'SBOM.Input.Directory',
 		this.name + '-' + _context.productModel + '-' + _context.softwareVersion,
 		_context
 	)
