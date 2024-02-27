@@ -2,12 +2,13 @@ package engineering.schumann.uml.m2t.docgen.services;
 
 import engineering.schumann.uml.docgen.Context;
 import engineering.schumann.uml.docgen.DocGenFactory;
+import engineering.schumann.uml.profile.csmn.CSMNFactory;
 import engineering.schumann.uml.profile.csmn.Product;
 
 public class DocGenServiceImpl {
 	public Context createContext(
 		Object umlElement,
-		Product product,
+		Product origProduct,
 		String softwareVersion,
 		String documentTitle,
 		String templateUUID,
@@ -19,8 +20,19 @@ public class DocGenServiceImpl {
 		
 		// === BODY ===
 		result.setUmlElement(umlElement);
-		if (product != null)
+		if (origProduct != null)
 		{
+			// we have to create a copy of product. Otherwise, the ownership/containment relationship
+			// will be automatically changed by EMF
+			
+			var product = CSMNFactory.eINSTANCE.createProduct();
+			product.setModel(origProduct.getModel());
+			product.setPlatformType(origProduct.getPlatformType());
+			product.setProductName(origProduct.getProductName());
+			product.setUdiDi(origProduct.getUdiDi());
+			product.setUdiDiBase(origProduct.getUdiDiBase());
+			product.setVendorName(origProduct.getVendorName());
+			
 			result.setProduct(product);
 			result.setProductModel(product.getModel());
 			result.setProductName(product.getProductName());
