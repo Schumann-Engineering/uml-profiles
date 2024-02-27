@@ -14,7 +14,8 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 	devNull 		: NamedElement,
 	locator			: String,
 	_context		: Context
-)][protectedArea( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )/][/template]
+)][protectedArea( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )
+	.replacePlaceholder(_context)/][/template]
 
 
 
@@ -22,7 +23,8 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 	devNull 		: NamedElement,
 	locator			: String,
 	_context		: Context
-)][protectedAreaOptional( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )/][/template]
+)][protectedAreaOptional( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )
+	.replacePlaceholder(_context)/][/template]
 
 
 [template public protectedAreaSchema(
@@ -57,3 +59,19 @@ post(trim())]
 [/if]
 [/let]
 [/template]
+
+
+[query private replacePlaceholder(
+	this 		: String,
+	_context	: Context
+) : String =
+	this
+	.replaceAll('\\{product\\.name\\}',		_context.product.productName)
+	.replaceAll('\\{product\\.udi\\}',		_context.product.udiDi)
+	.replaceAll('\\{product\\.udiBase\\}',	_context.product.udiDiBase)
+	.replaceAll('\\{product\\.model\\}',		_context.product.model)
+	.replaceAll('\\{product\\.ID\\}', 		getProperty('ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.prefix'))
+	.replaceAll('\\{software\\.version\\}',	_context.softwareVersion)
+	.replaceAll('\\{template\\.UUID\\}',		_context.templateUUID)
+	.replaceAll('\\{template\\.version\\}',	_context.templateVersion)
+/]
