@@ -15,3 +15,44 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 	locator			: String,
 	_context		: Context
 )][protectedArea( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )/][/template]
+
+
+
+[template public protectedAreaOptional(
+	devNull 		: NamedElement,
+	locator			: String,
+	_context		: Context
+)][protectedAreaOptional( locator,  DIRECTORY_URI_SNIPPETS(_context), _context.templateUUID )/][/template]
+
+
+[template public protectedAreaSchema(
+	devNull		: NamedElement,
+	name		: String,
+	_context	: Context
+)
+post(trim())]
+[protectedArea(name + ' > 1-Description', _context)/]
+[protectedAreaOptional(name + ' > 2-Applicable Documents (QMS)', 				'Applicable Documents (QMS)',				'(none)', _context) /]
+[protectedAreaOptional(name + ' > 3-Applicable Documents (product model)', 		'Applicable Documents (product model)',		'(none)', _context) /]
+[protectedAreaOptional(name + ' > 4-Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)', _context) /]
+[/template]
+
+
+[template private protectedAreaOptional(
+	devNull		: NamedElement,
+	name		: String,
+	title		: String,
+	default		: String,
+	_context	: Context
+)
+post(trim())]
+[let content : String = protectedAreaOptional(name, _context)]
+[if (content <> null)]
+<p>
+	<b>[title/]</b>
+</p>
+
+[content /]
+[/if]
+[/let]
+[/template]

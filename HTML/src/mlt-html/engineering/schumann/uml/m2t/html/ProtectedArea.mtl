@@ -14,17 +14,36 @@
 	includePaths	: Sequence(String),
 	templateUUID	: String
 )
+post(trim())][protectedArea( name, includePaths, templateUUID, true ) /][/template]
+
+
+[template protected protectedAreaOptional(
+	devNull 		: OclAny,
+	name    		: String,
+	includePaths	: Sequence(String),
+	templateUUID	: String
+)
+post(trim())][protectedArea( name, includePaths, templateUUID, false ) /][/template]
+
+
+[template protected protectedArea(
+	devNull 		: OclAny,
+	name    		: String,
+	includePaths	: Sequence(String),
+	templateUUID	: String,
+	showError		: Boolean
+)
 post(trim())
 {
 	includeContent	: String = _protectedArea(name, includePaths);
 }]
-[if (includeContent = null)]
+[if (includeContent <> null)]
+[includeContent.trim() /]
+[elseif (showError)]
 [let errorMessage : String = 'Content for "' + name + '" does not exist (yet) <i>OR</i> could not be found.']
 [html_TBD(errorMessage) /]
 [env_addError(errorMessage, templateUUID) /]
 [/let]
-[else]
-[includeContent.trim() /]
 [/if]
 [/template]
 
