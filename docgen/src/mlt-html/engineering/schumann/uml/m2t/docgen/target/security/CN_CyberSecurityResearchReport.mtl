@@ -329,8 +329,8 @@
 		DESCRIPTION
 		....................
 	/]
-[comment TOC_SubSection_begin('data architecture > Description') /]
-	[protectedArea('Data Architecture > Description', _context) /]
+[comment TOC_SubSection_begin('data architecture > 1-Description') /]
+	[protectedAreaSchema('Data Architecture', _context) /]
 
 	<p>
 		For a diagram showing the product and its interfaces as well as interaction with the environment, see document
@@ -340,14 +340,14 @@
 		<li>[DocRef_Characteristics_Diagram() /]</li>
 	</ul>
 	[comment TOC_SubSection_end() /]
-[comment html_PAGE_end('data architecture > description') /]
+[comment html_PAGE_end('data architecture > 1-Description') /]
 
 	[comment
 		....................
 		DIAGRAM
 		....................
 	/]
-[comment html_PAGE_begin('data architecture > description') /]
+[comment html_PAGE_begin('data architecture > 1-Description') /]
 	[Diagram_SubSection_print(_context) /]
 [html_PAGE_end('data architecture > diagram') /]
 
@@ -633,7 +633,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Risk Management > Description', _context) /]
+		[protectedAreaSchema('Risk Management', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
@@ -652,7 +652,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Requirements Specification > Description', _context)/]
+		[protectedAreaSchema('Requirements Specification', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
@@ -676,7 +676,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Verification and Validation > Description', _context) /]	
+		[protectedAreaSchema('Verification and Validation', _context) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -695,7 +695,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_begin('Description') /]
-		[protectedArea('Traceability > Description', _context) /]
+		[protectedAreaSchema('Traceability', _context) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
@@ -908,7 +908,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_Section_begin('Conclusion') /]
-		[protectedArea('Conclusion > Conclusion', _context) /]
+		[protectedAreaSchema('Conclusion', _context) /]
 		[comment TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]
@@ -926,7 +926,7 @@
 )]
 [html_PAGE_begin('appendix')/]
 	[TOC_Chapter_begin('Appendix') /]
-		[protectedArea('Appendix', _context) /]
+		[protectedAreaSchema('Appendix', _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('appendix')/]
 [/template]
