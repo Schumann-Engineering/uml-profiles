@@ -205,7 +205,7 @@ post(trim())
 		[if (ownedComponent->notEmpty())]
 		<ul>
 		[for (ownedComponent->sortedBy(name))]
-			<li>[TOC_link(name, _toString()) /]</li>
+			<li>[TOC_link(name, _toHtmlAnchor()) /] (version [version /])</li>
 		[/for]
 		</ul>
 		[else]
@@ -220,10 +220,10 @@ post(trim())
 		[if (sbom_relationship()->notEmpty())]
 		<ul>
 		[for (sbom_relationshipOutgoing())]
-			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target._toHtmlAnchor()) /]</li>
+			<li><i>«[type.sbom_toString() /]»</i> [TOC_link(target.name, target._toHtmlAnchor()) /] (version [target.version /])</li>
 		[/for]
 		[for (sbom_relationshipIncoming())]
-			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source._toHtmlAnchor()) /]</li>
+			<li><i>«[type.sbom_invert().sbom_toString() /]»</i> [TOC_link(source.name, source._toHtmlAnchor()) /] (version [source.version /])</li>
 		[/for]
 		</ul>
 		[else]
