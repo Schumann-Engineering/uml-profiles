@@ -42,11 +42,7 @@
 											->select(csmn_isAsset() and csmn_asset().assetType = assetType)
 											->sortedBy(name);
 }]
-[if (assets->size() = 0)]
-<p>
-	None
-</p>
-[else]
+[if (assets <> null and assets->notEmpty())]
 <table class="table-2-columns">
 	<thead>
 		<tr>
@@ -61,6 +57,10 @@
 [/for]
 	</tbody>
 </table>
+[else]
+<p>
+	None
+</p>
 [/if]
 [/template]
 
