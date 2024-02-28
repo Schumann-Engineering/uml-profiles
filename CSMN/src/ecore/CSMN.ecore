@@ -343,24 +343,26 @@
     <eLiterals name="Cellular5G" value="9"/>
     <eLiterals name="Display" value="10"/>
     <eLiterals name="DisplaySmall" value="11"/>
-    <eLiterals name="Ethernet" value="12"/>
-    <eLiterals name="Hdmi" value="13"/>
-    <eLiterals name="Knob" value="14"/>
-    <eLiterals name="Nfc" value="15"/>
-    <eLiterals name="Optical" value="16"/>
-    <eLiterals name="Proprietary" value="17"/>
-    <eLiterals name="Power" value="18"/>
-    <eLiterals name="SdCard" value="19"/>
-    <eLiterals name="Serial" value="20"/>
-    <eLiterals name="Speaker" value="21"/>
-    <eLiterals name="Touch" value="22"/>
-    <eLiterals name="Usb" value="23"/>
-    <eLiterals name="UsbA" value="24"/>
-    <eLiterals name="UsbC" value="25"/>
-    <eLiterals name="UsbFlash" value="26"/>
-    <eLiterals name="WifiAccessPoint" value="27"/>
-    <eLiterals name="WifiClient" value="28"/>
-    <eLiterals name="Zigbee" value="29"/>
+    <eLiterals name="Electrical" value="12"/>
+    <eLiterals name="Ethernet" value="13"/>
+    <eLiterals name="Hdmi" value="14"/>
+    <eLiterals name="Knob" value="15"/>
+    <eLiterals name="Nfc" value="16"/>
+    <eLiterals name="Optical" value="17"/>
+    <eLiterals name="Proprietary" value="18"/>
+    <eLiterals name="Power" value="19"/>
+    <eLiterals name="SdCard" value="20"/>
+    <eLiterals name="Serial" value="21"/>
+    <eLiterals name="Speaker" value="22"/>
+    <eLiterals name="Touch" value="23"/>
+    <eLiterals name="Usb" value="24"/>
+    <eLiterals name="UsbA" value="25"/>
+    <eLiterals name="UsbC" value="26"/>
+    <eLiterals name="UsbFlash" value="27"/>
+    <eLiterals name="Water" value="28"/>
+    <eLiterals name="WifiAccessPoint" value="29"/>
+    <eLiterals name="WifiClient" value="30"/>
+    <eLiterals name="Zigbee" value="31"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BandwidthCharacteristic">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Port" ordered="false"
@@ -380,7 +382,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Dependency" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="materialType" ordered="false"
-        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherMaterialType" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

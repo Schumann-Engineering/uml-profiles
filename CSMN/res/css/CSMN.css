@@ -878,6 +878,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/monitor-small.svg';
 }
 
+/* === InterfaceType.Electrical === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Electrical"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/connector.svg';
+}
+
 /* === InterfaceType.Ethernet === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Ethernet"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/ethernet.svg';
@@ -951,6 +956,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 /* === InterfaceType.UsbFlash === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="UsbFlash"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-flash-drive.svg';
+}
+
+/* === InterfaceType.Water === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Water"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/water.svg';
 }
 
 /* === InterfaceType.WifiAccessPoint === */

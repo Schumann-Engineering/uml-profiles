@@ -68,7 +68,7 @@ public interface MaterialCharacteristic extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Material Type</em>' reference list.
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_MaterialType()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EList<DataType> getMaterialType();

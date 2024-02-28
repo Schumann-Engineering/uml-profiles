@@ -35,10 +35,12 @@
 	else if (this = InterfaceType::UsbA)			then 'non-network'
 	else if (this = InterfaceType::UsbC)			then 'non-network'
 	else if (this = InterfaceType::UsbFlash)		then 'storage'
+	else if (this = InterfaceType::Water)			then 'material'
 	else if (this = InterfaceType::WifiAccessPoint)	then 'network'
 	else if (this = InterfaceType::WifiClient)		then 'network'
 	else if (this = InterfaceType::Zigbee)			then 'network'
 	else '?'
+	endif
 	endif
 	endif
 	endif
