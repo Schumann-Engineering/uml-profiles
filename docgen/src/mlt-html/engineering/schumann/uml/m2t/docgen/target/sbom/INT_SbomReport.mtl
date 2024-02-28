@@ -127,7 +127,7 @@
 	[let content : String = productElement.generateDocumentContent(this, _context)]
 	[HTML_PAGE_ERRORS(_context)/]
 
-	[QM_PAGE_Signatory(_context) /]
+	[productElement.QM_PAGE_Signatory(_context) /]
 
 	[invoke(
 		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
