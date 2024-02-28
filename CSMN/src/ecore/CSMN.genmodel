@@ -417,7 +417,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference CSMN.ecore#//MaterialCharacteristic/base_Dependency"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EReference CSMN.ecore#//MaterialCharacteristic/materialType"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CSMN.ecore#//MaterialCharacteristic/otherMaterialType"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="CSMN.ecore#//Iec62443SecurityLevelCharacteristic">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

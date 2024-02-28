@@ -23,7 +23,6 @@ import org.eclipse.uml2.uml.Port;
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Port <em>Base Port</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic()
@@ -96,32 +95,6 @@ public interface MaterialCharacteristic extends EObject {
 	 * @generated
 	 */
 	DataType getMaterialType(String name, boolean ignoreCase, EClass eClass);
-
-	/**
-	 * Returns the value of the '<em><b>Other Material Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Other Material Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Other Material Type</em>' attribute.
-	 * @see #setOtherMaterialType(String)
-	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_OtherMaterialType()
-	 * @model ordered="false"
-	 * @generated
-	 */
-	String getOtherMaterialType();
-
-	/**
-	 * Sets the value of the '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Other Material Type</em>' attribute.
-	 * @see #getOtherMaterialType()
-	 * @generated
-	 */
-	void setOtherMaterialType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Base Dependency</b></em>' reference.

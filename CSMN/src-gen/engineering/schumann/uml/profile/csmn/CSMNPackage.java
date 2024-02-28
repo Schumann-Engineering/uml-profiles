@@ -1530,22 +1530,13 @@ public interface CSMNPackage extends EPackage {
 	int MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Other Material Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = 3;
-
-	/**
 	 * The number of structural features of the '<em>Material Characteristic</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_CHARACTERISTIC_FEATURE_COUNT = 4;
+	int MATERIAL_CHARACTERISTIC_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Material Characteristic</em>' class.
@@ -3164,17 +3155,6 @@ public interface CSMNPackage extends EPackage {
 	EReference getMaterialCharacteristic_MaterialType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Other Material Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType()
-	 * @see #getMaterialCharacteristic()
-	 * @generated
-	 */
-	EAttribute getMaterialCharacteristic_OtherMaterialType();
-
-	/**
 	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4617,14 +4597,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = eINSTANCE.getMaterialCharacteristic_MaterialType();
-
-		/**
-		 * The meta object literal for the '<em><b>Other Material Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = eINSTANCE.getMaterialCharacteristic_OtherMaterialType();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Dependency</b></em>' reference feature.

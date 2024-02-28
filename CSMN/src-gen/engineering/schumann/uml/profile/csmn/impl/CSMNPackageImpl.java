@@ -1497,16 +1497,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMaterialCharacteristic_OtherMaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getMaterialCharacteristic_Base_Dependency() {
 		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
@@ -2224,7 +2214,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_PORT);
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY);
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
-		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE);
 
 		iec62443SecurityLevelCharacteristicEClass = createEClass(IEC62443_SECURITY_LEVEL_CHARACTERISTIC);
 		createEReference(iec62443SecurityLevelCharacteristicEClass, IEC62443_SECURITY_LEVEL_CHARACTERISTIC__BASE_NAMED_ELEMENT);
@@ -2450,7 +2439,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEReference(getMaterialCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMaterialCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMaterialCharacteristic_MaterialType(), theUMLPackage.getDataType(), null, "materialType", null, 1, -1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMaterialCharacteristic_OtherMaterialType(), ecorePackage.getEString(), "otherMaterialType", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iec62443SecurityLevelCharacteristicEClass, Iec62443SecurityLevelCharacteristic.class, "Iec62443SecurityLevelCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIec62443SecurityLevelCharacteristic_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Iec62443SecurityLevelCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

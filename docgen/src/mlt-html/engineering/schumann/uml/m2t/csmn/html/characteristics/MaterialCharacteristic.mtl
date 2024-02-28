@@ -37,7 +37,7 @@ post(trim())
 [template public print(
 	this : MaterialCharacteristic
 )
-? (this.materialType->notEmpty() or (this.otherMaterialType <> null and this.otherMaterialType <> ''))
+? (this.materialType->notEmpty())
 post(trim())
 {
 	materialType	: Set(DataType)	= this.materialType->filter(DataType);

@@ -31,7 +31,6 @@ import org.eclipse.uml2.uml.Port;
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getBase_Port <em>Base Port</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getBase_Dependency <em>Base Dependency</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getMaterialType <em>Material Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getOtherMaterialType <em>Other Material Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,26 +65,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<DataType> materialType;
-
-	/**
-	 * The default value of the '{@link #getOtherMaterialType() <em>Other Material Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOtherMaterialType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OTHER_MATERIAL_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getOtherMaterialType() <em>Other Material Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOtherMaterialType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String otherMaterialType = OTHER_MATERIAL_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,29 +169,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
-	public String getOtherMaterialType() {
-		return otherMaterialType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOtherMaterialType(String newOtherMaterialType) {
-		String oldOtherMaterialType = otherMaterialType;
-		otherMaterialType = newOtherMaterialType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE, oldOtherMaterialType, otherMaterialType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Dependency getBase_Dependency() {
 		if (base_Dependency != null && base_Dependency.eIsProxy()) {
 			InternalEObject oldBase_Dependency = (InternalEObject)base_Dependency;
@@ -263,8 +219,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 				return basicGetBase_Dependency();
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				return getMaterialType();
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
-				return getOtherMaterialType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -288,9 +242,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 				getMaterialType().clear();
 				getMaterialType().addAll((Collection<? extends DataType>)newValue);
 				return;
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
-				setOtherMaterialType((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -312,9 +263,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				getMaterialType().clear();
 				return;
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
-				setOtherMaterialType(OTHER_MATERIAL_TYPE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -333,26 +281,8 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 				return base_Dependency != null;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				return materialType != null && !materialType.isEmpty();
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
-				return OTHER_MATERIAL_TYPE_EDEFAULT == null ? otherMaterialType != null : !OTHER_MATERIAL_TYPE_EDEFAULT.equals(otherMaterialType);
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (otherMaterialType: ");
-		result.append(otherMaterialType);
-		result.append(')');
-		return result.toString();
 	}
 
 } //MaterialCharacteristicImpl
