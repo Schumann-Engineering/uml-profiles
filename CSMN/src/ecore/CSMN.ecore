@@ -380,7 +380,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Dependency" ordered="false"
         eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Dependency"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="materialType" ordered="false"
-        lowerBound="1" upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherMaterialType" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>

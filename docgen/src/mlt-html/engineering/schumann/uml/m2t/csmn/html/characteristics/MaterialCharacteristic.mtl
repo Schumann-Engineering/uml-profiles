@@ -38,17 +38,20 @@ post(trim())
 	this : MaterialCharacteristic
 )
 ? (this.materialType->notEmpty() or (this.otherMaterialType <> null and this.otherMaterialType <> ''))
-post(trim())]
+post(trim())
+{
+	materialType	: Set(DataType)	= this.materialType->filter(DataType);
+}]
 [printCharacteristicTitle('Material properties') /]
 
 <ul>
 	<li>
 		<i>Type</i>:
-[if (this.materialType->size() = 1)]
-		[this.materialType.name /]
+[if (materialType->size() = 1)]
+		[materialType.name /]
 [else]
 		<ul>
-[for (this.materialType)]
+[for (materialType)]
 			<li>[name /]</li>
 [/for]
 		</ul>
