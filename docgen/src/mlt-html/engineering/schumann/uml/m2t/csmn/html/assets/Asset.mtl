@@ -11,6 +11,7 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::html::Html /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
 
 
 [template public printAssetsForInterfacesAsTable(
@@ -18,31 +19,40 @@
 	assetType  		: AssetType
 )
 {
-	dependencies   : OrderedSet(Dependency) = interfaces
+	connections		: Set(Dependency)		= interfaces
 											.csmn_allConnectionInvolved()
 											->flatten()
 											->select(csmn_isConnection())
+											->asSet();
+	dependencies	: OrderedSet(Dependency) = connections
 											->sortedBy(name)
 											->asOrderedSet();
-	connections    : Set(Connection) 		= dependencies
+	connections		: Set(Connection) 		= dependencies
 											->collect(csmn_connection())
 											->filter(Connection)
 											->asSet();
-	flowToClient   : Set(DataType)   		= connections
+	flowToClient	: Set(DataType)   		= connections
 											->collect(flowToClient)
 											->filter(DataType)
 											->asSet();
-	flowToSupplier : Set(DataType)   		= connections
+	flowToSupplier	: Set(DataType)   		= connections
 											->collect(flowToSupplier)
 											->filter(DataType)
 											->asSet();
-	assets         : OrderedSet(DataType)	= flowToSupplier
+	assets			: OrderedSet(DataType)	= flowToSupplier
 											->union(flowToClient)
 											->asSet()
 											->select(csmn_isAsset() and csmn_asset().assetType = assetType)
 											->sortedBy(name);
 }]
-[if (assets <> null and assets->notEmpty())]
+[if (assets->oclIsUndefined() or assets->oclIsInvalid())]
+[html_ANSI_DANGER_Start() /]
+<p>
+	Something is wrong with the model. See debug information below.<br/>
+	Most common error: name is empty
+</p>
+[html_ANSI_DANGER_End() /]
+[elseif (assets->notEmpty())]
 <table class="table-2-columns">
 	<thead>
 		<tr>

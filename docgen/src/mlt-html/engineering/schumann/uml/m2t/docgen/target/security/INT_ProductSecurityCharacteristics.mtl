@@ -709,6 +709,16 @@
 				[TOC_SubSubSection_begin('ASSETs which are Data Assets') /]
 				[printAssetsForInterfacesAsTable( interfaces, AssetType::Data )/]
 [html_PAGE_end('data assets')/]
+				
+				[comment
+					....................
+					disturbance
+					....................
+				/]
+[html_PAGE_begin('data assets')/]
+				[TOC_SubSubSection_begin('ASSETs which are a Disturbance') /]
+				[printAssetsForInterfacesAsTable( interfaces, AssetType::Disturbance )/]
+[html_PAGE_end('data assets')/]
 
 				[comment
 					....................

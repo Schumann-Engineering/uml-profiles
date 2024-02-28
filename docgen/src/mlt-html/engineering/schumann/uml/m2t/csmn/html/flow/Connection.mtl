@@ -12,26 +12,30 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::html::Table /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
 
 
 [template public printConnectionsForInterfacesAsTable(
-	interfaces : Set(Port),
+	interfaces 		: Set(Port),
 	startNewPage	: Boolean
 )
 post(trim())
 {
-	connections : OrderedSet(Dependency) = 	interfaces
+	connections	: OrderedSet(Dependency)	= interfaces
 											.csmn_allConnectionInvolved()
 											->flatten()
 											->select(csmn_isConnection())
 											->sortedBy(name)
 											->asOrderedSet();
 }]
-[if (connections->size() = 0)]
+[if (connections->oclIsUndefined() or connections->oclIsInvalid())]
+[html_ANSI_DANGER_Start() /]
 <p>
-	None
+	Something is wrong with the model. See debug information below.<br/>
+	Most common error: name is empty
 </p>
-[else]
+[html_ANSI_DANGER_End() /]
+[elseif (connections->notEmpty())]
 [for (connections)]
 <p>
 	<b>Connection "[name/]"</b>
@@ -46,6 +50,10 @@ post(trim())
 [/if]
 
 [/for]
+[else]
+<p>
+	None
+</p>
 [/if]
 [/template]
 
@@ -75,8 +83,16 @@ post(trim())
 									)
 									->csmn_filterInScope();
 	connection   : Connection     = this.csmn_connection();
-	supplierFlow : Set(DataType)  = connection.flowToSupplier->filter(DataType);
-	clientFlow   : Set(DataType)  = connection.flowToClient->filter(DataType);
+	supplierFlow : Set(DataType)  = if (connection <> null) then
+										connection.flowToSupplier->filter(DataType)
+									else
+										Set(DataType) {}
+									endif;
+	clientFlow   : Set(DataType)  = if (connection <> null) then
+										connection.flowToClient->filter(DataType)
+									else
+										Set(DataType) {}
+									endif;
 }]
 <table class="table-2-columns" style="width: 100%">
 [comment Supplier /]
