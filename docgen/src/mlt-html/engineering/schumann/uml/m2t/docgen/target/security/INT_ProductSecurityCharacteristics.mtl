@@ -267,7 +267,7 @@
 		/]
 [comment html_PAGE_begin('diagram')/]
 		[if (_context.product <> null)]
-		[this.TOC_Section_begin('Overview ' + _context.product.productName + ' (model ' + _context.product.model + ')') /]
+		[this.TOC_Section_begin('Overview ' + _context.product.productName + ' (PN ' + _context.product.model + ')') /]
 		
 			<p>
 				The following diagram shows a system architecture overview.

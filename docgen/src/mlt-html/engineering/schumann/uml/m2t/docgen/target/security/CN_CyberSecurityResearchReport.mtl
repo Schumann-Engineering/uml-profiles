@@ -956,7 +956,7 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[this.TOC_SubSection_begin('Overview ' + _context.product.productName + ' (model ' + _context.product.model + ')') /]
+[this.TOC_SubSection_begin('Overview ' + _context.product.productName + ' (PN ' + _context.product.model + ')') /]
 	[this.html_IMG_ProductArchitectureDiagram(_context) /]
 [this.TOC_SubSection_end()/]
 [/template]
