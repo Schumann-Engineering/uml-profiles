@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module InterfaceType(
+[module E_InterfaceType(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1'
 )]
@@ -20,6 +20,7 @@
 	else if (this = InterfaceType::Cellular5G)		then 'network'
 	else if (this = InterfaceType::Display)			then 'energy'
 	else if (this = InterfaceType::DisplaySmall)	then 'energy'
+	else if (this = InterfaceType::Electrical)		then 'non-network'
 	else if (this = InterfaceType::Ethernet)		then 'network'
 	else if (this = InterfaceType::Hdmi)			then 'energy'
 	else if (this = InterfaceType::Knob)			then 'energy'
@@ -40,6 +41,7 @@
 	else if (this = InterfaceType::WifiClient)		then 'network'
 	else if (this = InterfaceType::Zigbee)			then 'network'
 	else '?'
+	endif
 	endif
 	endif
 	endif

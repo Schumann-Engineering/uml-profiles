@@ -1021,11 +1021,9 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 }
 
 /* === InterfaceConnector.Luer === */
-/*
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Luer"] {
-	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/???.svg';
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/pipe-disconnected.svg';
 }
-*/
 
 /* === InterfaceConnector.None === */
 /* no icon */
