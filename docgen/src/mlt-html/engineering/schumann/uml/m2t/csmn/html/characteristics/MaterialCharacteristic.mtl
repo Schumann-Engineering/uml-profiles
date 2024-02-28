@@ -1,0 +1,58 @@
+[comment encoding = UTF-8 /]
+[module MaterialCharacteristic(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)
+extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
+]
+
+
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::MaterialCharacteristic /]
+
+
+[template public printMaterialCharacteristic(
+	this : Port
+) 
+? (this.csmn_hasMaterialCharacteristic())
+post(trim())
+{
+	characteristic : MaterialCharacteristic = this.csmn_materialCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public printMaterialCharacteristic(
+	this : Relationship
+) 
+? (this.csmn_hasMaterialCharacteristic())
+post(trim())
+{
+	characteristic : MaterialCharacteristic = this.csmn_materialCharacteristic();
+}]
+[characteristic.print() /]
+[/template]
+
+
+[template public print(
+	this : MaterialCharacteristic
+)
+? (this.materialType->notEmpty() or (this.otherMaterialType <> null and this.otherMaterialType <> ''))
+post(trim())]
+[printCharacteristicTitle('Material properties') /]
+
+<ul>
+	<li>
+		<i>Type</i>:
+[if (this.materialType->size() = 1)]
+		[this.materialType.name /]
+[else]
+		<ul>
+[for (this.materialType)]
+			<li>[name /]</li>
+[/for]
+		</ul>
+[/if]
+	</li>
+</ul>
+[/template]
