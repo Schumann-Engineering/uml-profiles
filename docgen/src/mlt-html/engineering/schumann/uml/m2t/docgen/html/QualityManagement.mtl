@@ -7,6 +7,7 @@
 
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [comment UML profile /]
 [comment ... common /]
 [import engineering::schumann::uml::m2t::common::Metadata /]
@@ -33,6 +34,7 @@
 
 
 [template public QM_PAGE_Header(
+	this		: NamedElement,
 	_context	: Context
 )]
 <header class="qm-header">
@@ -41,7 +43,7 @@
 			<th>Product</th>
 			<td>[_context.product.productName /]</td>
 			<th>Doc. ID</th>
-			<td>[getProperty('ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.' + _context.templateUUID ) /]</td>
+			<td>[DocGen_File_Part_ID(_context) /]</td>
 		</tr>
 		<tr>
 			<th>Model</th>
@@ -78,6 +80,7 @@
 
 
 [template public QM_PAGE_Signatory(
+	this		: NamedElement,
 	_context	: Context
 )]
 [html_PAGE_begin('signatory page')/]
