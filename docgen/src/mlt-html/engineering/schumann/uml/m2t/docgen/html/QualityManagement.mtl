@@ -49,7 +49,7 @@
 			<th>Model</th>
 			<td>[_context.product.model /]</td>
 			<th>Doc. Version</th>
-			<td>[_context.softwareVersion /]</td>
+			<td>[_context.softwareVersion /] rev[DocGen_File_Part_Revision(_context) /]</td>
 		</tr>
 		<tr>
 			<th>Doc Title</th>
