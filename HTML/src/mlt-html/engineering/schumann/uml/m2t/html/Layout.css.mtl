@@ -80,5 +80,8 @@ div.page-break {
 		width:				100% !important;
 		/*min-height:		28.7cm !important;*/
 	}
+
+	.breadcrumbs {
+		display:			none !important;
 }
 [/template]
