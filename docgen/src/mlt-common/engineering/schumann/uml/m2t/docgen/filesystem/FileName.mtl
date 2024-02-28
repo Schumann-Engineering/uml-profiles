@@ -30,6 +30,15 @@ each file would need a new engine / run.
 	default			: String,
 	_context		: Context
 ) : String = 
+	replaceAllPlaceholder(
+		env(
+			key,
+			default
+		),
+		_context
+	)
+/]
+[comment]
 	env(
 		key,
 		default,
@@ -42,7 +51,7 @@ each file would need a new engine / run.
 			_context.documentTitle
 		}
 	)
-/]
+[/comment]
 
 
 [query protected env_withSomeParams(
@@ -51,6 +60,15 @@ each file would need a new engine / run.
 	default			: String,
 	_context		: Context
 ) : String = 
+	replaceSomePlaceholder(
+		env(
+			key,
+			default
+		),
+		_context
+	)
+/]
+[comment]
 	env(
 		key,
 		default,
@@ -63,7 +81,7 @@ each file would need a new engine / run.
 			_context.documentTitle
 		}
 	)
-/]
+[/comment]
 
 
 [query private DIRECTORY_NAME_SNIPPETS(
@@ -369,6 +387,20 @@ each file would need a new engine / run.
 /]
 
 
+[query public DocGen_File_Part_Revision(
+	this			: NamedElement,
+	_context		: Context
+) : String =
+	env(
+		_context.templateUUID + '.Output.Revision',
+		env(
+			'ANNOTATION.Product.Model.' + _context.product.model + '.Document.Revision',
+			'00'
+		)
+	)
+/]
+
+
 [query private DocGen_File_Part_Title(
 	this 			: NamedElement,
 	_context		: Context
@@ -455,4 +487,57 @@ each file would need a new engine / run.
 	devNull	: OclAny
 ) : String = 
 	'.'
+/]
+
+
+[query private replaceAllSafe(
+	this			: String,
+	pattern			: String,
+	replacemenet	: String
+) : String =
+	if (replacemenet.oclIsInvalid() or replacemenet.oclIsUndefined() or replacemenet = null) then
+		this
+	else
+		this.replaceAll(pattern, replacemenet)
+	endif
+/]
+
+
+[query public replaceSomePlaceholder(
+	this		: NamedElement,
+	content		: String,
+	_context	: Context
+) : String =
+	let partialResult : String =
+		content
+		.replaceAllSafe('\\[document\\.title\\]',		_context.documentTitle)
+		.replaceAllSafe('\\[document\\.revision\\]',	DocGen_File_Part_Revision(_context))
+		.replaceAllSafe('\\[document\\.prefix\\]',		DocGen_Document_ID_Prefix(_context))
+	
+		.replaceAllSafe('\\[software\\.version\\]',		_context.softwareVersion)
+	
+		.replaceAllSafe('\\[template\\.UUID\\]',		_context.templateUUID)
+		.replaceAllSafe('\\[template\\.version\\]',		_context.templateVersion)
+	
+		.replaceAllSafe('\\[product\\.ID\\]', 			getProperty('ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.prefix'))
+	in
+	if (_context.product <> null) then
+		partialResult
+		.replaceAllSafe('\\[product\\.name\\]',			_context.product.productName)
+		.replaceAllSafe('\\[product\\.udi\\]',			_context.product.udiDi)
+		.replaceAllSafe('\\[product\\.udiBase\\]',		_context.product.udiDiBase)
+		.replaceAllSafe('\\[product\\.model\\]',		_context.product.model)
+	else
+		partialResult
+	endif
+/]
+
+
+[query public replaceAllPlaceholder(
+	this		: NamedElement,
+	content		: String,
+	_context	: Context
+) : String =
+	replaceSomePlaceholder(content, _context)
+	.replaceAllSafe('\\[document\\.ID\\]',			DocGen_File_Part_ID(_context))
 /]
