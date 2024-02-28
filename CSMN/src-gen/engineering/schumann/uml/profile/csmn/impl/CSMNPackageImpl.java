@@ -35,7 +35,6 @@ import engineering.schumann.uml.profile.csmn.InterfaceCharacteristic;
 import engineering.schumann.uml.profile.csmn.InterfaceConnector;
 import engineering.schumann.uml.profile.csmn.InterfaceType;
 import engineering.schumann.uml.profile.csmn.MaterialCharacteristic;
-import engineering.schumann.uml.profile.csmn.MaterialType;
 import engineering.schumann.uml.profile.csmn.MechanicalAccessLevel;
 import engineering.schumann.uml.profile.csmn.OsiCharacteristic;
 import engineering.schumann.uml.profile.csmn.Product;
@@ -407,13 +406,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	private EEnum interfaceTypeEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum materialTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1495,8 +1487,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMaterialCharacteristic_MaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(1);
+	public EReference getMaterialCharacteristic_MaterialType() {
+		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1506,7 +1498,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 */
 	@Override
 	public EAttribute getMaterialCharacteristic_OtherMaterialType() {
-		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)materialCharacteristicEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1516,7 +1508,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 */
 	@Override
 	public EReference getMaterialCharacteristic_Base_Dependency() {
-		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(3);
+		return (EReference)materialCharacteristicEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2015,16 +2007,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getMaterialType() {
-		return materialTypeEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getIec62443SecurityLevel() {
 		return iec62443SecurityLevelEEnum;
 	}
@@ -2240,9 +2222,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		materialCharacteristicEClass = createEClass(MATERIAL_CHARACTERISTIC);
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_PORT);
-		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
-		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE);
 		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY);
+		createEReference(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
+		createEAttribute(materialCharacteristicEClass, MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE);
 
 		iec62443SecurityLevelCharacteristicEClass = createEClass(IEC62443_SECURITY_LEVEL_CHARACTERISTIC);
 		createEReference(iec62443SecurityLevelCharacteristicEClass, IEC62443_SECURITY_LEVEL_CHARACTERISTIC__BASE_NAMED_ELEMENT);
@@ -2298,7 +2280,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		energyTypeEEnum = createEEnum(ENERGY_TYPE);
 		interfaceConnectorEEnum = createEEnum(INTERFACE_CONNECTOR);
 		interfaceTypeEEnum = createEEnum(INTERFACE_TYPE);
-		materialTypeEEnum = createEEnum(MATERIAL_TYPE);
 		iec62443SecurityLevelEEnum = createEEnum(IEC62443_SECURITY_LEVEL);
 		iec62443FoundationalRequirementTypeEEnum = createEEnum(IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE);
 		iec62443SecurityLevelTypeEEnum = createEEnum(IEC62443_SECURITY_LEVEL_TYPE);
@@ -2467,9 +2448,9 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		initEClass(materialCharacteristicEClass, MaterialCharacteristic.class, "MaterialCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMaterialCharacteristic_Base_Port(), theUMLPackage.getPort(), null, "base_Port", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMaterialCharacteristic_MaterialType(), this.getMaterialType(), "materialType", "Unspecified", 1, -1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getMaterialCharacteristic_OtherMaterialType(), ecorePackage.getEString(), "otherMaterialType", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getMaterialCharacteristic_Base_Dependency(), theUMLPackage.getDependency(), null, "base_Dependency", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMaterialCharacteristic_MaterialType(), theUMLPackage.getDataType(), null, "materialType", null, 1, -1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getMaterialCharacteristic_OtherMaterialType(), ecorePackage.getEString(), "otherMaterialType", null, 0, 1, MaterialCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iec62443SecurityLevelCharacteristicEClass, Iec62443SecurityLevelCharacteristic.class, "Iec62443SecurityLevelCharacteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIec62443SecurityLevelCharacteristic_Base_NamedElement(), theUMLPackage.getNamedElement(), null, "base_NamedElement", null, 0, 1, Iec62443SecurityLevelCharacteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2680,14 +2661,6 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_ACCESS_POINT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_CLIENT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ZIGBEE);
-
-		initEEnum(materialTypeEEnum, MaterialType.class, "MaterialType");
-		addEEnumLiteral(materialTypeEEnum, MaterialType.UNSPECIFIED);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR_HUMIDITY);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.AIR_PRESSURE);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.DRUGS);
-		addEEnumLiteral(materialTypeEEnum, MaterialType.OTHER);
 
 		initEEnum(iec62443SecurityLevelEEnum, Iec62443SecurityLevel.class, "Iec62443SecurityLevel");
 		addEEnumLiteral(iec62443SecurityLevelEEnum, Iec62443SecurityLevel.UNKNOWN);

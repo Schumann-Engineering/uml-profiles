@@ -1512,13 +1512,22 @@ public interface CSMNPackage extends EPackage {
 	int MATERIAL_CHARACTERISTIC__BASE_PORT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Material Type</b></em>' attribute list.
+	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = 1;
+	int MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Material Type</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Other Material Type</b></em>' attribute.
@@ -1527,16 +1536,7 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Base Dependency</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY = 3;
+	int MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Material Characteristic</em>' class.
@@ -2050,16 +2050,6 @@ public interface CSMNPackage extends EPackage {
 	int INTERFACE_TYPE = 46;
 
 	/**
-	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see engineering.schumann.uml.profile.csmn.MaterialType
-	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialType()
-	 * @generated
-	 */
-	int MATERIAL_TYPE = 47;
-
-	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2067,7 +2057,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevel()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL = 48;
+	int IEC62443_SECURITY_LEVEL = 47;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443FoundationalRequirementType <em>Iec62443 Foundational Requirement Type</em>}' enum.
@@ -2077,7 +2067,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443FoundationalRequirementType()
 	 * @generated
 	 */
-	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 49;
+	int IEC62443_FOUNDATIONAL_REQUIREMENT_TYPE = 48;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevelType <em>Iec62443 Security Level Type</em>}' enum.
@@ -2087,7 +2077,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getIec62443SecurityLevelType()
 	 * @generated
 	 */
-	int IEC62443_SECURITY_LEVEL_TYPE = 50;
+	int IEC62443_SECURITY_LEVEL_TYPE = 49;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.StorageType <em>Storage Type</em>}' enum.
@@ -2097,7 +2087,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getStorageType()
 	 * @generated
 	 */
-	int STORAGE_TYPE = 51;
+	int STORAGE_TYPE = 50;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.FunctionalAccessLevel <em>Functional Access Level</em>}' enum.
@@ -2107,7 +2097,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getFunctionalAccessLevel()
 	 * @generated
 	 */
-	int FUNCTIONAL_ACCESS_LEVEL = 52;
+	int FUNCTIONAL_ACCESS_LEVEL = 51;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.MechanicalAccessLevel <em>Mechanical Access Level</em>}' enum.
@@ -2117,7 +2107,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMechanicalAccessLevel()
 	 * @generated
 	 */
-	int MECHANICAL_ACCESS_LEVEL = 53;
+	int MECHANICAL_ACCESS_LEVEL = 52;
 
 	/**
 	 * The meta object id for the '{@link engineering.schumann.uml.profile.csmn.UsageType <em>Usage Type</em>}' enum.
@@ -2127,7 +2117,7 @@ public interface CSMNPackage extends EPackage {
 	 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getUsageType()
 	 * @generated
 	 */
-	int USAGE_TYPE = 54;
+	int USAGE_TYPE = 53;
 
 
 	/**
@@ -3163,15 +3153,15 @@ public interface CSMNPackage extends EPackage {
 	EReference getMaterialCharacteristic_Base_Port();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}'.
+	 * Returns the meta object for the reference list '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Material Type</em>'.
+	 * @return the meta object for the reference list '<em>Material Type</em>'.
 	 * @see engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType()
 	 * @see #getMaterialCharacteristic()
 	 * @generated
 	 */
-	EAttribute getMaterialCharacteristic_MaterialType();
+	EReference getMaterialCharacteristic_MaterialType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}'.
@@ -3710,16 +3700,6 @@ public interface CSMNPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getInterfaceType();
-
-	/**
-	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Material Type</em>'.
-	 * @see engineering.schumann.uml.profile.csmn.MaterialType
-	 * @generated
-	 */
-	EEnum getMaterialType();
 
 	/**
 	 * Returns the meta object for enum '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}'.
@@ -4631,12 +4611,12 @@ public interface CSMNPackage extends EPackage {
 		EReference MATERIAL_CHARACTERISTIC__BASE_PORT = eINSTANCE.getMaterialCharacteristic_Base_Port();
 
 		/**
-		 * The meta object literal for the '<em><b>Material Type</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Material Type</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = eINSTANCE.getMaterialCharacteristic_MaterialType();
+		EReference MATERIAL_CHARACTERISTIC__MATERIAL_TYPE = eINSTANCE.getMaterialCharacteristic_MaterialType();
 
 		/**
 		 * The meta object literal for the '<em><b>Other Material Type</b></em>' attribute feature.
@@ -5091,16 +5071,6 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum INTERFACE_TYPE = eINSTANCE.getInterfaceType();
-
-		/**
-		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.MaterialType <em>Material Type</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see engineering.schumann.uml.profile.csmn.MaterialType
-		 * @see engineering.schumann.uml.profile.csmn.impl.CSMNPackageImpl#getMaterialType()
-		 * @generated
-		 */
-		EEnum MATERIAL_TYPE = eINSTANCE.getMaterialType();
 
 		/**
 		 * The meta object literal for the '{@link engineering.schumann.uml.profile.csmn.Iec62443SecurityLevel <em>Iec62443 Security Level</em>}' enum.

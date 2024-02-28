@@ -4,8 +4,6 @@ package engineering.schumann.uml.profile.csmn.impl;
 
 import engineering.schumann.uml.profile.csmn.CSMNPackage;
 import engineering.schumann.uml.profile.csmn.MaterialCharacteristic;
-import engineering.schumann.uml.profile.csmn.MaterialType;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,9 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
-
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Port;
 
@@ -32,9 +29,9 @@ import org.eclipse.uml2.uml.Port;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getBase_Dependency <em>Base Dependency</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getMaterialType <em>Material Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getOtherMaterialType <em>Other Material Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.impl.MaterialCharacteristicImpl#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  *
  * @generated
@@ -51,14 +48,24 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 	protected Port base_Port;
 
 	/**
-	 * The cached value of the '{@link #getMaterialType() <em>Material Type</em>}' attribute list.
+	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBase_Dependency()
+	 * @generated
+	 * @ordered
+	 */
+	protected Dependency base_Dependency;
+
+	/**
+	 * The cached value of the '{@link #getMaterialType() <em>Material Type</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getMaterialType()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<MaterialType> materialType;
+	protected EList<DataType> materialType;
 
 	/**
 	 * The default value of the '{@link #getOtherMaterialType() <em>Other Material Type</em>}' attribute.
@@ -79,16 +86,6 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected String otherMaterialType = OTHER_MATERIAL_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getBase_Dependency() <em>Base Dependency</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBase_Dependency()
-	 * @generated
-	 * @ordered
-	 */
-	protected Dependency base_Dependency;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -155,11 +152,36 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	@Override
-	public EList<MaterialType> getMaterialType() {
+	public EList<DataType> getMaterialType() {
 		if (materialType == null) {
-			materialType = new EDataTypeUniqueEList<MaterialType>(MaterialType.class, this, CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
+			materialType = new EObjectResolvingEList<DataType>(DataType.class, this, CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE);
 		}
 		return materialType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType getMaterialType(String name) {
+		return getMaterialType(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType getMaterialType(String name, boolean ignoreCase, EClass eClass) {
+		materialTypeLoop: for (DataType materialType : getMaterialType()) {
+			if (eClass != null && !eClass.isInstance(materialType))
+				continue materialTypeLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(materialType.getName()) : name.equals(materialType.getName())))
+				continue materialTypeLoop;
+			return materialType;
+		}
+		return null;
 	}
 
 	/**
@@ -236,13 +258,13 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_PORT:
 				if (resolve) return getBase_Port();
 				return basicGetBase_Port();
+			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
+				if (resolve) return getBase_Dependency();
+				return basicGetBase_Dependency();
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				return getMaterialType();
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
 				return getOtherMaterialType();
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
-				if (resolve) return getBase_Dependency();
-				return basicGetBase_Dependency();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -259,15 +281,15 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_PORT:
 				setBase_Port((Port)newValue);
 				return;
+			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
+				setBase_Dependency((Dependency)newValue);
+				return;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				getMaterialType().clear();
-				getMaterialType().addAll((Collection<? extends MaterialType>)newValue);
+				getMaterialType().addAll((Collection<? extends DataType>)newValue);
 				return;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
 				setOtherMaterialType((String)newValue);
-				return;
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
-				setBase_Dependency((Dependency)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -284,14 +306,14 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_PORT:
 				setBase_Port((Port)null);
 				return;
+			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
+				setBase_Dependency((Dependency)null);
+				return;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				getMaterialType().clear();
 				return;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
 				setOtherMaterialType(OTHER_MATERIAL_TYPE_EDEFAULT);
-				return;
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
-				setBase_Dependency((Dependency)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -307,12 +329,12 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_PORT:
 				return base_Port != null;
+			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
+				return base_Dependency != null;
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__MATERIAL_TYPE:
 				return materialType != null && !materialType.isEmpty();
 			case CSMNPackage.MATERIAL_CHARACTERISTIC__OTHER_MATERIAL_TYPE:
 				return OTHER_MATERIAL_TYPE_EDEFAULT == null ? otherMaterialType != null : !OTHER_MATERIAL_TYPE_EDEFAULT.equals(otherMaterialType);
-			case CSMNPackage.MATERIAL_CHARACTERISTIC__BASE_DEPENDENCY:
-				return base_Dependency != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -327,9 +349,7 @@ public class MaterialCharacteristicImpl extends MinimalEObjectImpl.Container imp
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (materialType: ");
-		result.append(materialType);
-		result.append(", otherMaterialType: ");
+		result.append(" (otherMaterialType: ");
 		result.append(otherMaterialType);
 		result.append(')');
 		return result.toString();

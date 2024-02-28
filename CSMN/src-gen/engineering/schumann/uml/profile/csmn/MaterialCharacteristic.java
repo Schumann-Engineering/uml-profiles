@@ -4,8 +4,10 @@ package engineering.schumann.uml.profile.csmn;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
+import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Dependency;
 import org.eclipse.uml2.uml.Port;
 
@@ -19,9 +21,9 @@ import org.eclipse.uml2.uml.Port;
  * </p>
  * <ul>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Port <em>Base Port</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getMaterialType <em>Material Type</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getOtherMaterialType <em>Other Material Type</em>}</li>
- *   <li>{@link engineering.schumann.uml.profile.csmn.MaterialCharacteristic#getBase_Dependency <em>Base Dependency</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic()
@@ -56,22 +58,44 @@ public interface MaterialCharacteristic extends EObject {
 	void setBase_Port(Port value);
 
 	/**
-	 * Returns the value of the '<em><b>Material Type</b></em>' attribute list.
-	 * The list contents are of type {@link engineering.schumann.uml.profile.csmn.MaterialType}.
-	 * The literals are from the enumeration {@link engineering.schumann.uml.profile.csmn.MaterialType}.
+	 * Returns the value of the '<em><b>Material Type</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Material Type</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Material Type</em>' attribute list.
-	 * @see engineering.schumann.uml.profile.csmn.MaterialType
+	 * @return the value of the '<em>Material Type</em>' reference list.
 	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getMaterialCharacteristic_MaterialType()
-	 * @model default="Unspecified" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	EList<MaterialType> getMaterialType();
+	EList<DataType> getMaterialType();
+
+	/**
+	 * Retrieves the first {@link org.eclipse.uml2.uml.DataType} with the specified '<em><b>Name</b></em>' from the '<em><b>Material Type</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.DataType} to retrieve, or <code>null</code>.
+	 * @return The first {@link org.eclipse.uml2.uml.DataType} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getMaterialType()
+	 * @generated
+	 */
+	DataType getMaterialType(String name);
+
+	/**
+	 * Retrieves the first {@link org.eclipse.uml2.uml.DataType} with the specified '<em><b>Name</b></em>' from the '<em><b>Material Type</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link org.eclipse.uml2.uml.DataType} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass The Ecore class of the {@link org.eclipse.uml2.uml.DataType} to retrieve, or <code>null</code>.
+	 * @return The first {@link org.eclipse.uml2.uml.DataType} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getMaterialType()
+	 * @generated
+	 */
+	DataType getMaterialType(String name, boolean ignoreCase, EClass eClass);
 
 	/**
 	 * Returns the value of the '<em><b>Other Material Type</b></em>' attribute.
