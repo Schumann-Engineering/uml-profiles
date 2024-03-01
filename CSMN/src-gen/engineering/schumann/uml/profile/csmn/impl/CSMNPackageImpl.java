@@ -1097,6 +1097,16 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getAsset_Comment() {
+		return (EReference)assetEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getAsset_Base_NamedElement() {
 		return (EReference)assetEClass.getEStructuralFeatures().get(0);
 	}
@@ -2166,6 +2176,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		createEAttribute(assetEClass, ASSET__ASSET_CATEGORY);
 		createEAttribute(assetEClass, ASSET__PROTECTION_GOAL);
 		createEAttribute(assetEClass, ASSET__STRIDE);
+		createEReference(assetEClass, ASSET__COMMENT);
 
 		assetLibraryEClass = createEClass(ASSET_LIBRARY);
 		createEReference(assetLibraryEClass, ASSET_LIBRARY__BASE_PACKAGE);
@@ -2391,6 +2402,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEAttribute(getAsset_AssetCategory(), this.getAssetCategory(), "assetCategory", null, 1, 1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAsset_ProtectionGoal(), this.getProtectionGoal(), "protectionGoal", null, 0, -1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAsset_Stride(), this.getSTRIDE(), "stride", null, 0, -1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getAsset_Comment(), theUMLPackage.getComment(), null, "comment", null, 0, -1, Asset.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(assetLibraryEClass, AssetLibrary.class, "AssetLibrary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAssetLibrary_Base_Package(), theUMLPackage.getPackage(), null, "base_Package", null, 0, 1, AssetLibrary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

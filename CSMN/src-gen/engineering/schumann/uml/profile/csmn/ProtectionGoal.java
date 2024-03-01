@@ -76,7 +76,23 @@ public enum ProtectionGoal implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LEGAL(5, "Legal", "Legal");
+	LEGAL(5, "Legal", "Legal"), /**
+	 * The '<em><b>Authenticity</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AUTHENTICITY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AUTHENTICITY(6, "Authenticity", "Authenticity"), /**
+	 * The '<em><b>Non Repudiation</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NON_REPUDIATION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NON_REPUDIATION(7, "NonRepudiation", "NonRepudiation");
 
 	/**
 	 * The '<em><b>Confidentiality</b></em>' literal value.
@@ -145,6 +161,28 @@ public enum ProtectionGoal implements Enumerator {
 	public static final int LEGAL_VALUE = 5;
 
 	/**
+	 * The '<em><b>Authenticity</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AUTHENTICITY
+	 * @model name="Authenticity"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AUTHENTICITY_VALUE = 6;
+
+	/**
+	 * The '<em><b>Non Repudiation</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NON_REPUDIATION
+	 * @model name="NonRepudiation"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NON_REPUDIATION_VALUE = 7;
+
+	/**
 	 * An array of all the '<em><b>Protection Goal</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -158,6 +196,8 @@ public enum ProtectionGoal implements Enumerator {
 			USABILITY,
 			MONEY,
 			LEGAL,
+			AUTHENTICITY,
+			NON_REPUDIATION,
 		};
 
 	/**
@@ -220,6 +260,8 @@ public enum ProtectionGoal implements Enumerator {
 			case USABILITY_VALUE: return USABILITY;
 			case MONEY_VALUE: return MONEY;
 			case LEGAL_VALUE: return LEGAL;
+			case AUTHENTICITY_VALUE: return AUTHENTICITY;
+			case NON_REPUDIATION_VALUE: return NON_REPUDIATION;
 		}
 		return null;
 	}

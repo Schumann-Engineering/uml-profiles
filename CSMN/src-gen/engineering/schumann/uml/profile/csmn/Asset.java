@@ -4,6 +4,7 @@ package engineering.schumann.uml.profile.csmn;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -22,6 +23,7 @@ import org.eclipse.uml2.uml.NamedElement;
  *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getAssetCategory <em>Asset Category</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getProtectionGoal <em>Protection Goal</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getStride <em>Stride</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.Asset#getComment <em>Comment</em>}</li>
  * </ul>
  *
  * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset()
@@ -151,6 +153,22 @@ public interface Asset extends EObject {
 	 * @generated
 	 */
 	EList<STRIDE> getStride();
+
+	/**
+	 * Returns the value of the '<em><b>Comment</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.uml2.uml.Comment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comment</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment</em>' reference list.
+	 * @see engineering.schumann.uml.profile.csmn.CSMNPackage#getAsset_Comment()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Comment> getComment();
 
 	/**
 	 * Returns the value of the '<em><b>Base Named Element</b></em>' reference.

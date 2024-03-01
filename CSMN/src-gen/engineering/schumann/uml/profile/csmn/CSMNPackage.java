@@ -1080,13 +1080,22 @@ public interface CSMNPackage extends EPackage {
 	int ASSET__STRIDE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Comment</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSET__COMMENT = 7;
+
+	/**
 	 * The number of structural features of the '<em>Asset</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSET_FEATURE_COUNT = 7;
+	int ASSET_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Asset</em>' class.
@@ -2724,6 +2733,17 @@ public interface CSMNPackage extends EPackage {
 	EAttribute getAsset_Stride();
 
 	/**
+	 * Returns the meta object for the reference list '{@link engineering.schumann.uml.profile.csmn.Asset#getComment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Comment</em>'.
+	 * @see engineering.schumann.uml.profile.csmn.Asset#getComment()
+	 * @see #getAsset()
+	 * @generated
+	 */
+	EReference getAsset_Comment();
+
+	/**
 	 * Returns the meta object for the reference '{@link engineering.schumann.uml.profile.csmn.Asset#getBase_NamedElement <em>Base Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4259,6 +4279,14 @@ public interface CSMNPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ASSET__STRIDE = eINSTANCE.getAsset_Stride();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSET__COMMENT = eINSTANCE.getAsset_Comment();
 
 		/**
 		 * The meta object literal for the '<em><b>Base Named Element</b></em>' reference feature.

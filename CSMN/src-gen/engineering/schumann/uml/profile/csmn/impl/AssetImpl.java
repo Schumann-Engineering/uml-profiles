@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.uml2.uml.Comment;
 import org.eclipse.uml2.uml.NamedElement;
 
 /**
@@ -37,6 +39,7 @@ import org.eclipse.uml2.uml.NamedElement;
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getAssetCategory <em>Asset Category</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getProtectionGoal <em>Protection Goal</em>}</li>
  *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getStride <em>Stride</em>}</li>
+ *   <li>{@link engineering.schumann.uml.profile.csmn.impl.AssetImpl#getComment <em>Comment</em>}</li>
  * </ul>
  *
  * @generated
@@ -151,6 +154,16 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * @ordered
 	 */
 	protected EList<STRIDE> stride;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Comment> comment;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,6 +285,19 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 	 * @generated
 	 */
 	@Override
+	public EList<Comment> getComment() {
+		if (comment == null) {
+			comment = new EObjectResolvingEList<Comment>(Comment.class, this, CSMNPackage.ASSET__COMMENT);
+		}
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NamedElement getBase_NamedElement() {
 		if (base_NamedElement != null && base_NamedElement.eIsProxy()) {
 			InternalEObject oldBase_NamedElement = (InternalEObject)base_NamedElement;
@@ -352,6 +378,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 				return getProtectionGoal();
 			case CSMNPackage.ASSET__STRIDE:
 				return getStride();
+			case CSMNPackage.ASSET__COMMENT:
+				return getComment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -388,6 +416,10 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 				getStride().clear();
 				getStride().addAll((Collection<? extends STRIDE>)newValue);
 				return;
+			case CSMNPackage.ASSET__COMMENT:
+				getComment().clear();
+				getComment().addAll((Collection<? extends Comment>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -421,6 +453,9 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 			case CSMNPackage.ASSET__STRIDE:
 				getStride().clear();
 				return;
+			case CSMNPackage.ASSET__COMMENT:
+				getComment().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -447,6 +482,8 @@ public class AssetImpl extends MinimalEObjectImpl.Container implements Asset {
 				return protectionGoal != null && !protectionGoal.isEmpty();
 			case CSMNPackage.ASSET__STRIDE:
 				return stride != null && !stride.isEmpty();
+			case CSMNPackage.ASSET__COMMENT:
+				return comment != null && !comment.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

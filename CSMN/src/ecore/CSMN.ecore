@@ -186,6 +186,8 @@
         upperBound="-1" eType="#//ProtectionGoal"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stride" ordered="false"
         upperBound="-1" eType="#//STRIDE"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comment" ordered="false"
+        upperBound="-1" eType="ecore:EClass ../../../org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
     <eLiterals name="Unspecified"/>
