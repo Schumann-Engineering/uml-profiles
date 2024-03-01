@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module CN_CyberSecurityResearchReport(
+[module INT_CyberSecurityManagementPlan(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/docgen/1'
@@ -55,13 +55,13 @@
 [**
  * IMPORTANT: Generation is *per product*
  ** /]
-[template public generateDocument_CN_CyberSecurityResearchReport(
+[template public generateDocument_INT_CyberSecurityManagementPlan(
 	this : Model
 )
 {
-	templateUUID		: String			= 'e51de0f8-66e6-4424-929b-b41c55b19227';
+	templateUUID		: String			= '65c48756-a4cc-4be2-8446-29e01d470120';
 	templateVersion		: String			= '0.2';
-	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report (China specific)');
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Management Plan');
 
 	productElements		: Set(Package) 		= this.allOwnedElements()
 												->filter(Package)
@@ -79,7 +79,7 @@
 			[comment iterate over all software version of the system element /]
 			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion->select(csmn_shallGenerateSoftwareVersion()))]
 				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
-[productElement.generateDocument_CN_CyberSecurityResearchReport( _context) /]
+[productElement.generateDocument_INT_CyberSecurityManagementPlan( _context) /]
 				[/let]
 			[/for]
 		[/for]
@@ -88,7 +88,7 @@
 [/template]
 
 
-[template private generateDocument_CN_CyberSecurityResearchReport(
+[template private generateDocument_INT_CyberSecurityManagementPlan(
 	this 			: NamedElement,
 	_context		: Context
 )]
@@ -127,10 +127,6 @@
 [ImplementationProcess_Chapter_print(_context)/]
 
 [VulnerabilityAssessment_Chapter_print(_context)/]
-
-[Conclusion_Chapter_print(_context)/]
-
-[Appendix_Chapter_print(_context)/]
 [/template]
 
 
@@ -332,7 +328,7 @@
 		....................
 	/]
 [comment TOC_SubSection_start('data architecture > 1-Description') /]
-	[protectedAreaSchemaProductOnly('Data Architecture', _context) /]
+	[protectedAreaSchemaQmsOnly('Data Architecture', _context) /]
 
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > 1-Description') /]
@@ -434,7 +430,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('Network security capabilities', _context) /]	
+	[protectedAreaSchemaQmsOnly('Network security capabilities', _context) /]	
 [TOC_Section_end() /]
 [/template]
 
@@ -470,7 +466,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('Off-the-shelf Software', _context) /]
+	[protectedAreaSchemaQmsOnly('Off-the-shelf Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -505,7 +501,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('Security Patches', _context) /]
+	[protectedAreaSchemaQmsOnly('Security Patches', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -543,7 +539,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('Security Software', _context) /]
+	[protectedAreaSchemaQmsOnly('Security Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -578,7 +574,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Risk Management', _context)/]
+		[protectedAreaSchemaQmsOnly('Risk Management', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
@@ -597,7 +593,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Requirements Specification', _context)/]
+		[protectedAreaSchemaQmsOnly('Requirements Specification', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
@@ -621,7 +617,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Verification and Validation Process', _context) /]	
+		[protectedAreaSchemaQmsOnly('Verification and Validation Process', _context) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -640,7 +636,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Traceability', _context) /]
+		[protectedAreaSchemaQmsOnly('Traceability', _context) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
@@ -696,7 +692,7 @@
 
 [html_PAGE_start('Software Maintenance Plan') /]
 		[TOC_SubSection_start('Software Maintenance Plan') /]
-			[protectedAreaSchemaProductOnly('Software Maintenance Plan', _context) /]
+			[protectedAreaSchemaQmsOnly('Software Maintenance Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Software Maintenance Plan') /]
 		
@@ -704,7 +700,7 @@
 [html_PAGE_start('Notification Plan') /]
 		[TOC_SubSection_start('Notification Plan') /]
 			[comment class A, B, C /]
-			[protectedAreaSchemaProductOnly('Notification Plan', _context) /]
+			[protectedAreaSchemaQmsOnly('Notification Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Notification Plan') /]
 
@@ -716,7 +712,7 @@
 			</p>
 [else]
 			[comment class B, C /]
-			[protectedAreaSchemaProductOnly('Security Incident Handling Process', _context) /]
+			[protectedAreaSchemaQmsOnly('Security Incident Handling Process', _context) /]
 [/if]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Security Incident Handling Process') /]
@@ -796,21 +792,21 @@
 
 [html_PAGE_start('Vulnerability Management Plan') /]
 	[TOC_Section_start('Vulnerability Management Plan') /]
-		[protectedAreaSchemaProductOnly('Vulnerability Management Plan', _context) /]
+		[protectedAreaSchemaQmsOnly('Vulnerability Management Plan', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('Vulnerability Management Plan') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Known Vulnerabilities') /]
 	[TOC_Section_start('List of Known Vulnerabilities') /]
-		[protectedAreaSchemaProductOnly('List of Known Vulnerabilities', _context) /]
+		[protectedAreaSchemaQmsOnly('List of Known Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Known Vulnerabilities') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Residual Vulnerabilities') /]
 	[TOC_Section_start('List of Residual Vulnerabilities') /]
-		[protectedAreaSchemaProductOnly('List of Residual Vulnerabilities', _context) /]
+		[protectedAreaSchemaQmsOnly('List of Residual Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Residual Vulnerabilities') /]
 
@@ -822,7 +818,7 @@
 			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
 		</p>
 [else]
-		[protectedAreaSchemaProductOnly('Security Self-Assessment Report', _context) /]
+		[protectedAreaSchemaQmsOnly('Security Self-Assessment Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Security Self-Assessment Report') /]
@@ -835,55 +831,13 @@
 			Product has Software Security Level of [level /]. No Pentest required.
 		</p>
 [else]
-		[protectedAreaSchemaProductOnly('Pentest Report', _context) /]
+		[protectedAreaSchemaQmsOnly('Pentest Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Pentest Report') /]
 [/let]
 [TOC_Chapter_end() /]
 [comment html_PAGE_end('vulnerablity assessment') /]
-[/template]
-
-
-[comment
-	====================
-	CONCLUSION
-	====================
-/]
-[template private Conclusion_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('conclusion')/]
-	[TOC_Chapter_start('Conclusion') /]
-		[html_NO_PRINT_start() /]
-			[html_TASK_start()/]
-				Outline the standardization of the network security implementation process for declaring medical devices and the results of network security vulnerability assessment, determine whether the network security of the declared medical devices meets the requirements, and whether the benefits outweigh the risks. 
-			[html_TASK_end()/]
-		[html_NO_PRINT_end() /]
-		
-		[comment TOC_Section_start('Conclusion') /]
-		[protectedAreaSchemaProductOnly('Conclusion', _context) /]
-		[comment TOC_Section_end() /]
-	[TOC_Chapter_end() /]
-[html_PAGE_end('conclusion')/]
-[/template]
-
-
-[comment
-	====================
-	APPENDIX
-	====================
-/]
-[template private Appendix_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('appendix')/]
-	[TOC_Chapter_start('Appendix') /]
-		[protectedAreaSchemaProductOnly('Appendix', _context) /]
-	[TOC_Chapter_end() /]
-[html_PAGE_end('appendix')/]
 [/template]
 
 
@@ -916,7 +870,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('List of Assets > Data', _context) /]
+	[protectedAreaSchemaQmsOnly('List of Assets > Data', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -942,7 +896,7 @@
 		[html_EXAMPLE_end()/]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('List of Assets > Data Flow', _context) /]
+	[protectedAreaSchemaQmsOnly('List of Assets > Data Flow', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 

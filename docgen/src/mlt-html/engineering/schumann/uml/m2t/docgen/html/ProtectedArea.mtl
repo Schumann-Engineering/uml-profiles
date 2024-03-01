@@ -30,7 +30,7 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 )/][/template]
 
 
-[template public protectedAreaSchema(
+[template public protectedAreaSchemaAll(
 	devNull		: NamedElement,
 	name		: String,
 	_context	: Context
@@ -42,6 +42,31 @@ post(trim())]
 [protectedAreaOptional(name + ' > Applicable Documents (hardware model)', 		'Applicable Documents (hardware model)',	'(none)',	_context) /]
 [protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /]
 [protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /]
+[/template]
+
+
+[template public protectedAreaSchemaQmsOnly(
+	devNull		: NamedElement,
+	name		: String,
+	_context	: Context
+)
+post(trim())]
+[protectedArea(        name + ' > Content', 																							_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (QMS)', 					'Applicable Documents (QMS)',				'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /]
+[/template]
+
+
+[template public protectedAreaSchemaProductOnly(
+	devNull		: NamedElement,
+	name		: String,
+	_context	: Context
+)
+post(trim())]
+[protectedArea(        name + ' > Content', 																							_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (product)', 				'Applicable Documents (product)',			'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (hardware model)', 		'Applicable Documents (hardware model)',	'(none)',	_context) /]
+[protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /]
 [/template]
 
 
