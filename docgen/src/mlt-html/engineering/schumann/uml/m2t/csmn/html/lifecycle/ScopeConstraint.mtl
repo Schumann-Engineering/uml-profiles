@@ -25,12 +25,12 @@ post(trim())
 	this : ScopeConstraint
 )
 post(trim())]
-[html_NOTE_Start()/]
+[html_NOTE_start()/]
 [comment type /]
 [this.constraintType /] with
 [if (this.productConstraint->notEmpty())][for (this.productConstraint) separator('\n')][self.print() /][/for][/if]
 [if (this.softwareConstraint->notEmpty())][for (this.softwareConstraint) separator('\n')][self.print() /][/for][/if]
-[html_NOTE_End()/]
+[html_NOTE_end()/]
 [/template]
 
 

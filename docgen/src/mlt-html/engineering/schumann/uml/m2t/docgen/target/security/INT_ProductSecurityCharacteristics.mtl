@@ -63,7 +63,7 @@
 )
 {
 	templateUUID		: String 			= '5b3cec7d-362f-4051-8a95-411bf9579f70';
-	templateVersion		: String 			= '0.1';
+	templateVersion		: String 			= '0.2';
 	documentTitle		: String 			= env(templateUUID + '.Output.Title', 'Product Security Characteristics');
 
 	productElements		: Set(NamedElement)	= this.allOwnedElements()
@@ -143,11 +143,11 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('cover page', 'cover-page')/]
+[html_PAGE_start('cover page', 'cover-page')/]
 	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
 	[comment DOC_Footer(_context) /]
 
-	[TOC_Title_begin(_context.documentTitle) /]
+	[TOC_Title_start(_context.documentTitle) /]
 		[this.printScopeForProduct(_context) /]
 	[TOC_Title_end() /]
 [html_PAGE_end('cover page')/]
@@ -163,9 +163,9 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('introduction')/]
-	[TOC_Chapter_begin('Introduction') /]
-		[TOC_Section_begin('Purpose') /]
+[html_PAGE_start('introduction')/]
+	[TOC_Chapter_start('Introduction') /]
+		[TOC_Section_start('Purpose') /]
 			<p>
 				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
 			</p>
@@ -174,7 +174,7 @@
 			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Target audience') /]
+		[TOC_Section_start('Target audience') /]
 			<p>
 				This document is targeted at:
 			</p>
@@ -187,11 +187,11 @@
 			</ul>
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Scope') /]
+		[TOC_Section_start('Scope') /]
 			[this.printScopeForProduct(_context) /]
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Abbreviations') /]
+		[TOC_Section_start('Abbreviations') /]
 			[TERMS_START()/]
 				[TERM_SECURITY_CPE()/]
 				[TERM_SECURITY_CVE()/]
@@ -213,14 +213,14 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('basic information')/]
-	[TOC_Chapter_begin('Basic information') /]
+[html_PAGE_start('basic information')/]
+	[TOC_Chapter_start('Basic information') /]
 		[comment
 			--------------------
 			HARDWARE
 			--------------------
 		/]
-		[TOC_Section_begin('Hardware versions') /]
+		[TOC_Section_start('Hardware versions') /]
 			[this.printScopeForProduct(_context) /]
 		[TOC_Section_end() /]
 	
@@ -229,7 +229,7 @@
 			SOFTWARE
 			--------------------
 		/]
-		[TOC_Section_begin('Software versions') /]
+		[TOC_Section_start('Software versions') /]
 			<p>
 				As of writing the following software versions have been released:
 			</p>
@@ -252,10 +252,16 @@
 	_context		: Context
 )]
 [let systemElements : OrderedSet(Component) = this.csmn_allSystemElement()->sortedBy(name)]
-[let interfaces : Set(Port) = systemElements.ownedElement->filter(Port)->select(csmn_hasInterfaceCharacteristic())->oclAsSet()->flatten()->csmn_filterInScope()]
+[let interfaces : Set(Port) = systemElements
+								.ownedElement
+								->filter(Port)
+								->select(csmn_hasInterfaceCharacteristic())
+								->oclAsSet()
+								->flatten()
+								->csmn_filterInScope()]
 
-[html_PAGE_begin('product architecture')/]
-	[TOC_Chapter_begin('Product Architecture') /]
+[html_PAGE_start('product architecture')/]
+	[TOC_Chapter_start('Product Architecture') /]
 		<p>
 			This section describes the boundary of the product and how its interfaces with the environment and different user groups. 
 		</p>
@@ -265,9 +271,9 @@
 			DIAGRAM
 			--------------------
 		/]
-[comment html_PAGE_begin('diagram')/]
+[comment html_PAGE_start('diagram')/]
 		[if (_context.product <> null)]
-		[this.TOC_Section_begin('Overview ' + _context.product.productName + ' (PN ' + _context.product.model + ')') /]
+		[this.TOC_Section_start('Overview ' + _context.product.productName + ' (PN ' + _context.product.model + ')') /]
 		
 			<p>
 				The following diagram shows a system architecture overview.
@@ -276,11 +282,11 @@
 				In addition, security boundaries are shown.
 			</p>
 
-			[html_INFO_Start()/]
+			[html_INFO_start()/]
 			<p>
 				The following sections will describe each element in detail.
 			</p>
-			[html_INFO_End()/]
+			[html_INFO_end()/]
 
 			[this.html_IMG_ProductArchitectureDiagram(_context) /]
 
@@ -288,11 +294,11 @@
 			
 		[this.TOC_Section_end()/]
 		[else]
-		[html_ANSI_DANGER_Start()/]
+		[html_ANSI_DANGER_start()/]
 			<p>
 				no product match found!
 			</p>
-		[html_ANSI_DANGER_End()/]
+		[html_ANSI_DANGER_end()/]
 		[/if]
 [html_PAGE_end('diagram')/]
 	
@@ -301,14 +307,14 @@
 			PRODUCT INTERFACES
 			--------------------
 		/]
-[html_PAGE_begin('product interfaces')/]
-		[TOC_Section_begin('Product interfaces') /]
+[html_PAGE_start('product interfaces')/]
+		[TOC_Section_start('Product interfaces') /]
 			[comment
 				....................
 				PRODUCT INTERFACES > DEFINITION
 				....................
 			/]
-			[TOC_SubSection_begin('Definition')/]
+			[TOC_SubSection_start('Definition')/]
 				<p>
 					A PRODUCT INTERFACE
 				</p>
@@ -330,9 +336,9 @@
 						<p>
 			    			is an interface to directly connect to a networked infrastructure
 						</p>
-					    [html_EXAMPLE_Start() /]
+					    [html_EXAMPLE_start() /]
 			    		Bluetooth, ZigBee, Ethernet, WLAN
-					    [html_EXAMPLE_End() /]
+					    [html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -341,9 +347,9 @@
 						<p>
 					    	is an electronic data interchange interface
 						</p>
-					    [html_EXAMPLE_Start() /]
+					    [html_EXAMPLE_start() /]
 					    touch screen, USB port, RS-232 port
-					    [html_EXAMPLE_End() /]
+					    [html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -352,9 +358,9 @@
 						<p>
 					    	is used for writing or retrieving data from a (mostly) non-volatile data storage.
 						</p>
-					    [html_EXAMPLE_Start() /]
+					    [html_EXAMPLE_start() /]
 					    SD card, USB mass storage device, CF card
-					    [html_EXAMPLE_End() /]
+					    [html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -363,9 +369,9 @@
 						<p>
 					    	provides or receives physical material.
 						</p>
-					    [html_EXAMPLE_Start() /]
+					    [html_EXAMPLE_start() /]
 					    flow of air
-					    [html_EXAMPLE_End() /]
+					    [html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -374,9 +380,9 @@
 						<p>
 					    	provides or receives any form of energy like electricity, light or sound.
 						</p>
-					    [html_EXAMPLE_Start() /]
+					    [html_EXAMPLE_start() /]
 					    power plugs, alarm light, speaker
-					    [html_EXAMPLE_End() /]
+					    [html_EXAMPLE_end() /]
 					</li>
 				</ol>
 			[TOC_SubSection_end() /]
@@ -387,85 +393,83 @@
 				PRODUCT INTERFACES > List of Interfaces
 				....................
 			/]
-[html_PAGE_begin('network interfaces')/]
-			[TOC_SubSection_begin('List of PRODUCT INTERFACE')/]
-				[comment
-					....................
-					network interfaces
-					....................
-				/]
-[comment html_PAGE_begin('network interfaces')/]
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Network interfaces') /]
-					[printInterfaceAsTable( interfaces->csmn_networkPort() )/]
-				[TOC_SubSubSection_end() /]
+[html_PAGE_start('network interfaces')/]
+			[comment
+				....................
+				network interfaces
+				....................
+			/]
+[comment html_PAGE_start('network interfaces')/]
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Network interfaces') /]
+				[printInterfaceAsTable( interfaces->csmn_networkPort(), false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('network interfaces')/]
-			
+		
 
-				[comment
-					....................
-					non-network interfaces
-					....................
-				/]
-[html_PAGE_begin('non-netowrk interfaces')/]
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Non-Network interfaces') /]			
-					[printInterfaceAsTable( interfaces->csmn_nonNetworkPort() )/]
-				[TOC_SubSubSection_end() /]
+			[comment
+				....................
+				non-network interfaces
+				....................
+			/]
+[html_PAGE_start('non-netowrk interfaces')/]
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Non-Network interfaces') /]			
+				[printInterfaceAsTable( interfaces->csmn_nonNetworkPort(), false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('non-netowrk interfaces')/]
-				
-				[comment
-					....................
-					storage media
-					....................
-				/]
-[html_PAGE_begin('storage media')/]
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Storage Media') /]			
-					[printInterfaceAsTable( interfaces->csmn_storagePort() )/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				storage media
+				....................
+			/]
+[html_PAGE_start('storage media')/]
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Storage Media') /]			
+				[printInterfaceAsTable( interfaces->csmn_storagePort(), false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('storage media')/]
-				
-				[comment
-					....................
-					material
-					....................
-				/]
-[html_PAGE_begin('material')/]
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Material interfaces') /]			
-					[printInterfaceAsTable( interfaces->csmn_materialPort() )/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				material
+				....................
+			/]
+[html_PAGE_start('material')/]
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Material interfaces') /]			
+				[printInterfaceAsTable( interfaces->csmn_materialPort(), false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('material')/]
-				
-				[comment
-					....................
-					energy
-					....................
-				/]
-[html_PAGE_begin('energy')/]
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Energy interfaces') /]			
-					[printInterfaceAsTable( interfaces->csmn_energyPort() )/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				energy
+				....................
+			/]
+[html_PAGE_start('energy')/]
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Energy interfaces') /]			
+				[printInterfaceAsTable( interfaces->csmn_energyPort(), false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('energy')/]
-				
-				[comment
-					....................
-					other
-					....................
-				/]
-				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
-				[if (otherInterfaces->size() > 0)]
-[html_PAGE_begin('other ports')/]
-				
-				[html_PAGE_BREAK('')/]			
-				[TOC_SubSubSection_begin('PRODUCT INTERFACEs which are Other interfaces') /]
-					[html_ANSI_WARNING_Start()/]
-						this section should be empty! This is an indicator of a wrongly configured model!
-					[html_ANSI_CAUTION_End()/]
-				
-					[printInterfaceAsTable( otherInterfaces )/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				other
+				....................
+			/]
+			[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
+			[if (otherInterfaces->size() > 0)]
+[html_PAGE_start('other ports')/]
+			
+			[html_PAGE_BREAK('')/]			
+			[TOC_SubSection_start('PRODUCT INTERFACEs which are Other interfaces') /]
+				[html_ANSI_WARNING_start()/]
+					this section should be empty! This is an indicator of a wrongly configured model!
+				[html_ANSI_CAUTION_end()/]
+			
+				[printInterfaceAsTable( otherInterfaces, false )/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('other ports')/]
-				[/if]
-				[/let]
-			[TOC_SubSection_end()/]
+			[/if]
+			[/let]
 		[TOC_Section_end()/]
 	
 		[comment
@@ -473,14 +477,14 @@
 			CONNECTIONS
 			--------------------
 		/]
-[html_PAGE_begin('connections')/]
-		[TOC_Section_begin('Interface connections') /]
+[html_PAGE_start('connections')/]
+		[TOC_Section_start('Interface connections') /]
 			[comment
 				....................
 				Definition
 				....................
 			/]
-			[TOC_SubSection_begin('Definition')/]
+			[TOC_SubSection_start('Definition')/]
 				<p>
 					An INTERFACE CONNECTION
 				</p>
@@ -489,77 +493,75 @@
 						<li>is a link from one interface to another</li>
 						<li>describes use-case specific characteristics between those interfaces, e.g. which protocol is used</li>
 				</ul>
+			[TOC_SubSection_end() /]
 
-				[TOC_SubSection_begin('List of INTERFACE CONNECTION')/]
-				
-				[TOC_SubSubSection_begin('INTERFACE CONNECTION for Network interfaces') /]
-					[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+			[TOC_SubSection_start('INTERFACE CONNECTION for Network interfaces') /]
+				[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('connections')/]
-				
-				[comment
-					....................
-					non-network connections
-					....................
-				/]
-[html_PAGE_begin('non-network connections')/]
-				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Non-Network interfaces') /]
-					[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				non-network connections
+				....................
+			/]
+[html_PAGE_start('non-network connections')/]
+			[TOC_SubSection_start('INTERFACE CONNECTIONs for Non-Network interfaces') /]
+				[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('non-network connections')/]
-				
-				[comment
-					....................
-					storage connections
-					....................
-				/]
-[html_PAGE_begin('storage connections')/]
-				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Storage Media') /]
-					[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				storage connections
+				....................
+			/]
+[html_PAGE_start('storage connections')/]
+			[TOC_SubSection_start('INTERFACE CONNECTIONs for Storage Media') /]
+				[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('storage connections')/]
-				
-				[comment
-					....................
-					material connections
-					....................
-				/]
-[html_PAGE_begin('material connections')/]
-				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Material interfaces') /]
-					[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				material connections
+				....................
+			/]
+[html_PAGE_start('material connections')/]
+			[TOC_SubSection_start('INTERFACE CONNECTIONs for Material interfaces') /]
+				[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('material connections')/]
-				
-				[comment
-					....................
-					energy connections
-					....................
-				/]
-[html_PAGE_begin('energy connections')/]
-				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Energy interfaces') /]
-					[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+			
+			[comment
+				....................
+				energy connections
+				....................
+			/]
+[html_PAGE_start('energy connections')/]
+			[TOC_SubSection_start('INTERFACE CONNECTIONs for Energy interfaces') /]
+				[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('energy connections')/]
+			
+			[comment
+				....................
+				other connections
+				....................
+			/]
+			[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
+			[if (otherInterfaces->size() > 0)]
+[html_PAGE_start('other connections')/]
+			[TOC_SubSection_start('INTERFACE CONNECTIONs for Other interfaces') /]
+				[html_ANSI_WARNING_start()/]
+					this section should be empty! This is an indicator of a wrongly configured model!
+				[html_ANSI_WARNING_end()/]
 				
-				[comment
-					....................
-					other connections
-					....................
-				/]
-				[let otherInterfaces : Set(Port) = interfaces->csmn_otherPort()]
-				[if (otherInterfaces->size() > 0)]
-[html_PAGE_begin('other connections')/]
-				[TOC_SubSubSection_begin('INTERFACE CONNECTIONs for Other interfaces') /]
-					[html_ANSI_WARNING_Start()/]
-						this section should be empty! This is an indicator of a wrongly configured model!
-					[html_ANSI_WARNING_End()/]
-					
-					[otherInterfaces->printConnectionsForInterfacesAsTable(true)/]
-				[TOC_SubSubSection_end() /]
+				[otherInterfaces->printConnectionsForInterfacesAsTable(true)/]
+			[TOC_SubSection_end() /]
 [html_PAGE_end('other connections')/]
-				[/if]
-				[/let]
-			[TOC_SubSection_end()/]
+			[/if]
+			[/let]
 		[TOC_Section_end()/]
 	
 		[comment
@@ -567,14 +569,14 @@
 			ASSETS
 			--------------------
 		/]
-[html_PAGE_begin('assets')/]
-		[TOC_Section_begin('Assets') /]
+[html_PAGE_start('assets')/]
+		[TOC_Section_start('Assets, Protection Goals and STRIDE') /]
 			[comment
 				....................
 				Definition
 				....................
 			/]
-			[TOC_SubSection_begin('Definition')/]
+			[TOC_SubSection_start('Definition')/]
 				<p>
 					An ASSET
 				</p>
@@ -594,14 +596,25 @@
 				<ol>
 					<li>
 						<p>
+							<b>CONNECTION / Data Flow</b>
+						</p>
+						<p>
+							Connections between interfaces, usually from a PRODUCT INTERFACE to a system in the environment.
+						</p>
+						[html_EXAMPLE_start() /]
+						Connection between a data interface and the receiving system or the Bluetooth RF connection between to two devices.
+						[html_EXAMPLE_end() /]
+					</li>
+					<li>
+						<p>
 							<b>CREDENTIALS</b>
 						</p>
 						<p>
 							Special kind of data holding passwords or cryptographic keys.
 						</p>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 						Username and password, private key, WLAN key
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -610,9 +623,9 @@
 						<p>
 							Received or provided physical energy in various forms, like electricity, light, sound or radiation.
 						</p>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 						Kinetic energy (e.g. touch, lifting), electrical energy (e.g. power), radiation energy (e.g. X-Ray)
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -621,9 +634,9 @@
 						<p>
 							Digital (raw) data stored and transfered.
 						</p>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 					    Log files, configuration, software, medical data
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -632,9 +645,20 @@
 						<p>
 							Information is interpreted data. By means of interpretation, data becomes information.
 						</p>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 					    Alarm, diagnosis
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
+					</li>
+					<li>
+						<p>
+							<b>INTERFACE</b>
+						</p>
+						<p>
+							Interfaces are product interfaces as listed in earlier .
+						</p>
+						[html_EXAMPLE_start() /]
+					    Alarm, diagnosis
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -643,18 +667,18 @@
 						<p>
 					    	provides or receives physical material.
 						</p>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 					    flow of air
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
 							<b>MECHANICAL</b>
 						</p>
 
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 					    power plugs, alarm light, speaker
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 					<li>
 						<p>
@@ -671,95 +695,123 @@
 								Oxford English Dictionary
 							</p>
 						</blockquote>
-						[html_EXAMPLE_Start() /]
+						[html_EXAMPLE_start() /]
 						radio waves, user input, light impulse.
-						[html_EXAMPLE_End() /]
+						[html_EXAMPLE_end() /]
 					</li>
 				</ol>
 			[TOC_SubSection_end()/]
 [html_PAGE_end('assets')/]
 	
-				[comment
-					....................
-					credential asset
-					....................
-				/]
-[html_PAGE_begin('credential assets')/]
-			[TOC_SubSection_begin('List of ASSETs')/]
-				[TOC_SubSubSection_begin('ASSETs which are Credential Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials )/]
+			[comment
+				....................
+				connection asset
+				....................
+			/]
+[html_PAGE_start('connection assets')/]
+			[TOC_SubSection_start('ASSETs which are Connections / Data flow') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Connection, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('credential assets')/]
-	
-				[comment
-					....................
-					energy asset
-					....................
-				/]
-[html_PAGE_begin('energy assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Energy Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy )/]
+
+			[comment
+				....................
+				credential asset
+				....................
+			/]
+[html_PAGE_start('credential assets')/]
+			[TOC_SubSection_start('ASSETs which are Credential Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials, true )/]
+			[TOC_SubSection_end()/]
+[html_PAGE_end('credential assets')/]
+
+			[comment
+				....................
+				energy asset
+				....................
+			/]
+[html_PAGE_start('energy assets')/]
+			[TOC_SubSection_start('ASSETs which are Energy Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('energy assets')/]
-				
-				[comment
-					....................
-					data asset
-					....................
-				/]
-[html_PAGE_begin('data assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Data Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Data )/]
+			
+			[comment
+				....................
+				data asset
+				....................
+			/]
+[html_PAGE_start('data assets')/]
+			[TOC_SubSection_start('ASSETs which are Data Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Data, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
-				
-				[comment
-					....................
-					disturbance
-					....................
-				/]
-[html_PAGE_begin('data assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are a Disturbance') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Disturbance )/]
+			
+			[comment
+				....................
+				disturbance
+				....................
+			/]
+[html_PAGE_start('data assets')/]
+			[TOC_SubSection_start('ASSETs which are a Disturbance') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Disturbance, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
 
-				[comment
-					....................
-					information asset
-					....................
-				/]
-[html_PAGE_begin('information assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Information Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Information )/]
+			[comment
+				....................
+				information asset
+				....................
+			/]
+[html_PAGE_start('information assets')/]
+			[TOC_SubSection_start('ASSETs which are Information Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Information, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('information assets')/]
 
-				[comment
-					....................
-					material asset
-					....................
-				/]
-[html_PAGE_begin('material assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Material Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Material )/]
+			[comment
+				....................
+				interface asset
+				....................
+			/]
+[html_PAGE_start('interface assets')/]
+			[TOC_SubSection_start('ASSETs which are Interface Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Interface, true)/]
+			[TOC_SubSection_end()/]
+[html_PAGE_end('interface assets')/]
+
+			[comment
+				....................
+				material asset
+				....................
+			/]
+[html_PAGE_start('material assets')/]
+			[TOC_SubSection_start('ASSETs which are Material Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Material, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('material assets')/]
-				
-				[comment
-					....................
-					mechanical asset
-					....................
-				/]
-[html_PAGE_begin('mechanical assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Mechanical Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical )/]
+			
+			[comment
+				....................
+				mechanical asset
+				....................
+			/]
+[html_PAGE_start('mechanical assets')/]
+			[TOC_SubSection_start('ASSETs which are Mechanical Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical, true )/]
+			[TOC_SubSection_end()/]
 [html_PAGE_end('mechanical')/]
 
-				[comment
-					....................
-					signal asset
-					....................
-				/]
-[html_PAGE_begin('signal assets')/]
-				[TOC_SubSubSection_begin('ASSETs which are Signal Assets') /]
-				[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal )/]
-[html_PAGE_end('signal assets')/]
+			[comment
+				....................
+				signal asset
+				....................
+			/]
+[html_PAGE_start('signal assets')/]
+			[TOC_SubSection_start('ASSETs which are Signal Assets') /]
+			[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal, true )/]
 			[TOC_SubSection_end()/]
+[html_PAGE_end('signal assets')/]
 		[TOC_Section_end() /]
 	
 	[/let]
@@ -771,8 +823,8 @@
 			--------------------
 		/]
 		
-[html_PAGE_begin('software')/]
-		[TOC_Section_begin('Software') /]
+[html_PAGE_start('software')/]
+		[TOC_Section_start('Software') /]
 			[SBOM_SubSection_print(_context) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('software')/]
@@ -786,13 +838,13 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[TOC_SubSection_begin('Software Bill of Material (SBOM)')/]
-	[comment TOC_SubSubSection_begin('Declaration') /]
+[TOC_SubSection_start('Software Bill of Material (SBOM)')/]
+	[comment TOC_SubSubSection_start('Declaration') /]
 	<p>
 		Off-the-shelf software is managed though Software Bill of Material (SBOM).
 	</p>
 
-	[html_INFO_Start() /]
+	[html_INFO_start() /]
 		<p>
 			Not every development environment supports the automated creation of a SBOM.
 		</p>
@@ -802,7 +854,7 @@
 		<p>
 			This usually only applies to firmware of micro-controllers, like STM32 or PIC32.
 		</p>
-	[html_INFO_End() /]
+	[html_INFO_end() /]
 
 	<p>
 		<b>Applicable Documents</b>
@@ -830,31 +882,31 @@
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('security capabilities')/]
-	[TOC_Chapter_begin('Security capabilities') /]
+[html_PAGE_start('security capabilities')/]
+	[TOC_Chapter_start('Security capabilities') /]
 		[comment
 			--------------------
 			MDS2
 			--------------------
 		/]
-[comment html_PAGE_begin('MDS2')/]
-		[TOC_Section_begin('Manufacturer Disclosure Statement for Medical Device Security (MDS2) (IEC TR 80001-2-2 et. al.)') /]
-			[comment TOC_SubSection_begin('Declaration')/]
-			[html_INFO_Start()/]see applicable document(s)[html_INFO_End()/]
+[comment html_PAGE_start('MDS2')/]
+		[TOC_Section_start('Manufacturer Disclosure Statement for Medical Device Security (MDS2) (IEC TR 80001-2-2 et. al.)') /]
+			[comment TOC_SubSection_start('Declaration')/]
+			[html_INFO_start()/]see applicable document(s)[html_INFO_end()/]
 			[comment TOC_SubSection_end()/]
 
 
-			[TOC_SubSection_begin('Applicable Documents')/]
+			[TOC_SubSection_start('Applicable Documents')/]
 				[DocRef_MDS2() /]
 			[TOC_SubSection_end()/]
 
-			[TOC_SubSection_begin('Background')/]
-				[TOC_SubSubSection_begin('Covered standards') /]
+			[TOC_SubSection_start('Background')/]
+				[TOC_SubSubSection_start('Covered standards') /]
 					<p>
 						MDS2 is a standardized form under ANSI/AAMI HN1:2019 for reporting security capabilities of a medical device.
 					</p>
 					
-					[html_INFO_Start()/]The attached MDS2 was extended to cover newer standards not considered by version 2019.[html_INFO_End()/]
+					[html_INFO_start()/]The attached MDS2 was extended to cover newer standards not considered by version 2019.[html_INFO_end()/]
 					
 					<p>
 						The following standards are covered by MDS2:
@@ -862,7 +914,7 @@
 					[protectedArea('MDS2 > Covered Standards', _context) /]
 				[TOC_SubSubSection_end() /]
 				
-				[TOC_SubSubSection_begin('Covered capabilities') /]
+				[TOC_SubSubSection_start('Covered capabilities') /]
 					<p>
 						MDS2 covers the following capabilities:
 					</p>
@@ -878,11 +930,11 @@
 			--------------------
 		/]
 [comment]
-[html_PAGE_begin('SL-C')/]
-		[TOC_Section_begin('Capability Security Level (SL-C) (IEC 60601-4-5)') /]
+[html_PAGE_start('SL-C')/]
+		[TOC_Section_start('Capability Security Level (SL-C) (IEC 60601-4-5)') /]
 			[html_TBD() /]
 
-			[TOC_SubSection_begin('Background')/]
+			[TOC_SubSection_start('Background')/]
 				[html_TBD('IMAGE: IEC 60601-4-5 - capability Security Level (SL-C)') /]
 			[TOC_SubSection_end()/]			
 		[TOC_Section_end()/]
@@ -895,11 +947,11 @@
 			--------------------
 		/]
 [comment]
-[html_PAGE_begin('SL-T')/]
-		[TOC_Section_begin('Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)') /]
+[html_PAGE_start('SL-T')/]
+		[TOC_Section_start('Targeted Security Level (SL-T) - recommendations for HDO (IEC 60601-4-5)') /]
 			[html_TBD() /]
 
-			[TOC_SubSection_begin('Background')/]
+			[TOC_SubSection_start('Background')/]
 				[html_TBD('IMAGE: IEC 60601-4-5 - target Security Level (SL-T)') /]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]

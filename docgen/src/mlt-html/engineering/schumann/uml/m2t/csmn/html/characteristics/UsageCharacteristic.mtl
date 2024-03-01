@@ -37,9 +37,9 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 		<i>Type</i>: [this.usageType /]
 		[if (this.usageSpec <> null)]
 		<br/>
-		[html_NOTE_Start()/]
+		[html_NOTE_start()/]
 			[this.usageSpec /]
-		[html_NOTE_End()/]
+		[html_NOTE_end()/]
 		[/if]
 	</li>
 [/if]

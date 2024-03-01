@@ -83,7 +83,7 @@
 	this		: NamedElement,
 	_context	: Context
 )]
-[html_PAGE_begin('signatory page')/]
+[html_PAGE_start('signatory page')/]
 	[QM_PAGE_Header(_context) /]
 
 	<p class="qm-title">

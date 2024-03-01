@@ -72,7 +72,7 @@
 )
 {
 	templateUUID		: String			= '7ccd9aab-f38d-47dc-9997-fa473002a1d5';
-	templateVersion		: String			= '0.1';
+	templateVersion		: String			= '0.2';
 	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Software Bill of Material (SBOM) Report');
 
 	productElements		: Set(Package) 		= this.allOwnedElements()
@@ -172,15 +172,15 @@ post(trim())]
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('cover page', 'cover-page')/]
+[html_PAGE_start('cover page', 'cover-page')/]
 	[DOC_Classification_PUBLIC(_context) /]
 	[comment DOC_Footer(_context) /]
 
-	[TOC_Title_begin(_context.documentTitle) /]
+	[TOC_Title_start(_context.documentTitle) /]
 		[this.printScopeForSoftware(_context) /]
 	[TOC_Title_end() /]
 
-	[html_ANSI_CAUTION_Start() /]
+	[html_ANSI_CAUTION_start() /]
 		<p>
 			This document is the human readable representation of the SBOM.
 		</p>
@@ -190,11 +190,11 @@ post(trim())]
 		<p>
 			This document is provided for convenience of reviews and audits only and should not be used to derive information about the product.
 		</p>
-	[html_ANSI_CAUTION_End() /]
+	[html_ANSI_CAUTION_end() /]
 
-	[html_ANSI_NOTICE_Start() /]
+	[html_ANSI_NOTICE_start() /]
 		The SBOM is provided in SPDX as well as CycloneDX format.
-	[html_ANSI_NOTICE_End() /]
+	[html_ANSI_NOTICE_end() /]
 [html_PAGE_end('cover page') /]
 [/template]
 
@@ -208,9 +208,9 @@ post(trim())]
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_begin('introduction') /]
-	[TOC_Chapter_begin('Introduction') /]
-		[TOC_Section_begin('Purpose') /]
+[html_PAGE_start('introduction') /]
+	[TOC_Chapter_start('Introduction') /]
+		[TOC_Section_start('Purpose') /]
 			<p>
 				This documents describe the software bill of material (SBOM) of the product(s) in scope.
 			</p>
@@ -219,7 +219,7 @@ post(trim())]
 			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Target audience') /]
+		[TOC_Section_start('Target audience') /]
 			<p>
 				This document is targeted at:
 			</p>
@@ -232,11 +232,11 @@ post(trim())]
 			</ul>
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Scope') /]
+		[TOC_Section_start('Scope') /]
 			[this.printScopeForSoftware(_context) /]
 		[TOC_Section_end() /]
 		
-		[TOC_Section_begin('Abbreviations') /]
+		[TOC_Section_start('Abbreviations') /]
 			[TERMS_START() /]
 				[TERM_SECURITY_CPE() /]
 				[TERM_SECURITY_CVE() /]
@@ -263,8 +263,8 @@ post(trim())]
 	_context		: Context
 )]
 [if (_context.product.platformType = CommonPlatformEnumerationType::Hardware)]
-[html_PAGE_begin('basic information') /]
-	[TOC_Chapter_begin('Hardware environment') /]
+[html_PAGE_start('basic information') /]
+	[TOC_Chapter_start('Hardware environment') /]
 		<p>
 			The software requires specialized hardware. Supported hardware is listed below.
 		</p>
@@ -286,36 +286,36 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[html_PAGE_begin('software components') /]
-	[TOC_Chapter_begin('Software Components') /]
+[html_PAGE_start('software components') /]
+	[TOC_Chapter_start('Software Components') /]
 		[SoftwareComponent_Overview_Section_print(sbom, _context) /]
 [html_PAGE_end('software components') /]
 
-[html_PAGE_begin('definitions') /]
+[html_PAGE_start('definitions') /]
 		[SoftwareComponent_Definitions_Section_print(sbom, _context) /]
 [html_PAGE_end('definitions') /]
 
-[html_PAGE_begin('os and firmware') /]
-		[TOC_Section_begin('Software from ' + VENDOR_NAME()) /]
+[html_PAGE_start('os and firmware') /]
+		[TOC_Section_start('Software from ' + VENDOR_NAME()) /]
 			[SoftwareComponent_Firmware_SubSection_print(sbom, _context) /]
 [html_PAGE_end('os and firmware') /]
 
-[html_PAGE_begin('application') /]
+[html_PAGE_start('application') /]
 			[SoftwareComponent_Application_SubSection_print(sbom, _context) /]
 [html_PAGE_end('application') /]
 
-[html_PAGE_begin('library') /]
+[html_PAGE_start('library') /]
 			[SoftwareComponent_Library_SubSection_print(sbom, _context) /]
 		[TOC_Section_end() /]
 [html_PAGE_end('library') /]
 
-[html_PAGE_begin('3rdparty') /]
+[html_PAGE_start('3rdparty') /]
 		[SoftwareComponent_3rdParty_Section_print(sbom, _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('3rdparty') /]
 
-[html_PAGE_begin('runtime environment') /]
-	[TOC_Chapter_begin('Runtime Environment') /]
+[html_PAGE_start('runtime environment') /]
+	[TOC_Chapter_start('Runtime Environment') /]
 		[RuntimeEnvironment_Container_Section_print(sbom, _context) /]
 		[RuntimeEnvironment_Device_Section_print(sbom, _context) /]
 		[RuntimeEnvironment_Platform_Section_print(sbom, _context) /]
@@ -334,7 +334,7 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Overview') /]
+[TOC_Section_start('Overview') /]
 	<p>
 		The following table shows all components present for each software system. Details for each component will be provided in later sections.
 	</p>
@@ -342,7 +342,7 @@ post(trim())]
 	[sbom.printAsTableExclude(Set(ComponentType){ ComponentType::Device }) /]
 [TOC_Section_end() /]
 
-[TOC_Section_begin('Runtime Environment') /]
+[TOC_Section_start('Runtime Environment') /]
 	<p>
 		The following table shows the runtime environment of the software.
 	</p>
@@ -362,8 +362,8 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Definitions') /]
-	[TOC_SubSection_begin('IEC 81001-5-1 Classification')/]
+[TOC_Section_start('Definitions') /]
+	[TOC_SubSection_start('IEC 81001-5-1 Classification')/]
 		<p>
 			Each component is classified according to IEC 81001-5-1:
 		</p>
@@ -377,7 +377,7 @@ post(trim())]
 		[html_IMG_IEC_81001_5_SOFTWARE_ITEM_Classification(_context) /]
 	[TOC_SubSection_end() /]
 
-	[TOC_SubSection_begin('NIST IR 7695 - CPE Part')/]
+	[TOC_SubSection_start('NIST IR 7695 - CPE Part')/]
 		<p>
 			"Part" is a termn defined in NIST IR 7695 for CPE:
 		</p>
@@ -402,7 +402,7 @@ post(trim())]
 		</blockquote>
 	[TOC_SubSection_end() /]
 
-	[TOC_SubSection_begin('NIST IR 7695 - Operating System')/]
+	[TOC_SubSection_start('NIST IR 7695 - Operating System')/]
 		<blockquote>
 			<p>
 				Operating System: 
@@ -427,7 +427,7 @@ post(trim())]
 		</p>
 	[TOC_SubSection_end() /]
 
-	[TOC_SubSection_begin('NIST IR 7695 - Application')/]
+	[TOC_SubSection_start('NIST IR 7695 - Application')/]
 		<blockquote>
 			<p>
 				Application:
@@ -465,18 +465,18 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_SubSection_begin('Operating System and Firmware') /]
+[TOC_SubSection_start('Operating System and Firmware') /]
 	<p>
 		The following lists the firmware included in the software.
 	</p>
 
-	[html_NOTE_Start() /]
+	[html_NOTE_start() /]
 		developed by [VENDOR_NAME() /]
-	[html_NOTE_End() /]
+	[html_NOTE_end() /]
 
-	[html_TIP_Start()/]
+	[html_TIP_start()/]
 		Firmware is any software run on an embedded system, no matter if it runs on a field programable gate array (FPGA), micro controller (uC), digital signal processor (DSP), or general purpose computational unit (CPU).
-	[html_TIP_End()/]
+	[html_TIP_end()/]
 
 	[sbom.printSelectedComponents(
 		Set{ ComponentType::OperatingSystem, ComponentType::Firmware },
@@ -497,18 +497,18 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_SubSection_begin('Applications') /]
+[TOC_SubSection_start('Applications') /]
 	<p>
 		The following lists the applications included in the software.
 	</p>
 
-	[html_NOTE_Start() /]
+	[html_NOTE_start() /]
 		developed by [VENDOR_NAME() /]
-	[html_NOTE_End() /]
+	[html_NOTE_end() /]
 
-	[html_TIP_Start()/]
+	[html_TIP_start()/]
 		An application is any executable. Libraries used by such an application will be listed in a separate section later.
-	[html_TIP_End()/]
+	[html_TIP_end()/]
 
 	[sbom.printSelectedComponents(
 		Set{ ComponentType::Application },
@@ -529,14 +529,14 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_SubSection_begin('Libraries') /]
+[TOC_SubSection_start('Libraries') /]
 	<p>
 		The following lists the libraries included in the software.
 	</p>
 
-	[html_NOTE_Start()/]
+	[html_NOTE_start()/]
 		Includes only libraries by [VENDOR_NAME() /]. Libraries from 3rd parties are listed in a separate section later.
-	[html_NOTE_End()/]
+	[html_NOTE_end()/]
 
 	[sbom.printSelectedComponents(
 		Set{ ComponentType::Library },
@@ -557,14 +557,14 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Software from 3rd Party / C(OTS) / (F)OSS') /]
+[TOC_Section_start('Software from 3rd Party / C(OTS) / (F)OSS') /]
 	<p>
 		The following lists components (applications, firmware, libraries etc.).
 	</p>
 
-	[html_NOTE_Start()/]
+	[html_NOTE_start()/]
 		Includes everything developed by a 3rd party, i.e. C(OTS) and (F)OSS, and <b>NOT</b> by [VENDOR_NAME() /].
-	[html_NOTE_End()/]
+	[html_NOTE_end()/]
 
 	[sbom.printSelectedComponents(
 		null,
@@ -585,7 +585,7 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Virtualization') /]
+[TOC_Section_start('Virtualization') /]
 	<p>
 		The following lists virtualization environments (e.g. Java JVM, OS Hypervisors) the software relies on to run.
 	</p>
@@ -609,7 +609,7 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Devices') /]
+[TOC_Section_start('Devices') /]
 	<p>
 		The following lists devices which the software runs on or controls.
 	</p>
@@ -633,7 +633,7 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[TOC_Section_begin('Platform') /]
+[TOC_Section_start('Platform') /]
 	<p>
 		The following lists platforms the software supports to run on.
 	</p>
@@ -657,10 +657,10 @@ post(trim())]
 	sbom 			: Sbom,
 	_context		: Context
 )]
-[html_PAGE_begin('vulnerability handling') /]
-[TOC_Chapter_begin('Vulnerability handling') /]
-	[TOC_Section_begin('Vulnerability reporting') /]
-		[html_ANSI_NOTICE_Start() /]
+[html_PAGE_start('vulnerability handling') /]
+[TOC_Chapter_start('Vulnerability handling') /]
+	[TOC_Section_start('Vulnerability reporting') /]
+		[html_ANSI_NOTICE_start() /]
 			<p>
 				Vulnerabilities can be reported by anyone through various channels. 
 			</p>
@@ -668,11 +668,11 @@ post(trim())]
 			<p>
 				For contact and reporting procedure details, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
 			</p>
-		[html_ANSI_NOTICE_End() /]
+		[html_ANSI_NOTICE_end() /]
 	[TOC_Section_end() /]
 
-	[TOC_Section_begin('Vulnerability disclosure') /]
-		[html_ANSI_NOTICE_Start() /]
+	[TOC_Section_start('Vulnerability disclosure') /]
+		[html_ANSI_NOTICE_start() /]
 			<p>
 				Vulnerabilities aren't disclosed in this document due to their nature of evolving over time.
 			</p>
@@ -680,11 +680,11 @@ post(trim())]
 			<p>
 				For current vulnerability information, please check [VENDOR_NAME() /] website at [html_Link(VENDOR_WEBSITE()) /].
 			</p>
-		[html_ANSI_NOTICE_End() /]
+		[html_ANSI_NOTICE_end() /]
 	
-		[html_INFO_Start() /]
+		[html_INFO_start() /]
 			[html_Link('Vulnerability Exploitability eXchange (VEX)', 'https://cyclonedx.org/capabilities/vex/') /] as well as [html_Link('Common Security Advisory Framework (CSAF)', 'https://oasis-open.github.io/csaf-documentation/index.html') /] are used for machine readable and automatable monitoring of evolving threats. 
-		[html_INFO_End() /]
+		[html_INFO_end() /]
 	[TOC_Section_end() /]
 [TOC_Chapter_end() /]
 [html_PAGE_end('vulnerability handling') /]
@@ -706,15 +706,15 @@ post(trim())]
 	licenses : OrderedSet(String) = sbom.sbom_allLicenses();
 }]
 [if (licenses->size() > 0)]
-[html_PAGE_begin('appendix a') /]
-[TOC_Chapter_begin('Appendix A - Licenses') /]
+[html_PAGE_start('appendix a') /]
+[TOC_Chapter_start('Appendix A - Licenses') /]
 
 [for (licenses)]
 [if (i > 1)]
 [html_PAGE_end() /]
-[html_PAGE_begin(self) /]
+[html_PAGE_start(self) /]
 [/if]
-	[TOC_Section_begin('license ' + self) /]
+	[TOC_Section_start('license ' + self) /]
 	[TOC_anchor(self) /]
 	<p>
 		<b>COMPONENTS</b> with this license:

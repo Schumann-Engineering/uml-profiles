@@ -116,7 +116,7 @@ post(trim())
 	).oclAsType(TocEntry);
 }]
 [if (toc <> null and toc.child->size() > 0)]
-[html_PAGE_begin('__toc__') /]
+[html_PAGE_start('__toc__') /]
 	<p class="toc-title">
 		Table of Contents
 	</p>

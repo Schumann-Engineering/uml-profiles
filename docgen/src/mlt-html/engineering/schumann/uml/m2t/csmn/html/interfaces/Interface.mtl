@@ -12,7 +12,8 @@
 
 
 [template public printInterfaceAsTable(
-	interfaces : Set(Port)
+	interfaces					: Set(Port),
+	includeAssetCharacteristics	: Boolean
 )
 post(trim())]
 [if (interfaces->size() = 0)]
@@ -29,7 +30,7 @@ None
 	</thead>
 	<tbody>
 [for (interface : Port | interfaces->sortedBy(name))]
-		[printInterfaceAsTableRow(interface) /]
+		[printInterfaceAsTableRow(interface, includeAssetCharacteristics) /]
 [/for]
 	</tbody>
 </table>
@@ -38,7 +39,8 @@ None
 
 
 [template private printInterfaceAsTableRow(
-	interface : Port
+	interface 					: Port,
+	includeAssetCharacteristics	: Boolean
 )
 post(trim())
 {
@@ -52,6 +54,6 @@ post(trim())
 [comment PRODUCT INTERFACE /]
 	<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
 [comment PRODUCT INTERFACE Characteristics /]
-	<td>[interface.printCharacteristics()/]</td> 
+	<td>[interface.printCharacteristics(includeAssetCharacteristics)/]</td> 
 </tr>
 [/template]

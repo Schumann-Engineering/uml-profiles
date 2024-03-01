@@ -128,12 +128,12 @@
 	_context	: String
 )]
 [if (env_hasError(_context))]
-[html_PAGE_begin('__errors__') /]
-	[html_ANSI_DANGER_Start()/]
+[html_PAGE_start('__errors__') /]
+	[html_ANSI_DANGER_start()/]
 		<p>
 			There were errors while generating this document!
 		</p>
-	[html_ANSI_DANGER_End() /]
+	[html_ANSI_DANGER_end() /]
 
 	<ul>
 		[for (env_getErrors(_context))]

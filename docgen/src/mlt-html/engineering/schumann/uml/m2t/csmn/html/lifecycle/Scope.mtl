@@ -104,7 +104,7 @@ post(trim())
 	<td>
 [if (product.platformType = CommonPlatformEnumerationType::Hardware)][product.productName /] Firmware
 [elseif (product.platformType = CommonPlatformEnumerationType::Application)][product.productName /]
-[else][html_ANSI_WARNING_Start()/]SBOM not defined for [product.productName /][html_ANSI_WARNING_End()/]
+[else][html_ANSI_WARNING_start()/]SBOM not defined for [product.productName /][html_ANSI_WARNING_end()/]
 [/if]
 	</td>
 </tr>
@@ -125,7 +125,7 @@ post(trim())
 [elseif (product.platformType = CommonPlatformEnumerationType::Firmware)]Software (Device Software or Firmware)
 [elseif (product.platformType = CommonPlatformEnumerationType::Application)]Software (Application)
 [elseif (product.platformType = CommonPlatformEnumerationType::OperatingSystem)]Software (Operating System)
-[else][html_ANSI_WARNING_Start()/]Unknown[html_ANSI_WARNING_End()/]
+[else][html_ANSI_WARNING_start()/]Unknown[html_ANSI_WARNING_end()/]
 [/if]
 	</td>
 </tr>

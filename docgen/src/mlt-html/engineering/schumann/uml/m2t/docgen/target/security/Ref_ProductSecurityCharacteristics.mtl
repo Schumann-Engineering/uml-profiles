@@ -28,7 +28,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_TIP_Start() /]
+[html_TIP_start() /]
 	For each asset, the following information is included:
 	<table class="table-2-columns">
 		<thead>
@@ -48,7 +48,7 @@
 			</tr>
 		</tbody>
 	</table>
-[html_TIP_End() /]
+[html_TIP_end() /]
 [/template]
 
 
@@ -60,7 +60,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_TIP_Start() /]
+[html_TIP_start() /]
 	<p>
 		For each connection to or from a system interface, the following information is included:
 	</p>
@@ -116,7 +116,7 @@
 			</tr>
 		</tbody>
 	</table>
-[html_TIP_End() /]
+[html_TIP_end() /]
 [/template]
 
 
@@ -128,7 +128,7 @@
 	'Product Architecture',
 	section
 )/]
-[html_TIP_Start() /]
+[html_TIP_start() /]
 	For each interface, the following information is included:
 	<table class="table-2-columns">
 		<thead>
@@ -166,7 +166,7 @@
 			</tr>
 		</tbody>
 	</table>
-[html_TIP_End() /]
+[html_TIP_end() /]
 [/template]
 
 

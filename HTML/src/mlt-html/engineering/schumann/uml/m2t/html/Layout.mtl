@@ -7,18 +7,18 @@
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
-[template public html_PAGE_begin(
+[template public html_PAGE_start(
 	id					: String
-)][html_PAGE_begin(id, '', '') /][/template]
+)][html_PAGE_start(id, '', '') /][/template]
 
 
-[template public html_PAGE_begin(
+[template public html_PAGE_start(
 	id					: String,
 	additionalClass		: String
-)][html_PAGE_begin(id, additionalClass, '') /][/template]
+)][html_PAGE_start(id, additionalClass, '') /][/template]
 
 
-[template public html_PAGE_begin(
+[template public html_PAGE_start(
 	id					: String,
 	additionalClass		: String,
 	additionalAttribute	: String

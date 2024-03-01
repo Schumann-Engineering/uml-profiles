@@ -11,42 +11,42 @@
 [/template]
 
 
-[template public html_EXAMPLE_Start(devNull : OclAny)]
+[template public html_EXAMPLE_start(devNull : OclAny)]
 <div class="box-example">
 [/template]
-[template public html_EXAMPLE_End(devNull : OclAny)]
+[template public html_EXAMPLE_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_INFO_Start(devNull : OclAny)]
+[template public html_INFO_start(devNull : OclAny)]
 <div class="box-info">
 [/template]
-[template public html_INFO_End(devNull : OclAny)]
+[template public html_INFO_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_NOTE_Start(devNull : OclAny)]
+[template public html_NOTE_start(devNull : OclAny)]
 <div class="box-note">
 [/template]
-[template public html_NOTE_End(devNull : OclAny)]
+[template public html_NOTE_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_TIP_Start(devNull : OclAny)]
+[template public html_TIP_start(devNull : OclAny)]
 <div class="box-tip">
 [/template]
-[template public html_TIP_End(devNull : OclAny)]
+[template public html_TIP_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_TASK_Start(devNull : OclAny)]
+[template public html_TASK_start(devNull : OclAny)]
 <div class="box-task">
 [/template]
-[template public html_TASK_End(devNull : OclAny)]
+[template public html_TASK_end(devNull : OclAny)]
 </div>
 [/template]
 
@@ -66,33 +66,33 @@
 [** ======================
   * ANSI Z535.6 
   * ====================== **/]
-[template public html_ANSI_NOTICE_Start(devNull : OclAny)]
+[template public html_ANSI_NOTICE_start(devNull : OclAny)]
 <div class="box-ansi-notice">
 [/template]
-[template public html_ANSI_NOTICE_End(devNull : OclAny)]
+[template public html_ANSI_NOTICE_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_ANSI_CAUTION_Start(devNull : OclAny)]
+[template public html_ANSI_CAUTION_start(devNull : OclAny)]
 <div class="box-ansi-caution">
 [/template]
-[template public html_ANSI_CAUTION_End(devNull : OclAny)]
+[template public html_ANSI_CAUTION_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_ANSI_WARNING_Start(devNull : OclAny)]
+[template public html_ANSI_WARNING_start(devNull : OclAny)]
 <div class="box-ansi-warning">
 [/template]
-[template public html_ANSI_WARNING_End(devNull : OclAny)]
+[template public html_ANSI_WARNING_end(devNull : OclAny)]
 </div>
 [/template]
 
 
-[template public html_ANSI_DANGER_Start(devNull : OclAny)]
+[template public html_ANSI_DANGER_start(devNull : OclAny)]
 <div class="box-ansi-danger">
 [/template]
-[template public html_ANSI_DANGER_End(devNull : OclAny)]
+[template public html_ANSI_DANGER_end(devNull : OclAny)]
 </div>
 [/template]

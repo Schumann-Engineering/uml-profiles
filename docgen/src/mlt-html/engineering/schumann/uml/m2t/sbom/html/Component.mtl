@@ -192,9 +192,9 @@ post(trim())
 		<p>
 			[TOC_link( license ) /]
 		</p>
-		[html_INFO_Start() /]
+		[html_INFO_start() /]
 			This license is the one "forwarded" to customers. There might be more licenses available by the vendor. However, the declared license was selected / is used.
-		[html_INFO_End() /]
+		[html_INFO_end() /]
 	</td>
 </tr>
 [/if]
@@ -278,9 +278,9 @@ post(trim())
 ? (name = null or name.trim().size() = 0)
 post(trim())
 ]
-[html_ANSI_WARNING_Start()/]
+[html_ANSI_WARNING_start()/]
 	name not allowed to be empty.<br/>Reason: NTIA minimum field
-[html_ANSI_WARNING_End()/]
+[html_ANSI_WARNING_end()/]
 [/template]
 
 
@@ -299,9 +299,9 @@ post(trim())
 ? (supplier = null or supplier.trim().size() = 0)
 post(trim())
 ]
-[html_ANSI_WARNING_Start()/]
+[html_ANSI_WARNING_start()/]
 	supplier not allowed to be empty.<br/>Reason: NTIA minimum field
-[html_ANSI_WARNING_End()/]
+[html_ANSI_WARNING_end()/]
 [/template]
 
 
@@ -320,9 +320,9 @@ post(trim())
 ? (version = null or version.trim().size() = 0)
 post(trim())
 ]
-[html_ANSI_WARNING_Start()/]
+[html_ANSI_WARNING_start()/]
 	version not allowed to be empty.<br/>Reason: NTIA minimum field
-[html_ANSI_WARNING_End()/]
+[html_ANSI_WARNING_end()/]
 [/template]
 
 
@@ -332,9 +332,9 @@ post(trim())
 ? (version.trim() = '*' or version.trim() = '-')
 post(trim())
 ]
-[html_ANSI_WARNING_Start()/]
+[html_ANSI_WARNING_start()/]
 	version not allowed to be generic (* or -).<br/>Reason: NTIA minimum field
-[html_ANSI_WARNING_End()/]
+[html_ANSI_WARNING_end()/]
 [/template]
 
 

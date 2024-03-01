@@ -18,9 +18,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_INFO_Start()/]
+		[html_INFO_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_INFO_End()/]
+		[html_INFO_end()/]
 	</td>
 </tr>
 [/template]
@@ -33,9 +33,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_NOTE_Start()/]
+		[html_NOTE_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_NOTE_End()/]
+		[html_NOTE_end()/]
 	</td>
 </tr>
 [/template]
@@ -48,9 +48,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_TIP_Start()/]
+		[html_TIP_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_TIP_End()/]
+		[html_TIP_end()/]
 	</td>
 </tr>
 [/template]
@@ -77,9 +77,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_ANSI_NOTICE_Start()/]
+		[html_ANSI_NOTICE_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_ANSI_NOTICE_End()/]
+		[html_ANSI_NOTICE_end()/]
 	</td>
 </tr>
 [/template]
@@ -92,9 +92,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_ANSI_CAUTION_Start()/]
+		[html_ANSI_CAUTION_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_ANSI_CAUTION_End()/]
+		[html_ANSI_CAUTION_end()/]
 	</td>
 </tr>
 [/template]
@@ -107,9 +107,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_ANSI_WARNING_Start()/]
+		[html_ANSI_WARNING_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_ANSI_WARNING_End()/]
+		[html_ANSI_WARNING_end()/]
 	</td>
 </tr>
 [/template]
@@ -122,9 +122,9 @@
 ]
 <tr>
 	<td colspan="2" style="text-align: center">
-		[html_ANSI_DANGER_Start()/]
+		[html_ANSI_DANGER_start()/]
 			[value._formattedTextToXHtml() /]
-		[html_ANSI_DANGER_End()/]
+		[html_ANSI_DANGER_end()/]
 	</td>
 </tr>
 [/template]

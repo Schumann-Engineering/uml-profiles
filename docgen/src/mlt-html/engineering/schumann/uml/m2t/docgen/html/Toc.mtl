@@ -43,7 +43,7 @@ post(trim())]
 [/template]
 
 
-[template public TOC_Title_begin(
+[template public TOC_Title_start(
 	title   	: String
 ) post(trim())][TOC_Header(title, 1) /][/template]
 [template public TOC_Title_end(
@@ -51,7 +51,7 @@ post(trim())]
 ) post(trim())][/template]
 
 
-[template public TOC_Chapter_begin(
+[template public TOC_Chapter_start(
 	title   : String
 )][TOC_Header(title, 2) /][/template]
 [template public TOC_Chapter_end(
@@ -59,7 +59,7 @@ post(trim())]
 ) post(trim())][/template]
 
 
-[template public TOC_Section_begin(
+[template public TOC_Section_start(
 	title   : String
 )][TOC_Header(title, 3) /][/template]
 [template public TOC_Section_end(
@@ -67,7 +67,7 @@ post(trim())]
 ) post(trim())][/template]
 
 
-[template public TOC_SubSection_begin(
+[template public TOC_SubSection_start(
 	title   : String
 )][TOC_Header(title, 4) /][/template]
 [template public TOC_SubSection_end(
@@ -75,7 +75,7 @@ post(trim())]
 ) post(trim())][/template]
 
 
-[template public TOC_SubSubSection_begin(
+[template public TOC_SubSubSection_start(
 	title   : String
 ) post(trim())][TOC_Header(title, 5) /][/template]
 [template public TOC_SubSubSection_end(
