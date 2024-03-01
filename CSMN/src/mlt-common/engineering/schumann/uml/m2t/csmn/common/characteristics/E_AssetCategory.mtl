@@ -246,6 +246,46 @@
 
 [comment
 	==============================
+	AUTHENTICITY
+	==============================
+/]
+[query public csmn_hasProtectionGoal_Authenticity(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::Authenticity)
+/]
+
+
+[query public csmn_hasProtectionGoal_Authenticity(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::Authenticity)
+/]
+
+
+[comment
+	==============================
+	NON-REPUDIATION
+	==============================
+/]
+[query public csmn_hasProtectionGoal_NonRepudiation(
+	this : AssetCategory
+) : Boolean =
+	csmn_toProtectionGoals()
+	->includes(ProtectionGoal::NonRepudiation)
+/]
+
+
+[query public csmn_hasProtectionGoal_NonRepudiation(
+	this : Set(ProtectionGoal)
+) : Boolean =
+	includes(ProtectionGoal::NonRepudiation)
+/]
+
+
+[comment
+	==============================
 	USABILITY
 	==============================
 /]

@@ -2581,6 +2581,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.USABILITY);
 		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.MONEY);
 		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.LEGAL);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.AUTHENTICITY);
+		addEEnumLiteral(protectionGoalEEnum, ProtectionGoal.NON_REPUDIATION);
 
 		initEEnum(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.class, "STRIDE");
 		addEEnumLiteral(strideEEnum, engineering.schumann.uml.profile.csmn.STRIDE.SPOOFING);

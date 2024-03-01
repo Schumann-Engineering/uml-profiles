@@ -235,6 +235,8 @@
     <eLiterals name="Usability" value="3"/>
     <eLiterals name="Money" value="4"/>
     <eLiterals name="Legal" value="5"/>
+    <eLiterals name="Authenticity" value="6"/>
+    <eLiterals name="NonRepudiation" value="7"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="STRIDE">
     <eLiterals name="Spoofing"/>
