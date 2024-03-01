@@ -14,16 +14,16 @@
   * CSMN
   * ========================================
   * ======================================== **/
-table.table-ciauml thead th,
-table.table-ciauml-2-stride thead th,
-table.table-ciauml thead th {
+table.table-ciaanuml thead th,
+table.table-ciaanuml-2-stride thead th,
+table.table-ciaanuml thead th {
 	text-align:		center !important;
 }
 
 
 
-table.table-ciauml tbody th,
-table.table-ciauml-2-stride tbody th,
+table.table-ciaanuml tbody th,
+table.table-ciaanuml-2-stride tbody th,
 table.table-stride tbody th {
 	text-align:		left !important;
 	width:			5cm !important;
@@ -51,30 +51,30 @@ td.table-column-empty-stride {
   * CSMN CIAAN+UML
   * ========================================
   * ======================================== **/
-table.table-ciauml {
+table.table-ciaanuml {
 	width:			15cm !important;
 }
 
-table.table-ciauml thead th:nth-child(1),
-table.table-ciauml tbody th:nth-child(1) {
+table.table-ciaanuml thead th:nth-child(1),
+table.table-ciaanuml tbody th:nth-child(1) {
 	width:			4cm !important;
 }
 
-table.table-ciauml thead th:nth-child(2),
-table.table-ciauml tbody td:nth-child(2) {
+table.table-ciaanuml thead th:nth-child(2),
+table.table-ciaanuml tbody td:nth-child(2) {
 	width:			5.5cm !important;
 }
 
-table.table-ciauml thead th:nth-child(3),
-table.table-ciauml tbody td:nth-child(3) {
+table.table-ciaanuml thead th:nth-child(3),
+table.table-ciaanuml tbody td:nth-child(3) {
 	width:			5.5cm !important;
 }
 
-table.table-ciauml tbody td:nth-child(2) {
+table.table-ciaanuml tbody td:nth-child(2) {
 	text-align:		center !important;
 }
 
-table.table-ciauml tbody td:nth-child(3) {
+table.table-ciaanuml tbody td:nth-child(3) {
 	text-align:		center !important;
 }
 
@@ -84,70 +84,70 @@ table.table-ciauml tbody td:nth-child(3) {
   * CSMN CIAAN+UML -2- STRIDE
   * ========================================
   * ======================================== **/
-table.table-ciauml-2-stride {
+table.table-ciaanuml-2-stride {
 	width:			15cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(1),
-table.table-ciauml-2-stride tbody th:nth-child(1) {
+table.table-ciaanuml-2-stride thead th:nth-child(1),
+table.table-ciaanuml-2-stride tbody th:nth-child(1) {
 	width:			4cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(2),
-table.table-ciauml-2-stride tbody td:nth-child(2) {
+table.table-ciaanuml-2-stride thead th:nth-child(2),
+table.table-ciaanuml-2-stride tbody td:nth-child(2) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(3),
-table.table-ciauml-2-stride tbody td:nth-child(3) {
+table.table-ciaanuml-2-stride thead th:nth-child(3),
+table.table-ciaanuml-2-stride tbody td:nth-child(3) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(4),
-table.table-ciauml-2-stride tbody td:nth-child(4) {
+table.table-ciaanuml-2-stride thead th:nth-child(4),
+table.table-ciaanuml-2-stride tbody td:nth-child(4) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(5),
-table.table-ciauml-2-stride tbody td:nth-child(5) {
+table.table-ciaanuml-2-stride thead th:nth-child(5),
+table.table-ciaanuml-2-stride tbody td:nth-child(5) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(6),
-table.table-ciauml-2-stride tbody td:nth-child(6) {
+table.table-ciaanuml-2-stride thead th:nth-child(6),
+table.table-ciaanuml-2-stride tbody td:nth-child(6) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride thead th:nth-child(7),
-table.table-ciauml-2-stride tbody td:nth-child(7) {
+table.table-ciaanuml-2-stride thead th:nth-child(7),
+table.table-ciaanuml-2-stride tbody td:nth-child(7) {
 	width:			1.8cm !important;
 }
 
-table.table-ciauml-2-stride tbody th:nth-child(1) {
+table.table-ciaanuml-2-stride tbody th:nth-child(1) {
 	text-align:		left !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(2) {
+table.table-ciaanuml-2-stride tbody td:nth-child(2) {
 	text-align:		center !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(3) {
+table.table-ciaanuml-2-stride tbody td:nth-child(3) {
 	text-align:		center !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(4) {
+table.table-ciaanuml-2-stride tbody td:nth-child(4) {
 	text-align:		center !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(5) {
+table.table-ciaanuml-2-stride tbody td:nth-child(5) {
 	text-align:		center !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(6) {
+table.table-ciaanuml-2-stride tbody td:nth-child(6) {
 	text-align:		center !important;
 }
 
-table.table-ciauml-2-stride tbody td:nth-child(7) {
+table.table-ciaanuml-2-stride tbody td:nth-child(7) {
 	text-align:		center !important;
 }
 
@@ -164,40 +164,18 @@ table.table-stride {
 
 table.table-stride thead th:nth-child(1),
 table.table-stride tbody th:nth-child(1) {
-	width:			4cm !important;
+	width:			5cm !important;
 }
 
 table.table-stride thead th:nth-child(2),
 table.table-stride tbody td:nth-child(2) {
-	width:			2cm !important;
+	width:			5cm !important;
+	text-align:		center !important;
 }
 
 table.table-stride thead th:nth-child(3),
 table.table-stride tbody td:nth-child(3) {
-	width:			2cm !important;
-}
-
-table.table-stride thead th:nth-child(4),
-table.table-stride tbody td:nth-child(4) {
-	width:			3cm !important;
-}
-
-table.table-stride thead th:nth-child(5),
-table.table-stride tbody td:nth-child(5) {
-	width:			3cm !important;
-}
-
-table.table-stride tbody th:nth-child(1) {
-	text-align:		left !important;
-}
-
-table.table-stride tbody td:nth-child(2),
-table.table-stride tbody td:nth-child(3) {
-	text-align:		left !important;
-}
-
-table.table-stride tbody td:nth-child(4),
-table.table-stride tbody td:nth-child(5) {
+	width:			5cm !important;
 	text-align:		center !important;
 }
 

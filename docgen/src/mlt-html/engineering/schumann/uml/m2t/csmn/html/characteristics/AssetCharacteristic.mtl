@@ -105,7 +105,7 @@ post(trim())
 	selected		: Set(ProtectionGoal)
 )
 post(trim())]
-<table class="table-ciauml">
+<table class="table-ciaanuml">
 	<thead>
 		<tr>
 			<th>PROTECTION GOAL</th>
@@ -165,7 +165,7 @@ post(trim())]
 )
 post(trim())]
 [if (selected->notEmpty())]
-<table class="table-ciauml-2-stride">
+<table class="table-ciaanuml-2-stride">
 	<thead>
 		<tr>
 			<th rowspan="2">Violated PROTECTION GOAL</th>
