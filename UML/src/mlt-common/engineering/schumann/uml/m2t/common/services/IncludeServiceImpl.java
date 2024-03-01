@@ -63,26 +63,7 @@ public class IncludeServiceImpl {
 		 * convert content
 		 * ----------- */
 		if (filename.endsWith(".md"))
-		{
-			// System.out.println("INFO: rendering file '" + name + "' (found in '" + filename + "') as markdown");
-			
-			var renderExtensions = Arrays.asList(TablesExtension.create());
-			
-			// parse markdown
-			var markdownParser = Parser.builder()
-			        .extensions(renderExtensions)
-			        .build();
-			var markdown = markdownParser.parse(result);
-			
-			// render markdown -> HTML
-			var htmlRenderer = HtmlRenderer.builder()
-			        .extensions(renderExtensions)
-			        .build();
-			result = htmlRenderer.render(markdown); 
-			
-			// beautify
-			result = result.replaceAll("<br>", "<br/>");
-		}
+			result = MarkdownServiceImpl.renderMarkdown(result);
 		
 		
 		/* -----------

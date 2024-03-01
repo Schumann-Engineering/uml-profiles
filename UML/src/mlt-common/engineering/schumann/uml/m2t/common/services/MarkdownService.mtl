@@ -1,0 +1,15 @@
+[module MarkdownService(
+	'http://www.eclipse.org/uml2/5.0.0/UML'
+)/]
+
+
+[query public renderMarkdown(
+	input	: String
+) : String = 
+	invoke(
+		'engineering.schumann.uml.m2t.common.services.MarkdownServiceImpl', 
+		'renderMarkdown(java.lang.String)',
+		Sequence{
+			input
+		})
+/]
