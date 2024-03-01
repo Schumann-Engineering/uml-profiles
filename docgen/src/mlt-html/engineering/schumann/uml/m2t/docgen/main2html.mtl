@@ -6,8 +6,10 @@
 
 
 [import engineering::schumann::uml::m2t::docgen::target::dev::DEV_ModelReport /]
-[import engineering::schumann::uml::m2t::docgen::target::security::CN_CyberSecurityResearchReport /]
+[import engineering::schumann::uml::m2t::docgen::target::security::INT_CyberSecurityManagementPlan /]
+[import engineering::schumann::uml::m2t::docgen::target::security::INT_CyberSecurityReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::INT_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::CN_CyberSecurityResearchReport /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::INT_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::JSON_CycloneDX /]
 
@@ -43,6 +45,8 @@
 	====================
 /]
 [generateDocument_INT_ProductSecurityCharacteristics() /]
+[generateDocument_INT_CyberSecurityManagementPlan() /]
+[generateDocument_INT_CyberSecurityReport() /]
 [generateDocument_CN_CyberSecurityResearchReport() /]
 
 
