@@ -60,7 +60,7 @@
 )
 {
 	templateUUID		: String			= '38dce280-981e-4dcc-8ff3-de2490bab33e';
-	templateVersion		: String			= '0.1';
+	templateVersion		: String			= '0.2';
 
 	productElements		: Set(Package) 		= this.allOwnedElements()
 												->filter(Package)
