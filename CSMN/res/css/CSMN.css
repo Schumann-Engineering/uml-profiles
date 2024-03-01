@@ -707,6 +707,11 @@ Dependency[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
 } 
 
+/* === AssetType.Connection === */
+*[appliedStereotypes~="CSMN::Asset"][assetType="Connection"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/transit-connection-variant.svg';
+} 
+
 /* === AssetType.Energy === */
 *[appliedStereotypes~="CSMN::Asset"][assetType="Energy"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/lightning-bolt.svg';
@@ -727,6 +732,11 @@ Dependency[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/information-box-outline.svg';
 } 
 
+/* === AssetType.Interface === */
+*[appliedStereotypes~="CSMN::Asset"][assetType="Interface"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/connection.svg';
+} 
+
 /* === AssetType.Material === */
 *[appliedStereotypes~="CSMN::Asset"][assetType="Material"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/palette-swatch.svg';
@@ -734,7 +744,7 @@ Dependency[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 
 /* === AssetType.Mechanical === */
 *[appliedStereotypes~="CSMN::Asset"][assetType="Mechanical"] {
-	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/connection.svg';
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/cogs.svg';
 } 
 
 /* === AssetType.Signal === */

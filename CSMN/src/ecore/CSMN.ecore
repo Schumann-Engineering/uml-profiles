@@ -190,14 +190,15 @@
   <eClassifiers xsi:type="ecore:EEnum" name="AssetType">
     <eLiterals name="Unspecified"/>
     <eLiterals name="Credentials" value="1"/>
-    <eLiterals name="Energy" value="2"/>
-    <eLiterals name="Data" value="3"/>
-    <eLiterals name="Disturbance" value="4"/>
-    <eLiterals name="Information" value="5"/>
-    <eLiterals name="Interface" value="6"/>
-    <eLiterals name="Material" value="7"/>
-    <eLiterals name="Mechanical" value="8"/>
-    <eLiterals name="Signal" value="9"/>
+    <eLiterals name="Connection" value="2"/>
+    <eLiterals name="Energy" value="3"/>
+    <eLiterals name="Data" value="4"/>
+    <eLiterals name="Disturbance" value="5"/>
+    <eLiterals name="Information" value="6"/>
+    <eLiterals name="Interface" value="7"/>
+    <eLiterals name="Material" value="8"/>
+    <eLiterals name="Mechanical" value="9"/>
+    <eLiterals name="Signal" value="10"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AssetFlightLevel">
     <eLiterals name="UNSPECIFIED"/>

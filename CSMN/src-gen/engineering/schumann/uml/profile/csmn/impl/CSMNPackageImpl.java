@@ -2536,6 +2536,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		initEEnum(assetTypeEEnum, AssetType.class, "AssetType");
 		addEEnumLiteral(assetTypeEEnum, AssetType.UNSPECIFIED);
 		addEEnumLiteral(assetTypeEEnum, AssetType.CREDENTIALS);
+		addEEnumLiteral(assetTypeEEnum, AssetType.CONNECTION);
 		addEEnumLiteral(assetTypeEEnum, AssetType.ENERGY);
 		addEEnumLiteral(assetTypeEEnum, AssetType.DATA);
 		addEEnumLiteral(assetTypeEEnum, AssetType.DISTURBANCE);

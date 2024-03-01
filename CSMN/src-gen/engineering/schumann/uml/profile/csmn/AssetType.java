@@ -39,6 +39,14 @@ public enum AssetType implements Enumerator {
 	CREDENTIALS(1, "Credentials", "Credentials"),
 
 	/**
+	 * The '<em><b>Connection</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CONNECTION_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	CONNECTION(2, "Connection", "Connection"), /**
 	 * The '<em><b>Energy</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -46,7 +54,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ENERGY(2, "Energy", "Energy"),
+	ENERGY(3, "Energy", "Energy"),
 
 	/**
 	 * The '<em><b>Data</b></em>' literal object.
@@ -56,7 +64,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DATA(3, "Data", "Data"),
+	DATA(4, "Data", "Data"),
 
 	/**
 	 * The '<em><b>Disturbance</b></em>' literal object.
@@ -66,7 +74,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DISTURBANCE(4, "Disturbance", "Disturbance"),
+	DISTURBANCE(5, "Disturbance", "Disturbance"),
 
 	/**
 	 * The '<em><b>Information</b></em>' literal object.
@@ -76,7 +84,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INFORMATION(5, "Information", "Information"),
+	INFORMATION(6, "Information", "Information"),
 
 	/**
 	 * The '<em><b>Interface</b></em>' literal object.
@@ -86,7 +94,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	INTERFACE(6, "Interface", "Interface"), /**
+	INTERFACE(7, "Interface", "Interface"), /**
 	 * The '<em><b>Material</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,7 +102,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MATERIAL(7, "Material", "Material"), /**
+	MATERIAL(8, "Material", "Material"), /**
 	 * The '<em><b>Mechanical</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -102,7 +110,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MECHANICAL(8, "Mechanical", "Mechanical"), /**
+	MECHANICAL(9, "Mechanical", "Mechanical"), /**
 	 * The '<em><b>Signal</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,7 +118,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SIGNAL(9, "Signal", "Signal");
+	SIGNAL(10, "Signal", "Signal");
 
 	/**
 	 * The '<em><b>Unspecified</b></em>' literal value.
@@ -135,6 +143,17 @@ public enum AssetType implements Enumerator {
 	public static final int CREDENTIALS_VALUE = 1;
 
 	/**
+	 * The '<em><b>Connection</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #CONNECTION
+	 * @model name="Connection"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int CONNECTION_VALUE = 2;
+
+	/**
 	 * The '<em><b>Energy</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -143,7 +162,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ENERGY_VALUE = 2;
+	public static final int ENERGY_VALUE = 3;
 
 	/**
 	 * The '<em><b>Data</b></em>' literal value.
@@ -154,7 +173,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DATA_VALUE = 3;
+	public static final int DATA_VALUE = 4;
 
 	/**
 	 * The '<em><b>Disturbance</b></em>' literal value.
@@ -165,7 +184,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DISTURBANCE_VALUE = 4;
+	public static final int DISTURBANCE_VALUE = 5;
 
 	/**
 	 * The '<em><b>Information</b></em>' literal value.
@@ -176,7 +195,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INFORMATION_VALUE = 5;
+	public static final int INFORMATION_VALUE = 6;
 
 	/**
 	 * The '<em><b>Interface</b></em>' literal value.
@@ -187,7 +206,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int INTERFACE_VALUE = 6;
+	public static final int INTERFACE_VALUE = 7;
 
 	/**
 	 * The '<em><b>Material</b></em>' literal value.
@@ -198,7 +217,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MATERIAL_VALUE = 7;
+	public static final int MATERIAL_VALUE = 8;
 
 	/**
 	 * The '<em><b>Mechanical</b></em>' literal value.
@@ -209,7 +228,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MECHANICAL_VALUE = 8;
+	public static final int MECHANICAL_VALUE = 9;
 
 	/**
 	 * The '<em><b>Signal</b></em>' literal value.
@@ -220,7 +239,7 @@ public enum AssetType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SIGNAL_VALUE = 9;
+	public static final int SIGNAL_VALUE = 10;
 
 	/**
 	 * An array of all the '<em><b>Asset Type</b></em>' enumerators.
@@ -232,6 +251,7 @@ public enum AssetType implements Enumerator {
 		new AssetType[] {
 			UNSPECIFIED,
 			CREDENTIALS,
+			CONNECTION,
 			ENERGY,
 			DATA,
 			DISTURBANCE,
@@ -298,6 +318,7 @@ public enum AssetType implements Enumerator {
 		switch (value) {
 			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case CREDENTIALS_VALUE: return CREDENTIALS;
+			case CONNECTION_VALUE: return CONNECTION;
 			case ENERGY_VALUE: return ENERGY;
 			case DATA_VALUE: return DATA;
 			case DISTURBANCE_VALUE: return DISTURBANCE;
