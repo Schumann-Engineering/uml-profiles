@@ -356,9 +356,9 @@ each file would need a new engine / run.
 	let dummyUUID	: String = _context.templateUUID in
 	let dummyModel	: String = _context.product.model in
 
-	env_withSomeParams(
+	env_withAllParams(
 		'ANNOTATION.Product.Model.' + _context.product.model + '.Document.FileName.' + _context.templateUUID,
-		env_withSomeParams(
+		env_withAllParams(
 			_context.templateUUID + '.Output.FileName', 
 			this.name,
 			_context
@@ -466,6 +466,19 @@ each file would need a new engine / run.
 /]
 
 
+[query public DocGen_Template_ID(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	let dummyUUID	: String = _context.templateUUID in
+
+	env(
+		_context.templateUUID + '.ID',
+		_context.templateUUID
+	)
+/]
+
+
 [query public PATH_SEPARATOR(
 	this 			: NamedElement
 ) : String =
@@ -517,6 +530,7 @@ each file would need a new engine / run.
 		.replaceAllSafe('\\[software\\.version\\]',		_context.softwareVersion)
 	
 		.replaceAllSafe('\\[template\\.UUID\\]',		_context.templateUUID)
+		.replaceAllSafe('\\[template\\.ID\\]',			DocGen_Template_ID(_context))
 		.replaceAllSafe('\\[template\\.version\\]',		_context.templateVersion)
 	
 		.replaceAllSafe('\\[product\\.ID\\]', 			getProperty('ANNOTATION.Product.Model.' + _context.product.model + '.Document.ID.prefix'))
