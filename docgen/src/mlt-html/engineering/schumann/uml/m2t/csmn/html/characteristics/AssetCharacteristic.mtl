@@ -13,6 +13,7 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 [import engineering::schumann::uml::m2t::common::services::StringService /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
 [template public printAssetCharacteristic(
@@ -24,12 +25,13 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-[asset.print(includeAssetCharacteristics) /]
+[asset.print(this, includeAssetCharacteristics) /]
 [/template]
 
 
 [template public print(
 	this 						: Asset,
+	element						: NamedElement,
 	includeAssetCharacteristics	: Boolean
 )
 post(trim())]
@@ -39,20 +41,53 @@ post(trim())]
 [printCharacteristicTitle('Asset type') /]
 
 <ul>
-	<li><i>Type</i>: [this.assetType.csmn_toString() /]</li>
+	<li>
+[if (assetType <> AssetType::Unspecified)]
+		<i>Type</i>: [this.assetType.csmn_toString() /]
+[else]
+		[html_ANSI_DANGER_start() /]
+		<p>
+			Type is unspecified
+		</p>	
+		[html_ANSI_DANGER_end() /]
+		[env_addError('"' + element.name + '" does not have a Type for Asset Characteristic', null) /] 
+[/if]
+	</li>
 </ul>
 [/if]
 [comment flight level/]
 [printCharacteristicTitle('Asset Level') /]
 
 <ul>
-	<li><i>[this.flightLevel /]</i></li>
+	<li>
+[if (flightLevel <> AssetFlightLevel::UNSPECIFIED)]
+		<i>[this.flightLevel /]</i>
+[else]
+		[html_ANSI_DANGER_start() /]
+		<p>
+			Level is unspecified
+		</p>	
+		[html_ANSI_DANGER_end() /]
+		[env_addError('"' + element.name + '" does not have a Level for Asset Characteristic', null) /] 
+[/if]
+	</li>
 </ul>
 [comment category/]
 [printCharacteristicTitle('Asset Category') /]
 
 <ul>
-	<li><i>[this.assetCategory /]</i></li>
+	<li>
+[if (assetCategory <> AssetCategory::UNSPECIFIED)]
+		<i>[this.assetCategory /]</i>
+[else]
+		[html_ANSI_DANGER_start() /]
+		<p>
+			Category is unspecified
+		</p>	
+		[html_ANSI_DANGER_end() /]
+		[env_addError('"' + element.name + '" does not have a Category for Asset Characteristic', null) /] 
+[/if]
+	</li>
 </ul>
 [comment spec /]
 [if (not this.assetSpec._isNullOrEmpty())]

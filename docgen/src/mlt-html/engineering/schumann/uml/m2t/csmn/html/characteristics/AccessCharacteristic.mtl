@@ -11,34 +11,37 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 [import engineering::schumann::uml::m2t::csmn::text::characteristics::MechanicalAccessLevel /]
 [import engineering::schumann::uml::m2t::csmn::text::characteristics::FunctionalAccessLevel /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::common::services::MarkdownService /]
 
 
 [template public printAccessCharacteristic(
 	this : NamedElement
 ) 
-? (this.csmn_hasAccessCharacteristic())
+? (csmn_hasAccessCharacteristic())
 post(trim())
 {
-	characteristic : AccessCharacteristic = this.csmn_accessCharacteristic();
+	characteristic : AccessCharacteristic = csmn_accessCharacteristic();
 }]
-[characteristic.print() /]
+[characteristic.print(this) /]
 [/template]
 
 
 [template public print(
-	this : AccessCharacteristic
+	this	: AccessCharacteristic,
+	element	: NamedElement
 )
 post(trim())]
 [printCharacteristicTitle('Access properties') /]
 
 <ul>
-[if (this.mechanicalLevel <> null)]
+[if (mechanicalLevel <> null)]
 	<li>
-[if (this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
-		<i>Mechanical</i>: [this.mechanicalLevel.csmn_toString() /]
-[if (this.mechanicalSpec <> null)]
+[if (mechanicalLevel <> null and mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
+		<i>Mechanical</i>: [mechanicalLevel.csmn_toString() /]
+[if (mechanicalSpec <> null)]
 		[html_NOTE_start()/]
-		[this.mechanicalSpec /]
+		[mechanicalSpec.renderMarkdown() /]
 		[html_NOTE_end()/]
 [/if]
 [else]
@@ -47,16 +50,17 @@ post(trim())]
 				MechanicalAccessLevel is "Unspecified"
 			</p>
 		[html_NOTE_end() /]
+		[env_addError('"' + element.name + '" does not have Mechanical Access Characteristic', null) /] 
 [/if]
 	</li>
 [/if]
-[if (this.functionalLevel <> null)]
+[if (functionalLevel <> null)]
 	<li>
-[if (this.functionalLevel <> FunctionalAccessLevel::Unspecified)]
-		<i>Functionality</i>: [this.functionalLevel.csmn_toString() /]
-[if (this.functionalSpec <> null)]
+[if (functionalLevel <> null and functionalLevel <> FunctionalAccessLevel::Unspecified)]
+		<i>Functionality</i>: [functionalLevel.csmn_toString() /]
+[if (functionalSpec <> null)]
 	  	[html_NOTE_start() /]
-		[this.functionalSpec /]
+		[functionalSpec.renderMarkdown() /]
 		[html_NOTE_end() /]
 [/if]
 [else]
@@ -65,6 +69,7 @@ post(trim())]
 				FunctionalAccessLevel is "Unspecified"
 			</p>
 		[html_NOTE_end() /]
+		[env_addError('"' + element.name + '" does not have Functional Access Characteristic', null) /] 
 [/if]
 	</li>
 [/if]
