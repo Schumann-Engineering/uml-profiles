@@ -13,6 +13,8 @@
 			ProtectionGoal::Confidentiality,
 /*			ProtectionGoal::Integrity,*/
 /*			ProtectionGoal::Availability,*/
+/*			ProtectionGoal::Authenticity,*/
+			ProtectionGoal::NonRepudiation,
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money
 /*			ProtectionGoal::Legal */
@@ -22,6 +24,8 @@
 /*			ProtectionGoal::Confidentiality, */
 /*			ProtectionGoal::Integrity, */
 /*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Authenticity,*/
+			ProtectionGoal::NonRepudiation,
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money
 /*			ProtectionGoal::Legal */
@@ -31,6 +35,8 @@
 /*			ProtectionGoal::Confidentiality, */
 /*			ProtectionGoal::Integrity, */
 /*			ProtectionGoal::Availability, */
+			ProtectionGoal::Authenticity,
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money
 /*			ProtectionGoal::Legal */
@@ -40,6 +46,8 @@
 /*			ProtectionGoal::Confidentiality, */
 /*			ProtectionGoal::Integrity, */
 /*			ProtectionGoal::Availability, */
+			ProtectionGoal::Authenticity,
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
@@ -49,6 +57,8 @@
 /*			ProtectionGoal::Confidentiality, */
 /*			ProtectionGoal::Integrity, */
 /*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
@@ -58,6 +68,8 @@
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
+			ProtectionGoal::Authenticity,
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
@@ -67,6 +79,8 @@
 /*			ProtectionGoal::Confidentiality, */
 /*			ProtectionGoal::Integrity, */
 /*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Authenticity,*/
+			ProtectionGoal::NonRepudiation,
 /*			ProtectionGoal::Usability, */
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
@@ -76,6 +90,8 @@
 /*			ProtectionGoal::Confidentiality,
 /*			ProtectionGoal::Integrity,
 /*			ProtectionGoal::Availability,
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 			ProtectionGoal::Usability
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -85,6 +101,8 @@
 /*			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
+/*			ProtectionGoal::Authenticity,*/
+			ProtectionGoal::NonRepudiation,
 			ProtectionGoal::Usability
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -94,6 +112,8 @@
 /*			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -103,6 +123,8 @@
 /*			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -111,7 +133,9 @@
 		Set(ProtectionGoal) {
 /*			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
-			ProtectionGoal::Availability
+			ProtectionGoal::Availability,
+			ProtectionGoal::Authenticity,
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -121,6 +145,8 @@
 /*			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -129,7 +155,9 @@
 		Set(ProtectionGoal) {
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
-			ProtectionGoal::Availability
+			ProtectionGoal::Availability,
+			ProtectionGoal::Authenticity,
+			ProtectionGoal::NonRepudiation
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -138,7 +166,9 @@
 		Set(ProtectionGoal) {
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
-			ProtectionGoal::Availability
+			ProtectionGoal::Availability,
+			ProtectionGoal::Authenticity
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -148,6 +178,8 @@
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
+/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */
@@ -156,7 +188,9 @@
 		Set(ProtectionGoal) {
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
-			ProtectionGoal::Availability
+			ProtectionGoal::Availability,
+			ProtectionGoal::Authenticity
+/*			ProtectionGoal::NonRepudiation,*/
 /*			ProtectionGoal::Usability, */
 /*			ProtectionGoal::Money, */
 /*			ProtectionGoal::Legal */

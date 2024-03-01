@@ -19,12 +19,12 @@
 		}
 	else if (this = ProtectionGoal::Integrity) 			then
 		Set(STRIDE) {
-			STRIDE::Spoofing,
+/*			STRIDE::Spoofing, */
 			STRIDE::Tampering,
-			STRIDE::Repudiation,
+			STRIDE::Repudiation
 /*			STRIDE::InformationDisclosure, */
 /*			STRIDE::DenialOfService, */
-			STRIDE::ElevationOfPrivilege
+/*			STRIDE::ElevationOfPrivilege */
 		}
 	else if (this = ProtectionGoal::Availability) 		then
 		Set(STRIDE) {
@@ -34,6 +34,24 @@
 /*			STRIDE::InformationDisclosure, */
 			STRIDE::DenialOfService
 /*			STRIDE::ElevationOfPrivilege */
+		}
+	else if (this = ProtectionGoal::Authenticity) 		then
+		Set(STRIDE) {
+			STRIDE::Spoofing,
+			STRIDE::Tampering,
+			STRIDE::Repudiation,
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService */
+			STRIDE::ElevationOfPrivilege
+		}
+	else if (this = ProtectionGoal::NonRepudiation)		then
+		Set(STRIDE) {
+			STRIDE::Spoofing,
+			STRIDE::Tampering,
+			STRIDE::Repudiation,
+/*			STRIDE::InformationDisclosure, */
+/*			STRIDE::DenialOfService */
+			STRIDE::ElevationOfPrivilege
 		}
 	else if (this = ProtectionGoal::Usability) 			then
 		Set(STRIDE) {
@@ -65,6 +83,8 @@
 	else
 		Set(STRIDE) {
 		}
+	endif
+	endif
 	endif
 	endif
 	endif
