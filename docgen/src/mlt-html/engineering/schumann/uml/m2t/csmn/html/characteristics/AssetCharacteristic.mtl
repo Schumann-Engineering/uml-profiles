@@ -12,32 +12,44 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::E_STRIDE /]
 [import engineering::schumann::uml::m2t::common::services::StringService /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 
 
 [template public printAssetCharacteristic(
-	this : NamedElement
+	this 						: NamedElement,
+	includeAssetCharacteristics	: Boolean
 ) 
 ? (this.csmn_isAsset())
 post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-[asset.print() /]
+[asset.print(includeAssetCharacteristics) /]
 [/template]
 
 
 [template public print(
-	this : Asset
+	this 						: Asset,
+	includeAssetCharacteristics	: Boolean
 )
 post(trim())]
+[if (includeAssetCharacteristics)]
+[comment type/]
+[if (this.assetType <> null and this.assetType <> AssetType::Unspecified)]
+[printCharacteristicTitle('Asset type') /]
+
+<ul>
+	<li><i>Type</i>: [this.assetType.csmn_toString() /]</li>
+</ul>
+[/if]
 [comment flight level/]
-[printCharacteristicTitle('flight level') /]
+[printCharacteristicTitle('Asset Level') /]
 
 <ul>
 	<li><i>[this.flightLevel /]</i></li>
 </ul>
 [comment category/]
-[printCharacteristicTitle('category') /]
+[printCharacteristicTitle('Asset Category') /]
 
 <ul>
 	<li><i>[this.assetCategory /]</i></li>
@@ -49,14 +61,14 @@ post(trim())]
 	[this.assetSpec /]
 </p>
 [/if]
-[comment CIAUML /]
-[printCharacteristicTitle('Protection goals (CIAUML model)') /]
+[comment CIAAN+UML /]
+[printCharacteristicTitle('Protection goals (CIAAN+UML model)') /]
 [protectionGoalsToHtml(
 	this.assetCategory.csmn_toProtectionGoals(),
 	this.protectionGoal
 ) /]
-[comment CIAUML -> STRIDE /]
-[printCharacteristicTitle('Threats (CIAUML model ➡ STRIDE model)') /]
+[comment CIAAN+UML -> STRIDE /]
+[printCharacteristicTitle('Threats (CIAAN+UML model ➡ STRIDE model)') /]
 [protectionGoalsToStrideToHtml(
 	this.protectionGoal
 ) /]
@@ -66,13 +78,17 @@ post(trim())]
 	this.protectionGoal,
 	this.stride
 ) /]
-[comment properties/]
-[if (this.assetType <> null and this.assetType <> AssetType::Unspecified)]
-[printCharacteristicTitle('Asset properties') /]
-
-<ul>
-	<li><i>Type</i>: [this.assetType.csmn_toString() /]</li>
-</ul>
+[else]
+[printCharacteristicTitle('Asset, Protection Goals (CIAAN+UML) and Threats (STRIDE) properties') /]
+[html_INFO_start() /]
+<p>
+	This is an ASSET. The ASSET Characteristics can be found in the respective section for ASSETs.
+</p>
+[html_INFO_end() /]
+[/if]
+[comment Comment /]
+[if (this.comment->notEmpty())]
+[this.comment->printComment() /]
 [/if]
 [/template]
 
@@ -115,6 +131,16 @@ post(trim())]
 			<td class="table-column-icon">[selected->csmn_hasProtectionGoal_Availability().toIcon() /]</td>
 		</tr>
 		<tr>
+			<th class="table-column-literal">A = Authenticity</th>
+			<td class="table-column-icon">[byCategory->csmn_hasProtectionGoal_Authenticity().toIcon() /]</td>
+			<td class="table-column-icon">[selected->csmn_hasProtectionGoal_Authenticity().toIcon() /]</td>
+		</tr>
+		<tr>
+			<th class="table-column-literal">N = Non-repudiation</th>
+			<td class="table-column-icon">[byCategory->csmn_hasProtectionGoal_NonRepudiation().toIcon() /]</td>
+			<td class="table-column-icon">[selected->csmn_hasProtectionGoal_NonRepudiation().toIcon() /]</td>
+		</tr>
+		<tr>
 			<th class="table-column-literal">U = Usability</th>
 			<td class="table-column-icon">[byCategory->csmn_hasProtectionGoal_Usability().toIcon() /]</td>
 			<td class="table-column-icon">[selected->csmn_hasProtectionGoal_Usability().toIcon() /]</td>
@@ -153,72 +179,110 @@ post(trim())]
 	</thead>
 
 	<tbody>
-[if (selected->csmn_hasProtectionGoal_Confidentiality())]
 		<tr>
 			<th class="table-column-literal">C = Confidentiality</th>
+[if (selected->csmn_hasProtectionGoal_Confidentiality())]
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
-[if (selected->csmn_hasProtectionGoal_Integrity())]
+		</tr>
 		<tr>
 			<th class="table-column-literal">I = Integrity</th>
-			<td class="table-column-icon">✅</td>
+[if (selected->csmn_hasProtectionGoal_Integrity())]
+			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
-[if (selected->csmn_hasProtectionGoal_Availability())]
+		</tr>
 		<tr>
 			<th class="table-column-literal">A = Availability</th>
+[if (selected->csmn_hasProtectionGoal_Availability())]
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
-[if (selected->csmn_hasProtectionGoal_Usability())]
+		</tr>
+		<tr>
+			<th class="table-column-literal">A = Authenticity</th>
+[if (selected->csmn_hasProtectionGoal_Authenticity())]
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">❌</td>
+			<td class="table-column-icon">❌</td>
+			<td class="table-column-icon">✅</td>
+[else]
+			<td colspan="6">not applicable</td>
+[/if]
+		</tr>
+		<tr>
+			<th class="table-column-literal">N = Non-Repudiation</th>
+[if (selected->csmn_hasProtectionGoal_NonRepudiation())]
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">✅</td>
+			<td class="table-column-icon">❌</td>
+			<td class="table-column-icon">❌</td>
+			<td class="table-column-icon">✅</td>
+[else]
+			<td colspan="6">not applicable</td>
+[/if]
+		</tr>
 		<tr>
 			<th class="table-column-literal">U = Usability</th>
+[if (selected->csmn_hasProtectionGoal_Usability())]
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
-[if (selected->csmn_hasProtectionGoal_Money())]
+		</tr>
 		<tr>
 			<th class="table-column-literal">M = Money</th>
+[if (selected->csmn_hasProtectionGoal_Money())]
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
-[if (selected->csmn_hasProtectionGoal_Legal())]
+		</tr>
 		<tr>
 			<th class="table-column-literal">L = Legal</th>
+[if (selected->csmn_hasProtectionGoal_Legal())]
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">✅</td>
 			<td class="table-column-icon">❌</td>
 			<td class="table-column-icon">❌</td>
-		</tr>
+[else]
+			<td colspan="6">not applicable</td>
 [/if]
+		</tr>
 	</tbody>
 </table>
 [else]
@@ -248,8 +312,10 @@ post(trim())
 	<thead>
 		<tr>
 			<th>STRIDE</th>
+[comment]
 			<th>Violated property</th>
 			<th>Threat</th>
+[/comment]
 			<th>derived from PROTECTION GOALs</th>
 			<th>selected for ASSET</th>
 		</tr>
@@ -258,43 +324,55 @@ post(trim())
 	<tbody>
 		<tr>
 			<th class="table-column-literal">S = Spoofing</th>
+[comment]
 			<td>Authentication</td>
 			<td>Pretending to be something or someone other than yourself</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_Spoofing().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_Spoofing().toIcon() /]</td>
 		</tr>
 		<tr>
 			<th class="table-column-literal">T = Tampering</th>
+[comment]
 			<td>Integrity</td>
 			<td>Modifying something on disk, network, memory, or elsewhere</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_Tampering().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_Tampering().toIcon() /]</td>
 		</tr>
 		<tr>
 			<th class="table-column-literal">R = Repudiation</th>
+[comment]
 			<td>Non-repudiation</td>
 			<td>Claiming that you didn't do something or where not responsible; can be honest or false</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_Repudiation().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_Repudiation().toIcon() /]</td>
 		</tr>
 		<tr>
 			<th class="table-column-literal">I = Information disclosure</th>
+[comment]
 			<td>Confidentiality</td>
 			<td>Providing information to someone not authorized to access it</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_InformationDisclosure().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_InformationDisclosure().toIcon() /]</td>
 		</tr>
 		<tr>
 			<th class="table-column-literal">D = Denial of service</th>
+[comment]
 			<td>Availability</td>
 			<td>Exhausting resources needed to provide service</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_DenialOfService().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_DenialOfService().toIcon() /]</td>
 		</tr>
 		<tr>
 			<th class="table-column-literal">E = Elevation of privilege</th>
+[comment]
 			<td>Authorization</td>
 			<td>Allowing someone to do something are not authorized to do</td>
+[/comment]
 			<td>[derivedStride->csmn_hasSTRIDE_ElevationOfPrivilege().toIcon() /]</td>
 			<td>[actualStride->csmn_hasSTRIDE_ElevationOfPrivilege().toIcon() /]</td>
 		</tr>

@@ -1,7 +1,6 @@
 [comment encoding = UTF-8 /]
 [module Comment(
-	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://www.eclipse.org/uml2/5.0.0/UML'
 )
 extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCharacteristic
 ]
@@ -10,19 +9,36 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 [import engineering::schumann::uml::m2t::uml::common::Comment /]
 [import engineering::schumann::uml::m2t::uml::services::CommentService /]
 [import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::common::services::MarkdownService /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
 
 
 [template public printComment(
 	this : Element
 )
+post(trim())
+]
+[this.ownedComment->printComment() /]
+[/template]
+
+
+[template public printComment(
+	this : Set(Comment)
+)
 post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n'))
 ]
-[if (this.ownedComment->size() > 0 and this.ownedComment->one(not _isEmpty()))]
-[printCharacteristicTitle('COMMENT') /]
+[if (
+	this <> null and
+	this->notEmpty() and 
+	this->one(not _isEmpty())
+)]
+[printCharacteristicTitle('NOTE') /]
 
-[for (eComment : Comment | this.ownedComment)]
-[if (not eComment._isEmpty())]
-[for (eComment.stripComment()) separator ('\n')]  [self/][/for]
+[for (this)]
+[if (not _isEmpty())]
+[html_NOTE_start() /]
+[_body.renderMarkdown() /]
+[html_NOTE_end() /]
 [/if]
 [/for]
 [/if]

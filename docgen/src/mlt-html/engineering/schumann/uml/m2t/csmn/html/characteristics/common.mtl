@@ -24,7 +24,8 @@
 
 
 [template public printCharacteristics(
-	this : Element
+	this						: Element,
+	includeAssetCharacteristics	: Boolean
 )
 post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n')._htmlToXHtml())
 ]
@@ -38,7 +39,7 @@ post(trim().replaceEachRepeatedly('\r\n\r\n', '\r\n')._htmlToXHtml())
 [comment Interface /]
 [if (this.oclIsKindOf(Port))][this.oclAsType(Port).printInterfaceCharacteristic() /][/if]
 [comment Asset /]
-[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAssetCharacteristic() /][/if]
+[if (this.oclIsKindOf(NamedElement))][this.oclAsType(NamedElement).printAssetCharacteristic(includeAssetCharacteristics) /][/if]
 [comment
 	SECONDARY CHARACTERISTICS
 /]

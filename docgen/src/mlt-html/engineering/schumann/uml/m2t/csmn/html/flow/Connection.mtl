@@ -29,12 +29,12 @@ post(trim())
 											->asOrderedSet();
 }]
 [if (connections->oclIsUndefined() or connections->oclIsInvalid())]
-[html_ANSI_DANGER_Start() /]
+[html_ANSI_DANGER_start() /]
 <p>
 	Something is wrong with the model. See debug information below.<br/>
 	Most common error: name is empty
 </p>
-[html_ANSI_DANGER_End() /]
+[html_ANSI_DANGER_end() /]
 [elseif (connections->notEmpty())]
 [for (connections)]
 <p>
@@ -44,7 +44,7 @@ post(trim())
 [self.printConnectionAsTable() /]
 [if (startNewPage)]
 [html_PAGE_end('')/]
-[html_PAGE_begin('')/]
+[html_PAGE_start('')/]
 [else]
 [html_PAGE_BREAK('') /]
 [/if]
@@ -161,7 +161,7 @@ post(trim())
 [comment CONNECTION Characteristics /]
 	<tr>
 		<th style="text-align: right">CONNECTION Characteristics</th>
-		<td style="text-align: left">[this.printCharacteristics()/]</td>
+		<td style="text-align: left">[this.printCharacteristics(false)/]</td>
 	</tr>
 </table>
 

@@ -32,23 +32,39 @@ post(trim())]
 [printCharacteristicTitle('Access properties') /]
 
 <ul>
-[if (this.mechanicalLevel <> null and this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
+[if (this.mechanicalLevel <> null)]
 	<li>
+[if (this.mechanicalLevel <> MechanicalAccessLevel::Unspecified)]
 		<i>Mechanical</i>: [this.mechanicalLevel.csmn_toString() /]
 [if (this.mechanicalSpec <> null)]
-		[html_NOTE_Start()/]
+		[html_NOTE_start()/]
 		[this.mechanicalSpec /]
-		[html_NOTE_End()/]
+		[html_NOTE_end()/]
+[/if]
+[else]
+	  	[html_ANSI_DANGER_start() /]
+			<p>
+				MechanicalAccessLevel is "Unspecified"
+			</p>
+		[html_NOTE_end() /]
 [/if]
 	</li>
 [/if]
-[if (this.functionalLevel <> null and this.functionalLevel <> FunctionalAccessLevel::Unspecified)]
+[if (this.functionalLevel <> null)]
 	<li>
+[if (this.functionalLevel <> FunctionalAccessLevel::Unspecified)]
 		<i>Functionality</i>: [this.functionalLevel.csmn_toString() /]
 [if (this.functionalSpec <> null)]
-	  	[html_NOTE_Start() /]
+	  	[html_NOTE_start() /]
 		[this.functionalSpec /]
-		[html_NOTE_End() /]
+		[html_NOTE_end() /]
+[/if]
+[else]
+	  	[html_ANSI_DANGER_start() /]
+			<p>
+				FunctionalAccessLevel is "Unspecified"
+			</p>
+		[html_NOTE_end() /]
 [/if]
 	</li>
 [/if]

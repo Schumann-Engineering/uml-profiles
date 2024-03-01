@@ -12,66 +12,149 @@
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Layout /]
 
 
 [template public printAssetsForInterfacesAsTable(
 	interfaces 		: Set(Port),
-	assetType  		: AssetType
+	assetType  		: AssetType,
+	startNewPage	: Boolean
 )
 {
-	connections		: Set(Dependency)		= interfaces
-											.csmn_allConnectionInvolved()
-											->flatten()
-											->select(csmn_isConnection())
-											->asSet();
-	dependencies	: OrderedSet(Dependency) = connections
-											->sortedBy(name)
-											->asOrderedSet();
-	connections		: Set(Connection) 		= dependencies
-											->collect(csmn_connection())
-											->filter(Connection)
-											->asSet();
-	flowToClient	: Set(DataType)   		= connections
-											->collect(flowToClient)
-											->filter(DataType)
-											->asSet();
-	flowToSupplier	: Set(DataType)   		= connections
-											->collect(flowToSupplier)
-											->filter(DataType)
-											->asSet();
-	assets			: OrderedSet(DataType)	= flowToSupplier
-											->union(flowToClient)
-											->asSet()
-											->select(csmn_isAsset() and csmn_asset().assetType = assetType)
-											->sortedBy(name);
+	connections			: Set(Dependency)		= interfaces
+												.csmn_allConnectionInvolved()
+												->flatten()
+												->select(csmn_isConnection())
+												->asSet();
+	dependencies		: OrderedSet(Dependency) = connections
+												->sortedBy(name)
+												->asOrderedSet();
+	connections			: Set(Connection) 		= dependencies
+												->collect(csmn_connection())
+												->filter(Connection)
+												->asSet();
+	flowToClient		: Set(DataType)   		= connections
+												->collect(flowToClient)
+												->filter(DataType)
+												->asSet();
+	flowToSupplier		: Set(DataType)   		= connections
+												->collect(flowToSupplier)
+												->filter(DataType)
+												->asSet();
+
+
+	dataTypeAssets		: OrderedSet(DataType)	= flowToSupplier
+												->union(flowToClient)
+												->asSet()
+												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+												->sortedBy(name);
+	dependencyAssets	: OrderedSet(Dependency) = dependencies
+												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+												->sortedBy(name);
+	portAssets			: OrderedSet(Port)		= interfaces
+												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+												->sortedBy(name);
 }]
-[if (assets->oclIsUndefined() or assets->oclIsInvalid())]
-[html_ANSI_DANGER_Start() /]
+[if (
+	dataTypeAssets->oclIsUndefined() or dataTypeAssets->oclIsInvalid()
+	or
+	dependencyAssets->oclIsUndefined() or dependencyAssets->oclIsInvalid()
+	or
+	portAssets->oclIsUndefined() or portAssets->oclIsInvalid()
+)]
+[html_ANSI_DANGER_start() /]
 <p>
 	Something is wrong with the model. See debug information below.<br/>
 	Most common error: name is empty
 </p>
-[html_ANSI_DANGER_End() /]
-[elseif (assets->notEmpty())]
-<table class="table-2-columns">
-	<thead>
-		<tr>
-			<th>ASSET</th>
-			<th>ASSET Characteristics</th>
-		</tr>
-	</thead>
-
-	<tbody>
-[for (asset : DataType | assets->sortedBy(name))]
-		[printAssetAsTableRow(asset) /]
-[/for]
-	</tbody>
-</table>
+[html_ANSI_DANGER_end() /]
+[elseif (
+	dataTypeAssets->notEmpty()
+	or
+	dependencyAssets->notEmpty()
+	or
+	portAssets->notEmpty() 
+)]
+[comment]
+	<table class="table-2-columns">
+		<thead>
+			<tr>
+				<th>ASSET</th>
+				<th>ASSET Characteristics</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+	[for (portAssets)]
+			[printAssetAsTableRow() /]
+	[/for]
+	[for (dataTypeAssets)]
+			[printAssetAsTableRow() /]
+	[/for]
+		</tbody>
+	</table>
+[/comment]
+[dataTypeAssets.printAssetAsTable(startNewPage) /]
+[dependencyAssets.printAssetAsTable(startNewPage) /]
+[portAssets.printAssetAsTable(startNewPage) /]
 [else]
 <p>
 	None
 </p>
 [/if]
+[/template]
+
+
+[template private printAssetAsTable(
+	assets			: NamedElement,
+	startNewPage	: Boolean
+)
+post(trim())]
+[for (assets)]
+<p>
+	<b>Asset "[name/]"</b>
+</p>
+
+[printAssetAsTable() /]
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+
+[/for]
+[/template]
+
+
+[template private printAssetAsTable(
+	asset		: NamedElement
+)
+post(trim())
+{
+	assetMeta : Asset = asset.csmn_asset();
+}]
+<table class="table-2-columns">
+	<tbody>
+		[comment ASSET /]
+		<tr>
+			<th>Name</th>
+			<td>
+				[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
+			</td>
+		</tr>
+		[comment origin /]
+		<tr>
+			<th>Origin in Product Architecture</th>
+			<td>[_toOrigin() /]</td>
+		</tr>
+		<tr>
+		[comment ASSET Characteristics /]
+			<th>ASSET Characteristics</th>
+			<td>[asset.printCharacteristics(true)/]</td> 
+		</tr>
+	</tbody>
+</table>
 [/template]
 
 
@@ -84,9 +167,13 @@ post(trim())
 }]
 <tr>
 [comment ASSET /]
-	<td>[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]</td>
+	<td>
+		«[_toOrigin() /]»
+		<br/>
+		[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
+	</td>
 [comment ASSET Characteristics /]
-	<td>[asset.printCharacteristics()/]</td> 
+	<td>[asset.printCharacteristics(true)/]</td> 
 </tr>
 [/template]
 
@@ -121,3 +208,16 @@ post(trim())
 post(trim())]
 <img src="icon_Asset_[this.assetType.toString().replaceAll(' ', '')._htmlToXHtml() /].png[']]'/]" width="16px" />
 [/template]
+
+
+[query private _toOrigin(
+	asset : NamedElement
+) : String =
+	     if (asset.oclIsTypeOf(Port)) 		then 'Interface of System Element'
+	else if (asset.oclIsTypeOf(Component))	then 'System Element'
+	else if (asset.oclIsTypeOf(Dependency))	then 'Connection between interfaces'
+	else 'Other Asset'
+	endif
+	endif
+	endif
+/]
