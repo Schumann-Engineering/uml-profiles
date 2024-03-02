@@ -1,0 +1,94 @@
+[comment encoding = UTF-8 /]
+[module Element(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::docgen::converter::Converter /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::EnvironmentElement /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Html /]
+
+
+[template public printElementsAsTable(
+	this			: OrderedSet(Component),
+	startNewPage	: Boolean
+)
+post(trim())]
+[this.printElementAsTable(startNewPage) /]
+[/template]
+
+
+[template public printElementAsTable(
+	this			: Component,
+	startNewPage	: Boolean
+)
+post(trim())]
+<p>
+	<b>Element "[name/]"</b>
+</p>
+
+[printElementAsTable() /]
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/template]
+
+
+[template public printElementAsTable(
+	this			: Component
+)
+post(trim())]
+<table class="table-2-columns">
+	<tbody>
+		[comment Element /]
+		<tr>
+			<th>Name</th>
+			<td>
+				[name._htmlToXHtml() /]
+			</td>
+		</tr>
+		[comment Type /]
+		<tr>
+			<th>Type</th>
+			<td>
+				[csmn_ElementType() /]
+			</td>
+		</tr>
+		[comment Security Zone /]
+		<tr>
+			<th>Is Security Zone?</th>
+			<td>
+				[csmn_isSecurityZone().toIcon() /]
+			</td>
+		</tr>
+		[comment Characteristics /]
+		<tr>
+			<th>ELEMENT Characteristics</th>
+			<td>[printCharacteristics(true)/]</td> 
+		</tr>
+	</tbody>
+</table>
+[/template]
+
+
+[query public csmn_ElementType(
+	this			: Component
+) : String =
+		 if (this.csmn_isSystemElement()) 		then 'System Element'
+	else if (this.csmn_isEnvironmentElement())	then 'Environment Element'
+	else if (this.csmn_isSecurityZone())		then 'Security Zone'
+	else 'unknown'
+	endif
+	endif
+	endif
+/]

@@ -31,12 +31,13 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::assets::Asset /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::elements::Element /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::html::common::terms::Terms /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
@@ -572,11 +573,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 		/]
 [html_PAGE_start('System Elements')/]
 		[TOC_Section_start('System Elements')/]
-			<ul>
-[for (systemElements)]
-				<li>[name /]</li>
-[/for]
-			</ul>
+			[systemElements->printElementsAsTable(true) /]
 		[TOC_Section_end()/]
 [html_PAGE_end('System Elements')/]
 
@@ -596,11 +593,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 													->select(csmn_isEnvironmentElement())
 													->asSet()
 													->sortedBy(name)]
-			<ul>
-[for (environmentElements)]
-				<li>[name /]</li>
-[/for]
-			</ul>
+			[environmentElements->printElementsAsTable(true) /]
 [/let]
 		[TOC_Section_end()/]
 [html_PAGE_end('Environment Elements')/]
