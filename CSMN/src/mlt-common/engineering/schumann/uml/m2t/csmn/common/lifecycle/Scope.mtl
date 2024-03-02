@@ -29,7 +29,7 @@
 ) : Boolean =
 	this
 	.csmn_productInScope()
-	->size() > 0
+	->notEmpty()
 /]
 
 
@@ -41,7 +41,7 @@
 		scope
 		.product
 		->csmn_filterInScope()
-		->size() > 0
+		->notEmpty()
 	else
 		true
 	endif
