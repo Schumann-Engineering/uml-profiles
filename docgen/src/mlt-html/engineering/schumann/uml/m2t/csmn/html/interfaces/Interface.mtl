@@ -9,51 +9,66 @@
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import engineering::schumann::uml::m2t::html::Layout /]
 
 
 [template public printInterfaceAsTable(
 	interfaces					: Set(Port),
-	includeAssetCharacteristics	: Boolean
+	includeAssetCharacteristics	: Boolean,
+	startNewPage				: Boolean
 )
 post(trim())]
-[if (interfaces->size() = 0)]
-None
+[if (interfaces->notEmpty())]
+[interfaces.printInterfaceAsTable(includeAssetCharacteristics, startNewPage)/]
 [else]
-<table>
-	<thead>
-		<tr>
-			<th style="text-align: center; width: 15%;">System Element</th>
-			<th style="text-align: center; width: 15%;">Security Zone</th>
-			<th style="text-align: center; width: 15%;">PRODUCT INTERFACE</th>
-			<th style="text-align: center; width: 55%;">PRODUCT INTERFACE Characteristics</th>
-		</tr>
-	</thead>
-	<tbody>
-[for (interface : Port | interfaces->sortedBy(name))]
-		[printInterfaceAsTableRow(interface, includeAssetCharacteristics) /]
-[/for]
-	</tbody>
-</table>
+<p>
+	(None)
+</p>
 [/if]
 [/template]
 
 
-[template private printInterfaceAsTableRow(
-	interface 					: Port,
-	includeAssetCharacteristics	: Boolean
+[template public printInterfaceAsTable(
+	interface					: Port,
+	includeAssetCharacteristics	: Boolean,
+	startNewPage				: Boolean
 )
 post(trim())
 {
 	systemElement : Component = interface.owner.oclAsType(Component);
 }]
-<tr>
-[comment System Element /]
-	<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
-[comment Security Zone /]
-	<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
-[comment PRODUCT INTERFACE /]
-	<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
-[comment PRODUCT INTERFACE Characteristics /]
-	<td>[interface.printCharacteristics(includeAssetCharacteristics)/]</td> 
-</tr>
+<p>
+	<b>Product Interface "[name/]"</b>
+</p>
+
+<table class="table-2-columns">
+	<tbody>
+		[comment PRODUCT INTERFACE /]
+		<tr>
+			<th>Name</th>
+			<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
+		</tr>
+		[comment System Element /]
+		<tr>
+			<th>System Element</th>
+			<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
+		</tr>
+		[comment Security Zone /]
+		<tr>
+			<th>Trust Boundary / Security Zone</th>
+			<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
+		</tr>
+		[comment PRODUCT INTERFACE Characteristics /]
+		<tr>
+			<th>PRODUCT INTERFACE Characteristics</th>
+			<td>[interface.printCharacteristics(includeAssetCharacteristics)/]</td> 
+		</tr>
+	</tbody>
+</table>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
 [/template]

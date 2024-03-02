@@ -99,18 +99,17 @@
 [portAssets.printAssetAsTable(startNewPage) /]
 [else]
 <p>
-	None
+	(None)
 </p>
 [/if]
 [/template]
 
 
 [template private printAssetAsTable(
-	assets			: NamedElement,
+	this			: NamedElement,
 	startNewPage	: Boolean
 )
 post(trim())]
-[for (assets)]
 <p>
 	<b>Asset "[name/]"</b>
 </p>
@@ -122,8 +121,6 @@ post(trim())]
 [else]
 [html_PAGE_BREAK('') /]
 [/if]
-
-[/for]
 [/template]
 
 

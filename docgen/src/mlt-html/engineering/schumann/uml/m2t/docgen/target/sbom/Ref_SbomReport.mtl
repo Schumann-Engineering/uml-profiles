@@ -1,15 +1,19 @@
 [comment encoding = UTF-8 /]
 [module Ref_SbomReport(
-	'http://www.eclipse.org/uml2/5.0.0/UML'
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
 )]
 
 
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
+[import engineering::schumann::uml::m2t::common::services::MarkdownService /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 
 
 [template public DocRef_Sbom_OTS(
 	devNull	: OclAny
-)]
+)
+post(trim())]
 [html_Document_Ref(
 	'Software Bill of Material (SBOM)'
 	'Software Components',
@@ -18,9 +22,34 @@
 [/template]
 
 
-[template public DocRef_Sbom_Vulnerability_Handling(
+[template public DocRef_Sbom_OTSasTable(
+	element		: NamedElement,
+	_context	: Context
+)
+post(trim())]
+[replaceAllPlaceholder(
+	DocRef_Sbom_OTSasMarkdown()
+		.renderMarkdown(),
+	_context
+)/]
+[/template]
+
+
+[template public DocRef_Sbom_OTSasMarkdown(
 	devNull	: OclAny
 )]
+| Name                                    | Document Location | Document ID                       | Version                         | Relevant sections |
+| :--:                                    | :--:              | :--:                              | :--:                            | :---              |
+| Software Bill of Material (SBOM)        | TECHFILE          | ['['/]product.ID[']'/]_Sbom       | SW (see "Software information") | all               |
+| Software Bill of Material (SBOM) Report | TECHFILE          | ['['/]product.ID[']'/]_SbomReport | SW (see "Software information") | all               |
+[/template]
+
+
+
+[template public DocRef_Sbom_Vulnerability_Handling(
+	devNull	: OclAny
+)
+post(trim())]
 [html_Document_Ref(
 	'Software Bill of Material (SBOM)'
 	'Vulnerability handling'
@@ -30,7 +59,8 @@
 
 [template public DocRef_Sbom_Vulnerability_Reporting(
 	devNull	: OclAny
-)]
+)
+post(trim())]
 [html_Document_Ref(
 	'Software Bill of Material (SBOM)'
 	'Vulnerability handling',
@@ -41,7 +71,8 @@
 
 [template public DocRef_Sbom_Vulnerability_Disclosure(
 	devNull	: OclAny
-)]
+)
+post(trim())]
 [html_Document_Ref(
 	'Software Bill of Material (SBOM)'
 	'Vulnerability handling',

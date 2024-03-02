@@ -332,7 +332,7 @@
 		....................
 	/]
 [comment TOC_SubSection_start('data architecture > 1-Description') /]
-	[protectedAreaSchemaProductOnly('Data Architecture', _context) /]
+	[protectedAreaSchemaAll('Data Architecture', _context) /]
 
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > 1-Description') /]
@@ -434,7 +434,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('Network security capabilities', _context) /]	
+	[protectedAreaSchemaAll('Network security capabilities', _context) /]	
 [TOC_Section_end() /]
 [/template]
 
@@ -470,7 +470,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('Off-the-shelf Software', _context) /]
+	[protectedAreaSchemaAll('Off-the-shelf Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -505,7 +505,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('Security Patches', _context) /]
+	[protectedAreaSchemaAll('Security Patches', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -543,7 +543,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('Security Software', _context) /]
+	[protectedAreaSchemaAll('Security Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -578,7 +578,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Risk Management', _context)/]
+		[protectedAreaSchemaAll('Risk Management', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
@@ -597,7 +597,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Requirements Specification', _context)/]
+		[protectedAreaSchemaAll('Requirements Specification', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
@@ -621,7 +621,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Verification and Validation Process', _context) /]	
+		[protectedAreaSchemaAll('Verification and Validation Process', _context) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -640,7 +640,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaProductOnly('Traceability', _context) /]
+		[protectedAreaSchemaAll('Traceability', _context) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
@@ -696,7 +696,7 @@
 
 [html_PAGE_start('Software Maintenance Plan') /]
 		[TOC_SubSection_start('Software Maintenance Plan') /]
-			[protectedAreaSchemaProductOnly('Software Maintenance Plan', _context) /]
+			[protectedAreaSchemaAll('Software Maintenance Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Software Maintenance Plan') /]
 		
@@ -704,7 +704,7 @@
 [html_PAGE_start('Notification Plan') /]
 		[TOC_SubSection_start('Notification Plan') /]
 			[comment class A, B, C /]
-			[protectedAreaSchemaProductOnly('Notification Plan', _context) /]
+			[protectedAreaSchemaAll('Notification Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Notification Plan') /]
 
@@ -716,7 +716,7 @@
 			</p>
 [else]
 			[comment class B, C /]
-			[protectedAreaSchemaProductOnly('Security Incident Handling Process', _context) /]
+			[protectedAreaSchemaAll('Security Incident Handling Process', _context) /]
 [/if]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Security Incident Handling Process') /]
@@ -796,21 +796,21 @@
 
 [html_PAGE_start('Vulnerability Management Plan') /]
 	[TOC_Section_start('Vulnerability Management Plan') /]
-		[protectedAreaSchemaProductOnly('Vulnerability Management Plan', _context) /]
+		[protectedAreaSchemaAll('Vulnerability Management Plan', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('Vulnerability Management Plan') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Known Vulnerabilities') /]
 	[TOC_Section_start('List of Known Vulnerabilities') /]
-		[protectedAreaSchemaProductOnly('List of Known Vulnerabilities', _context) /]
+		[protectedAreaSchemaAll('List of Known Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Known Vulnerabilities') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Residual Vulnerabilities') /]
 	[TOC_Section_start('List of Residual Vulnerabilities') /]
-		[protectedAreaSchemaProductOnly('List of Residual Vulnerabilities', _context) /]
+		[protectedAreaSchemaAll('List of Residual Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Residual Vulnerabilities') /]
 
@@ -822,7 +822,7 @@
 			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
 		</p>
 [else]
-		[protectedAreaSchemaProductOnly('Security Self-Assessment Report', _context) /]
+		[protectedAreaSchemaAll('Security Self-Assessment Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Security Self-Assessment Report') /]
@@ -835,7 +835,7 @@
 			Product has Software Security Level of [level /]. No Pentest required.
 		</p>
 [else]
-		[protectedAreaSchemaProductOnly('Pentest Report', _context) /]
+		[protectedAreaSchemaAll('Pentest Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Pentest Report') /]
@@ -863,7 +863,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_Section_start('Conclusion') /]
-		[protectedAreaSchemaProductOnly('Conclusion', _context) /]
+		[protectedAreaSchemaAll('Conclusion', _context) /]
 		[comment TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]
@@ -881,7 +881,7 @@
 )]
 [html_PAGE_start('appendix')/]
 	[TOC_Chapter_start('Appendix') /]
-		[protectedAreaSchemaProductOnly('Appendix', _context) /]
+		[protectedAreaSchemaAll('Appendix', _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('appendix')/]
 [/template]
@@ -916,7 +916,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaProductOnly('List of Assets > Data', _context) /]
+	[protectedAreaSchemaAll('List of Assets > Data', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -942,7 +942,7 @@
 		[html_EXAMPLE_end()/]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaProductOnly('List of Assets > Data Flow', _context) /]
+	[protectedAreaSchemaAll('List of Assets > Data Flow', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
