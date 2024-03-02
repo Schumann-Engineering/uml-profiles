@@ -102,8 +102,13 @@ post(trim())]
 	this.assetCategory.csmn_toProtectionGoals(),
 	this.protectionGoal
 ) /]
+[comment Threats/]
+[printCharacteristicTitle('Threats (CIAAN+UML model)') /]
+[threatsByProtectionGoalsToHtml(
+	element
+) /]
 [comment CIAAN+UML -> STRIDE /]
-[printCharacteristicTitle('Threats (CIAAN+UML model ➡ STRIDE model)') /]
+[printCharacteristicTitle('Mapping (CIAAN+UML model ➡ STRIDE model)') /]
 [protectionGoalsToStrideToHtml(
 	this.protectionGoal
 ) /]
@@ -323,6 +328,173 @@ post(trim())]
 [else]
 <p>
 	no PROTECTION GOAL assigned to ASSET
+</p>
+[/if]
+[/template]
+
+
+[template private threatsByProtectionGoalsToHtml(
+	this			: Asset,
+	element			: NamedElement
+)
+post(trim())]
+[if (true)]
+[if (protectionGoal->notEmpty())]
+<table class="table-ciaanuml-2-threats">
+	<thead>
+		<tr>
+			<th class="protectionGoal">Violated PROTECTION GOAL</th>
+			<th class="domain">Domain</th>
+			<th class="threat">Threat</th>
+			<th class="name">Name</th>
+		</tr>
+	</thead>
+
+	<tbody>
+[comment
+	====================
+	CONFIDENTIALITY
+	==================== /]
+		<tr>
+			<th class="protectionGoal table-column-literal">C = Confidentiality</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Confidentiality())]
+			<td class="domain">Security / Privacy</td>
+			<td class="threat"><b><i>'[element.name /]'</i> compromised</b></td>
+			<td class="name">breach</td>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+[comment
+	====================
+	INTEGRITY
+	==================== /]
+		<tr>
+			<th rowspan="2" class="protectionGoal table-column-literal">I = Integrity</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Integrity())]
+			<td class="domain" rowspan="2">Safety</td>
+			<td class="threat"><b><i>'[element.name /]'</i> does not work as intended / according to spec</b></td>
+			<td class="name">defect</td>
+[else]
+			<td class="notApplicable" rowspan="2" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+		<tr>
+[if (protectionGoal->csmn_hasProtectionGoal_Integrity())]
+			<td class="threat"><b><i>'[element.name /]'s'</i> performance deteriorated</b></td>
+			<td class="name">deterioration</td>
+[/if]
+		</tr>
+[comment
+	====================
+	AVAILABILITY
+	==================== /]
+		<tr>
+			<th class="protectionGoal table-column-literal">A = Availability</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Availability())]
+			<td class="domain">Safety</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is not available</b></td>
+			<td class="name">failure / loss</td>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+[comment
+	====================
+	AUTHENTICITY
+	==================== /]
+[let typeMatch : Boolean = Set(AssetType) { AssetType::Credentials, AssetType::Data, AssetType::Information, AssetType::Signal }->includes(assetType)] 
+		<tr>
+			<th class="protectionGoal table-column-literal" rowspan="2">A = Authenticity</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Authenticity())]
+			<td class="domain">Security</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is (used by) an unauthorized entity</b></td>
+			<td class="name">un-authorized</td>
+[else]
+			<td class="notApplicable" colspan="3" [if (not typeMatch)]rowspan="2"[/if]>(not applicable)</td>
+[/if]
+		</tr>
+		<tr>
+[if (protectionGoal->csmn_hasProtectionGoal_Authenticity() and typeMatch)]
+			<td class="domain">Legal</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is a forgery</b></td>
+			<td class="name">forgery</td>
+[/if]
+		</tr>
+[/let]
+[comment
+	====================
+	NON-REPUDIATION
+	==================== /]
+		<tr>
+			<th class="protectionGoal table-column-literal">N = Non-Repudiation</th>
+[if (protectionGoal->csmn_hasProtectionGoal_NonRepudiation())]
+			<td class="domain">Security / Legal</td>
+			<td class="threat"><b><i>'[element.name /]'s'</i> origin can not be authenticated</b></td>
+			<td class="name">un-authenticated</td>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+[comment
+	====================
+	USABILITY
+	==================== /]
+		<tr>
+			<th rowspan="2" class="protectionGoal table-column-literal">U = Usability</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Usability())]
+			<td class="domain">Safety</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is used in an unintended way</b></td>
+			<td class="name">abnormal use</td>
+[else]
+			<td class="notApplicable" rowspan="2" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+		<tr>
+[if (protectionGoal->csmn_hasProtectionGoal_Usability())]
+			<td class="domain">Usability</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is not understood by user</b></td>
+			<td class="name">error use</td>
+[/if]
+		</tr>
+[comment
+	====================
+	MONEY
+	==================== /]
+		<tr>
+			<th class="protectionGoal table-column-literal">M = Money</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Money())]
+			<td class="domain">Financial</td>
+			<td class="threat"><b><i>'[element.name /]'</i> leads to bad press</b></td>
+			<td class="name">reputation</td>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+[comment
+	====================
+	LEGAL
+	==================== /]
+		<tr>
+			<th class="protectionGoal table-column-literal">L = Legal</th>
+[if (protectionGoal->csmn_hasProtectionGoal_Legal())]
+			<td class="domain">Legal</td>
+			<td class="threat"><b><i>'[element.name /]'</i> is in violation of regulation</b></td>
+			<td class="name">legal issue</td>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+[/if]
+		</tr>
+	</tbody>
+</table>
+[else]
+<p>
+	no PROTECTION GOAL assigned to ASSET
+</p>
+[/if]
+[else]
+<p>
+	does not apply to assets of type "[assetType /]"
 </p>
 [/if]
 [/template]

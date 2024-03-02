@@ -43,7 +43,10 @@ tbody tr:nth-child(even) {
  * Table sizing
  * ========== */
 /* === any === */
-table td:nth-child(1) {
+table.table-2-columns td:nth-child(1),
+table.table-3-columns td:nth-child(1),
+table.table-4-columns td:nth-child(1),
+table.table-5-columns td:nth-child(1)  {
 	width:				20%;
 	text-align:			left;
 }

@@ -16,6 +16,7 @@
   * ======================================== **/
 table.table-ciaanuml thead th,
 table.table-ciaanuml-2-stride thead th,
+table.table-ciaanuml-2-threats thead th,
 table.table-ciaanuml thead th {
 	text-align:		center !important;
 }
@@ -24,6 +25,7 @@ table.table-ciaanuml thead th {
 
 table.table-ciaanuml tbody th,
 table.table-ciaanuml-2-stride tbody th,
+table.table-ciaanuml-2-threats tbody th,
 table.table-stride tbody th {
 	text-align:		left !important;
 	width:			5cm !important;
@@ -75,6 +77,40 @@ table.table-ciaanuml tbody td:nth-child(2) {
 }
 
 table.table-ciaanuml tbody td:nth-child(3) {
+	text-align:		center !important;
+}
+
+
+/** ========================================
+  * ========================================
+  * CSMN CIAAN+UML -2- Threats
+  * ========================================
+  * ======================================== **/
+table.table-ciaanuml-2-threats {
+	width:			15cm !important;
+}
+
+table.table-ciaanuml-2-threats .protectionGoal {
+	width:			4cm !important;
+}
+
+table.table-ciaanuml-2-threats .domain {
+	width:			2cm !important;
+	text-align:		center !important;
+}
+
+table.table-ciaanuml-2-threats .threat  {
+	width:			7cm !important;
+	text-align:		center !important;
+}
+
+table.table-ciaanuml-2-threats .name {
+	width:			2cm !important;
+	text-align:		center !important;
+}
+
+table.table-ciaanuml-2-threats .notApplicable {
+	width:			11cm !important;
 	text-align:		center !important;
 }
 

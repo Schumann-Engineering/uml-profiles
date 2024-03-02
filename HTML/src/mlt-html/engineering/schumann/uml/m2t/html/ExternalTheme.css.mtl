@@ -91,7 +91,7 @@ table, pre {
 table {
 	font-family: 		Roboto, Helvetica !important;
 	font-size: 			10pt !important;
-	text-align: 		center !important;
+/*	text-align: 		center !important;*/
 	margin: 			10px auto 5px !important;
 /*	border-top: 		1px solid #292929 !important; */
 /*	border-bottom: 		1px solid #292929 !important; */
