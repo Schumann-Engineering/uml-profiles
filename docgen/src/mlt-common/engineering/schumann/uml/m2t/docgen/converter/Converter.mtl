@@ -1,0 +1,13 @@
+[comment encoding = UTF-8 /]
+[module Converter(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[template public toIcon(
+	this : Boolean
+)
+post(trim())
+][if (this)]✅[else]❌[/if][/template]

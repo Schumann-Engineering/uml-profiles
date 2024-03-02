@@ -7,6 +7,7 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 ]
 
 
+[import engineering::schumann::uml::m2t::docgen::converter::Converter /]
 [import engineering::schumann::uml::m2t::csmn::common::assets::Asset /]
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::E_AssetCategory /]
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::E_STRIDE /]
@@ -132,12 +133,6 @@ post(trim())]
 [/if]
 [/template]
 
-
-[template private toIcon(
-	this : Boolean
-)
-post(trim())
-][if (this)]✅[else]❌[/if][/template]
 
 
 [template private protectionGoalsToHtml(
