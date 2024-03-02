@@ -1,0 +1,32 @@
+[comment encoding = UTF-8 /]
+[module EnvironmentElement(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+
+
+[query public csmn_allEnvironmentElement(
+	this : Element
+) : Set(Component) =
+	this
+	._allStereotypedElements('CSMN::EnvironmentElement')
+	->filter(Component)
+/]
+
+
+[query public csmn_isEnvironmentElement(
+	this : Component
+) : Boolean =
+	this
+	._hasStereotype('CSMN::EnvironmentElement')
+/]
+
+
+[query public csmn_environmentElement(
+	this : Component
+) : SystemElement =
+	this
+	._getStereotypeInstance('CSMN::EnvironmentElement')
+/]
