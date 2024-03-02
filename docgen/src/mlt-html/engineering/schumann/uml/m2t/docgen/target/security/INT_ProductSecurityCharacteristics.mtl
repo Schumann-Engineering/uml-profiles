@@ -32,6 +32,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::assets::Asset /]
 [import engineering::schumann::uml::m2t::csmn::html::elements::Element /]
+[import engineering::schumann::uml::m2t::csmn::html::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
@@ -608,11 +609,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 [let trustBoundaries : OrderedSet(Component) 		= systemElements
 														->select(csmn_isSecurityZone())
 														->sortedBy(name)]
-			<ul>
-[for (trustBoundaries)]
-				<li>[name /]</li>
-[/for]
-			</ul>
+			[trustBoundaries->printSecurityZonesAsTable(true) /]
 [/let]
 		[TOC_Section_end()/]
 [html_PAGE_end('Trust boundaries')/]

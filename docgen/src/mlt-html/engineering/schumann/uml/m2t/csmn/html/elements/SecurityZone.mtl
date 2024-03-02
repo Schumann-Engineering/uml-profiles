@@ -1,0 +1,75 @@
+[comment encoding = UTF-8 /]
+[module SecurityZone(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::docgen::converter::Converter /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::EnvironmentElement /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Html /]
+
+
+[template public printSecurityZonesAsTable(
+	this			: OrderedSet(Component),
+	startNewPage	: Boolean
+)
+post(trim())]
+[this.printSecurityZoneAsTable(startNewPage) /]
+[/template]
+
+
+[template public printSecurityZoneAsTable(
+	this			: Component,
+	startNewPage	: Boolean
+)
+post(trim())]
+<p>
+	<b>Trust boundary / Security Zone "[name/]"</b>
+</p>
+
+[printSecurityZoneAsTable() /]
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/template]
+
+
+[template public printSecurityZoneAsTable(
+	this			: Component
+)
+post(trim())]
+<table class="table-2-columns">
+	<tbody>
+		[comment Element /]
+		<tr>
+			<th>Name</th>
+			<td>
+				[name._htmlToXHtml() /]
+			</td>
+		</tr>
+		[comment Characteristics /]
+		<tr>
+			<th>ELEMENT Characteristics</th>
+			<td>
+[if (csmn_isSystemElement())]
+				Security Zone is also a SYSTEM ELEMENT. See details there.
+[elseif (csmn_isEnvironmentElement())]
+				Security Zone is also an ENVIRONMENT ELEMENT. See details there.
+[else]
+				[printCharacteristics(true)/]
+[/if]
+			</td> 
+		</tr>
+	</tbody>
+</table>
+[/template]
