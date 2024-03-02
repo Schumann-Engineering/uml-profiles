@@ -15,18 +15,33 @@
 [import engineering::schumann::uml::m2t::html::Boxes /]
 
 
+[query public csmn_connectionsForPorts(
+	this			: Set(Port)
+) : OrderedSet(Dependency) =
+	this
+	.csmn_allConnectionInvolved()
+	->flatten()
+	->select(csmn_isConnection())
+	->sortedBy(name)
+	->asOrderedSet()
+/]
+
+
+[query public csmn_connectionsForPort(
+	this			: Port
+) : OrderedSet(Dependency) =
+	Set(Port) { this }
+	->csmn_connectionsForPorts()
+/]
+
+
 [template public printConnectionsForInterfacesAsTable(
 	interfaces 		: Set(Port),
 	startNewPage	: Boolean
 )
 post(trim())
 {
-	connections	: OrderedSet(Dependency)	= interfaces
-											.csmn_allConnectionInvolved()
-											->flatten()
-											->select(csmn_isConnection())
-											->sortedBy(name)
-											->asOrderedSet();
+	connections	: OrderedSet(Dependency)	= interfaces->csmn_connectionsForPorts();
 }]
 [if (connections->oclIsUndefined() or connections->oclIsInvalid())]
 [html_ANSI_DANGER_start() /]
