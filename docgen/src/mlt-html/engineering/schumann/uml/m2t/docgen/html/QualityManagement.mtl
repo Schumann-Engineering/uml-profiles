@@ -72,7 +72,7 @@
 		</tr>
 		<tr>
 			<td colspan="2" style="width: 50% !important;">&#169; Copyright by [VENDOR_NAME() /]</td>
-			<td colspan="2" style="width: 50% !important; background-color: [env('DOC_Classification_Color') /];">[env('DOC_Classification', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
+			<td colspan="2" style="width: 50% !important; background-color: [env(_context.templateUUID + '.Classification.Color', '#0000FF') /];">[env(_context.templateUUID + '.Classification.Text', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
 		</tr>
 	</table>
 </footer>
