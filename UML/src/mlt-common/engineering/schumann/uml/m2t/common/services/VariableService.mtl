@@ -91,29 +91,30 @@
 /]
 
 
-[query public isTrue(
-	key 	: String
+[query public envIsTrue(
+	key 	: String,
+	default	: String
 ) : Boolean =
 	let value : String =
 		if (exists(key)) then
-			env(key, '')
+			env(key, default)
 		else
 			getProperty(key)
 		endif
 	in
 		invoke(
 			'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
-			'isTrue(java.lang.String)', 
+			'IsTrue(java.lang.String)', 
 			Sequence{
 				value
 			})
 /]
 
 
-[query public isFalse(
+[query public envIsFalse(
 	key 	: String
 ) : Boolean = 
-	not isTrue(key)
+	not envIsTrue(key)
 /]
 
 
