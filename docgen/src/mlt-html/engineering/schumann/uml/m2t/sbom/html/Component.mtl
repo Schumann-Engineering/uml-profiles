@@ -193,7 +193,7 @@ post(trim())
 			[TOC_link( license ) /]
 		</p>
 		[html_INFO_start() /]
-			This license is the one "forwarded" to customers. There might be more licenses available by the vendor. However, the declared license was selected / is used.
+			This license is the one "forwarded" to customers. There might be more licenses available by the supplier. However, the declared license was selected / is used by the product's vendor.
 		[html_INFO_end() /]
 	</td>
 </tr>
