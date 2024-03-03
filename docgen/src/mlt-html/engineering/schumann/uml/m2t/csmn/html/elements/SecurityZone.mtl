@@ -59,7 +59,7 @@ post(trim())]
 		</tr>
 		[comment Characteristics /]
 		<tr>
-			<th>ELEMENT Characteristics</th>
+			<th>TRUST BOUNDARY Characteristics</th>
 			<td>
 [if (csmn_isSystemElement())]
 				Security Zone is also a SYSTEM ELEMENT. See details there.
