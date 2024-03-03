@@ -9,7 +9,7 @@
 /]
 
 [comment Checks if a string is a keyword in the used target /]
-[query public _isKeyWord(str : String) : Boolean = isTrue( 'KEYWORD_' + str ) /]
+[query public _isKeyWord(str : String) : Boolean = envIsTrue( 'KEYWORD_' + str, 'false' ) /]
 
 [comment Returns the name of an element taking into account if the name is a key word in the used target /]
 [template public _name(element : NamedElement) post(trim())]
