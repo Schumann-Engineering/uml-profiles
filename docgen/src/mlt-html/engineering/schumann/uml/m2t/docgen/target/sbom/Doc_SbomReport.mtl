@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module INT_SbomReport(
+[module Doc_SbomReport(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/sbom/1',
@@ -57,6 +57,7 @@
 [import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
 [import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
@@ -81,6 +82,7 @@
 	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
 }]
 [setEnv(templateUUID + '.Output.Extension',   	'html') /]
+[setEnv(templateUUID + '.Classification',		'public') /]
 
 [loadSbomLibrary() /]
 
@@ -250,29 +252,6 @@ post(trim())]
 		[TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('introduction') /]
-[/template]
-
-
-[comment
-	====================
-	BASIC INFORMATION
-	====================
-/]
-[template private BasicInformation_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[if (_context.product.platformType = CommonPlatformEnumerationType::Hardware)]
-[html_PAGE_start('basic information') /]
-	[TOC_Chapter_start('Hardware environment') /]
-		<p>
-			The software requires specialized hardware. Supported hardware is listed below.
-		</p>
-
-		[printScopeForProduct(_context) /]
-[TOC_Chapter_end() /]
-[html_PAGE_end('basic information') /]
-[/if]
 [/template]
 
 

@@ -7,6 +7,8 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 ]
 
 
+[import engineering::schumann::uml::m2t::common::services::StringService /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 
 
@@ -30,43 +32,58 @@ extends engineering::schumann::uml::m2t::html::ProtectedArea
 )/][/template]
 
 
-[template public protectedAreaSchemaAll(
+[query private IncludeQms(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.QMS', 'true')
+/]
+
+
+[query private IncludeProduct(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.Product', 'true')
+/]
+
+
+[query private IncludeHardware(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.Hardware', 'true')
+/]
+
+
+[query private IncludeSoftware(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.Software', 'true')
+/]
+
+
+[query private IncludeOther(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.Other', 'true')
+/]
+
+
+[template public protectedAreaSchema(
 	devNull		: NamedElement,
 	name		: String,
 	_context	: Context
 )
 post(trim())]
 [protectedArea(        name + ' > Content', 																							_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (QMS)', 					'Applicable Documents (QMS)',				'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (product)', 				'Applicable Documents (product)',			'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (hardware model)', 		'Applicable Documents (hardware model)',	'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /]
-[/template]
-
-
-[template public protectedAreaSchemaQmsOnly(
-	devNull		: NamedElement,
-	name		: String,
-	_context	: Context
-)
-post(trim())]
-[protectedArea(        name + ' > Content', 																							_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (QMS)', 					'Applicable Documents (QMS)',				'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /]
-[/template]
-
-
-[template public protectedAreaSchemaProductOnly(
-	devNull		: NamedElement,
-	name		: String,
-	_context	: Context
-)
-post(trim())]
-[protectedArea(        name + ' > Content', 																							_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (product)', 				'Applicable Documents (product)',			'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (hardware model)', 		'Applicable Documents (hardware model)',	'(none)',	_context) /]
-[protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /]
+[if (IncludeQms(_context))     ][protectedAreaOptional(name + ' > Applicable Documents (QMS)', 					'Applicable Documents (QMS)',				'(none)',	_context) /][/if]
+[if (IncludeProduct(_context)) ][protectedAreaOptional(name + ' > Applicable Documents (product)', 				'Applicable Documents (product)',			'(none)',	_context) /][/if]
+[if (IncludeHardware(_context))][protectedAreaOptional(name + ' > Applicable Documents (hardware model)', 		'Applicable Documents (hardware model)',	'(none)',	_context) /][/if]
+[if (IncludeSoftware(_context))][protectedAreaOptional(name + ' > Applicable Documents (software version)', 	'Applicable Documents (software version)',	'(none)',	_context) /][/if]
+[if (IncludeOther(_context))   ][protectedAreaOptional(name + ' > Applicable Documents (other)', 				'Applicable Documents (other)',				'(none)',	_context) /][/if]
 [/template]
 
 

@@ -1,0 +1,99 @@
+[comment encoding = UTF-8 /]
+[module Doc_CyberSecurityReport_CN(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)
+extends engineering::schumann::uml::m2t::docgen::target::security::Doc_CyberSecurityReport
+]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	Cyber Security Research Report
+ * REALM:    	China
+ * CONTENT:  	report required by medical device authority
+ * PROFILES: 	CSMN
+ * UUID:		1145613c-bd93-4c19-b613-4b65e2ab8999
+ * ====================
+ **/]
+
+
+[import engineering::schumann::uml::m2t::docgen::html::BasicHtmlDocument /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_Model /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
+[import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Checkbox /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata /]
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+[import engineering::schumann::uml::m2t::html::Html /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::html::common::terms::Terms /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
+[import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
+
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
+
+
+[**
+ * IMPORTANT: Generation is *per product*
+ ** /]
+[template public generateDocument_CN_CyberSecurityResearchReport(
+	this : Model
+)
+{
+	templateUUID		: String			= 'e51de0f8-66e6-4424-929b-b41c55b19227';
+	templateVersion		: String			= '0.2';
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report (China specific)');
+
+	productElements		: Set(Package) 		= this.allOwnedElements()
+												->filter(Package)
+												->select( p : Package | p.csmn_isScoped() );
+
+	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
+}]
+[setEnv(templateUUID + '.Output.Extension',   		'html') /]
+[setEnv(templateUUID + '.Classification',			'internal') /]
+[setEnv(templateUUID + '.Output.Schema.Registrant',	'true') /]
+[setEnv(templateUUID + '.Output.Schema.QMS',   		'true') /]
+[setEnv(templateUUID + '.Output.Schema.Product',   	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Hardware',  	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Software',  	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Other',  	'true') /]
+
+[for (productElement : NamedElement | productElements)]
+	[comment iterate over products /]
+	[for (product : Product | productElement.csmn_scope().csmn_productInScope()->select(model.csmn_shallGenerateProductModel()))]
+		[comment find all Components/SystemElements which constraint/match product /]
+		[for (os : Component | softwareElements->select(csmn_isMatch(product)))]
+			[comment iterate over all software version of the system element /]
+			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion->select(csmn_shallGenerateSoftwareVersion()))]
+				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
+[productElement.generateDocument_INT_CyberSecurityReport( _context) /]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
+[/for]
+[/template]

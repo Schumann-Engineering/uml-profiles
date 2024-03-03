@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module CN_CyberSecurityResearchReport(
+[module Doc_CyberSecurityReport(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/docgen/1'
@@ -51,17 +51,20 @@
 [import engineering::schumann::uml::m2t::standards::text::China_Security /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_CoverPage /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
+
 
 [**
  * IMPORTANT: Generation is *per product*
  ** /]
-[template public generateDocument_CN_CyberSecurityResearchReport(
+[template public generateDocument_INT_CyberSecurityReport(
 	this : Model
 )
 {
-	templateUUID		: String			= 'e51de0f8-66e6-4424-929b-b41c55b19227';
+	templateUUID		: String			= '1145613c-bd93-4c19-b613-4b65e2ab8999';
 	templateVersion		: String			= '0.2';
-	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Research Report (China specific)');
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Report');
 
 	productElements		: Set(Package) 		= this.allOwnedElements()
 												->filter(Package)
@@ -69,7 +72,14 @@
 
 	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
 }]
-[setEnv(templateUUID + '.Output.Extension',   	'html') /]
+[setEnv(templateUUID + '.Output.Extension',   		'html') /]
+[setEnv(templateUUID + '.Classification',			'internal') /]
+[setEnv(templateUUID + '.Output.Schema.Registrant',	'false') /]
+[setEnv(templateUUID + '.Output.Schema.QMS',   		'false') /]
+[setEnv(templateUUID + '.Output.Schema.Product',   	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Hardware',  	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Software',  	'true') /]
+[setEnv(templateUUID + '.Output.Schema.Other',  	'false') /]
 
 [for (productElement : NamedElement | productElements)]
 	[comment iterate over products /]
@@ -79,7 +89,7 @@
 			[comment iterate over all software version of the system element /]
 			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion->select(csmn_shallGenerateSoftwareVersion()))]
 				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
-[productElement.generateDocument_CN_CyberSecurityResearchReport( _context) /]
+[productElement.generateDocument_INT_CyberSecurityReport( _context) /]
 				[/let]
 			[/for]
 		[/for]
@@ -88,7 +98,7 @@
 [/template]
 
 
-[template private generateDocument_CN_CyberSecurityResearchReport(
+[template protected generateDocument_INT_CyberSecurityReport(
 	this 			: NamedElement,
 	_context		: Context
 )]
@@ -124,6 +134,8 @@
 
 [BasicInformation_Chapter_print(_context)/]
 
+[SecurityContextSummary_Chapter_print(_context)/]
+
 [ImplementationProcess_Chapter_print(_context)/]
 
 [VulnerabilityAssessment_Chapter_print(_context)/]
@@ -131,26 +143,6 @@
 [Conclusion_Chapter_print(_context)/]
 
 [Appendix_Chapter_print(_context)/]
-[/template]
-
-
-[comment
-	====================
-	COVER PAGE
-	====================
-/]
-[template private CoverPage_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('cover page', 'cover-page')/]
-	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
-	[comment DOC_Footer(_context) /]
-
-	[TOC_Title_start(_context.documentTitle) /]
-		[this.printScopeForProduct(_context) /]
-	[TOC_Title_end() /]
-[html_PAGE_end('cover page')/]
 [/template]
 
 
@@ -203,46 +195,21 @@
 
 [comment
 	====================
-	BASIC INFORMATION
+	PRODUCT SECURITY SUMMARY
 	====================
 /]
-[template private BasicInformation_Chapter_print(
+[template private SecurityContextSummary_Chapter_print(
 	this 			: NamedElement,
 	_context		: Context
 )]
-[html_PAGE_start('basic information')/]
-	[TOC_Chapter_start('Basic Information') /]
-		
-		[comment
-			--------------------
-			REGISTRANT
-			--------------------
-		/]
-[comment html_PAGE_start('registrant') /]
-		[Registrant_Section_print(_context) /]
-[html_PAGE_end('registrant') /]
-		
-		[comment
-			--------------------
-			SOFTWARE
-			--------------------
-		/]
-[html_PAGE_start('software information') /]
-		[TOC_Section_start('Software information') /] 
-			<p>
-				As of writing the following software versions have been released:
-			</p>
-		
-			[printOperatingSystems(_context) /]
-		[TOC_Section_end() /]
-[html_PAGE_end('software information') /]
-		
+[html_PAGE_start('Product Security Summary')/]
+	[TOC_Chapter_start('Product Security Summary') /]
 		[comment
 			--------------------
 			DATA ARCHITECTURE
 			--------------------
 		/]
-[html_PAGE_start('data architecture') /]
+[comment html_PAGE_start('data architecture') /]
 		[DataArchitecture_Section_print(_context)/]
 [html_PAGE_end('data architecture') /]
 		
@@ -283,35 +250,7 @@
 		[OTS_Section_print(_context) /]
 	[TOC_Chapter_end() /]
 [comment html_PAGE_end('OTS') /]
-[html_PAGE_end('basic information')/]
-[/template]
-
-
-[comment
-	--------------------
-	REGISTRANT
-	--------------------
-/]
-[template private Registrant_Section_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[TOC_Section_start('Registrant') /]
-	<table class="table-2-columns">
-		<tr>
-			<th>Manufacturer</th>
-			<td>[VENDOR_NAME() /]</td>
-		</tr>
-		<tr>
-			<th>Registrant address</th>
-			<td>[VENDOR_ADDRESS() /]</td>
-		</tr>
-		<tr>
-			<th>Registrant website</th>
-			<td>[VENDOR_WEBSITE() /]</td>
-		</tr>
-	</table>
-[TOC_Section_end() /]
+[html_PAGE_end('Product Security Summary')/]
 [/template]
 
 
@@ -332,7 +271,7 @@
 		....................
 	/]
 [comment TOC_SubSection_start('data architecture > 1-Description') /]
-	[protectedAreaSchemaAll('Data Architecture', _context) /]
+	[protectedAreaSchema('Data Architecture', _context) /]
 
 	[comment TOC_SubSection_end() /]
 [comment html_PAGE_end('data architecture > 1-Description') /]
@@ -434,7 +373,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaAll('Network security capabilities', _context) /]	
+	[protectedAreaSchema('Network security capabilities', _context) /]	
 [TOC_Section_end() /]
 [/template]
 
@@ -470,7 +409,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaAll('Off-the-shelf Software', _context) /]
+	[protectedAreaSchema('Off-the-shelf Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -505,7 +444,7 @@
 		[html_NOTE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaAll('Security Patches', _context) /]
+	[protectedAreaSchema('Security Patches', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -543,7 +482,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaAll('Security Software', _context) /]
+	[protectedAreaSchema('Security Software', _context) /]
 [TOC_Section_end() /]
 [/template]
 
@@ -578,7 +517,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaAll('Risk Management', _context)/]
+		[protectedAreaSchema('Risk Management', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('risk management') /]
@@ -597,7 +536,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaAll('Requirements Specification', _context)/]
+		[protectedAreaSchema('Requirements Specification', _context)/]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('requirements specification') /]
@@ -621,7 +560,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaAll('Verification and Validation Process', _context) /]	
+		[protectedAreaSchema('Verification and Validation Process', _context) /]	
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('verification and validation') /]
@@ -640,7 +579,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_SubSection_start('Description') /]
-		[protectedAreaSchemaAll('Traceability', _context) /]
+		[protectedAreaSchema('Traceability', _context) /]
 		[comment TOC_SubSection_end() /]
 	[TOC_Section_end() /]
 [html_PAGE_end('traceability analysis') /]
@@ -696,7 +635,7 @@
 
 [html_PAGE_start('Software Maintenance Plan') /]
 		[TOC_SubSection_start('Software Maintenance Plan') /]
-			[protectedAreaSchemaAll('Software Maintenance Plan', _context) /]
+			[protectedAreaSchema('Software Maintenance Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Software Maintenance Plan') /]
 		
@@ -704,7 +643,7 @@
 [html_PAGE_start('Notification Plan') /]
 		[TOC_SubSection_start('Notification Plan') /]
 			[comment class A, B, C /]
-			[protectedAreaSchemaAll('Notification Plan', _context) /]
+			[protectedAreaSchema('Notification Plan', _context) /]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Notification Plan') /]
 
@@ -716,7 +655,7 @@
 			</p>
 [else]
 			[comment class B, C /]
-			[protectedAreaSchemaAll('Security Incident Handling Process', _context) /]
+			[protectedAreaSchema('Security Incident Handling Process', _context) /]
 [/if]
 		[TOC_SubSection_end() /]
 [html_PAGE_end('Security Incident Handling Process') /]
@@ -796,21 +735,21 @@
 
 [html_PAGE_start('Vulnerability Management Plan') /]
 	[TOC_Section_start('Vulnerability Management Plan') /]
-		[protectedAreaSchemaAll('Vulnerability Management Plan', _context) /]
+		[protectedAreaSchema('Vulnerability Management Plan', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('Vulnerability Management Plan') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Known Vulnerabilities') /]
 	[TOC_Section_start('List of Known Vulnerabilities') /]
-		[protectedAreaSchemaAll('List of Known Vulnerabilities', _context) /]
+		[protectedAreaSchema('List of Known Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Known Vulnerabilities') /]
 
 	[comment Class A, B, C /]
 [html_PAGE_start('List of Residual Vulnerabilities') /]
 	[TOC_Section_start('List of Residual Vulnerabilities') /]
-		[protectedAreaSchemaAll('List of Residual Vulnerabilities', _context) /]
+		[protectedAreaSchema('List of Residual Vulnerabilities', _context) /]
 	[TOC_Section_end() /]
 [html_PAGE_end('List of Residual Vulnerabilities') /]
 
@@ -822,7 +761,7 @@
 			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
 		</p>
 [else]
-		[protectedAreaSchemaAll('Security Self-Assessment Report', _context) /]
+		[protectedAreaSchema('Security Self-Assessment Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Security Self-Assessment Report') /]
@@ -835,7 +774,7 @@
 			Product has Software Security Level of [level /]. No Pentest required.
 		</p>
 [else]
-		[protectedAreaSchemaAll('Pentest Report', _context) /]
+		[protectedAreaSchema('Pentest Report', _context) /]
 [/if]
 	[TOC_Section_end() /]
 [html_PAGE_end('Pentest Report') /]
@@ -863,7 +802,7 @@
 		[html_NO_PRINT_end() /]
 		
 		[comment TOC_Section_start('Conclusion') /]
-		[protectedAreaSchemaAll('Conclusion', _context) /]
+		[protectedAreaSchema('Conclusion', _context) /]
 		[comment TOC_Section_end() /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('conclusion')/]
@@ -881,7 +820,7 @@
 )]
 [html_PAGE_start('appendix')/]
 	[TOC_Chapter_start('Appendix') /]
-		[protectedAreaSchemaAll('Appendix', _context) /]
+		[protectedAreaSchema('Appendix', _context) /]
 	[TOC_Chapter_end() /]
 [html_PAGE_end('appendix')/]
 [/template]
@@ -916,7 +855,7 @@
 		[html_EXAMPLE_end() /]
 	[html_NO_PRINT_end() /]
 	
-	[protectedAreaSchemaAll('List of Assets > Data', _context) /]
+	[protectedAreaSchema('List of Assets > Data', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 
@@ -942,7 +881,7 @@
 		[html_EXAMPLE_end()/]
 	[html_NO_PRINT_end() /]
 
-	[protectedAreaSchemaAll('List of Assets > Data Flow', _context) /]
+	[protectedAreaSchema('List of Assets > Data Flow', _context) /]
 [TOC_SubSection_end() /]
 [/template]
 

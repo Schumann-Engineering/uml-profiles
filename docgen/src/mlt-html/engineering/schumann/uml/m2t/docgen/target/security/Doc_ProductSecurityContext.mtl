@@ -1,5 +1,5 @@
 [comment encoding = UTF-8 /]
-[module INT_ProductSecurityCharacteristics(
+[module Doc_ProductSecurityContext(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
 	'http://schumann.engineering/csmn/1',
 	'http://schumann.engineering/docgen/1'
@@ -36,7 +36,6 @@
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::csmn::html::flow::Connection /]
 [import engineering::schumann::uml::m2t::csmn::html::interfaces::Interface /]
-[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
 [import engineering::schumann::uml::m2t::csmn::html::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
@@ -60,6 +59,9 @@
 [import org::w3c::xhtml::Link /]
 [import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
 
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_CoverPage /]
+
 
 [template public generateDocument_INT_ProductSecurityCharacteristics(
 	this : Model
@@ -75,7 +77,8 @@
 
 	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
 }]
-[setEnv(templateUUID + '.Output.Extension',   	'html')/]
+[setEnv(templateUUID + '.Output.Extension', 'html')/]
+[setEnv(templateUUID + '.Classification',	'internal') /]
 
 [for (productElement : NamedElement | productElements)]
 	[comment iterate over products /]
@@ -137,25 +140,6 @@
 [ProductArchitecture_Chapter_print(_context)/]
 
 [SecurityCapabilities_Chapter_print(_context)/]
-[/template]
-
-[comment
-	====================
-	COVER PAGE
-	====================
-/]
-[template private CoverPage_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('cover page', 'cover-page')/]
-	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context)/]
-	[comment DOC_Footer(_context)/]
-
-	[TOC_Title_start(_context.documentTitle)/]
-		[this.printScopeForProduct(_context)/]
-	[TOC_Title_end()/]
-[html_PAGE_end('cover page')/]
 [/template]
 
 
@@ -355,45 +339,6 @@ example, message authentication codes and digital signatures) and/or content VAL
 	[TOC_Chapter_end()/]
 [html_PAGE_end('introduction')/]
 [/template]
-
-
-[comment
-	====================
-	BASIC INFORMATION
-	====================
-/]
-[template private BasicInformation_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('basic information')/]
-	[TOC_Chapter_start('Basic information')/]
-		[comment
-			--------------------
-			HARDWARE
-			--------------------
-		/]
-		[TOC_Section_start('Hardware versions')/]
-			[this.printScopeForProduct(_context)/]
-		[TOC_Section_end()/]
-	
-		[comment
-			--------------------
-			SOFTWARE
-			--------------------
-		/]
-		[TOC_Section_start('Software versions')/]
-			<p>
-				As of writing the following software versions have been released:
-			</p>
-		
-			[printOperatingSystems(_context)/]
-		[TOC_Section_end()/]
-	[TOC_Chapter_end()/]
-[html_PAGE_end('basic information')/]
-[/template]
-
-
 
 
 [comment

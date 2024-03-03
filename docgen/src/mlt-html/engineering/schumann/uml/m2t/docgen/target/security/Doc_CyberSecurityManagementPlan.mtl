@@ -1,0 +1,565 @@
+[comment encoding = UTF-8 /]
+[module Doc_CyberSecurityManagementPlan(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/csmn/1',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[**
+ * ====================
+ * DOCUMENT: 	Cyber Security Research Report
+ * REALM:    	China
+ * CONTENT:  	report required by medical device authority
+ * PROFILES: 	CSMN
+ * UUID:		1145613c-bd93-4c19-b613-4b65e2ab8999
+ * ====================
+ **/]
+
+
+[import engineering::schumann::uml::m2t::docgen::html::BasicHtmlDocument /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::csmn::common::elements::SystemElement /]
+[import engineering::schumann::uml::m2t::csmn::common::characteristics::InterfaceCharacteristic /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::common /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_Model /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Dt_SoftwareVersion /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
+[import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
+[import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
+[import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Checkbox /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
+[import engineering::schumann::uml::m2t::docgen::html::DocumentMetadata /]
+[import engineering::schumann::uml::m2t::html::DocumentRef /]
+[import engineering::schumann::uml::m2t::html::Html /]
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::ProtectedArea /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+[import engineering::schumann::uml::m2t::html::common::terms::Terms /]
+[import engineering::schumann::uml::m2t::standards::text::China_Security /]
+[import engineering::schumann::uml::m2t::docgen::services::DocGenService /]
+
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_CoverPage /]
+
+
+[**
+ * IMPORTANT: Generation is *per product*
+ ** /]
+[template public generateDocument_INT_CyberSecurityManagementPlan(
+	this : Model
+)
+{
+	templateUUID		: String			= '65c48756-a4cc-4be2-8446-29e01d470120';
+	templateVersion		: String			= '0.2';
+	documentTitle		: String			= env(templateUUID + '.Output.Title', 'Cybersecurity Management Plan');
+
+	productElements		: Set(Package) 		= this.allOwnedElements()
+												->filter(Package)
+												->select( p : Package | p.csmn_isScoped() );
+
+	softwareElements	: Set(Component) 	= this.csmn_allOperatingSystem();
+}]
+[setEnv(templateUUID + '.Output.Extension',   		'html') /]
+[setEnv(templateUUID + '.Output.Schema.QMS',   		'true') /]
+[setEnv(templateUUID + '.Output.Schema.Product',   	'false') /]
+[setEnv(templateUUID + '.Output.Schema.Hardware',  	'false') /]
+[setEnv(templateUUID + '.Output.Schema.Software',  	'false') /]
+[setEnv(templateUUID + '.Output.Schema.Other',  	'true') /]
+
+[for (productElement : NamedElement | productElements)]
+	[comment iterate over products /]
+	[for (product : Product | productElement.csmn_scope().csmn_productInScope()->select(model.csmn_shallGenerateProductModel()))]
+		[comment find all Components/SystemElements which constraint/match product /]
+		[for (os : Component | softwareElements->select(csmn_isMatch(product)))]
+			[comment iterate over all software version of the system element /]
+			[for (softwareVersion : String | os.csmn_scopeConstraint().softwareConstraint.softwareVersion->select(csmn_shallGenerateSoftwareVersion()))]
+				[let _context : Context = os.getContext(product, softwareVersion, documentTitle, templateUUID, templateVersion)]
+[productElement.generateDocument_INT_CyberSecurityManagementPlan( _context) /]
+				[/let]
+			[/for]
+		[/for]
+	[/for]
+[/for]
+[/template]
+
+
+[template private generateDocument_INT_CyberSecurityManagementPlan(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[file (DocGen_File_URI(_context), false, 'UTF-8')]
+[HTML_START(_context)/]
+	[CoverPage_Chapter_print(_context)/]
+
+	[let content : String = generateDocumentContent(_context)]
+	[HTML_PAGE_ERRORS(_context)/]
+
+	[QM_PAGE_Signatory(_context) /]
+
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { HTML_PAGE_TOC(_context) }) /]
+
+	[invoke(
+		'engineering.schumann.uml.m2t.common.services.StringServiceImpl',
+		'fixAcceleoOutput(java.lang.String)',
+		Sequence { content }) /]
+	[/let]
+[HTML_END(_context)/]
+[/file]
+[/template]
+
+
+[template private generateDocumentContent(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[Introduction_Chapter_print(_context)/]
+
+[BasicInformation_Chapter_print(_context)/]
+
+[SecurityContext_Chapter_print(_context)/]
+
+[ImplementationProcess_Chapter_print(_context)/]
+
+[VulnerabilityAssessment_Chapter_print(_context)/]
+[/template]
+
+
+[comment
+	====================
+	INTRODUCTION
+	====================
+/]
+[template private Introduction_Chapter_print(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[html_PAGE_start('introduction')/]
+	[TOC_Chapter_start('Introduction') /]
+		[TOC_Section_start('Purpose') /]
+			<p>
+				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
+			</p>
+	
+			[LegalRef_IMDRF_STED_Cybersec() /]
+			[LegalRef_China_Cybersec() /]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_start('Target audience') /]
+			<p>
+				This document is targeted at:
+			</p>
+
+			<ul>
+				<li>regulatory authorities</li>
+				<li>notified body</li>
+			</ul>
+		[TOC_Section_end() /]
+		
+		[TOC_Section_start('Scope') /]
+			[this.printScopeForProduct(_context) /]
+		[TOC_Section_end() /]
+		
+		[TOC_Section_start('Abbreviations') /]
+			[TERMS_START()/]
+				[TERM_SECURITY_CPE()/]
+				[TERM_SECURITY_CVE()/]
+				[TERM_HEALTHCARE_HDO()/]
+			[TERMS_END()/]
+		[TOC_Section_end() /]
+	[TOC_Chapter_end() /]
+[html_PAGE_end('introduction')/]
+[/template]
+
+
+[comment
+	--------------------
+	DATA ARCHITECTURE
+	--------------------
+/]
+[template private SecurityContext_Chapter_print(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[html_PAGE_start('Security Context') /]
+[TOC_Chapter_start('Security Context') /]
+	<p>
+		A SECURITY CONTEXT is the basis of all security related activities. Such a SECURITY CONTEXT has to be created.
+	</p>
+
+	<p>
+		A SECURITY CONTEXT contains of at least the following information:
+	</p>
+
+	<ul>
+		<li>Intended purpose and Environment of Use
+		<ul>
+			<li>Intended purpose</li>
+			<li>Intended Environment of Use</li>
+		</ul>
+		</li>
+
+		<li>Use Environment
+		<ul>
+			<li>System Elements</li>
+			<li>Environment Elements / interacting external entitites</li>
+			<li>Trust boundaries</li>
+			<li>Product interfaces</li>
+			<li>Interface connections</li>
+			<li>Assets, Protection Goals and Threats</li>
+			<li>External dependencies (OTS / SOUP)</li>
+		</ul>
+		</li>
+	</ul>
+
+[TOC_Chapter_end() /]
+[html_PAGE_end('Security Context') /]
+[/template]
+
+	
+[comment
+	--------------------
+	OTS
+	--------------------
+/]
+[template private NOT_USED_OTS_Section_print(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[TOC_Section_start('Off-the-shelf Software (OTS)') /]
+	[html_NO_PRINT_start() /]
+		[html_NOTE_start() /]
+			includes
+
+			<ul>
+				<li>application software</li>
+				<li>system software</li>
+				<li>support software</li>
+			</ul>
+		[html_NOTE_end() /]
+
+		[html_EXAMPLE_start() /]
+			<table border="1" class="table-2-columns">
+				<tr><td>Software Name:</td><td>...</td></tr>
+				<tr><td>Model and Specification:</td><td>...</td></tr>
+				<tr><td>Full Version:</td><td>...</td></tr>
+				<tr><td>Software Supplier:</td><td>...</td></tr>
+			</table>
+		[html_EXAMPLE_end() /]
+	[html_NO_PRINT_end() /]
+
+	[protectedAreaSchema('Off-the-shelf Software', _context) /]
+[TOC_Section_end() /]
+[/template]
+
+   
+[comment
+	====================
+	IMPLEMENTATION PROCESS
+	====================
+/]
+[template private ImplementationProcess_Chapter_print(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[html_PAGE_start('implementation process') /]
+[TOC_Chapter_start('Implementation Process') /]
+	
+	[comment
+		--------------------
+		RISK MANAGEMENT
+		--------------------
+	/]
+[comment html_PAGE_start('risk management') /]
+	[TOC_Section_start('Risk Management') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_start() /]
+				Please attach the Risk Analysis Report and Risk Summary Report of Medical Device Network Security Risk Management. Which can ensure all residual risks are acceptable.
+			[html_TASK_end() /]
+
+			[html_NOTE_start() /]
+				Cybersecurity Risk Management is part of the Risk Analysis 
+			[html_NOTE_end() /]
+		[html_NO_PRINT_end() /]
+		
+		[comment TOC_SubSection_start('Description') /]
+		[protectedAreaSchema('Risk Management', _context)/]
+		[comment TOC_SubSection_end() /]
+	[TOC_Section_end() /]
+[html_PAGE_end('risk management') /]
+	
+	[comment
+		--------------------
+		REQIOREMENT SPECIFICATION
+		--------------------
+	/]
+[html_PAGE_start('requirements specification') /]
+	[TOC_Section_start('Requirements Specification') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_start() /]
+				Provide a network security Requirements Specification document for declaring medical devices, along with the original documents formed by network security development. It is also possible to provide a Requirements Specification document for medical device software, but it should indicate the network security situation. 
+			[html_TASK_end() /]
+		[html_NO_PRINT_end() /]
+		
+		[comment TOC_SubSection_start('Description') /]
+		[protectedAreaSchema('Requirements Specification', _context)/]
+		[comment TOC_SubSection_end() /]
+	[TOC_Section_end() /]
+[html_PAGE_end('requirements specification') /]
+	
+	[comment
+		--------------------
+		VERIFICATION & VALIDATION
+		--------------------
+	/]
+[html_PAGE_start('verification and validation') /]
+	[TOC_Section_start('Verification and Validation') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_start() /]
+				Test Plan and Test Report of Network Security，which can prove that Network security requirements (such as confidentiality, integrity, availability, etc.) have been satisfied
+				
+				 if it is a security software, please provide the Compatibility Test Report of Security Software (if applicable) 
+				 if it is a standard transmission protocol or storage format, please attach the Supporting file of Standard Compliance  
+				 If it is a user-defined transmission protocol or storage format, please attach Summary Report of Integrity Test  
+				 if it has real-time remote control function, please attach the Integrity and Availability Test Report of real time remote control function ) (if applicable) 
+			[html_TASK_end() /]
+		[html_NO_PRINT_end() /]
+		
+		[comment TOC_SubSection_start('Description') /]
+		[protectedAreaSchema('Verification and Validation Process', _context) /]	
+		[comment TOC_SubSection_end() /]
+	[TOC_Section_end() /]
+[html_PAGE_end('verification and validation') /]
+	
+	[comment
+		--------------------
+		TRACEABILITY
+		--------------------
+	/]
+[html_PAGE_start('traceability analysis') /]
+	[TOC_Section_start('Traceability analysis') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_start() /]
+				Network Security Traceability Analysis Report, which refers the relationship table of requirements specifications, design specifications, test, risk management in order to trace the network security. 
+			[html_TASK_end() /]
+		[html_NO_PRINT_end() /]
+		
+		[comment TOC_SubSection_start('Description') /]
+		[protectedAreaSchema('Traceability', _context) /]
+		[comment TOC_SubSection_end() /]
+	[TOC_Section_end() /]
+[html_PAGE_end('traceability analysis') /]
+	
+	[comment
+		--------------------
+		MAINTENANCE PLAN
+		--------------------
+	/]
+[html_PAGE_start('maintenance plan') /]
+	[TOC_Section_start('Maintenance Plan') /]
+		[html_NO_PRINT_start() /]
+			[html_TASK_start() /]
+				Provide a flowchart for declaring network security updates for medical devices and describe relevant activities based on the diagram. 
+				Provide a flowchart for emergency response to cybersecurity incidents and describe relevant activities based on the diagram; Or provide emergency response plan documents for network security incidents. 
+			[html_TASK_end() /]
+		[html_NO_PRINT_end() /]
+
+[let level : String = China_getSoftwareSecurityLevel()]
+		[comment TOC_SubSection_start('Overview') /]
+		<p>
+			The following is being provided:
+		</p>
+
+		<table class="table-3-columns table-centered">
+			<thead>
+				<tr>
+					<th>Information</th>
+					<th>Provided</th>
+					<th>Reason</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Software Maintenance Plan</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Notification Plan</td>
+					<td>[html_checkbox(true) /]</td>
+					<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+				</tr>
+				<tr>
+					<td>Security Incident Handling</td>
+					<td>[html_checkbox(level <> 'Low') /]</td>
+					<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+				</tr>
+			</tbody>
+		</table>
+		[comment TOC_SubSection_end() /]
+[html_PAGE_end('maintenance plan') /]
+
+[html_PAGE_start('Software Maintenance Plan') /]
+		[TOC_SubSection_start('Software Maintenance Plan') /]
+			[protectedAreaSchema('Software Maintenance Plan', _context) /]
+		[TOC_SubSection_end() /]
+[html_PAGE_end('Software Maintenance Plan') /]
+		
+
+[html_PAGE_start('Notification Plan') /]
+		[TOC_SubSection_start('Notification Plan') /]
+			[comment class A, B, C /]
+			[protectedAreaSchema('Notification Plan', _context) /]
+		[TOC_SubSection_end() /]
+[html_PAGE_end('Notification Plan') /]
+
+[html_PAGE_start('Security Incident Handling Process') /]
+		[TOC_SubSection_start('Security Incident Handling Process') /]
+[if (level = 'Low')]
+			<p>
+				Product has Software Security Level [level/]. No Security Incident Handling required.
+			</p>
+[else]
+			[comment class B, C /]
+			[protectedAreaSchema('Security Incident Handling Process', _context) /]
+[/if]
+		[TOC_SubSection_end() /]
+[html_PAGE_end('Security Incident Handling Process') /]
+[/let]
+	[TOC_Section_end() /]
+[TOC_Chapter_end() /]
+[comment html_PAGE_end('implementation process') /]
+[/template]
+
+
+[comment
+	====================
+	VULNERABILITY ASSESSMENT
+	====================
+/]
+[template private VulnerabilityAssessment_Chapter_print(
+	this 			: NamedElement,
+	_context		: Context
+)]
+[html_PAGE_start('vulnerablity assessment') /]
+[TOC_Chapter_start('Vulnerability Assessment') /]
+	[html_NO_PRINT_start() /]
+		[html_TASK_start() /]
+			<ul>
+				<li>Level Low: Clarify the total number of known vulnerabilities and the number of remaining vulnerabilities according to vulnerability levels</li>
+				<li>Level Medium: Provide a self-assessment report on network security vulnerabilities, clarifying the total number of known vulnerabilities and the remaining known vulnerabilities according to vulnerability levels.</li>
+				<li>Level High: Provide network security vulnerability self-assessment reports, network security vulnerability assessment reports issued by network security assessment agencies, and clarify maintenance plans for known remaining vulnerabilities.</li>
+			</ul>
+		[html_TASK_end() /]
+	[html_NO_PRINT_end() /]
+
+[let level : String = China_getSoftwareSecurityLevel()]
+	[comment TOC_Section_start('Overview') /]
+	<p>
+		The following is being provided:
+	</p>
+
+		<table class="table-3-columns table-centered">
+		<thead>
+			<tr>
+				<th>Information</th>
+				<th>Provided</th>
+				<th>Reason</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Vulnerability Management Plan</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>List of Known Vulnerabilities</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>List of Residual Vulnerabilities</td>
+				<td>[html_checkbox(true) /]</td>
+				<td>Required for Level Low or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>Security Self-Assessment Report</td>
+				<td>[html_checkbox(level <> 'Low') /]</td>
+				<td>Required for Level Medium or higher.<br/>Level is [level /]</td>
+			</tr>
+			<tr>
+				<td>Pentest Report</td>
+				<td>[html_checkbox(level = 'High') /]</td>
+				<td>Required for Level High.<br/>Level is [level /]</td>
+			</tr>
+		</tbody>
+	</table>
+	[comment TOC_Section_end() /]
+[html_PAGE_end('vulnerablity assessment') /]
+	
+
+[html_PAGE_start('Vulnerability Management Plan') /]
+	[TOC_Section_start('Vulnerability Management Plan') /]
+		[protectedAreaSchema('Vulnerability Management Plan', _context) /]
+	[TOC_Section_end() /]
+[html_PAGE_end('Vulnerability Management Plan') /]
+
+	[comment Class A, B, C /]
+[html_PAGE_start('List of Known Vulnerabilities') /]
+	[TOC_Section_start('List of Known Vulnerabilities') /]
+		[protectedAreaSchema('List of Known Vulnerabilities', _context) /]
+	[TOC_Section_end() /]
+[html_PAGE_end('List of Known Vulnerabilities') /]
+
+	[comment Class A, B, C /]
+[html_PAGE_start('List of Residual Vulnerabilities') /]
+	[TOC_Section_start('List of Residual Vulnerabilities') /]
+		[protectedAreaSchema('List of Residual Vulnerabilities', _context) /]
+	[TOC_Section_end() /]
+[html_PAGE_end('List of Residual Vulnerabilities') /]
+
+	[comment Class B, C /]
+[html_PAGE_start('Security Self-Assessment Report') /]
+	[TOC_Section_start('Security Self-Assessment Report') /]
+[if (level = 'Low')]
+		<p>
+			Product has Software Security Level [level /]. No Security Self-Assessment Report required.
+		</p>
+[else]
+		[protectedAreaSchema('Security Self-Assessment Report', _context) /]
+[/if]
+	[TOC_Section_end() /]
+[html_PAGE_end('Security Self-Assessment Report') /]
+
+	[comment Class C /]
+[html_PAGE_start('Pentest Report') /]
+	[TOC_Section_start('Pentest Report') /]
+[if (level <> 'High')]
+		<p>
+			Product has Software Security Level of [level /]. No Pentest required.
+		</p>
+[else]
+		[protectedAreaSchema('Pentest Report', _context) /]
+[/if]
+	[TOC_Section_end() /]
+[html_PAGE_end('Pentest Report') /]
+[/let]
+[TOC_Chapter_end() /]
+[comment html_PAGE_end('vulnerablity assessment') /]
+[/template]
