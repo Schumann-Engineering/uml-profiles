@@ -1,0 +1,48 @@
+[comment encoding = UTF-8 /]
+[module Chapter_CoverPage(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+
+[import engineering::schumann::uml::m2t::docgen::html::DocumentClassification /]
+
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+
+
+[comment
+	====================
+	COVER PAGE
+	====================
+/]
+[template public CoverPage_Chapter_print(
+	this 			: NamedElement,
+	_context		: Context
+)
+{
+	classification : String = env(_context.templateUUID + '.Classification', 'internal');
+}]
+[html_PAGE_start('cover page', 'cover-page')/]
+[if (classification = 'public')]
+	[DOC_Classification_PUBLIC(_context) /]
+[elseif (classification = 'confidential')]
+	[DOC_Classification_CONFIDENTIAL(_context) /]
+[elseif (classification = 'external')]
+	[DOC_Classification_CONFIDENTIAL_EXTERNAL(_context) /]
+[elseif (classification = 'strictly')]
+	[DOC_Classification_STRICTLY_CONFIDENTIAL(_context) /]
+[else]
+	[DOC_Classification_CONFIDENTIAL_INTERNAL(_context) /]
+[/if]
+	[comment DOC_Footer(_context) /]
+
+	[TOC_Title_start(_context.documentTitle) /]
+		[this.printScopeForProduct(_context) /]
+	[TOC_Title_end() /]
+[html_PAGE_end('cover page')/]
+[/template]
