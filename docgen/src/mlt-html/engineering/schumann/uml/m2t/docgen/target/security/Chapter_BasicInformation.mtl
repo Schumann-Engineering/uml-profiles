@@ -1,0 +1,84 @@
+[comment encoding = UTF-8 /]
+[module Chapter_BasicInformation(
+	'http://www.eclipse.org/uml2/5.0.0/UML',
+	'http://schumann.engineering/docgen/1'
+)]
+
+
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Scope /]
+[import engineering::schumann::uml::m2t::csmn::html::lifecycle::Product.OperatingSystem /]
+
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
+[import engineering::schumann::uml::m2t::common::Metadata /]
+
+[import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::docgen::html::Toc /]
+
+
+[comment
+	====================
+	BASIC INFORMATION
+	====================
+/]
+[query private IncludeRegistrant(
+	devNull		: NamedElement,
+	_context	: Context
+) : Boolean =
+	envIsTrue(_context.templateUUID + '.Output.Schema.Registrant', 'false')
+/]
+
+
+[template public BasicInformation_Chapter_print(
+	this 				: NamedElement,
+	_context			: Context
+)
+post(trim())]
+[html_PAGE_start('basic information')/]
+	[TOC_Chapter_start('Basic information')/]
+		[comment
+			--------------------
+			REGISTRANT
+			--------------------
+		/]
+[if (IncludeRegistrant(_context))]
+		[TOC_Section_start('Registrant') /]
+			<table class="table-2-columns">
+				<tr>
+					<th>Manufacturer</th>
+					<td>[VENDOR_NAME() /]</td>
+				</tr>
+				<tr>
+					<th>Registrant address</th>
+					<td>[VENDOR_ADDRESS() /]</td>
+				</tr>
+				<tr>
+					<th>Registrant website</th>
+					<td>[VENDOR_WEBSITE() /]</td>
+				</tr>
+			</table>
+		[TOC_Section_end() /]
+[/if]
+		[comment
+			--------------------
+			HARDWARE
+			--------------------
+		/]
+		[TOC_Section_start('Hardware versions')/]
+			[printScopeForProduct(_context)/]
+		[TOC_Section_end()/]
+	
+		[comment
+			--------------------
+			SOFTWARE
+			--------------------
+		/]
+		[TOC_Section_start('Software versions')/]
+			<p>
+				As of writing the following software versions have been released:
+			</p>
+		
+			[printOperatingSystems(_context)/]
+		[TOC_Section_end()/]
+	[TOC_Chapter_end()/]
+[html_PAGE_end('basic information')/]
+[/template]
