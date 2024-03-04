@@ -36,7 +36,7 @@
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
-[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityContext /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
@@ -153,11 +153,13 @@
 	[TOC_Chapter_start('Introduction') /]
 		[TOC_Section_start('Purpose') /]
 			<p>
-				This documents describe the security characteristics of the product(s) in scope. It shall be used as overview and to find documents within the technical documentation more easily.
+				This documents describe the plan to manage cybersecurity across the product(s) life cycle in scope.
+			</p>
+			<p>
+				It shall be used as overview and to find documents within the technical documentation more easily.
 			</p>
 	
 			[LegalRef_IMDRF_STED_Cybersec() /]
-			[LegalRef_China_Cybersec() /]
 		[TOC_Section_end() /]
 		
 		[TOC_Section_start('Target audience') /]
@@ -166,6 +168,7 @@
 			</p>
 
 			<ul>
+				<li>engineers</li>
 				<li>regulatory authorities</li>
 				<li>notified body</li>
 			</ul>
@@ -198,35 +201,7 @@
 )]
 [html_PAGE_start('Security Context') /]
 [TOC_Chapter_start('Security Context') /]
-	<p>
-		A SECURITY CONTEXT is the basis of all security related activities. Such a SECURITY CONTEXT has to be created.
-	</p>
-
-	<p>
-		A SECURITY CONTEXT contains of at least the following information:
-	</p>
-
-	<ul>
-		<li>Intended purpose and Environment of Use
-		<ul>
-			<li>Intended purpose</li>
-			<li>Intended Environment of Use</li>
-		</ul>
-		</li>
-
-		<li>Use Environment
-		<ul>
-			<li>System Elements</li>
-			<li>Environment Elements / interacting external entitites</li>
-			<li>Trust boundaries</li>
-			<li>Product interfaces</li>
-			<li>Interface connections</li>
-			<li>Assets, Protection Goals and Threats</li>
-			<li>External dependencies (OTS / SOUP)</li>
-		</ul>
-		</li>
-	</ul>
-
+	[protectedAreaSchema('Security Context', _context) /]
 [TOC_Chapter_end() /]
 [html_PAGE_end('Security Context') /]
 [/template]

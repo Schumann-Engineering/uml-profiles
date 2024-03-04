@@ -15,47 +15,175 @@
 [import engineering::schumann::uml::m2t::html::Layout /]
 
 
+[query private interfaces2portAssets(
+	interfaces 		: Set(Port),
+	assetType  		: AssetType
+) : OrderedSet(Port) =
+	interfaces
+	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+	->sortedBy(name)
+/]
+
+
+[query private interfaces2componentAssets(
+	interfaces 		: Set(Port),
+	assetType  		: AssetType
+) : OrderedSet(Component) =
+	interfaces
+	.owner
+	->flatten()
+	->filter(Component)
+	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+	->asSet()
+	->sortedBy(name)
+/]
+
+
+[query private interfaces2umlConnections(
+	interfaces 		: Set(Port)
+) : OrderedSet(Dependency) =
+	interfaces
+	.csmn_allConnectionInvolved()
+	->flatten()
+	->select(csmn_isConnection())
+	->asSet()
+	->sortedBy(name)
+	->asOrderedSet()
+/]
+
+
+[query private interfaces2csmnConnections(
+	interfaces 		: Set(Port)
+) : Set(Connection) =
+	interfaces
+	->interfaces2umlConnections()
+	->collect(csmn_connection())
+	->filter(Connection)
+	->asSet()
+/]
+
+
+[query private interfaces2dataTypeAssets(
+	interfaces 		: Set(Port),
+	assetType  		: AssetType
+) : OrderedSet(DataType) =
+	let connections		: Set(Connection)	= interfaces
+												->interfaces2csmnConnections() in
+	let flowToClient	: Set(DataType)   	= connections
+												->collect(flowToClient)
+												->filter(DataType)
+												->asSet() in
+	let flowToSupplier	: Set(DataType)   	= connections
+												->collect(flowToSupplier)
+												->filter(DataType)
+												->asSet() in
+
+	Set(DataType) { }
+	->union(flowToSupplier)
+	->union(flowToClient)
+	->asSet()
+	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+	->sortedBy(name)
+/]
+
+
+[query private interfaces2dependencyAssets(
+	interfaces 		: Set(Port),
+	assetType  		: AssetType
+) : OrderedSet(Dependency) =
+	interfaces
+	->interfaces2umlConnections()
+	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
+	->sortedBy(name)
+/]
+
+
+[template public printAssetsForInterfacesAsList(
+	interfaces 		: Set(Port),
+	assetType  		: AssetType,
+	startNewPage	: Boolean
+)
+post(trim())
+{
+	componentAssets		: OrderedSet(Component)		= interfaces->interfaces2componentAssets(assetType);
+	dataTypeAssets		: OrderedSet(DataType)		= interfaces->interfaces2dataTypeAssets(assetType);
+	dependencyAssets	: OrderedSet(Dependency)	= interfaces->interfaces2dependencyAssets(assetType);
+	portAssets			: OrderedSet(Port)			= interfaces->interfaces2portAssets(assetType);
+}]
+[if (
+	componentAssets->notEmpty()
+	or
+	dataTypeAssets->notEmpty()
+	or
+	dependencyAssets->notEmpty()
+	or
+	portAssets->notEmpty() 
+)]
+<p>
+	<b>Overview</b>
+</p>
+<ul>
+[for (componentAssets)]
+	<li>[name /]</li>
+[/for]
+[for (dataTypeAssets)]
+	<li>[name /]</li>
+[/for]
+[for (dependencyAssets)]
+	<li>[name /]</li>
+[/for]
+[for (portAssets)]
+	<li>[name /]</li>
+[/for]
+</li>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/if]
+[/template]
+
+
+[template private printAssetsForInterfacesAsList(
+	assets	 		: OrderedSet(NamedElement),
+	startNewPage	: Boolean
+)
+post(trim())]
+[if (assets->notEmpty())]
+<p>
+	<b>Overview</b>
+</p>
+<ul>
+[for (assets->sortedBy(name))]
+	<li>[name /]</li>
+[/for]
+</li>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/if]
+[/template]
+
+
 [template public printAssetsForInterfacesAsTable(
 	interfaces 		: Set(Port),
 	assetType  		: AssetType,
 	startNewPage	: Boolean
 )
 {
-	connections			: Set(Dependency)		= interfaces
-												.csmn_allConnectionInvolved()
-												->flatten()
-												->select(csmn_isConnection())
-												->asSet();
-	dependencies		: OrderedSet(Dependency) = connections
-												->sortedBy(name)
-												->asOrderedSet();
-	connections			: Set(Connection) 		= dependencies
-												->collect(csmn_connection())
-												->filter(Connection)
-												->asSet();
-	flowToClient		: Set(DataType)   		= connections
-												->collect(flowToClient)
-												->filter(DataType)
-												->asSet();
-	flowToSupplier		: Set(DataType)   		= connections
-												->collect(flowToSupplier)
-												->filter(DataType)
-												->asSet();
-
-
-	dataTypeAssets		: OrderedSet(DataType)	= flowToSupplier
-												->union(flowToClient)
-												->asSet()
-												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
-												->sortedBy(name);
-	dependencyAssets	: OrderedSet(Dependency) = dependencies
-												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
-												->sortedBy(name);
-	portAssets			: OrderedSet(Port)		= interfaces
-												->select(csmn_isAsset() and csmn_asset().assetType = assetType)
-												->sortedBy(name);
+	componentAssets		: OrderedSet(Component)		= interfaces->interfaces2componentAssets(assetType);
+	dataTypeAssets		: OrderedSet(DataType)		= interfaces->interfaces2dataTypeAssets(assetType);
+	dependencyAssets	: OrderedSet(Dependency)	= interfaces->interfaces2dependencyAssets(assetType);
+	portAssets			: OrderedSet(Port)			= interfaces->interfaces2portAssets(assetType);
 }]
 [if (
+	componentAssets->oclIsUndefined() or componentAssets->oclIsInvalid()
+	or
 	dataTypeAssets->oclIsUndefined() or dataTypeAssets->oclIsInvalid()
 	or
 	dependencyAssets->oclIsUndefined() or dependencyAssets->oclIsInvalid()
@@ -69,6 +197,8 @@
 </p>
 [html_ANSI_DANGER_end() /]
 [elseif (
+	componentAssets->notEmpty()
+	or
 	dataTypeAssets->notEmpty()
 	or
 	dependencyAssets->notEmpty()
@@ -94,6 +224,7 @@
 		</tbody>
 	</table>
 [/comment]
+[componentAssets.printAssetAsTable(startNewPage) /]
 [dataTypeAssets.printAssetAsTable(startNewPage) /]
 [dependencyAssets.printAssetAsTable(startNewPage) /]
 [portAssets.printAssetAsTable(startNewPage) /]

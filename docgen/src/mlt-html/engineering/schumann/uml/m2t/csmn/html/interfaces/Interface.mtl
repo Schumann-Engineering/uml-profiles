@@ -12,6 +12,31 @@
 [import engineering::schumann::uml::m2t::html::Layout /]
 
 
+[template public printInterfacesAsList(
+	interfaces					: Set(Port),
+	includeAssetCharacteristics	: Boolean,
+	startNewPage				: Boolean
+)
+post(trim())]
+[if (interfaces->notEmpty())]
+<p>
+	<b>Overview</b>
+</p>
+<ul>
+[for (interfaces->sortedBy(name))]
+	<li>[name /]</li>
+[/for]
+</li>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/if]
+[/template]
+
+
 [template public printInterfaceAsTable(
 	interfaces					: Set(Port),
 	includeAssetCharacteristics	: Boolean,

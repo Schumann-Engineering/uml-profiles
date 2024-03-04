@@ -10,7 +10,7 @@
 [import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 
 
-[template public DocRef_Sbom_OTS(
+[template private DO_NOT_USE_DocRef_Sbom_OTS(
 	devNull	: OclAny
 )
 post(trim())]
@@ -22,20 +22,20 @@ post(trim())]
 [/template]
 
 
-[template public DocRef_Sbom_OTSasTable(
+[template public DocRef_Sbom_OTS_asTable(
 	element		: NamedElement,
 	_context	: Context
 )
 post(trim())]
 [replaceAllPlaceholder(
-	DocRef_Sbom_OTSasMarkdown()
+	DocRef_Sbom_OTS_asMarkdown()
 		.renderMarkdown(),
 	_context
 )/]
 [/template]
 
 
-[template public DocRef_Sbom_OTSasMarkdown(
+[template public DocRef_Sbom_OTS_asMarkdown(
 	devNull	: OclAny
 )]
 | Name                                    | Document Location | Document ID                       | Version                         | Relevant sections |

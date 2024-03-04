@@ -31,6 +31,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::ScopeConstraint /]
 [import engineering::schumann::uml::m2t::csmn::common::lifecycle::Product /]
 [import engineering::schumann::uml::m2t::csmn::html::assets::Asset /]
+[import engineering::schumann::uml::m2t::csmn::html::elements::common /]
 [import engineering::schumann::uml::m2t::csmn::html::elements::Element /]
 [import engineering::schumann::uml::m2t::csmn::html::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
@@ -519,6 +520,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 		/]
 [html_PAGE_start('System Elements')/]
 		[TOC_Section_start('System Elements')/]
+			[systemElements->printElementsAsList(true) /]
 			[systemElements->printElementsAsTable(true) /]
 		[TOC_Section_end()/]
 [html_PAGE_end('System Elements')/]
@@ -539,6 +541,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 													->select(csmn_isEnvironmentElement())
 													->asSet()
 													->sortedBy(name)]
+			[environmentElements->printElementsAsList(true) /]
 			[environmentElements->printElementsAsTable(true) /]
 [/let]
 		[TOC_Section_end()/]
@@ -554,6 +557,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 [let trustBoundaries : OrderedSet(Component) 		= systemElements
 														->select(csmn_isSecurityZone())
 														->sortedBy(name)]
+			[trustBoundaries->printElementsAsList(true) /]
 			[trustBoundaries->printSecurityZonesAsTable(true) /]
 [/let]
 		[TOC_Section_end()/]
@@ -649,6 +653,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [comment html_PAGE_start('network interfaces')/]
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Network interfaces')/]
+				[interfaces->csmn_networkPort()->printInterfacesAsList( false, true )/]
 				[interfaces->csmn_networkPort()->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('network interfaces')/]
@@ -661,6 +666,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('non-netowrk interfaces')/]
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Non-Network interfaces')/]			
+				[interfaces->csmn_nonNetworkPort()->printInterfacesAsList( false, true )/]
 				[interfaces->csmn_nonNetworkPort()->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('non-netowrk interfaces')/]
@@ -672,6 +678,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('storage media')/]
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Storage Media')/]			
+				[interfaces->csmn_storagePort()->printInterfacesAsList( false, true )/]
 				[interfaces->csmn_storagePort()->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('storage media')/]
@@ -683,6 +690,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('material')/]
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Material interfaces')/]			
+				[interfaces->csmn_materialPort()->printInterfacesAsList( false, true )/]
 				[interfaces->csmn_materialPort()->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('material')/]
@@ -694,6 +702,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('energy')/]
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Energy interfaces')/]			
+				[interfaces->csmn_energyPort()->printInterfacesAsList( false, true )/]
 				[interfaces->csmn_energyPort()->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('energy')/]
@@ -713,6 +722,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 					this section should be empty! This is an indicator of a wrongly configured model!
 				[html_ANSI_CAUTION_end()/]
 			
+				[otherInterfaces->printInterfacesAsList( false, true )/]
 				[otherInterfaces->printInterfaceAsTable( false, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('other ports')/]
@@ -738,6 +748,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 [/comment]
 
 			[TOC_SubSection_start('INTERFACE CONNECTION for Network interfaces')/]
+				[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsList(true)/]
 				[interfaces->csmn_networkPort()->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('connections')/]
@@ -749,6 +760,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('non-network connections')/]
 			[TOC_SubSection_start('INTERFACE CONNECTIONs for Non-Network interfaces')/]
+				[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsList(true)/]
 				[interfaces->csmn_nonNetworkPort()->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('non-network connections')/]
@@ -760,6 +772,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('storage connections')/]
 			[TOC_SubSection_start('INTERFACE CONNECTIONs for Storage Media')/]
+				[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsList(true)/]
 				[interfaces->csmn_storagePort()->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('storage connections')/]
@@ -771,6 +784,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('material connections')/]
 			[TOC_SubSection_start('INTERFACE CONNECTIONs for Material interfaces')/]
+				[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsList(true)/]
 				[interfaces->csmn_materialPort()->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('material connections')/]
@@ -782,6 +796,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('energy connections')/]
 			[TOC_SubSection_start('INTERFACE CONNECTIONs for Energy interfaces')/]
+				[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsList(true)/]
 				[interfaces->csmn_energyPort()->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('energy connections')/]
@@ -799,6 +814,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 					this section should be empty! This is an indicator of a wrongly configured model!
 				[html_ANSI_WARNING_end()/]
 				
+				[otherInterfaces->printConnectionsForInterfacesAsList(true)/]
 				[otherInterfaces->printConnectionsForInterfacesAsTable(true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('other connections')/]
@@ -952,6 +968,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('connection assets')/]
 			[TOC_SubSection_start('ASSETs which are Connections / Data flow')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Connection, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Connection, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('credential assets')/]
@@ -963,6 +980,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('credential assets')/]
 			[TOC_SubSection_start('ASSETs which are Credential Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Credentials, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('credential assets')/]
@@ -974,6 +992,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('energy assets')/]
 			[TOC_SubSection_start('ASSETs which are Energy Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Energy, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('energy assets')/]
@@ -985,6 +1004,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('data assets')/]
 			[TOC_SubSection_start('ASSETs which are Data Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Data, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Data, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
@@ -996,6 +1016,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('data assets')/]
 			[TOC_SubSection_start('ASSETs which are a Disturbance')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Disturbance, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Disturbance, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
@@ -1007,6 +1028,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('information assets')/]
 			[TOC_SubSection_start('ASSETs which are Information Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Information, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Information, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('information assets')/]
@@ -1018,6 +1040,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('interface assets')/]
 			[TOC_SubSection_start('ASSETs which are Interface Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Interface, true)/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Interface, true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('interface assets')/]
@@ -1029,6 +1052,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('material assets')/]
 			[TOC_SubSection_start('ASSETs which are Material Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Material, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Material, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('material assets')/]
@@ -1040,6 +1064,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('mechanical assets')/]
 			[TOC_SubSection_start('ASSETs which are Mechanical Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Mechanical, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('mechanical')/]
@@ -1051,6 +1076,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 			/]
 [html_PAGE_start('signal assets')/]
 			[TOC_SubSection_start('ASSETs which are Signal Assets')/]
+			[printAssetsForInterfacesAsList( interfaces, AssetType::Signal, true )/]
 			[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('signal assets')/]
@@ -1101,7 +1127,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 	<b>Applicable Documents</b>
 </p>
 
-[DocRef_Sbom_OTSasTable(_context)/]
+[DocRef_Sbom_OTS_asTable(_context)/]
 [/template]
 
 
@@ -1127,10 +1153,11 @@ example, message authentication codes and digital signatures) and/or content VAL
 			[html_INFO_start()/]see applicable document(s)[html_INFO_end()/]
 			[comment TOC_SubSection_end()/]
 
+			<p>
+				<b>Applicable Documents (product)</b>
+			</p>
+			[DocRef_MDS2_asTable(_context)/]
 
-			[TOC_SubSection_start('Applicable Documents')/]
-				[DocRef_MDS2()/]
-			[TOC_SubSection_end()/]
 
 			[TOC_SubSection_start('Background')/]
 				[TOC_SubSubSection_start('Covered standards')/]

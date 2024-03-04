@@ -38,7 +38,7 @@ extends engineering::schumann::uml::m2t::docgen::target::security::Doc_CyberSecu
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
-[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityContext /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]

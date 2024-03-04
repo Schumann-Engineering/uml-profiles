@@ -1,18 +1,34 @@
 [comment encoding = UTF-8 /]
 [module Ref_MDS2(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://schumann.engineering/docgen/1'
 )]
 
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
+[import engineering::schumann::uml::m2t::common::services::MarkdownService /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
-[template public DocRef_MDS2(
+[template public DocRef_MDS2_asTable(
+	element		: NamedElement,
+	_context	: Context
+)
+post(trim())]
+[replaceAllPlaceholder(
+	DocRef_MDS2_asMarkdown()
+		.renderMarkdown(),
+	_context
+)/]
+[/template]
+
+
+[template public DocRef_MDS2_asMarkdown(
 	devNull	: OclAny
 )]
-[html_Document_Ref(
-	'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-)/]
+| Name                                                        | Document Location | Document ID                                              | Version                                                       | Relevant sections |
+| :--:                                                        | :--:              | :--:                                                     | :--:                                                          | :---              |
+| [env('75c75b01-551b-43b3-a569-c44ab18e7a91.Output.Title')/] | TECHFILE          | [env('75c75b01-551b-43b3-a569-c44ab18e7a91.Output.ID')/] | [env('75c75b01-551b-43b3-a569-c44ab18e7a91.Output.Version')/] | all               |
 [/template]

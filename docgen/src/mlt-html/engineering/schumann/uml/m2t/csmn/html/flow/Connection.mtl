@@ -35,13 +35,48 @@
 /]
 
 
+[query private _connections(
+	interfaces 		: Set(Port)
+) : OrderedSet(Dependency) =
+	interfaces->csmn_connectionsForPorts()
+/]
+
+
+
+[template public printConnectionsForInterfacesAsList(
+	interfaces 		: Set(Port),
+	startNewPage	: Boolean
+)
+post(trim())
+{
+	connections	: OrderedSet(Dependency)	= interfaces->_connections();
+}]
+[if (connections->notEmpty())]
+<p>
+	<b>Overview</b>
+</p>
+<ul>
+[for (connections->sortedBy(name))]
+	<li>[name /]</li>
+[/for]
+</li>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/if]
+[/template]
+
+
 [template public printConnectionsForInterfacesAsTable(
 	interfaces 		: Set(Port),
 	startNewPage	: Boolean
 )
 post(trim())
 {
-	connections	: OrderedSet(Dependency)	= interfaces->csmn_connectionsForPorts();
+	connections	: OrderedSet(Dependency)	= interfaces->_connections();
 }]
 [if (connections->oclIsUndefined() or connections->oclIsInvalid())]
 [html_ANSI_DANGER_start() /]

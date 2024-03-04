@@ -36,7 +36,7 @@
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Ref_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_MDS2 /]
-[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityCharacteristics /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Ref_ProductSecurityContext /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::Checkbox /]
@@ -897,6 +897,8 @@
 )]
 [this.TOC_SubSection_start('Overview ' + _context.product.productName + ' (PN ' + _context.product.model + ')') /]
 	[this.html_IMG_ProductArchitectureDiagram(_context) /]
+
+	[html_IMG_ProductArchitectureDiagramLegend(_context)/]
 [this.TOC_SubSection_end()/]
 [/template]
 
@@ -1047,7 +1049,7 @@
 	</p>
 	<ul>
 		<li>
-			[DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Network interfaces') /]
+			[DO_NOT_USE_DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Network interfaces') /]
 		</li>
 	</ul>
 	[/if]
@@ -1138,7 +1140,7 @@
 	</p>
 	<ul>
 		<li>
-			[DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Storage Media') /]
+			[DO_NOT_USE_DocRef_Characteristics_Interfaces('PRODUCT INTERFACEs which are Storage Media') /]
 		</li>
 	</ul>
 	[/if]
@@ -1204,7 +1206,7 @@
 	</p>
 	<ul>
 		<li>
-			[DocRef_Characteristics_Interfaces('List of PRODUCT INTERFACE') /]
+			[DO_NOT_USE_DocRef_Characteristics_Interfaces('List of PRODUCT INTERFACE') /]
 		</li>
 	</ul>
 	[/if]

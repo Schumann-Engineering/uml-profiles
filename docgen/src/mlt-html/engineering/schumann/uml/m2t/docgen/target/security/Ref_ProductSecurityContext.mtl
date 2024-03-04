@@ -1,31 +1,66 @@
 [comment encoding = UTF-8 /]
-[module Ref_ProductSecurityCharacteristics(
+[module Ref_ProductSecurityContext(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/csmn/1'
+	'http://schumann.engineering/docgen/1'
 )]
 
 
 [import engineering::schumann::uml::m2t::html::Boxes /]
 [import engineering::schumann::uml::m2t::html::DocumentRef /]
+[import engineering::schumann::uml::m2t::common::services::MarkdownService /]
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
-[template public DocRef_Characteristics_Diagram(
-	devNull : OclAny
-)]
-[html_Document_Ref(
-	'Product Security Characteristics',
-	'Product Architecture',
-	'Overview'
+[template public DocRef_SecurityContext_asTable(
+	element		: NamedElement,
+	_context	: Context
+)
+post(trim())]
+[replaceAllPlaceholder(
+	DocRef_SecurityContext_asMarkdown()
+		.renderMarkdown(),
+	_context
 )/]
 [/template]
 
 
-[template public DocRef_Characteristics_Asset(
+[template public DocRef_SecurityContext_asMarkdown(
+	devNull	: OclAny
+)]
+| Name                                                        | Document Location | Document ID                                              | Version                                                       | Relevant sections |
+| :--:                                                        | :--:              | :--:                                                     | :--:                                                          | :---              |
+| [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.Title')/] | TECHFILE          | [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.ID')/] | [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.Version')/] | all               |
+[/template]
+
+
+[template public DocRef_Securitycontext_Diagram_asTable(
+	element		: NamedElement,
+	_context	: Context
+)]
+[replaceAllPlaceholder(
+	DocRef_Securitycontext_Diagram_asMarkdown()
+		.renderMarkdown(),
+	_context
+)/]
+[/template]
+
+
+[template public DocRef_Securitycontext_Diagram_asMarkdown(
+	devNull	: OclAny
+)]
+| Name                                                        | Document Location | Document ID                                              | Version                                                       | Relevant sections |
+| :--:                                                        | :--:              | :--:                                                     | :--:                                                          | :---              |
+| [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.Title')/] | TECHFILE          | [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.ID')/] | [env('5b3cec7d-362f-4051-8a95-411bf9579f70.Output.Version')/] | ▪ chapter "Use Environment", section "Overview"  |
+[/template]
+
+
+[template public DO_NOT_USE_DocRef_Characteristics_Asset(
 	section	: String
 )]
 [html_Document_Ref(
-	'Product Security Characteristics',
-	'Product Architecture',
+	'Product Security Context',
+	'Use Environment',
 	section
 )/]
 [html_TIP_start() /]
@@ -52,7 +87,7 @@
 [/template]
 
 
-[template public DocRef_Characteristics_Connection(
+[template public DO_NOT_USE_DocRef_Characteristics_Connection(
 	section	: String
 )]
 [html_Document_Ref(
@@ -120,12 +155,12 @@
 [/template]
 
 
-[template public DocRef_Characteristics_Interfaces(
+[template public DO_NOT_USE_DocRef_Characteristics_Interfaces(
 	section	: String
 )]
 [html_Document_Ref(
-	'Product Security Characteristics',
-	'Product Architecture',
+	'Product Security Context',
+	'Use Environment',
 	section
 )/]
 [html_TIP_start() /]
@@ -167,27 +202,4 @@
 		</tbody>
 	</table>
 [html_TIP_end() /]
-[/template]
-
-
-[template public DocRef_Characteristics_MDS2(
-	devNull	: OclAny
-)]
-[html_Document_Ref(
-	'Product Security Characteristics',
-	'Security Capabilities',
-	'Manufacturer Disclosure Statement for Medical Device Security (MDS2)'
-)/]
-[/template]
-
-
-[template public DocRef_Characteristics_Sbom(
-	devNull	: OclAny
-)]
-[html_Document_Ref(
-	'Product Security Characteristics',
-	'Product Architecture',
-	'Software',
-	'Software Bill of Material (SBOM)'
-)/]
 [/template]
