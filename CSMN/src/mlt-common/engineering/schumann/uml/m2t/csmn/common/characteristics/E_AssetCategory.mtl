@@ -33,9 +33,9 @@
 	else if (this = AssetCategory::Property) 					then
 		Set(ProtectionGoal) {
 /*			ProtectionGoal::Confidentiality, 	*/
-/*			ProtectionGoal::Integrity, 			*/
+			ProtectionGoal::Integrity, 			
 /*			ProtectionGoal::Availability, 		*/
-			ProtectionGoal::Authenticity,
+/*			ProtectionGoal::Authenticity,		*/
 /*			ProtectionGoal::NonRepudiation,		*/
 /*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money
@@ -88,8 +88,8 @@
 	else if (this = AssetCategory::PrimaryOperatingFunction) 	then	
 		Set(ProtectionGoal) {
 /*			ProtectionGoal::Confidentiality, 	*/
-/*			ProtectionGoal::Integrity, 			*/
-/*			ProtectionGoal::Availability, 		*/
+			ProtectionGoal::Integrity, 			
+			ProtectionGoal::Availability, 		
 /*			ProtectionGoal::Authenticity,		*/
 /*			ProtectionGoal::NonRepudiation,		*/
 			ProtectionGoal::Usability

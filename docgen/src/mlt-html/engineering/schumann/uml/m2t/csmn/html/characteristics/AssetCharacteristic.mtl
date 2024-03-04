@@ -129,7 +129,7 @@ post(trim())]
 [/if]
 [comment Comment /]
 [if (this.comment->notEmpty())]
-[this.comment->printComment() /]
+[this.comment->filter(Comment)->printComment() /]
 [/if]
 [/template]
 
