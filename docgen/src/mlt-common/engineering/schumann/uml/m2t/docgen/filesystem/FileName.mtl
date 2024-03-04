@@ -387,6 +387,20 @@ each file would need a new engine / run.
 /]
 
 
+[query public DocGen_File_Part_Version(
+	this 			: NamedElement,
+	_context		: Context
+) : String =
+	let dummyUUID	: String = _context.templateUUID in
+	let dummyModel	: String = _context.product.model in
+
+	env_withSomeParams(
+		_context.templateUUID + '.Output.Version', 
+		'???',
+		_context
+	)
+/]
+
 [query public DocGen_File_Part_Revision(
 	this			: NamedElement,
 	_context		: Context
@@ -554,4 +568,5 @@ each file would need a new engine / run.
 ) : String =
 	replaceSomePlaceholder(content, _context)
 	.replaceAllSafe('\\[document\\.ID\\]',			DocGen_File_Part_ID(_context))
+	.replaceAllSafe('\\[document\\.version\\]',		DocGen_File_Part_Version(_context))
 /]
