@@ -12,10 +12,9 @@
 	this : String
 ) : Boolean =
 	if (this <> null) then
-		this
-		.isContainedInEnvironmentPropertyAsVersion('EXCLUDE_CSMN_Product_Model') = false
+		this.isContainedInEnvironmentProperty('EXCLUDE_CSMN_Product_Model', false) = false
 	else
-		true
+		false
 	endif
 /]
 

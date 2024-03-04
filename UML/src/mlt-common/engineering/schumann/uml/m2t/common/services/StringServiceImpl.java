@@ -1,5 +1,8 @@
 package engineering.schumann.uml.m2t.common.services;
 
+import java.util.HashMap;
+import java.util.regex.Pattern;
+
 import org.apache.commons.lang.StringUtils;
 
 public class StringServiceImpl {
@@ -8,7 +11,30 @@ public class StringServiceImpl {
 	 * Constant "True Values" (strings which are used to represent boolean true)
 	 */
 	private static final String[] TRUE_VALUES = { "1", "on" ,"yes" , "true" };
-
+	
+	private static HashMap<String, Pattern> REGEX_CACHE = new HashMap<String, Pattern>();
+	
+	
+	private static String replaceAllPrecompiled(
+			String input,
+			String condition,
+			Pattern pattern,
+			String replacement
+	)
+	{
+		// === GUARDS ===
+		if (input == null)
+			return input;
+		if (condition != null && !input.contains(condition))
+			return input;
+		
+		// === BODY ===
+		var result = pattern.matcher(input).replaceAll(replacement);
+		
+		// === RESULT ===
+		return result;
+	}
+	
 
 	/**
 	 * Checks if a given string is true.
@@ -57,7 +83,7 @@ public class StringServiceImpl {
 	public static String escape(
 			String input)
 	{
-		return input.replaceAll("\\.", "\\\\.");
+		return replaceEachRepeatedly(input, "\\.", "\\\\.");
 	}
 	
 	
@@ -100,8 +126,7 @@ public class StringServiceImpl {
 			String commentSign
 	)
 	{
-		return commentSign + input.replaceAll("\n", "\n" + commentSign);
-		
+		return commentSign + replaceEachRepeatedly(input, "\n", "\n" + commentSign);		
 	}
 	
 	/**
@@ -204,7 +229,7 @@ public class StringServiceImpl {
 	{
 		return StringUtils.rightPad(input, length, paddingChar);
 	}
-
+	
 	
 	public static String replaceEachRepeatedly(
 			String input,
@@ -222,7 +247,15 @@ public class StringServiceImpl {
 		
 		// === BODY ===
 		var result = input;
-				
+
+		if (pattern.contains("\\"))
+			pattern = pattern.replace("\\", "\\\\");
+		
+		if (!REGEX_CACHE.containsKey(pattern))
+			REGEX_CACHE.put(pattern, Pattern.compile(pattern));
+		
+		var regex = REGEX_CACHE.get(pattern);
+
 		while (result.contains(pattern))
 		{
 			// replacing \ with \\ throws an exception... handle this differently
@@ -232,7 +265,7 @@ public class StringServiceImpl {
 				break;
 			}
 
-			result = result.replaceAll(pattern, replacement);
+			result = regex.matcher(result).replaceAll(replacement);
 		}
 		
 		// === RESULT
@@ -261,11 +294,12 @@ public class StringServiceImpl {
 	)
 	{
 		var result = input;
-		result = replaceEachRepeatedly(input, " \n", "\n");
-		result = replaceEachRepeatedly(result, "\t\n", "\n");
-		result = replaceEachRepeatedly(result, "\n\n", "\n");
-		result = replaceEachRepeatedly(result, "\t\n", "");
-		result = replaceEachRepeatedly(result, "\r\n\r\n", "\r\n");
+
+		result = replaceEachRepeatedly(result, "\r\n\r\n",			"\r\n");
+		result = replaceEachRepeatedly(result, "^[ |\t|\r]*\n$", 	"");
+		result = replaceEachRepeatedly(result, "[ |\t]+\n", 		"\n");
+		result = replaceEachRepeatedly(result, "\t\n",				"\n");
+		result = replaceEachRepeatedly(result, "\n\n",				"\n");
 		
 		return result;
 	}
