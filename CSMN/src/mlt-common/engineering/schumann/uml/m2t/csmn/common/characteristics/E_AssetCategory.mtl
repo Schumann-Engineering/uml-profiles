@@ -11,55 +11,55 @@
 	     if (this = AssetCategory::IntellectualProperty) 		then
 		Set(ProtectionGoal) {
 			ProtectionGoal::Confidentiality,
-/*			ProtectionGoal::Integrity,*/
-/*			ProtectionGoal::Availability,*/
-/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::Integrity,			*/
+/*			ProtectionGoal::Availability,		*/
+/*			ProtectionGoal::Authenticity,		*/
 			ProtectionGoal::NonRepudiation,
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Reputation) 					then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality, */
-/*			ProtectionGoal::Integrity, */
-/*			ProtectionGoal::Availability, */
-/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::Confidentiality, 	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability, 		*/
+/*			ProtectionGoal::Authenticity,		*/
 			ProtectionGoal::NonRepudiation,
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Property) 					then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality, */
-/*			ProtectionGoal::Integrity, */
-/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Confidentiality, 	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability, 		*/
 			ProtectionGoal::Authenticity,
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::People) 						then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality, */
-/*			ProtectionGoal::Integrity, */
-/*			ProtectionGoal::Availability, */
+/*			ProtectionGoal::Confidentiality, 	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability,		*/
 			ProtectionGoal::Authenticity,
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
 		}
 	else if (this = AssetCategory::EnvironmentAndResource)	 	then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality, */
-/*			ProtectionGoal::Integrity, */
-/*			ProtectionGoal::Availability, */
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Confidentiality, 	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability, 		*/
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
 		}
@@ -69,87 +69,87 @@
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
 			ProtectionGoal::Authenticity,
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
 		}
 	else if (this = AssetCategory::Compliance) 					then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality, */
-/*			ProtectionGoal::Integrity, */
-/*			ProtectionGoal::Availability, */
-/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::Confidentiality,	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability, 		*/
+/*			ProtectionGoal::Authenticity,		*/
 			ProtectionGoal::NonRepudiation,
-/*			ProtectionGoal::Usability, */
+/*			ProtectionGoal::Usability, 			*/
 			ProtectionGoal::Money,
 			ProtectionGoal::Legal
 		}
 	else if (this = AssetCategory::PrimaryOperatingFunction) 	then	
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
-/*			ProtectionGoal::Integrity,
-/*			ProtectionGoal::Availability,
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
+/*			ProtectionGoal::Confidentiality, 	*/
+/*			ProtectionGoal::Integrity, 			*/
+/*			ProtectionGoal::Availability, 		*/
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
 			ProtectionGoal::Usability
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::ManufacturingProcess) 		then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Confidentiality, 	*/
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
-/*			ProtectionGoal::Authenticity,*/
+/*			ProtectionGoal::Authenticity,		*/
 			ProtectionGoal::NonRepudiation,
 			ProtectionGoal::Usability
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::EssentialPerformanceFeature) then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Confidentiality, 	*/
 			ProtectionGoal::Integrity,
-			ProtectionGoal::Availability
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+			ProtectionGoal::Availability,
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
+			ProtectionGoal::Usability
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Feature) 					then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Confidentiality, 	*/
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Accessory) 					then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Confidentiality, 	*/
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
-			ProtectionGoal::Authenticity,
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+			ProtectionGoal::Authenticity
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability,			*/
+/*			ProtectionGoal::Money,				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::ArchitectureComponent) 		then
 		Set(ProtectionGoal) {
-/*			ProtectionGoal::Confidentiality,
+/*			ProtectionGoal::Confidentiality, 	*/
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Data) 						then
 		Set(ProtectionGoal) {
@@ -158,9 +158,9 @@
 			ProtectionGoal::Availability,
 			ProtectionGoal::Authenticity,
 			ProtectionGoal::NonRepudiation
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Usability, 			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::InterfacesAndAccess)			then
 		Set(ProtectionGoal) {
@@ -168,21 +168,21 @@
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
 			ProtectionGoal::Authenticity
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Interface)					then
 		Set(ProtectionGoal) {
 			ProtectionGoal::Confidentiality,
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability
-/*			ProtectionGoal::Authenticity,*/
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::Authenticity,		*/
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability, 			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else if (this = AssetCategory::Hardware) 					then
 		Set(ProtectionGoal) {
@@ -190,10 +190,10 @@
 			ProtectionGoal::Integrity,
 			ProtectionGoal::Availability,
 			ProtectionGoal::Authenticity
-/*			ProtectionGoal::NonRepudiation,*/
-/*			ProtectionGoal::Usability, */
-/*			ProtectionGoal::Money, */
-/*			ProtectionGoal::Legal */
+/*			ProtectionGoal::NonRepudiation,		*/
+/*			ProtectionGoal::Usability,			*/
+/*			ProtectionGoal::Money, 				*/
+/*			ProtectionGoal::Legal 				*/
 		}
 	else
 		Set(ProtectionGoal) {
