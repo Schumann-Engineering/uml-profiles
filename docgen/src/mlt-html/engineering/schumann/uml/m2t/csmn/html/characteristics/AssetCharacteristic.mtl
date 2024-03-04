@@ -43,7 +43,7 @@ post(trim())]
 
 <ul>
 	<li>
-[if (assetType <> AssetType::Unspecified)]
+[if (assetType <> null and assetType <> AssetType::Unspecified)]
 		<i>Type</i>: [this.assetType.csmn_toString() /]
 [else]
 		[html_ANSI_DANGER_start() /]
@@ -61,7 +61,7 @@ post(trim())]
 
 <ul>
 	<li>
-[if (flightLevel <> AssetFlightLevel::UNSPECIFIED)]
+[if (flightLevel <> null and flightLevel <> AssetFlightLevel::UNSPECIFIED)]
 		<i>[this.flightLevel /]</i>
 [else]
 		[html_ANSI_DANGER_start() /]
@@ -78,7 +78,7 @@ post(trim())]
 
 <ul>
 	<li>
-[if (assetCategory <> AssetCategory::UNSPECIFIED)]
+[if (assetCategory <> null and assetCategory <> AssetCategory::UNSPECIFIED)]
 		<i>[this.assetCategory /]</i>
 [else]
 		[html_ANSI_DANGER_start() /]

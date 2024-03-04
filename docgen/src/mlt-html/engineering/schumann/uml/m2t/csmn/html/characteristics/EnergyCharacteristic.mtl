@@ -8,41 +8,53 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 
 
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::EnergyCharacteristic /]
+[import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::common::services::VariableService /]
 
 
 [template public printEnergyCharacteristic(
-	this : Port
+	this 		: Port
 ) 
 ? (this.csmn_hasEnergyCharacteristic())
 post(trim())
 {
 	characteristic : EnergyCharacteristic = this.csmn_energyCharacteristic();
 }]
-[characteristic.print() /]
+[characteristic.print(this) /]
 [/template]
 
 
 [template public printEnergyCharacteristic(
-	this : Relationship
+	this 		: Dependency
 ) 
 ? (this.csmn_hasEnergyCharacteristic())
 post(trim())
 {
 	characteristic : EnergyCharacteristic = this.csmn_energyCharacteristic();
 }]
-[characteristic.print() /]
+[characteristic.print(this) /]
 [/template]
 
 
 [template public print(
-	this : EnergyCharacteristic
+	this 		: EnergyCharacteristic,
+	element		: NamedElement
 )
 post(trim())]
 [printCharacteristicTitle('Energetic properties') /]
 
 <ul>
 	<li>
-		<i>Type</i>: [this.energyType /]
+[if (energyType <> null and energyType <> EnergyType::Unspecified)]
+		<i>Type</i>: [energyType /]
+[else]
+		[html_ANSI_DANGER_start() /]
+		<p>
+			Type is unspecified
+		</p>	
+		[html_ANSI_DANGER_end() /]
+		[env_addError('"' + element.name + '" does not have a Type for Energy Characteristic', null) /] 
+[/if]
 	</li>
 </ul>
 [/template]
