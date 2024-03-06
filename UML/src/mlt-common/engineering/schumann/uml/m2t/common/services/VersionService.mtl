@@ -3,6 +3,24 @@
 )/]
 
 
+[query public isEqualOrNewer(
+	needle 		: String, 
+	haystack 	: String
+) : Boolean = 
+	isEqual(haystack) or
+	isNewer(haystack)
+/]
+
+
+[query public isEqualOrOlder(
+	needle 		: String, 
+	haystack 	: String
+) : Boolean = 
+	isEqual(haystack) or
+	isOlder(haystack)
+/]
+
+
 [query public isEqual(
 	needle : String, 
 	haystack : String
