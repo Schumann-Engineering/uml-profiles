@@ -28,7 +28,7 @@ post(trim())]
 [html_NOTE_start()/]
 [comment type /]
 <p>
-	[this.constraintType /] with
+	[this.constraintType /] with / in
 </p>
 
 <ul>
@@ -51,7 +51,7 @@ post(trim())]
 	this : ProductConstraint
 )
 post(trim())]
-model [this.model /]
+Model [this.model /]
 [/template]
 
 

@@ -19,6 +19,20 @@
 /]
 
 
+[query public csmn_hasValidScopeAsModel(
+	this 			: String,
+	context_model	: String
+) : Boolean =
+	csmn_hasValidScopeAsModel()
+	and
+	if (this <> null and context_model <> null) then
+		this.equalsIgnoreCase(context_model)
+	else
+		false
+	endif	
+/]
+
+
 [query public csmn_shallGenerateProductModel(
 	this : String
 ) : Boolean =

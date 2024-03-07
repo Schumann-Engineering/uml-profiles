@@ -33,11 +33,13 @@
 
 
 [query public csmn_filterInScope(
-	this : Set(Port)
+	this 			: Set(Port),
+	model			: String,
+	softwareVersion	: String
 ) : Set(Port) =
 	if (this <> null) then
 		this
-		->select( element : Port | element.csmn_isInScope() )
+		->select( element : Port | element.csmn_isInScope(model, softwareVersion) )
 	else
 		Set{}
 	endif
@@ -49,6 +51,25 @@
 ) : Boolean =
 	this.csmn_hasValidScope() and
 	this.csmn_hasValidScopeConstraint() and
+	this.csmn_isInScopeByVisibility()
+	
+	and
+
+	if (this.namespace <> null) then
+		this.namespace.csmn_isInScope()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_isInScope(
+	this 			: NamedElement,
+	model			: String,
+	softwareVersion	: String
+) : Boolean =
+	this.csmn_hasValidScope() and
+	this.csmn_hasValidScopeConstraint(model, softwareVersion) and
 	this.csmn_isInScopeByVisibility()
 	
 	and

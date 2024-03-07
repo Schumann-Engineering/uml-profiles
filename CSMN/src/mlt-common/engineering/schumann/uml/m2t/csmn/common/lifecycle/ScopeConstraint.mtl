@@ -37,6 +37,21 @@
 /]
 
 
+[query public csmn_hasValidScopeConstraint(
+	this 			: NamedElement,
+	model			: String,
+	softwareVersion	: String
+) : Boolean =
+	let scopeConstraint : ScopeConstraint = this.csmn_scopeConstraint() in
+	if scopeConstraint <> null then
+		scopeConstraint
+		.csmn_hasValidScope(model, softwareVersion)
+	else
+		true
+	endif
+/]
+
+
 [query public csmn_hasValidScope(
 	this : ScopeConstraint
 ) : Boolean = 
@@ -51,6 +66,29 @@
 			this
 			.softwareConstraint
 			->csmn_hasValidScope()
+		endif
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this 			: ScopeConstraint,
+	model			: String,
+	softwareVersion	: String
+) : Boolean = 
+	if (this <> null) then
+		if (this.constraintType = ScopeConstraintType::Removed) then
+			true
+		else
+			this
+			.productConstraint
+			->csmn_hasValidScope(model)
+			and
+			this
+			.softwareConstraint
+			->csmn_hasValidScope(softwareVersion)
 		endif
 	else
 		true

@@ -970,7 +970,7 @@
 									.csmn_networkPort()
 									->flatten()
 									->asSet()
-									->csmn_filterInScope() ]
+									->csmn_filterInScope(_context.productModel, _context.softwareVersion) ]
 	<ul>
 		<li>
 			[html_checkbox(networkPorts->size() = 0) /] No
@@ -1107,7 +1107,7 @@
 									.csmn_storagePort()
 									->flatten()
 									->asSet()
-									->csmn_filterInScope() ]
+									->csmn_filterInScope(_context.productModel, _context.softwareVersion) ]
 	<ul>
 		<li>
 			[html_checkbox(storageMedia->size() = 0) /] No
@@ -1177,7 +1177,7 @@
 									.csmn_wirelessPort()
 									->flatten()
 									->asSet()
-									->csmn_filterInScope() ]
+									->csmn_filterInScope(_context.productModel, _context.softwareVersion) ]
 	<ul>
 		<li>
 			[html_checkbox(wirelessInterfaces->size() = 0) /] No

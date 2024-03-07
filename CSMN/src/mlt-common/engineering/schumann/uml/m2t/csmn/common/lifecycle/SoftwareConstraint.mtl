@@ -10,7 +10,7 @@
 
 
 [query public csmn_filterInScope(
-	this : Set(SoftwareConstraint)
+	this 					: Set(SoftwareConstraint)
 ) : Set(SoftwareConstraint) =
 	this
 	->select( constraint : SoftwareConstraint | constraint.csmn_hasValidScope() )
@@ -18,13 +18,23 @@
 /]
 
 
+[query public csmn_filterInScope(
+	this 					: Set(SoftwareConstraint),
+	context_softwareVersion	: String
+) : Set(SoftwareConstraint) =
+	this
+	->select( constraint : SoftwareConstraint | constraint.csmn_hasValidScope(context_softwareVersion) )
+	->sortedBy( softwareVersion )
+/]
+
+
 [query public csmn_hasValidScope(
-	this : Set(SoftwareConstraint)
+	this 					: Set(SoftwareConstraint)
 ) : Boolean =
 	if (this <> null) then
 		this
 		->csmn_filterInScope()
-		->size() > 0
+		->notEmpty()
 	else
 		true
 	endif
@@ -32,10 +42,36 @@
 
 
 [query public csmn_hasValidScope(
-	this : SoftwareConstraint
+	this 					: Set(SoftwareConstraint),
+	context_softwareVersion	: String
+) : Boolean =
+	if (this <> null) then
+		this
+		->csmn_filterInScope(context_softwareVersion)
+		->notEmpty()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this 					: SoftwareConstraint
 ) : Boolean =
 	if (this <> null) then
 		this.softwareVersion.csmn_hasValidScopeAsSoftwareVersion()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this 					: SoftwareConstraint,
+	context_softwareVersion	: String
+) : Boolean =
+	if (this <> null) then
+		this.softwareVersion.csmn_hasValidScopeAsSoftwareVersion(context_softwareVersion)
 	else
 		true
 	endif

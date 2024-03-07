@@ -6,6 +6,7 @@
 
 
 [import engineering::schumann::uml::m2t::common::services::PropertyFileService /]
+[import engineering::schumann::uml::m2t::common::services::VersionService /]
 
 
 [query public csmn_filterInScopeAsSoftwareVersion(
@@ -27,7 +28,7 @@
 	if (this <> null) then
 		this
 		->csmn_filterInScopeAsSoftwareVersion()
-		->size() > 0
+		->notEmpty()
 	else
 		true
 	endif
@@ -40,10 +41,26 @@
 	if (this <> null) then
 		not this.isContainedInEnvironmentPropertyAsVersion('EXCLUDE_CSMN_SoftwareVersion')
 		and
-		this.isContainedInEnvironmentProperty('ONLY_CSMN_SoftwareVersion', true)
+		(
+			this.isContainedInEnvironmentProperty('ONLY_CSMN_SoftwareVersion', true)
+		)
 	else
 		true
 	endif
+/]
+
+
+[query public csmn_hasValidScopeAsSoftwareVersion(
+	this 					: String,
+	context_softwareVersion	: String
+) : Boolean =
+	csmn_hasValidScopeAsSoftwareVersion()
+	and
+	if (this <> null and context_softwareVersion <> null) then
+		this.isEqualOrOlder(context_softwareVersion)
+	else
+		false
+	endif	
 /]
 
 

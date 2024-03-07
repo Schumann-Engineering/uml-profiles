@@ -18,13 +18,37 @@
 /]
 
 
+[query public csmn_filterInScope(
+	this 			: Set(ProductConstraint),
+	context_model	: String
+) : Set(ProductConstraint) =
+	this
+	->select( constraint : ProductConstraint | constraint.csmn_hasValidScope(context_model) )
+	->sortedBy( model )
+/]
+
+
 [query public csmn_hasValidScope(
 	this : Set(ProductConstraint)
 ) : Boolean =
 	if (this <> null) then
 		this
 		->csmn_filterInScope()
-		->size() > 0
+		->notEmpty()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this 			: Set(ProductConstraint),
+	context_model	: String
+) : Boolean =
+	if (this <> null) then
+		this
+		->csmn_filterInScope(context_model)
+		->notEmpty()
 	else
 		true
 	endif
@@ -36,6 +60,18 @@
 ) : Boolean =
 	if (this <> null) then
 		this.model.csmn_hasValidScopeAsModel()
+	else
+		true
+	endif
+/]
+
+
+[query public csmn_hasValidScope(
+	this 			: ProductConstraint,
+	context_model	: String
+) : Boolean =
+	if (this <> null) then
+		this.model.csmn_hasValidScopeAsModel(context_model)
 	else
 		true
 	endif

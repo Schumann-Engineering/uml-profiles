@@ -394,7 +394,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 													->select(csmn_hasInterfaceCharacteristic())
 													->oclAsSet()
 													->flatten()
-													->csmn_filterInScope()]
+													->csmn_filterInScope(_context.productModel, _context.softwareVersion)]
 [let connections	: OrderedSet(Dependency)	= interfaces->csmn_connectionsForPorts()]
 [html_PAGE_start('use environment')/]
 	[TOC_Chapter_start('Use Environment')/]
