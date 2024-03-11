@@ -15,23 +15,24 @@
 [import engineering::schumann::uml::m2t::html::Layout /]
 
 
-[query private interfaces2portAssets(
-	interfaces 		: Set(Port),
+[query private getPortAssets(
+	this 			: Set(NamedElement),
 	assetType  		: AssetType
 ) : OrderedSet(Port) =
-	interfaces
+	this
+	->filter(Port)
 	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
 	->sortedBy(name)
 /]
 
 
-[query private interfaces2componentAssets(
-	interfaces 		: Set(Port),
-	assetType  		: AssetType
+[query private getComponentAssets(
+	this 			: Set(NamedElement),
+	assetType		: AssetType
 ) : OrderedSet(Component) =
-	interfaces
-	.owner
-	->flatten()
+	Set(NamedElement) {}
+	->union(this->filter(Port).owner->flatten())
+	->union(this->filter(Component))
 	->filter(Component)
 	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
 	->asSet()
@@ -39,11 +40,12 @@
 /]
 
 
-[query private interfaces2umlConnections(
-	interfaces 		: Set(Port)
+[query private getUmlConnections(
+	this			: Set(NamedElement)
 ) : OrderedSet(Dependency) =
-	interfaces
-	.csmn_allConnectionInvolved()
+	Set(Dependency) {}
+	->union(this->filter(Port).csmn_allConnectionInvolved())
+	->union(this->filter(Dependency))
 	->flatten()
 	->select(csmn_isConnection())
 	->asSet()
@@ -52,23 +54,23 @@
 /]
 
 
-[query private interfaces2csmnConnections(
-	interfaces 		: Set(Port)
+[query private getCsmnConnections(
+	this			: Set(NamedElement)
 ) : Set(Connection) =
-	interfaces
-	->interfaces2umlConnections()
+	this
+	->getUmlConnections()
 	->collect(csmn_connection())
 	->filter(Connection)
 	->asSet()
 /]
 
 
-[query private interfaces2dataTypeAssets(
-	interfaces 		: Set(Port),
+[query private getDataTypeAssets(
+	this			: Set(NamedElement),
 	assetType  		: AssetType
 ) : OrderedSet(DataType) =
-	let connections		: Set(Connection)	= interfaces
-												->interfaces2csmnConnections() in
+	let connections		: Set(Connection)	= this
+												->getCsmnConnections() in
 	let flowToClient	: Set(DataType)   	= connections
 												->collect(flowToClient)
 												->filter(DataType)
@@ -87,151 +89,123 @@
 /]
 
 
-[query private interfaces2dependencyAssets(
-	interfaces 		: Set(Port),
+[query private getDependencyAssets(
+	this			: Set(NamedElement),
 	assetType  		: AssetType
 ) : OrderedSet(Dependency) =
-	interfaces
-	->interfaces2umlConnections()
+	this
+	->getUmlConnections()
 	->select(csmn_isAsset() and csmn_asset().assetType = assetType)
 	->sortedBy(name)
 /]
 
 
 [template public printAssetsForInterfacesAsList(
-	interfaces 		: Set(Port),
+	haystack 		: Set(NamedElement),
 	assetType  		: AssetType,
 	startNewPage	: Boolean
 )
 post(trim())
 {
-	componentAssets		: OrderedSet(Component)		= interfaces->interfaces2componentAssets(assetType);
-	dataTypeAssets		: OrderedSet(DataType)		= interfaces->interfaces2dataTypeAssets(assetType);
-	dependencyAssets	: OrderedSet(Dependency)	= interfaces->interfaces2dependencyAssets(assetType);
-	portAssets			: OrderedSet(Port)			= interfaces->interfaces2portAssets(assetType);
+	componentAssets		: OrderedSet(Component)		= haystack->getComponentAssets(assetType);
+	dataTypeAssets		: OrderedSet(DataType)		= haystack->getDataTypeAssets(assetType);
+	dependencyAssets	: OrderedSet(Dependency)	= haystack->getDependencyAssets(assetType);
+	portAssets			: OrderedSet(Port)			= haystack->getPortAssets(assetType);
+
+	haystack2			: OrderedSet(NamedElement)	= Set(NamedElement) {}
+														->union(componentAssets->filter(NamedElement))
+														->union(dataTypeAssets->filter(NamedElement))
+														->union(dependencyAssets->filter(NamedElement))
+														->union(portAssets->filter(NamedElement))
+														->sortedBy(eClass().name + '_' + name);
 }]
-[if (
-	componentAssets->notEmpty()
-	or
-	dataTypeAssets->notEmpty()
-	or
-	dependencyAssets->notEmpty()
-	or
-	portAssets->notEmpty() 
-)]
-<p>
-	<b>Overview</b>
-</p>
-<ul>
-[for (componentAssets)]
-	<li>[name._simpleTextToXHtml() /]</li>
-[/for]
-[for (dataTypeAssets)]
-	<li>[name._simpleTextToXHtml() /]</li>
-[/for]
-[for (dependencyAssets)]
-	<li>[name._simpleTextToXHtml() /]</li>
-[/for]
-[for (portAssets)]
-	<li>[name._simpleTextToXHtml() /]</li>
-[/for]
-</ul>
-[if (startNewPage)]
-[html_PAGE_end('')/]
-[html_PAGE_start('')/]
-[else]
-[html_PAGE_BREAK('') /]
-[/if]
-[/if]
-[/template]
-
-
-[template private printAssetsForInterfacesAsList(
-	assets	 		: OrderedSet(NamedElement),
-	startNewPage	: Boolean
-)
-post(trim())]
-[if (assets->notEmpty())]
-<p>
-	<b>Overview</b>
-</p>
-<ul>
-[for (assets->sortedBy(name))]
-	<li>[name._simpleTextToXHtml() /]</li>
-[/for]
-</ul>
-[if (startNewPage)]
-[html_PAGE_end('')/]
-[html_PAGE_start('')/]
-[else]
-[html_PAGE_BREAK('') /]
-[/if]
-[/if]
-[/template]
-
-
-[template public printAssetsForInterfacesAsTable(
-	interfaces 		: Set(Port),
-	assetType  		: AssetType,
-	startNewPage	: Boolean
-)
-{
-	componentAssets		: OrderedSet(Component)		= interfaces->interfaces2componentAssets(assetType);
-	dataTypeAssets		: OrderedSet(DataType)		= interfaces->interfaces2dataTypeAssets(assetType);
-	dependencyAssets	: OrderedSet(Dependency)	= interfaces->interfaces2dependencyAssets(assetType);
-	portAssets			: OrderedSet(Port)			= interfaces->interfaces2portAssets(assetType);
-}]
-[if (
-	componentAssets->oclIsUndefined() or componentAssets->oclIsInvalid()
-	or
-	dataTypeAssets->oclIsUndefined() or dataTypeAssets->oclIsInvalid()
-	or
-	dependencyAssets->oclIsUndefined() or dependencyAssets->oclIsInvalid()
-	or
-	portAssets->oclIsUndefined() or portAssets->oclIsInvalid()
-)]
+[if (haystack2->oclIsUndefined() or haystack2->oclIsInvalid())]
 [html_ANSI_DANGER_start() /]
 <p>
 	Something is wrong with the model. See debug information below.<br/>
 	Most common error: name is empty
 </p>
 [html_ANSI_DANGER_end() /]
-[elseif (
-	componentAssets->notEmpty()
-	or
-	dataTypeAssets->notEmpty()
-	or
-	dependencyAssets->notEmpty()
-	or
-	portAssets->notEmpty() 
-)]
-[comment]
-	<table class="table-2-columns">
-		<thead>
-			<tr>
-				<th>ASSET</th>
-				<th>ASSET Characteristics</th>
-			</tr>
-		</thead>
-	
-		<tbody>
-	[for (portAssets)]
-			[printAssetAsTableRow() /]
-	[/for]
-	[for (dataTypeAssets)]
-			[printAssetAsTableRow() /]
-	[/for]
-		</tbody>
-	</table>
-[/comment]
+[elseif (haystack2->notEmpty())]
+<p>
+	<b>Overview</b>
+</p>
+<ul>
+	[haystack2._printAssetsForInterfacesAsListItem() /]
+</ul>
+[if (startNewPage)]
+[html_PAGE_end('')/]
+[html_PAGE_start('')/]
+[else]
+[html_PAGE_BREAK('') /]
+[/if]
+[/if]
+[/template]
+
+
+[template private _printAssetsForInterfacesAsListItem(
+	this			: NamedElement
+)
+post(trim())]
+<li>[name._simpleTextToXHtml() /]</li>
+[/template]
+
+
+[template public printAssetsForInterfacesAsTable(
+	haystack 		: Set(NamedElement),
+	assetType  		: AssetType,
+	startNewPage	: Boolean
+)
+post(trim())
+{
+	componentAssets		: OrderedSet(Component)		= haystack->getComponentAssets(assetType);
+	dataTypeAssets		: OrderedSet(DataType)		= haystack->getDataTypeAssets(assetType);
+	dependencyAssets	: OrderedSet(Dependency)	= haystack->getDependencyAssets(assetType);
+	portAssets			: OrderedSet(Port)			= haystack->getPortAssets(assetType);
+
+	haystack2			: OrderedSet(NamedElement)	= Set(NamedElement) {}
+														->union(componentAssets->filter(NamedElement))
+														->union(dataTypeAssets->filter(NamedElement))
+														->union(dependencyAssets->filter(NamedElement))
+														->union(portAssets->filter(NamedElement))
+														->sortedBy(eClass().name + '_' + name);
+}]
+[if (haystack2->oclIsUndefined() or haystack2->oclIsInvalid())]
+[html_ANSI_DANGER_start() /]
+<p>
+	Something is wrong with the model. See debug information below.<br/>
+	Most common error: name is empty
+</p>
+[html_ANSI_DANGER_end() /]
+[elseif (haystack2->notEmpty())]
 [componentAssets.printAssetAsTable(startNewPage) /]
 [dataTypeAssets.printAssetAsTable(startNewPage) /]
 [dependencyAssets.printAssetAsTable(startNewPage) /]
 [portAssets.printAssetAsTable(startNewPage) /]
 [else]
 <p>
-	(None)
+	(none)
 </p>
+[/if]
+[/template]
+
+
+[template private _printAssetsForInterfacesAsTable(
+	this			: Set(NamedElement),
+	assetType  		: AssetType,
+	startNewPage	: Boolean
+)
+post(trim())
+]
+[if (this->oclIsUndefined() or this->oclIsInvalid())]
+[html_ANSI_DANGER_start() /]
+<p>
+	Something is wrong with the model. See debug information below.<br/>
+	Most common error: name is empty
+</p>
+[html_ANSI_DANGER_end() /]
+[elseif (this->notEmpty())]
+[this.printAssetAsTable(startNewPage) /]
 [/if]
 [/template]
 

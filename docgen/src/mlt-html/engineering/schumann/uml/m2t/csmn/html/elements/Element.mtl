@@ -75,7 +75,7 @@ post(trim())]
 		[comment Characteristics /]
 		<tr>
 			<th>ELEMENT Characteristics</th>
-			<td>[printCharacteristics(true)/]</td> 
+			<td>[printCharacteristics(false)/]</td> 
 		</tr>
 	</tbody>
 </table>

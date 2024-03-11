@@ -416,6 +416,10 @@
 													->flatten()
 													->csmn_filterInScope(_context.productModel, _context.softwareVersion)]
 [let connections	: OrderedSet(Dependency)	= interfaces->csmn_connectionsForPorts()]
+[let securityContext	: Set(NamedElement)		= Set(NamedElement) {}
+													->union(systemElements)
+													->union(interfaces)
+													->union(connections)]
 [html_PAGE_start('use environment')/]
 	[TOC_Chapter_start('Use Environment')/]
 		<p>
@@ -988,8 +992,8 @@
 			/]
 [html_PAGE_start('connection assets')/]
 			[TOC_SubSection_start('ASSETs which are Connections / Data flow')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Connection, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Connection, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Connection, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Connection, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('credential assets')/]
 
@@ -1000,8 +1004,8 @@
 			/]
 [html_PAGE_start('credential assets')/]
 			[TOC_SubSection_start('ASSETs which are Credential Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Credentials, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Credentials, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Credentials, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Credentials, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('credential assets')/]
 
@@ -1012,8 +1016,8 @@
 			/]
 [html_PAGE_start('energy assets')/]
 			[TOC_SubSection_start('ASSETs which are Energy Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Energy, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Energy, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Energy, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Energy, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('energy assets')/]
 			
@@ -1024,8 +1028,8 @@
 			/]
 [html_PAGE_start('data assets')/]
 			[TOC_SubSection_start('ASSETs which are Data Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Data, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Data, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Data, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Data, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
 			
@@ -1036,8 +1040,8 @@
 			/]
 [html_PAGE_start('data assets')/]
 			[TOC_SubSection_start('ASSETs which are a Disturbance')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Disturbance, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Disturbance, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Disturbance, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Disturbance, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('data assets')/]
 
@@ -1048,8 +1052,8 @@
 			/]
 [html_PAGE_start('information assets')/]
 			[TOC_SubSection_start('ASSETs which are Information Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Information, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Information, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Information, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Information, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('information assets')/]
 
@@ -1060,8 +1064,8 @@
 			/]
 [html_PAGE_start('interface assets')/]
 			[TOC_SubSection_start('ASSETs which are Interface Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Interface, true)/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Interface, true)/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Interface, true)/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Interface, true)/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('interface assets')/]
 
@@ -1072,8 +1076,8 @@
 			/]
 [html_PAGE_start('material assets')/]
 			[TOC_SubSection_start('ASSETs which are Material Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Material, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Material, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Material, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Material, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('material assets')/]
 			
@@ -1084,8 +1088,8 @@
 			/]
 [html_PAGE_start('mechanical assets')/]
 			[TOC_SubSection_start('ASSETs which are Mechanical Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Mechanical, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Mechanical, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Mechanical, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Mechanical, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('mechanical')/]
 
@@ -1096,15 +1100,16 @@
 			/]
 [html_PAGE_start('signal assets')/]
 			[TOC_SubSection_start('ASSETs which are Signal Assets')/]
-			[printAssetsForInterfacesAsList( interfaces, AssetType::Signal, true )/]
-			[printAssetsForInterfacesAsTable( interfaces, AssetType::Signal, true )/]
+			[printAssetsForInterfacesAsList( securityContext, AssetType::Signal, true )/]
+			[printAssetsForInterfacesAsTable( securityContext, AssetType::Signal, true )/]
 			[TOC_SubSection_end()/]
 [html_PAGE_end('signal assets')/]
 		[TOC_Section_end()/]
 	
-	[/let]
-	[/let]
-	[/let]
+[/let]
+[/let]
+[/let]
+[/let]
 	
 		[comment
 			--------------------
