@@ -13,6 +13,7 @@ extends engineering::schumann::uml::m2t::csmn::html::characteristics::GenericCha
 [import engineering::schumann::uml::m2t::csmn::common::characteristics::E_STRIDE /]
 [import engineering::schumann::uml::m2t::common::services::StringService /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Html /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::Comment /]
 [import engineering::schumann::uml::m2t::common::services::VariableService /]
 
@@ -350,136 +351,155 @@ post(trim())]
 	====================
 	CONFIDENTIALITY
 	==================== /]
+[let hasConfidentiality : Boolean = protectionGoal->csmn_hasProtectionGoal_Confidentiality()] 
 		<tr>
 			<th class="protectionGoal table-column-literal">C = Confidentiality</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Confidentiality())]
+[if (hasConfidentiality)]
 			<td class="domain">Security / Privacy</td>
-			<td class="threat"><b><i>'[element.name /]'</i> compromised</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> compromised</b></td>
 			<td class="name">breach</td>
+		</tr>
 [else]
 			<td class="notApplicable" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	INTEGRITY
 	==================== /]
+[let hasIntegrity : Boolean = protectionGoal->csmn_hasProtectionGoal_Integrity()] 
 		<tr>
-			<th rowspan="2" class="protectionGoal table-column-literal">I = Integrity</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Integrity())]
+			<th class="protectionGoal table-column-literal"[if (hasIntegrity)] rowspan="2"[/if]>I = Integrity</th>
+[if (hasIntegrity)]
 			<td class="domain" rowspan="2">Safety</td>
-			<td class="threat"><b><i>'[element.name /]'</i> does not work as intended / according to spec</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> does not work as intended / according to spec</b></td>
 			<td class="name">defect</td>
-[else]
-			<td class="notApplicable" rowspan="2" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
 		<tr>
-[if (protectionGoal->csmn_hasProtectionGoal_Integrity())]
-			<td class="threat"><b><i>'[element.name /]'s'</i> performance deteriorated</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'s'</i> performance deteriorated</b></td>
 			<td class="name">deterioration</td>
-[/if]
 		</tr>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	AVAILABILITY
 	==================== /]
+[let hasAvailability : Boolean = protectionGoal->csmn_hasProtectionGoal_Availability()] 
 		<tr>
 			<th class="protectionGoal table-column-literal">A = Availability</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Availability())]
+[if (hasAvailability)]
 			<td class="domain">Safety</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is not available</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is not available</b></td>
 			<td class="name">failure / loss</td>
+		</tr>
 [else]
 			<td class="notApplicable" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	AUTHENTICITY
 	==================== /]
-[let typeMatch : Boolean = Set(AssetType) { AssetType::Credentials, AssetType::Data, AssetType::Information, AssetType::Signal }->includes(assetType)] 
+[let typeMatch : Boolean = Set(AssetType) { AssetType::Credentials, AssetType::Data, AssetType::Information, AssetType::Signal }->includes(assetType)]
+[let hasAuthenticity : Boolean = protectionGoal->csmn_hasProtectionGoal_Authenticity()]  
 		<tr>
-			<th class="protectionGoal table-column-literal" rowspan="2">A = Authenticity</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Authenticity())]
+			<th class="protectionGoal table-column-literal"[if (hasAuthenticity and not typeMatch)] rowspan="2"[/if]>A = Authenticity</th>
+[if (hasAuthenticity and not typeMatch)]
 			<td class="domain">Security</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is (used by) an unauthorized entity</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is (used by) an unauthorized entity</b></td>
 			<td class="name">un-authorized</td>
-[else]
-			<td class="notApplicable" colspan="3" [if (not typeMatch)]rowspan="2"[/if]>(not applicable)</td>
-[/if]
 		</tr>
 		<tr>
-[if (protectionGoal->csmn_hasProtectionGoal_Authenticity() and typeMatch)]
 			<td class="domain">Legal</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is a forgery</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is a forgery</b></td>
 			<td class="name">forgery</td>
-[/if]
 		</tr>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+		</tr>
+[/if]
+[/let]
 [/let]
 [comment
 	====================
 	NON-REPUDIATION
 	==================== /]
+[let hasNonRepudiation : Boolean = protectionGoal->csmn_hasProtectionGoal_NonRepudiation()] 
 		<tr>
 			<th class="protectionGoal table-column-literal">N = Non-Repudiation</th>
-[if (protectionGoal->csmn_hasProtectionGoal_NonRepudiation())]
+[if (hasNonRepudiation)]
 			<td class="domain">Security / Legal</td>
-			<td class="threat"><b><i>'[element.name /]'s'</i> origin can not be authenticated</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'s'</i> origin can not be authenticated</b></td>
 			<td class="name">un-authenticated</td>
+		</tr>
 [else]
 			<td class="notApplicable" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	USABILITY
 	==================== /]
+[let hasUsability : Boolean = protectionGoal->csmn_hasProtectionGoal_Usability()]
 		<tr>
-			<th rowspan="2" class="protectionGoal table-column-literal">U = Usability</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Usability())]
+			<th class="protectionGoal table-column-literal"[if (hasUsability)] rowspan="2"[/if]>U = Usability</th>
+[if (hasUsability)]
 			<td class="domain">Safety</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is used in an unintended way</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is used in an unintended way</b></td>
 			<td class="name">abnormal use</td>
-[else]
-			<td class="notApplicable" rowspan="2" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
 		<tr>
-[if (protectionGoal->csmn_hasProtectionGoal_Usability())]
 			<td class="domain">Usability</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is not understood by user</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is not understood by user</b></td>
 			<td class="name">error use</td>
-[/if]
 		</tr>
+[else]
+			<td class="notApplicable" colspan="3">(not applicable)</td>
+		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	MONEY
 	==================== /]
+[let hasMoney : Boolean = protectionGoal->csmn_hasProtectionGoal_Money()] 
 		<tr>
 			<th class="protectionGoal table-column-literal">M = Money</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Money())]
+[if (hasMoney)]
 			<td class="domain">Financial</td>
-			<td class="threat"><b><i>'[element.name /]'</i> leads to bad press</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> leads to bad press</b></td>
 			<td class="name">reputation</td>
+		</tr>
 [else]
 			<td class="notApplicable" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
+[/if]
+[/let]
 [comment
 	====================
 	LEGAL
 	==================== /]
+[let hasLegal : Boolean = protectionGoal->csmn_hasProtectionGoal_Legal()] 
 		<tr>
 			<th class="protectionGoal table-column-literal">L = Legal</th>
-[if (protectionGoal->csmn_hasProtectionGoal_Legal())]
+[if (hasLegal)]
 			<td class="domain">Legal</td>
-			<td class="threat"><b><i>'[element.name /]'</i> is in violation of regulation</b></td>
+			<td class="threat"><b><i>'[element.name._simpleTextToXHtml() /]'</i> is in violation of regulation</b></td>
 			<td class="name">legal issue</td>
+		</tr>
 [else]
 			<td class="notApplicable" colspan="3">(not applicable)</td>
-[/if]
 		</tr>
+[/if]
+[/let]
+
 	</tbody>
 </table>
 [else]

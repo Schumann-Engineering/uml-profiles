@@ -10,6 +10,7 @@
 [import engineering::schumann::uml::m2t::csmn::common::elements::SecurityZone /]
 [import engineering::schumann::uml::m2t::csmn::html::characteristics::common /]
 [import engineering::schumann::uml::m2t::html::Layout /]
+[import engineering::schumann::uml::m2t::html::Html /]
 
 
 [template public printInterfacesAsList(
@@ -24,9 +25,9 @@ post(trim())]
 </p>
 <ul>
 [for (interfaces->sortedBy(name))]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
-</li>
+</ul>
 [if (startNewPage)]
 [html_PAGE_end('')/]
 [html_PAGE_start('')/]
@@ -63,7 +64,7 @@ post(trim())
 	systemElement : Component = interface.owner.oclAsType(Component);
 }]
 <p>
-	<b>Product Interface "[name/]"</b>
+	<b>Product Interface "[name._simpleTextToXHtml()/]"</b>
 </p>
 
 <table class="table-2-columns">
@@ -71,17 +72,17 @@ post(trim())
 		[comment PRODUCT INTERFACE /]
 		<tr>
 			<th>Name</th>
-			<td>[interface.name/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
+			<td>[interface.name._simpleTextToXHtml()/][if (interface.csmn_hasScopeConstraint())]<br/>[interface.printScopeConstraint() /][/if]</td>
 		</tr>
 		[comment System Element /]
 		<tr>
 			<th>System Element</th>
-			<td>[systemElement.name /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
+			<td>[systemElement.name._simpleTextToXHtml() /][if (systemElement.csmn_hasScopeConstraint())]<br/>[systemElement.printScopeConstraint() /][/if]</td>
 		</tr>
 		[comment Security Zone /]
 		<tr>
 			<th>Trust Boundary / Security Zone</th>
-			<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name/][else]./.[/if]</td>
+			<td>[if (systemElement.csmn_hasSecurityZone())][systemElement.csmn_securityZoneElement().name._simpleTextToXHtml()/][else]./.[/if]</td>
 		</tr>
 		[comment PRODUCT INTERFACE Characteristics /]
 		<tr>

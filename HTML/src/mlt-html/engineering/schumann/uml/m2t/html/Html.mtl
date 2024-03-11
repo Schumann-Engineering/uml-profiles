@@ -145,6 +145,18 @@
 [/template]
 
 
+[query public _simpleTextToXHtml(
+	input : String
+) : String =
+	input
+		.replaceAll('\r',			'')
+		.replaceAll('\n',			'')
+		.replaceAll('>',            '&gt;')
+		.replaceAll('<',            '&lt;')
+		._htmlToXHtml()
+/]
+
+
 [query public _formattedTextToXHtml(
 	input : String
 ) : String =
@@ -163,6 +175,8 @@
 		.replaceAll('<hr>', 		'<hr/>')
 		.replaceAll('&', 			'&amp;')
 		.replaceAll('&amp;amp;', 	'&amp;')
+		.replaceAll('&amp;lt;', 	'&lt;')
+		.replaceAll('&amp;gt;', 	'&gt;')
 /]
 
 

@@ -13,6 +13,7 @@
 [import engineering::schumann::uml::m2t::html::Table /]
 [import engineering::schumann::uml::m2t::html::Layout /]
 [import engineering::schumann::uml::m2t::html::Boxes /]
+[import engineering::schumann::uml::m2t::html::Html /]
 
 
 [query public csmn_connectionsForPorts(
@@ -57,9 +58,9 @@ post(trim())
 </p>
 <ul>
 [for (connections->sortedBy(name))]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
-</li>
+</ul>
 [if (startNewPage)]
 [html_PAGE_end('')/]
 [html_PAGE_start('')/]
@@ -88,7 +89,7 @@ post(trim())
 [elseif (connections->notEmpty())]
 [for (connections)]
 <p>
-	<b>Connection "[name/]"</b>
+	<b>Connection "[name._simpleTextToXHtml()/]"</b>
 </p>
 
 [self.printConnectionAsTable() /]
@@ -151,7 +152,7 @@ post(trim())
 		<td style="text-align: left">
 			<ol>
 			[for (suppliers.owner.oclAsType(NamedElement))]
-				<li>[self.name /]</li>
+				<li>[self.name._simpleTextToXHtml() /]</li>
 			[/for]
 			</ol>
 		</td>
@@ -162,7 +163,7 @@ post(trim())
 		<td style="text-align: left">
 			<ol>
 				[for (suppliers.owner.oclAsType(NamedElement))]
-				<li>[if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if]</li>
+				<li>[if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if]</li>
 			[/for]
 			</ol>
 		</td>
@@ -173,7 +174,7 @@ post(trim())
 		<td style="text-align: left">
 			<ol>
 			[for (suppliers)]
-				<li>[self.name /]</li>
+				<li>[self.name._simpleTextToXHtml() /]</li>
 			[/for]
 			</ol>
 		</td>
@@ -186,7 +187,7 @@ post(trim())
 [comment ===CONNECTION=== /]
 	<tr>
 		<th style="text-align: right">Connection Name</th>
-		<td style="text-align: left">[this.name /]</td>
+		<td style="text-align: left">[this.name._simpleTextToXHtml() /]</td>
 	</tr>
 [comment Flow → /]
 	<tr>
@@ -196,17 +197,17 @@ post(trim())
 [comment Interface /]
 	<tr>
 		<th style="text-align: right">Client Interface</th>
-		<td style="text-align: left">[for (clients) separator('<hr/>')][self.name /][/for]</td>
+		<td style="text-align: left">[for (clients) separator('<hr/>')][self.name._simpleTextToXHtml() /][/for]</td>
 	</tr>
 [comment Client /]
 	<tr>
 		<th style="text-align: right">Client Element</th>
-		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name /][/for]</td>
+		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name._simpleTextToXHtml() /][/for]</td>
 	</tr>
 [comment Client Zone /]
 	<tr>
 		<th style="text-align: right">Client Element's Security Zone</th>
-		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name /][/if][/for]</td>
+		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if][/for]</td>
 	</tr>
 [comment CONNECTION Characteristics /]
 	<tr>

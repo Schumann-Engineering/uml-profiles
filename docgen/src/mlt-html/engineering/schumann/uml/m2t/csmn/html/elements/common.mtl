@@ -21,7 +21,7 @@ post(trim())]
 [for (this->sortedBy(name))]
 	<li>[name /]</li>
 [/for]
-</li>
+</ul>
 [if (startNewPage)]
 [html_PAGE_end('')/]
 [html_PAGE_start('')/]

@@ -191,19 +191,22 @@
 					<tr>
 						<td>Asset</td>
 						<td><blockquote>
-physical or digital entity that has value to an individual, an organization or a government
-
-Note 1 to entry: As per the definition for ASSET this can include the following:
-a) data and information;
-b) HEALTH SOFTWARE and software needed for its operation;
-c) hardware components such as computers, mobile devices, servers, databases, and networks;
-d) services, including SECURITY, software development, IT operations and externally provided services such as data
-centres, internet and software-as-a-service and cloud solutions;
-e) people, and their qualifications, skills and experience;
-f) technical procedures and documentation to manage and support the HEALTH IT INFRASTRUCTURE;
-g) HEALTH IT SYSTEMS that are configured and implemented to address organizational objectives by leveraging the
-ASSETS; and
-h) intangibles, such as reputation and image.
+<p>
+	physical or digital entity that has value to an individual, an organization or a government
+</p>
+<p>
+	Note 1 to entry: As per the definition for ASSET this can include the following:
+</p>
+<ol>
+	<li>a) data and information;</li>
+	<li>b) HEALTH SOFTWARE and software needed for its operation;</li>
+	<li>c) hardware components such as computers, mobile devices, servers, databases, and networks;</li>
+	<li>d) services, including SECURITY, software development, IT operations and externally provided services such as data centres, internet and software-as-a-service and cloud solutions;</li>
+	<li>e) people, and their qualifications, skills and experience;</li>
+	<li>f) technical procedures and documentation to manage and support the HEALTH IT INFRASTRUCTURE;</li>
+	<li>g) HEALTH IT SYSTEMS that are configured and implemented to address organizational objectives by leveraging the ASSETS; and</li>
+	<li>h) intangibles, such as reputation and image.</li>
+</ol>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.4, "Asset"</li>
@@ -214,8 +217,9 @@ h) intangibles, such as reputation and image.
 					<tr>
 						<td>Availability</td>
 						<td><blockquote>
-property of being accessible and usable on demand by an authorized entity
-
+<p>
+	property of being accessible and usable on demand by an authorized entity
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.7, "Availability"</li>
@@ -226,8 +230,9 @@ property of being accessible and usable on demand by an authorized entity
 					<tr>
 						<td>CONFIDENTIALITY</td>
 						<td><blockquote>
-property that information is not made available or disclosed to unauthorized individuals, entities,
-or PROCESSES
+<p>
+	property that information is not made available or disclosed to unauthorized individuals, entities, or PROCESSES
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.8, "Confidentiality"</li>
@@ -238,8 +243,9 @@ or PROCESSES
 					<tr>
 						<td>HEALTHCARE DELIVERY ORGANIZATION / HDO</td>
 						<td><blockquote>
-facility or enterprise such as a clinic or hospital that provides healthcare services
-
+<p>
+	facility or enterprise such as a clinic or hospital that provides healthcare services
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.16, "Healthcare Devliery Organization / HDO"</li>
@@ -250,7 +256,9 @@ facility or enterprise such as a clinic or hospital that provides healthcare ser
 					<tr>
 						<td>INTEGRITY</td>
 						<td><blockquote>
-property of accuracy and completeness
+<p>
+	property of accuracy and completeness
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.17, "Integrity"</li>
@@ -261,8 +269,9 @@ property of accuracy and completeness
 					<tr>
 						<td>INTENDED ENVIRONMENT OF USE</td>
 						<td><blockquote>
-conditions and setting in which users interact with the HEALTH SOFTWARE – as specified by the
-MANUFACTURER
+<p>
+	conditions and setting in which users interact with the HEALTH SOFTWARE – as specified by the MANUFACTURER
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.18, "Intended Environment"</li>
@@ -271,10 +280,12 @@ MANUFACTURER
 					<tr>
 						<td>INTENDED USE / INTENDED PURPOSE</td>
 						<td><blockquote>
-use for which a PRODUCT, PROCESS or service is intended according to the specifications,
-instructions and information provided by the MANUFACTURER
-Note 1 to entry: The intended medical indication, patient population, part of the body or type of tissue interacted
-with, user profile, INTENDED ENVIRONMENT OF USE, and operating principle are typical elements of the INTENDED USE.
+<p>
+	use for which a PRODUCT, PROCESS or service is intended according to the specifications,
+	instructions and information provided by the MANUFACTURER
+	Note 1 to entry: The intended medical indication, patient population, part of the body or type of tissue interacted
+	with, user profile, INTENDED ENVIRONMENT OF USE, and operating principle are typical elements of the INTENDED USE.
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.19, "Intended use / Intended purpose"</li>
@@ -285,9 +296,12 @@ with, user profile, INTENDED ENVIRONMENT OF USE, and operating principle are typ
 					<tr>
 						<td>USE ENVIRONMENT</td>
 						<td><blockquote>
-actual conditions and setting in which users interact with the HEALTH SOFTWARE
-Note 1 to entry: For the purpose of this document, that includes data interfaces.
-
+<p>
+	actual conditions and setting in which users interact with the HEALTH SOFTWARE
+</p>
+<p>
+	Note 1 to entry: For the purpose of this document, that includes data interfaces.
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.44, "Use Environment"</li>
@@ -298,10 +312,12 @@ Note 1 to entry: For the purpose of this document, that includes data interfaces
 					<tr>
 						<td>Security Context</td>
 						<td><blockquote>
-minimum requirements and assumptions about the environment of HEALTH SOFTWARE – derived
-from the INTENDED ENVIRONMENT OF USE at PRODUCT-level, considering also the configuration
-and integration of HEALTH SOFTWARE and taking into account foreseeable unauthorized or
-unintended access
+<p>
+	minimum requirements and assumptions about the environment of HEALTH SOFTWARE – derived
+	from the INTENDED ENVIRONMENT OF USE at PRODUCT-level, considering also the configuration
+	and integration of HEALTH SOFTWARE and taking into account foreseeable unauthorized or
+	unintended access
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.32 "Security Context"</li>
@@ -311,15 +327,19 @@ unintended access
 					<tr>
 						<td>Trust Boundary</td>
 						<td><blockquote>
-element of a THREAT MODEL that depicts a boundary where authentication is required or a change
-in trust level occurs (higher to lower or vice versa)
-
-Note 1 to entry: TRUST BOUNDARY enforcement mechanisms for PRODUCT users typically include authentication (for
-example, challenge/response, passwords, biometrics or digital signatures) and associated authorization (for
-example, access control rules).
-
-Note 2 to entry: TRUST BOUNDARY enforcement mechanisms for data typically include source authentication (for
-example, message authentication codes and digital signatures) and/or content VALIDATION.
+<p>
+	element of a THREAT MODEL that depicts a boundary where authentication is required or a change
+	in trust level occurs (higher to lower or vice versa)
+</p>
+<p>
+	Note 1 to entry: TRUST BOUNDARY enforcement mechanisms for PRODUCT users typically include authentication (for
+	example, challenge/response, passwords, biometrics or digital signatures) and associated authorization (for
+	example, access control rules).
+</p>
+<p>
+	Note 2 to entry: TRUST BOUNDARY enforcement mechanisms for data typically include source authentication (for
+	example, message authentication codes and digital signatures) and/or content VALIDATION.
+</p>
 						</blockquote></td>
 						<td><ul>
 							<li>IEC 81001-5-1:2022, 3.43 "Trust Boundary"</li>
@@ -434,7 +454,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 
 				<li>
 					<p>
-						<b>SYSTEM ELEMENT / entities
+						<b>SYSTEM ELEMENT / entities</b>
 					</p>
 					<p>
 						Components in the SYSTEM ARCHITECTURE which interact with the environment or a user (group).
@@ -446,7 +466,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 
 				<li>
 					<p>
-						ENVIRONMENT ELEMENT</b> / external entities
+						<b>ENVIRONMENT ELEMENT</b> / external entities
 					</p>
 					<p>
 						Components in the environment a SYSTEM ELEMENT interacts with.
@@ -486,7 +506,7 @@ example, message authentication codes and digital signatures) and/or content VAL
 						<li>describes use-case specific characteristics between those interfaces, e.g. which protocol is used</li>
 					</ul>
 				</li>
-			</ol>
+			</ul>
 
 			[html_NOTE_start()/]
 			<p>

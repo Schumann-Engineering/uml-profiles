@@ -56,7 +56,7 @@ post(trim())
 	<td style="text-align: center !important;">[softwareVersion /]</td>
 	<td style="text-align: center !important;">[os.name /]</td>
 	<td style="text-align: center !important;">[_context.csmn_ReleaseDate(softwareVersion) /]</td>
-	<td style="text-align: center !important;">[_context.product.csmn_html_getCpeLinkForFirmware(softwareVersion) /]</td<
+	<td style="text-align: center !important;">[_context.product.csmn_html_getCpeLinkForFirmware(softwareVersion) /]</td>
 </tr>
 [/if]
 [/let]

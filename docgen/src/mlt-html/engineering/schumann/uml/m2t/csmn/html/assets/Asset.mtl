@@ -124,18 +124,18 @@ post(trim())
 </p>
 <ul>
 [for (componentAssets)]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
 [for (dataTypeAssets)]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
 [for (dependencyAssets)]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
 [for (portAssets)]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
-</li>
+</ul>
 [if (startNewPage)]
 [html_PAGE_end('')/]
 [html_PAGE_start('')/]
@@ -157,9 +157,9 @@ post(trim())]
 </p>
 <ul>
 [for (assets->sortedBy(name))]
-	<li>[name /]</li>
+	<li>[name._simpleTextToXHtml() /]</li>
 [/for]
-</li>
+</ul>
 [if (startNewPage)]
 [html_PAGE_end('')/]
 [html_PAGE_start('')/]
@@ -242,7 +242,7 @@ post(trim())]
 )
 post(trim())]
 <p>
-	<b>Asset "[name/]"</b>
+	<b>Asset "[name._simpleTextToXHtml()/]"</b>
 </p>
 
 [printAssetAsTable() /]
@@ -268,7 +268,7 @@ post(trim())
 		<tr>
 			<th>Name</th>
 			<td>
-				[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
+				[asset.name._simpleTextToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
 			</td>
 		</tr>
 		[comment origin /]
@@ -298,7 +298,7 @@ post(trim())
 	<td>
 		«[_toOrigin() /]»
 		<br/>
-		[asset.name._htmlToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
+		[asset.name._simpleTextToXHtml() /][if (asset.csmn_hasScopeConstraint())]<br/>[asset.printScopeConstraint() /][/if]
 	</td>
 [comment ASSET Characteristics /]
 	<td>[asset.printCharacteristics(true)/]</td> 
@@ -314,7 +314,7 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-[asset.mardown_icon() /]&nbsp;[this.name._htmlToXHtml() /]
+[asset.mardown_icon() /]&nbsp;[this.name._simpleTextToXHtml() /]
 [/template]
 
 
@@ -326,7 +326,7 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-«[asset.assetType /]»&nbsp;[this.name._htmlToXHtml() /]
+«[asset.assetType /]»&nbsp;[this.name._simpleTextToXHtml() /]
 [/template]
 
 

@@ -37,7 +37,7 @@
 	this		: NamedElement,
 	_context	: Context
 )]
-<header class="qm-header">
+<div class="qm-header">
 	<table border="1">
 		<tr>
 			<th>Product</th>
@@ -56,14 +56,14 @@
 			<td colspan="3">[_context.documentTitle /]</td>
 		</tr>
 	</table>
-</header>
+</div>
 [/template]
 
 
 [template public QM_PAGE_Footer(
 	_context	: Context
 )]
-<footer class="qm-footer">
+<div class="qm-footer">
 	<table border="1">
 		<tr>
 			<th             style="width: 25% !important;">Document date</th>
@@ -75,7 +75,7 @@
 			<td colspan="2" style="width: 50% !important; background-color: [env(_context.templateUUID + '.Classification.Color', '#0000FF') /];">[env(_context.templateUUID + '.Classification.Text', 'NOT CLASSIFIED, assume CONFIDENTIAL') /]</td>
 		</tr>
 	</table>
-</footer>
+</div>
 [/template]
 
 
