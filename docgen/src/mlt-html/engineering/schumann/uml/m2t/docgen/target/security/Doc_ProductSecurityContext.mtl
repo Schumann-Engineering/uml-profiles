@@ -1179,26 +1179,24 @@
 			[DocRef_MDS2_asTable(_context)/]
 
 
-			[TOC_SubSection_start('Background')/]
-				[TOC_SubSubSection_start('Covered standards')/]
-					<p>
-						MDS2 is a standardized form under ANSI/AAMI HN1:2019 for reporting security capabilities of a medical device.
-					</p>
-					
-					[html_INFO_start()/]The attached MDS2 was extended to cover newer standards not considered by version 2019.[html_INFO_end()/]
-					
-					<p>
-						The following standards are covered by MDS2:
-					</p>
-					[protectedArea('MDS2 > Covered Standards', _context)/]
-				[TOC_SubSubSection_end()/]
+			[TOC_SubSection_start('Covered standards')/]
+				<p>
+					MDS2 is a standardized form under ANSI/AAMI HN1:2019 for reporting security capabilities of a medical device.
+				</p>
 				
-				[TOC_SubSubSection_start('Covered capabilities')/]
-					<p>
-						MDS2 covers the following capabilities:
-					</p>
-					[protectedArea('MDS2 > Covered Capabilities', _context)/]
-				[TOC_SubSubSection_end()/]
+				[html_INFO_start()/]The attached MDS2 was extended to cover newer standards not considered by version 2019.[html_INFO_end()/]
+				
+				<p>
+					The following standards are covered by MDS2:
+				</p>
+				[protectedArea('MDS2 > Covered Standards', _context)/]
+			[TOC_SubSection_end()/]
+			
+			[TOC_SubSection_start('Covered capabilities')/]
+				<p>
+					MDS2 covers the following capabilities:
+				</p>
+				[protectedArea('MDS2 > Covered Capabilities', _context)/]
 			[TOC_SubSection_end()/]
 		[TOC_Section_end()/]
 [html_PAGE_end('MDS2')/]

@@ -983,6 +983,7 @@
 	<p>
 		[if (networkPorts->size() = 0)]
 		The product has <b><i>NO</i></b> network ports.
+	</p>
 		[else]
 		The product has <b><i>[networkPorts->size() /]</i></b> network ports:
 	</p>
