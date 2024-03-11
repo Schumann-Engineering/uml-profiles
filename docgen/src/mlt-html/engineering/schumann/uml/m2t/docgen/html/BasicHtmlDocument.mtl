@@ -110,7 +110,7 @@ post(trim())]
 post(trim())
 {
 	toc	: TocEntry = invoke(
-		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
 		'getToc()',
 		Sequence {}
 	).oclAsType(TocEntry);
@@ -136,7 +136,7 @@ post(trim())
 	_context	: Context
 )
 post(trim())]
-['....'.repeat(depth() - 2) /][TOC_link() /]
+[Toc_sectionNumber()/] ['....'.repeat(depth() - 2) /][TOC_link() /]
 [for (child)]
 [_TocEntry_print(_context).trim() /]
 [/for]

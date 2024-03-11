@@ -17,9 +17,6 @@
 }
 
 
-body {
-	counter-reset: H1 H2 H3 H4 H5 H6 !important;
-}
 /* Header styling and automatic numbering. --------------------------------------------- */
 h1, h2, h3, h4, h5 {
 	font-family: 			Roboto, Helvetica !important;
@@ -36,20 +33,6 @@ h1, h2, h3, h4, h5 {
 	page-break-inside:		avoid !important;
 	break-inside:			avoid !important;
 }
-h2:before {
-	counter-increment: H2;
-	content: counter(H2) ". \0000a0";
-}
-h2 {counter-reset: H3;}
-h3:before {
-	counter-increment: H3;
-	content: counter(H2) "." counter(H3) ". \0000a0";
-}
-h3 {counter-reset: H4;}
-h4:before {
-	counter-increment: H4;
-	content: counter(H2) "." counter(H3) "." counter(H4) ". \0000a0";
-}
 
 
 /* ==========
@@ -65,8 +48,6 @@ h1 {
 	font-weight:			bold !important;
 	
 	text-align: 			center !important;
-
-	counter-reset: 			H2;
 }
 
 

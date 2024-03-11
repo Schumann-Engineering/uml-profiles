@@ -15,7 +15,7 @@
 )
 post(trim())]
 [_addBreadcrumb(title, level)/]
-<h[level/] id="[Toc_currentId()/]">[title /]</h[level/]>
+<h[level/] id="[Toc_currentId()/]">[Toc_currentSectionNumber()/] [title /]</h[level/]>
 [DocGen_breadcrumbs_toHtml() /]
 [/template]
 
@@ -23,7 +23,7 @@ post(trim())]
 [template public Toc_currentId()
 post(trim())]
 [let currentToc : TocEntry = 	invoke(
-		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
 		'getLastEntry()',
 		Sequence {}
 	)]
@@ -32,9 +32,33 @@ post(trim())]
 [/template]
 
 
+[template public Toc_sectionNumber(
+	this	: TocEntry
+)
+post(trim())]
+[invoke(
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
+		'getSectionNumber(engineering.schumann.uml.docgen.TocEntry)',
+		Sequence {
+			this
+		}
+	)/]
+[/template]
+
+
+[template public Toc_currentSectionNumber()
+post(trim())]
+[invoke(
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
+		'getCurrentSectionNumber()',
+		Sequence {}
+	)/]
+[/template]
+
+
 [template public Toc_currentBreadcrumbs_Html()]
 [let currentToc : TocEntry = 	invoke(
-		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
 		'getLastEntry()',
 		Sequence {}
 	)]
@@ -89,7 +113,7 @@ post(trim())]
 )
 post(trim())]
 [invoke(
-	'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+	'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
 	'Add(java.lang.String, java.lang.Integer)',
 	Sequence {
 		title,
@@ -182,7 +206,7 @@ post(trim())][if (this <> null and this.depth() > 2)][this.parent.TOC_linkWithou
 )
 post(trim())
 ][invoke(
-		'engineering.schumann.uml.m2t.docgen.html.services.TocServiceImpl',
+		'engineering.schumann.uml.m2t.docgen.html.TocServiceImpl',
 		'clearToc()',
 		Sequence {}
 	)/][/template]

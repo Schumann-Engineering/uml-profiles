@@ -1,4 +1,4 @@
-package engineering.schumann.uml.m2t.docgen.html.services;
+package engineering.schumann.uml.m2t.docgen.html;
 
 import engineering.schumann.uml.docgen.DocGenFactory;
 import engineering.schumann.uml.docgen.TocEntry;
@@ -112,6 +112,47 @@ public class TocServiceImpl {
 	public TocEntry getLastEntry()
 	{
 		return m_LastEntry;
+	}
+	
+	
+	public String getSectionNumber(
+			TocEntry entry
+	)
+	{
+		// === GUARDS ===
+		if (entry == null)
+			return "?";
+		
+		// === BODY ===
+		var result = new StringBuilder();
+		
+		// root element = h1 = title -> <nothing>
+		var parent = entry.getParent();
+		if (parent == null)
+			return null;
+
+		// get section number for parent
+		var parentIndex = getSectionNumber(parent);
+		
+		if (parentIndex != null)
+		{
+			result.append(parentIndex);
+			result.append('.');
+		}
+
+		// find position of entry in children of parent -> section relative to parent
+		var index = parent.getChild().indexOf(entry) + 1;
+		
+		result.append(index);
+		
+		// === RESULT ===
+		return result.toString();
+	}
+	
+	
+	public String getCurrentSectionNumber()
+	{
+		return getSectionNumber(m_LastEntry);
 	}
 	
 	
