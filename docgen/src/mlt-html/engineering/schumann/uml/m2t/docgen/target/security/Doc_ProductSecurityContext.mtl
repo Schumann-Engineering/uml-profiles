@@ -106,7 +106,19 @@
 ]
 [file (DocGen_File_URI(_context), false, 'UTF-8')]
 [HTML_START(_context)/]
-	[CoverPage_Chapter_print(_context)/]
+	[CoverPage_Chapter_print_start(_context) /]
+		[html_ANSI_CAUTION_start() /]
+			<p>
+				This document is the human readable representation of the Product Architecture Model.
+			</p>
+			<p>
+				The authoritive source is the digital, machine readable UML model.
+			</p>
+			<p>
+				This document is provided for convenience of reviews and audits only and should not be used to derive information about the product.
+			</p>
+		[html_ANSI_CAUTION_end() /]
+	[CoverPage_Chapter_print_end(_context) /]
 
 	[let content : String = generateDocumentContent(_context)]
 	[HTML_PAGE_ERRORS(_context)/]
