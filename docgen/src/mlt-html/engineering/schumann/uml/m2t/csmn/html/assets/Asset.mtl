@@ -300,7 +300,7 @@ post(trim())
 {
 	asset : Asset = this.csmn_asset();
 }]
-«[asset.assetType /]»&nbsp;[this.name._simpleTextToXHtml() /]
+[this.name._simpleTextToXHtml() /]&nbsp;<i>(Type: [asset.assetType /])</i>
 [/template]
 
 

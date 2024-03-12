@@ -148,18 +148,28 @@ post(trim())
 <table class="table-2-columns" style="width: 100%">
 [comment Supplier /]
 	<tr>
-		<th style="text-align: right">Supplier Element</th>
-		<td style="text-align: left">
+		<th style="text-align: center;" colspan="2">Supplier[if (suppliers->size() > 1)](s)[/if]</th>
+	</tr>
+	<tr>
+		<th style="text-align: right;">Source[if (suppliers->size() > 1)](s)[/if]</th>
+		<td style="text-align: left;">
 			<ol>
-			[for (suppliers.owner.oclAsType(NamedElement))]
-				<li>[self.name._simpleTextToXHtml() /]</li>
+			[for (
+				OrderedSet(NamedElement) {}
+				->union(suppliers->filter(Port).owner.oclAsType(NamedElement))
+				->union(suppliers->filter(Component))
+				->union(suppliers->filter(Actor))
+				->sortedBy(eClass().name + '@' + name)
+			)]
+				<li>«[eClass().name /]»&nbsp;[name._simpleTextToXHtml() /]&nbsp;<i>(Trust boundary: [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if])</i></li>
 			[/for]
 			</ol>
 		</td>
 	</tr>
 [comment Supplier Security Zone /]
+[comment]
 	<tr>
-		<th style="text-align: right">Supplier Element's Security Zone</th>
+		<th style="text-align: right">Security Zone</th>
 		<td style="text-align: left">
 			<ol>
 				[for (suppliers.owner.oclAsType(NamedElement))]
@@ -168,51 +178,109 @@ post(trim())
 			</ol>
 		</td>
 	</tr>
-[comment Interface /]
+[/comment]
+[comment Supplier Interface /]
+[if (suppliers->filter(Port)->notEmpty())]
 	<tr>
-		<th style="text-align: right">Supplier Interface</th>
-		<td style="text-align: left">
+		<th style="text-align: right;">Interface</th>
+		<td style="text-align: left;">
 			<ol>
-			[for (suppliers)]
+			[for (suppliers->filter(Port))]
 				<li>[self.name._simpleTextToXHtml() /]</li>
 			[/for]
 			</ol>
 		</td>
 	</tr>
-[comment Flow ← /]
-	<tr>
-		<th style="text-align: right">Asset Flow<br/>Supplier ← Client</th>
-		<td style="text-align: left">[if (supplierFlow->size() = 0)]./.[else][for (supplierFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
-	</tr>
-[comment ===CONNECTION=== /]
-	<tr>
-		<th style="text-align: right">Connection Name</th>
-		<td style="text-align: left">[this.name._simpleTextToXHtml() /]</td>
-	</tr>
-[comment Flow → /]
-	<tr>
-		<th style="text-align: right">Asset Flow<br/>Supplier → Client</th>
-		<td style="text-align: left">[if (clientFlow->size() = 0)]./.[else][for (clientFlow) separator('<br/>')]▪ [self.printAssetWithType() /][/for][/if]</td>
-	</tr>
-[comment Interface /]
-	<tr>
-		<th style="text-align: right">Client Interface</th>
-		<td style="text-align: left">[for (clients) separator('<hr/>')][self.name._simpleTextToXHtml() /][/for]</td>
-	</tr>
+[/if]
 [comment Client /]
 	<tr>
-		<th style="text-align: right">Client Element</th>
-		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][self.name._simpleTextToXHtml() /][/for]</td>
+		<th style="text-align: center;" colspan="2">Client[if (clients->size() > 1)](s)[/if]</th>
 	</tr>
-[comment Client Zone /]
 	<tr>
-		<th style="text-align: right">Client Element's Security Zone</th>
-		<td style="text-align: left">[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if][/for]</td>
+		<th style="text-align: right;">Target[if (clients->size() > 1)](s)[/if]</th>
+		<td style="text-align: left;">
+			<ol>
+			[for (
+				OrderedSet(NamedElement) {}
+				->union(clients->filter(Port).owner.oclAsType(NamedElement))
+				->union(clients->filter(Component))
+				->union(clients->filter(Actor))
+				->sortedBy(eClass().name + '@' + name)
+			)]
+				<li>«[eClass().name /]»&nbsp;[name._simpleTextToXHtml() /]&nbsp;<i>(Trust boundary: [if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if])</i></li>
+			[/for]
+			</ol>
+		</td>
+	</tr>
+[comment Client Interface /]
+[if (clients->filter(Port)->notEmpty())]
+	<tr>
+		<th style="text-align: right;">Interface</th>
+		<td style="text-align: left;">
+			<ol>
+			[for (clients->filter(Port))]
+				<li>[self.name._simpleTextToXHtml() /]</li>
+			[/for]
+			</ol>
+		</td>
+	</tr>
+[/if]
+[comment Client Zone /]
+[comment]
+	<tr>
+		<th style="text-align: right">Security Zone</th>
+		<td style="text-align: left">
+			[for (clients.owner.oclAsType(NamedElement)) separator('<hr/>')][if (csmn_securityZoneElement().oclIsUndefined())]./.[else][csmn_securityZoneElement().name._simpleTextToXHtml() /][/if][/for]
+		</td>
+	</tr>
+[/comment]
+[comment Flow ← /]
+	<tr>
+		<th style="text-align: center;" colspan="2">Asset Flow</th>
+	</tr>
+	<tr>
+		<th style="text-align: right;">Supplier ← Client</th>
+		<td style="text-align: left">
+[if (supplierFlow->notEmpty())]
+			<ul>
+[for (supplierFlow)]
+				<li>[self.printAssetWithType() /]</li>
+[/for]
+			</ul>
+[else]
+			./.
+[/if]
+		</td>
+	</tr>
+[comment ===CONNECTION=== /]
+[comment]
+	<tr>
+		<th style="text-align: right;">Connection</th>
+		<th style="text-align: right;">Name</th>
+		<td style="text-align: left;">[this.name._simpleTextToXHtml() /]</td>
+	</tr>
+[/comment]
+[comment Flow → /]
+	<tr>
+		<th style="text-align: right">Supplier → Client</th>
+		<td style="text-align: left">
+[if (clientFlow->notEmpty())]
+			<ul>
+[for (clientFlow)]
+				<li>[self.printAssetWithType() /]</li>
+[/for]
+			</ul>
+[else]
+			./.
+[/if]
+		</td>
 	</tr>
 [comment CONNECTION Characteristics /]
 	<tr>
-		<th style="text-align: right">CONNECTION Characteristics</th>
-		<td style="text-align: left">[this.printCharacteristics(false)/]</td>
+		<th style="text-align: center;" colspan="2">CONNECTION Characteristics</th>
+	</tr>
+	<tr>
+		<td style="text-align: left;" colspan="2">[this.printCharacteristics(false)/]</td>
 	</tr>
 </table>
 
