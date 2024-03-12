@@ -23,6 +23,15 @@
 [template public CoverPage_Chapter_print(
 	this 			: NamedElement,
 	_context		: Context
+)]
+[CoverPage_Chapter_print_start(_context) /]
+[CoverPage_Chapter_print_end(_context) /]
+[/template]
+
+
+[template public CoverPage_Chapter_print_start(
+	this 			: NamedElement,
+	_context		: Context
 )
 {
 	classification : String = env(_context.templateUUID + '.Classification', 'internal');
@@ -44,5 +53,12 @@
 	[TOC_Title_start(_context.documentTitle) /]
 		[this.printScopeForProduct(_context) /]
 	[TOC_Title_end() /]
+[/template]
+
+
+[template public CoverPage_Chapter_print_end(
+	this 			: NamedElement,
+	_context		: Context
+)]
 [html_PAGE_end('cover page')/]
 [/template]

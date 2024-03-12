@@ -58,6 +58,7 @@
 [import engineering::schumann::uml::m2t::docgen::html::QualityManagement /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Chapter_CoverPage /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Images /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Ref_Regulatory /]
 [import engineering::schumann::uml::m2t::sbom::html::Sbom /]
@@ -124,7 +125,23 @@
 )]
 [file (productElement.DocGen_File_URI(_context), false, 'UTF-8')]
 [productElement.HTML_START(_context) /]
-	[productElement.CoverPage_Chapter_print(_context) /]
+	[productElement.CoverPage_Chapter_print_start(_context) /]
+		[html_ANSI_CAUTION_start() /]
+			<p>
+				This document is the human readable representation of the SBOM.
+			</p>
+			<p>
+				The authoritive source is the digital, machine readable SBOM.
+			</p>
+			<p>
+				This document is provided for convenience of reviews and audits only and should not be used to derive information about the product.
+			</p>
+		[html_ANSI_CAUTION_end() /]
+	
+		[html_ANSI_NOTICE_start() /]
+			The SBOM is provided in SPDX as well as CycloneDX format.
+		[html_ANSI_NOTICE_end() /]
+	[productElement.CoverPage_Chapter_print_end(_context) /]
 
 	[let content : String = productElement.generateDocumentContent(this, _context)]
 	[HTML_PAGE_ERRORS(_context)/]
@@ -162,42 +179,6 @@ post(trim())]
 [VulnerabilityHandling_Chapter_print(sbom, _context) /]
 
 [Appendix_Licenses_print(sbom, _context) /]
-[/template]
-
-
-[comment
-	====================
-	COVER PAGE
-	====================
-/]
-[template private CoverPage_Chapter_print(
-	this 			: NamedElement,
-	_context		: Context
-)]
-[html_PAGE_start('cover page', 'cover-page')/]
-	[DOC_Classification_PUBLIC(_context) /]
-	[comment DOC_Footer(_context) /]
-
-	[TOC_Title_start(_context.documentTitle) /]
-		[this.printScopeForSoftware(_context) /]
-	[TOC_Title_end() /]
-
-	[html_ANSI_CAUTION_start() /]
-		<p>
-			This document is the human readable representation of the SBOM.
-		</p>
-		<p>
-			The authoritive source is the digital, machine readable SBOM.
-		</p>
-		<p>
-			This document is provided for convenience of reviews and audits only and should not be used to derive information about the product.
-		</p>
-	[html_ANSI_CAUTION_end() /]
-
-	[html_ANSI_NOTICE_start() /]
-		The SBOM is provided in SPDX as well as CycloneDX format.
-	[html_ANSI_NOTICE_end() /]
-[html_PAGE_end('cover page') /]
 [/template]
 
 
