@@ -1,7 +1,8 @@
 [comment encoding = UTF-8 /]
 [module main2html(
 	'http://www.eclipse.org/uml2/5.0.0/UML',
-	'http://schumann.engineering/sbom/1'
+	'http://schumann.engineering/sbom/1',
+	'http://www.eclipse.org/gmf/runtime/1.0.3/notation'
 )]
 
 
@@ -13,17 +14,38 @@
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Doc_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::JSON_CycloneDX /]
 
+[import engineering::schumann::uml::m2t::uml::common::Element /]
 
 [**
  * ====================
  * MAIN
  * ====================
 */]
-[template public main_Model(
+[template public processModel(
 	this : Model
-)]
-	[comment @main/]
+)
+post(trim())
+]
+[comment @main/]
+[process(this) /]
+[/template]
 
+
+[template private process(
+	this	: Model
+)
+post(trim())
+]
+[process(this, null) /]
+[/template]
+
+
+[template private process(
+	this	: Model,
+	scope	: Set(NamedElement)
+)
+post(trim())
+]
 [comment
 	====================
 	DEV
@@ -33,11 +55,9 @@
 	correctly. This report fixes that by brute-forcing the loading.
 	====================
 /]
-[generateDocument_DEV_ModelTestReport() /]
-
+[generateDocument_DEV_ModelTestReport(scope) /]
 
 [generateFile_JSON_CycloneDX_1_5() /]
-
 
 [comment
 	====================
@@ -56,16 +76,71 @@
 	====================
 /]
 [generateDocument_INT_SbomReport() /]
+[/template]
+
+
+[template public processDiagram(
+	this : Diagram
+)
+post(trim())
+]
+[comment @main/]
+
+[comment
+	====================
+	determine all elements in a diagram to restrict the scope of which model
+	elements to process / be "in scope"
+	====================
+/]
+[file (name + '.diagram.md', false, 'UTF-8')]
+# [name /]
+
+## Model
+[let model : Model = getModelForDiagram()]
+[model.name /]
+[/let]
+
+## Scope
+[let scope	: Set(NamedElement) = getUmlElementsFromDiagram()]  
+[for (scope->sortedBy(eClass().name + '#' + name))]
+- <<[eClass().name /]>> [name /]
+[/for]
+[/let]
+[/file]
+
+[comment process(
+	model,
+	scope
+)/]
 
 [/template]
 
 
+[query private getModelForDiagram(
+	this	: Diagram
+) : Model =
+	let elements : Set(NamedElement) = getUmlElementsFromDiagram() in
+	if (elements->notEmpty()) then
+		elements->asSequence()->first()._model()
+	else
+		null
+	endif
+/]
 
 
-[template public main_Sbom(
-	this : Sbom
-)]
-	[comment main/]
+[query private getUmlElementsFromDiagram(
+	this	: Diagram
+) : Set(NamedElement) = 
+	let content : Sequence(View) = eAllContents()->filter(View) in 
 
-[comment generateDocument_INT_SbomReport() /]
-[/template]
+	content
+	.element
+	->select(not oclIsUndefined())
+	->filter(NamedElement)
+	->select(
+		oclIsKindOf(Component) or
+		oclIsKindOf(Port) or
+		oclIsKindOf(Dependency)
+	)
+	->asSet()
+/]

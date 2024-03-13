@@ -144,6 +144,26 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
 
+        
+        /* ====================
+         * Papyrus
+         * ==================== */
+        // style = http://www.eclipse.org/papyrus/infra/gmfdiag/style
+		resourceSet.getPackageRegistry().putIfAbsent(
+				org.eclipse.papyrus.infra.gmfdiag.style.StylePackage.eINSTANCE.getNsURI(),
+				org.eclipse.papyrus.infra.gmfdiag.style.StylePackage.eINSTANCE
+		);
+		// css = http://www.eclipse.org/papyrus/infra/gmfdiag/css
+		resourceSet.getPackageRegistry().putIfAbsent(
+				org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage.eINSTANCE.getNsURI(),
+				org.eclipse.papyrus.infra.gmfdiag.css.stylesheets.StylesheetsPackage.eINSTANCE
+		);
+		// notation = http://www.eclipse.org/gmf/runtime/1.0.3/notation
+		resourceSet.getPackageRegistry().putIfAbsent(
+				org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getNsURI(),
+				org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE
+		);
+
 
         /* ====================
          * CSMN

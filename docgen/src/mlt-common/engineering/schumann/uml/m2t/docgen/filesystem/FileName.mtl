@@ -349,7 +349,7 @@ each file would need a new engine / run.
 /]
 
 
-[query private DocGen_File_Part_Name(
+[query public DocGen_File_Part_Name(
 	this 			: NamedElement,
 	_context		: Context
 ) : String =

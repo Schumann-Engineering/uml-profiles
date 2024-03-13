@@ -42,7 +42,7 @@ public class Main2html extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String[] TEMPLATE_NAMES = { "main_Model" };
+    public static final String[] TEMPLATE_NAMES = { "processModel", "processDiagram" };
     
     /**
      * The list of properties files from the launch parameters (Launch configuration).
@@ -343,6 +343,9 @@ public class Main2html extends AbstractAcceleoGenerator {
         super.registerPackages(resourceSet);
         if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.eclipse.gmf.runtime.notation.NotationPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getNsURI(), org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE);
         }
         
         /*

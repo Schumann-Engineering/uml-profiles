@@ -9,6 +9,7 @@ extends engineering::schumann::uml::m2t::html::Html
 ]
 
 
+[import engineering::schumann::uml::m2t::docgen::filesystem::FileName /]
 [comment Templates & Queries /]
 [import engineering::schumann::uml::m2t::docgen::html::Toc /]
 [import engineering::schumann::uml::m2t::html::Layout /]
@@ -76,8 +77,16 @@ post(trim())]
 					'getCurrentTime()',
 					Sequence{}
 					).oclAsType(String)) /]
-[HTML_START_HEAD_BEGIN(_context.documentTitle, _context.UUID) /]
-[CSS_ADDON(_context) /]
+[XHTML_DOCTYPE_STRICT() /]
+[XHTML_START()/]
+	<head>
+		<title>[DocGen_File_Part_Name(_context) /]</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+		[CSS() /]
+
+		[CSS_ADDON(_context) /]
 [HTML_START_HEAD_END(_context.UUID) /]
 [TOC_clear(_context)/]
 [QM_DOC_start() /]

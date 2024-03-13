@@ -22,7 +22,13 @@ Require-Bundle: org.eclipse.core.runtime,
  engineering.schumann.uml.m2t.html;bundle-version="0.1.0",
  engineering.schumann.uml.profile.csmn;bundle-version="0.1.0",
  schumann.engineering.uml.profile.sbom;bundle-version="0.1.0",
- engineering.schumann.uml.model.uml;bundle-version="0.1.0"
+ engineering.schumann.uml.model.uml;bundle-version="0.1.0",
+ org.eclipse.gmf;bundle-version="1.16.2",
+ org.eclipse.gmf.runtime.diagram.core;bundle-version="1.8.0",
+ org.eclipse.papyrus.infra.gmfdiag.style;bundle-version="3.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="3.0.100",
+ org.eclipse.papyrus.infra.gmfdiag.css.model;bundle-version="2.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.css.theme;bundle-version="2.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true

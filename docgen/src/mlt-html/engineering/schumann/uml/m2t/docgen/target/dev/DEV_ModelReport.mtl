@@ -29,7 +29,8 @@
 
 
 [template public generateDocument_DEV_ModelTestReport(
-	this : Model
+	this 	: Model,
+	scope	: Set(NamedElement)
 )
 {
 	templateUUID	: String	= '5d20db90-3c4d-4f61-998c-76a84a5ab679';
@@ -43,6 +44,26 @@
 <html>
 	<body>
 		<h1>Self-test</h1>
+
+[comment
+ * ====================
+ * SCOPE from diagram
+ * ====================
+ /]
+		<h2>Scoped elements from diagram</h2>
+
+[if (not scope->oclIsUndefined() and scope->notEmpty())]
+		<ul>
+[for (scope)]
+			<li>[name /]</li>
+[/for]
+		</ul>
+[else]
+		<p>
+			no scope provided
+		</p>
+[/if]
+
 
 [comment
  * ====================
