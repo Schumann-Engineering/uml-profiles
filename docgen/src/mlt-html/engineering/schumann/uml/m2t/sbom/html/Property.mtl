@@ -163,12 +163,46 @@
 [template public printAsTableRowVertical(
 	this : Property
 )
-? (key.startsWith('*'))
+? (key.toLower().contains('uuid'))
 ]
+<tr>
+	<th class="sbom-ntia-minimum">«ID» UUID</th>
+	<td>[value._formattedTextToXHtml() /]</td>
+</tr>
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.toLower().contains('swid'))
+{
+	propertyValue : String = value._formattedTextToXHtml().trim(); 
+}
+]
+[if (propertyValue <> '')]
+<tr>
+	<th class="sbom-ntia-minimum">«ID» SWID</th>
+	<td>[value._formattedTextToXHtml() /]</td>
+</tr>
+[/if]
+[/template]
+
+
+[template public printAsTableRowVertical(
+	this : Property
+)
+? (key.startsWith('*'))
+{
+	propertyValue : String = value._formattedTextToXHtml().trim(); 
+}
+]
+[if (propertyValue <> '')]
 <tr>
 	<th class="sbom-ntia-minimum">[key.substring(2) /]</th>
 	<td>[value._formattedTextToXHtml() /]</td>
 </tr>
+[/if]
 [/template]
 
 
