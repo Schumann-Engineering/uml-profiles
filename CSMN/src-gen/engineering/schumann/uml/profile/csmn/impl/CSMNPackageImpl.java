@@ -2625,6 +2625,8 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_PLUG_C13);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.IEC_SOCKET_C14);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.MEDICAL_GAS_DISS);
+		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.MEDICAL_GAS_NIST);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.PROPRIETARY);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SD_CARD);
 		addEEnumLiteral(interfaceConnectorEEnum, InterfaceConnector.SUB_D);
@@ -2635,8 +2637,11 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 
 		initEEnum(interfaceTypeEEnum, InterfaceType.class, "InterfaceType");
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.UNSPECIFIED);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_CYLINDER);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_FAN);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_BY_TURBINE);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.AIR_FILTER);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ALARMLIGHT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.BLUETOOTH);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.CELLULAR);
@@ -2649,6 +2654,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ELECTRICAL);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.ETHERNET);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.HDMI);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.KEYBOARD);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.KNOB);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.NFC);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.OPTICAL);
@@ -2662,6 +2668,7 @@ public class CSMNPackageImpl extends EPackageImpl implements CSMNPackage {
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.USB_A);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.USB_C);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.USB_FLASH);
+		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.VALVE);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WATER);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_ACCESS_POINT);
 		addEEnumLiteral(interfaceTypeEEnum, InterfaceType.WIFI_CLIENT);

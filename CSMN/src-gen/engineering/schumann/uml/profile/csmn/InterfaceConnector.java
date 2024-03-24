@@ -119,6 +119,22 @@ public enum InterfaceConnector implements Enumerator {
 	IEC_SOCKET_C14(9, "IecSocketC14", "IecSocketC14"),
 
 	/**
+	 * The '<em><b>Medical Gas DISS</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MEDICAL_GAS_DISS_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MEDICAL_GAS_DISS(10, "MedicalGasDISS", "MedicalGasDISS"), /**
+	 * The '<em><b>Medical Gas NIST</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MEDICAL_GAS_NIST_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MEDICAL_GAS_NIST(11, "MedicalGasNIST", "MedicalGasNIST"), /**
 	 * The '<em><b>Proprietary</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,7 +142,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROPRIETARY(10, "Proprietary", "Proprietary"),
+	PROPRIETARY(12, "Proprietary", "Proprietary"),
 
 	/**
 	 * The '<em><b>Sd Card</b></em>' literal object.
@@ -136,7 +152,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SD_CARD(11, "SdCard", "SdCard"),
+	SD_CARD(13, "SdCard", "SdCard"),
 
 	/**
 	 * The '<em><b>Sub D</b></em>' literal object.
@@ -146,7 +162,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SUB_D(12, "SubD", "SubD"),
+	SUB_D(14, "SubD", "SubD"),
 
 	/**
 	 * The '<em><b>Toslink</b></em>' literal object.
@@ -156,7 +172,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TOSLINK(13, "Toslink", "Toslink"),
+	TOSLINK(15, "Toslink", "Toslink"),
 
 	/**
 	 * The '<em><b>Usb A</b></em>' literal object.
@@ -166,7 +182,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_A(14, "UsbA", "UsbA"),
+	USB_A(16, "UsbA", "UsbA"),
 
 	/**
 	 * The '<em><b>Usb C</b></em>' literal object.
@@ -176,7 +192,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_C(15, "UsbC", "UsbC"),
+	USB_C(17, "UsbC", "UsbC"),
 
 	/**
 	 * The '<em><b>Wireless</b></em>' literal object.
@@ -186,7 +202,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WIRELESS(16, "Wireless", "Wireless");
+	WIRELESS(18, "Wireless", "Wireless");
 
 	/**
 	 * The '<em><b>Unspecified</b></em>' literal value.
@@ -299,6 +315,28 @@ public enum InterfaceConnector implements Enumerator {
 	public static final int IEC_SOCKET_C14_VALUE = 9;
 
 	/**
+	 * The '<em><b>Medical Gas DISS</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MEDICAL_GAS_DISS
+	 * @model name="MedicalGasDISS"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MEDICAL_GAS_DISS_VALUE = 10;
+
+	/**
+	 * The '<em><b>Medical Gas NIST</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MEDICAL_GAS_NIST
+	 * @model name="MedicalGasNIST"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MEDICAL_GAS_NIST_VALUE = 11;
+
+	/**
 	 * The '<em><b>Proprietary</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,7 +345,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROPRIETARY_VALUE = 10;
+	public static final int PROPRIETARY_VALUE = 12;
 
 	/**
 	 * The '<em><b>Sd Card</b></em>' literal value.
@@ -318,7 +356,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SD_CARD_VALUE = 11;
+	public static final int SD_CARD_VALUE = 13;
 
 	/**
 	 * The '<em><b>Sub D</b></em>' literal value.
@@ -329,7 +367,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SUB_D_VALUE = 12;
+	public static final int SUB_D_VALUE = 14;
 
 	/**
 	 * The '<em><b>Toslink</b></em>' literal value.
@@ -340,7 +378,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TOSLINK_VALUE = 13;
+	public static final int TOSLINK_VALUE = 15;
 
 	/**
 	 * The '<em><b>Usb A</b></em>' literal value.
@@ -351,7 +389,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_A_VALUE = 14;
+	public static final int USB_A_VALUE = 16;
 
 	/**
 	 * The '<em><b>Usb C</b></em>' literal value.
@@ -362,7 +400,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_C_VALUE = 15;
+	public static final int USB_C_VALUE = 17;
 
 	/**
 	 * The '<em><b>Wireless</b></em>' literal value.
@@ -373,7 +411,7 @@ public enum InterfaceConnector implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WIRELESS_VALUE = 16;
+	public static final int WIRELESS_VALUE = 18;
 
 	/**
 	 * An array of all the '<em><b>Interface Connector</b></em>' enumerators.
@@ -393,6 +431,8 @@ public enum InterfaceConnector implements Enumerator {
 			IEC_PLUG_C,
 			IEC_PLUG_C13,
 			IEC_SOCKET_C14,
+			MEDICAL_GAS_DISS,
+			MEDICAL_GAS_NIST,
 			PROPRIETARY,
 			SD_CARD,
 			SUB_D,
@@ -466,6 +506,8 @@ public enum InterfaceConnector implements Enumerator {
 			case IEC_PLUG_C_VALUE: return IEC_PLUG_C;
 			case IEC_PLUG_C13_VALUE: return IEC_PLUG_C13;
 			case IEC_SOCKET_C14_VALUE: return IEC_SOCKET_C14;
+			case MEDICAL_GAS_DISS_VALUE: return MEDICAL_GAS_DISS;
+			case MEDICAL_GAS_NIST_VALUE: return MEDICAL_GAS_NIST;
 			case PROPRIETARY_VALUE: return PROPRIETARY;
 			case SD_CARD_VALUE: return SD_CARD;
 			case SUB_D_VALUE: return SUB_D;

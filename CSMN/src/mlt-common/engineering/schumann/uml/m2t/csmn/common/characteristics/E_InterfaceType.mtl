@@ -9,8 +9,11 @@
 	this : InterfaceType
 ) : String =
 	     if (this = InterfaceType::Unspecified) 	then '?'
+	else if (this = InterfaceType::Air) 			then 'material'
+	else if (this = InterfaceType::AirByCylinder)	then 'material'
 	else if (this = InterfaceType::AirByFan) 		then 'material'
 	else if (this = InterfaceType::AirByTurbine)	then 'material'
+	else if (this = InterfaceType::AirFilter)		then 'material'
 	else if (this = InterfaceType::Alarmlight)		then 'energy'
 	else if (this = InterfaceType::Bluetooth)		then 'network'
 	else if (this = InterfaceType::Cellular)		then 'network'
@@ -22,8 +25,9 @@
 	else if (this = InterfaceType::DisplaySmall)	then 'energy'
 	else if (this = InterfaceType::Electrical)		then 'non-network'
 	else if (this = InterfaceType::Ethernet)		then 'network'
-	else if (this = InterfaceType::Hdmi)			then 'energy'
-	else if (this = InterfaceType::Knob)			then 'energy'
+	else if (this = InterfaceType::Hdmi)			then 'non-network'
+	else if (this = InterfaceType::Keyboard)		then 'non-network'
+	else if (this = InterfaceType::Knob)			then 'non-network'
 	else if (this = InterfaceType::Nfc)				then 'non-network'
 	else if (this = InterfaceType::Optical)			then 'non-network'
 	else if (this = InterfaceType::Power)			then 'energy'
@@ -36,11 +40,17 @@
 	else if (this = InterfaceType::UsbA)			then 'non-network'
 	else if (this = InterfaceType::UsbC)			then 'non-network'
 	else if (this = InterfaceType::UsbFlash)		then 'storage'
+	else if (this = InterfaceType::Valve)			then 'material'
 	else if (this = InterfaceType::Water)			then 'material'
 	else if (this = InterfaceType::WifiAccessPoint)	then 'network'
 	else if (this = InterfaceType::WifiClient)		then 'network'
 	else if (this = InterfaceType::Zigbee)			then 'network'
 	else '?'
+	endif
+	endif
+	endif
+	endif
+	endif
 	endif
 	endif
 	endif
@@ -141,8 +151,10 @@
 [query public csmn_toString(
 	this : InterfaceType
 ) : String =
-	     if (this = InterfaceType::AirByFan) 		then 'Air by Fan'
+	     if (this = InterfaceType::AirByCylinder)	then 'Air from cylinder'
+	else if (this = InterfaceType::AirByFan) 		then 'Air by Fan'
 	else if (this = InterfaceType::AirByTurbine)	then 'Air by Turbine'
+	else if (this = InterfaceType::AirFilter)		then 'Air filter'
 	else if (this = InterfaceType::Cellular2G)		then 'Cellular (2G)'
 	else if (this = InterfaceType::Cellular3G)		then 'Cellular (3G)'
 	else if (this = InterfaceType::Cellular4G)		then 'Cellular (4G)'
@@ -159,6 +171,8 @@
 	else if (this = InterfaceType::WifiAccessPoint)	then 'Wifi Access Point'
 	else if (this = InterfaceType::WifiClient)		then 'Wifi Client'
 	else this.toString()
+	endif
+	endif
 	endif
 	endif
 	endif

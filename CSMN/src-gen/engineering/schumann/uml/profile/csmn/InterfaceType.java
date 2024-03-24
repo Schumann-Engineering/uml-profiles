@@ -29,6 +29,22 @@ public enum InterfaceType implements Enumerator {
 	UNSPECIFIED(0, "Unspecified", "Unspecified"),
 
 	/**
+	 * The '<em><b>Air</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AIR(1, "Air", "Air"), /**
+	 * The '<em><b>Air By Cylinder</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR_BY_CYLINDER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AIR_BY_CYLINDER(2, "AirByCylinder", "AirByCylinder"), /**
 	 * The '<em><b>Air By Fan</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,7 +52,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AIR_BY_FAN(1, "AirByFan", "AirByFan"),
+	AIR_BY_FAN(3, "AirByFan", "AirByFan"),
 
 	/**
 	 * The '<em><b>Air By Turbine</b></em>' literal object.
@@ -46,9 +62,17 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AIR_BY_TURBINE(2, "AirByTurbine", "AirByTurbine"),
+	AIR_BY_TURBINE(4, "AirByTurbine", "AirByTurbine"),
 
 	/**
+	 * The '<em><b>Air Filter</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR_FILTER_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AIR_FILTER(5, "AirFilter", "AirFilter"), /**
 	 * The '<em><b>Alarmlight</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,7 +80,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ALARMLIGHT(3, "Alarmlight", "Alarmlight"),
+	ALARMLIGHT(6, "Alarmlight", "Alarmlight"),
 
 	/**
 	 * The '<em><b>Bluetooth</b></em>' literal object.
@@ -66,7 +90,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BLUETOOTH(4, "Bluetooth", "Bluetooth"),
+	BLUETOOTH(7, "Bluetooth", "Bluetooth"),
 
 	/**
 	 * The '<em><b>Cellular</b></em>' literal object.
@@ -76,7 +100,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CELLULAR(5, "Cellular", "Cellular"),
+	CELLULAR(8, "Cellular", "Cellular"),
 
 	/**
 	 * The '<em><b>Cellular2 G</b></em>' literal object.
@@ -86,7 +110,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CELLULAR2_G(6, "Cellular2G", "Cellular2G"),
+	CELLULAR2_G(9, "Cellular2G", "Cellular2G"),
 
 	/**
 	 * The '<em><b>Cellular3 G</b></em>' literal object.
@@ -96,7 +120,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CELLULAR3_G(7, "Cellular3G", "Cellular3G"),
+	CELLULAR3_G(10, "Cellular3G", "Cellular3G"),
 
 	/**
 	 * The '<em><b>Cellular4 G</b></em>' literal object.
@@ -106,7 +130,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CELLULAR4_G(8, "Cellular4G", "Cellular4G"),
+	CELLULAR4_G(11, "Cellular4G", "Cellular4G"),
 
 	/**
 	 * The '<em><b>Cellular5 G</b></em>' literal object.
@@ -116,7 +140,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CELLULAR5_G(9, "Cellular5G", "Cellular5G"),
+	CELLULAR5_G(12, "Cellular5G", "Cellular5G"),
 
 	/**
 	 * The '<em><b>Display</b></em>' literal object.
@@ -126,7 +150,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DISPLAY(10, "Display", "Display"),
+	DISPLAY(13, "Display", "Display"),
 
 	/**
 	 * The '<em><b>Display Small</b></em>' literal object.
@@ -136,7 +160,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DISPLAY_SMALL(11, "DisplaySmall", "DisplaySmall"),
+	DISPLAY_SMALL(14, "DisplaySmall", "DisplaySmall"),
 
 	/**
 	 * The '<em><b>Electrical</b></em>' literal object.
@@ -146,7 +170,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ELECTRICAL(12, "Electrical", "Electrical"), /**
+	ELECTRICAL(15, "Electrical", "Electrical"), /**
 	 * The '<em><b>Ethernet</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -154,7 +178,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ETHERNET(13, "Ethernet", "Ethernet"),
+	ETHERNET(16, "Ethernet", "Ethernet"),
 
 	/**
 	 * The '<em><b>Hdmi</b></em>' literal object.
@@ -164,9 +188,17 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HDMI(14, "Hdmi", "Hdmi"),
+	HDMI(17, "Hdmi", "Hdmi"),
 
 	/**
+	 * The '<em><b>Keyboard</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #KEYBOARD_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	KEYBOARD(18, "Keyboard", "Keyboard"), /**
 	 * The '<em><b>Knob</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -174,7 +206,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	KNOB(15, "Knob", "Knob"),
+	KNOB(19, "Knob", "Knob"),
 
 	/**
 	 * The '<em><b>Nfc</b></em>' literal object.
@@ -184,7 +216,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NFC(16, "Nfc", "Nfc"),
+	NFC(20, "Nfc", "Nfc"),
 
 	/**
 	 * The '<em><b>Optical</b></em>' literal object.
@@ -194,7 +226,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OPTICAL(17, "Optical", "Optical"),
+	OPTICAL(21, "Optical", "Optical"),
 
 	/**
 	 * The '<em><b>Proprietary</b></em>' literal object.
@@ -204,7 +236,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROPRIETARY(18, "Proprietary", "Proprietary"),
+	PROPRIETARY(22, "Proprietary", "Proprietary"),
 
 	/**
 	 * The '<em><b>Power</b></em>' literal object.
@@ -214,7 +246,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	POWER(19, "Power", "Power"),
+	POWER(23, "Power", "Power"),
 
 	/**
 	 * The '<em><b>Sd Card</b></em>' literal object.
@@ -224,7 +256,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SD_CARD(20, "SdCard", "SdCard"),
+	SD_CARD(24, "SdCard", "SdCard"),
 
 	/**
 	 * The '<em><b>Serial</b></em>' literal object.
@@ -234,7 +266,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SERIAL(21, "Serial", "Serial"),
+	SERIAL(25, "Serial", "Serial"),
 
 	/**
 	 * The '<em><b>Speaker</b></em>' literal object.
@@ -244,7 +276,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SPEAKER(22, "Speaker", "Speaker"),
+	SPEAKER(26, "Speaker", "Speaker"),
 
 	/**
 	 * The '<em><b>Touch</b></em>' literal object.
@@ -254,7 +286,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TOUCH(23, "Touch", "Touch"),
+	TOUCH(27, "Touch", "Touch"),
 
 	/**
 	 * The '<em><b>Usb</b></em>' literal object.
@@ -264,7 +296,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB(24, "Usb", "Usb"),
+	USB(28, "Usb", "Usb"),
 
 	/**
 	 * The '<em><b>Usb A</b></em>' literal object.
@@ -274,7 +306,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_A(25, "UsbA", "UsbA"),
+	USB_A(29, "UsbA", "UsbA"),
 
 	/**
 	 * The '<em><b>Usb C</b></em>' literal object.
@@ -284,7 +316,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_C(26, "UsbC", "UsbC"),
+	USB_C(30, "UsbC", "UsbC"),
 
 	/**
 	 * The '<em><b>Usb Flash</b></em>' literal object.
@@ -294,9 +326,17 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	USB_FLASH(27, "UsbFlash", "UsbFlash"),
+	USB_FLASH(31, "UsbFlash", "UsbFlash"),
 
 	/**
+	 * The '<em><b>Valve</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VALVE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	VALVE(32, "Valve", "Valve"), /**
 	 * The '<em><b>Water</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -304,7 +344,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WATER(28, "Water", "Water"), /**
+	WATER(33, "Water", "Water"), /**
 	 * The '<em><b>Wifi Access Point</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -312,7 +352,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WIFI_ACCESS_POINT(29, "WifiAccessPoint", "WifiAccessPoint"),
+	WIFI_ACCESS_POINT(34, "WifiAccessPoint", "WifiAccessPoint"),
 
 	/**
 	 * The '<em><b>Wifi Client</b></em>' literal object.
@@ -322,7 +362,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	WIFI_CLIENT(30, "WifiClient", "WifiClient"),
+	WIFI_CLIENT(35, "WifiClient", "WifiClient"),
 
 	/**
 	 * The '<em><b>Zigbee</b></em>' literal object.
@@ -332,7 +372,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ZIGBEE(31, "Zigbee", "Zigbee");
+	ZIGBEE(36, "Zigbee", "Zigbee");
 
 	/**
 	 * The '<em><b>Unspecified</b></em>' literal value.
@@ -346,6 +386,28 @@ public enum InterfaceType implements Enumerator {
 	public static final int UNSPECIFIED_VALUE = 0;
 
 	/**
+	 * The '<em><b>Air</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR
+	 * @model name="Air"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AIR_VALUE = 1;
+
+	/**
+	 * The '<em><b>Air By Cylinder</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR_BY_CYLINDER
+	 * @model name="AirByCylinder"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AIR_BY_CYLINDER_VALUE = 2;
+
+	/**
 	 * The '<em><b>Air By Fan</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,7 +416,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AIR_BY_FAN_VALUE = 1;
+	public static final int AIR_BY_FAN_VALUE = 3;
 
 	/**
 	 * The '<em><b>Air By Turbine</b></em>' literal value.
@@ -365,7 +427,18 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AIR_BY_TURBINE_VALUE = 2;
+	public static final int AIR_BY_TURBINE_VALUE = 4;
+
+	/**
+	 * The '<em><b>Air Filter</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AIR_FILTER
+	 * @model name="AirFilter"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AIR_FILTER_VALUE = 5;
 
 	/**
 	 * The '<em><b>Alarmlight</b></em>' literal value.
@@ -376,7 +449,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ALARMLIGHT_VALUE = 3;
+	public static final int ALARMLIGHT_VALUE = 6;
 
 	/**
 	 * The '<em><b>Bluetooth</b></em>' literal value.
@@ -387,7 +460,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BLUETOOTH_VALUE = 4;
+	public static final int BLUETOOTH_VALUE = 7;
 
 	/**
 	 * The '<em><b>Cellular</b></em>' literal value.
@@ -398,7 +471,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CELLULAR_VALUE = 5;
+	public static final int CELLULAR_VALUE = 8;
 
 	/**
 	 * The '<em><b>Cellular2 G</b></em>' literal value.
@@ -409,7 +482,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CELLULAR2_G_VALUE = 6;
+	public static final int CELLULAR2_G_VALUE = 9;
 
 	/**
 	 * The '<em><b>Cellular3 G</b></em>' literal value.
@@ -420,7 +493,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CELLULAR3_G_VALUE = 7;
+	public static final int CELLULAR3_G_VALUE = 10;
 
 	/**
 	 * The '<em><b>Cellular4 G</b></em>' literal value.
@@ -431,7 +504,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CELLULAR4_G_VALUE = 8;
+	public static final int CELLULAR4_G_VALUE = 11;
 
 	/**
 	 * The '<em><b>Cellular5 G</b></em>' literal value.
@@ -442,7 +515,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CELLULAR5_G_VALUE = 9;
+	public static final int CELLULAR5_G_VALUE = 12;
 
 	/**
 	 * The '<em><b>Display</b></em>' literal value.
@@ -453,7 +526,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DISPLAY_VALUE = 10;
+	public static final int DISPLAY_VALUE = 13;
 
 	/**
 	 * The '<em><b>Display Small</b></em>' literal value.
@@ -464,7 +537,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DISPLAY_SMALL_VALUE = 11;
+	public static final int DISPLAY_SMALL_VALUE = 14;
 
 	/**
 	 * The '<em><b>Electrical</b></em>' literal value.
@@ -475,7 +548,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ELECTRICAL_VALUE = 12;
+	public static final int ELECTRICAL_VALUE = 15;
 
 	/**
 	 * The '<em><b>Ethernet</b></em>' literal value.
@@ -486,7 +559,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ETHERNET_VALUE = 13;
+	public static final int ETHERNET_VALUE = 16;
 
 	/**
 	 * The '<em><b>Hdmi</b></em>' literal value.
@@ -497,7 +570,18 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HDMI_VALUE = 14;
+	public static final int HDMI_VALUE = 17;
+
+	/**
+	 * The '<em><b>Keyboard</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #KEYBOARD
+	 * @model name="Keyboard"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int KEYBOARD_VALUE = 18;
 
 	/**
 	 * The '<em><b>Knob</b></em>' literal value.
@@ -508,7 +592,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int KNOB_VALUE = 15;
+	public static final int KNOB_VALUE = 19;
 
 	/**
 	 * The '<em><b>Nfc</b></em>' literal value.
@@ -519,7 +603,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NFC_VALUE = 16;
+	public static final int NFC_VALUE = 20;
 
 	/**
 	 * The '<em><b>Optical</b></em>' literal value.
@@ -530,7 +614,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int OPTICAL_VALUE = 17;
+	public static final int OPTICAL_VALUE = 21;
 
 	/**
 	 * The '<em><b>Proprietary</b></em>' literal value.
@@ -541,7 +625,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROPRIETARY_VALUE = 18;
+	public static final int PROPRIETARY_VALUE = 22;
 
 	/**
 	 * The '<em><b>Power</b></em>' literal value.
@@ -552,7 +636,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int POWER_VALUE = 19;
+	public static final int POWER_VALUE = 23;
 
 	/**
 	 * The '<em><b>Sd Card</b></em>' literal value.
@@ -563,7 +647,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SD_CARD_VALUE = 20;
+	public static final int SD_CARD_VALUE = 24;
 
 	/**
 	 * The '<em><b>Serial</b></em>' literal value.
@@ -574,7 +658,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SERIAL_VALUE = 21;
+	public static final int SERIAL_VALUE = 25;
 
 	/**
 	 * The '<em><b>Speaker</b></em>' literal value.
@@ -585,7 +669,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int SPEAKER_VALUE = 22;
+	public static final int SPEAKER_VALUE = 26;
 
 	/**
 	 * The '<em><b>Touch</b></em>' literal value.
@@ -596,7 +680,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TOUCH_VALUE = 23;
+	public static final int TOUCH_VALUE = 27;
 
 	/**
 	 * The '<em><b>Usb</b></em>' literal value.
@@ -607,7 +691,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_VALUE = 24;
+	public static final int USB_VALUE = 28;
 
 	/**
 	 * The '<em><b>Usb A</b></em>' literal value.
@@ -618,7 +702,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_A_VALUE = 25;
+	public static final int USB_A_VALUE = 29;
 
 	/**
 	 * The '<em><b>Usb C</b></em>' literal value.
@@ -629,7 +713,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_C_VALUE = 26;
+	public static final int USB_C_VALUE = 30;
 
 	/**
 	 * The '<em><b>Usb Flash</b></em>' literal value.
@@ -640,7 +724,18 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int USB_FLASH_VALUE = 27;
+	public static final int USB_FLASH_VALUE = 31;
+
+	/**
+	 * The '<em><b>Valve</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #VALVE
+	 * @model name="Valve"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int VALVE_VALUE = 32;
 
 	/**
 	 * The '<em><b>Water</b></em>' literal value.
@@ -651,7 +746,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WATER_VALUE = 28;
+	public static final int WATER_VALUE = 33;
 
 	/**
 	 * The '<em><b>Wifi Access Point</b></em>' literal value.
@@ -662,7 +757,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WIFI_ACCESS_POINT_VALUE = 29;
+	public static final int WIFI_ACCESS_POINT_VALUE = 34;
 
 	/**
 	 * The '<em><b>Wifi Client</b></em>' literal value.
@@ -673,7 +768,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WIFI_CLIENT_VALUE = 30;
+	public static final int WIFI_CLIENT_VALUE = 35;
 
 	/**
 	 * The '<em><b>Zigbee</b></em>' literal value.
@@ -684,7 +779,7 @@ public enum InterfaceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ZIGBEE_VALUE = 31;
+	public static final int ZIGBEE_VALUE = 36;
 
 	/**
 	 * An array of all the '<em><b>Interface Type</b></em>' enumerators.
@@ -695,8 +790,11 @@ public enum InterfaceType implements Enumerator {
 	private static final InterfaceType[] VALUES_ARRAY =
 		new InterfaceType[] {
 			UNSPECIFIED,
+			AIR,
+			AIR_BY_CYLINDER,
 			AIR_BY_FAN,
 			AIR_BY_TURBINE,
+			AIR_FILTER,
 			ALARMLIGHT,
 			BLUETOOTH,
 			CELLULAR,
@@ -709,6 +807,7 @@ public enum InterfaceType implements Enumerator {
 			ELECTRICAL,
 			ETHERNET,
 			HDMI,
+			KEYBOARD,
 			KNOB,
 			NFC,
 			OPTICAL,
@@ -722,6 +821,7 @@ public enum InterfaceType implements Enumerator {
 			USB_A,
 			USB_C,
 			USB_FLASH,
+			VALVE,
 			WATER,
 			WIFI_ACCESS_POINT,
 			WIFI_CLIENT,
@@ -783,8 +883,11 @@ public enum InterfaceType implements Enumerator {
 	public static InterfaceType get(int value) {
 		switch (value) {
 			case UNSPECIFIED_VALUE: return UNSPECIFIED;
+			case AIR_VALUE: return AIR;
+			case AIR_BY_CYLINDER_VALUE: return AIR_BY_CYLINDER;
 			case AIR_BY_FAN_VALUE: return AIR_BY_FAN;
 			case AIR_BY_TURBINE_VALUE: return AIR_BY_TURBINE;
+			case AIR_FILTER_VALUE: return AIR_FILTER;
 			case ALARMLIGHT_VALUE: return ALARMLIGHT;
 			case BLUETOOTH_VALUE: return BLUETOOTH;
 			case CELLULAR_VALUE: return CELLULAR;
@@ -797,6 +900,7 @@ public enum InterfaceType implements Enumerator {
 			case ELECTRICAL_VALUE: return ELECTRICAL;
 			case ETHERNET_VALUE: return ETHERNET;
 			case HDMI_VALUE: return HDMI;
+			case KEYBOARD_VALUE: return KEYBOARD;
 			case KNOB_VALUE: return KNOB;
 			case NFC_VALUE: return NFC;
 			case OPTICAL_VALUE: return OPTICAL;
@@ -810,6 +914,7 @@ public enum InterfaceType implements Enumerator {
 			case USB_A_VALUE: return USB_A;
 			case USB_C_VALUE: return USB_C;
 			case USB_FLASH_VALUE: return USB_FLASH;
+			case VALVE_VALUE: return VALVE;
 			case WATER_VALUE: return WATER;
 			case WIFI_ACCESS_POINT_VALUE: return WIFI_ACCESS_POINT;
 			case WIFI_CLIENT_VALUE: return WIFI_CLIENT;

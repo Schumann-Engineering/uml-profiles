@@ -168,6 +168,8 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecPlugC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecPlugC13"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/IecSocketC14"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/MedicalGasDISS"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/MedicalGasNIST"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/Proprietary"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/SdCard"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceConnector/SubD"/>
@@ -178,8 +180,11 @@
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CSMN.ecore#//InterfaceType">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Unspecified"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Air"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirByCylinder"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirByFan"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirByTurbine"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/AirFilter"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Alarmlight"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Bluetooth"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Cellular"/>
@@ -192,6 +197,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Electrical"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Ethernet"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Hdmi"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Keyboard"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Knob"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Nfc"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Optical"/>
@@ -205,6 +211,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/UsbA"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/UsbC"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/UsbFlash"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Valve"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/Water"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/WifiAccessPoint"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CSMN.ecore#//InterfaceType/WifiClient"/>

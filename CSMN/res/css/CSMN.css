@@ -833,6 +833,16 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/help-circle-outline.svg';
 }
 
+/* === InterfaceType.Air === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Air"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
+}
+
+/* === InterfaceType.AirByCylinder === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByCylinder"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/gas-cylinder.svg';
+}
+
 /* === InterfaceType.AirByFan === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByFan"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/fan.svg';
@@ -841,6 +851,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 /* === InterfaceType.AirByTurbine === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirByTurbine"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/turbine.svg';
+}
+
+/* === InterfaceType.AirFilter === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="AirFilter"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/air-filter.svg';
 }
 
 /* === InterfaceType.Alarm === */
@@ -901,6 +916,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 /* === InterfaceType.Hdmi === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Hdmi"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/hdmi-port.svg';
+}
+
+/* === InterfaceType.Keyboard === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Keyboard"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/keyboard-variant.svg';
 }
 
 /* === InterfaceType.Knob === */
@@ -968,6 +988,11 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/usb-flash-drive.svg';
 }
 
+/* === InterfaceType.Valve === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Valve"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/valve.svg';
+}
+
 /* === InterfaceType.Water === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceType="Water"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/water.svg';
@@ -1032,6 +1057,16 @@ Dependency[appliedStereotypes~="CSMN::OsiCharacteristic"] > Label[kind=Name] {
 
 /* === InterfaceConnector.Luer === */
 *[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="Luer"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/pipe-disconnected.svg';
+}
+
+/* === InterfaceConnector.MedicalGasDISS === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="MedicalGasDISS"] {
+	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/pipe-disconnected.svg';
+}
+
+/* === InterfaceConnector.MedicalGasNIST === */
+*[appliedStereotypes~="CSMN::InterfaceCharacteristic"][interfaceConnector="MedicalGasNIST"] {
 	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/pipe-disconnected.svg';
 }
 
