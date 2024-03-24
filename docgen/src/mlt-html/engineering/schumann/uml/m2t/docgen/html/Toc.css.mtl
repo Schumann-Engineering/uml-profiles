@@ -44,7 +44,7 @@ h1 {
 }
 
 h1 {
-	font-size: 				60pt !important;
+	font-size: 				52pt !important;
 	font-weight:			bold !important;
 	
 	text-align: 			center !important;

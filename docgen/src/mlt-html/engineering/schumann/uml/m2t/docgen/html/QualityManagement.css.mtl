@@ -45,7 +45,7 @@
 	top:				3cm;
 	height:				12cm;
 	width:				20.5cm;
-	font-size:			60pt !important;
+	font-size:			52pt !important;
 	font-weight:		bold !important;
 	display:			flex;
 	align-items:		center;
