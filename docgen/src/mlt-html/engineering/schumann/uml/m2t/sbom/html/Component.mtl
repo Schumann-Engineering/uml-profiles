@@ -175,10 +175,12 @@ post(trim())
 	<td>[printSupplier() /]</td>
 </tr>
 [comment summary /]
+[comment]
 <tr>
 	<th>Summary</th>
 	<td>[summary /]</td>
 </tr>
+[/comment]
 [comment description /]
 <tr>
 	<th>Description</th>
