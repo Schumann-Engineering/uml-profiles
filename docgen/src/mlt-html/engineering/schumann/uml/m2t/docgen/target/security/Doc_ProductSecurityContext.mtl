@@ -754,6 +754,7 @@
 			
 			[html_PAGE_BREAK('')/]			
 			[TOC_SubSection_start('PRODUCT INTERFACEs which are Other interfaces')/]
+				[env_addError('there are PRODUCT INTERFACEs which are not classified', _context.templateUUID) /]
 				[html_ANSI_WARNING_start()/]
 					this section should be empty! This is an indicator of a wrongly configured model!
 				[html_ANSI_CAUTION_end()/]

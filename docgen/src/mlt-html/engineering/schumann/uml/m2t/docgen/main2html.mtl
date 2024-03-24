@@ -9,8 +9,9 @@
 [import engineering::schumann::uml::m2t::docgen::target::dev::DEV_ModelReport /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Doc_CyberSecurityManagementPlan /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Doc_CyberSecurityReport /]
-[import engineering::schumann::uml::m2t::docgen::target::security::Doc_ProductSecurityContext /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Doc_CyberSecurityReport_CN /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Doc_Mds2Cover /]
+[import engineering::schumann::uml::m2t::docgen::target::security::Doc_ProductSecurityContext /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::Doc_SbomReport /]
 [import engineering::schumann::uml::m2t::docgen::target::sbom::JSON_CycloneDX /]
 
@@ -27,16 +28,7 @@
 post(trim())
 ]
 [comment @main/]
-[process(this) /]
-[/template]
-
-
-[template private process(
-	this	: Model
-)
-post(trim())
-]
-[process(this, null) /]
+[process(this, Set(NamedElement) { }) /]
 [/template]
 
 
@@ -69,6 +61,13 @@ post(trim())
 [generateDocument_INT_CyberSecurityReport() /]
 [generateDocument_CN_CyberSecurityResearchReport() /]
 
+
+[comment
+	====================
+	MDS2
+	====================
+/]
+[generateDocument_INT_Mds2Cover() /]
 
 [comment
 	====================
