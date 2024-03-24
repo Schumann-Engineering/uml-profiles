@@ -9,7 +9,7 @@
 ) : String =
 	     if (type = RelationshipType::contains) 		then 'contains'
 	else if (type = RelationshipType::describes) 		then 'describes'
-	else if (type = RelationshipType::isContainedBy)	then 'is contained by'
+	else if (type = RelationshipType::isContainedBy)	then 'is contained in'
 	else if (type = RelationshipType::isDescribedBy)	then 'is described by'
 	else if (type = RelationshipType::isRequiredBy) 	then 'is required by'
 	else if (type = RelationshipType::requires) 		then 'requires'
