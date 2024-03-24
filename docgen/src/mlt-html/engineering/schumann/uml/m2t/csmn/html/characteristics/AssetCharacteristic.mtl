@@ -105,8 +105,8 @@ post(trim())]
 	this.protectionGoal
 ) /]
 [comment Threats/]
-[printCharacteristicTitle('Threats (CIAAN+UML model)') /]
-[threatsByProtectionGoalsToHtml(
+[printCharacteristicTitle('Failure Mode (CIAAN+UML model)') /]
+[failureModeByProtectionGoalsToHtml(
 	element
 ) /]
 [comment CIAAN+UML -> STRIDE /]
@@ -329,7 +329,7 @@ post(trim())]
 [/template]
 
 
-[template private threatsByProtectionGoalsToHtml(
+[template private failureModeByProtectionGoalsToHtml(
 	this			: Asset,
 	element			: NamedElement
 )
@@ -341,7 +341,7 @@ post(trim())]
 		<tr>
 			<th class="protectionGoal">Violated PROTECTION GOAL</th>
 			<th class="domain">Domain</th>
-			<th class="threat">Threat</th>
+			<th class="threat">Failure Mode</th>
 			<th class="name">Name</th>
 		</tr>
 	</thead>
@@ -536,7 +536,7 @@ post(trim())
 			<th>STRIDE</th>
 [comment]
 			<th>Violated property</th>
-			<th>Threat</th>
+			<th>Failure Mode</th>
 [/comment]
 			<th>derived from PROTECTION GOALs</th>
 			<th>selected for ASSET</th>
