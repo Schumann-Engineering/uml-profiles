@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module main2html(
+	'http://schumann.engineering/qwiki/1.0'
+)/]
+
+
+[template public main2html(
+	this : Standard
+)]
+	
+	[comment @main /]
+	[file (name.concat('.html'), false, 'UTF-8')]
+SDO:
+		[for (this.sdo())]
+- [name /], [authorType /]
+		[/for]
+	[/file]
+	
+[/template]

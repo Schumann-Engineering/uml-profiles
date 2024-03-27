@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated QWiki -->
+      <package
+            uri="http://schumann.engineering/qwiki/1.0"
+            class="QWiki.QWikiPackage"
+            genModel="src/ecore/QWiki.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated QWiki -->
+      <factory
+            uri="http://schumann.engineering/qwiki/1.0"
+            class="QWiki.provider.QWikiItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated QWiki -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="QWiki.presentation.QWikiModelWizardID"
+            name="%_UI_QWikiModelWizard_label"
+            class="QWiki.presentation.QWikiModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/QWikiModelFile.gif">
+         <description>%_UI_QWikiModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated QWiki -->
+      <editor
+            id="QWiki.presentation.QWikiEditorID"
+            name="%_UI_QWikiEditor_label"
+            icon="icons/full/obj16/QWikiModelFile.gif"
+            extensions="qwiki"
+            class="QWiki.presentation.QWikiEditor"
+            contributorClass="QWiki.presentation.QWikiActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

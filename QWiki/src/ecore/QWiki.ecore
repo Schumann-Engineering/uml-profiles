@@ -1,450 +1,518 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="QWiki" nsURI="http:///QWiki.ecore" nsPrefix="QWiki">
-  <eSubpackages name="SPICE" nsURI="http:///QWiki/SPICE.ecore" nsPrefix="QWiki.SPICE">
-    <eClassifiers xsi:type="ecore:EClass" name="ProcessGroup" eSuperTypes="#//SPICE/SpiceElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="onwedProcess" upperBound="-1"
-          eType="#//SPICE/Process" containment="true" eOpposite="#//SPICE/Process/owningProcessGroup">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SpiceElement" abstract="true" eSuperTypes="#//RASCI/RasciElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessReferenceModel"
-          ordered="false" eType="#//SPICE/ProcessReferenceModel" eOpposite="#//SPICE/ProcessReferenceModel/ownedSpiceElement">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedSection" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Section" changeable="false" volatile="true"
-          transient="true" derived="true" eOpposite="#//Bibliography/Section/facilitatingSpiceElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningRole" ordered="false"
-          eType="#//RASCI/Role">
-        <eAnnotations source="subsets" references="#//SPICE/SpiceElement/role"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="managingRole" ordered="false"
-          eType="#//RASCI/Role">
-        <eAnnotations source="subsets" references="#//SPICE/SpiceElement/role"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="participatingRole" ordered="false"
-          upperBound="-1" eType="#//RASCI/Role">
-        <eAnnotations source="subsets" references="#//SPICE/SpiceElement/role"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="role" ordered="false"
-          upperBound="-1" eType="#//RASCI/Role" changeable="false" volatile="true"
-          transient="true" derived="true">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ProcessReferenceModel" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNonStandard" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-          defaultValueLiteral="false"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="prmDomain" ordered="false"
-          lowerBound="1" eType="#//SPICE/ProcessReferenceModelDomain"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSpiceElement" ordered="false"
-          upperBound="-1" eType="#//SPICE/SpiceElement" containment="true" eOpposite="#//SPICE/SpiceElement/owningProcessReferenceModel">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ProcessReferenceModelDomain">
-      <eLiterals name="agile" literal="agileLiteral">
-        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details key="originalName" value="Agile"/>
-        </eAnnotations>
-      </eLiterals>
-      <eLiterals name="Automotive" value="1"/>
-      <eLiterals name="Cybersecurity" value="2"/>
-      <eLiterals name="DataManagement" value="3"/>
-      <eLiterals name="Hardware" value="4"/>
-      <eLiterals name="ITServices" value="5"/>
-      <eLiterals name="Mechanical" value="6"/>
-      <eLiterals name="Medical" value="7"/>
-      <eLiterals name="Organizational" value="8"/>
-      <eLiterals name="Test" value="9"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//SPICE/SpiceElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBasePractise" upperBound="-1"
-          eType="#//SPICE/BasePractise" containment="true" eOpposite="#//SPICE/BasePractise/owningProcess">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOutcome" upperBound="-1"
-          eType="#//SPICE/Outcome" containment="true" eOpposite="#//SPICE/Outcome/owningProcess">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingWorkProduct"
-          ordered="false" upperBound="-1" eType="#//SPICE/WorkProduct" eOpposite="#//SPICE/WorkProduct/facilitatedProcess"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedWorkProduct"
-          ordered="false" eType="#//SPICE/WorkProduct" eOpposite="#//SPICE/WorkProduct/facilitatingProcess"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessGroup" ordered="false"
-          lowerBound="1" eType="#//SPICE/ProcessGroup" eOpposite="#//SPICE/ProcessGroup/onwedProcess">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BasePractise" eSuperTypes="#//SPICE/SpiceElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//SPICE/Outcome" eOpposite="#//SPICE/Outcome/facilitatingBasePractise"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedWorkProduct"
-          ordered="false" eType="#//SPICE/WorkProduct"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
-          lowerBound="1" eType="#//SPICE/Process" eOpposite="#//SPICE/Process/ownedBasePractise">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Outcome" eSuperTypes="#//Kernel/I18nNamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
-          lowerBound="1" eType="#//SPICE/Process" eOpposite="#//SPICE/Process/ownedOutcome">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="requiredWorkproduct"
-          ordered="false" upperBound="-1" eType="#//SPICE/WorkProduct" eOpposite="#//SPICE/WorkProduct/facilitatedOutcome"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="resultingWorkproduct"
-          ordered="false" upperBound="-1" eType="#//SPICE/WorkProduct" eOpposite="#//SPICE/WorkProduct/facilitatingOutcome"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingBasePractise"
-          ordered="false" lowerBound="1" upperBound="-1" eType="#//SPICE/BasePractise"
-          eOpposite="#//SPICE/BasePractise/facilitatedOutcome"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="WorkProduct" eSuperTypes="#//SPICE/SpiceElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningWorkingGroup" ordered="false"
-          eType="#//SPICE/GenericWorkProduct" eOpposite="#//SPICE/GenericWorkProduct/ownedWorkProduct">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingOutcome"
-          ordered="false" upperBound="-1" eType="#//SPICE/Outcome" eOpposite="#//SPICE/Outcome/resultingWorkproduct"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedProcess" ordered="false"
-          upperBound="-1" eType="#//SPICE/Process" eOpposite="#//SPICE/Process/facilitatingWorkProduct"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingProcess"
-          ordered="false" lowerBound="1" eType="#//SPICE/Process" eOpposite="#//SPICE/Process/facilitatedWorkProduct"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="workProductType" ordered="false"
-          lowerBound="1" eType="#//SPICE/WorkProductType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
-          upperBound="-1" eType="#//SPICE/Outcome" eOpposite="#//SPICE/Outcome/requiredWorkproduct"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="GenericWorkProduct" eSuperTypes="#//SPICE/WorkProduct">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedWorkProduct" ordered="false"
-          upperBound="-1" eType="#//SPICE/WorkProduct" containment="true" eOpposite="#//SPICE/WorkProduct/owningWorkingGroup">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="WorkProductType">
-      <eLiterals name="Artefact"/>
-      <eLiterals name="Document" value="1"/>
-      <eLiterals name="Generic" value="2"/>
-      <eLiterals name="Shippable" value="3"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="RASCI" nsURI="http:///QWiki/RASCI.ecore" nsPrefix="QWiki.RASCI">
-    <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="skills" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleElement" ordered="false"
-          upperBound="-1" eType="#//RASCI/RasciElement" eOpposite="#//RASCI/RasciElement/responsibleRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="accountableElement" ordered="false"
-          upperBound="-1" eType="#//RASCI/RasciElement" eOpposite="#//RASCI/RasciElement/accountableRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="supportingElement" ordered="false"
-          upperBound="-1" eType="#//RASCI/RasciElement" eOpposite="#//RASCI/RasciElement/supportingRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="consultingElement" ordered="false"
-          upperBound="-1" eType="#//RASCI/RasciElement" eOpposite="#//RASCI/RasciElement/consultingRole"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="informedElement" ordered="false"
-          upperBound="-1" eType="#//RASCI/RasciElement" eOpposite="#//RASCI/RasciElement/informedRole"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RasciElement" abstract="true" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleRole" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//RASCI/Role" eOpposite="#//RASCI/Role/responsibleElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="accountableRole" ordered="false"
-          lowerBound="1" eType="#//RASCI/Role" eOpposite="#//RASCI/Role/accountableElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="supportingRole" ordered="false"
-          upperBound="-1" eType="#//RASCI/Role" eOpposite="#//RASCI/Role/supportingElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="consultingRole" ordered="false"
-          upperBound="-1" eType="#//RASCI/Role" eOpposite="#//RASCI/Role/consultingElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="informedRole" ordered="false"
-          upperBound="-1" eType="#//RASCI/Role" eOpposite="#//RASCI/Role/informedElement"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="Kernel" nsURI="http:///QWiki/Kernel.ecore" nsPrefix="QWiki.Kernel">
-    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" ordered="false"
-          upperBound="-1" eType="#//Kernel/Comment" containment="true" eOpposite="#//Kernel/Comment/owningElement">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" ordered="false"
-          upperBound="-1" eType="#//Kernel/Element" changeable="false" volatile="true"
-          transient="true" derived="true" eOpposite="#//Kernel/Element/owner">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
-          eType="#//Kernel/Element" changeable="false" volatile="true" transient="true"
-          derived="true" eOpposite="#//Kernel/Element/ownedElement">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipAsSource"
-          ordered="false" upperBound="-1" eType="#//Kernel/DirectedRelationship" volatile="true"
-          transient="true" derived="true" eOpposite="#//Kernel/DirectedRelationship/source"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" ordered="false"
-          upperBound="-1" eType="#//Kernel/Relationship" volatile="true" transient="true"
-          derived="true" eOpposite="#//Kernel/Relationship/relatedElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipAsTarget"
-          ordered="false" upperBound="-1" eType="#//Kernel/DirectedRelationship" volatile="true"
-          transient="true" derived="true" eOpposite="#//Kernel/DirectedRelationship/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="comments" ordered="false"
-          upperBound="-1" eType="#//Kernel/Comment"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          iD="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" ordered="false"
-          upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="association" ordered="false"
-          upperBound="-1" eType="#//Kernel/Association" eOpposite="#//Kernel/Association/end"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="oid" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="customProperty" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nKeyedString" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Kernel/Element">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningElement" ordered="false"
-          eType="#//Kernel/Element" eOpposite="#//Kernel/Element/ownedComment">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nString" eSuperTypes="#//Kernel/I18nBaseString"/>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nBaseString">
-      <eOperations name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eParameters name="language" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nValue" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nValue">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true"
-        eSuperTypes="#//Kernel/Relationship">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Kernel/Element" changeable="false"
-          volatile="true" transient="true" derived="true" eOpposite="#//Kernel/Element/relationshipAsTarget">
-        <eAnnotations source="union"/>
-        <eAnnotations source="subsets" references="#//Kernel/Relationship/relatedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Kernel/Element" changeable="false"
-          volatile="true" transient="true" derived="true" eOpposite="#//Kernel/Element/relationshipAsSource">
-        <eAnnotations source="union"/>
-        <eAnnotations source="subsets" references="#//Kernel/Relationship/relatedElement"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true" eSuperTypes="#//Kernel/Element">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="relatedElement" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Kernel/Element" changeable="false"
-          volatile="true" transient="true" derived="true" eOpposite="#//Kernel/Element/relationship">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Kernel/Relationship">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="endRelationshipType"
-          ordered="false" lowerBound="2" upperBound="2" eType="#//Kernel/RelationshipType"
-          eOpposite="#//Kernel/RelationshipType/typedAssociation"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="end" ordered="false"
-          lowerBound="2" upperBound="2" eType="#//Kernel/Element" eOpposite="#//Kernel/Element/association"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="RelationshipType" eSuperTypes="#//Kernel/I18nNamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="typedAssociation" ordered="false"
-          upperBound="-1" eType="#//Kernel/Association" eOpposite="#//Kernel/Association/endRelationshipType"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nNamedElement" abstract="true"
-        eSuperTypes="#//Kernel/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//Kernel/Element">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="assignedDomain" ordered="false"
-          eType="#//Kernel/Domain" eOpposite="#//Kernel/Domain/domainElement">
-        <eAnnotations source="subsets" references="#//Kernel/NamedElement/domain"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="domain" ordered="false"
-          eType="#//Kernel/Domain" changeable="false" volatile="true" transient="true"
-          derived="true">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//Kernel/I18nNamedElement">
-      <eOperations name="allDomainElement" ordered="false" upperBound="-1" eType="#//Kernel/NamedElement"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="domainElement" ordered="false"
-          upperBound="-1" eType="#//Kernel/NamedElement" eOpposite="#//Kernel/NamedElement/assignedDomain"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nKeyedString" eSuperTypes="#//Kernel/I18nBaseString">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="I18nDescriptiveElement" abstract="true"
-        eSuperTypes="#//Kernel/I18nNamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="purpose" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="Bibliography" nsURI="http:///QWiki/Bibliography.ecore" nsPrefix="QWiki.Bibliography">
-    <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
-          lowerBound="1" upperBound="-1" eType="#//Bibliography/Author" eOpposite="#//Bibliography/Author/authoredDocument"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVersion" ordered="false"
-          upperBound="-1" eType="#//Bibliography/DocumentVersion" containment="true"
-          eOpposite="#//Bibliography/DocumentVersion/owningDocument">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
-          ordered="false" upperBound="-1" eType="#//Bibliography/SuperseedingRelationship"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentType" ordered="false"
-          lowerBound="1" eType="#//Bibliography/DocumentType"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//Kernel/NamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="authoredStandard" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Standard" changeable="false" volatile="true"
-          transient="true" derived="true" eOpposite="#//Bibliography/Standard/sdo"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorType" ordered="false"
-          lowerBound="1" eType="#//Bibliography/AuthorType" defaultValueLiteral="Person"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="authoredDocument" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Document" eOpposite="#//Bibliography/Document/author"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Standard" eSuperTypes="#//Bibliography/Document">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sdo" lowerBound="1" upperBound="-1"
-          eType="#//Bibliography/Author" changeable="false" volatile="true" transient="true"
-          derived="true" eOpposite="#//Bibliography/Author/authoredStandard"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="AuthorType">
-      <eLiterals name="Person"/>
-      <eLiterals name="Organization" value="1"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DocumentVersion" eSuperTypes="#//Kernel/Element">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicationYear" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentVersionType"
-          ordered="false" lowerBound="1" eType="#//Bibliography/DocumentVersionType"
-          defaultValueLiteral="FirstEdition"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="edition" ordered="false"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Section" containment="true" eOpposite="#//Bibliography/Section/owningDocument">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
-          ordered="false" upperBound="-1" eType="#//Bibliography/SuperseedingRelationship"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedNumber" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
-          lowerBound="1" eType="#//Bibliography/Document" eOpposite="#//Bibliography/Document/ownedVersion">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="DocumentVersionType">
-      <eLiterals name="Addendum"/>
-      <eLiterals name="Amendment" value="1"/>
-      <eLiterals name="Corrigendum" value="2"/>
-      <eLiterals name="FirstEdition" value="3"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SuperseedingRelationship" eSuperTypes="#//Kernel/DirectedRelationship">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="superseedingType" ordered="false"
-          lowerBound="1" eType="#//Bibliography/SuperseedingType" defaultValueLiteral="Equal">
-        <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-          <details key="originalName" value="superseedingT\ype"/>
-        </eAnnotations>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="SuperseedingType">
-      <eLiterals name="Added"/>
-      <eLiterals name="Equal" value="1"/>
-      <eLiterals name="UpdatedMajor" value="2"/>
-      <eLiterals name="UpdatedMinor" value="3"/>
-      <eLiterals name="Removed" value="4"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="DocumentType">
-      <eLiterals name="Document"/>
-      <eLiterals name="Guideline" value="1"/>
-      <eLiterals name="Hyperlink" value="2"/>
-      <eLiterals name="Legislation" value="3"/>
-      <eLiterals name="Process" value="4"/>
-      <eLiterals name="Standard" value="5"/>
-      <eLiterals name="TechnicalReport" value="6"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//Kernel/I18nNamedElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="acronym" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="synonym" ordered="false"
-          eType="#//Kernel/I18nString" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="termDefinition" ordered="false"
-          upperBound="-1" eType="#//Kernel/I18nDescriptiveElement" changeable="false"
-          volatile="true" transient="true" derived="true">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTermDefinition"
-          ordered="false" upperBound="-1" eType="#//Bibliography/TermDefinition" containment="true"
-          eOpposite="#//Bibliography/TermDefinition/owningTerm">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement #//Bibliography/Term/termDefinition"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="externalTermDefinition"
-          ordered="false" upperBound="-1" eType="#//Bibliography/Section" eOpposite="#//Bibliography/Section/term">
-        <eAnnotations source="subsets" references="#//Bibliography/Term/termDefinition"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="TermDefinition" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningTerm" ordered="false"
-          eType="#//Bibliography/Term" eOpposite="#//Bibliography/Term/ownedTermDefinition">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//Kernel/I18nDescriptiveElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
-          eType="#//Bibliography/DocumentVersion" eOpposite="#//Bibliography/DocumentVersion/ownedSection">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="term" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Term" eOpposite="#//Bibliography/Term/externalTermDefinition"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
-          upperBound="-1" eType="#//Bibliography/Section" containment="true" eOpposite="#//Bibliography/Section/owningSection">
-        <eAnnotations source="subsets" references="#//Kernel/Element/ownedElement"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="owningSection" ordered="false"
-          eType="#//Bibliography/Section" eOpposite="#//Bibliography/Section/ownedSection">
-        <eAnnotations source="subsets" references="#//Kernel/Element/owner"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingElement"
-          ordered="false" upperBound="-1" eType="#//Kernel/Element" changeable="false"
-          volatile="true" transient="true" derived="true">
-        <eAnnotations source="union"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
-          ordered="false" upperBound="-1" eType="#//Bibliography/SuperseedingRelationship"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedNumber" ordered="false"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-          changeable="false" volatile="true" transient="true" derived="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingSpiceElement"
-          ordered="false" upperBound="-1" eType="#//SPICE/SpiceElement" changeable="false"
-          volatile="true" transient="true" derived="true" eOpposite="#//SPICE/SpiceElement/facilitatedSection">
-        <eAnnotations source="subsets" references="#//Bibliography/Section/facilitatingElement"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-  </eSubpackages>
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="QWiki" nsURI="http://schumann.engineering/qwiki/1.0" nsPrefix="QWiki">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//NamedElement">
+    <eOperations name="authoredDocument" ordered="false" upperBound="-1" eType="#//Document">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="model.ownedElement->select(oclIsKindOf(QWiki::Document)).oclAsType(QWiki::Document)->select(author->includes(self))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="authoredStandard" ordered="false" upperBound="-1" eType="#//Standard">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="model.ownedElement->select(oclIsKindOf(QWiki::Standard)).oclAsType(QWiki::Standard)->select(author->includes(self))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authorType" ordered="false"
+        lowerBound="1" eType="#//AuthorType" defaultValueLiteral="Person"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//TaggedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedDomain" ordered="false"
+        eType="#//Domain" eOpposite="#//Domain/domainElement">
+      <eAnnotations source="subsets" references="#//NamedElement/domain"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" ordered="false"
+        eType="#//Domain" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="namedelement"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TaggedElement" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" ordered="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customProperty" ordered="false"
+        upperBound="-1" eType="#//I18nKeyedString" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An element is a constituent of a model. As such, it has the capability of owning other elements.&#xD;&#xA;not self.allOwnedElements()->includes(self)&#xD;&#xA;self.mustBeOwned() implies owner->notEmpty()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="not_own_self has_owner"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="not_own_self" value="not self.allOwnedElements()->includes(self)"/>
+      <details key="has_owner" value="self.mustBeOwned() implies owner->notEmpty()"/>
+    </eAnnotations>
+    <eOperations name="allOwnedElements" ordered="false" upperBound="-1" eType="#//Element">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query allOwnedElements() gives all of the direct and indirect owned elements of an element."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="ownedElement->union(ownedElement->collect(e | e.allOwnedElements()))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="mustBeOwned" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query mustBeOwned() indicates whether elements of this type must have an owner. Subclasses of Element that do not require an owner must override this operation."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="true"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="model" ordered="false" eType="#//QWikiModel">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if (owner = null) then&#xD;&#xA;&#x9;null&#xD;&#xA;else if (owner.oclIsKindOf(QWikiModel)) then&#xD;&#xA;  owner.oclAsType(QWikiModel)&#xD;&#xA;else&#xD;&#xA;  owner.model()&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;  "/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" ordered="false"
+        upperBound="-1" eType="#//Comment" containment="true" eOpposite="#//Comment/owningElement">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" ordered="false"
+        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//Element/owner">
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Element/ownedElement">
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oid" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//I18nString"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningElement" ordered="false"
+        eType="#//Element" eOpposite="#//Element/ownedComment">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nString" eSuperTypes="#//I18nBaseString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nBaseString">
+    <eOperations name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="language" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
+        upperBound="-1" eType="#//I18nValue" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningElement"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QWikiModel" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nKeyedString" eSuperTypes="#//I18nBaseString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//I18nNamedElement">
+    <eOperations name="allDomainElement" ordered="false" upperBound="-1" eType="#//NamedElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainElement" ordered="false"
+        upperBound="-1" eType="#//NamedElement" eOpposite="#//NamedElement/assignedDomain"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nNamedElement" abstract="true" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
+        eType="#//I18nString" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AuthorType">
+    <eLiterals name="Person"/>
+    <eLiterals name="Organization" value="1"/>
+    <eLiterals name="StandardsDevelopmentOrganization" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Document" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVersion" ordered="false"
+        upperBound="-1" eType="#//DocumentVersion" containment="true" eOpposite="#//DocumentVersion/owningDocument">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
+        ordered="false" upperBound="-1" eType="#//SuperseedingRelationship" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="document"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentType" ordered="false"
+        lowerBound="1" eType="#//DocumentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Author">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="authoredDocument"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nDescriptiveElement" abstract="true"
+      eSuperTypes="#//I18nNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="purpose" ordered="false"
+        eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//I18nString"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentVersion" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicationYear" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="documentVersionType" ordered="false"
+        lowerBound="1" eType="#//DocumentVersionType" defaultValueLiteral="FirstEdition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="edition" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
+        upperBound="-1" eType="#//Section" containment="true" eOpposite="#//Section/owningDocument">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
+        ordered="false" upperBound="-1" eType="#//SuperseedingRelationship" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="documentversion"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedNumber" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
+        lowerBound="1" eType="#//Document" eOpposite="#//Document/ownedVersion">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DocumentVersionType">
+    <eLiterals name="Addendum"/>
+    <eLiterals name="Amendment" value="1"/>
+    <eLiterals name="Corrigendum" value="2"/>
+    <eLiterals name="FirstEdition" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Section" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
+        upperBound="-1" eType="#//Section" containment="true" eOpposite="#//Section/owningSection">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningSection" ordered="false"
+        eType="#//Section" eOpposite="#//Section/ownedSection">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingSpiceElement"
+        ordered="false" upperBound="-1" eType="#//SpiceElement" eOpposite="#//SpiceElement/facilitatedSection">
+      <eAnnotations source="subsets" references="#//Section/facilitatingElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingElement" ordered="false"
+        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="facilitatedSection"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
+        ordered="false" upperBound="-1" eType="#//SuperseedingRelationship" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="section"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedNumber" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="term" ordered="false" upperBound="-1"
+        eType="#//Term" eOpposite="#//Term/externalTermDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
+        eType="#//DocumentVersion" eOpposite="#//DocumentVersion/ownedSection">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpiceElement" abstract="true" eSuperTypes="#//RasciElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessReferenceModel"
+        ordered="false" eType="#//ProcessReferenceModel" eOpposite="#//ProcessReferenceModel/ownedSpiceElement">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningRole" ordered="false"
+        eType="#//Role">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="spiceelement"/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//SpiceElement/role"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="managingRole" ordered="false"
+        eType="#//Role">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="spiceelement"/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//SpiceElement/role"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participatingRole" ordered="false"
+        upperBound="-1" eType="#//Role">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="spiceelement"/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//SpiceElement/role"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" ordered="false" upperBound="-1"
+        eType="#//Role" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="spiceelement"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedSection" ordered="false"
+        upperBound="-1" eType="#//Section" eOpposite="#//Section/facilitatingSpiceElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RasciElement" abstract="true" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleRole" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Role" eOpposite="#//Role/responsibleElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accountableRole" ordered="false"
+        lowerBound="1" eType="#//Role" eOpposite="#//Role/accountableElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supportingRole" ordered="false"
+        upperBound="-1" eType="#//Role" eOpposite="#//Role/supportingElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consultingRole" ordered="false"
+        upperBound="-1" eType="#//Role" eOpposite="#//Role/consultingElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="informedRole" ordered="false"
+        upperBound="-1" eType="#//Role" eOpposite="#//Role/informedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="skills" ordered="false"
+        upperBound="-1" eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="accountableElement" ordered="false"
+        upperBound="-1" eType="#//RasciElement" eOpposite="#//RasciElement/accountableRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supportingElement" ordered="false"
+        upperBound="-1" eType="#//RasciElement" eOpposite="#//RasciElement/supportingRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consultingElement" ordered="false"
+        upperBound="-1" eType="#//RasciElement" eOpposite="#//RasciElement/consultingRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="informedElement" ordered="false"
+        upperBound="-1" eType="#//RasciElement" eOpposite="#//RasciElement/informedRole"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="responsibleElement" ordered="false"
+        upperBound="-1" eType="#//RasciElement" eOpposite="#//RasciElement/responsibleRole"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessReferenceModel" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNonStandard" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prmDomain" ordered="false"
+        lowerBound="1" eType="#//ProcessReferenceModelDomain"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSpiceElement" ordered="false"
+        upperBound="-1" eType="#//SpiceElement" containment="true" eOpposite="#//SpiceElement/owningProcessReferenceModel">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProcessReferenceModelDomain">
+    <eLiterals name="Agile"/>
+    <eLiterals name="Automotive" value="1"/>
+    <eLiterals name="Cybersecurity" value="2"/>
+    <eLiterals name="DataManagement" value="3"/>
+    <eLiterals name="Hardware" value="4"/>
+    <eLiterals name="ITServices" value="5"/>
+    <eLiterals name="Mechanical" value="6"/>
+    <eLiterals name="Medical" value="7"/>
+    <eLiterals name="Organizational" value="8"/>
+    <eLiterals name="Test" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SuperseedingRelationship" eSuperTypes="#//DirectedRelationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="superseedingType" ordered="false"
+        lowerBound="1" eType="#//SuperseedingType" defaultValueLiteral="Equal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true"
+      eSuperTypes="#//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="relationshipAsSource"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="relationshipAsTarget"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedElement" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="relationship"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SuperseedingType">
+    <eLiterals name="Added"/>
+    <eLiterals name="Equal" value="1"/>
+    <eLiterals name="UpdatedMajor" value="2"/>
+    <eLiterals name="UpdatedMinor" value="3"/>
+    <eLiterals name="Removed" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//I18nNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="acronym" ordered="false"
+        eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="synonym" ordered="false"
+        eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="termDefinition" ordered="false"
+        upperBound="-1" eType="#//I18nDescriptiveElement" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="term"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTermDefinition" ordered="false"
+        upperBound="-1" eType="#//TermDefinition" containment="true" eOpposite="#//TermDefinition/owningTerm">
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//Term/termDefinition"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalTermDefinition"
+        ordered="false" upperBound="-1" eType="#//Section" eOpposite="#//Section/term">
+      <eAnnotations source="subsets" references="#//Term/termDefinition"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TermDefinition" eSuperTypes="#//I18nDescriptiveElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningTerm" ordered="false"
+        eType="#//Term" eOpposite="#//Term/ownedTermDefinition">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DocumentType">
+    <eLiterals name="Document"/>
+    <eLiterals name="Guideline" value="1"/>
+    <eLiterals name="Hyperlink" value="2"/>
+    <eLiterals name="Legislation" value="3"/>
+    <eLiterals name="Process" value="4"/>
+    <eLiterals name="Standard" value="5"/>
+    <eLiterals name="TechnicalReport" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Standard" eSuperTypes="#//Document">
+    <eOperations name="sdo" ordered="false" upperBound="-1" eType="#//Author">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="author->select(authorType = StandardsDevelopmentOrganization)"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationship">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" ordered="false" lowerBound="2"
+        upperBound="2" eType="#//Element">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="association"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endRelationshipType" ordered="false"
+        lowerBound="2" upperBound="2" eType="#//RelationshipType" eOpposite="#//RelationshipType/typedAssociation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RelationshipType" eSuperTypes="#//I18nNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typedAssociation" ordered="false"
+        upperBound="-1" eType="#//Association" eOpposite="#//Association/endRelationshipType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasePractise" eSuperTypes="#//SpiceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
+        lowerBound="1" eType="#//Process" eOpposite="#//Process/ownedBasePractise">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Outcome" eOpposite="#//Outcome/facilitatingBasePractise"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedWorkProduct"
+        ordered="false" eType="#//WorkProduct">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="facilitatingBacePractise"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//SpiceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessGroup" ordered="false"
+        lowerBound="1" eType="#//ProcessGroup" eOpposite="#//ProcessGroup/onwedProcess">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOutcome" upperBound="-1"
+        eType="#//Outcome" containment="true" eOpposite="#//Outcome/owningProcess">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingWorkProduct"
+        ordered="false" upperBound="-1" eType="#//WorkProduct" eOpposite="#//WorkProduct/facilitatedProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedWorkProduct"
+        ordered="false" eType="#//WorkProduct" eOpposite="#//WorkProduct/facilitatingProcess"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBasePractise" upperBound="-1"
+        eType="#//BasePractise" containment="true" eOpposite="#//BasePractise/owningProcess">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcessGroup" eSuperTypes="#//SpiceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onwedProcess" upperBound="-1"
+        eType="#//Process" containment="true" eOpposite="#//Process/owningProcessGroup">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Outcome" eSuperTypes="#//I18nNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingBasePractise"
+        ordered="false" lowerBound="1" upperBound="-1" eType="#//BasePractise" eOpposite="#//BasePractise/facilitatedOutcome"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredWorkproduct" ordered="false"
+        upperBound="-1" eType="#//WorkProduct" eOpposite="#//WorkProduct/facilitatedOutcome"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resultingWorkproduct" ordered="false"
+        upperBound="-1" eType="#//WorkProduct" eOpposite="#//WorkProduct/facilitatingOutcome"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
+        lowerBound="1" eType="#//Process" eOpposite="#//Process/ownedOutcome">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkProduct" eSuperTypes="#//SpiceElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningWorkingGroup" ordered="false"
+        eType="#//GenericWorkProduct" eOpposite="#//GenericWorkProduct/ownedWorkProduct">
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" ordered="false"
+        upperBound="-1" eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
+        upperBound="-1" eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingOutcome" ordered="false"
+        upperBound="-1" eType="#//Outcome" eOpposite="#//Outcome/resultingWorkproduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedProcess" ordered="false"
+        upperBound="-1" eType="#//Process" eOpposite="#//Process/facilitatingWorkProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingProcess" ordered="false"
+        lowerBound="1" eType="#//Process" eOpposite="#//Process/facilitatedWorkProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workProductType" ordered="false"
+        lowerBound="1" eType="#//WorkProductType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
+        upperBound="-1" eType="#//Outcome" eOpposite="#//Outcome/requiredWorkproduct"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GenericWorkProduct" eSuperTypes="#//WorkProduct">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedWorkProduct" ordered="false"
+        upperBound="-1" eType="#//WorkProduct" containment="true" eOpposite="#//WorkProduct/owningWorkingGroup">
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WorkProductType">
+    <eLiterals name="Artefact"/>
+    <eLiterals name="Document" value="1"/>
+    <eLiterals name="Generic" value="2"/>
+    <eLiterals name="Shippable" value="3"/>
+  </eClassifiers>
 </ecore:EPackage>
