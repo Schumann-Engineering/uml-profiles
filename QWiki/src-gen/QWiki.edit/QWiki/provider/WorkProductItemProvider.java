@@ -179,8 +179,8 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QWikiPackage.Literals.WORK_PRODUCT__CHARACTERISTIC);
-			childrenFeatures.add(QWikiPackage.Literals.WORK_PRODUCT__CONTENT);
+			childrenFeatures.add(QWikiPackage.Literals.WORK_PRODUCT__OWNED_CHARACTERISTIC);
+			childrenFeatures.add(QWikiPackage.Literals.WORK_PRODUCT__OWNED_CONTENT);
 		}
 		return childrenFeatures;
 	}
@@ -239,8 +239,8 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 			case QWikiPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
-			case QWikiPackage.WORK_PRODUCT__CONTENT:
+			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
+			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -260,12 +260,12 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(QWikiPackage.Literals.WORK_PRODUCT__CHARACTERISTIC,
+				(QWikiPackage.Literals.WORK_PRODUCT__OWNED_CHARACTERISTIC,
 				 QWikiFactory.eINSTANCE.createI18nString()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(QWikiPackage.Literals.WORK_PRODUCT__CONTENT,
+				(QWikiPackage.Literals.WORK_PRODUCT__OWNED_CONTENT,
 				 QWikiFactory.eINSTANCE.createI18nString()));
 	}
 
@@ -284,8 +284,8 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 			childFeature == QWikiPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == QWikiPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
 			childFeature == QWikiPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY ||
-			childFeature == QWikiPackage.Literals.WORK_PRODUCT__CHARACTERISTIC ||
-			childFeature == QWikiPackage.Literals.WORK_PRODUCT__CONTENT;
+			childFeature == QWikiPackage.Literals.WORK_PRODUCT__OWNED_CHARACTERISTIC ||
+			childFeature == QWikiPackage.Literals.WORK_PRODUCT__OWNED_CONTENT;
 
 		if (qualify) {
 			return getString

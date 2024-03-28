@@ -19,13 +19,12 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Section#getFacilitatingSpiceElement <em>Facilitating Spice Element</em>}</li>
  *   <li>{@link QWiki.Section#getFacilitatingElement <em>Facilitating Element</em>}</li>
  *   <li>{@link QWiki.Section#getSuperseedingRelationship <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.Section#getQualifiedNumber <em>Qualified Number</em>}</li>
  *   <li>{@link QWiki.Section#getTerm <em>Term</em>}</li>
  *   <li>{@link QWiki.Section#getOwningDocument <em>Owning Document</em>}</li>
  * </ul>
  *
  * @see QWiki.QWikiPackage#getSection()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface Section extends I18nDescriptiveElement {
@@ -48,7 +47,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Owned Section</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getSection_OwnedSection()
 	 * @see QWiki.Section#getOwningSection
-	 * @model opposite="owningSection" containment="true" ordered="false"
+	 * @model opposite="owningSection" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -73,7 +72,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * @see #setOwningSection(Section)
 	 * @see QWiki.QWikiPackage#getSection_OwningSection()
 	 * @see QWiki.Section#getOwnedSection
-	 * @model opposite="ownedSection" transient="false" ordered="false"
+	 * @model opposite="ownedSection" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -134,7 +133,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Facilitating Spice Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getSection_FacilitatingSpiceElement()
 	 * @see QWiki.SpiceElement#getFacilitatedSection
-	 * @model opposite="facilitatedSection" ordered="false"
+	 * @model opposite="facilitatedSection" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -177,21 +176,6 @@ public interface Section extends I18nDescriptiveElement {
 	EList<SuperseedingRelationship> getSuperseedingRelationship();
 
 	/**
-	 * Returns the value of the '<em><b>Qualified Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Qualified Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qualified Number</em>' attribute.
-	 * @see QWiki.QWikiPackage#getSection_QualifiedNumber()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 * @generated
-	 */
-	String getQualifiedNumber();
-
-	/**
 	 * Returns the value of the '<em><b>Term</b></em>' reference list.
 	 * The list contents are of type {@link QWiki.Term}.
 	 * It is bidirectional and its opposite is '{@link QWiki.Term#getExternalTermDefinition <em>External Term Definition</em>}'.
@@ -204,7 +188,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Term</em>' reference list.
 	 * @see QWiki.QWikiPackage#getSection_Term()
 	 * @see QWiki.Term#getExternalTermDefinition
-	 * @model opposite="externalTermDefinition" ordered="false"
+	 * @model opposite="externalTermDefinition" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Term> getTerm();
@@ -228,7 +212,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * @see #setOwningDocument(DocumentVersion)
 	 * @see QWiki.QWikiPackage#getSection_OwningDocument()
 	 * @see QWiki.DocumentVersion#getOwnedSection
-	 * @model opposite="ownedSection" transient="false" ordered="false"
+	 * @model opposite="ownedSection" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -243,5 +227,23 @@ public interface Section extends I18nDescriptiveElement {
 	 * @generated
 	 */
 	void setOwningDocument(DocumentVersion value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (owningDocument-&gt;notEmpty()) then owningDocument else owningSection.documentVersion() endif'"
+	 * @generated
+	 */
+	DocumentVersion documentVersion();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (owningSection-&gt;notEmpty()) then\r\n  owningSection.qualifiedNumber() + \'.\' + number\r\nelse\r\n  number\r\nendif'"
+	 * @generated
+	 */
+	String qualifiedNumber();
 
 } // Section

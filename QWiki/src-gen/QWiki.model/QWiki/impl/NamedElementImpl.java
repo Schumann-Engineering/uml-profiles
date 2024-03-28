@@ -3,16 +3,23 @@
 package QWiki.impl;
 
 import QWiki.Domain;
+import QWiki.Element;
 import QWiki.NamedElement;
+import QWiki.Namespace;
 import QWiki.QWikiPackage;
 
+import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,9 +30,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link QWiki.impl.NamedElementImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link QWiki.impl.NamedElementImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link QWiki.impl.NamedElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link QWiki.impl.NamedElementImpl#getQualifiedName <em>Qualified Name</em>}</li>
  *   <li>{@link QWiki.impl.NamedElementImpl#getAssignedDomain <em>Assigned Domain</em>}</li>
+ *   <li>{@link QWiki.impl.NamedElementImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link QWiki.impl.NamedElementImpl#getOwningPackage <em>Owning Package</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,16 +59,6 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getQualifiedName() <em>Qualified Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQualifiedName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUALIFIED_NAME_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getAssignedDomain() <em>Assigned Domain</em>}' reference.
@@ -119,6 +118,31 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 	 * @generated
 	 */
 	@Override
+	public Element getOwner() {
+		Element owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Element basicGetOwner() {
+		Namespace namespace = basicGetNamespace();			
+		if (namespace != null) {
+			return namespace;
+		}
+		return super.basicGetOwner();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -134,18 +158,6 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.NAMED_ELEMENT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getQualifiedName() {
-		// TODO: implement this method to return the 'Qualified Name' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -216,12 +228,167 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 	 * @generated
 	 */
 	@Override
+	public Namespace getNamespace() {
+		Namespace namespace = basicGetNamespace();
+		return namespace != null && namespace.eIsProxy() ? (Namespace)eResolveProxy((InternalEObject)namespace) : namespace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Namespace basicGetNamespace() {
+		// TODO: implement this method to return the 'Namespace' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNamespace(Namespace newNamespace) {
+		// TODO: implement this method to set the 'Namespace' reference
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QWiki.Package getOwningPackage() {
+		if (eContainerFeatureID() != QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE) return null;
+		return (QWiki.Package)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOwningPackage(QWiki.Package newOwningPackage, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newOwningPackage, QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOwningPackage(QWiki.Package newOwningPackage) {
+		if (newOwningPackage != eInternalContainer() || (eContainerFeatureID() != QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE && newOwningPackage != null)) {
+			if (EcoreUtil.isAncestor(this, newOwningPackage))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newOwningPackage != null)
+				msgs = ((InternalEObject)newOwningPackage).eInverseAdd(this, QWikiPackage.PACKAGE__PACKAGED_ELEMENT, QWiki.Package.class, msgs);
+			msgs = basicSetOwningPackage(newOwningPackage, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE, newOwningPackage, newOwningPackage));
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #qualifiedName() <em>Qualified Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #qualifiedName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate QUALIFIED_NAME__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.NAMED_ELEMENT___QUALIFIED_NAME).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String qualifiedName() {
+		try {
+			return (String)QUALIFIED_NAME__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #allNamespaces() <em>All Namespaces</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #allNamespaces()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate ALL_NAMESPACES__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.NAMED_ELEMENT___ALL_NAMESPACES).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Namespace> allNamespaces() {
+		try {
+			return (EList<Namespace>)ALL_NAMESPACES__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #separator() <em>Separator</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #separator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate SEPARATOR__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.NAMED_ELEMENT___SEPARATOR).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String separator() {
+		try {
+			return (String)SEPARATOR__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				if (assignedDomain != null)
 					msgs = ((InternalEObject)assignedDomain).eInverseRemove(this, QWikiPackage.DOMAIN__DOMAIN_ELEMENT, Domain.class, msgs);
 				return basicSetAssignedDomain((Domain)otherEnd, msgs);
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetOwningPackage((QWiki.Package)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -236,8 +403,24 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 		switch (featureID) {
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				return basicSetAssignedDomain(null, msgs);
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				return basicSetOwningPackage(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				return eInternalContainer().eInverseRemove(this, QWikiPackage.PACKAGE__PACKAGED_ELEMENT, QWiki.Package.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -253,11 +436,14 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 				return basicGetDomain();
 			case QWikiPackage.NAMED_ELEMENT__NAME:
 				return getName();
-			case QWikiPackage.NAMED_ELEMENT__QUALIFIED_NAME:
-				return getQualifiedName();
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				if (resolve) return getAssignedDomain();
 				return basicGetAssignedDomain();
+			case QWikiPackage.NAMED_ELEMENT__NAMESPACE:
+				if (resolve) return getNamespace();
+				return basicGetNamespace();
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				return getOwningPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -275,6 +461,12 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 				return;
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				setAssignedDomain((Domain)newValue);
+				return;
+			case QWikiPackage.NAMED_ELEMENT__NAMESPACE:
+				setNamespace((Namespace)newValue);
+				return;
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				setOwningPackage((QWiki.Package)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -294,6 +486,12 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				setAssignedDomain((Domain)null);
 				return;
+			case QWikiPackage.NAMED_ELEMENT__NAMESPACE:
+				setNamespace((Namespace)null);
+				return;
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				setOwningPackage((QWiki.Package)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -308,14 +506,36 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 		switch (featureID) {
 			case QWikiPackage.NAMED_ELEMENT__DOMAIN:
 				return isSetDomain();
+			case QWikiPackage.NAMED_ELEMENT__OWNER:
+				return isSetOwner();
 			case QWikiPackage.NAMED_ELEMENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case QWikiPackage.NAMED_ELEMENT__QUALIFIED_NAME:
-				return QUALIFIED_NAME_EDEFAULT == null ? getQualifiedName() != null : !QUALIFIED_NAME_EDEFAULT.equals(getQualifiedName());
 			case QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN:
 				return assignedDomain != null;
+			case QWikiPackage.NAMED_ELEMENT__NAMESPACE:
+				return basicGetNamespace() != null;
+			case QWikiPackage.NAMED_ELEMENT__OWNING_PACKAGE:
+				return getOwningPackage() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case QWikiPackage.NAMED_ELEMENT___QUALIFIED_NAME:
+				return qualifiedName();
+			case QWikiPackage.NAMED_ELEMENT___ALL_NAMESPACES:
+				return allNamespaces();
+			case QWikiPackage.NAMED_ELEMENT___SEPARATOR:
+				return separator();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
@@ -341,6 +561,17 @@ public abstract class NamedElementImpl extends TaggedElementImpl implements Name
 	 */
 	public boolean isSetDomain() {
 		return eIsSet(QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetOwner() {
+		return super.isSetOwner()
+			|| eIsSet(QWikiPackage.NAMED_ELEMENT__NAMESPACE);
 	}
 
 } //NamedElementImpl

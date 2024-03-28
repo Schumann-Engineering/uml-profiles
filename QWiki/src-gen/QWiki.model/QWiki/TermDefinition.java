@@ -39,7 +39,7 @@ public interface TermDefinition extends I18nDescriptiveElement {
 	 * @see #setOwningTerm(Term)
 	 * @see QWiki.QWikiPackage#getTermDefinition_OwningTerm()
 	 * @see QWiki.Term#getOwnedTermDefinition
-	 * @model opposite="ownedTermDefinition" transient="false" ordered="false"
+	 * @model opposite="ownedTermDefinition" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */

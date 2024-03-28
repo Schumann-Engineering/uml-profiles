@@ -34,7 +34,7 @@ public interface RelationshipType extends I18nNamedElement {
 	 * @return the value of the '<em>Typed Association</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRelationshipType_TypedAssociation()
 	 * @see QWiki.Association#getEndRelationshipType
-	 * @model opposite="endRelationshipType" ordered="false"
+	 * @model opposite="endRelationshipType" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Association> getTypedAssociation();

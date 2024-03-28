@@ -302,6 +302,29 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Package} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PackageItemProvider packageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Package}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPackageAdapter() {
+		if (packageItemProvider == null) {
+			packageItemProvider = new PackageItemProvider(this);
+		}
+
+		return packageItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link QWiki.Document} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -624,29 +647,6 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Standard} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StandardItemProvider standardItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.Standard}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStandardAdapter() {
-		if (standardItemProvider == null) {
-			standardItemProvider = new StandardItemProvider(this);
-		}
-
-		return standardItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -759,6 +759,7 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 		if (qWikiModelItemProvider != null) qWikiModelItemProvider.dispose();
 		if (i18nKeyedStringItemProvider != null) i18nKeyedStringItemProvider.dispose();
 		if (domainItemProvider != null) domainItemProvider.dispose();
+		if (packageItemProvider != null) packageItemProvider.dispose();
 		if (documentItemProvider != null) documentItemProvider.dispose();
 		if (documentVersionItemProvider != null) documentVersionItemProvider.dispose();
 		if (sectionItemProvider != null) sectionItemProvider.dispose();
@@ -767,7 +768,6 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 		if (superseedingRelationshipItemProvider != null) superseedingRelationshipItemProvider.dispose();
 		if (termItemProvider != null) termItemProvider.dispose();
 		if (termDefinitionItemProvider != null) termDefinitionItemProvider.dispose();
-		if (standardItemProvider != null) standardItemProvider.dispose();
 		if (associationItemProvider != null) associationItemProvider.dispose();
 		if (relationshipTypeItemProvider != null) relationshipTypeItemProvider.dispose();
 		if (basePractiseItemProvider != null) basePractiseItemProvider.dispose();

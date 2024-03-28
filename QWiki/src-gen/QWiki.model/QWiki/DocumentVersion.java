@@ -18,12 +18,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.DocumentVersion#getEdition <em>Edition</em>}</li>
  *   <li>{@link QWiki.DocumentVersion#getOwnedSection <em>Owned Section</em>}</li>
  *   <li>{@link QWiki.DocumentVersion#getSuperseedingRelationship <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.DocumentVersion#getQualifiedNumber <em>Qualified Number</em>}</li>
  *   <li>{@link QWiki.DocumentVersion#getOwningDocument <em>Owning Document</em>}</li>
  * </ul>
  *
  * @see QWiki.QWikiPackage#getDocumentVersion()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface DocumentVersion extends Element {
@@ -128,7 +127,7 @@ public interface DocumentVersion extends Element {
 	 * @return the value of the '<em>Owned Section</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getDocumentVersion_OwnedSection()
 	 * @see QWiki.Section#getOwningDocument
-	 * @model opposite="owningDocument" containment="true" ordered="false"
+	 * @model opposite="owningDocument" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -152,21 +151,6 @@ public interface DocumentVersion extends Element {
 	EList<SuperseedingRelationship> getSuperseedingRelationship();
 
 	/**
-	 * Returns the value of the '<em><b>Qualified Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Qualified Number</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Qualified Number</em>' attribute.
-	 * @see QWiki.QWikiPackage#getDocumentVersion_QualifiedNumber()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
-	 * @generated
-	 */
-	String getQualifiedNumber();
-
-	/**
 	 * Returns the value of the '<em><b>Owning Document</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link QWiki.Document#getOwnedVersion <em>Owned Version</em>}'.
 	 * <p>
@@ -185,7 +169,7 @@ public interface DocumentVersion extends Element {
 	 * @see #setOwningDocument(Document)
 	 * @see QWiki.QWikiPackage#getDocumentVersion_OwningDocument()
 	 * @see QWiki.Document#getOwnedVersion
-	 * @model opposite="ownedVersion" required="true" transient="false" ordered="false"
+	 * @model opposite="ownedVersion" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */

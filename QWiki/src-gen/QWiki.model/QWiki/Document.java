@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getDocument()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface Document extends I18nDescriptiveElement {
@@ -70,7 +70,7 @@ public interface Document extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Owned Version</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getDocument_OwnedVersion()
 	 * @see QWiki.DocumentVersion#getOwningDocument
-	 * @model opposite="owningDocument" containment="true" ordered="false"
+	 * @model opposite="owningDocument" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -133,7 +133,7 @@ public interface Document extends I18nDescriptiveElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Author</em>' reference list.
 	 * @see QWiki.QWikiPackage#getDocument_Author()
-	 * @model required="true" ordered="false"
+	 * @model required="true" transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='authoredDocument'"
 	 * @generated
 	 */

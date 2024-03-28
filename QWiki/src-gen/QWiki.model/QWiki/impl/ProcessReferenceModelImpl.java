@@ -8,6 +8,7 @@ import QWiki.ProcessReferenceModelDomain;
 import QWiki.QWikiPackage;
 import QWiki.SpiceElement;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,7 +16,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -191,6 +194,55 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oidForDomain()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID_FOR_DOMAIN__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String oidForDomain() {
+		try {
+			return (String)OID_FOR_DOMAIN__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -299,6 +351,22 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 				return ownedSpiceElement != null && !ownedSpiceElement.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case QWikiPackage.PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN:
+				return oidForDomain();
+			case QWikiPackage.PROCESS_REFERENCE_MODEL___OID:
+				return oid();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -24,7 +24,7 @@ public interface GenericWorkProduct extends WorkProduct {
 	/**
 	 * Returns the value of the '<em><b>Owned Work Product</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.WorkProduct}.
-	 * It is bidirectional and its opposite is '{@link QWiki.WorkProduct#getOwningWorkingGroup <em>Owning Working Group</em>}'.
+	 * It is bidirectional and its opposite is '{@link QWiki.WorkProduct#getOwningWorkProductGroup <em>Owning Work Product Group</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
 	 * </p>
@@ -39,8 +39,8 @@ public interface GenericWorkProduct extends WorkProduct {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Work Product</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getGenericWorkProduct_OwnedWorkProduct()
-	 * @see QWiki.WorkProduct#getOwningWorkingGroup
-	 * @model opposite="owningWorkingGroup" containment="true" ordered="false"
+	 * @see QWiki.WorkProduct#getOwningWorkProductGroup
+	 * @model opposite="owningWorkProductGroup" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */

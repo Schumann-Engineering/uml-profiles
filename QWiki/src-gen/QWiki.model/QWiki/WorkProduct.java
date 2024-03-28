@@ -13,9 +13,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.WorkProduct#getOwningWorkingGroup <em>Owning Working Group</em>}</li>
- *   <li>{@link QWiki.WorkProduct#getCharacteristic <em>Characteristic</em>}</li>
- *   <li>{@link QWiki.WorkProduct#getContent <em>Content</em>}</li>
+ *   <li>{@link QWiki.WorkProduct#getOwningWorkProductGroup <em>Owning Work Product Group</em>}</li>
+ *   <li>{@link QWiki.WorkProduct#getOwnedCharacteristic <em>Owned Characteristic</em>}</li>
+ *   <li>{@link QWiki.WorkProduct#getOwnedContent <em>Owned Content</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatingOutcome <em>Facilitating Outcome</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatedProcess <em>Facilitated Process</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}</li>
@@ -24,12 +24,12 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getWorkProduct()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface WorkProduct extends SpiceElement {
 	/**
-	 * Returns the value of the '<em><b>Owning Working Group</b></em>' container reference.
+	 * Returns the value of the '<em><b>Owning Work Product Group</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link QWiki.GenericWorkProduct#getOwnedWorkProduct <em>Owned Work Product</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
@@ -39,61 +39,78 @@ public interface WorkProduct extends SpiceElement {
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owning Working Group</em>' container reference isn't clear,
+	 * If the meaning of the '<em>Owning Work Product Group</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owning Working Group</em>' container reference.
-	 * @see #setOwningWorkingGroup(GenericWorkProduct)
-	 * @see QWiki.QWikiPackage#getWorkProduct_OwningWorkingGroup()
+	 * @return the value of the '<em>Owning Work Product Group</em>' container reference.
+	 * @see #setOwningWorkProductGroup(GenericWorkProduct)
+	 * @see QWiki.QWikiPackage#getWorkProduct_OwningWorkProductGroup()
 	 * @see QWiki.GenericWorkProduct#getOwnedWorkProduct
-	 * @model opposite="ownedWorkProduct" transient="false" ordered="false"
+	 * @model opposite="ownedWorkProduct" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
-	GenericWorkProduct getOwningWorkingGroup();
+	GenericWorkProduct getOwningWorkProductGroup();
 
 	/**
-	 * Sets the value of the '{@link QWiki.WorkProduct#getOwningWorkingGroup <em>Owning Working Group</em>}' container reference.
+	 * Sets the value of the '{@link QWiki.WorkProduct#getOwningWorkProductGroup <em>Owning Work Product Group</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Owning Working Group</em>' container reference.
-	 * @see #getOwningWorkingGroup()
+	 * @param value the new value of the '<em>Owning Work Product Group</em>' container reference.
+	 * @see #getOwningWorkProductGroup()
 	 * @generated
 	 */
-	void setOwningWorkingGroup(GenericWorkProduct value);
+	void setOwningWorkProductGroup(GenericWorkProduct value);
 
 	/**
-	 * Returns the value of the '<em><b>Characteristic</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Characteristic</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.I18nString}.
+	 * <p>
+	 * This feature subsets the following features:
+	 * </p>
+	 * <ul>
+	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Characteristic</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Characteristic</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Characteristic</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getWorkProduct_Characteristic()
-	 * @model containment="true" ordered="false"
+	 * @return the value of the '<em>Owned Characteristic</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getWorkProduct_OwnedCharacteristic()
+	 * @model containment="true" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
+	 *        annotation="subsets"
 	 * @generated
 	 */
-	EList<I18nString> getCharacteristic();
+	EList<I18nString> getOwnedCharacteristic();
 
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Content</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.I18nString}.
+	 * <p>
+	 * This feature subsets the following features:
+	 * </p>
+	 * <ul>
+	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Content</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getWorkProduct_Content()
-	 * @model containment="true" ordered="false"
+	 * @return the value of the '<em>Owned Content</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getWorkProduct_OwnedContent()
+	 * @model containment="true" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
+	 *        annotation="subsets"
 	 * @generated
 	 */
-	EList<I18nString> getContent();
+	EList<I18nString> getOwnedContent();
 
 	/**
 	 * Returns the value of the '<em><b>Facilitating Outcome</b></em>' reference list.
@@ -108,7 +125,8 @@ public interface WorkProduct extends SpiceElement {
 	 * @return the value of the '<em>Facilitating Outcome</em>' reference list.
 	 * @see QWiki.QWikiPackage#getWorkProduct_FacilitatingOutcome()
 	 * @see QWiki.Outcome#getResultingWorkproduct
-	 * @model opposite="resultingWorkproduct" ordered="false"
+	 * @model opposite="resultingWorkproduct" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Outcome> getFacilitatingOutcome();
@@ -126,7 +144,8 @@ public interface WorkProduct extends SpiceElement {
 	 * @return the value of the '<em>Facilitated Process</em>' reference list.
 	 * @see QWiki.QWikiPackage#getWorkProduct_FacilitatedProcess()
 	 * @see QWiki.Process#getFacilitatingWorkProduct
-	 * @model opposite="facilitatingWorkProduct" ordered="false"
+	 * @model opposite="facilitatingWorkProduct" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<QWiki.Process> getFacilitatedProcess();
@@ -144,7 +163,8 @@ public interface WorkProduct extends SpiceElement {
 	 * @see #setFacilitatingProcess(QWiki.Process)
 	 * @see QWiki.QWikiPackage#getWorkProduct_FacilitatingProcess()
 	 * @see QWiki.Process#getFacilitatedWorkProduct
-	 * @model opposite="facilitatedWorkProduct" required="true" ordered="false"
+	 * @model opposite="facilitatedWorkProduct" transient="true" ordered="false"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	QWiki.Process getFacilitatingProcess();
@@ -201,7 +221,8 @@ public interface WorkProduct extends SpiceElement {
 	 * @return the value of the '<em>Facilitated Outcome</em>' reference list.
 	 * @see QWiki.QWikiPackage#getWorkProduct_FacilitatedOutcome()
 	 * @see QWiki.Outcome#getRequiredWorkproduct
-	 * @model opposite="requiredWorkproduct" ordered="false"
+	 * @model opposite="requiredWorkproduct" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Outcome> getFacilitatedOutcome();

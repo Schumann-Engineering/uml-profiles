@@ -6,8 +6,6 @@ import QWiki.Author;
 import QWiki.AuthorType;
 import QWiki.Document;
 import QWiki.QWikiPackage;
-import QWiki.Standard;
-
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,6 +26,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link QWiki.impl.AuthorImpl#getAuthorType <em>Author Type</em>}</li>
+ *   <li>{@link QWiki.impl.AuthorImpl#getAbbreviation <em>Abbreviation</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +51,26 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 	 * @ordered
 	 */
 	protected AuthorType authorType = AUTHOR_TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbbreviation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ABBREVIATION_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAbbreviation() <em>Abbreviation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAbbreviation()
+	 * @generated
+	 * @ordered
+	 */
+	protected String abbreviation = ABBREVIATION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,6 +115,29 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getAbbreviation() {
+		return abbreviation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAbbreviation(String newAbbreviation) {
+		String oldAbbreviation = abbreviation;
+		abbreviation = newAbbreviation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.AUTHOR__ABBREVIATION, oldAbbreviation, abbreviation));
+	}
+
+	/**
 	 * The cached invocation delegate for the '{@link #authoredDocument() <em>Authored Document</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,9 +178,34 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EList<Standard> authoredStandard() {
+	public EList<Document> authoredStandard() {
 		try {
-			return (EList<Standard>)AUTHORED_STANDARD__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (EList<Document>)AUTHORED_STANDARD__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -156,6 +222,8 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 		switch (featureID) {
 			case QWikiPackage.AUTHOR__AUTHOR_TYPE:
 				return getAuthorType();
+			case QWikiPackage.AUTHOR__ABBREVIATION:
+				return getAbbreviation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -170,6 +238,9 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 		switch (featureID) {
 			case QWikiPackage.AUTHOR__AUTHOR_TYPE:
 				setAuthorType((AuthorType)newValue);
+				return;
+			case QWikiPackage.AUTHOR__ABBREVIATION:
+				setAbbreviation((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +257,9 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 			case QWikiPackage.AUTHOR__AUTHOR_TYPE:
 				setAuthorType(AUTHOR_TYPE_EDEFAULT);
 				return;
+			case QWikiPackage.AUTHOR__ABBREVIATION:
+				setAbbreviation(ABBREVIATION_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -200,6 +274,8 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 		switch (featureID) {
 			case QWikiPackage.AUTHOR__AUTHOR_TYPE:
 				return authorType != AUTHOR_TYPE_EDEFAULT;
+			case QWikiPackage.AUTHOR__ABBREVIATION:
+				return ABBREVIATION_EDEFAULT == null ? abbreviation != null : !ABBREVIATION_EDEFAULT.equals(abbreviation);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,6 +292,8 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 				return authoredDocument();
 			case QWikiPackage.AUTHOR___AUTHORED_STANDARD:
 				return authoredStandard();
+			case QWikiPackage.AUTHOR___OID:
+				return oid();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -232,6 +310,8 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (authorType: ");
 		result.append(authorType);
+		result.append(", abbreviation: ");
+		result.append(abbreviation);
 		result.append(')');
 		return result.toString();
 	}

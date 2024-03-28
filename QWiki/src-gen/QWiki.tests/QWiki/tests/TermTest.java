@@ -11,6 +11,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Term</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.Term#oid() <em>Oid</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class TermTest extends I18nNamedElementTest {
@@ -65,6 +71,19 @@ public class TermTest extends I18nNamedElementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Term#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Term#oid()
+	 * @generated
+	 */
+	public void testOid() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //TermTest

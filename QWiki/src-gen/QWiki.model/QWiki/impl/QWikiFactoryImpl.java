@@ -27,7 +27,6 @@ import QWiki.QWikiPackage;
 import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
-import QWiki.Standard;
 import QWiki.SuperseedingRelationship;
 import QWiki.SuperseedingType;
 import QWiki.Term;
@@ -96,6 +95,7 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 			case QWikiPackage.QWIKI_MODEL: return createQWikiModel();
 			case QWikiPackage.I1_8N_KEYED_STRING: return createI18nKeyedString();
 			case QWikiPackage.DOMAIN: return createDomain();
+			case QWikiPackage.PACKAGE: return createPackage();
 			case QWikiPackage.DOCUMENT: return createDocument();
 			case QWikiPackage.DOCUMENT_VERSION: return createDocumentVersion();
 			case QWikiPackage.SECTION: return createSection();
@@ -104,7 +104,6 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 			case QWikiPackage.SUPERSEEDING_RELATIONSHIP: return createSuperseedingRelationship();
 			case QWikiPackage.TERM: return createTerm();
 			case QWikiPackage.TERM_DEFINITION: return createTermDefinition();
-			case QWikiPackage.STANDARD: return createStandard();
 			case QWikiPackage.ASSOCIATION: return createAssociation();
 			case QWikiPackage.RELATIONSHIP_TYPE: return createRelationshipType();
 			case QWikiPackage.BASE_PRACTISE: return createBasePractise();
@@ -284,6 +283,17 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
+	public QWiki.Package createPackage() {
+		PackageImpl package_ = new PackageImpl();
+		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Document createDocument() {
 		DocumentImpl document = new DocumentImpl();
 		return document;
@@ -364,17 +374,6 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	public TermDefinition createTermDefinition() {
 		TermDefinitionImpl termDefinition = new TermDefinitionImpl();
 		return termDefinition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Standard createStandard() {
-		StandardImpl standard = new StandardImpl();
-		return standard;
 	}
 
 	/**

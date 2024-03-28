@@ -5,13 +5,13 @@
 
 
 [template public main2html(
-	this : Standard
+	this : Document
 )]
 	
 	[comment @main /]
 	[file (name.concat('.html'), false, 'UTF-8')]
-SDO:
-		[for (this.sdo())]
+Author:
+		[for (author)]
 - [name /], [authorType /]
 		[/for]
 	[/file]

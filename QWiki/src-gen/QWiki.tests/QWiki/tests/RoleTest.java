@@ -11,6 +11,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Role</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.Role#oid() <em>Oid</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class RoleTest extends I18nDescriptiveElementTest {
@@ -65,6 +71,19 @@ public class RoleTest extends I18nDescriptiveElementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Role#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Role#oid()
+	 * @generated
+	 */
+	public void testOid() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //RoleTest

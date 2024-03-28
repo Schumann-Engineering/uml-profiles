@@ -18,7 +18,6 @@ import QWiki.QWikiPackage;
 import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
-import QWiki.Standard;
 import QWiki.SuperseedingRelationship;
 import QWiki.Term;
 import QWiki.TermDefinition;
@@ -99,6 +98,9 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.DOMAIN:
 				notifyDomainChanged(notification, eClass);
 				break;
+			case QWikiPackage.PACKAGE:
+				notifyPackageChanged(notification, eClass);
+				break;
 			case QWikiPackage.DOCUMENT:
 				notifyDocumentChanged(notification, eClass);
 				break;
@@ -122,9 +124,6 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 				break;
 			case QWikiPackage.TERM_DEFINITION:
 				notifyTermDefinitionChanged(notification, eClass);
-				break;
-			case QWikiPackage.STANDARD:
-				notifyStandardChanged(notification, eClass);
 				break;
 			case QWikiPackage.ASSOCIATION:
 				notifyAssociationChanged(notification, eClass);
@@ -179,8 +178,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.AUTHOR__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.AUTHOR__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.AUTHOR__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.AUTHOR__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.AUTHOR__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -197,6 +205,9 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 		switch (notification.getFeatureID(Comment.class)) {
 			case QWikiPackage.COMMENT__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.COMMENT__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.COMMENT__OWNING_ELEMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -217,6 +228,9 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.ASSOCIATION__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.ASSOCIATION__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 		}
 	}
 
@@ -233,8 +247,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.RELATIONSHIP_TYPE__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.RELATIONSHIP_TYPE__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.RELATIONSHIP_TYPE__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.RELATIONSHIP_TYPE__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.RELATIONSHIP_TYPE__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -250,6 +273,12 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyQWikiModelChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(QWikiModel.class)) {
 			case QWikiPackage.QWIKI_MODEL__OWNED_COMMENT:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.QWIKI_MODEL__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 		}
@@ -268,8 +297,59 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.DOMAIN__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.DOMAIN__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.DOMAIN__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.DOMAIN__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.DOMAIN__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+		}
+	}
+
+	/**
+	 * Calls <code>notifyChanged</code> for each affected derived union.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param notification a description of the change.
+	 * @param eClass the Ecore class of the notifier.
+	 * @generated
+	 */
+	protected void notifyPackageChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(QWiki.Package.class)) {
+			case QWikiPackage.PACKAGE__OWNED_COMMENT:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.PACKAGE__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PACKAGE__ASSIGNED_DOMAIN:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.PACKAGE__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PACKAGE__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PACKAGE__OWNED_MEMBER:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.PACKAGE__NESTING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PACKAGE__NESTED_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.PACKAGE__PACKAGED_ELEMENT:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 		}
 	}
@@ -287,8 +367,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.DOCUMENT__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.DOCUMENT__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.DOCUMENT__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.DOCUMENT__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.DOCUMENT__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.DOCUMENT__OWNED_VERSION:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
@@ -308,6 +397,9 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 		switch (notification.getFeatureID(DocumentVersion.class)) {
 			case QWikiPackage.DOCUMENT_VERSION__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.DOCUMENT_VERSION__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.DOCUMENT_VERSION__OWNED_SECTION:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
@@ -331,8 +423,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.SECTION__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.SECTION__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.SECTION__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.SECTION__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.SECTION__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.SECTION__OWNED_SECTION:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
@@ -362,8 +463,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.ROLE__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.ROLE__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.ROLE__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.ROLE__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.ROLE__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -381,8 +491,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.PROCESS_REFERENCE_MODEL__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.PROCESS_REFERENCE_MODEL__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.PROCESS_REFERENCE_MODEL__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.PROCESS_REFERENCE_MODEL__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PROCESS_REFERENCE_MODEL__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
@@ -402,6 +521,9 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 		switch (notification.getFeatureID(SuperseedingRelationship.class)) {
 			case QWikiPackage.SUPERSEEDING_RELATIONSHIP__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.SUPERSEEDING_RELATIONSHIP__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.SUPERSEEDING_RELATIONSHIP__SOURCE:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.RELATIONSHIP__RELATED_ELEMENT);
@@ -425,8 +547,23 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.TERM__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.TERM__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.TERM__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.TERM__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.TERM__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.TERM__ACRONYM:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.TERM__SYNONYM:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case QWikiPackage.TERM__OWNED_TERM_DEFINITION:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
@@ -451,33 +588,20 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.TERM_DEFINITION__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.TERM_DEFINITION__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.TERM_DEFINITION__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
 				break;
-			case QWikiPackage.TERM_DEFINITION__OWNING_TERM:
+			case QWikiPackage.TERM_DEFINITION__NAMESPACE:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
-		}
-	}
-
-	/**
-	 * Calls <code>notifyChanged</code> for each affected derived union.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
-	 * @generated
-	 */
-	protected void notifyStandardChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(Standard.class)) {
-			case QWikiPackage.STANDARD__OWNED_COMMENT:
-				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+			case QWikiPackage.TERM_DEFINITION__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
-			case QWikiPackage.STANDARD__ASSIGNED_DOMAIN:
-				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
-				break;
-			case QWikiPackage.STANDARD__OWNED_VERSION:
-				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+			case QWikiPackage.TERM_DEFINITION__OWNING_TERM:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -495,8 +619,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.BASE_PRACTISE__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.BASE_PRACTISE__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.BASE_PRACTISE__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.BASE_PRACTISE__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.BASE_PRACTISE__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.BASE_PRACTISE__OWNING_PROCESS_REFERENCE_MODEL:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -529,8 +662,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.PROCESS__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.PROCESS__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.PROCESS__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.PROCESS__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PROCESS__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.PROCESS__OWNING_PROCESS_REFERENCE_MODEL:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -569,8 +711,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.PROCESS_GROUP__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.PROCESS_GROUP__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.PROCESS_GROUP__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.PROCESS_GROUP__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.PROCESS_GROUP__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.PROCESS_GROUP__OWNING_PROCESS_REFERENCE_MODEL:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -584,7 +735,7 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.PROCESS_GROUP__PARTICIPATING_ROLE:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case QWikiPackage.PROCESS_GROUP__ONWED_PROCESS:
+			case QWikiPackage.PROCESS_GROUP__OWNED_PROCESS:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 		}
@@ -603,8 +754,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.OUTCOME__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.OUTCOME__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.OUTCOME__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.OUTCOME__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.OUTCOME__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.OUTCOME__OWNING_PROCESS:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -625,8 +785,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.WORK_PRODUCT__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.WORK_PRODUCT__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.WORK_PRODUCT__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.WORK_PRODUCT__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.WORK_PRODUCT__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.WORK_PRODUCT__OWNING_PROCESS_REFERENCE_MODEL:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -640,8 +809,14 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.WORK_PRODUCT__PARTICIPATING_ROLE:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case QWikiPackage.WORK_PRODUCT__OWNING_WORKING_GROUP:
+			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 		}
 	}
@@ -659,8 +834,17 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
+			case QWikiPackage.GENERIC_WORK_PRODUCT__MODEL:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
 			case QWikiPackage.GENERIC_WORK_PRODUCT__ASSIGNED_DOMAIN:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.NAMED_ELEMENT__DOMAIN);
+				break;
+			case QWikiPackage.GENERIC_WORK_PRODUCT__NAMESPACE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNING_PACKAGE:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
 				break;
 			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNING_PROCESS_REFERENCE_MODEL:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
@@ -674,8 +858,14 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.GENERIC_WORK_PRODUCT__PARTICIPATING_ROLE:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNING_WORKING_GROUP:
+			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CHARACTERISTIC:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CONTENT:
+				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				notifyChanged(notification, eClass, QWikiPackage.Literals.ELEMENT__OWNED_ELEMENT);

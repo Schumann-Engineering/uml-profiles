@@ -35,7 +35,7 @@ public interface Association extends Relationship {
 	 * @return the value of the '<em>End Relationship Type</em>' reference list.
 	 * @see QWiki.QWikiPackage#getAssociation_EndRelationshipType()
 	 * @see QWiki.RelationshipType#getTypedAssociation
-	 * @model opposite="typedAssociation" lower="2" upper="2" ordered="false"
+	 * @model opposite="typedAssociation" lower="2" upper="2" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RelationshipType> getEndRelationshipType();
@@ -51,7 +51,7 @@ public interface Association extends Relationship {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End</em>' reference list.
 	 * @see QWiki.QWikiPackage#getAssociation_End()
-	 * @model lower="2" upper="2" ordered="false"
+	 * @model lower="2" upper="2" transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='association'"
 	 * @generated
 	 */

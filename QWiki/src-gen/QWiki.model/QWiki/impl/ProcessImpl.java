@@ -9,6 +9,7 @@ import QWiki.ProcessGroup;
 import QWiki.QWikiPackage;
 import QWiki.WorkProduct;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -16,7 +17,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -69,14 +72,14 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	protected EList<WorkProduct> facilitatingWorkProduct;
 
 	/**
-	 * The cached value of the '{@link #getFacilitatedWorkProduct() <em>Facilitated Work Product</em>}' reference.
+	 * The cached value of the '{@link #getFacilitatedWorkProduct() <em>Facilitated Work Product</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getFacilitatedWorkProduct()
 	 * @generated
 	 * @ordered
 	 */
-	protected WorkProduct facilitatedWorkProduct;
+	protected EList<WorkProduct> facilitatedWorkProduct;
 
 	/**
 	 * The cached value of the '{@link #getOwnedBasePractise() <em>Owned Base Practise</em>}' containment reference list.
@@ -187,7 +190,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningProcessGroup != null)
-				msgs = ((InternalEObject)newOwningProcessGroup).eInverseAdd(this, QWikiPackage.PROCESS_GROUP__ONWED_PROCESS, ProcessGroup.class, msgs);
+				msgs = ((InternalEObject)newOwningProcessGroup).eInverseAdd(this, QWikiPackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
 			msgs = basicSetOwningProcessGroup(newOwningProcessGroup, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -227,60 +230,11 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	 * @generated
 	 */
 	@Override
-	public WorkProduct getFacilitatedWorkProduct() {
-		if (facilitatedWorkProduct != null && facilitatedWorkProduct.eIsProxy()) {
-			InternalEObject oldFacilitatedWorkProduct = (InternalEObject)facilitatedWorkProduct;
-			facilitatedWorkProduct = (WorkProduct)eResolveProxy(oldFacilitatedWorkProduct);
-			if (facilitatedWorkProduct != oldFacilitatedWorkProduct) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT, oldFacilitatedWorkProduct, facilitatedWorkProduct));
-			}
+	public EList<WorkProduct> getFacilitatedWorkProduct() {
+		if (facilitatedWorkProduct == null) {
+			facilitatedWorkProduct = new EObjectWithInverseResolvingEList<WorkProduct>(WorkProduct.class, this, QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT, QWikiPackage.WORK_PRODUCT__FACILITATING_PROCESS);
 		}
 		return facilitatedWorkProduct;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkProduct basicGetFacilitatedWorkProduct() {
-		return facilitatedWorkProduct;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetFacilitatedWorkProduct(WorkProduct newFacilitatedWorkProduct, NotificationChain msgs) {
-		WorkProduct oldFacilitatedWorkProduct = facilitatedWorkProduct;
-		facilitatedWorkProduct = newFacilitatedWorkProduct;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT, oldFacilitatedWorkProduct, newFacilitatedWorkProduct);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setFacilitatedWorkProduct(WorkProduct newFacilitatedWorkProduct) {
-		if (newFacilitatedWorkProduct != facilitatedWorkProduct) {
-			NotificationChain msgs = null;
-			if (facilitatedWorkProduct != null)
-				msgs = ((InternalEObject)facilitatedWorkProduct).eInverseRemove(this, QWikiPackage.WORK_PRODUCT__FACILITATING_PROCESS, WorkProduct.class, msgs);
-			if (newFacilitatedWorkProduct != null)
-				msgs = ((InternalEObject)newFacilitatedWorkProduct).eInverseAdd(this, QWikiPackage.WORK_PRODUCT__FACILITATING_PROCESS, WorkProduct.class, msgs);
-			msgs = basicSetFacilitatedWorkProduct(newFacilitatedWorkProduct, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT, newFacilitatedWorkProduct, newFacilitatedWorkProduct));
 	}
 
 	/**
@@ -294,6 +248,31 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			ownedBasePractise = new EObjectContainmentWithInverseEList<BasePractise>(BasePractise.class, this, QWikiPackage.PROCESS__OWNED_BASE_PRACTISE, QWikiPackage.BASE_PRACTISE__OWNING_PROCESS);
 		}
 		return ownedBasePractise;
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -314,9 +293,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			case QWikiPackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatingWorkProduct()).basicAdd(otherEnd, msgs);
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				if (facilitatedWorkProduct != null)
-					msgs = ((InternalEObject)facilitatedWorkProduct).eInverseRemove(this, QWikiPackage.WORK_PRODUCT__FACILITATING_PROCESS, WorkProduct.class, msgs);
-				return basicSetFacilitatedWorkProduct((WorkProduct)otherEnd, msgs);
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatedWorkProduct()).basicAdd(otherEnd, msgs);
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedBasePractise()).basicAdd(otherEnd, msgs);
 		}
@@ -338,7 +315,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			case QWikiPackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return ((InternalEList<?>)getFacilitatingWorkProduct()).basicRemove(otherEnd, msgs);
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				return basicSetFacilitatedWorkProduct(null, msgs);
+				return ((InternalEList<?>)getFacilitatedWorkProduct()).basicRemove(otherEnd, msgs);
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ((InternalEList<?>)getOwnedBasePractise()).basicRemove(otherEnd, msgs);
 		}
@@ -354,7 +331,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case QWikiPackage.PROCESS__OWNING_PROCESS_GROUP:
-				return eInternalContainer().eInverseRemove(this, QWikiPackage.PROCESS_GROUP__ONWED_PROCESS, ProcessGroup.class, msgs);
+				return eInternalContainer().eInverseRemove(this, QWikiPackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -374,8 +351,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			case QWikiPackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return getFacilitatingWorkProduct();
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				if (resolve) return getFacilitatedWorkProduct();
-				return basicGetFacilitatedWorkProduct();
+				return getFacilitatedWorkProduct();
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				return getOwnedBasePractise();
 		}
@@ -403,7 +379,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 				getFacilitatingWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				setFacilitatedWorkProduct((WorkProduct)newValue);
+				getFacilitatedWorkProduct().clear();
+				getFacilitatedWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				getOwnedBasePractise().clear();
@@ -431,7 +408,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 				getFacilitatingWorkProduct().clear();
 				return;
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				setFacilitatedWorkProduct((WorkProduct)null);
+				getFacilitatedWorkProduct().clear();
 				return;
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				getOwnedBasePractise().clear();
@@ -459,11 +436,25 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 			case QWikiPackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return facilitatingWorkProduct != null && !facilitatingWorkProduct.isEmpty();
 			case QWikiPackage.PROCESS__FACILITATED_WORK_PRODUCT:
-				return facilitatedWorkProduct != null;
+				return facilitatedWorkProduct != null && !facilitatedWorkProduct.isEmpty();
 			case QWikiPackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ownedBasePractise != null && !ownedBasePractise.isEmpty();
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case QWikiPackage.PROCESS___OID:
+				return oid();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

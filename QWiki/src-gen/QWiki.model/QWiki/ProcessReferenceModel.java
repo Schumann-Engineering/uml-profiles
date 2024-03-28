@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getProcessReferenceModel()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface ProcessReferenceModel extends I18nDescriptiveElement {
@@ -98,10 +98,19 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Owned Spice Element</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getProcessReferenceModel_OwnedSpiceElement()
 	 * @see QWiki.SpiceElement#getOwningProcessReferenceModel
-	 * @model opposite="owningProcessReferenceModel" containment="true" ordered="false"
+	 * @model opposite="owningProcessReferenceModel" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
 	EList<SpiceElement> getOwnedSpiceElement();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif'"
+	 * @generated
+	 */
+	String oidForDomain();
 
 } // ProcessReferenceModel

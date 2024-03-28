@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link QWiki.Element#getOwnedElement <em>Owned Element</em>}</li>
  *   <li>{@link QWiki.Element#getOwner <em>Owner</em>}</li>
  *   <li>{@link QWiki.Element#getUuid <em>Uuid</em>}</li>
- *   <li>{@link QWiki.Element#getOid <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Element#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @see QWiki.QWikiPackage#getElement()
@@ -54,7 +54,7 @@ public interface Element extends EObject {
 	 * @return the value of the '<em>Owned Comment</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getElement_OwnedComment()
 	 * @see QWiki.Comment#getOwningElement
-	 * @model opposite="owningElement" containment="true" ordered="false"
+	 * @model opposite="owningElement" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -153,19 +153,39 @@ public interface Element extends EObject {
 	boolean isSetUuid();
 
 	/**
-	 * Returns the value of the '<em><b>Oid</b></em>' attribute.
+	 * Returns the value of the '<em><b>Model</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link QWiki.QWikiModel#getOwnedModelElement <em>Owned Model Element</em>}'.
+	 * <p>
+	 * This feature subsets the following features:
+	 * </p>
+	 * <ul>
+	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Oid</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Model</em>' container reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Oid</em>' attribute.
-	 * @see QWiki.QWikiPackage#getElement_Oid()
-	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @return the value of the '<em>Model</em>' container reference.
+	 * @see #setModel(QWikiModel)
+	 * @see QWiki.QWikiPackage#getElement_Model()
+	 * @see QWiki.QWikiModel#getOwnedModelElement
+	 * @model opposite="ownedModelElement" transient="false" ordered="false"
+	 *        annotation="subsets"
 	 * @generated
 	 */
-	String getOid();
+	QWikiModel getModel();
+
+	/**
+	 * Sets the value of the '{@link QWiki.Element#getModel <em>Model</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model</em>' container reference.
+	 * @see #getModel()
+	 * @generated
+	 */
+	void setModel(QWikiModel value);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,9 +215,18 @@ public interface Element extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (owner = null) then\r\n\tnull\r\nelse if (owner.oclIsKindOf(QWikiModel)) then\r\n  owner.oclAsType(QWikiModel)\r\nelse\r\n  owner.model()\r\nendif\r\nendif\r\n  '"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (model-&gt;notEmpty()) then\r\n  model\r\nelse if (owner-&gt;notEmpty()) then\r\n  owner.model()\r\nelse\r\n  null\r\nendif\r\nendif'"
 	 * @generated
 	 */
 	QWikiModel model();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='uuid'"
+	 * @generated
+	 */
+	String oid();
 
 } // Element

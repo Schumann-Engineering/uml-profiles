@@ -15,7 +15,14 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link QWiki.Section#getSuperseedingRelationship() <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.Section#getQualifiedNumber() <em>Qualified Number</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.Section#documentVersion() <em>Document Version</em>}</li>
+ *   <li>{@link QWiki.Section#qualifiedNumber() <em>Qualified Number</em>}</li>
+ *   <li>{@link QWiki.Section#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -88,14 +95,40 @@ public class SectionTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Section#getQualifiedNumber() <em>Qualified Number</em>}' feature getter.
+	 * Tests the '{@link QWiki.Section#documentVersion() <em>Document Version</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Section#getQualifiedNumber()
+	 * @see QWiki.Section#documentVersion()
 	 * @generated
 	 */
-	public void testGetQualifiedNumber() {
-		// TODO: implement this feature getter test method
+	public void testDocumentVersion() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Section#qualifiedNumber() <em>Qualified Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Section#qualifiedNumber()
+	 * @generated
+	 */
+	public void testQualifiedNumber() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Section#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Section#oid()
+	 * @generated
+	 */
+	public void testOid() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

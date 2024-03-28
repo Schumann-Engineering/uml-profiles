@@ -46,9 +46,9 @@ public class NamedElementItemProvider extends TaggedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addQualifiedNamePropertyDescriptor(object);
 			addAssignedDomainPropertyDescriptor(object);
 			addDomainPropertyDescriptor(object);
+			addNamespacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,28 +68,6 @@ public class NamedElementItemProvider extends TaggedElementItemProvider {
 				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
 				 QWikiPackage.Literals.NAMED_ELEMENT__NAME,
 				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Qualified Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addQualifiedNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NamedElement_qualifiedName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_qualifiedName_feature", "_UI_NamedElement_type"),
-				 QWikiPackage.Literals.NAMED_ELEMENT__QUALIFIED_NAME,
-				 false,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
@@ -142,6 +120,28 @@ public class NamedElementItemProvider extends TaggedElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Namespace feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamespacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_namespace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_namespace_feature", "_UI_NamedElement_type"),
+				 QWikiPackage.Literals.NAMED_ELEMENT__NAMESPACE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -169,7 +169,6 @@ public class NamedElementItemProvider extends TaggedElementItemProvider {
 
 		switch (notification.getFeatureID(NamedElement.class)) {
 			case QWikiPackage.NAMED_ELEMENT__NAME:
-			case QWikiPackage.NAMED_ELEMENT__QUALIFIED_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

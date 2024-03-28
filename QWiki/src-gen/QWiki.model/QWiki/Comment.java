@@ -32,7 +32,7 @@ public interface Comment extends Element {
 	 * @return the value of the '<em>Body</em>' containment reference.
 	 * @see #setBody(I18nString)
 	 * @see QWiki.QWikiPackage#getComment_Body()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getBody();
@@ -66,7 +66,7 @@ public interface Comment extends Element {
 	 * @see #setOwningElement(Element)
 	 * @see QWiki.QWikiPackage#getComment_OwningElement()
 	 * @see QWiki.Element#getOwnedComment
-	 * @model opposite="ownedComment" transient="false" ordered="false"
+	 * @model opposite="ownedComment" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */

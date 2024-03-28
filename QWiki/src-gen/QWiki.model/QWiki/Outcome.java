@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getOutcome()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface Outcome extends I18nNamedElement {
@@ -37,7 +37,7 @@ public interface Outcome extends I18nNamedElement {
 	 * @return the value of the '<em>Facilitating Base Practise</em>' reference list.
 	 * @see QWiki.QWikiPackage#getOutcome_FacilitatingBasePractise()
 	 * @see QWiki.BasePractise#getFacilitatedOutcome
-	 * @model opposite="facilitatedOutcome" required="true" ordered="false"
+	 * @model opposite="facilitatedOutcome" required="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<BasePractise> getFacilitatingBasePractise();
@@ -55,7 +55,7 @@ public interface Outcome extends I18nNamedElement {
 	 * @return the value of the '<em>Required Workproduct</em>' reference list.
 	 * @see QWiki.QWikiPackage#getOutcome_RequiredWorkproduct()
 	 * @see QWiki.WorkProduct#getFacilitatedOutcome
-	 * @model opposite="facilitatedOutcome" ordered="false"
+	 * @model opposite="facilitatedOutcome" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<WorkProduct> getRequiredWorkproduct();
@@ -73,7 +73,7 @@ public interface Outcome extends I18nNamedElement {
 	 * @return the value of the '<em>Resulting Workproduct</em>' reference list.
 	 * @see QWiki.QWikiPackage#getOutcome_ResultingWorkproduct()
 	 * @see QWiki.WorkProduct#getFacilitatingOutcome
-	 * @model opposite="facilitatingOutcome" ordered="false"
+	 * @model opposite="facilitatingOutcome" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<WorkProduct> getResultingWorkproduct();
@@ -97,7 +97,7 @@ public interface Outcome extends I18nNamedElement {
 	 * @see #setOwningProcess(QWiki.Process)
 	 * @see QWiki.QWikiPackage#getOutcome_OwningProcess()
 	 * @see QWiki.Process#getOwnedOutcome
-	 * @model opposite="ownedOutcome" required="true" transient="false" ordered="false"
+	 * @model opposite="ownedOutcome" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */

@@ -38,6 +38,7 @@ public class QWikiTests extends TestSuite {
 		suite.addTestSuite(QWikiModelTest.class);
 		suite.addTestSuite(I18nKeyedStringTest.class);
 		suite.addTestSuite(DomainTest.class);
+		suite.addTestSuite(PackageTest.class);
 		suite.addTestSuite(DocumentTest.class);
 		suite.addTestSuite(DocumentVersionTest.class);
 		suite.addTestSuite(SectionTest.class);
@@ -46,7 +47,6 @@ public class QWikiTests extends TestSuite {
 		suite.addTestSuite(SuperseedingRelationshipTest.class);
 		suite.addTestSuite(TermTest.class);
 		suite.addTestSuite(TermDefinitionTest.class);
-		suite.addTestSuite(StandardTest.class);
 		suite.addTestSuite(AssociationTest.class);
 		suite.addTestSuite(RelationshipTypeTest.class);
 		suite.addTestSuite(BasePractiseTest.class);

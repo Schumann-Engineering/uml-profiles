@@ -11,7 +11,15 @@ import QWiki.NamedElement;
  * <p>
  * The following features are tested:
  * <ul>
- *   <li>{@link QWiki.NamedElement#getQualifiedName() <em>Qualified Name</em>}</li>
+ *   <li>{@link QWiki.NamedElement#getNamespace() <em>Namespace</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.NamedElement#qualifiedName() <em>Qualified Name</em>}</li>
+ *   <li>{@link QWiki.NamedElement#allNamespaces() <em>All Namespaces</em>}</li>
+ *   <li>{@link QWiki.NamedElement#separator() <em>Separator</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -40,14 +48,66 @@ public abstract class NamedElementTest extends TaggedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.NamedElement#getQualifiedName() <em>Qualified Name</em>}' feature getter.
+	 * Tests the '{@link QWiki.NamedElement#getNamespace() <em>Namespace</em>}' feature getter.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.NamedElement#getQualifiedName()
+	 * @see QWiki.NamedElement#getNamespace()
 	 * @generated
 	 */
-	public void testGetQualifiedName() {
+	public void testGetNamespace() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.NamedElement#setNamespace(QWiki.Namespace) <em>Namespace</em>}' feature setter.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.NamedElement#setNamespace(QWiki.Namespace)
+	 * @generated
+	 */
+	public void testSetNamespace() {
+		// TODO: implement this feature setter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.NamedElement#qualifiedName() <em>Qualified Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.NamedElement#qualifiedName()
+	 * @generated
+	 */
+	public void testQualifiedName() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.NamedElement#allNamespaces() <em>All Namespaces</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.NamedElement#allNamespaces()
+	 * @generated
+	 */
+	public void testAllNamespaces() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.NamedElement#separator() <em>Separator</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.NamedElement#separator()
+	 * @generated
+	 */
+	public void testSeparator() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

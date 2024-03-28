@@ -52,7 +52,6 @@ public class SectionItemProvider extends I18nDescriptiveElementItemProvider {
 			addFacilitatingSpiceElementPropertyDescriptor(object);
 			addFacilitatingElementPropertyDescriptor(object);
 			addSuperseedingRelationshipPropertyDescriptor(object);
-			addQualifiedNumberPropertyDescriptor(object);
 			addTermPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -142,28 +141,6 @@ public class SectionItemProvider extends I18nDescriptiveElementItemProvider {
 				 false,
 				 false,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Qualified Number feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addQualifiedNumberPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Section_qualifiedNumber_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Section_qualifiedNumber_feature", "_UI_Section_type"),
-				 QWikiPackage.Literals.SECTION__QUALIFIED_NUMBER,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -259,7 +236,6 @@ public class SectionItemProvider extends I18nDescriptiveElementItemProvider {
 
 		switch (notification.getFeatureID(Section.class)) {
 			case QWikiPackage.SECTION__NUMBER:
-			case QWikiPackage.SECTION__QUALIFIED_NUMBER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case QWikiPackage.SECTION__OWNED_SECTION:

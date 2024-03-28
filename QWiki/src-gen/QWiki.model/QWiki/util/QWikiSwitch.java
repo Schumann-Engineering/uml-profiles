@@ -19,6 +19,7 @@ import QWiki.I18nNamedElement;
 import QWiki.I18nString;
 import QWiki.I18nValue;
 import QWiki.NamedElement;
+import QWiki.Namespace;
 import QWiki.Outcome;
 import QWiki.ProcessGroup;
 import QWiki.ProcessReferenceModel;
@@ -30,7 +31,6 @@ import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SpiceElement;
-import QWiki.Standard;
 import QWiki.SuperseedingRelationship;
 import QWiki.TaggedElement;
 import QWiki.Term;
@@ -188,6 +188,25 @@ public class QWikiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case QWikiPackage.NAMESPACE: {
+				Namespace namespace = (Namespace)theEObject;
+				T result = caseNamespace(namespace);
+				if (result == null) result = caseNamedElement(namespace);
+				if (result == null) result = caseTaggedElement(namespace);
+				if (result == null) result = caseElement(namespace);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case QWikiPackage.PACKAGE: {
+				QWiki.Package package_ = (QWiki.Package)theEObject;
+				T result = casePackage(package_);
+				if (result == null) result = caseNamespace(package_);
+				if (result == null) result = caseNamedElement(package_);
+				if (result == null) result = caseTaggedElement(package_);
+				if (result == null) result = caseElement(package_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case QWikiPackage.DOCUMENT: {
 				Document document = (Document)theEObject;
 				T result = caseDocument(document);
@@ -314,18 +333,6 @@ public class QWikiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseNamedElement(termDefinition);
 				if (result == null) result = caseTaggedElement(termDefinition);
 				if (result == null) result = caseElement(termDefinition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case QWikiPackage.STANDARD: {
-				Standard standard = (Standard)theEObject;
-				T result = caseStandard(standard);
-				if (result == null) result = caseDocument(standard);
-				if (result == null) result = caseI18nDescriptiveElement(standard);
-				if (result == null) result = caseI18nNamedElement(standard);
-				if (result == null) result = caseNamedElement(standard);
-				if (result == null) result = caseTaggedElement(standard);
-				if (result == null) result = caseElement(standard);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -623,6 +630,36 @@ public class QWikiSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamespace(Namespace object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePackage(QWiki.Package object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Keyed String</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -829,21 +866,6 @@ public class QWikiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTermDefinition(TermDefinition object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Standard</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Standard</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStandard(Standard object) {
 		return null;
 	}
 

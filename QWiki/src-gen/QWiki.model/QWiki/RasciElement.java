@@ -38,7 +38,7 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Responsible Role</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRasciElement_ResponsibleRole()
 	 * @see QWiki.Role#getResponsibleElement
-	 * @model opposite="responsibleElement" required="true" ordered="false"
+	 * @model opposite="responsibleElement" required="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getResponsibleRole();
@@ -56,7 +56,7 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * @see #setAccountableRole(Role)
 	 * @see QWiki.QWikiPackage#getRasciElement_AccountableRole()
 	 * @see QWiki.Role#getAccountableElement
-	 * @model opposite="accountableElement" required="true" ordered="false"
+	 * @model opposite="accountableElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	Role getAccountableRole();
@@ -84,7 +84,7 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Supporting Role</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRasciElement_SupportingRole()
 	 * @see QWiki.Role#getSupportingElement
-	 * @model opposite="supportingElement" ordered="false"
+	 * @model opposite="supportingElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getSupportingRole();
@@ -102,7 +102,7 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Consulting Role</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRasciElement_ConsultingRole()
 	 * @see QWiki.Role#getConsultingElement
-	 * @model opposite="consultingElement" ordered="false"
+	 * @model opposite="consultingElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getConsultingRole();
@@ -120,7 +120,7 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Informed Role</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRasciElement_InformedRole()
 	 * @see QWiki.Role#getInformedElement
-	 * @model opposite="informedElement" ordered="false"
+	 * @model opposite="informedElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getInformedRole();

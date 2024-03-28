@@ -13,16 +13,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.ProcessGroup#getOnwedProcess <em>Onwed Process</em>}</li>
+ *   <li>{@link QWiki.ProcessGroup#getOwnedProcess <em>Owned Process</em>}</li>
  * </ul>
  *
  * @see QWiki.QWikiPackage#getProcessGroup()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface ProcessGroup extends SpiceElement {
 	/**
-	 * Returns the value of the '<em><b>Onwed Process</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Owned Process</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.Process}.
 	 * It is bidirectional and its opposite is '{@link QWiki.Process#getOwningProcessGroup <em>Owning Process Group</em>}'.
 	 * <p>
@@ -33,17 +33,17 @@ public interface ProcessGroup extends SpiceElement {
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Onwed Process</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Process</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Onwed Process</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getProcessGroup_OnwedProcess()
+	 * @return the value of the '<em>Owned Process</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getProcessGroup_OwnedProcess()
 	 * @see QWiki.Process#getOwningProcessGroup
-	 * @model opposite="owningProcessGroup" containment="true"
+	 * @model opposite="owningProcessGroup" containment="true" transient="true"
 	 *        annotation="subsets"
 	 * @generated
 	 */
-	EList<QWiki.Process> getOnwedProcess();
+	EList<QWiki.Process> getOwnedProcess();
 
 } // ProcessGroup

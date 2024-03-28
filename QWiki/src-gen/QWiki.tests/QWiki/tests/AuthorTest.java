@@ -16,6 +16,7 @@ import junit.textui.TestRunner;
  * <ul>
  *   <li>{@link QWiki.Author#authoredDocument() <em>Authored Document</em>}</li>
  *   <li>{@link QWiki.Author#authoredStandard() <em>Authored Standard</em>}</li>
+ *   <li>{@link QWiki.Author#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -95,6 +96,19 @@ public class AuthorTest extends NamedElementTest {
 	 * @generated
 	 */
 	public void testAuthoredStandard() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Author#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Author#oid()
+	 * @generated
+	 */
+	public void testOid() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -34,7 +34,7 @@ public interface Domain extends I18nNamedElement {
 	 * @return the value of the '<em>Domain Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getDomain_DomainElement()
 	 * @see QWiki.NamedElement#getAssignedDomain
-	 * @model opposite="assignedDomain" ordered="false"
+	 * @model opposite="assignedDomain" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<NamedElement> getDomainElement();

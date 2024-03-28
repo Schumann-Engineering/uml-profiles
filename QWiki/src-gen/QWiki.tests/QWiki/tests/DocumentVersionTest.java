@@ -15,7 +15,12 @@ import junit.textui.TestRunner;
  * The following features are tested:
  * <ul>
  *   <li>{@link QWiki.DocumentVersion#getSuperseedingRelationship() <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.DocumentVersion#getQualifiedNumber() <em>Qualified Number</em>}</li>
+ * </ul>
+ * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.DocumentVersion#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -88,14 +93,14 @@ public class DocumentVersionTest extends ElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.DocumentVersion#getQualifiedNumber() <em>Qualified Number</em>}' feature getter.
+	 * Tests the '{@link QWiki.DocumentVersion#oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.DocumentVersion#getQualifiedNumber()
+	 * @see QWiki.DocumentVersion#oid()
 	 * @generated
 	 */
-	public void testGetQualifiedNumber() {
-		// TODO: implement this feature getter test method
+	public void testOid() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

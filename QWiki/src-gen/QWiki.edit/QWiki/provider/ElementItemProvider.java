@@ -66,7 +66,6 @@ public class ElementItemProvider
 			addOwnedElementPropertyDescriptor(object);
 			addOwnerPropertyDescriptor(object);
 			addUuidPropertyDescriptor(object);
-			addOidPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -138,28 +137,6 @@ public class ElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Oid feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOidPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Element_oid_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Element_oid_feature", "_UI_Element_type"),
-				 QWikiPackage.Literals.ELEMENT__OID,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -217,7 +194,6 @@ public class ElementItemProvider
 
 		switch (notification.getFeatureID(Element.class)) {
 			case QWikiPackage.ELEMENT__UUID:
-			case QWikiPackage.ELEMENT__OID:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case QWikiPackage.ELEMENT__OWNED_COMMENT:

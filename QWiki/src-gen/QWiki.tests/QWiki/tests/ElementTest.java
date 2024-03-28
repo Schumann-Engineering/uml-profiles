@@ -11,17 +11,12 @@ import junit.framework.TestCase;
  * A test case for the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are tested:
- * <ul>
- *   <li>{@link QWiki.Element#getOid() <em>Oid</em>}</li>
- * </ul>
- * </p>
- * <p>
  * The following operations are tested:
  * <ul>
  *   <li>{@link QWiki.Element#allOwnedElements() <em>All Owned Elements</em>}</li>
  *   <li>{@link QWiki.Element#mustBeOwned() <em>Must Be Owned</em>}</li>
  *   <li>{@link QWiki.Element#model() <em>Model</em>}</li>
+ *   <li>{@link QWiki.Element#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -67,19 +62,6 @@ public abstract class ElementTest extends TestCase {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Element#getOid() <em>Oid</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Element#getOid()
-	 * @generated
-	 */
-	public void testGetOid() {
-		// TODO: implement this feature getter test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
 	 * Tests the '{@link QWiki.Element#allOwnedElements() <em>All Owned Elements</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -113,6 +95,19 @@ public abstract class ElementTest extends TestCase {
 	 * @generated
 	 */
 	public void testModel() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Element#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Element#oid()
+	 * @generated
+	 */
+	public void testOid() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

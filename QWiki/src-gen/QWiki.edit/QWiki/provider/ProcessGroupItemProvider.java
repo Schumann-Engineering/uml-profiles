@@ -14,7 +14,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -62,7 +61,7 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QWikiPackage.Literals.PROCESS_GROUP__ONWED_PROCESS);
+			childrenFeatures.add(QWikiPackage.Literals.PROCESS_GROUP__OWNED_PROCESS);
 		}
 		return childrenFeatures;
 	}
@@ -118,7 +117,7 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ProcessGroup.class)) {
-			case QWikiPackage.PROCESS_GROUP__ONWED_PROCESS:
+			case QWikiPackage.PROCESS_GROUP__OWNED_PROCESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -138,7 +137,7 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(QWikiPackage.Literals.PROCESS_GROUP__ONWED_PROCESS,
+				(QWikiPackage.Literals.PROCESS_GROUP__OWNED_PROCESS,
 				 QWikiFactory.eINSTANCE.createProcess()));
 	}
 

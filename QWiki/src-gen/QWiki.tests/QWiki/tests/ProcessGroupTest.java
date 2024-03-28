@@ -11,6 +11,12 @@ import junit.textui.TestRunner;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Process Group</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.ProcessGroup#oid() <em>Oid</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class ProcessGroupTest extends SpiceElementTest {
@@ -65,6 +71,19 @@ public class ProcessGroupTest extends SpiceElementTest {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link QWiki.ProcessGroup#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.ProcessGroup#oid()
+	 * @generated
+	 */
+	public void testOid() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //ProcessGroupTest

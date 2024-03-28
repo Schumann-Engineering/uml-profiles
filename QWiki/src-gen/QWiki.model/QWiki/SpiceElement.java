@@ -46,7 +46,7 @@ public interface SpiceElement extends RasciElement {
 	 * @see #setOwningProcessReferenceModel(ProcessReferenceModel)
 	 * @see QWiki.QWikiPackage#getSpiceElement_OwningProcessReferenceModel()
 	 * @see QWiki.ProcessReferenceModel#getOwnedSpiceElement
-	 * @model opposite="ownedSpiceElement" transient="false" ordered="false"
+	 * @model opposite="ownedSpiceElement" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -105,7 +105,7 @@ public interface SpiceElement extends RasciElement {
 	 * @return the value of the '<em>Owning Role</em>' reference.
 	 * @see #setOwningRole(Role)
 	 * @see QWiki.QWikiPackage#getSpiceElement_OwningRole()
-	 * @model ordered="false"
+	 * @model transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
 	 *        annotation="subsets"
 	 * @generated
@@ -139,7 +139,7 @@ public interface SpiceElement extends RasciElement {
 	 * @return the value of the '<em>Managing Role</em>' reference.
 	 * @see #setManagingRole(Role)
 	 * @see QWiki.QWikiPackage#getSpiceElement_ManagingRole()
-	 * @model ordered="false"
+	 * @model transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
 	 *        annotation="subsets"
 	 * @generated
@@ -173,7 +173,7 @@ public interface SpiceElement extends RasciElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Participating Role</em>' reference list.
 	 * @see QWiki.QWikiPackage#getSpiceElement_ParticipatingRole()
-	 * @model ordered="false"
+	 * @model transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
 	 *        annotation="subsets"
 	 * @generated
@@ -212,7 +212,7 @@ public interface SpiceElement extends RasciElement {
 	 * @return the value of the '<em>Facilitated Section</em>' reference list.
 	 * @see QWiki.QWikiPackage#getSpiceElement_FacilitatedSection()
 	 * @see QWiki.Section#getFacilitatingSpiceElement
-	 * @model opposite="facilitatingSpiceElement" ordered="false"
+	 * @model opposite="facilitatingSpiceElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Section> getFacilitatedSection();

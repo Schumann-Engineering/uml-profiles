@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getBasePractise()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface BasePractise extends SpiceElement {
@@ -42,7 +42,7 @@ public interface BasePractise extends SpiceElement {
 	 * @see #setOwningProcess(QWiki.Process)
 	 * @see QWiki.QWikiPackage#getBasePractise_OwningProcess()
 	 * @see QWiki.Process#getOwnedBasePractise
-	 * @model opposite="ownedBasePractise" required="true" transient="false" ordered="false"
+	 * @model opposite="ownedBasePractise" required="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -71,7 +71,7 @@ public interface BasePractise extends SpiceElement {
 	 * @return the value of the '<em>Facilitated Outcome</em>' reference list.
 	 * @see QWiki.QWikiPackage#getBasePractise_FacilitatedOutcome()
 	 * @see QWiki.Outcome#getFacilitatingBasePractise
-	 * @model opposite="facilitatingBasePractise" required="true" ordered="false"
+	 * @model opposite="facilitatingBasePractise" required="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Outcome> getFacilitatedOutcome();
@@ -87,7 +87,7 @@ public interface BasePractise extends SpiceElement {
 	 * @return the value of the '<em>Facilitated Work Product</em>' reference.
 	 * @see #setFacilitatedWorkProduct(WorkProduct)
 	 * @see QWiki.QWikiPackage#getBasePractise_FacilitatedWorkProduct()
-	 * @model ordered="false"
+	 * @model transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='facilitatingBacePractise'"
 	 * @generated
 	 */

@@ -52,7 +52,6 @@ public class DocumentVersionItemProvider extends ElementItemProvider {
 			addDocumentVersionTypePropertyDescriptor(object);
 			addEditionPropertyDescriptor(object);
 			addSuperseedingRelationshipPropertyDescriptor(object);
-			addQualifiedNumberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -146,28 +145,6 @@ public class DocumentVersionItemProvider extends ElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Qualified Number feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addQualifiedNumberPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DocumentVersion_qualifiedNumber_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DocumentVersion_qualifiedNumber_feature", "_UI_DocumentVersion_type"),
-				 QWikiPackage.Literals.DOCUMENT_VERSION__QUALIFIED_NUMBER,
-				 false,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -238,7 +215,6 @@ public class DocumentVersionItemProvider extends ElementItemProvider {
 			case QWikiPackage.DOCUMENT_VERSION__PUBLICATION_YEAR:
 			case QWikiPackage.DOCUMENT_VERSION__DOCUMENT_VERSION_TYPE:
 			case QWikiPackage.DOCUMENT_VERSION__EDITION:
-			case QWikiPackage.DOCUMENT_VERSION__QUALIFIED_NUMBER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case QWikiPackage.DOCUMENT_VERSION__OWNED_SECTION:

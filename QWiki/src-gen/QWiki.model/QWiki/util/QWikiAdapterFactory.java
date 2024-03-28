@@ -19,6 +19,7 @@ import QWiki.I18nNamedElement;
 import QWiki.I18nString;
 import QWiki.I18nValue;
 import QWiki.NamedElement;
+import QWiki.Namespace;
 import QWiki.Outcome;
 import QWiki.ProcessGroup;
 import QWiki.ProcessReferenceModel;
@@ -30,7 +31,6 @@ import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SpiceElement;
-import QWiki.Standard;
 import QWiki.SuperseedingRelationship;
 import QWiki.TaggedElement;
 import QWiki.Term;
@@ -149,6 +149,14 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 				return createI18nNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseNamespace(Namespace object) {
+				return createNamespaceAdapter();
+			}
+			@Override
+			public Adapter casePackage(QWiki.Package object) {
+				return createPackageAdapter();
+			}
+			@Override
 			public Adapter caseDocument(Document object) {
 				return createDocumentAdapter();
 			}
@@ -199,10 +207,6 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTermDefinition(TermDefinition object) {
 				return createTermDefinitionAdapter();
-			}
-			@Override
-			public Adapter caseStandard(Standard object) {
-				return createStandardAdapter();
 			}
 			@Override
 			public Adapter caseAssociation(Association object) {
@@ -439,6 +443,34 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Namespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Namespace
+	 * @generated
+	 */
+	public Adapter createNamespaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Package <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Package
+	 * @generated
+	 */
+	public Adapter createPackageAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link QWiki.I18nKeyedString <em>I1 8n Keyed String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -631,20 +663,6 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTermDefinitionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Standard <em>Standard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Standard
-	 * @generated
-	 */
-	public Adapter createStandardAdapter() {
 		return null;
 	}
 

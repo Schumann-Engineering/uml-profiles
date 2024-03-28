@@ -49,7 +49,7 @@ public interface TaggedElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Custom Property</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getTaggedElement_CustomProperty()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='owningElement'"
 	 * @generated
 	 */

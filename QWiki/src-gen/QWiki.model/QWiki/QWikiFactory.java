@@ -112,6 +112,15 @@ public interface QWikiFactory extends EFactory {
 	Domain createDomain();
 
 	/**
+	 * Returns a new object of class '<em>Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Package</em>'.
+	 * @generated
+	 */
+	Package createPackage();
+
+	/**
 	 * Returns a new object of class '<em>Document</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -182,15 +191,6 @@ public interface QWikiFactory extends EFactory {
 	 * @generated
 	 */
 	TermDefinition createTermDefinition();
-
-	/**
-	 * Returns a new object of class '<em>Standard</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Standard</em>'.
-	 * @generated
-	 */
-	Standard createStandard();
 
 	/**
 	 * Returns a new object of class '<em>Base Practise</em>'.

@@ -83,7 +83,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
+	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CHARACTERISTIC, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CONTENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -93,7 +93,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public EList<WorkProduct> getOwnedWorkProduct() {
 		if (ownedWorkProduct == null) {
-			ownedWorkProduct = new EObjectContainmentWithInverseEList<WorkProduct>(WorkProduct.class, this, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT, QWikiPackage.WORK_PRODUCT__OWNING_WORKING_GROUP);
+			ownedWorkProduct = new EObjectContainmentWithInverseEList<WorkProduct>(WorkProduct.class, this, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT, QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
 		}
 		return ownedWorkProduct;
 	}

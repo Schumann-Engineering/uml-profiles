@@ -32,7 +32,7 @@ public interface I18nDescriptiveElement extends I18nNamedElement {
 	 * @return the value of the '<em>Purpose</em>' containment reference.
 	 * @see #setPurpose(I18nString)
 	 * @see QWiki.QWikiPackage#getI18nDescriptiveElement_Purpose()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getPurpose();
@@ -58,7 +58,7 @@ public interface I18nDescriptiveElement extends I18nNamedElement {
 	 * @return the value of the '<em>Body</em>' containment reference.
 	 * @see #setBody(I18nString)
 	 * @see QWiki.QWikiPackage#getI18nDescriptiveElement_Body()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getBody();

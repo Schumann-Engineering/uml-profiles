@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getRole()
- * @model
+ * @model annotation="duplicates"
  * @generated
  */
 public interface Role extends I18nDescriptiveElement {
@@ -37,7 +37,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Skills</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getRole_Skills()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<I18nString> getSkills();
@@ -55,7 +55,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Accountable Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRole_AccountableElement()
 	 * @see QWiki.RasciElement#getAccountableRole
-	 * @model opposite="accountableRole" ordered="false"
+	 * @model opposite="accountableRole" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RasciElement> getAccountableElement();
@@ -73,7 +73,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Supporting Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRole_SupportingElement()
 	 * @see QWiki.RasciElement#getSupportingRole
-	 * @model opposite="supportingRole" ordered="false"
+	 * @model opposite="supportingRole" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RasciElement> getSupportingElement();
@@ -91,7 +91,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Consulting Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRole_ConsultingElement()
 	 * @see QWiki.RasciElement#getConsultingRole
-	 * @model opposite="consultingRole" ordered="false"
+	 * @model opposite="consultingRole" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RasciElement> getConsultingElement();
@@ -109,7 +109,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Informed Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRole_InformedElement()
 	 * @see QWiki.RasciElement#getInformedRole
-	 * @model opposite="informedRole" ordered="false"
+	 * @model opposite="informedRole" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RasciElement> getInformedElement();
@@ -127,7 +127,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @return the value of the '<em>Responsible Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getRole_ResponsibleElement()
 	 * @see QWiki.RasciElement#getResponsibleRole
-	 * @model opposite="responsibleRole" ordered="false"
+	 * @model opposite="responsibleRole" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<RasciElement> getResponsibleElement();

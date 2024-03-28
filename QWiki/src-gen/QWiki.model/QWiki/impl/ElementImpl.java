@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
@@ -38,7 +39,7 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *   <li>{@link QWiki.impl.ElementImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link QWiki.impl.ElementImpl#getOwnedComment <em>Owned Comment</em>}</li>
  *   <li>{@link QWiki.impl.ElementImpl#getUuid <em>Uuid</em>}</li>
- *   <li>{@link QWiki.impl.ElementImpl#getOid <em>Oid</em>}</li>
+ *   <li>{@link QWiki.impl.ElementImpl#getModel <em>Model</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,16 +83,6 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @ordered
 	 */
 	protected boolean uuidESet;
-
-	/**
-	 * The default value of the '{@link #getOid() <em>Oid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOid()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String OID_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +140,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public Element basicGetOwner() {
+		QWikiModel model = getModel();			
+		if (model != null) {
+			return model;
+		}
 		return null;
 	}
 
@@ -221,10 +216,41 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	@Override
-	public String getOid() {
-		// TODO: implement this method to return the 'Oid' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public QWikiModel getModel() {
+		if (eContainerFeatureID() != QWikiPackage.ELEMENT__MODEL) return null;
+		return (QWikiModel)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetModel(QWikiModel newModel, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newModel, QWikiPackage.ELEMENT__MODEL, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setModel(QWikiModel newModel) {
+		if (newModel != eInternalContainer() || (eContainerFeatureID() != QWikiPackage.ELEMENT__MODEL && newModel != null)) {
+			if (EcoreUtil.isAncestor(this, newModel))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newModel != null)
+				msgs = ((InternalEObject)newModel).eInverseAdd(this, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT, QWikiModel.class, msgs);
+			msgs = basicSetModel(newModel, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.ELEMENT__MODEL, newModel, newModel));
 	}
 
 	/**
@@ -301,6 +327,30 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -311,6 +361,10 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case QWikiPackage.ELEMENT__OWNED_COMMENT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedComment()).basicAdd(otherEnd, msgs);
+			case QWikiPackage.ELEMENT__MODEL:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetModel((QWikiModel)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -325,8 +379,24 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 		switch (featureID) {
 			case QWikiPackage.ELEMENT__OWNED_COMMENT:
 				return ((InternalEList<?>)getOwnedComment()).basicRemove(otherEnd, msgs);
+			case QWikiPackage.ELEMENT__MODEL:
+				return basicSetModel(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case QWikiPackage.ELEMENT__MODEL:
+				return eInternalContainer().eInverseRemove(this, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT, QWikiModel.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -346,8 +416,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return getOwnedComment();
 			case QWikiPackage.ELEMENT__UUID:
 				return getUuid();
-			case QWikiPackage.ELEMENT__OID:
-				return getOid();
+			case QWikiPackage.ELEMENT__MODEL:
+				return getModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -368,6 +438,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 			case QWikiPackage.ELEMENT__UUID:
 				setUuid((String)newValue);
 				return;
+			case QWikiPackage.ELEMENT__MODEL:
+				setModel((QWikiModel)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -385,6 +458,9 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return;
 			case QWikiPackage.ELEMENT__UUID:
 				unsetUuid();
+				return;
+			case QWikiPackage.ELEMENT__MODEL:
+				setModel((QWikiModel)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -406,8 +482,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return ownedComment != null && !ownedComment.isEmpty();
 			case QWikiPackage.ELEMENT__UUID:
 				return isSetUuid();
-			case QWikiPackage.ELEMENT__OID:
-				return OID_EDEFAULT == null ? getOid() != null : !OID_EDEFAULT.equals(getOid());
+			case QWikiPackage.ELEMENT__MODEL:
+				return getModel() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -426,6 +502,8 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 				return mustBeOwned();
 			case QWikiPackage.ELEMENT___MODEL:
 				return model();
+			case QWikiPackage.ELEMENT___OID:
+				return oid();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -461,7 +539,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * @generated
 	 */
 	public boolean isSetOwner() {
-		return false;
+		return eIsSet(QWikiPackage.ELEMENT__MODEL);
 	}
 
 } //ElementImpl

@@ -22,6 +22,7 @@ import QWiki.I18nNamedElement;
 import QWiki.I18nString;
 import QWiki.I18nValue;
 import QWiki.NamedElement;
+import QWiki.Namespace;
 import QWiki.Outcome;
 import QWiki.ProcessGroup;
 import QWiki.ProcessReferenceModel;
@@ -34,7 +35,6 @@ import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SpiceElement;
-import QWiki.Standard;
 import QWiki.SuperseedingRelationship;
 import QWiki.SuperseedingType;
 import QWiki.TaggedElement;
@@ -149,6 +149,10 @@ public class QWikiValidator extends EObjectValidator {
 				return validateDomain((Domain)value, diagnostics, context);
 			case QWikiPackage.I1_8N_NAMED_ELEMENT:
 				return validateI18nNamedElement((I18nNamedElement)value, diagnostics, context);
+			case QWikiPackage.NAMESPACE:
+				return validateNamespace((Namespace)value, diagnostics, context);
+			case QWikiPackage.PACKAGE:
+				return validatePackage((QWiki.Package)value, diagnostics, context);
 			case QWikiPackage.DOCUMENT:
 				return validateDocument((Document)value, diagnostics, context);
 			case QWikiPackage.I1_8N_DESCRIPTIVE_ELEMENT:
@@ -175,8 +179,6 @@ public class QWikiValidator extends EObjectValidator {
 				return validateTerm((Term)value, diagnostics, context);
 			case QWikiPackage.TERM_DEFINITION:
 				return validateTermDefinition((TermDefinition)value, diagnostics, context);
-			case QWikiPackage.STANDARD:
-				return validateStandard((Standard)value, diagnostics, context);
 			case QWikiPackage.ASSOCIATION:
 				return validateAssociation((Association)value, diagnostics, context);
 			case QWikiPackage.RELATIONSHIP_TYPE:
@@ -227,6 +229,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(author, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(author, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(author, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(author, diagnostics, context);
 		return result;
 	}
 
@@ -247,7 +250,38 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(namedElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(namedElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(namedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(namedElement, diagnostics, context);
 		return result;
+	}
+
+	/**
+	 * The cached validation expression for the has_no_qualified_name constraint of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String NAMED_ELEMENT__HAS_NO_QUALIFIED_NAME__EEXPRESSION = "(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())\r\n" +
+		"implies self.qualifiedName()->isEmpty()";
+
+	/**
+	 * Validates the has_no_qualified_name constraint of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNamedElement_has_no_qualified_name(NamedElement namedElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(QWikiPackage.Literals.NAMED_ELEMENT,
+				 namedElement,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL",
+				 "has_no_qualified_name",
+				 NAMED_ELEMENT__HAS_NO_QUALIFIED_NAME__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -472,6 +506,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(relationshipType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(relationshipType, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(relationshipType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(relationshipType, diagnostics, context);
 		return result;
 	}
 
@@ -492,6 +527,49 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i18nNamedElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(i18nNamedElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(i18nNamedElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(i18nNamedElement, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNamespace(Namespace namespace, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(namespace, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validateElement_not_own_self(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validateElement_has_owner(namespace, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(namespace, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePackage(QWiki.Package package_, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(package_, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateElement_not_own_self(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateElement_has_owner(package_, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(package_, diagnostics, context);
 		return result;
 	}
 
@@ -541,6 +619,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(domain, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(domain, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(domain, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(domain, diagnostics, context);
 		return result;
 	}
 
@@ -561,6 +640,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(document, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(document, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(document, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(document, diagnostics, context);
 		return result;
 	}
 
@@ -581,6 +661,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(i18nDescriptiveElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(i18nDescriptiveElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(i18nDescriptiveElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(i18nDescriptiveElement, diagnostics, context);
 		return result;
 	}
 
@@ -621,6 +702,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(section, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(section, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(section, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(section, diagnostics, context);
 		return result;
 	}
 
@@ -641,6 +723,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(spiceElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(spiceElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(spiceElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(spiceElement, diagnostics, context);
 		return result;
 	}
 
@@ -661,6 +744,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(rasciElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(rasciElement, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(rasciElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(rasciElement, diagnostics, context);
 		return result;
 	}
 
@@ -681,6 +765,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(role, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(role, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(role, diagnostics, context);
 		return result;
 	}
 
@@ -701,6 +786,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(processReferenceModel, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(processReferenceModel, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(processReferenceModel, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(processReferenceModel, diagnostics, context);
 		return result;
 	}
 
@@ -741,6 +827,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(term, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(term, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(term, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(term, diagnostics, context);
 		return result;
 	}
 
@@ -761,26 +848,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(termDefinition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(termDefinition, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(termDefinition, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateStandard(Standard standard, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(standard, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validateElement_not_own_self(standard, diagnostics, context);
-		if (result || diagnostics != null) result &= validateElement_has_owner(standard, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(termDefinition, diagnostics, context);
 		return result;
 	}
 
@@ -801,6 +869,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(basePractise, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(basePractise, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(basePractise, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(basePractise, diagnostics, context);
 		return result;
 	}
 
@@ -821,6 +890,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(process, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(process, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(process, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(process, diagnostics, context);
 		return result;
 	}
 
@@ -841,6 +911,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(processGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(processGroup, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(processGroup, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(processGroup, diagnostics, context);
 		return result;
 	}
 
@@ -861,6 +932,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(outcome, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(outcome, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(outcome, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(outcome, diagnostics, context);
 		return result;
 	}
 
@@ -881,6 +953,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(workProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(workProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(workProduct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(workProduct, diagnostics, context);
 		return result;
 	}
 
@@ -901,6 +974,7 @@ public class QWikiValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(genericWorkProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_not_own_self(genericWorkProduct, diagnostics, context);
 		if (result || diagnostics != null) result &= validateElement_has_owner(genericWorkProduct, diagnostics, context);
+		if (result || diagnostics != null) result &= validateNamedElement_has_no_qualified_name(genericWorkProduct, diagnostics, context);
 		return result;
 	}
 

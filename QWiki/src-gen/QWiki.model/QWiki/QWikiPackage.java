@@ -106,13 +106,13 @@ public interface QWikiPackage extends EPackage {
 	int ELEMENT__UUID = 3;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT__OID = 4;
+	int ELEMENT__MODEL = 4;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -151,13 +151,22 @@ public interface QWikiPackage extends EPackage {
 	int ELEMENT___MODEL = 2;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT___OID = 3;
+
+	/**
 	 * The number of operations of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT_OPERATION_COUNT = 3;
+	int ELEMENT_OPERATION_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link QWiki.impl.TaggedElementImpl <em>Tagged Element</em>}' class.
@@ -206,13 +215,13 @@ public interface QWikiPackage extends EPackage {
 	int TAGGED_ELEMENT__UUID = ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAGGED_ELEMENT__OID = ELEMENT__OID;
+	int TAGGED_ELEMENT__MODEL = ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -267,6 +276,15 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int TAGGED_ELEMENT___MODEL = ELEMENT___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAGGED_ELEMENT___OID = ELEMENT___OID;
 
 	/**
 	 * The number of operations of the '<em>Tagged Element</em>' class.
@@ -324,13 +342,13 @@ public interface QWikiPackage extends EPackage {
 	int NAMED_ELEMENT__UUID = TAGGED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__OID = TAGGED_ELEMENT__OID;
+	int NAMED_ELEMENT__MODEL = TAGGED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -360,22 +378,13 @@ public interface QWikiPackage extends EPackage {
 	int NAMED_ELEMENT__NAME = TAGGED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__QUALIFIED_NAME = TAGGED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__ASSIGNED_DOMAIN = TAGGED_ELEMENT_FEATURE_COUNT + 2;
+	int NAMED_ELEMENT__ASSIGNED_DOMAIN = TAGGED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -384,7 +393,25 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT__DOMAIN = TAGGED_ELEMENT_FEATURE_COUNT + 3;
+	int NAMED_ELEMENT__DOMAIN = TAGGED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAMESPACE = TAGGED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__OWNING_PACKAGE = TAGGED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Named Element</em>' class.
@@ -393,7 +420,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = TAGGED_ELEMENT_FEATURE_COUNT + 4;
+	int NAMED_ELEMENT_FEATURE_COUNT = TAGGED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -423,13 +450,49 @@ public interface QWikiPackage extends EPackage {
 	int NAMED_ELEMENT___MODEL = TAGGED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT___OID = TAGGED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT___QUALIFIED_NAME = TAGGED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT___ALL_NAMESPACES = TAGGED_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT___SEPARATOR = TAGGED_ELEMENT_OPERATION_COUNT + 2;
+
+	/**
 	 * The number of operations of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = TAGGED_ELEMENT_OPERATION_COUNT + 0;
+	int NAMED_ELEMENT_OPERATION_COUNT = TAGGED_ELEMENT_OPERATION_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link QWiki.impl.AuthorImpl <em>Author</em>}' class.
@@ -478,13 +541,13 @@ public interface QWikiPackage extends EPackage {
 	int AUTHOR__UUID = NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__OID = NAMED_ELEMENT__OID;
+	int AUTHOR__MODEL = NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -514,15 +577,6 @@ public interface QWikiPackage extends EPackage {
 	int AUTHOR__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR__QUALIFIED_NAME = NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -541,6 +595,24 @@ public interface QWikiPackage extends EPackage {
 	int AUTHOR__DOMAIN = NAMED_ELEMENT__DOMAIN;
 
 	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR__NAMESPACE = NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR__OWNING_PACKAGE = NAMED_ELEMENT__OWNING_PACKAGE;
+
+	/**
 	 * The feature id for the '<em><b>Author Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -550,13 +622,22 @@ public interface QWikiPackage extends EPackage {
 	int AUTHOR__AUTHOR_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Abbreviation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR__ABBREVIATION = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Author</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int AUTHOR_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -584,6 +665,42 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int AUTHOR___MODEL = NAMED_ELEMENT___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___OID = NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___QUALIFIED_NAME = NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___ALL_NAMESPACES = NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR___SEPARATOR = NAMED_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Authored Document</em>' operation.
@@ -659,13 +776,13 @@ public interface QWikiPackage extends EPackage {
 	int COMMENT__UUID = ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT__OID = ELEMENT__OID;
+	int COMMENT__MODEL = ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -720,6 +837,15 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT___MODEL = ELEMENT___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT___OID = ELEMENT___OID;
 
 	/**
 	 * The number of operations of the '<em>Comment</em>' class.
@@ -869,66 +995,6 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_VALUE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link QWiki.impl.RelationshipImpl <em>Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.RelationshipImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getRelationship()
-	 * @generated
-	 */
-	int RELATIONSHIP = 22;
-
-	/**
-	 * The meta object id for the '{@link QWiki.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.DirectedRelationshipImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getDirectedRelationship()
-	 * @generated
-	 */
-	int DIRECTED_RELATIONSHIP = 21;
-
-	/**
-	 * The meta object id for the '{@link QWiki.impl.AssociationImpl <em>Association</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.AssociationImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getAssociation()
-	 * @generated
-	 */
-	int ASSOCIATION = 26;
-
-	/**
-	 * The meta object id for the '{@link QWiki.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.I18nNamedElementImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getI18nNamedElement()
-	 * @generated
-	 */
-	int I1_8N_NAMED_ELEMENT = 11;
-
-	/**
-	 * The meta object id for the '{@link QWiki.impl.RelationshipTypeImpl <em>Relationship Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.RelationshipTypeImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getRelationshipType()
-	 * @generated
-	 */
-	int RELATIONSHIP_TYPE = 27;
-
-	/**
-	 * The meta object id for the '{@link QWiki.impl.I18nKeyedStringImpl <em>I1 8n Keyed String</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.I18nKeyedStringImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getI18nKeyedString()
-	 * @generated
-	 */
-	int I1_8N_KEYED_STRING = 9;
-
-	/**
 	 * The meta object id for the '{@link QWiki.impl.QWikiModelImpl <em>Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -975,13 +1041,22 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL__UUID = ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_MODEL__OID = ELEMENT__OID;
+	int QWIKI_MODEL__MODEL = ELEMENT__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Owned Model Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_MODEL__OWNED_MODEL_ELEMENT = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -990,7 +1065,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_MODEL_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 0;
+	int QWIKI_MODEL_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1020,6 +1095,15 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL___MODEL = ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_MODEL___OID = ELEMENT___OID;
+
+	/**
 	 * The number of operations of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1027,6 +1111,16 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int QWIKI_MODEL_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.impl.I18nKeyedStringImpl <em>I1 8n Keyed String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.I18nKeyedStringImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getI18nKeyedString()
+	 * @generated
+	 */
+	int I1_8N_KEYED_STRING = 9;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
@@ -1074,6 +1168,16 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_KEYED_STRING_OPERATION_COUNT = I1_8N_BASE_STRING_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link QWiki.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.I18nNamedElementImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getI18nNamedElement()
+	 * @generated
+	 */
+	int I1_8N_NAMED_ELEMENT = 11;
+
+	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1110,13 +1214,13 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_NAMED_ELEMENT__UUID = NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int I1_8N_NAMED_ELEMENT__OID = NAMED_ELEMENT__OID;
+	int I1_8N_NAMED_ELEMENT__MODEL = NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1146,15 +1250,6 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_NAMED_ELEMENT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int I1_8N_NAMED_ELEMENT__QUALIFIED_NAME = NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1171,6 +1266,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int I1_8N_NAMED_ELEMENT__DOMAIN = NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__NAMESPACE = NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__OWNING_PACKAGE = NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1216,6 +1329,42 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int I1_8N_NAMED_ELEMENT___MODEL = NAMED_ELEMENT___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___OID = NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___QUALIFIED_NAME = NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___ALL_NAMESPACES = NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___SEPARATOR = NAMED_ELEMENT___SEPARATOR;
 
 	/**
 	 * The number of operations of the '<em>I1 8n Named Element</em>' class.
@@ -1273,13 +1422,13 @@ public interface QWikiPackage extends EPackage {
 	int DOMAIN__UUID = I1_8N_NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__OID = I1_8N_NAMED_ELEMENT__OID;
+	int DOMAIN__MODEL = I1_8N_NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1309,15 +1458,6 @@ public interface QWikiPackage extends EPackage {
 	int DOMAIN__NAME = I1_8N_NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOMAIN__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1334,6 +1474,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOMAIN__DOMAIN = I1_8N_NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN__OWNING_PACKAGE = I1_8N_NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1390,6 +1548,42 @@ public interface QWikiPackage extends EPackage {
 	int DOMAIN___MODEL = I1_8N_NAMED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN___OID = I1_8N_NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN___QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOMAIN___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
+
+	/**
 	 * The operation id for the '<em>All Domain Element</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1408,6 +1602,449 @@ public interface QWikiPackage extends EPackage {
 	int DOMAIN_OPERATION_COUNT = I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link QWiki.impl.NamespaceImpl <em>Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.NamespaceImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getNamespace()
+	 * @generated
+	 */
+	int NAMESPACE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNED_COMMENT = NAMED_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNED_ELEMENT = NAMED_ELEMENT__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNER = NAMED_ELEMENT__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__UUID = NAMED_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__MODEL = NAMED_ELEMENT__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__TAG = NAMED_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__CUSTOM_PROPERTY = NAMED_ELEMENT__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__ASSIGNED_DOMAIN = NAMED_ELEMENT__ASSIGNED_DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__DOMAIN = NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__NAMESPACE = NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNING_PACKAGE = NAMED_ELEMENT__OWNING_PACKAGE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE__OWNED_MEMBER = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Namespace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>All Owned Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___ALL_OWNED_ELEMENTS = NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Must Be Owned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___MUST_BE_OWNED = NAMED_ELEMENT___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___MODEL = NAMED_ELEMENT___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___OID = NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___QUALIFIED_NAME = NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___ALL_NAMESPACES = NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE___SEPARATOR = NAMED_ELEMENT___SEPARATOR;
+
+	/**
+	 * The number of operations of the '<em>Namespace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMESPACE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.impl.PackageImpl <em>Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.PackageImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getPackage()
+	 * @generated
+	 */
+	int PACKAGE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__OWNED_COMMENT = NAMESPACE__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__OWNED_ELEMENT = NAMESPACE__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__OWNER = NAMESPACE__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__UUID = NAMESPACE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__MODEL = NAMESPACE__MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__TAG = NAMESPACE__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__CUSTOM_PROPERTY = NAMESPACE__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__NAME = NAMESPACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__ASSIGNED_DOMAIN = NAMESPACE__ASSIGNED_DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Domain</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__DOMAIN = NAMESPACE__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__NAMESPACE = NAMESPACE__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__OWNING_PACKAGE = NAMESPACE__OWNING_PACKAGE;
+
+	/**
+	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__OWNED_MEMBER = NAMESPACE__OWNED_MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Nesting Package</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__NESTING_PACKAGE = NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Nested Package</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__NESTED_PACKAGE = NAMESPACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE__PACKAGED_ELEMENT = NAMESPACE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>All Owned Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___ALL_OWNED_ELEMENTS = NAMESPACE___ALL_OWNED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Must Be Owned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___MUST_BE_OWNED = NAMESPACE___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___MODEL = NAMESPACE___MODEL;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___OID = NAMESPACE___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___QUALIFIED_NAME = NAMESPACE___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___ALL_NAMESPACES = NAMESPACE___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE___SEPARATOR = NAMESPACE___SEPARATOR;
+
+	/**
+	 * The number of operations of the '<em>Package</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PACKAGE_OPERATION_COUNT = NAMESPACE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link QWiki.impl.I18nDescriptiveElementImpl <em>I1 8n Descriptive Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1415,7 +2052,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getI18nDescriptiveElement()
 	 * @generated
 	 */
-	int I1_8N_DESCRIPTIVE_ELEMENT = 13;
+	int I1_8N_DESCRIPTIVE_ELEMENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1454,13 +2091,13 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_DESCRIPTIVE_ELEMENT__UUID = I1_8N_NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int I1_8N_DESCRIPTIVE_ELEMENT__OID = I1_8N_NAMED_ELEMENT__OID;
+	int I1_8N_DESCRIPTIVE_ELEMENT__MODEL = I1_8N_NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1490,15 +2127,6 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_DESCRIPTIVE_ELEMENT__NAME = I1_8N_NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1515,6 +2143,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN = I1_8N_NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE = I1_8N_NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1580,6 +2226,42 @@ public interface QWikiPackage extends EPackage {
 	int I1_8N_DESCRIPTIVE_ELEMENT___MODEL = I1_8N_NAMED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___OID = I1_8N_NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>I1 8n Descriptive Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1596,7 +2278,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getDocument()
 	 * @generated
 	 */
-	int DOCUMENT = 12;
+	int DOCUMENT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1635,13 +2317,13 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int DOCUMENT__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1671,15 +2353,6 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1696,6 +2369,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOCUMENT__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1806,6 +2497,42 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Document</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1822,7 +2549,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getDocumentVersion()
 	 * @generated
 	 */
-	int DOCUMENT_VERSION = 14;
+	int DOCUMENT_VERSION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1861,13 +2588,13 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT_VERSION__UUID = ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_VERSION__OID = ELEMENT__OID;
+	int DOCUMENT_VERSION__MODEL = ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Publication Year</b></em>' attribute.
@@ -1915,22 +2642,13 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT_VERSION__SUPERSEEDING_RELATIONSHIP = ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOCUMENT_VERSION__QUALIFIED_NUMBER = ELEMENT_FEATURE_COUNT + 5;
-
-	/**
 	 * The feature id for the '<em><b>Owning Document</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_VERSION__OWNING_DOCUMENT = ELEMENT_FEATURE_COUNT + 6;
+	int DOCUMENT_VERSION__OWNING_DOCUMENT = ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Document Version</em>' class.
@@ -1939,7 +2657,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOCUMENT_VERSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 7;
+	int DOCUMENT_VERSION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1969,6 +2687,15 @@ public interface QWikiPackage extends EPackage {
 	int DOCUMENT_VERSION___MODEL = ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT_VERSION___OID = ELEMENT___OID;
+
+	/**
 	 * The number of operations of the '<em>Document Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1985,7 +2712,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getSection()
 	 * @generated
 	 */
-	int SECTION = 15;
+	int SECTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2024,13 +2751,13 @@ public interface QWikiPackage extends EPackage {
 	int SECTION__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int SECTION__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2060,15 +2787,6 @@ public interface QWikiPackage extends EPackage {
 	int SECTION__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2085,6 +2803,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SECTION__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -2168,22 +2904,13 @@ public interface QWikiPackage extends EPackage {
 	int SECTION__SUPERSEEDING_RELATIONSHIP = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__QUALIFIED_NUMBER = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 6;
-
-	/**
 	 * The feature id for the '<em><b>Term</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__TERM = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 7;
+	int SECTION__TERM = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Owning Document</b></em>' container reference.
@@ -2192,7 +2919,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION__OWNING_DOCUMENT = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 8;
+	int SECTION__OWNING_DOCUMENT = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Section</em>' class.
@@ -2201,7 +2928,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_FEATURE_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 9;
+	int SECTION_FEATURE_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -2231,13 +2958,67 @@ public interface QWikiPackage extends EPackage {
 	int SECTION___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
+	 * The operation id for the '<em>Document Version</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___DOCUMENT_VERSION = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Qualified Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SECTION___QUALIFIED_NUMBER = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
 	 * The number of operations of the '<em>Section</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SECTION_OPERATION_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+	int SECTION_OPERATION_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link QWiki.impl.RasciElementImpl <em>Rasci Element</em>}' class.
@@ -2247,7 +3028,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getRasciElement()
 	 * @generated
 	 */
-	int RASCI_ELEMENT = 17;
+	int RASCI_ELEMENT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2286,13 +3067,13 @@ public interface QWikiPackage extends EPackage {
 	int RASCI_ELEMENT__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int RASCI_ELEMENT__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2322,15 +3103,6 @@ public interface QWikiPackage extends EPackage {
 	int RASCI_ELEMENT__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RASCI_ELEMENT__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2347,6 +3119,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int RASCI_ELEMENT__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -2457,6 +3247,42 @@ public interface QWikiPackage extends EPackage {
 	int RASCI_ELEMENT___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Rasci Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2473,7 +3299,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getSpiceElement()
 	 * @generated
 	 */
-	int SPICE_ELEMENT = 16;
+	int SPICE_ELEMENT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2512,13 +3338,13 @@ public interface QWikiPackage extends EPackage {
 	int SPICE_ELEMENT__UUID = RASCI_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OID = RASCI_ELEMENT__OID;
+	int SPICE_ELEMENT__MODEL = RASCI_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2548,15 +3374,6 @@ public interface QWikiPackage extends EPackage {
 	int SPICE_ELEMENT__NAME = RASCI_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPICE_ELEMENT__QUALIFIED_NAME = RASCI_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2573,6 +3390,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int SPICE_ELEMENT__DOMAIN = RASCI_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT__NAMESPACE = RASCI_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT__OWNING_PACKAGE = RASCI_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -2746,6 +3581,42 @@ public interface QWikiPackage extends EPackage {
 	int SPICE_ELEMENT___MODEL = RASCI_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT___OID = RASCI_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT___QUALIFIED_NAME = RASCI_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT___ALL_NAMESPACES = RASCI_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT___SEPARATOR = RASCI_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Spice Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2762,7 +3633,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getRole()
 	 * @generated
 	 */
-	int ROLE = 18;
+	int ROLE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2801,13 +3672,13 @@ public interface QWikiPackage extends EPackage {
 	int ROLE__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int ROLE__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2837,15 +3708,6 @@ public interface QWikiPackage extends EPackage {
 	int ROLE__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2862,6 +3724,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROLE__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -2981,6 +3861,42 @@ public interface QWikiPackage extends EPackage {
 	int ROLE___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Role</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2997,7 +3913,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getProcessReferenceModel()
 	 * @generated
 	 */
-	int PROCESS_REFERENCE_MODEL = 19;
+	int PROCESS_REFERENCE_MODEL = 21;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3036,13 +3952,13 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int PROCESS_REFERENCE_MODEL__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -3072,15 +3988,6 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3097,6 +4004,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESS_REFERENCE_MODEL__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -3189,13 +4114,68 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
+	 * The operation id for the '<em>Oid For Domain</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The number of operations of the '<em>Process Reference Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL_OPERATION_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+	int PROCESS_REFERENCE_MODEL_OPERATION_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link QWiki.impl.RelationshipImpl <em>Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.RelationshipImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getRelationship()
+	 * @generated
+	 */
+	int RELATIONSHIP = 24;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3234,13 +4214,13 @@ public interface QWikiPackage extends EPackage {
 	int RELATIONSHIP__UUID = ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__OID = ELEMENT__OID;
+	int RELATIONSHIP__MODEL = ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -3288,6 +4268,15 @@ public interface QWikiPackage extends EPackage {
 	int RELATIONSHIP___MODEL = ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP___OID = ELEMENT___OID;
+
+	/**
 	 * The number of operations of the '<em>Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3295,6 +4284,16 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATIONSHIP_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.DirectedRelationshipImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getDirectedRelationship()
+	 * @generated
+	 */
+	int DIRECTED_RELATIONSHIP = 23;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3333,13 +4332,13 @@ public interface QWikiPackage extends EPackage {
 	int DIRECTED_RELATIONSHIP__UUID = RELATIONSHIP__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DIRECTED_RELATIONSHIP__OID = RELATIONSHIP__OID;
+	int DIRECTED_RELATIONSHIP__MODEL = RELATIONSHIP__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -3405,6 +4404,15 @@ public interface QWikiPackage extends EPackage {
 	int DIRECTED_RELATIONSHIP___MODEL = RELATIONSHIP___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DIRECTED_RELATIONSHIP___OID = RELATIONSHIP___OID;
+
+	/**
 	 * The number of operations of the '<em>Directed Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3421,7 +4429,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getSuperseedingRelationship()
 	 * @generated
 	 */
-	int SUPERSEEDING_RELATIONSHIP = 20;
+	int SUPERSEEDING_RELATIONSHIP = 22;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3460,13 +4468,13 @@ public interface QWikiPackage extends EPackage {
 	int SUPERSEEDING_RELATIONSHIP__UUID = DIRECTED_RELATIONSHIP__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__OID = DIRECTED_RELATIONSHIP__OID;
+	int SUPERSEEDING_RELATIONSHIP__MODEL = DIRECTED_RELATIONSHIP__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -3541,6 +4549,15 @@ public interface QWikiPackage extends EPackage {
 	int SUPERSEEDING_RELATIONSHIP___MODEL = DIRECTED_RELATIONSHIP___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPERSEEDING_RELATIONSHIP___OID = DIRECTED_RELATIONSHIP___OID;
+
+	/**
 	 * The number of operations of the '<em>Superseeding Relationship</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3557,7 +4574,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getTerm()
 	 * @generated
 	 */
-	int TERM = 23;
+	int TERM = 25;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3596,13 +4613,13 @@ public interface QWikiPackage extends EPackage {
 	int TERM__UUID = I1_8N_NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM__OID = I1_8N_NAMED_ELEMENT__OID;
+	int TERM__MODEL = I1_8N_NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -3632,15 +4649,6 @@ public interface QWikiPackage extends EPackage {
 	int TERM__NAME = I1_8N_NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERM__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3657,6 +4665,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int TERM__DOMAIN = I1_8N_NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM__OWNING_PACKAGE = I1_8N_NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -3749,6 +4775,42 @@ public interface QWikiPackage extends EPackage {
 	int TERM___MODEL = I1_8N_NAMED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM___OID = I1_8N_NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM___QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Term</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3765,7 +4827,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getTermDefinition()
 	 * @generated
 	 */
-	int TERM_DEFINITION = 24;
+	int TERM_DEFINITION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -3804,13 +4866,13 @@ public interface QWikiPackage extends EPackage {
 	int TERM_DEFINITION__UUID = I1_8N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_DEFINITION__OID = I1_8N_DESCRIPTIVE_ELEMENT__OID;
+	int TERM_DEFINITION__MODEL = I1_8N_DESCRIPTIVE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -3840,15 +4902,6 @@ public interface QWikiPackage extends EPackage {
 	int TERM_DEFINITION__NAME = I1_8N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TERM_DEFINITION__QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3865,6 +4918,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int TERM_DEFINITION__DOMAIN = I1_8N_DESCRIPTIVE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION__NAMESPACE = I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION__OWNING_PACKAGE = I1_8N_DESCRIPTIVE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -3939,6 +5010,42 @@ public interface QWikiPackage extends EPackage {
 	int TERM_DEFINITION___MODEL = I1_8N_DESCRIPTIVE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION___OID = I1_8N_DESCRIPTIVE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION___QUALIFIED_NAME = I1_8N_DESCRIPTIVE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION___ALL_NAMESPACES = I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_DEFINITION___SEPARATOR = I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Term Definition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3948,239 +5055,14 @@ public interface QWikiPackage extends EPackage {
 	int TERM_DEFINITION_OPERATION_COUNT = I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link QWiki.impl.StandardImpl <em>Standard</em>}' class.
+	 * The meta object id for the '{@link QWiki.impl.AssociationImpl <em>Association</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.StandardImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getStandard()
+	 * @see QWiki.impl.AssociationImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getAssociation()
 	 * @generated
 	 */
-	int STANDARD = 25;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__OWNED_COMMENT = DOCUMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__OWNED_ELEMENT = DOCUMENT__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__OWNER = DOCUMENT__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__UUID = DOCUMENT__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__OID = DOCUMENT__OID;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__TAG = DOCUMENT__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__CUSTOM_PROPERTY = DOCUMENT__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__NAME = DOCUMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__QUALIFIED_NAME = DOCUMENT__QUALIFIED_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__ASSIGNED_DOMAIN = DOCUMENT__ASSIGNED_DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__DOMAIN = DOCUMENT__DOMAIN;
-
-	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__DISPLAY_NAME = DOCUMENT__DISPLAY_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__PURPOSE = DOCUMENT__PURPOSE;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__BODY = DOCUMENT__BODY;
-
-	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__NUMBER = DOCUMENT__NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Owned Version</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__OWNED_VERSION = DOCUMENT__OWNED_VERSION;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__SUPERSEEDING_RELATIONSHIP = DOCUMENT__SUPERSEEDING_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Document Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__DOCUMENT_TYPE = DOCUMENT__DOCUMENT_TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Author</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD__AUTHOR = DOCUMENT__AUTHOR;
-
-	/**
-	 * The number of structural features of the '<em>Standard</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD_FEATURE_COUNT = DOCUMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>All Owned Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD___ALL_OWNED_ELEMENTS = DOCUMENT___ALL_OWNED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Must Be Owned</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD___MUST_BE_OWNED = DOCUMENT___MUST_BE_OWNED;
-
-	/**
-	 * The operation id for the '<em>Model</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD___MODEL = DOCUMENT___MODEL;
-
-	/**
-	 * The operation id for the '<em>Sdo</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD___SDO = DOCUMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Standard</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STANDARD_OPERATION_COUNT = DOCUMENT_OPERATION_COUNT + 1;
+	int ASSOCIATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -4219,13 +5101,13 @@ public interface QWikiPackage extends EPackage {
 	int ASSOCIATION__UUID = RELATIONSHIP__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSOCIATION__OID = RELATIONSHIP__OID;
+	int ASSOCIATION__MODEL = RELATIONSHIP__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -4291,6 +5173,15 @@ public interface QWikiPackage extends EPackage {
 	int ASSOCIATION___MODEL = RELATIONSHIP___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSOCIATION___OID = RELATIONSHIP___OID;
+
+	/**
 	 * The number of operations of the '<em>Association</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4298,6 +5189,16 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int ASSOCIATION_OPERATION_COUNT = RELATIONSHIP_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.impl.RelationshipTypeImpl <em>Relationship Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.impl.RelationshipTypeImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getRelationshipType()
+	 * @generated
+	 */
+	int RELATIONSHIP_TYPE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -4336,13 +5237,13 @@ public interface QWikiPackage extends EPackage {
 	int RELATIONSHIP_TYPE__UUID = I1_8N_NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP_TYPE__OID = I1_8N_NAMED_ELEMENT__OID;
+	int RELATIONSHIP_TYPE__MODEL = I1_8N_NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -4372,15 +5273,6 @@ public interface QWikiPackage extends EPackage {
 	int RELATIONSHIP_TYPE__NAME = I1_8N_NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONSHIP_TYPE__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4397,6 +5289,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATIONSHIP_TYPE__DOMAIN = I1_8N_NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE__OWNING_PACKAGE = I1_8N_NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -4453,6 +5363,42 @@ public interface QWikiPackage extends EPackage {
 	int RELATIONSHIP_TYPE___MODEL = I1_8N_NAMED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE___OID = I1_8N_NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE___QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONSHIP_TYPE___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Relationship Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4469,7 +5415,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getBasePractise()
 	 * @generated
 	 */
-	int BASE_PRACTISE = 28;
+	int BASE_PRACTISE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -4508,13 +5454,13 @@ public interface QWikiPackage extends EPackage {
 	int BASE_PRACTISE__UUID = SPICE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_PRACTISE__OID = SPICE_ELEMENT__OID;
+	int BASE_PRACTISE__MODEL = SPICE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -4544,15 +5490,6 @@ public interface QWikiPackage extends EPackage {
 	int BASE_PRACTISE__NAME = SPICE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE__QUALIFIED_NAME = SPICE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4569,6 +5506,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int BASE_PRACTISE__DOMAIN = SPICE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE__NAMESPACE = SPICE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE__OWNING_PACKAGE = SPICE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -4769,6 +5724,42 @@ public interface QWikiPackage extends EPackage {
 	int BASE_PRACTISE___MODEL = SPICE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE___OID = SPICE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE___QUALIFIED_NAME = SPICE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE___ALL_NAMESPACES = SPICE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE___SEPARATOR = SPICE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Base Practise</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4785,7 +5776,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getProcess()
 	 * @generated
 	 */
-	int PROCESS = 29;
+	int PROCESS = 30;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -4824,13 +5815,13 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS__UUID = SPICE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS__OID = SPICE_ELEMENT__OID;
+	int PROCESS__MODEL = SPICE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -4860,15 +5851,6 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS__NAME = SPICE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS__QUALIFIED_NAME = SPICE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4885,6 +5867,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESS__DOMAIN = SPICE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__NAMESPACE = SPICE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__OWNING_PACKAGE = SPICE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -5049,7 +6049,7 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS__FACILITATING_WORK_PRODUCT = SPICE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Facilitated Work Product</b></em>' reference.
+	 * The feature id for the '<em><b>Facilitated Work Product</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5103,6 +6103,42 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS___MODEL = SPICE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS___OID = SPICE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS___QUALIFIED_NAME = SPICE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS___ALL_NAMESPACES = SPICE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS___SEPARATOR = SPICE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Process</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5119,7 +6155,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getProcessGroup()
 	 * @generated
 	 */
-	int PROCESS_GROUP = 30;
+	int PROCESS_GROUP = 31;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -5158,13 +6194,13 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_GROUP__UUID = SPICE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_GROUP__OID = SPICE_ELEMENT__OID;
+	int PROCESS_GROUP__MODEL = SPICE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -5194,15 +6230,6 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_GROUP__NAME = SPICE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP__QUALIFIED_NAME = SPICE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5219,6 +6246,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESS_GROUP__DOMAIN = SPICE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP__NAMESPACE = SPICE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP__OWNING_PACKAGE = SPICE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -5356,13 +6401,13 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_GROUP__FACILITATED_SECTION = SPICE_ELEMENT__FACILITATED_SECTION;
 
 	/**
-	 * The feature id for the '<em><b>Onwed Process</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Process</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_GROUP__ONWED_PROCESS = SPICE_ELEMENT_FEATURE_COUNT + 0;
+	int PROCESS_GROUP__OWNED_PROCESS = SPICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Process Group</em>' class.
@@ -5401,6 +6446,42 @@ public interface QWikiPackage extends EPackage {
 	int PROCESS_GROUP___MODEL = SPICE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP___OID = SPICE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP___QUALIFIED_NAME = SPICE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP___ALL_NAMESPACES = SPICE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP___SEPARATOR = SPICE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Process Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5417,7 +6498,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getOutcome()
 	 * @generated
 	 */
-	int OUTCOME = 31;
+	int OUTCOME = 32;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -5456,13 +6537,13 @@ public interface QWikiPackage extends EPackage {
 	int OUTCOME__UUID = I1_8N_NAMED_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__OID = I1_8N_NAMED_ELEMENT__OID;
+	int OUTCOME__MODEL = I1_8N_NAMED_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -5492,15 +6573,6 @@ public interface QWikiPackage extends EPackage {
 	int OUTCOME__NAME = I1_8N_NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5517,6 +6589,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTCOME__DOMAIN = I1_8N_NAMED_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME__OWNING_PACKAGE = I1_8N_NAMED_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -5600,6 +6690,42 @@ public interface QWikiPackage extends EPackage {
 	int OUTCOME___MODEL = I1_8N_NAMED_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME___OID = I1_8N_NAMED_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME___QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Outcome</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5616,7 +6742,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getWorkProduct()
 	 * @generated
 	 */
-	int WORK_PRODUCT = 32;
+	int WORK_PRODUCT = 33;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -5655,13 +6781,13 @@ public interface QWikiPackage extends EPackage {
 	int WORK_PRODUCT__UUID = SPICE_ELEMENT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT__OID = SPICE_ELEMENT__OID;
+	int WORK_PRODUCT__MODEL = SPICE_ELEMENT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -5691,15 +6817,6 @@ public interface QWikiPackage extends EPackage {
 	int WORK_PRODUCT__NAME = SPICE_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT__QUALIFIED_NAME = SPICE_ELEMENT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5716,6 +6833,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int WORK_PRODUCT__DOMAIN = SPICE_ELEMENT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT__NAMESPACE = SPICE_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT__OWNING_PACKAGE = SPICE_ELEMENT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -5853,31 +6988,31 @@ public interface QWikiPackage extends EPackage {
 	int WORK_PRODUCT__FACILITATED_SECTION = SPICE_ELEMENT__FACILITATED_SECTION;
 
 	/**
-	 * The feature id for the '<em><b>Owning Working Group</b></em>' container reference.
+	 * The feature id for the '<em><b>Owning Work Product Group</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT__OWNING_WORKING_GROUP = SPICE_ELEMENT_FEATURE_COUNT + 0;
+	int WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = SPICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Characteristic</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT__CHARACTERISTIC = SPICE_ELEMENT_FEATURE_COUNT + 1;
+	int WORK_PRODUCT__OWNED_CHARACTERISTIC = SPICE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT__CONTENT = SPICE_ELEMENT_FEATURE_COUNT + 2;
+	int WORK_PRODUCT__OWNED_CONTENT = SPICE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Facilitating Outcome</b></em>' reference list.
@@ -5961,6 +7096,42 @@ public interface QWikiPackage extends EPackage {
 	int WORK_PRODUCT___MODEL = SPICE_ELEMENT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT___OID = SPICE_ELEMENT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT___QUALIFIED_NAME = SPICE_ELEMENT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT___ALL_NAMESPACES = SPICE_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT___SEPARATOR = SPICE_ELEMENT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Work Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5977,7 +7148,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getGenericWorkProduct()
 	 * @generated
 	 */
-	int GENERIC_WORK_PRODUCT = 33;
+	int GENERIC_WORK_PRODUCT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -6016,13 +7187,13 @@ public interface QWikiPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__UUID = WORK_PRODUCT__UUID;
 
 	/**
-	 * The feature id for the '<em><b>Oid</b></em>' attribute.
+	 * The feature id for the '<em><b>Model</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT__OID = WORK_PRODUCT__OID;
+	int GENERIC_WORK_PRODUCT__MODEL = WORK_PRODUCT__MODEL;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -6052,15 +7223,6 @@ public interface QWikiPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__NAME = WORK_PRODUCT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT__QUALIFIED_NAME = WORK_PRODUCT__QUALIFIED_NAME;
-
-	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6077,6 +7239,24 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GENERIC_WORK_PRODUCT__DOMAIN = WORK_PRODUCT__DOMAIN;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT__NAMESPACE = WORK_PRODUCT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owning Package</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT__OWNING_PACKAGE = WORK_PRODUCT__OWNING_PACKAGE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -6214,31 +7394,31 @@ public interface QWikiPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__FACILITATED_SECTION = WORK_PRODUCT__FACILITATED_SECTION;
 
 	/**
-	 * The feature id for the '<em><b>Owning Working Group</b></em>' container reference.
+	 * The feature id for the '<em><b>Owning Work Product Group</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT__OWNING_WORKING_GROUP = WORK_PRODUCT__OWNING_WORKING_GROUP;
+	int GENERIC_WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Characteristic</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT__CHARACTERISTIC = WORK_PRODUCT__CHARACTERISTIC;
+	int GENERIC_WORK_PRODUCT__OWNED_CHARACTERISTIC = WORK_PRODUCT__OWNED_CHARACTERISTIC;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Owned Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT__CONTENT = WORK_PRODUCT__CONTENT;
+	int GENERIC_WORK_PRODUCT__OWNED_CONTENT = WORK_PRODUCT__OWNED_CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Facilitating Outcome</b></em>' reference list.
@@ -6331,6 +7511,42 @@ public interface QWikiPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT___MODEL = WORK_PRODUCT___MODEL;
 
 	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
+
+	/**
+	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT___QUALIFIED_NAME = WORK_PRODUCT___QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT___ALL_NAMESPACES = WORK_PRODUCT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT___SEPARATOR = WORK_PRODUCT___SEPARATOR;
+
+	/**
 	 * The number of operations of the '<em>Generic Work Product</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6347,7 +7563,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getAuthorType()
 	 * @generated
 	 */
-	int AUTHOR_TYPE = 34;
+	int AUTHOR_TYPE = 35;
 
 	/**
 	 * The meta object id for the '{@link QWiki.DocumentVersionType <em>Document Version Type</em>}' enum.
@@ -6357,7 +7573,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getDocumentVersionType()
 	 * @generated
 	 */
-	int DOCUMENT_VERSION_TYPE = 35;
+	int DOCUMENT_VERSION_TYPE = 36;
 
 	/**
 	 * The meta object id for the '{@link QWiki.ProcessReferenceModelDomain <em>Process Reference Model Domain</em>}' enum.
@@ -6367,7 +7583,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getProcessReferenceModelDomain()
 	 * @generated
 	 */
-	int PROCESS_REFERENCE_MODEL_DOMAIN = 36;
+	int PROCESS_REFERENCE_MODEL_DOMAIN = 37;
 
 	/**
 	 * The meta object id for the '{@link QWiki.SuperseedingType <em>Superseeding Type</em>}' enum.
@@ -6377,7 +7593,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getSuperseedingType()
 	 * @generated
 	 */
-	int SUPERSEEDING_TYPE = 37;
+	int SUPERSEEDING_TYPE = 38;
 
 	/**
 	 * The meta object id for the '{@link QWiki.DocumentType <em>Document Type</em>}' enum.
@@ -6387,7 +7603,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getDocumentType()
 	 * @generated
 	 */
-	int DOCUMENT_TYPE = 38;
+	int DOCUMENT_TYPE = 39;
 
 	/**
 	 * The meta object id for the '{@link QWiki.WorkProductType <em>Work Product Type</em>}' enum.
@@ -6397,7 +7613,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getWorkProductType()
 	 * @generated
 	 */
-	int WORK_PRODUCT_TYPE = 39;
+	int WORK_PRODUCT_TYPE = 40;
 
 
 	/**
@@ -6420,6 +7636,17 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAuthor_AuthorType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link QWiki.Author#getAbbreviation <em>Abbreviation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Abbreviation</em>'.
+	 * @see QWiki.Author#getAbbreviation()
+	 * @see #getAuthor()
+	 * @generated
+	 */
+	EAttribute getAuthor_Abbreviation();
 
 	/**
 	 * Returns the meta object for the '{@link QWiki.Author#authoredDocument() <em>Authored Document</em>}' operation.
@@ -6463,17 +7690,6 @@ public interface QWikiPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.NamedElement#getQualifiedName <em>Qualified Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Qualified Name</em>'.
-	 * @see QWiki.NamedElement#getQualifiedName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_QualifiedName();
-
-	/**
 	 * Returns the meta object for the reference '{@link QWiki.NamedElement#getAssignedDomain <em>Assigned Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6494,6 +7710,58 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNamedElement_Domain();
+
+	/**
+	 * Returns the meta object for the reference '{@link QWiki.NamedElement#getNamespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Namespace</em>'.
+	 * @see QWiki.NamedElement#getNamespace()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EReference getNamedElement_Namespace();
+
+	/**
+	 * Returns the meta object for the container reference '{@link QWiki.NamedElement#getOwningPackage <em>Owning Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Owning Package</em>'.
+	 * @see QWiki.NamedElement#getOwningPackage()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EReference getNamedElement_OwningPackage();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.NamedElement#qualifiedName() <em>Qualified Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Qualified Name</em>' operation.
+	 * @see QWiki.NamedElement#qualifiedName()
+	 * @generated
+	 */
+	EOperation getNamedElement__QualifiedName();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.NamedElement#allNamespaces() <em>All Namespaces</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>All Namespaces</em>' operation.
+	 * @see QWiki.NamedElement#allNamespaces()
+	 * @generated
+	 */
+	EOperation getNamedElement__AllNamespaces();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.NamedElement#separator() <em>Separator</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Separator</em>' operation.
+	 * @see QWiki.NamedElement#separator()
+	 * @generated
+	 */
+	EOperation getNamedElement__Separator();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.TaggedElement <em>Tagged Element</em>}'.
@@ -6582,15 +7850,15 @@ public interface QWikiPackage extends EPackage {
 	EAttribute getElement_Uuid();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.Element#getOid <em>Oid</em>}'.
+	 * Returns the meta object for the container reference '{@link QWiki.Element#getModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Oid</em>'.
-	 * @see QWiki.Element#getOid()
+	 * @return the meta object for the container reference '<em>Model</em>'.
+	 * @see QWiki.Element#getModel()
 	 * @see #getElement()
 	 * @generated
 	 */
-	EAttribute getElement_Oid();
+	EReference getElement_Model();
 
 	/**
 	 * Returns the meta object for the '{@link QWiki.Element#allOwnedElements() <em>All Owned Elements</em>}' operation.
@@ -6621,6 +7889,16 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getElement__Model();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.Element#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Oid</em>' operation.
+	 * @see QWiki.Element#oid()
+	 * @generated
+	 */
+	EOperation getElement__Oid();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Comment <em>Comment</em>}'.
@@ -6728,131 +8006,25 @@ public interface QWikiPackage extends EPackage {
 	EAttribute getI18nValue_Body();
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * Returns the meta object for class '{@link QWiki.QWikiModel <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Directed Relationship</em>'.
-	 * @see QWiki.DirectedRelationship
+	 * @return the meta object for class '<em>Model</em>'.
+	 * @see QWiki.QWikiModel
 	 * @generated
 	 */
-	EClass getDirectedRelationship();
+	EClass getQWikiModel();
 
 	/**
-	 * Returns the meta object for the reference list '{@link QWiki.DirectedRelationship#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.QWikiModel#getOwnedModelElement <em>Owned Model Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Target</em>'.
-	 * @see QWiki.DirectedRelationship#getTarget()
-	 * @see #getDirectedRelationship()
+	 * @return the meta object for the containment reference list '<em>Owned Model Element</em>'.
+	 * @see QWiki.QWikiModel#getOwnedModelElement()
+	 * @see #getQWikiModel()
 	 * @generated
 	 */
-	EReference getDirectedRelationship_Target();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.DirectedRelationship#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Source</em>'.
-	 * @see QWiki.DirectedRelationship#getSource()
-	 * @see #getDirectedRelationship()
-	 * @generated
-	 */
-	EReference getDirectedRelationship_Source();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.Relationship <em>Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Relationship</em>'.
-	 * @see QWiki.Relationship
-	 * @generated
-	 */
-	EClass getRelationship();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.Relationship#getRelatedElement <em>Related Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Related Element</em>'.
-	 * @see QWiki.Relationship#getRelatedElement()
-	 * @see #getRelationship()
-	 * @generated
-	 */
-	EReference getRelationship_RelatedElement();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.Association <em>Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Association</em>'.
-	 * @see QWiki.Association
-	 * @generated
-	 */
-	EClass getAssociation();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.Association#getEndRelationshipType <em>End Relationship Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>End Relationship Type</em>'.
-	 * @see QWiki.Association#getEndRelationshipType()
-	 * @see #getAssociation()
-	 * @generated
-	 */
-	EReference getAssociation_EndRelationshipType();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.Association#getEnd <em>End</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>End</em>'.
-	 * @see QWiki.Association#getEnd()
-	 * @see #getAssociation()
-	 * @generated
-	 */
-	EReference getAssociation_End();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.RelationshipType <em>Relationship Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Relationship Type</em>'.
-	 * @see QWiki.RelationshipType
-	 * @generated
-	 */
-	EClass getRelationshipType();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.RelationshipType#getTypedAssociation <em>Typed Association</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Typed Association</em>'.
-	 * @see QWiki.RelationshipType#getTypedAssociation()
-	 * @see #getRelationshipType()
-	 * @generated
-	 */
-	EReference getRelationshipType_TypedAssociation();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.I18nNamedElement <em>I1 8n Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>I1 8n Named Element</em>'.
-	 * @see QWiki.I18nNamedElement
-	 * @generated
-	 */
-	EClass getI18nNamedElement();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link QWiki.I18nNamedElement#getDisplayName <em>Display Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Display Name</em>'.
-	 * @see QWiki.I18nNamedElement#getDisplayName()
-	 * @see #getI18nNamedElement()
-	 * @generated
-	 */
-	EReference getI18nNamedElement_DisplayName();
+	EReference getQWikiModel_OwnedModelElement();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.I18nKeyedString <em>I1 8n Keyed String</em>}'.
@@ -6874,16 +8046,6 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getI18nKeyedString_Key();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.QWikiModel <em>Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model</em>'.
-	 * @see QWiki.QWikiModel
-	 * @generated
-	 */
-	EClass getQWikiModel();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Domain <em>Domain</em>}'.
@@ -6915,6 +8077,91 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getDomain__AllDomainElement();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n Named Element</em>'.
+	 * @see QWiki.I18nNamedElement
+	 * @generated
+	 */
+	EClass getI18nNamedElement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link QWiki.I18nNamedElement#getDisplayName <em>Display Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Display Name</em>'.
+	 * @see QWiki.I18nNamedElement#getDisplayName()
+	 * @see #getI18nNamedElement()
+	 * @generated
+	 */
+	EReference getI18nNamedElement_DisplayName();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Namespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Namespace</em>'.
+	 * @see QWiki.Namespace
+	 * @generated
+	 */
+	EClass getNamespace();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.Namespace#getOwnedMember <em>Owned Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Owned Member</em>'.
+	 * @see QWiki.Namespace#getOwnedMember()
+	 * @see #getNamespace()
+	 * @generated
+	 */
+	EReference getNamespace_OwnedMember();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Package <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Package</em>'.
+	 * @see QWiki.Package
+	 * @generated
+	 */
+	EClass getPackage();
+
+	/**
+	 * Returns the meta object for the reference '{@link QWiki.Package#getNestingPackage <em>Nesting Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Nesting Package</em>'.
+	 * @see QWiki.Package#getNestingPackage()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_NestingPackage();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.Package#getNestedPackage <em>Nested Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Nested Package</em>'.
+	 * @see QWiki.Package#getNestedPackage()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_NestedPackage();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link QWiki.Package#getPackagedElement <em>Packaged Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Packaged Element</em>'.
+	 * @see QWiki.Package#getPackagedElement()
+	 * @see #getPackage()
+	 * @generated
+	 */
+	EReference getPackage_PackagedElement();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Document <em>Document</em>}'.
@@ -7079,17 +8326,6 @@ public interface QWikiPackage extends EPackage {
 	EReference getDocumentVersion_SuperseedingRelationship();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.DocumentVersion#getQualifiedNumber <em>Qualified Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Qualified Number</em>'.
-	 * @see QWiki.DocumentVersion#getQualifiedNumber()
-	 * @see #getDocumentVersion()
-	 * @generated
-	 */
-	EAttribute getDocumentVersion_QualifiedNumber();
-
-	/**
 	 * Returns the meta object for the container reference '{@link QWiki.DocumentVersion#getOwningDocument <em>Owning Document</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7177,17 +8413,6 @@ public interface QWikiPackage extends EPackage {
 	EReference getSection_SuperseedingRelationship();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.Section#getQualifiedNumber <em>Qualified Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Qualified Number</em>'.
-	 * @see QWiki.Section#getQualifiedNumber()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EAttribute getSection_QualifiedNumber();
-
-	/**
 	 * Returns the meta object for the reference list '{@link QWiki.Section#getTerm <em>Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7208,6 +8433,26 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSection_OwningDocument();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.Section#documentVersion() <em>Document Version</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Document Version</em>' operation.
+	 * @see QWiki.Section#documentVersion()
+	 * @generated
+	 */
+	EOperation getSection__DocumentVersion();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.Section#qualifiedNumber() <em>Qualified Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Qualified Number</em>' operation.
+	 * @see QWiki.Section#qualifiedNumber()
+	 * @generated
+	 */
+	EOperation getSection__QualifiedNumber();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.SpiceElement <em>Spice Element</em>}'.
@@ -7481,6 +8726,16 @@ public interface QWikiPackage extends EPackage {
 	EReference getProcessReferenceModel_OwnedSpiceElement();
 
 	/**
+	 * Returns the meta object for the '{@link QWiki.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Oid For Domain</em>' operation.
+	 * @see QWiki.ProcessReferenceModel#oidForDomain()
+	 * @generated
+	 */
+	EOperation getProcessReferenceModel__OidForDomain();
+
+	/**
 	 * Returns the meta object for class '{@link QWiki.SuperseedingRelationship <em>Superseeding Relationship</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7500,6 +8755,59 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSuperseedingRelationship_SuperseedingType();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Directed Relationship</em>'.
+	 * @see QWiki.DirectedRelationship
+	 * @generated
+	 */
+	EClass getDirectedRelationship();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.DirectedRelationship#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Source</em>'.
+	 * @see QWiki.DirectedRelationship#getSource()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EReference getDirectedRelationship_Source();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.DirectedRelationship#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Target</em>'.
+	 * @see QWiki.DirectedRelationship#getTarget()
+	 * @see #getDirectedRelationship()
+	 * @generated
+	 */
+	EReference getDirectedRelationship_Target();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Relationship <em>Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Relationship</em>'.
+	 * @see QWiki.Relationship
+	 * @generated
+	 */
+	EClass getRelationship();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.Relationship#getRelatedElement <em>Related Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Related Element</em>'.
+	 * @see QWiki.Relationship#getRelatedElement()
+	 * @see #getRelationship()
+	 * @generated
+	 */
+	EReference getRelationship_RelatedElement();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Term <em>Term</em>}'.
@@ -7588,24 +8896,57 @@ public interface QWikiPackage extends EPackage {
 	EReference getTermDefinition_OwningTerm();
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Standard <em>Standard</em>}'.
+	 * Returns the meta object for class '{@link QWiki.Association <em>Association</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Standard</em>'.
-	 * @see QWiki.Standard
+	 * @return the meta object for class '<em>Association</em>'.
+	 * @see QWiki.Association
 	 * @generated
 	 */
-	EClass getStandard();
+	EClass getAssociation();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Standard#sdo() <em>Sdo</em>}' operation.
+	 * Returns the meta object for the reference list '{@link QWiki.Association#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Sdo</em>' operation.
-	 * @see QWiki.Standard#sdo()
+	 * @return the meta object for the reference list '<em>End</em>'.
+	 * @see QWiki.Association#getEnd()
+	 * @see #getAssociation()
 	 * @generated
 	 */
-	EOperation getStandard__Sdo();
+	EReference getAssociation_End();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.Association#getEndRelationshipType <em>End Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>End Relationship Type</em>'.
+	 * @see QWiki.Association#getEndRelationshipType()
+	 * @see #getAssociation()
+	 * @generated
+	 */
+	EReference getAssociation_EndRelationshipType();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.RelationshipType <em>Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Relationship Type</em>'.
+	 * @see QWiki.RelationshipType
+	 * @generated
+	 */
+	EClass getRelationshipType();
+
+	/**
+	 * Returns the meta object for the reference list '{@link QWiki.RelationshipType#getTypedAssociation <em>Typed Association</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Typed Association</em>'.
+	 * @see QWiki.RelationshipType#getTypedAssociation()
+	 * @see #getRelationshipType()
+	 * @generated
+	 */
+	EReference getRelationshipType_TypedAssociation();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.BasePractise <em>Base Practise</em>}'.
@@ -7694,10 +9035,10 @@ public interface QWikiPackage extends EPackage {
 	EReference getProcess_FacilitatingWorkProduct();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Process#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}'.
+	 * Returns the meta object for the reference list '{@link QWiki.Process#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Facilitated Work Product</em>'.
+	 * @return the meta object for the reference list '<em>Facilitated Work Product</em>'.
 	 * @see QWiki.Process#getFacilitatedWorkProduct()
 	 * @see #getProcess()
 	 * @generated
@@ -7726,15 +9067,15 @@ public interface QWikiPackage extends EPackage {
 	EClass getProcessGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.ProcessGroup#getOnwedProcess <em>Onwed Process</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.ProcessGroup#getOwnedProcess <em>Owned Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Onwed Process</em>'.
-	 * @see QWiki.ProcessGroup#getOnwedProcess()
+	 * @return the meta object for the containment reference list '<em>Owned Process</em>'.
+	 * @see QWiki.ProcessGroup#getOwnedProcess()
 	 * @see #getProcessGroup()
 	 * @generated
 	 */
-	EReference getProcessGroup_OnwedProcess();
+	EReference getProcessGroup_OwnedProcess();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Outcome <em>Outcome</em>}'.
@@ -7801,37 +9142,37 @@ public interface QWikiPackage extends EPackage {
 	EClass getWorkProduct();
 
 	/**
-	 * Returns the meta object for the container reference '{@link QWiki.WorkProduct#getOwningWorkingGroup <em>Owning Working Group</em>}'.
+	 * Returns the meta object for the container reference '{@link QWiki.WorkProduct#getOwningWorkProductGroup <em>Owning Work Product Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Owning Working Group</em>'.
-	 * @see QWiki.WorkProduct#getOwningWorkingGroup()
+	 * @return the meta object for the container reference '<em>Owning Work Product Group</em>'.
+	 * @see QWiki.WorkProduct#getOwningWorkProductGroup()
 	 * @see #getWorkProduct()
 	 * @generated
 	 */
-	EReference getWorkProduct_OwningWorkingGroup();
+	EReference getWorkProduct_OwningWorkProductGroup();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.WorkProduct#getCharacteristic <em>Characteristic</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.WorkProduct#getOwnedCharacteristic <em>Owned Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Characteristic</em>'.
-	 * @see QWiki.WorkProduct#getCharacteristic()
+	 * @return the meta object for the containment reference list '<em>Owned Characteristic</em>'.
+	 * @see QWiki.WorkProduct#getOwnedCharacteristic()
 	 * @see #getWorkProduct()
 	 * @generated
 	 */
-	EReference getWorkProduct_Characteristic();
+	EReference getWorkProduct_OwnedCharacteristic();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.WorkProduct#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.WorkProduct#getOwnedContent <em>Owned Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Content</em>'.
-	 * @see QWiki.WorkProduct#getContent()
+	 * @return the meta object for the containment reference list '<em>Owned Content</em>'.
+	 * @see QWiki.WorkProduct#getOwnedContent()
 	 * @see #getWorkProduct()
 	 * @generated
 	 */
-	EReference getWorkProduct_Content();
+	EReference getWorkProduct_OwnedContent();
 
 	/**
 	 * Returns the meta object for the reference list '{@link QWiki.WorkProduct#getFacilitatingOutcome <em>Facilitating Outcome</em>}'.
@@ -8011,6 +9352,14 @@ public interface QWikiPackage extends EPackage {
 		EAttribute AUTHOR__AUTHOR_TYPE = eINSTANCE.getAuthor_AuthorType();
 
 		/**
+		 * The meta object literal for the '<em><b>Abbreviation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute AUTHOR__ABBREVIATION = eINSTANCE.getAuthor_Abbreviation();
+
+		/**
 		 * The meta object literal for the '<em><b>Authored Document</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8045,14 +9394,6 @@ public interface QWikiPackage extends EPackage {
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualified Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__QUALIFIED_NAME = eINSTANCE.getNamedElement_QualifiedName();
-
-		/**
 		 * The meta object literal for the '<em><b>Assigned Domain</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8067,6 +9408,46 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NAMED_ELEMENT__DOMAIN = eINSTANCE.getNamedElement_Domain();
+
+		/**
+		 * The meta object literal for the '<em><b>Namespace</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NAMED_ELEMENT__NAMESPACE = eINSTANCE.getNamedElement_Namespace();
+
+		/**
+		 * The meta object literal for the '<em><b>Owning Package</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NAMED_ELEMENT__OWNING_PACKAGE = eINSTANCE.getNamedElement_OwningPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualified Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NAMED_ELEMENT___QUALIFIED_NAME = eINSTANCE.getNamedElement__QualifiedName();
+
+		/**
+		 * The meta object literal for the '<em><b>All Namespaces</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NAMED_ELEMENT___ALL_NAMESPACES = eINSTANCE.getNamedElement__AllNamespaces();
+
+		/**
+		 * The meta object literal for the '<em><b>Separator</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation NAMED_ELEMENT___SEPARATOR = eINSTANCE.getNamedElement__Separator();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.TaggedElementImpl <em>Tagged Element</em>}' class.
@@ -8137,12 +9518,12 @@ public interface QWikiPackage extends EPackage {
 		EAttribute ELEMENT__UUID = eINSTANCE.getElement_Uuid();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ELEMENT__OID = eINSTANCE.getElement_Oid();
+		EReference ELEMENT__MODEL = eINSTANCE.getElement_Model();
 
 		/**
 		 * The meta object literal for the '<em><b>All Owned Elements</b></em>' operation.
@@ -8167,6 +9548,14 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation ELEMENT___MODEL = eINSTANCE.getElement__Model();
+
+		/**
+		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ELEMENT___OID = eINSTANCE.getElement__Oid();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.CommentImpl <em>Comment</em>}' class.
@@ -8257,110 +9646,22 @@ public interface QWikiPackage extends EPackage {
 		EAttribute I1_8N_VALUE__BODY = eINSTANCE.getI18nValue_Body();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
+		 * The meta object literal for the '{@link QWiki.impl.QWikiModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.DirectedRelationshipImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getDirectedRelationship()
+		 * @see QWiki.impl.QWikiModelImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getQWikiModel()
 		 * @generated
 		 */
-		EClass DIRECTED_RELATIONSHIP = eINSTANCE.getDirectedRelationship();
+		EClass QWIKI_MODEL = eINSTANCE.getQWikiModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Owned Model Element</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference DIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getDirectedRelationship_Target();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getDirectedRelationship_Source();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.impl.RelationshipImpl <em>Relationship</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.RelationshipImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getRelationship()
-		 * @generated
-		 */
-		EClass RELATIONSHIP = eINSTANCE.getRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Related Element</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONSHIP__RELATED_ELEMENT = eINSTANCE.getRelationship_RelatedElement();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.impl.AssociationImpl <em>Association</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.AssociationImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getAssociation()
-		 * @generated
-		 */
-		EClass ASSOCIATION = eINSTANCE.getAssociation();
-
-		/**
-		 * The meta object literal for the '<em><b>End Relationship Type</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSOCIATION__END_RELATIONSHIP_TYPE = eINSTANCE.getAssociation_EndRelationshipType();
-
-		/**
-		 * The meta object literal for the '<em><b>End</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSOCIATION__END = eINSTANCE.getAssociation_End();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.impl.RelationshipTypeImpl <em>Relationship Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.RelationshipTypeImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getRelationshipType()
-		 * @generated
-		 */
-		EClass RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
-
-		/**
-		 * The meta object literal for the '<em><b>Typed Association</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONSHIP_TYPE__TYPED_ASSOCIATION = eINSTANCE.getRelationshipType_TypedAssociation();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.I18nNamedElementImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getI18nNamedElement()
-		 * @generated
-		 */
-		EClass I1_8N_NAMED_ELEMENT = eINSTANCE.getI18nNamedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Display Name</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference I1_8N_NAMED_ELEMENT__DISPLAY_NAME = eINSTANCE.getI18nNamedElement_DisplayName();
+		EReference QWIKI_MODEL__OWNED_MODEL_ELEMENT = eINSTANCE.getQWikiModel_OwnedModelElement();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.I18nKeyedStringImpl <em>I1 8n Keyed String</em>}' class.
@@ -8379,16 +9680,6 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute I1_8N_KEYED_STRING__KEY = eINSTANCE.getI18nKeyedString_Key();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.impl.QWikiModelImpl <em>Model</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.QWikiModelImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getQWikiModel()
-		 * @generated
-		 */
-		EClass QWIKI_MODEL = eINSTANCE.getQWikiModel();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.DomainImpl <em>Domain</em>}' class.
@@ -8415,6 +9706,76 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation DOMAIN___ALL_DOMAIN_ELEMENT = eINSTANCE.getDomain__AllDomainElement();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.I18nNamedElementImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getI18nNamedElement()
+		 * @generated
+		 */
+		EClass I1_8N_NAMED_ELEMENT = eINSTANCE.getI18nNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Display Name</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference I1_8N_NAMED_ELEMENT__DISPLAY_NAME = eINSTANCE.getI18nNamedElement_DisplayName();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.NamespaceImpl <em>Namespace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.NamespaceImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getNamespace()
+		 * @generated
+		 */
+		EClass NAMESPACE = eINSTANCE.getNamespace();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Member</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NAMESPACE__OWNED_MEMBER = eINSTANCE.getNamespace_OwnedMember();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.PackageImpl <em>Package</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.PackageImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getPackage()
+		 * @generated
+		 */
+		EClass PACKAGE = eINSTANCE.getPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Nesting Package</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__NESTING_PACKAGE = eINSTANCE.getPackage_NestingPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Nested Package</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__NESTED_PACKAGE = eINSTANCE.getPackage_NestedPackage();
+
+		/**
+		 * The meta object literal for the '<em><b>Packaged Element</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PACKAGE__PACKAGED_ELEMENT = eINSTANCE.getPackage_PackagedElement();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.DocumentImpl <em>Document</em>}' class.
@@ -8543,14 +9904,6 @@ public interface QWikiPackage extends EPackage {
 		EReference DOCUMENT_VERSION__SUPERSEEDING_RELATIONSHIP = eINSTANCE.getDocumentVersion_SuperseedingRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualified Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DOCUMENT_VERSION__QUALIFIED_NUMBER = eINSTANCE.getDocumentVersion_QualifiedNumber();
-
-		/**
 		 * The meta object literal for the '<em><b>Owning Document</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8617,14 +9970,6 @@ public interface QWikiPackage extends EPackage {
 		EReference SECTION__SUPERSEEDING_RELATIONSHIP = eINSTANCE.getSection_SuperseedingRelationship();
 
 		/**
-		 * The meta object literal for the '<em><b>Qualified Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECTION__QUALIFIED_NUMBER = eINSTANCE.getSection_QualifiedNumber();
-
-		/**
 		 * The meta object literal for the '<em><b>Term</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8639,6 +9984,22 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SECTION__OWNING_DOCUMENT = eINSTANCE.getSection_OwningDocument();
+
+		/**
+		 * The meta object literal for the '<em><b>Document Version</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SECTION___DOCUMENT_VERSION = eINSTANCE.getSection__DocumentVersion();
+
+		/**
+		 * The meta object literal for the '<em><b>Qualified Number</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation SECTION___QUALIFIED_NUMBER = eINSTANCE.getSection__QualifiedNumber();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.SpiceElementImpl <em>Spice Element</em>}' class.
@@ -8849,6 +10210,14 @@ public interface QWikiPackage extends EPackage {
 		EReference PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT = eINSTANCE.getProcessReferenceModel_OwnedSpiceElement();
 
 		/**
+		 * The meta object literal for the '<em><b>Oid For Domain</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN = eINSTANCE.getProcessReferenceModel__OidForDomain();
+
+		/**
 		 * The meta object literal for the '{@link QWiki.impl.SuperseedingRelationshipImpl <em>Superseeding Relationship</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8865,6 +10234,50 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SUPERSEEDING_RELATIONSHIP__SUPERSEEDING_TYPE = eINSTANCE.getSuperseedingRelationship_SuperseedingType();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.DirectedRelationshipImpl <em>Directed Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.DirectedRelationshipImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getDirectedRelationship()
+		 * @generated
+		 */
+		EClass DIRECTED_RELATIONSHIP = eINSTANCE.getDirectedRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIRECTED_RELATIONSHIP__SOURCE = eINSTANCE.getDirectedRelationship_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DIRECTED_RELATIONSHIP__TARGET = eINSTANCE.getDirectedRelationship_Target();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.RelationshipImpl <em>Relationship</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.RelationshipImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getRelationship()
+		 * @generated
+		 */
+		EClass RELATIONSHIP = eINSTANCE.getRelationship();
+
+		/**
+		 * The meta object literal for the '<em><b>Related Element</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONSHIP__RELATED_ELEMENT = eINSTANCE.getRelationship_RelatedElement();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.TermImpl <em>Term</em>}' class.
@@ -8935,22 +10348,48 @@ public interface QWikiPackage extends EPackage {
 		EReference TERM_DEFINITION__OWNING_TERM = eINSTANCE.getTermDefinition_OwningTerm();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.impl.StandardImpl <em>Standard</em>}' class.
+		 * The meta object literal for the '{@link QWiki.impl.AssociationImpl <em>Association</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.StandardImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getStandard()
+		 * @see QWiki.impl.AssociationImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getAssociation()
 		 * @generated
 		 */
-		EClass STANDARD = eINSTANCE.getStandard();
+		EClass ASSOCIATION = eINSTANCE.getAssociation();
 
 		/**
-		 * The meta object literal for the '<em><b>Sdo</b></em>' operation.
+		 * The meta object literal for the '<em><b>End</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation STANDARD___SDO = eINSTANCE.getStandard__Sdo();
+		EReference ASSOCIATION__END = eINSTANCE.getAssociation_End();
+
+		/**
+		 * The meta object literal for the '<em><b>End Relationship Type</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSOCIATION__END_RELATIONSHIP_TYPE = eINSTANCE.getAssociation_EndRelationshipType();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.impl.RelationshipTypeImpl <em>Relationship Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.impl.RelationshipTypeImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getRelationshipType()
+		 * @generated
+		 */
+		EClass RELATIONSHIP_TYPE = eINSTANCE.getRelationshipType();
+
+		/**
+		 * The meta object literal for the '<em><b>Typed Association</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONSHIP_TYPE__TYPED_ASSOCIATION = eINSTANCE.getRelationshipType_TypedAssociation();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.BasePractiseImpl <em>Base Practise</em>}' class.
@@ -9021,7 +10460,7 @@ public interface QWikiPackage extends EPackage {
 		EReference PROCESS__FACILITATING_WORK_PRODUCT = eINSTANCE.getProcess_FacilitatingWorkProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Facilitated Work Product</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Facilitated Work Product</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -9047,12 +10486,12 @@ public interface QWikiPackage extends EPackage {
 		EClass PROCESS_GROUP = eINSTANCE.getProcessGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Onwed Process</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Process</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PROCESS_GROUP__ONWED_PROCESS = eINSTANCE.getProcessGroup_OnwedProcess();
+		EReference PROCESS_GROUP__OWNED_PROCESS = eINSTANCE.getProcessGroup_OwnedProcess();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.OutcomeImpl <em>Outcome</em>}' class.
@@ -9107,28 +10546,28 @@ public interface QWikiPackage extends EPackage {
 		EClass WORK_PRODUCT = eINSTANCE.getWorkProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Owning Working Group</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Owning Work Product Group</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WORK_PRODUCT__OWNING_WORKING_GROUP = eINSTANCE.getWorkProduct_OwningWorkingGroup();
+		EReference WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = eINSTANCE.getWorkProduct_OwningWorkProductGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Characteristic</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Characteristic</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WORK_PRODUCT__CHARACTERISTIC = eINSTANCE.getWorkProduct_Characteristic();
+		EReference WORK_PRODUCT__OWNED_CHARACTERISTIC = eINSTANCE.getWorkProduct_OwnedCharacteristic();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Content</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference WORK_PRODUCT__CONTENT = eINSTANCE.getWorkProduct_Content();
+		EReference WORK_PRODUCT__OWNED_CONTENT = eINSTANCE.getWorkProduct_OwnedContent();
 
 		/**
 		 * The meta object literal for the '<em><b>Facilitating Outcome</b></em>' reference list feature.

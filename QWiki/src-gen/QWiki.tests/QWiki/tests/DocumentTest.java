@@ -17,6 +17,12 @@ import junit.textui.TestRunner;
  *   <li>{@link QWiki.Document#getSuperseedingRelationship() <em>Superseeding Relationship</em>}</li>
  * </ul>
  * </p>
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link QWiki.Document#oid() <em>Oid</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class DocumentTest extends I18nDescriptiveElementTest {
@@ -82,6 +88,19 @@ public class DocumentTest extends I18nDescriptiveElementTest {
 	 */
 	public void testGetSuperseedingRelationship() {
 		// TODO: implement this feature getter test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link QWiki.Document#oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Document#oid()
+	 * @generated
+	 */
+	public void testOid() {
+		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}

@@ -10,6 +10,7 @@ import QWiki.QWikiPackage;
 import QWiki.Section;
 import QWiki.SuperseedingRelationship;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,7 +18,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -43,7 +46,6 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *   <li>{@link QWiki.impl.DocumentVersionImpl#getEdition <em>Edition</em>}</li>
  *   <li>{@link QWiki.impl.DocumentVersionImpl#getOwnedSection <em>Owned Section</em>}</li>
  *   <li>{@link QWiki.impl.DocumentVersionImpl#getSuperseedingRelationship <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.impl.DocumentVersionImpl#getQualifiedNumber <em>Qualified Number</em>}</li>
  *   <li>{@link QWiki.impl.DocumentVersionImpl#getOwningDocument <em>Owning Document</em>}</li>
  * </ul>
  *
@@ -119,16 +121,6 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @ordered
 	 */
 	protected EList<Section> ownedSection;
-
-	/**
-	 * The default value of the '{@link #getQualifiedNumber() <em>Qualified Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQualifiedNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUALIFIED_NUMBER_EDEFAULT = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -294,18 +286,6 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @generated
 	 */
 	@Override
-	public String getQualifiedNumber() {
-		// TODO: implement this method to return the 'Qualified Number' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Document getOwningDocument() {
 		if (eContainerFeatureID() != QWikiPackage.DOCUMENT_VERSION__OWNING_DOCUMENT) return null;
 		return (Document)eInternalContainer();
@@ -341,6 +321,31 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.DOCUMENT_VERSION__OWNING_DOCUMENT, newOwningDocument, newOwningDocument));
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -410,8 +415,6 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 				return getOwnedSection();
 			case QWikiPackage.DOCUMENT_VERSION__SUPERSEEDING_RELATIONSHIP:
 				return getSuperseedingRelationship();
-			case QWikiPackage.DOCUMENT_VERSION__QUALIFIED_NUMBER:
-				return getQualifiedNumber();
 			case QWikiPackage.DOCUMENT_VERSION__OWNING_DOCUMENT:
 				return getOwningDocument();
 		}
@@ -496,12 +499,24 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 				return ownedSection != null && !ownedSection.isEmpty();
 			case QWikiPackage.DOCUMENT_VERSION__SUPERSEEDING_RELATIONSHIP:
 				return !getSuperseedingRelationship().isEmpty();
-			case QWikiPackage.DOCUMENT_VERSION__QUALIFIED_NUMBER:
-				return QUALIFIED_NUMBER_EDEFAULT == null ? getQualifiedNumber() != null : !QUALIFIED_NUMBER_EDEFAULT.equals(getQualifiedNumber());
 			case QWikiPackage.DOCUMENT_VERSION__OWNING_DOCUMENT:
 				return getOwningDocument() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case QWikiPackage.DOCUMENT_VERSION___OID:
+				return oid();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

@@ -31,7 +31,7 @@ public interface I18nNamedElement extends NamedElement {
 	 * @return the value of the '<em>Display Name</em>' containment reference.
 	 * @see #setDisplayName(I18nString)
 	 * @see QWiki.QWikiPackage#getI18nNamedElement_DisplayName()
-	 * @model containment="true" ordered="false"
+	 * @model containment="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getDisplayName();

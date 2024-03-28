@@ -46,6 +46,7 @@ public class AuthorItemProvider extends NamedElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addAuthorTypePropertyDescriptor(object);
+			addAbbreviationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -64,6 +65,28 @@ public class AuthorItemProvider extends NamedElementItemProvider {
 				 getString("_UI_Author_authorType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Author_authorType_feature", "_UI_Author_type"),
 				 QWikiPackage.Literals.AUTHOR__AUTHOR_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Abbreviation feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAbbreviationPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Author_abbreviation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Author_abbreviation_feature", "_UI_Author_type"),
+				 QWikiPackage.Literals.AUTHOR__ABBREVIATION,
 				 true,
 				 false,
 				 false,
@@ -111,6 +134,7 @@ public class AuthorItemProvider extends NamedElementItemProvider {
 
 		switch (notification.getFeatureID(Author.class)) {
 			case QWikiPackage.AUTHOR__AUTHOR_TYPE:
+			case QWikiPackage.AUTHOR__ABBREVIATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

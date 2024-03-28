@@ -10,6 +10,7 @@ import QWiki.SpiceElement;
 import QWiki.SuperseedingRelationship;
 import QWiki.Term;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,7 +18,9 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -45,7 +48,6 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *   <li>{@link QWiki.impl.SectionImpl#getNumber <em>Number</em>}</li>
  *   <li>{@link QWiki.impl.SectionImpl#getFacilitatingSpiceElement <em>Facilitating Spice Element</em>}</li>
  *   <li>{@link QWiki.impl.SectionImpl#getSuperseedingRelationship <em>Superseeding Relationship</em>}</li>
- *   <li>{@link QWiki.impl.SectionImpl#getQualifiedNumber <em>Qualified Number</em>}</li>
  *   <li>{@link QWiki.impl.SectionImpl#getTerm <em>Term</em>}</li>
  *   <li>{@link QWiki.impl.SectionImpl#getOwningDocument <em>Owning Document</em>}</li>
  * </ul>
@@ -92,16 +94,6 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @ordered
 	 */
 	protected EList<SpiceElement> facilitatingSpiceElement;
-
-	/**
-	 * The default value of the '{@link #getQualifiedNumber() <em>Qualified Number</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getQualifiedNumber()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String QUALIFIED_NUMBER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getTerm() <em>Term</em>}' reference list.
@@ -311,18 +303,6 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 */
 	@Override
-	public String getQualifiedNumber() {
-		// TODO: implement this method to return the 'Qualified Number' attribute
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Term> getTerm() {
 		if (term == null) {
 			term = new EObjectWithInverseResolvingEList.ManyInverse<Term>(Term.class, this, QWikiPackage.SECTION__TERM, QWikiPackage.TERM__EXTERNAL_TERM_DEFINITION);
@@ -371,6 +351,79 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.SECTION__OWNING_DOCUMENT, newOwningDocument, newOwningDocument));
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #documentVersion() <em>Document Version</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #documentVersion()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate DOCUMENT_VERSION__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.SECTION___DOCUMENT_VERSION).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DocumentVersion documentVersion() {
+		try {
+			return (DocumentVersion)DOCUMENT_VERSION__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #qualifiedNumber() <em>Qualified Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #qualifiedNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate QUALIFIED_NUMBER__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.SECTION___QUALIFIED_NUMBER).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String qualifiedNumber() {
+		try {
+			return (String)QUALIFIED_NUMBER__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #oid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oid() {
+		try {
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -458,8 +511,6 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 				return getFacilitatingSpiceElement();
 			case QWikiPackage.SECTION__SUPERSEEDING_RELATIONSHIP:
 				return getSuperseedingRelationship();
-			case QWikiPackage.SECTION__QUALIFIED_NUMBER:
-				return getQualifiedNumber();
 			case QWikiPackage.SECTION__TERM:
 				return getTerm();
 			case QWikiPackage.SECTION__OWNING_DOCUMENT:
@@ -556,14 +607,30 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 				return facilitatingSpiceElement != null && !facilitatingSpiceElement.isEmpty();
 			case QWikiPackage.SECTION__SUPERSEEDING_RELATIONSHIP:
 				return !getSuperseedingRelationship().isEmpty();
-			case QWikiPackage.SECTION__QUALIFIED_NUMBER:
-				return QUALIFIED_NUMBER_EDEFAULT == null ? getQualifiedNumber() != null : !QUALIFIED_NUMBER_EDEFAULT.equals(getQualifiedNumber());
 			case QWikiPackage.SECTION__TERM:
 				return term != null && !term.isEmpty();
 			case QWikiPackage.SECTION__OWNING_DOCUMENT:
 				return getOwningDocument() != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case QWikiPackage.SECTION___DOCUMENT_VERSION:
+				return documentVersion();
+			case QWikiPackage.SECTION___QUALIFIED_NUMBER:
+				return qualifiedNumber();
+			case QWikiPackage.SECTION___OID:
+				return oid();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

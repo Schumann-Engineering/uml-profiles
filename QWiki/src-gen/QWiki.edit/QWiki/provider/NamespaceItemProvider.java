@@ -3,8 +3,8 @@
 package QWiki.provider;
 
 
+import QWiki.Namespace;
 import QWiki.QWikiPackage;
-import QWiki.Standard;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,22 +12,23 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link QWiki.Standard} object.
+ * This is the item provider adapter for a {@link QWiki.Namespace} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StandardItemProvider extends DocumentItemProvider {
+public class NamespaceItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StandardItemProvider(AdapterFactory adapterFactory) {
+	public NamespaceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,19 +43,31 @@ public class StandardItemProvider extends DocumentItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOwnedMemberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This returns Standard.gif.
+	 * This adds a property descriptor for the Owned Member feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Standard"));
+	protected void addOwnedMemberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Namespace_ownedMember_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Namespace_ownedMember_feature", "_UI_Namespace_type"),
+				 QWikiPackage.Literals.NAMESPACE__OWNED_MEMBER,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -65,10 +78,10 @@ public class StandardItemProvider extends DocumentItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Standard)object).getName();
+		String label = ((Namespace)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Standard_type") :
-			getString("_UI_Standard_type") + " " + label;
+			getString("_UI_Namespace_type") :
+			getString("_UI_Namespace_type") + " " + label;
 	}
 
 
@@ -95,30 +108,6 @@ public class StandardItemProvider extends DocumentItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify =
-			childFeature == QWikiPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == QWikiPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == QWikiPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
-
-		if (qualify) {
-			return getString
-				("_UI_CreateChild_text2",
-				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }
