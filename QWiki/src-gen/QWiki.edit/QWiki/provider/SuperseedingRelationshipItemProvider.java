@@ -5,6 +5,7 @@ package QWiki.provider;
 
 import QWiki.QWikiPackage;
 import QWiki.SuperseedingRelationship;
+import QWiki.SuperseedingType;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,7 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SuperseedingRelationshipItemProvider extends DirectedRelationshipItemProvider {
+public class SuperseedingRelationshipItemProvider extends UmlDirectedRelationshipItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -91,7 +92,8 @@ public class SuperseedingRelationshipItemProvider extends DirectedRelationshipIt
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((SuperseedingRelationship)object).getUuid();
+		SuperseedingType labelValue = ((SuperseedingRelationship)object).getSuperseedingType();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
 			getString("_UI_SuperseedingRelationship_type") :
 			getString("_UI_SuperseedingRelationship_type") + " " + label;

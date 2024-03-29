@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public abstract class I18nNamedElementImpl extends NamedElementImpl implements I18nNamedElement {
+public abstract class I18nNamedElementImpl extends UmlNamedElementImpl implements I18nNamedElement {
 	/**
 	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->

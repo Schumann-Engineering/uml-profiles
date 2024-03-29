@@ -2,18 +2,19 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.ProcessGroup;
 import QWiki.QWikiPackage;
+import QWiki.UmlElement;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -47,6 +48,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @ordered
 	 */
 	protected EList<QWiki.Process> ownedProcess;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -72,8 +74,8 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.PROCESS_GROUP__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.PROCESS_GROUP__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -107,7 +109,8 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

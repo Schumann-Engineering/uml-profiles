@@ -26,7 +26,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TaggedElementItemProvider extends ElementItemProvider {
+public class TaggedElementItemProvider extends UmlElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -113,10 +113,7 @@ public class TaggedElementItemProvider extends ElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((TaggedElement)object).getUuid();
-		return label == null || label.length() == 0 ?
-			getString("_UI_TaggedElement_type") :
-			getString("_UI_TaggedElement_type") + " " + label;
+		return getString("_UI_TaggedElement_type");
 	}
 
 

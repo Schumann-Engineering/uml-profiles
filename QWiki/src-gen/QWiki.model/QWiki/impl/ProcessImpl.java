@@ -3,21 +3,22 @@
 package QWiki.impl;
 
 import QWiki.BasePractise;
-import QWiki.Element;
 import QWiki.Outcome;
 import QWiki.ProcessGroup;
 import QWiki.QWikiPackage;
+import QWiki.UmlElement;
 import QWiki.WorkProduct;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -116,9 +117,9 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -127,7 +128,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		ProcessGroup owningProcessGroup = getOwningProcessGroup();			
 		if (owningProcessGroup != null) {
 			return owningProcessGroup;
@@ -141,8 +142,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.PROCESS__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.PROCESS__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -258,7 +259,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Process {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->

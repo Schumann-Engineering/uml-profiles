@@ -95,49 +95,49 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Comment} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.UmlComment} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CommentItemProvider commentItemProvider;
+	protected UmlCommentItemProvider umlCommentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Comment}.
+	 * This creates an adapter for a {@link QWiki.UmlComment}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCommentAdapter() {
-		if (commentItemProvider == null) {
-			commentItemProvider = new CommentItemProvider(this);
+	public Adapter createUmlCommentAdapter() {
+		if (umlCommentItemProvider == null) {
+			umlCommentItemProvider = new UmlCommentItemProvider(this);
 		}
 
-		return commentItemProvider;
+		return umlCommentItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.I18nString} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.I18nKeyedString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected I18nStringItemProvider i18nStringItemProvider;
+	protected I18nKeyedStringItemProvider i18nKeyedStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.I18nString}.
+	 * This creates an adapter for a {@link QWiki.I18nKeyedString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createI18nStringAdapter() {
-		if (i18nStringItemProvider == null) {
-			i18nStringItemProvider = new I18nStringItemProvider(this);
+	public Adapter createI18nKeyedStringAdapter() {
+		if (i18nKeyedStringItemProvider == null) {
+			i18nKeyedStringItemProvider = new I18nKeyedStringItemProvider(this);
 		}
 
-		return i18nStringItemProvider;
+		return i18nKeyedStringItemProvider;
 	}
 
 	/**
@@ -187,75 +187,6 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Association} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AssociationItemProvider associationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.Association}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAssociationAdapter() {
-		if (associationItemProvider == null) {
-			associationItemProvider = new AssociationItemProvider(this);
-		}
-
-		return associationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.RelationshipType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RelationshipTypeItemProvider relationshipTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.RelationshipType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRelationshipTypeAdapter() {
-		if (relationshipTypeItemProvider == null) {
-			relationshipTypeItemProvider = new RelationshipTypeItemProvider(this);
-		}
-
-		return relationshipTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.I18nKeyedString} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected I18nKeyedStringItemProvider i18nKeyedStringItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.I18nKeyedString}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createI18nKeyedStringAdapter() {
-		if (i18nKeyedStringItemProvider == null) {
-			i18nKeyedStringItemProvider = new I18nKeyedStringItemProvider(this);
-		}
-
-		return i18nKeyedStringItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link QWiki.QWikiModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -279,49 +210,26 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Domain} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.UmlPackage} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DomainItemProvider domainItemProvider;
+	protected UmlPackageItemProvider umlPackageItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Domain}.
+	 * This creates an adapter for a {@link QWiki.UmlPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDomainAdapter() {
-		if (domainItemProvider == null) {
-			domainItemProvider = new DomainItemProvider(this);
+	public Adapter createUmlPackageAdapter() {
+		if (umlPackageItemProvider == null) {
+			umlPackageItemProvider = new UmlPackageItemProvider(this);
 		}
 
-		return domainItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Package} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PackageItemProvider packageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.Package}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPackageAdapter() {
-		if (packageItemProvider == null) {
-			packageItemProvider = new PackageItemProvider(this);
-		}
-
-		return packageItemProvider;
+		return umlPackageItemProvider;
 	}
 
 	/**
@@ -345,6 +253,29 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 		}
 
 		return documentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.I18nString} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected I18nStringItemProvider i18nStringItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.I18nString}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createI18nStringAdapter() {
+		if (i18nStringItemProvider == null) {
+			i18nStringItemProvider = new I18nStringItemProvider(this);
+		}
+
+		return i18nStringItemProvider;
 	}
 
 	/**
@@ -647,6 +578,75 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Domain} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DomainItemProvider domainItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Domain}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDomainAdapter() {
+		if (domainItemProvider == null) {
+			domainItemProvider = new DomainItemProvider(this);
+		}
+
+		return domainItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.DO_NOT_USE_RelationshipType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DO_NOT_USE_RelationshipTypeItemProvider dO_NOT_USE_RelationshipTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.DO_NOT_USE_RelationshipType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDO_NOT_USE_RelationshipTypeAdapter() {
+		if (dO_NOT_USE_RelationshipTypeItemProvider == null) {
+			dO_NOT_USE_RelationshipTypeItemProvider = new DO_NOT_USE_RelationshipTypeItemProvider(this);
+		}
+
+		return dO_NOT_USE_RelationshipTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.UmlAssociation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected UmlAssociationItemProvider umlAssociationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.UmlAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUmlAssociationAdapter() {
+		if (umlAssociationItemProvider == null) {
+			umlAssociationItemProvider = new UmlAssociationItemProvider(this);
+		}
+
+		return umlAssociationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -752,15 +752,14 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	@Override
 	public void dispose() {
 		if (authorItemProvider != null) authorItemProvider.dispose();
-		if (commentItemProvider != null) commentItemProvider.dispose();
-		if (i18nStringItemProvider != null) i18nStringItemProvider.dispose();
+		if (umlCommentItemProvider != null) umlCommentItemProvider.dispose();
+		if (i18nKeyedStringItemProvider != null) i18nKeyedStringItemProvider.dispose();
 		if (i18nBaseStringItemProvider != null) i18nBaseStringItemProvider.dispose();
 		if (i18nValueItemProvider != null) i18nValueItemProvider.dispose();
 		if (qWikiModelItemProvider != null) qWikiModelItemProvider.dispose();
-		if (i18nKeyedStringItemProvider != null) i18nKeyedStringItemProvider.dispose();
-		if (domainItemProvider != null) domainItemProvider.dispose();
-		if (packageItemProvider != null) packageItemProvider.dispose();
+		if (umlPackageItemProvider != null) umlPackageItemProvider.dispose();
 		if (documentItemProvider != null) documentItemProvider.dispose();
+		if (i18nStringItemProvider != null) i18nStringItemProvider.dispose();
 		if (documentVersionItemProvider != null) documentVersionItemProvider.dispose();
 		if (sectionItemProvider != null) sectionItemProvider.dispose();
 		if (roleItemProvider != null) roleItemProvider.dispose();
@@ -768,14 +767,15 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 		if (superseedingRelationshipItemProvider != null) superseedingRelationshipItemProvider.dispose();
 		if (termItemProvider != null) termItemProvider.dispose();
 		if (termDefinitionItemProvider != null) termDefinitionItemProvider.dispose();
-		if (associationItemProvider != null) associationItemProvider.dispose();
-		if (relationshipTypeItemProvider != null) relationshipTypeItemProvider.dispose();
 		if (basePractiseItemProvider != null) basePractiseItemProvider.dispose();
 		if (processItemProvider != null) processItemProvider.dispose();
 		if (processGroupItemProvider != null) processGroupItemProvider.dispose();
 		if (outcomeItemProvider != null) outcomeItemProvider.dispose();
 		if (workProductItemProvider != null) workProductItemProvider.dispose();
 		if (genericWorkProductItemProvider != null) genericWorkProductItemProvider.dispose();
+		if (domainItemProvider != null) domainItemProvider.dispose();
+		if (dO_NOT_USE_RelationshipTypeItemProvider != null) dO_NOT_USE_RelationshipTypeItemProvider.dispose();
+		if (umlAssociationItemProvider != null) umlAssociationItemProvider.dispose();
 	}
 
 }

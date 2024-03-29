@@ -85,7 +85,7 @@ public interface Outcome extends I18nNamedElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

@@ -2,23 +2,24 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.GenericWorkProduct;
 import QWiki.I18nString;
 import QWiki.Outcome;
 import QWiki.QWikiPackage;
+import QWiki.UmlElement;
 import QWiki.WorkProduct;
 import QWiki.WorkProductType;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -40,10 +40,9 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * </p>
  * <ul>
  *   <li>{@link QWiki.impl.WorkProductImpl#getOwner <em>Owner</em>}</li>
- *   <li>{@link QWiki.impl.WorkProductImpl#getOwnedElement <em>Owned Element</em>}</li>
  *   <li>{@link QWiki.impl.WorkProductImpl#getOwningWorkProductGroup <em>Owning Work Product Group</em>}</li>
- *   <li>{@link QWiki.impl.WorkProductImpl#getOwnedCharacteristic <em>Owned Characteristic</em>}</li>
- *   <li>{@link QWiki.impl.WorkProductImpl#getOwnedContent <em>Owned Content</em>}</li>
+ *   <li>{@link QWiki.impl.WorkProductImpl#getCharacteristic <em>Characteristic</em>}</li>
+ *   <li>{@link QWiki.impl.WorkProductImpl#getContent <em>Content</em>}</li>
  *   <li>{@link QWiki.impl.WorkProductImpl#getFacilitatingOutcome <em>Facilitating Outcome</em>}</li>
  *   <li>{@link QWiki.impl.WorkProductImpl#getFacilitatedProcess <em>Facilitated Process</em>}</li>
  *   <li>{@link QWiki.impl.WorkProductImpl#getFacilitatingProcess <em>Facilitating Process</em>}</li>
@@ -55,24 +54,24 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  */
 public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	/**
-	 * The cached value of the '{@link #getOwnedCharacteristic() <em>Owned Characteristic</em>}' containment reference list.
+	 * The cached value of the '{@link #getCharacteristic() <em>Characteristic</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedCharacteristic()
+	 * @see #getCharacteristic()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<I18nString> ownedCharacteristic;
+	protected EList<I18nString> characteristic;
 
 	/**
-	 * The cached value of the '{@link #getOwnedContent() <em>Owned Content</em>}' containment reference list.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedContent()
+	 * @see #getContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<I18nString> ownedContent;
+	protected EList<I18nString> content;
 
 	/**
 	 * The cached value of the '{@link #getFacilitatingOutcome() <em>Facilitating Outcome</em>}' reference list.
@@ -159,9 +158,9 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -170,33 +169,13 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		GenericWorkProduct owningWorkProductGroup = getOwningWorkProductGroup();			
 		if (owningWorkProductGroup != null) {
 			return owningWorkProductGroup;
 		}
 		return super.basicGetOwner();
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.WORK_PRODUCT__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
-	}
-
-	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.WORK_PRODUCT__OWNED_COMMENT, QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC, QWikiPackage.WORK_PRODUCT__OWNED_CONTENT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -247,11 +226,11 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 */
 	@Override
-	public EList<I18nString> getOwnedCharacteristic() {
-		if (ownedCharacteristic == null) {
-			ownedCharacteristic = new EObjectContainmentEList<I18nString>(I18nString.class, this, QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC);
+	public EList<I18nString> getCharacteristic() {
+		if (characteristic == null) {
+			characteristic = new EObjectContainmentEList<I18nString>(I18nString.class, this, QWikiPackage.WORK_PRODUCT__CHARACTERISTIC);
 		}
-		return ownedCharacteristic;
+		return characteristic;
 	}
 
 	/**
@@ -260,11 +239,11 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 */
 	@Override
-	public EList<I18nString> getOwnedContent() {
-		if (ownedContent == null) {
-			ownedContent = new EObjectContainmentEList<I18nString>(I18nString.class, this, QWikiPackage.WORK_PRODUCT__OWNED_CONTENT);
+	public EList<I18nString> getContent() {
+		if (content == null) {
+			content = new EObjectContainmentEList<I18nString>(I18nString.class, this, QWikiPackage.WORK_PRODUCT__CONTENT);
 		}
-		return ownedContent;
+		return content;
 	}
 
 	/**
@@ -399,7 +378,7 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -453,10 +432,10 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 		switch (featureID) {
 			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return basicSetOwningWorkProductGroup(null, msgs);
-			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
-				return ((InternalEList<?>)getOwnedCharacteristic()).basicRemove(otherEnd, msgs);
-			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
-				return ((InternalEList<?>)getOwnedContent()).basicRemove(otherEnd, msgs);
+			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
+				return ((InternalEList<?>)getCharacteristic()).basicRemove(otherEnd, msgs);
+			case QWikiPackage.WORK_PRODUCT__CONTENT:
+				return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
 			case QWikiPackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				return ((InternalEList<?>)getFacilitatingOutcome()).basicRemove(otherEnd, msgs);
 			case QWikiPackage.WORK_PRODUCT__FACILITATED_PROCESS:
@@ -493,10 +472,10 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 		switch (featureID) {
 			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return getOwningWorkProductGroup();
-			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
-				return getOwnedCharacteristic();
-			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
-				return getOwnedContent();
+			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
+				return getCharacteristic();
+			case QWikiPackage.WORK_PRODUCT__CONTENT:
+				return getContent();
 			case QWikiPackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				return getFacilitatingOutcome();
 			case QWikiPackage.WORK_PRODUCT__FACILITATED_PROCESS:
@@ -524,13 +503,13 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				setOwningWorkProductGroup((GenericWorkProduct)newValue);
 				return;
-			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
-				getOwnedCharacteristic().clear();
-				getOwnedCharacteristic().addAll((Collection<? extends I18nString>)newValue);
+			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
+				getCharacteristic().clear();
+				getCharacteristic().addAll((Collection<? extends I18nString>)newValue);
 				return;
-			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
-				getOwnedContent().clear();
-				getOwnedContent().addAll((Collection<? extends I18nString>)newValue);
+			case QWikiPackage.WORK_PRODUCT__CONTENT:
+				getContent().clear();
+				getContent().addAll((Collection<? extends I18nString>)newValue);
 				return;
 			case QWikiPackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				getFacilitatingOutcome().clear();
@@ -565,11 +544,11 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				setOwningWorkProductGroup((GenericWorkProduct)null);
 				return;
-			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
-				getOwnedCharacteristic().clear();
+			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
+				getCharacteristic().clear();
 				return;
-			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
-				getOwnedContent().clear();
+			case QWikiPackage.WORK_PRODUCT__CONTENT:
+				getContent().clear();
 				return;
 			case QWikiPackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				getFacilitatingOutcome().clear();
@@ -600,14 +579,12 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 		switch (featureID) {
 			case QWikiPackage.WORK_PRODUCT__OWNER:
 				return isSetOwner();
-			case QWikiPackage.WORK_PRODUCT__OWNED_ELEMENT:
-				return isSetOwnedElement();
 			case QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return getOwningWorkProductGroup() != null;
-			case QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC:
-				return ownedCharacteristic != null && !ownedCharacteristic.isEmpty();
-			case QWikiPackage.WORK_PRODUCT__OWNED_CONTENT:
-				return ownedContent != null && !ownedContent.isEmpty();
+			case QWikiPackage.WORK_PRODUCT__CHARACTERISTIC:
+				return characteristic != null && !characteristic.isEmpty();
+			case QWikiPackage.WORK_PRODUCT__CONTENT:
+				return content != null && !content.isEmpty();
 			case QWikiPackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				return facilitatingOutcome != null && !facilitatingOutcome.isEmpty();
 			case QWikiPackage.WORK_PRODUCT__FACILITATED_PROCESS:
@@ -661,18 +638,6 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	public boolean isSetOwner() {
 		return super.isSetOwner()
 			|| eIsSet(QWikiPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
-			|| eIsSet(QWikiPackage.WORK_PRODUCT__OWNED_CHARACTERISTIC)
-			|| eIsSet(QWikiPackage.WORK_PRODUCT__OWNED_CONTENT);
 	}
 
 } //WorkProductImpl

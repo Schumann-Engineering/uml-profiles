@@ -2,17 +2,25 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
+import QWiki.ModelElement;
 import QWiki.QWikiModel;
 import QWiki.QWikiPackage;
+import QWiki.UmlElement;
+
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
 /**
@@ -29,7 +37,7 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *
  * @generated
  */
-public class QWikiModelImpl extends ElementImpl implements QWikiModel {
+public class QWikiModelImpl extends UmlPackageImpl implements QWikiModel {
 	/**
 	 * The cached value of the '{@link #getOwnedModelElement() <em>Owned Model Element</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -38,7 +46,7 @@ public class QWikiModelImpl extends ElementImpl implements QWikiModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Element> ownedModelElement;
+	protected EList<ModelElement> ownedModelElement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,8 +73,8 @@ public class QWikiModelImpl extends ElementImpl implements QWikiModel {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.QWIKI_MODEL__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.QWIKI_MODEL__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -77,7 +85,7 @@ public class QWikiModelImpl extends ElementImpl implements QWikiModel {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.QWIKI_MODEL__OWNED_COMMENT, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT};
+	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.QWIKI_MODEL__OWNED_COMMENT, QWikiPackage.QWIKI_MODEL__OWNED_MEMBER, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -85,9 +93,9 @@ public class QWikiModelImpl extends ElementImpl implements QWikiModel {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedModelElement() {
+	public EList<ModelElement> getOwnedModelElement() {
 		if (ownedModelElement == null) {
-			ownedModelElement = new EObjectContainmentWithInverseEList<Element>(Element.class, this, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT, QWikiPackage.ELEMENT__MODEL);
+			ownedModelElement = new EObjectContainmentWithInverseEList<ModelElement>(ModelElement.class, this, QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT, QWikiPackage.MODEL_ELEMENT__MODEL);
 		}
 		return ownedModelElement;
 	}
@@ -158,7 +166,7 @@ public class QWikiModelImpl extends ElementImpl implements QWikiModel {
 		switch (featureID) {
 			case QWikiPackage.QWIKI_MODEL__OWNED_MODEL_ELEMENT:
 				getOwnedModelElement().clear();
-				getOwnedModelElement().addAll((Collection<? extends Element>)newValue);
+				getOwnedModelElement().addAll((Collection<? extends ModelElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

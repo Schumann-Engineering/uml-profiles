@@ -32,14 +32,13 @@ public class QWikiTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new QWikiTests("QWiki Tests");
 		suite.addTestSuite(AuthorTest.class);
-		suite.addTestSuite(CommentTest.class);
-		suite.addTestSuite(I18nStringTest.class);
+		suite.addTestSuite(UmlCommentTest.class);
+		suite.addTestSuite(I18nKeyedStringTest.class);
 		suite.addTestSuite(I18nBaseStringTest.class);
 		suite.addTestSuite(QWikiModelTest.class);
-		suite.addTestSuite(I18nKeyedStringTest.class);
-		suite.addTestSuite(DomainTest.class);
-		suite.addTestSuite(PackageTest.class);
+		suite.addTestSuite(UmlPackageTest.class);
 		suite.addTestSuite(DocumentTest.class);
+		suite.addTestSuite(I18nStringTest.class);
 		suite.addTestSuite(DocumentVersionTest.class);
 		suite.addTestSuite(SectionTest.class);
 		suite.addTestSuite(RoleTest.class);
@@ -47,14 +46,15 @@ public class QWikiTests extends TestSuite {
 		suite.addTestSuite(SuperseedingRelationshipTest.class);
 		suite.addTestSuite(TermTest.class);
 		suite.addTestSuite(TermDefinitionTest.class);
-		suite.addTestSuite(AssociationTest.class);
-		suite.addTestSuite(RelationshipTypeTest.class);
 		suite.addTestSuite(BasePractiseTest.class);
 		suite.addTestSuite(ProcessTest.class);
 		suite.addTestSuite(ProcessGroupTest.class);
 		suite.addTestSuite(OutcomeTest.class);
 		suite.addTestSuite(WorkProductTest.class);
 		suite.addTestSuite(GenericWorkProductTest.class);
+		suite.addTestSuite(DomainTest.class);
+		suite.addTestSuite(DO_NOT_USE_RelationshipTypeTest.class);
+		suite.addTestSuite(UmlAssociationTest.class);
 		return suite;
 	}
 

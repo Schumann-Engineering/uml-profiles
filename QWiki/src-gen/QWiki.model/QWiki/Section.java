@@ -36,7 +36,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -60,7 +60,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -141,7 +141,7 @@ public interface Section extends I18nDescriptiveElement {
 
 	/**
 	 * Returns the value of the '<em><b>Facilitating Element</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.Element}.
+	 * The list contents are of type {@link QWiki.UmlElement}.
 	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -156,7 +156,7 @@ public interface Section extends I18nDescriptiveElement {
 	 *        annotation="union"
 	 * @generated
 	 */
-	EList<Element> getFacilitatingElement();
+	EList<UmlElement> getFacilitatingElement();
 
 	/**
 	 * Returns the value of the '<em><b>Superseeding Relationship</b></em>' reference list.
@@ -200,7 +200,7 @@ public interface Section extends I18nDescriptiveElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

@@ -5,11 +5,11 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
     <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//UmlNamedElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="if (abbreviation->notEmpty()) then 'a/' + abbreviation else 'a/' + uuid endif"/>
         </eAnnotations>
@@ -30,27 +30,23 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="abbreviation" ordered="false"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//TaggedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="UmlNamedElement" abstract="true" eSuperTypes="#//ModelElement #//UmlElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-      <details key="documentation" value="A named element is an element in a model that may have a name.&#xD;&#xA;(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())&#xD;&#xA;implies self.qualifiedName()->isEmpty()"/>
+      <details key="documentation" value="A named element is an element in a model that may have a name.&#xD;&#xA;(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())&#xD;&#xA;  implies self.qualifiedName->isEmpty()&#xD;&#xA;(self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) implies&#xA;  self.qualifiedName = self.allNamespaces()->iterate( ns : UmlNamespace; result: String = self.name | ns.name + self.separator() + result)"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="has_no_qualified_name"/>
+      <details key="constraints" value="has_no_qualified_name has_qualified_name"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-      <details key="has_no_qualified_name" value="(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())&#xD;&#xA;implies self.qualifiedName()->isEmpty()"/>
+      <details key="has_no_qualified_name" value="(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())&#xD;&#xA;  implies self.qualifiedName->isEmpty()"/>
+      <details key="has_qualified_name" value="(self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) implies&#xA;  self.qualifiedName = self.allNamespaces()->iterate( ns : UmlNamespace; result: String = self.name | ns.name + self.separator() + result)"/>
     </eAnnotations>
-    <eOperations name="qualifiedName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+    <eOperations name="allNamespaces" unique="false" upperBound="-1" eType="#//UmlNamespace">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="When there is a name, and all of the containing namespaces have a name, the qualified name is constructed from the names of the containing namespaces."/>
+        <details key="documentation" value="The query allNamespaces() gives the sequence of namespaces in which the NamedElement is nested, working outwards."/>
       </eAnnotations>
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="body" value="if (self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) then &#xD;&#xA;    self.allNamespaces()->iterate( ns : Namespace; result: String = self.name | ns.name + self.separator() + result)&#xD;&#xA;else&#xD;&#xA;    null&#xD;&#xA;endif"/>
-      </eAnnotations>
-    </eOperations>
-    <eOperations name="allNamespaces" unique="false" upperBound="-1" eType="#//Namespace">
-      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="body" value="if (self.namespace->isEmpty()) then&#xD;&#xA;  Sequence{}&#xD;&#xA;else&#xD;&#xA;  self.namespace.allNamespaces()->prepend(self.namespace)&#xD;&#xA;endif"/>
+        <details key="body" value="if self.namespace->isEmpty()&#xA;then Sequence{}&#xA;else self.namespace.allNamespaces()->prepend(self.namespace)&#xA;endif"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="separator" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -61,38 +57,37 @@
         <details key="body" value="'::'"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedDomain" ordered="false"
-        eType="#//Domain" transient="true" eOpposite="#//Domain/domainElement">
-      <eAnnotations source="subsets" references="#//NamedElement/domain"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" ordered="false"
-        eType="#//Domain" changeable="false" volatile="true" transient="true" derived="true">
-      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="namedelement"/>
+    <eOperations name="qualifiedName" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When there is a name, and all of the containing namespaces have a name, the qualified name is constructed from the names of the containing namespaces."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if (self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name &lt;> null)->isEmpty()) then &#xA;    self.allNamespaces()->iterate( ns : UmlNamespace; result: String = self.name | ns.name + self.separator() + result)&#xA;else&#xA;    null&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" ordered="false"
+        eType="#//UmlNamespace" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//UmlNamespace/ownedMember">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the namespace that owns the NamedElement."/>
       </eAnnotations>
       <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" ordered="false"
-        eType="#//Namespace" volatile="true" transient="true" derived="true" eOpposite="#//Namespace/ownedMember">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the NamedElement."/>
+      </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owningPackage" ordered="false"
-        eType="#//Package" transient="true" eOpposite="#//Package/packagedElement">
-      <eAnnotations source="subsets" references="#//NamedElement/namespace"/>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="TaggedElement" abstract="true" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" ordered="false" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="customProperty" ordered="false"
-        upperBound="-1" eType="#//I18nKeyedString" transient="true" containment="true">
-      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="owningElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" ordered="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A name which allows the NamedElement to be identified within a hierarchy of nested Namespaces. It is constructed from the names of the containing namespaces starting at the root of the hierarchy and ending with the name of the NamedElement itself."/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="UmlElement" abstract="true">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="An element is a constituent of a model. As such, it has the capability of owning other elements.&#xD;&#xA;not self.allOwnedElements()->includes(self)&#xD;&#xA;self.mustBeOwned() implies owner->notEmpty()"/>
     </eAnnotations>
@@ -103,7 +98,7 @@
       <details key="not_own_self" value="not self.allOwnedElements()->includes(self)"/>
       <details key="has_owner" value="self.mustBeOwned() implies owner->notEmpty()"/>
     </eAnnotations>
-    <eOperations name="allOwnedElements" ordered="false" upperBound="-1" eType="#//Element">
+    <eOperations name="allOwnedElements" ordered="false" upperBound="-1" eType="#//UmlElement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The query allOwnedElements() gives all of the direct and indirect owned elements of an element."/>
       </eAnnotations>
@@ -119,9 +114,56 @@
         <details key="body" value="true"/>
       </eAnnotations>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" ordered="false"
+        upperBound="-1" eType="#//UmlElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//UmlElement/owner">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Elements owned by this element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//UmlElement" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//UmlElement/ownedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Element that owns this element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" ordered="false"
+        upperBound="-1" eType="#//UmlComment" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Comments owned by this element."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlComment" eSuperTypes="#//UmlElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A comment is a textual annotation that can be attached to a set of elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies a string that is the comment."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotatedElement" ordered="false"
+        upperBound="-1" eType="#//UmlElement">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="comment"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Element(s) being commented."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement" abstract="true" eSuperTypes="#//TaggedElement">
     <eOperations name="model" ordered="false" eType="#//QWikiModel">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-        <details key="body" value="if (model->notEmpty()) then&#xD;&#xA;  model&#xD;&#xA;else if (owner->notEmpty()) then&#xD;&#xA;  owner.model()&#xD;&#xA;else&#xD;&#xA;  null&#xD;&#xA;endif&#xD;&#xA;endif"/>
+        <details key="body" value="if (model->notEmpty()) then&#xD;&#xA;  model&#xD;&#xA;else if (owner->notEmpty() and owner->oclIsKindOf(ModelElement)) then&#xD;&#xA;  owner.oclAsType(ModelElement).model()&#xD;&#xA;else&#xD;&#xA;  null&#xD;&#xA;endif&#xD;&#xA;endif"/>
       </eAnnotations>
     </eOperations>
     <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -129,37 +171,28 @@
         <details key="body" value="uuid"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" ordered="false"
-        upperBound="-1" eType="#//Comment" transient="true" containment="true" eOpposite="#//Comment/owningElement">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" ordered="false"
-        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
-        derived="true" eOpposite="#//Element/owner">
-      <eAnnotations source="union"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
-        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
-        eOpposite="#//Element/ownedElement">
-      <eAnnotations source="union"/>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" unsettable="true"
         iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" ordered="false"
         eType="#//QWikiModel" eOpposite="#//QWikiModel/ownedModelElement">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Element">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//I18nString"
-        transient="true" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="owningElement" ordered="false"
-        eType="#//Element" transient="true" eOpposite="#//Element/ownedComment">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TaggedElement" abstract="true" eSuperTypes="#//UmlElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tag" ordered="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customProperty" ordered="false"
+        upperBound="-1" eType="#//I18nKeyedString" transient="true" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningElement"/>
+      </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="I18nString" eSuperTypes="#//I18nBaseString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nKeyedString" eSuperTypes="#//I18nBaseString">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="I18nBaseString">
     <eOperations name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="language" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -177,63 +210,97 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="QWikiModel" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="QWikiModel" eSuperTypes="#//UmlPackage">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="mustBeOwned" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The query mustBeOwned() indicates whether elements of this type must have an owner. Model are not owned my anyone because they are the root element"/>
         </eAnnotations>
-        <eAnnotations source="redefines" references="#//Element/mustBeOwned"/>
+        <eAnnotations source="redefines" references="#//UmlElement/mustBeOwned #//UmlPackage/%duplicates%/mustBeOwned"/>
       </contents>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedModelElement" ordered="false"
-        upperBound="-1" eType="#//Element" containment="true" eOpposite="#//Element/model.1">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+        upperBound="-1" eType="#//ModelElement" containment="true" eOpposite="#//ModelElement/model.1">
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="I18nKeyedString" eSuperTypes="#//I18nBaseString">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" ordered="false" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//I18nNamedElement">
-    <eOperations name="allDomainElement" ordered="false" upperBound="-1" eType="#//NamedElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="domainElement" ordered="false"
-        upperBound="-1" eType="#//NamedElement" transient="true" eOpposite="#//NamedElement/assignedDomain"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="I18nNamedElement" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
-        eType="#//I18nString" transient="true" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMember" ordered="false"
-        upperBound="-1" eType="#//NamedElement" changeable="false" volatile="true"
-        transient="true" derived="true" eOpposite="#//NamedElement/namespace">
-      <eAnnotations source="union"/>
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlPackage" eSuperTypes="#//UmlNamespace #//UmlPackageableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A package is used to group elements, and provides a namespace for the grouped elements."/>
+    </eAnnotations>
+    <eAnnotations source="duplicates">
+      <contents xsi:type="ecore:EOperation" name="mustBeOwned" ordered="false" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The query mustBeOwned() indicates whether elements of this type must have an owner."/>
+        </eAnnotations>
+        <eAnnotations source="redefines" references="#//UmlElement/mustBeOwned"/>
+        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+          <details key="body" value="false"/>
+        </eAnnotations>
+      </contents>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packagedElement" ordered="false"
+        upperBound="-1" eType="#//UmlPackageableElement" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningPackage"/>
       </eAnnotations>
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Namespace">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingPackage" ordered="false"
-        eType="#//Package" volatile="true" transient="true" derived="true" eOpposite="#//Package/nestedPackage">
-      <eAnnotations source="subsets" references="#//NamedElement/owningPackage"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the packageable elements that are owned by this Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//UmlNamespace/ownedMember"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestedPackage" ordered="false"
-        upperBound="-1" eType="#//Package" changeable="false" volatile="true" transient="true"
-        derived="true" eOpposite="#//Package/nestingPackage">
-      <eAnnotations source="union"/>
-      <eAnnotations source="subsets" references="#//Package/packagedElement"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="packagedElement" ordered="false"
-        upperBound="-1" eType="#//NamedElement" transient="true" containment="true"
-        eOpposite="#//NamedElement/owningPackage">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
+        upperBound="-1" eType="#//UmlPackage" volatile="true" transient="true" derived="true"
+        eOpposite="#//UmlPackage/nestingPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the packaged elements that are Packages."/>
       </eAnnotations>
-      <eAnnotations source="subsets" references="#//Namespace/ownedMember"/>
+      <eAnnotations source="subsets" references="#//UmlPackage/packagedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingPackage" ordered="false"
+        eType="#//UmlPackage" volatile="true" transient="true" derived="true" eOpposite="#//UmlPackage/nestedPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Package that owns this Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//UmlNamedElement/namespace"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlPackageableElement" abstract="true"
+      eSuperTypes="#//UmlNamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A packageable element indicates a named element that may be owned directly by a package."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlNamespace" abstract="true" eSuperTypes="#//UmlNamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A namespace is an element in a model that contains a set of named elements that can be identified by name."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedMember" ordered="false"
+        upperBound="-1" eType="#//UmlPackageableElement" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the PackageableElements that are members of this Namespace as a result of either PackageImports or ElementImports."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//UmlNamespace/member"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMember" ordered="false"
+        upperBound="-1" eType="#//UmlNamedElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//UmlNamedElement/namespace">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A collection of NamedElements owned by the Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//UmlNamespace/member #//UmlElement/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" ordered="false"
+        upperBound="-1" eType="#//UmlNamedElement" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A collection of NamedElements identifiable within the Namespace, either by being owned or by being introduced by importing or inheritance."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="AuthorType">
@@ -245,7 +312,7 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="if (documentType = DocumentType::Document) then 'd/' + number else &#xD;&#xA;if (documentType = DocumentType::Guideline) then 'g/' + number else&#xD;&#xA;if (documentType = DocumentType::Hyperlink) then 'href/' + number else&#xD;&#xA;if (documentType = DocumentType::Legislation) then 'l/' + number else&#xD;&#xA;if (documentType = DocumentType::Process) then 'p/' + number else&#xD;&#xA;if (documentType = DocumentType::Standard) then 's/' + number else&#xD;&#xA;if (documentType = DocumentType::TechnicalReport) then 'tr/' + number else &#xD;&#xA;'?'&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;endif&#xD;&#xA;endif"/>
         </eAnnotations>
@@ -256,7 +323,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVersion" ordered="false"
         upperBound="-1" eType="#//DocumentVersion" transient="true" containment="true"
         eOpposite="#//DocumentVersion/owningDocument">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
         ordered="false" upperBound="-1" eType="#//SuperseedingRelationship" changeable="false"
@@ -281,11 +348,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//I18nString"
         transient="true" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentVersion" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="I18nNamedElement" abstract="true" eSuperTypes="#//UmlNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
+        eType="#//I18nString" transient="true" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="I18nString" eSuperTypes="#//I18nBaseString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentVersion" eSuperTypes="#//ModelElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="owningDocument.oid() + '/' + edition + if (owningDocument.documentType = DocumentType::Standard) then '&lt;SDO-TBD>' else '' endif"/>
         </eAnnotations>
@@ -299,7 +371,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
         upperBound="-1" eType="#//Section" transient="true" containment="true" eOpposite="#//Section/owningDocument">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superseedingRelationship"
         ordered="false" upperBound="-1" eType="#//SuperseedingRelationship" changeable="false"
@@ -310,7 +382,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
         eType="#//Document" transient="true" eOpposite="#//Document/ownedVersion">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentVersionType">
@@ -323,7 +395,7 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="qualifiedNumber() + '@' + documentVersion().oid()"/>
         </eAnnotations>
@@ -341,11 +413,11 @@
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSection" ordered="false"
         upperBound="-1" eType="#//Section" transient="true" containment="true" eOpposite="#//Section/owningSection">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningSection" ordered="false"
         eType="#//Section" transient="true" eOpposite="#//Section/ownedSection">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -354,7 +426,7 @@
       <eAnnotations source="subsets" references="#//Section/facilitatingElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingElement" ordered="false"
-        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        upperBound="-1" eType="#//UmlElement" changeable="false" volatile="true" transient="true"
         derived="true">
       <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
         <details key="body" value="facilitatedSection"/>
@@ -372,13 +444,13 @@
         eType="#//Term" transient="true" eOpposite="#//Term/externalTermDefinition"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningDocument" ordered="false"
         eType="#//DocumentVersion" transient="true" eOpposite="#//DocumentVersion/ownedSection">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SpiceElement" abstract="true" eSuperTypes="#//RasciElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessReferenceModel"
         ordered="false" eType="#//ProcessReferenceModel" transient="true" eOpposite="#//ProcessReferenceModel/ownedSpiceElement">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -429,7 +501,7 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'r/' + name"/>
         </eAnnotations>
@@ -452,7 +524,7 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="if (isNonStandard = true) then oidForDomain() + '-xt' else oidForDomain() + '' endif"/>
         </eAnnotations>
@@ -471,7 +543,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedSpiceElement" ordered="false"
         upperBound="-1" eType="#//SpiceElement" transient="true" containment="true"
         eOpposite="#//SpiceElement/owningProcessReferenceModel">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ProcessReferenceModelDomain">
@@ -486,37 +558,49 @@
     <eLiterals name="Organizational" value="8"/>
     <eLiterals name="Test" value="9"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SuperseedingRelationship" eSuperTypes="#//DirectedRelationship">
+  <eClassifiers xsi:type="ecore:EClass" name="SuperseedingRelationship" eSuperTypes="#//UmlDirectedRelationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="superseedingType" ordered="false"
         lowerBound="1" eType="#//SuperseedingType" defaultValueLiteral="Equal"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true"
-      eSuperTypes="#//Relationship">
+  <eClassifiers xsi:type="ecore:EClass" name="UmlDirectedRelationship" abstract="true"
+      eSuperTypes="#//UmlRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A directed relationship represents a relationship between a collection of source model elements and a collection of target model elements."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        lowerBound="1" upperBound="-1" eType="#//UmlElement" changeable="false" volatile="true"
         transient="true" derived="true">
       <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="relationshipAsSource"/>
+        <details key="body" value="directedRelationship"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the sources of the DirectedRelationship."/>
       </eAnnotations>
       <eAnnotations source="union"/>
-      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+      <eAnnotations source="subsets" references="#//UmlRelationship/relatedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        lowerBound="1" upperBound="-1" eType="#//UmlElement" changeable="false" volatile="true"
         transient="true" derived="true">
       <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="relationshipAsTarget"/>
+        <details key="body" value="directedRelationship"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the targets of the DirectedRelationship."/>
       </eAnnotations>
       <eAnnotations source="union"/>
-      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+      <eAnnotations source="subsets" references="#//UmlRelationship/relatedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="UmlRelationship" abstract="true" eSuperTypes="#//UmlElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Relationship is an abstract concept that specifies some kind of relationship between elements."/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relatedElement" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        lowerBound="1" upperBound="-1" eType="#//UmlElement" changeable="false" volatile="true"
         transient="true" derived="true">
-      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="relationship"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the elements related by the Relationship."/>
       </eAnnotations>
       <eAnnotations source="union"/>
     </eStructuralFeatures>
@@ -532,20 +616,16 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'t/' + name"/>
         </eAnnotations>
       </contents>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="acronym" ordered="false"
-        eType="#//I18nString" transient="true" containment="true">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
+        eType="#//I18nString" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="synonym" ordered="false"
-        eType="#//I18nString" transient="true" containment="true">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
+        eType="#//I18nString" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="termDefinition" ordered="false"
         upperBound="-1" eType="#//I18nDescriptiveElement" changeable="false" volatile="true"
         transient="true" derived="true">
@@ -557,7 +637,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTermDefinition" ordered="false"
         upperBound="-1" eType="#//TermDefinition" transient="true" containment="true"
         eOpposite="#//TermDefinition/owningTerm">
-      <eAnnotations source="subsets" references="#//Element/ownedElement #//Term/termDefinition"/>
+      <eAnnotations source="subsets" references="#//Term/termDefinition #//UmlElement/ownedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="externalTermDefinition"
         ordered="false" upperBound="-1" eType="#//Section" transient="true" eOpposite="#//Section/term">
@@ -567,7 +647,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="TermDefinition" eSuperTypes="#//I18nDescriptiveElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningTerm" ordered="false"
         eType="#//Term" transient="true" eOpposite="#//Term/ownedTermDefinition">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DocumentType">
@@ -579,26 +659,11 @@
     <eLiterals name="Standard" value="5"/>
     <eLiterals name="TechnicalReport" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationship">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" ordered="false" lowerBound="2"
-        upperBound="2" eType="#//Element" transient="true">
-      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="association"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="endRelationshipType" ordered="false"
-        lowerBound="2" upperBound="2" eType="#//RelationshipType" transient="true"
-        eOpposite="#//RelationshipType/typedAssociation"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationshipType" eSuperTypes="#//I18nNamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="typedAssociation" ordered="false"
-        upperBound="-1" eType="#//Association" transient="true" eOpposite="#//Association/endRelationshipType"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BasePractise" eSuperTypes="#//SpiceElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'bp/' + number + '@' + owningProcess.oid()"/>
         </eAnnotations>
@@ -606,7 +671,7 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
         lowerBound="1" eType="#//Process" transient="true" eOpposite="#//Process/ownedBasePractise">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
         lowerBound="1" upperBound="-1" eType="#//Outcome" transient="true" eOpposite="#//Outcome/facilitatingBasePractise"/>
@@ -621,7 +686,7 @@
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="owningProcessGroup.oid() +  '.' + number"/>
         </eAnnotations>
@@ -629,11 +694,11 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcessGroup" ordered="false"
         eType="#//ProcessGroup" transient="true" eOpposite="#//ProcessGroup/ownedProcess">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOutcome" upperBound="-1"
         eType="#//Outcome" transient="true" containment="true" eOpposite="#//Outcome/owningProcess">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingWorkProduct"
         ordered="false" upperBound="-1" eType="#//WorkProduct" transient="true" eOpposite="#//WorkProduct/facilitatedProcess"/>
@@ -641,14 +706,14 @@
         ordered="false" upperBound="-1" eType="#//WorkProduct" transient="true" eOpposite="#//WorkProduct/facilitatingProcess"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBasePractise" upperBound="-1"
         eType="#//BasePractise" transient="true" containment="true" eOpposite="#//BasePractise/owningProcess">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessGroup" eSuperTypes="#//SpiceElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'p/' + number"/>
         </eAnnotations>
@@ -656,14 +721,14 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedProcess" upperBound="-1"
         eType="#//Process" transient="true" containment="true" eOpposite="#//Process/owningProcessGroup">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Outcome" eSuperTypes="#//I18nNamedElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'oc/' + uuid + '@' + owningProcess.oid()"/>
         </eAnnotations>
@@ -678,14 +743,14 @@
         upperBound="-1" eType="#//WorkProduct" transient="true" eOpposite="#//WorkProduct/facilitatingOutcome"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="owningProcess" ordered="false"
         eType="#//Process" transient="true" eOpposite="#//Process/ownedOutcome">
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WorkProduct" eSuperTypes="#//SpiceElement">
     <eAnnotations source="duplicates">
       <contents xsi:type="ecore:EOperation" name="oid" ordered="false" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Element/oid"/>
+        <eAnnotations source="redefines" references="#//ModelElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'wp/' + if (owningWorkProductGroup->notEmpty()) then owningWorkProductGroup.number + '-' else '' endif + number + '/' + owningProcessReferenceModel.oid()"/>
         </eAnnotations>
@@ -696,22 +761,12 @@
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="attribute"/>
       </eAnnotations>
-      <eAnnotations source="subsets" references="#//Element/owner"/>
+      <eAnnotations source="subsets" references="#//UmlElement/owner"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedCharacteristic" ordered="false"
-        upperBound="-1" eType="#//I18nString" transient="true" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-      </eAnnotations>
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedContent" ordered="false"
-        upperBound="-1" eType="#//I18nString" transient="true" containment="true">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
-      </eAnnotations>
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" ordered="false"
+        upperBound="-1" eType="#//I18nString" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
+        upperBound="-1" eType="#//I18nString" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingOutcome" ordered="false"
         upperBound="-1" eType="#//Outcome" transient="true" eOpposite="#//Outcome/resultingWorkproduct">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -743,7 +798,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedWorkProduct" ordered="false"
         upperBound="-1" eType="#//WorkProduct" transient="true" containment="true"
         eOpposite="#//WorkProduct/owningWorkProductGroup">
-      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+      <eAnnotations source="subsets" references="#//UmlElement/ownedElement"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WorkProductType">
@@ -751,5 +806,37 @@
     <eLiterals name="Document" value="1"/>
     <eLiterals name="Generic" value="2"/>
     <eLiterals name="Shippable" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Domain" eSuperTypes="#//I18nNamedElement">
+    <eOperations name="allDomainElement" ordered="false" upperBound="-1" eType="#//DomainElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainElement" ordered="false"
+        upperBound="-1" eType="#//DomainElement" transient="true" eOpposite="#//DomainElement/assignedDomain"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainElement" abstract="true" eSuperTypes="#//UmlNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domain" ordered="false"
+        eType="#//Domain" changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="namedelement"/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedDomain" ordered="false"
+        eType="#//Domain" transient="true" eOpposite="#//Domain/domainElement">
+      <eAnnotations source="subsets" references="#//DomainElement/domain"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DO_NOT_USE_Relationship" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DO_NOT_USE_RelationshipType" eSuperTypes="#//I18nNamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UmlAssociation" eSuperTypes="#//UmlRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An association describes a set of tuples whose values refer to typed instances. An instance of an association is called a link."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDerived" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies whether the association is derived from other model elements such as other associations or constraints."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

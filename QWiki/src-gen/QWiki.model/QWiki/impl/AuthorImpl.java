@@ -6,15 +6,17 @@ import QWiki.Author;
 import QWiki.AuthorType;
 import QWiki.Document;
 import QWiki.QWikiPackage;
+
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -31,7 +33,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class AuthorImpl extends NamedElementImpl implements Author {
+public class AuthorImpl extends UmlNamedElementImpl implements Author {
 	/**
 	 * The default value of the '{@link #getAuthorType() <em>Author Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -195,7 +197,7 @@ public class AuthorImpl extends NamedElementImpl implements Author {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -3,22 +3,23 @@
 package QWiki.impl;
 
 import QWiki.DocumentVersion;
-import QWiki.Element;
 import QWiki.QWikiPackage;
 import QWiki.Section;
 import QWiki.SpiceElement;
 import QWiki.SuperseedingRelationship;
 import QWiki.Term;
+import QWiki.UmlElement;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -130,8 +131,8 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.SECTION__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.SECTION__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -150,9 +151,9 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -161,7 +162,7 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		Section owningSection = getOwningSection();			
 		if (owningSection != null) {
 			return owningSection;
@@ -179,8 +180,8 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getFacilitatingElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.SECTION__FACILITATING_ELEMENT, FACILITATING_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getFacilitatingElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.SECTION__FACILITATING_ELEMENT, FACILITATING_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -409,7 +410,7 @@ public class SectionImpl extends I18nDescriptiveElementImpl implements Section {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->

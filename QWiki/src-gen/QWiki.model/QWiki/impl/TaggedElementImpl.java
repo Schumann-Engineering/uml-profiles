@@ -33,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class TaggedElementImpl extends ElementImpl implements TaggedElement {
+public abstract class TaggedElementImpl extends UmlElementImpl implements TaggedElement {
 	/**
 	 * The cached value of the '{@link #getTag() <em>Tag</em>}' attribute list.
 	 * <!-- begin-user-doc -->

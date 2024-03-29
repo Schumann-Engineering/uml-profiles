@@ -25,7 +25,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class DocumentVersionTest extends ElementTest {
+public class DocumentVersionTest extends ModelElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->

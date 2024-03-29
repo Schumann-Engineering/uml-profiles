@@ -20,17 +20,16 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="duplicates"
  * @generated
  */
-public interface QWikiModel extends Element {
-
+public interface QWikiModel extends UmlPackage {
 	/**
 	 * Returns the value of the '<em><b>Owned Model Element</b></em>' containment reference list.
-	 * The list contents are of type {@link QWiki.Element}.
-	 * It is bidirectional and its opposite is '{@link QWiki.Element#getModel <em>Model</em>}'.
+	 * The list contents are of type {@link QWiki.ModelElement}.
+	 * It is bidirectional and its opposite is '{@link QWiki.ModelElement#getModel <em>Model</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -40,11 +39,11 @@ public interface QWikiModel extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Model Element</em>' containment reference list.
 	 * @see QWiki.QWikiPackage#getQWikiModel_OwnedModelElement()
-	 * @see QWiki.Element#getModel
+	 * @see QWiki.ModelElement#getModel
 	 * @model opposite="model" containment="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
-	EList<Element> getOwnedModelElement();
+	EList<ModelElement> getOwnedModelElement();
 
 } // QWikiModel

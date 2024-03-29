@@ -10,7 +10,7 @@ import QWiki.I18nNamedElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class I18nNamedElementTest extends NamedElementTest {
+public abstract class I18nNamedElementTest extends UmlNamedElementTest {
 
 	/**
 	 * Constructs a new I1 8n Named Element test case with the given name.

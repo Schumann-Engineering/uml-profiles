@@ -2,12 +2,12 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.ProcessReferenceModel;
 import QWiki.QWikiPackage;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SpiceElement;
+import QWiki.UmlElement;
 
 import java.util.Collection;
 
@@ -134,9 +134,9 @@ public abstract class SpiceElementImpl extends RasciElementImpl implements Spice
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -145,7 +145,7 @@ public abstract class SpiceElementImpl extends RasciElementImpl implements Spice
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		ProcessReferenceModel owningProcessReferenceModel = getOwningProcessReferenceModel();			
 		if (owningProcessReferenceModel != null) {
 			return owningProcessReferenceModel;

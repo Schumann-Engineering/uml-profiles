@@ -2,18 +2,17 @@
  */
 package QWiki.impl;
 
-import QWiki.Association;
 import QWiki.Author;
 import QWiki.AuthorType;
 import QWiki.BasePractise;
-import QWiki.Comment;
-import QWiki.DirectedRelationship;
+import QWiki.DO_NOT_USE_Relationship;
+import QWiki.DO_NOT_USE_RelationshipType;
 import QWiki.Document;
 import QWiki.DocumentType;
 import QWiki.DocumentVersion;
 import QWiki.DocumentVersionType;
 import QWiki.Domain;
-import QWiki.Element;
+import QWiki.DomainElement;
 import QWiki.GenericWorkProduct;
 import QWiki.I18nBaseString;
 import QWiki.I18nDescriptiveElement;
@@ -21,8 +20,7 @@ import QWiki.I18nKeyedString;
 import QWiki.I18nNamedElement;
 import QWiki.I18nString;
 import QWiki.I18nValue;
-import QWiki.NamedElement;
-import QWiki.Namespace;
+import QWiki.ModelElement;
 import QWiki.Outcome;
 import QWiki.ProcessGroup;
 import QWiki.ProcessReferenceModel;
@@ -31,8 +29,6 @@ import QWiki.QWikiFactory;
 import QWiki.QWikiModel;
 import QWiki.QWikiPackage;
 import QWiki.RasciElement;
-import QWiki.Relationship;
-import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SpiceElement;
@@ -41,10 +37,20 @@ import QWiki.SuperseedingType;
 import QWiki.TaggedElement;
 import QWiki.Term;
 import QWiki.TermDefinition;
+import QWiki.UmlAssociation;
+import QWiki.UmlComment;
+import QWiki.UmlDirectedRelationship;
+import QWiki.UmlElement;
+import QWiki.UmlNamedElement;
+import QWiki.UmlNamespace;
+import QWiki.UmlPackage;
+import QWiki.UmlPackageableElement;
+import QWiki.UmlRelationship;
 import QWiki.WorkProduct;
 import QWiki.WorkProductType;
 
 import QWiki.util.QWikiValidator;
+
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -53,8 +59,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -76,7 +82,28 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass namedElementEClass = null;
+	private EClass umlNamedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlCommentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass modelElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -90,21 +117,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass elementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass commentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass i18nStringEClass = null;
+	private EClass i18nKeyedStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,62 +138,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass directedRelationshipEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass relationshipEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass associationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass relationshipTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass i18nNamedElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass namespaceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass packageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass i18nKeyedStringEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass qWikiModelEClass = null;
 
 	/**
@@ -188,7 +145,21 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass domainEClass = null;
+	private EClass umlPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlPackageableElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlNamespaceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -203,6 +174,20 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	private EClass i18nDescriptiveElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass i18nNamedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass i18nStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,6 +237,20 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	private EClass superseedingRelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlDirectedRelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlRelationshipEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -308,6 +307,41 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	private EClass genericWorkProductEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass domainEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass domainElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dO_NOT_USE_RelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dO_NOT_USE_RelationshipTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass umlAssociationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -477,8 +511,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNamedElement() {
-		return namedElementEClass;
+	public EClass getUmlNamedElement() {
+		return umlNamedElementEClass;
 	}
 
 	/**
@@ -487,8 +521,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	public EReference getUmlNamedElement_Namespace() {
+		return (EReference)umlNamedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -497,8 +531,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement_AssignedDomain() {
-		return (EReference)namedElementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getUmlNamedElement_Name() {
+		return (EAttribute)umlNamedElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -507,8 +541,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement_Domain() {
-		return (EReference)namedElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getUmlNamedElement_QualifiedName() {
+		return (EAttribute)umlNamedElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -517,8 +551,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement_Namespace() {
-		return (EReference)namedElementEClass.getEStructuralFeatures().get(3);
+	public EOperation getUmlNamedElement__AllNamespaces() {
+		return umlNamedElementEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -527,8 +561,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNamedElement_OwningPackage() {
-		return (EReference)namedElementEClass.getEStructuralFeatures().get(4);
+	public EOperation getUmlNamedElement__Separator() {
+		return umlNamedElementEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -537,8 +571,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getNamedElement__QualifiedName() {
-		return namedElementEClass.getEOperations().get(0);
+	public EOperation getUmlNamedElement__QualifiedName() {
+		return umlNamedElementEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -547,8 +581,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getNamedElement__AllNamespaces() {
-		return namedElementEClass.getEOperations().get(1);
+	public EClass getUmlElement() {
+		return umlElementEClass;
 	}
 
 	/**
@@ -557,8 +591,128 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getNamedElement__Separator() {
-		return namedElementEClass.getEOperations().get(2);
+	public EReference getUmlElement_OwnedElement() {
+		return (EReference)umlElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlElement_Owner() {
+		return (EReference)umlElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlElement_OwnedComment() {
+		return (EReference)umlElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUmlElement__AllOwnedElements() {
+		return umlElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getUmlElement__MustBeOwned() {
+		return umlElementEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUmlComment() {
+		return umlCommentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUmlComment_Body() {
+		return (EAttribute)umlCommentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlComment_AnnotatedElement() {
+		return (EReference)umlCommentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getModelElement() {
+		return modelElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getModelElement_Uuid() {
+		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getModelElement_Model() {
+		return (EReference)modelElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getModelElement__Model() {
+		return modelElementEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getModelElement__Oid() {
+		return modelElementEClass.getEOperations().get(1);
 	}
 
 	/**
@@ -597,8 +751,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getElement() {
-		return elementEClass;
+	public EClass getI18nKeyedString() {
+		return i18nKeyedStringEClass;
 	}
 
 	/**
@@ -607,128 +761,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getElement_OwnedComment() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getElement_OwnedElement() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getElement_Owner() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getElement_Uuid() {
-		return (EAttribute)elementEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getElement_Model() {
-		return (EReference)elementEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getElement__AllOwnedElements() {
-		return elementEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getElement__MustBeOwned() {
-		return elementEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getElement__Model() {
-		return elementEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getElement__Oid() {
-		return elementEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getComment() {
-		return commentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComment_Body() {
-		return (EReference)commentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComment_OwningElement() {
-		return (EReference)commentEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getI18nString() {
-		return i18nStringEClass;
+	public EAttribute getI18nKeyedString_Key() {
+		return (EAttribute)i18nKeyedStringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -797,206 +831,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDirectedRelationship() {
-		return directedRelationshipEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDirectedRelationship_Target() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDirectedRelationship_Source() {
-		return (EReference)directedRelationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRelationship() {
-		return relationshipEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRelationship_RelatedElement() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAssociation() {
-		return associationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAssociation_EndRelationshipType() {
-		return (EReference)associationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAssociation_End() {
-		return (EReference)associationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRelationshipType() {
-		return relationshipTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRelationshipType_TypedAssociation() {
-		return (EReference)relationshipTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getI18nNamedElement() {
-		return i18nNamedElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getI18nNamedElement_DisplayName() {
-		return (EReference)i18nNamedElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getNamespace() {
-		return namespaceEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getNamespace_OwnedMember() {
-		return (EReference)namespaceEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getPackage() {
-		return packageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackage_NestingPackage() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackage_NestedPackage() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackage_PackagedElement() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getI18nKeyedString() {
-		return i18nKeyedStringEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getI18nKeyedString_Key() {
-		return (EAttribute)i18nKeyedStringEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getQWikiModel() {
 		return qWikiModelEClass;
 	}
@@ -1017,8 +851,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDomain() {
-		return domainEClass;
+	public EClass getUmlPackage() {
+		return umlPackageEClass;
 	}
 
 	/**
@@ -1027,8 +861,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getDomain_DomainElement() {
-		return (EReference)domainEClass.getEStructuralFeatures().get(0);
+	public EReference getUmlPackage_PackagedElement() {
+		return (EReference)umlPackageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1037,8 +871,68 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getDomain__AllDomainElement() {
-		return domainEClass.getEOperations().get(0);
+	public EReference getUmlPackage_NestedPackage() {
+		return (EReference)umlPackageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlPackage_NestingPackage() {
+		return (EReference)umlPackageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUmlPackageableElement() {
+		return umlPackageableElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUmlNamespace() {
+		return umlNamespaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlNamespace_ImportedMember() {
+		return (EReference)umlNamespaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlNamespace_OwnedMember() {
+		return (EReference)umlNamespaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlNamespace_Member() {
+		return (EReference)umlNamespaceEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1129,6 +1023,36 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	@Override
 	public EReference getI18nDescriptiveElement_Body() {
 		return (EReference)i18nDescriptiveElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getI18nNamedElement() {
+		return i18nNamedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getI18nNamedElement_DisplayName() {
+		return (EReference)i18nNamedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getI18nString() {
+		return i18nStringEClass;
 	}
 
 	/**
@@ -1597,6 +1521,56 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getUmlDirectedRelationship() {
+		return umlDirectedRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlDirectedRelationship_Source() {
+		return (EReference)umlDirectedRelationshipEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlDirectedRelationship_Target() {
+		return (EReference)umlDirectedRelationshipEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUmlRelationship() {
+		return umlRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getUmlRelationship_RelatedElement() {
+		return (EReference)umlRelationshipEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTerm() {
 		return termEClass;
 	}
@@ -1867,7 +1841,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_OwnedCharacteristic() {
+	public EReference getWorkProduct_Characteristic() {
 		return (EReference)workProductEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1877,7 +1851,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_OwnedContent() {
+	public EReference getWorkProduct_Content() {
 		return (EReference)workProductEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1949,6 +1923,106 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	@Override
 	public EReference getGenericWorkProduct_OwnedWorkProduct() {
 		return (EReference)genericWorkProductEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDomain() {
+		return domainEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDomain_DomainElement() {
+		return (EReference)domainEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getDomain__AllDomainElement() {
+		return domainEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDomainElement() {
+		return domainElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDomainElement_Domain() {
+		return (EReference)domainElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDomainElement_AssignedDomain() {
+		return (EReference)domainElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDO_NOT_USE_Relationship() {
+		return dO_NOT_USE_RelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDO_NOT_USE_RelationshipType() {
+		return dO_NOT_USE_RelationshipTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getUmlAssociation() {
+		return umlAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getUmlAssociation_IsDerived() {
+		return (EAttribute)umlAssociationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2046,36 +2120,37 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		createEOperation(authorEClass, AUTHOR___AUTHORED_DOCUMENT);
 		createEOperation(authorEClass, AUTHOR___AUTHORED_STANDARD);
 
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
-		createEReference(namedElementEClass, NAMED_ELEMENT__ASSIGNED_DOMAIN);
-		createEReference(namedElementEClass, NAMED_ELEMENT__DOMAIN);
-		createEReference(namedElementEClass, NAMED_ELEMENT__NAMESPACE);
-		createEReference(namedElementEClass, NAMED_ELEMENT__OWNING_PACKAGE);
-		createEOperation(namedElementEClass, NAMED_ELEMENT___QUALIFIED_NAME);
-		createEOperation(namedElementEClass, NAMED_ELEMENT___ALL_NAMESPACES);
-		createEOperation(namedElementEClass, NAMED_ELEMENT___SEPARATOR);
+		umlNamedElementEClass = createEClass(UML_NAMED_ELEMENT);
+		createEReference(umlNamedElementEClass, UML_NAMED_ELEMENT__NAMESPACE);
+		createEAttribute(umlNamedElementEClass, UML_NAMED_ELEMENT__NAME);
+		createEAttribute(umlNamedElementEClass, UML_NAMED_ELEMENT__QUALIFIED_NAME);
+		createEOperation(umlNamedElementEClass, UML_NAMED_ELEMENT___ALL_NAMESPACES);
+		createEOperation(umlNamedElementEClass, UML_NAMED_ELEMENT___SEPARATOR);
+		createEOperation(umlNamedElementEClass, UML_NAMED_ELEMENT___QUALIFIED_NAME);
+
+		umlElementEClass = createEClass(UML_ELEMENT);
+		createEReference(umlElementEClass, UML_ELEMENT__OWNED_ELEMENT);
+		createEReference(umlElementEClass, UML_ELEMENT__OWNER);
+		createEReference(umlElementEClass, UML_ELEMENT__OWNED_COMMENT);
+		createEOperation(umlElementEClass, UML_ELEMENT___ALL_OWNED_ELEMENTS);
+		createEOperation(umlElementEClass, UML_ELEMENT___MUST_BE_OWNED);
+
+		umlCommentEClass = createEClass(UML_COMMENT);
+		createEAttribute(umlCommentEClass, UML_COMMENT__BODY);
+		createEReference(umlCommentEClass, UML_COMMENT__ANNOTATED_ELEMENT);
+
+		modelElementEClass = createEClass(MODEL_ELEMENT);
+		createEAttribute(modelElementEClass, MODEL_ELEMENT__UUID);
+		createEReference(modelElementEClass, MODEL_ELEMENT__MODEL);
+		createEOperation(modelElementEClass, MODEL_ELEMENT___MODEL);
+		createEOperation(modelElementEClass, MODEL_ELEMENT___OID);
 
 		taggedElementEClass = createEClass(TAGGED_ELEMENT);
 		createEAttribute(taggedElementEClass, TAGGED_ELEMENT__TAG);
 		createEReference(taggedElementEClass, TAGGED_ELEMENT__CUSTOM_PROPERTY);
 
-		elementEClass = createEClass(ELEMENT);
-		createEReference(elementEClass, ELEMENT__OWNED_COMMENT);
-		createEReference(elementEClass, ELEMENT__OWNED_ELEMENT);
-		createEReference(elementEClass, ELEMENT__OWNER);
-		createEAttribute(elementEClass, ELEMENT__UUID);
-		createEReference(elementEClass, ELEMENT__MODEL);
-		createEOperation(elementEClass, ELEMENT___ALL_OWNED_ELEMENTS);
-		createEOperation(elementEClass, ELEMENT___MUST_BE_OWNED);
-		createEOperation(elementEClass, ELEMENT___MODEL);
-		createEOperation(elementEClass, ELEMENT___OID);
-
-		commentEClass = createEClass(COMMENT);
-		createEReference(commentEClass, COMMENT__BODY);
-		createEReference(commentEClass, COMMENT__OWNING_ELEMENT);
-
-		i18nStringEClass = createEClass(I1_8N_STRING);
+		i18nKeyedStringEClass = createEClass(I1_8N_KEYED_STRING);
+		createEAttribute(i18nKeyedStringEClass, I1_8N_KEYED_STRING__KEY);
 
 		i18nBaseStringEClass = createEClass(I1_8N_BASE_STRING);
 		createEReference(i18nBaseStringEClass, I1_8N_BASE_STRING__VALUE);
@@ -2088,23 +2163,17 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		qWikiModelEClass = createEClass(QWIKI_MODEL);
 		createEReference(qWikiModelEClass, QWIKI_MODEL__OWNED_MODEL_ELEMENT);
 
-		i18nKeyedStringEClass = createEClass(I1_8N_KEYED_STRING);
-		createEAttribute(i18nKeyedStringEClass, I1_8N_KEYED_STRING__KEY);
+		umlPackageEClass = createEClass(UML_PACKAGE);
+		createEReference(umlPackageEClass, UML_PACKAGE__PACKAGED_ELEMENT);
+		createEReference(umlPackageEClass, UML_PACKAGE__NESTED_PACKAGE);
+		createEReference(umlPackageEClass, UML_PACKAGE__NESTING_PACKAGE);
 
-		domainEClass = createEClass(DOMAIN);
-		createEReference(domainEClass, DOMAIN__DOMAIN_ELEMENT);
-		createEOperation(domainEClass, DOMAIN___ALL_DOMAIN_ELEMENT);
+		umlPackageableElementEClass = createEClass(UML_PACKAGEABLE_ELEMENT);
 
-		i18nNamedElementEClass = createEClass(I1_8N_NAMED_ELEMENT);
-		createEReference(i18nNamedElementEClass, I1_8N_NAMED_ELEMENT__DISPLAY_NAME);
-
-		namespaceEClass = createEClass(NAMESPACE);
-		createEReference(namespaceEClass, NAMESPACE__OWNED_MEMBER);
-
-		packageEClass = createEClass(PACKAGE);
-		createEReference(packageEClass, PACKAGE__NESTING_PACKAGE);
-		createEReference(packageEClass, PACKAGE__NESTED_PACKAGE);
-		createEReference(packageEClass, PACKAGE__PACKAGED_ELEMENT);
+		umlNamespaceEClass = createEClass(UML_NAMESPACE);
+		createEReference(umlNamespaceEClass, UML_NAMESPACE__IMPORTED_MEMBER);
+		createEReference(umlNamespaceEClass, UML_NAMESPACE__OWNED_MEMBER);
+		createEReference(umlNamespaceEClass, UML_NAMESPACE__MEMBER);
 
 		documentEClass = createEClass(DOCUMENT);
 		createEAttribute(documentEClass, DOCUMENT__NUMBER);
@@ -2116,6 +2185,11 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		i18nDescriptiveElementEClass = createEClass(I1_8N_DESCRIPTIVE_ELEMENT);
 		createEReference(i18nDescriptiveElementEClass, I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE);
 		createEReference(i18nDescriptiveElementEClass, I1_8N_DESCRIPTIVE_ELEMENT__BODY);
+
+		i18nNamedElementEClass = createEClass(I1_8N_NAMED_ELEMENT);
+		createEReference(i18nNamedElementEClass, I1_8N_NAMED_ELEMENT__DISPLAY_NAME);
+
+		i18nStringEClass = createEClass(I1_8N_STRING);
 
 		documentVersionEClass = createEClass(DOCUMENT_VERSION);
 		createEAttribute(documentVersionEClass, DOCUMENT_VERSION__PUBLICATION_YEAR);
@@ -2170,12 +2244,12 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		superseedingRelationshipEClass = createEClass(SUPERSEEDING_RELATIONSHIP);
 		createEAttribute(superseedingRelationshipEClass, SUPERSEEDING_RELATIONSHIP__SUPERSEEDING_TYPE);
 
-		directedRelationshipEClass = createEClass(DIRECTED_RELATIONSHIP);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__SOURCE);
-		createEReference(directedRelationshipEClass, DIRECTED_RELATIONSHIP__TARGET);
+		umlDirectedRelationshipEClass = createEClass(UML_DIRECTED_RELATIONSHIP);
+		createEReference(umlDirectedRelationshipEClass, UML_DIRECTED_RELATIONSHIP__SOURCE);
+		createEReference(umlDirectedRelationshipEClass, UML_DIRECTED_RELATIONSHIP__TARGET);
 
-		relationshipEClass = createEClass(RELATIONSHIP);
-		createEReference(relationshipEClass, RELATIONSHIP__RELATED_ELEMENT);
+		umlRelationshipEClass = createEClass(UML_RELATIONSHIP);
+		createEReference(umlRelationshipEClass, UML_RELATIONSHIP__RELATED_ELEMENT);
 
 		termEClass = createEClass(TERM);
 		createEReference(termEClass, TERM__ACRONYM);
@@ -2186,13 +2260,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		termDefinitionEClass = createEClass(TERM_DEFINITION);
 		createEReference(termDefinitionEClass, TERM_DEFINITION__OWNING_TERM);
-
-		associationEClass = createEClass(ASSOCIATION);
-		createEReference(associationEClass, ASSOCIATION__END);
-		createEReference(associationEClass, ASSOCIATION__END_RELATIONSHIP_TYPE);
-
-		relationshipTypeEClass = createEClass(RELATIONSHIP_TYPE);
-		createEReference(relationshipTypeEClass, RELATIONSHIP_TYPE__TYPED_ASSOCIATION);
 
 		basePractiseEClass = createEClass(BASE_PRACTISE);
 		createEReference(basePractiseEClass, BASE_PRACTISE__OWNING_PROCESS);
@@ -2217,8 +2284,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		workProductEClass = createEClass(WORK_PRODUCT);
 		createEReference(workProductEClass, WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
-		createEReference(workProductEClass, WORK_PRODUCT__OWNED_CHARACTERISTIC);
-		createEReference(workProductEClass, WORK_PRODUCT__OWNED_CONTENT);
+		createEReference(workProductEClass, WORK_PRODUCT__CHARACTERISTIC);
+		createEReference(workProductEClass, WORK_PRODUCT__CONTENT);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATING_OUTCOME);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATED_PROCESS);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATING_PROCESS);
@@ -2227,6 +2294,21 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		genericWorkProductEClass = createEClass(GENERIC_WORK_PRODUCT);
 		createEReference(genericWorkProductEClass, GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
+
+		domainEClass = createEClass(DOMAIN);
+		createEReference(domainEClass, DOMAIN__DOMAIN_ELEMENT);
+		createEOperation(domainEClass, DOMAIN___ALL_DOMAIN_ELEMENT);
+
+		domainElementEClass = createEClass(DOMAIN_ELEMENT);
+		createEReference(domainElementEClass, DOMAIN_ELEMENT__DOMAIN);
+		createEReference(domainElementEClass, DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
+
+		dO_NOT_USE_RelationshipEClass = createEClass(DO_NOT_USE_RELATIONSHIP);
+
+		dO_NOT_USE_RelationshipTypeEClass = createEClass(DO_NOT_USE_RELATIONSHIP_TYPE);
+
+		umlAssociationEClass = createEClass(UML_ASSOCIATION);
+		createEAttribute(umlAssociationEClass, UML_ASSOCIATION__IS_DERIVED);
 
 		// Create enums
 		authorTypeEEnum = createEEnum(AUTHOR_TYPE);
@@ -2265,38 +2347,43 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		authorEClass.getESuperTypes().add(this.getNamedElement());
-		namedElementEClass.getESuperTypes().add(this.getTaggedElement());
-		taggedElementEClass.getESuperTypes().add(this.getElement());
-		commentEClass.getESuperTypes().add(this.getElement());
-		i18nStringEClass.getESuperTypes().add(this.getI18nBaseString());
-		qWikiModelEClass.getESuperTypes().add(this.getElement());
+		authorEClass.getESuperTypes().add(this.getUmlNamedElement());
+		umlNamedElementEClass.getESuperTypes().add(this.getModelElement());
+		umlNamedElementEClass.getESuperTypes().add(this.getUmlElement());
+		umlCommentEClass.getESuperTypes().add(this.getUmlElement());
+		modelElementEClass.getESuperTypes().add(this.getTaggedElement());
+		taggedElementEClass.getESuperTypes().add(this.getUmlElement());
 		i18nKeyedStringEClass.getESuperTypes().add(this.getI18nBaseString());
-		domainEClass.getESuperTypes().add(this.getI18nNamedElement());
-		i18nNamedElementEClass.getESuperTypes().add(this.getNamedElement());
-		namespaceEClass.getESuperTypes().add(this.getNamedElement());
-		packageEClass.getESuperTypes().add(this.getNamespace());
+		qWikiModelEClass.getESuperTypes().add(this.getUmlPackage());
+		umlPackageEClass.getESuperTypes().add(this.getUmlNamespace());
+		umlPackageEClass.getESuperTypes().add(this.getUmlPackageableElement());
+		umlPackageableElementEClass.getESuperTypes().add(this.getUmlNamedElement());
+		umlNamespaceEClass.getESuperTypes().add(this.getUmlNamedElement());
 		documentEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
 		i18nDescriptiveElementEClass.getESuperTypes().add(this.getI18nNamedElement());
-		documentVersionEClass.getESuperTypes().add(this.getElement());
+		i18nNamedElementEClass.getESuperTypes().add(this.getUmlNamedElement());
+		i18nStringEClass.getESuperTypes().add(this.getI18nBaseString());
+		documentVersionEClass.getESuperTypes().add(this.getModelElement());
 		sectionEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
 		spiceElementEClass.getESuperTypes().add(this.getRasciElement());
 		rasciElementEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
 		roleEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
 		processReferenceModelEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
-		superseedingRelationshipEClass.getESuperTypes().add(this.getDirectedRelationship());
-		directedRelationshipEClass.getESuperTypes().add(this.getRelationship());
-		relationshipEClass.getESuperTypes().add(this.getElement());
+		superseedingRelationshipEClass.getESuperTypes().add(this.getUmlDirectedRelationship());
+		umlDirectedRelationshipEClass.getESuperTypes().add(this.getUmlRelationship());
+		umlRelationshipEClass.getESuperTypes().add(this.getUmlElement());
 		termEClass.getESuperTypes().add(this.getI18nNamedElement());
 		termDefinitionEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
-		associationEClass.getESuperTypes().add(this.getRelationship());
-		relationshipTypeEClass.getESuperTypes().add(this.getI18nNamedElement());
 		basePractiseEClass.getESuperTypes().add(this.getSpiceElement());
 		processEClass.getESuperTypes().add(this.getSpiceElement());
 		processGroupEClass.getESuperTypes().add(this.getSpiceElement());
 		outcomeEClass.getESuperTypes().add(this.getI18nNamedElement());
 		workProductEClass.getESuperTypes().add(this.getSpiceElement());
 		genericWorkProductEClass.getESuperTypes().add(this.getWorkProduct());
+		domainEClass.getESuperTypes().add(this.getI18nNamedElement());
+		domainElementEClass.getESuperTypes().add(this.getUmlNamedElement());
+		dO_NOT_USE_RelationshipTypeEClass.getESuperTypes().add(this.getI18nNamedElement());
+		umlAssociationEClass.getESuperTypes().add(this.getUmlRelationship());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2307,43 +2394,44 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		initEOperation(getAuthor__AuthoredStandard(), this.getDocument(), "authoredStandard", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamedElement_AssignedDomain(), this.getDomain(), this.getDomain_DomainElement(), "assignedDomain", null, 0, 1, NamedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamedElement_Domain(), this.getDomain(), null, "domain", null, 0, 1, NamedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamedElement_Namespace(), this.getNamespace(), this.getNamespace_OwnedMember(), "namespace", null, 0, 1, NamedElement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getNamedElement_OwningPackage(), this.getPackage(), this.getPackage_PackagedElement(), "owningPackage", null, 0, 1, NamedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(umlNamedElementEClass, UmlNamedElement.class, "UmlNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlNamedElement_Namespace(), this.getUmlNamespace(), this.getUmlNamespace_OwnedMember(), "namespace", null, 0, 1, UmlNamedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUmlNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, UmlNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getUmlNamedElement_QualifiedName(), ecorePackage.getEString(), "qualifiedName", null, 0, 1, UmlNamedElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getNamedElement__QualifiedName(), ecorePackage.getEString(), "qualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getUmlNamedElement__AllNamespaces(), this.getUmlNamespace(), "allNamespaces", 0, -1, !IS_UNIQUE, IS_ORDERED);
 
-		initEOperation(getNamedElement__AllNamespaces(), this.getNamespace(), "allNamespaces", 0, -1, !IS_UNIQUE, IS_ORDERED);
+		initEOperation(getUmlNamedElement__Separator(), ecorePackage.getEString(), "separator", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getNamedElement__Separator(), ecorePackage.getEString(), "separator", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getUmlNamedElement__QualifiedName(), ecorePackage.getEString(), "qualifiedName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(umlElementEClass, UmlElement.class, "UmlElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlElement_OwnedElement(), this.getUmlElement(), this.getUmlElement_Owner(), "ownedElement", null, 0, -1, UmlElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlElement_Owner(), this.getUmlElement(), this.getUmlElement_OwnedElement(), "owner", null, 0, 1, UmlElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlElement_OwnedComment(), this.getUmlComment(), null, "ownedComment", null, 0, -1, UmlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getUmlElement__AllOwnedElements(), this.getUmlElement(), "allOwnedElements", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getUmlElement__MustBeOwned(), ecorePackage.getEBoolean(), "mustBeOwned", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(umlCommentEClass, UmlComment.class, "UmlComment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUmlComment_Body(), ecorePackage.getEString(), "body", null, 0, 1, UmlComment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlComment_AnnotatedElement(), this.getUmlElement(), null, "annotatedElement", null, 0, -1, UmlComment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getModelElement_Uuid(), ecorePackage.getEString(), "uuid", null, 1, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getModelElement_Model(), this.getQWikiModel(), this.getQWikiModel_OwnedModelElement(), "model", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getModelElement__Model(), this.getQWikiModel(), "model", 0, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getModelElement__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(taggedElementEClass, TaggedElement.class, "TaggedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTaggedElement_Tag(), ecorePackage.getEString(), "tag", null, 0, -1, TaggedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTaggedElement_CustomProperty(), this.getI18nKeyedString(), null, "customProperty", null, 0, -1, TaggedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getElement_OwnedComment(), this.getComment(), this.getComment_OwningElement(), "ownedComment", null, 0, -1, Element.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getElement_OwnedElement(), this.getElement(), this.getElement_Owner(), "ownedElement", null, 0, -1, Element.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getElement_Owner(), this.getElement(), this.getElement_OwnedElement(), "owner", null, 0, 1, Element.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getElement_Uuid(), ecorePackage.getEString(), "uuid", null, 1, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getElement_Model(), this.getQWikiModel(), this.getQWikiModel_OwnedModelElement(), "model", null, 0, 1, Element.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getElement__AllOwnedElements(), this.getElement(), "allOwnedElements", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getElement__MustBeOwned(), ecorePackage.getEBoolean(), "mustBeOwned", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getElement__Model(), this.getQWikiModel(), "model", 0, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getElement__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComment_Body(), this.getI18nString(), null, "body", null, 0, 1, Comment.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getComment_OwningElement(), this.getElement(), this.getElement_OwnedComment(), "owningElement", null, 0, 1, Comment.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(i18nStringEClass, I18nString.class, "I18nString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(i18nKeyedStringEClass, I18nKeyedString.class, "I18nKeyedString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getI18nKeyedString_Key(), ecorePackage.getEString(), "key", null, 1, 1, I18nKeyedString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(i18nBaseStringEClass, I18nBaseString.class, "I18nBaseString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getI18nBaseString_Value(), this.getI18nValue(), null, "value", null, 0, -1, I18nBaseString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2356,26 +2444,19 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEAttribute(getI18nValue_Body(), ecorePackage.getEString(), "body", null, 1, 1, I18nValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(qWikiModelEClass, QWikiModel.class, "QWikiModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQWikiModel_OwnedModelElement(), this.getElement(), this.getElement_Model(), "ownedModelElement", null, 0, -1, QWikiModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getQWikiModel_OwnedModelElement(), this.getModelElement(), this.getModelElement_Model(), "ownedModelElement", null, 0, -1, QWikiModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(i18nKeyedStringEClass, I18nKeyedString.class, "I18nKeyedString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getI18nKeyedString_Key(), ecorePackage.getEString(), "key", null, 1, 1, I18nKeyedString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(umlPackageEClass, UmlPackage.class, "UmlPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlPackage_PackagedElement(), this.getUmlPackageableElement(), null, "packagedElement", null, 0, -1, UmlPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlPackage_NestedPackage(), this.getUmlPackage(), this.getUmlPackage_NestingPackage(), "nestedPackage", null, 0, -1, UmlPackage.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlPackage_NestingPackage(), this.getUmlPackage(), this.getUmlPackage_NestedPackage(), "nestingPackage", null, 0, 1, UmlPackage.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDomain_DomainElement(), this.getNamedElement(), this.getNamedElement_AssignedDomain(), "domainElement", null, 0, -1, Domain.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(umlPackageableElementEClass, UmlPackageableElement.class, "UmlPackageableElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getDomain__AllDomainElement(), this.getNamedElement(), "allDomainElement", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(i18nNamedElementEClass, I18nNamedElement.class, "I18nNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getI18nNamedElement_DisplayName(), this.getI18nString(), null, "displayName", null, 0, 1, I18nNamedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(namespaceEClass, Namespace.class, "Namespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNamespace_OwnedMember(), this.getNamedElement(), this.getNamedElement_Namespace(), "ownedMember", null, 0, -1, Namespace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-
-		initEClass(packageEClass, QWiki.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackage_NestingPackage(), this.getPackage(), this.getPackage_NestedPackage(), "nestingPackage", null, 0, 1, QWiki.Package.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getPackage_NestedPackage(), this.getPackage(), this.getPackage_NestingPackage(), "nestedPackage", null, 0, -1, QWiki.Package.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getPackage_PackagedElement(), this.getNamedElement(), this.getNamedElement_OwningPackage(), "packagedElement", null, 0, -1, QWiki.Package.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(umlNamespaceEClass, UmlNamespace.class, "UmlNamespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlNamespace_ImportedMember(), this.getUmlPackageableElement(), null, "importedMember", null, 0, -1, UmlNamespace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlNamespace_OwnedMember(), this.getUmlNamedElement(), this.getUmlNamedElement_Namespace(), "ownedMember", null, 0, -1, UmlNamespace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlNamespace_Member(), this.getUmlNamedElement(), null, "member", null, 0, -1, UmlNamespace.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(documentEClass, Document.class, "Document", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocument_Number(), ecorePackage.getEString(), "number", null, 1, 1, Document.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2387,6 +2468,11 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEClass(i18nDescriptiveElementEClass, I18nDescriptiveElement.class, "I18nDescriptiveElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getI18nDescriptiveElement_Purpose(), this.getI18nString(), null, "purpose", null, 0, 1, I18nDescriptiveElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getI18nDescriptiveElement_Body(), this.getI18nString(), null, "body", null, 0, 1, I18nDescriptiveElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(i18nNamedElementEClass, I18nNamedElement.class, "I18nNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getI18nNamedElement_DisplayName(), this.getI18nString(), null, "displayName", null, 0, 1, I18nNamedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(i18nStringEClass, I18nString.class, "I18nString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(documentVersionEClass, DocumentVersion.class, "DocumentVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentVersion_PublicationYear(), ecorePackage.getEString(), "publicationYear", null, 1, 1, DocumentVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2401,7 +2487,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEReference(getSection_OwningSection(), this.getSection(), this.getSection_OwnedSection(), "owningSection", null, 0, 1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSection_Number(), ecorePackage.getEString(), "number", null, 1, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSection_FacilitatingSpiceElement(), this.getSpiceElement(), this.getSpiceElement_FacilitatedSection(), "facilitatingSpiceElement", null, 0, -1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_FacilitatingElement(), this.getElement(), null, "facilitatingElement", null, 0, -1, Section.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getSection_FacilitatingElement(), this.getUmlElement(), null, "facilitatingElement", null, 0, -1, Section.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getSection_SuperseedingRelationship(), this.getSuperseedingRelationship(), null, "superseedingRelationship", null, 0, -1, Section.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getSection_Term(), this.getTerm(), this.getTerm_ExternalTermDefinition(), "term", null, 0, -1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSection_OwningDocument(), this.getDocumentVersion(), this.getDocumentVersion_OwnedSection(), "owningDocument", null, 0, 1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2444,29 +2530,22 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEClass(superseedingRelationshipEClass, SuperseedingRelationship.class, "SuperseedingRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSuperseedingRelationship_SuperseedingType(), this.getSuperseedingType(), "superseedingType", "Equal", 1, 1, SuperseedingRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(directedRelationshipEClass, DirectedRelationship.class, "DirectedRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDirectedRelationship_Source(), this.getElement(), null, "source", null, 1, -1, DirectedRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDirectedRelationship_Target(), this.getElement(), null, "target", null, 1, -1, DirectedRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(umlDirectedRelationshipEClass, UmlDirectedRelationship.class, "UmlDirectedRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlDirectedRelationship_Source(), this.getUmlElement(), null, "source", null, 1, -1, UmlDirectedRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getUmlDirectedRelationship_Target(), this.getUmlElement(), null, "target", null, 1, -1, UmlDirectedRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
-		initEClass(relationshipEClass, Relationship.class, "Relationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelationship_RelatedElement(), this.getElement(), null, "relatedElement", null, 1, -1, Relationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEClass(umlRelationshipEClass, UmlRelationship.class, "UmlRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getUmlRelationship_RelatedElement(), this.getUmlElement(), null, "relatedElement", null, 1, -1, UmlRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTerm_Acronym(), this.getI18nString(), null, "acronym", null, 0, 1, Term.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getTerm_Synonym(), this.getI18nString(), null, "synonym", null, 0, 1, Term.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTerm_Acronym(), this.getI18nString(), null, "acronym", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getTerm_Synonym(), this.getI18nString(), null, "synonym", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTerm_TermDefinition(), this.getI18nDescriptiveElement(), null, "termDefinition", null, 0, -1, Term.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getTerm_OwnedTermDefinition(), this.getTermDefinition(), this.getTermDefinition_OwningTerm(), "ownedTermDefinition", null, 0, -1, Term.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getTerm_ExternalTermDefinition(), this.getSection(), this.getSection_Term(), "externalTermDefinition", null, 0, -1, Term.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(termDefinitionEClass, TermDefinition.class, "TermDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTermDefinition_OwningTerm(), this.getTerm(), this.getTerm_OwnedTermDefinition(), "owningTerm", null, 0, 1, TermDefinition.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(associationEClass, Association.class, "Association", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssociation_End(), this.getElement(), null, "end", null, 2, 2, Association.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getAssociation_EndRelationshipType(), this.getRelationshipType(), this.getRelationshipType_TypedAssociation(), "endRelationshipType", null, 2, 2, Association.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(relationshipTypeEClass, RelationshipType.class, "RelationshipType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelationshipType_TypedAssociation(), this.getAssociation(), this.getAssociation_EndRelationshipType(), "typedAssociation", null, 0, -1, RelationshipType.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(basePractiseEClass, BasePractise.class, "BasePractise", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBasePractise_OwningProcess(), this.getProcess(), this.getProcess_OwnedBasePractise(), "owningProcess", null, 1, 1, BasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2491,8 +2570,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		initEClass(workProductEClass, WorkProduct.class, "WorkProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkProduct_OwningWorkProductGroup(), this.getGenericWorkProduct(), this.getGenericWorkProduct_OwnedWorkProduct(), "owningWorkProductGroup", null, 0, 1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWorkProduct_OwnedCharacteristic(), this.getI18nString(), null, "ownedCharacteristic", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWorkProduct_OwnedContent(), this.getI18nString(), null, "ownedContent", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getWorkProduct_Characteristic(), this.getI18nString(), null, "characteristic", null, 0, -1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getWorkProduct_Content(), this.getI18nString(), null, "content", null, 0, -1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatingOutcome(), this.getOutcome(), this.getOutcome_ResultingWorkproduct(), "facilitatingOutcome", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatedProcess(), this.getProcess(), this.getProcess_FacilitatingWorkProduct(), "facilitatedProcess", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatingProcess(), this.getProcess(), this.getProcess_FacilitatedWorkProduct(), "facilitatingProcess", null, 0, 1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -2501,6 +2580,22 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		initEClass(genericWorkProductEClass, GenericWorkProduct.class, "GenericWorkProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenericWorkProduct_OwnedWorkProduct(), this.getWorkProduct(), this.getWorkProduct_OwningWorkProductGroup(), "ownedWorkProduct", null, 0, -1, GenericWorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(domainEClass, Domain.class, "Domain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDomain_DomainElement(), this.getDomainElement(), this.getDomainElement_AssignedDomain(), "domainElement", null, 0, -1, Domain.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getDomain__AllDomainElement(), this.getDomainElement(), "allDomainElement", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(domainElementEClass, DomainElement.class, "DomainElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDomainElement_Domain(), this.getDomain(), null, "domain", null, 0, 1, DomainElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getDomainElement_AssignedDomain(), this.getDomain(), this.getDomain_DomainElement(), "assignedDomain", null, 0, 1, DomainElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(dO_NOT_USE_RelationshipEClass, DO_NOT_USE_Relationship.class, "DO_NOT_USE_Relationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(dO_NOT_USE_RelationshipTypeEClass, DO_NOT_USE_RelationshipType.class, "DO_NOT_USE_RelationshipType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(umlAssociationEClass, UmlAssociation.class, "UmlAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUmlAssociation_IsDerived(), ecorePackage.getEBoolean(), "isDerived", "false", 1, 1, UmlAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(authorTypeEEnum, AuthorType.class, "AuthorType");
@@ -2558,12 +2653,12 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		createDuplicatesAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// union
+		createUnionAnnotations();
 		// subsets
 		createSubsetsAnnotations();
 		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
 		createEmofAnnotations();
-		// union
-		createUnionAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
 	}
@@ -2584,13 +2679,13 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
 		   });
 		addAnnotation
-		  (namedElementEClass,
+		  (umlNamedElementEClass,
 		   source,
 		   new String[] {
-			   "constraints", "has_no_qualified_name"
+			   "constraints", "has_no_qualified_name has_qualified_name"
 		   });
 		addAnnotation
-		  (elementEClass,
+		  (umlElementEClass,
 		   source,
 		   new String[] {
 			   "constraints", "not_own_self has_owner"
@@ -2612,6 +2707,11 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   });
 		addAnnotation
 		  (qWikiModelEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (umlPackageEClass,
 		   source,
 		   new String[] {
 		   });
@@ -2673,6 +2773,172 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	}
 
 	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (getAuthor__AuthoredDocument(),
+		   source,
+		   new String[] {
+			   "body", "model().ownedElement->select(oclIsKindOf(QWiki::Document)).oclAsType(QWiki::Document)->select(author->includes(self))->asSet()"
+		   });
+		addAnnotation
+		  (getAuthor__AuthoredStandard(),
+		   source,
+		   new String[] {
+			   "body", "authoredDocument()->select(documentType = DocumentType::Standard)"
+		   });
+		addAnnotation
+		  (umlNamedElementEClass,
+		   source,
+		   new String[] {
+			   "has_no_qualified_name", "(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())\r\n  implies self.qualifiedName->isEmpty()",
+			   "has_qualified_name", "(self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) implies\n  self.qualifiedName = self.allNamespaces()->iterate( ns : UmlNamespace; result: String = self.name | ns.name + self.separator() + result)"
+		   });
+		addAnnotation
+		  (getUmlNamedElement__AllNamespaces(),
+		   source,
+		   new String[] {
+			   "body", "if self.namespace->isEmpty()\nthen Sequence{}\nelse self.namespace.allNamespaces()->prepend(self.namespace)\nendif"
+		   });
+		addAnnotation
+		  (getUmlNamedElement__Separator(),
+		   source,
+		   new String[] {
+			   "body", "\'::\'"
+		   });
+		addAnnotation
+		  (getUmlNamedElement__QualifiedName(),
+		   source,
+		   new String[] {
+			   "body", "if (self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name <> null)->isEmpty()) then \n    self.allNamespaces()->iterate( ns : UmlNamespace; result: String = self.name | ns.name + self.separator() + result)\nelse\n    null\nendif"
+		   });
+		addAnnotation
+		  (umlElementEClass,
+		   source,
+		   new String[] {
+			   "not_own_self", "not self.allOwnedElements()->includes(self)",
+			   "has_owner", "self.mustBeOwned() implies owner->notEmpty()"
+		   });
+		addAnnotation
+		  (getUmlElement__AllOwnedElements(),
+		   source,
+		   new String[] {
+			   "body", "ownedElement->union(ownedElement->collect(e | e.allOwnedElements()))->asSet()"
+		   });
+		addAnnotation
+		  (getUmlElement__MustBeOwned(),
+		   source,
+		   new String[] {
+			   "body", "true"
+		   });
+		addAnnotation
+		  (getModelElement__Model(),
+		   source,
+		   new String[] {
+			   "body", "if (model->notEmpty()) then\r\n  model\r\nelse if (owner->notEmpty() and owner->oclIsKindOf(ModelElement)) then\r\n  owner.oclAsType(ModelElement).model()\r\nelse\r\n  null\r\nendif\r\nendif"
+		   });
+		addAnnotation
+		  (getModelElement__Oid(),
+		   source,
+		   new String[] {
+			   "body", "uuid"
+		   });
+		addAnnotation
+		  (getSection__DocumentVersion(),
+		   source,
+		   new String[] {
+			   "body", "if (owningDocument->notEmpty()) then owningDocument else owningSection.documentVersion() endif"
+		   });
+		addAnnotation
+		  (getSection__QualifiedNumber(),
+		   source,
+		   new String[] {
+			   "body", "if (owningSection->notEmpty()) then\r\n  owningSection.qualifiedNumber() + \'.\' + number\r\nelse\r\n  number\r\nendif"
+		   });
+		addAnnotation
+		  (getProcessReferenceModel__OidForDomain(),
+		   source,
+		   new String[] {
+			   "body", "\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>union</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUnionAnnotations() {
+		String source = "union";
+		addAnnotation
+		  (getUmlNamedElement_Namespace(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlElement_OwnedElement(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlElement_Owner(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlNamespace_OwnedMember(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlNamespace_Member(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getSection_FacilitatingElement(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getSpiceElement_Role(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlDirectedRelationship_Source(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlDirectedRelationship_Target(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getUmlRelationship_RelatedElement(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getTerm_TermDefinition(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getDomainElement_Domain(),
+		   source,
+		   new String[] {
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>subsets</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2681,52 +2947,28 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";
 		addAnnotation
-		  (getNamedElement_AssignedDomain(),
+		  (getUmlNamedElement_Namespace(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//NamedElement/domain")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
-		  (getNamedElement_Namespace(),
+		  (getUmlElement_OwnedComment(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
-		  (getNamedElement_OwningPackage(),
+		  (getModelElement_Model(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//NamedElement/namespace")
-		   });
-		addAnnotation
-		  (getElement_OwnedComment(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
-		   });
-		addAnnotation
-		  (getElement_Model(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
-		   });
-		addAnnotation
-		  (getComment_OwningElement(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getQWikiModel_OwnedModelElement(),
@@ -2734,39 +2976,48 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
-		  (getNamespace_OwnedMember(),
+		  (getUmlPackage_PackagedElement(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlNamespace/ownedMember")
 		   });
 		addAnnotation
-		  (getPackage_NestingPackage(),
+		  (getUmlPackage_NestedPackage(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//NamedElement/owningPackage")
+			 URI.createURI(eNS_URI).appendFragment("//UmlPackage/packagedElement")
 		   });
 		addAnnotation
-		  (getPackage_NestedPackage(),
+		  (getUmlPackage_NestingPackage(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Package/packagedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlNamedElement/namespace")
 		   });
 		addAnnotation
-		  (getPackage_PackagedElement(),
+		  (getUmlNamespace_ImportedMember(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Namespace/ownedMember")
+			 URI.createURI(eNS_URI).appendFragment("//UmlNamespace/member")
+		   });
+		addAnnotation
+		  (getUmlNamespace_OwnedMember(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(eNS_URI).appendFragment("//UmlNamespace/member"),
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getDocument_OwnedVersion(),
@@ -2774,7 +3025,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getDocumentVersion_OwnedSection(),
@@ -2782,7 +3033,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getDocumentVersion_OwningDocument(),
@@ -2790,7 +3041,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getSection_OwnedSection(),
@@ -2798,7 +3049,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getSection_OwningSection(),
@@ -2806,7 +3057,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getSection_FacilitatingSpiceElement(),
@@ -2822,7 +3073,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getSpiceElement_OwningProcessReferenceModel(),
@@ -2830,7 +3081,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getSpiceElement_OwningRole(),
@@ -2862,39 +3113,23 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
-		  (getDirectedRelationship_Source(),
+		  (getUmlDirectedRelationship_Source(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Relationship/relatedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlRelationship/relatedElement")
 		   });
 		addAnnotation
-		  (getDirectedRelationship_Target(),
+		  (getUmlDirectedRelationship_Target(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Relationship/relatedElement")
-		   });
-		addAnnotation
-		  (getTerm_Acronym(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
-		   });
-		addAnnotation
-		  (getTerm_Synonym(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlRelationship/relatedElement")
 		   });
 		addAnnotation
 		  (getTerm_OwnedTermDefinition(),
@@ -2902,8 +3137,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement"),
-			 URI.createURI(eNS_URI).appendFragment("//Term/termDefinition")
+			 URI.createURI(eNS_URI).appendFragment("//Term/termDefinition"),
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getTerm_ExternalTermDefinition(),
@@ -2919,7 +3154,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getBasePractise_OwningProcess(),
@@ -2927,7 +3162,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getProcess_OwningProcessGroup(),
@@ -2935,7 +3170,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getProcess_OwnedOutcome(),
@@ -2943,7 +3178,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getProcess_OwnedBasePractise(),
@@ -2951,7 +3186,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getProcessGroup_OwnedProcess(),
@@ -2959,7 +3194,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
 		   });
 		addAnnotation
 		  (getOutcome_OwningProcess(),
@@ -2967,7 +3202,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getWorkProduct_OwningWorkProductGroup(),
@@ -2975,23 +3210,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/owner")
-		   });
-		addAnnotation
-		  (getWorkProduct_OwnedCharacteristic(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
-		   });
-		addAnnotation
-		  (getWorkProduct_OwnedContent(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/owner")
 		   });
 		addAnnotation
 		  (getGenericWorkProduct_OwnedWorkProduct(),
@@ -2999,7 +3218,15 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Element/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//UmlElement/ownedElement")
+		   });
+		addAnnotation
+		  (getDomainElement_AssignedDomain(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(eNS_URI).appendFragment("//DomainElement/domain")
 		   });
 	}
 
@@ -3012,10 +3239,16 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	protected void createEmofAnnotations() {
 		String source = "http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName";
 		addAnnotation
-		  (getNamedElement_Domain(),
+		  (getUmlElement_OwnedComment(),
 		   source,
 		   new String[] {
-			   "body", "namedelement"
+			   "body", "owningElement"
+		   });
+		addAnnotation
+		  (getUmlComment_AnnotatedElement(),
+		   source,
+		   new String[] {
+			   "body", "comment"
 		   });
 		addAnnotation
 		  (getTaggedElement_CustomProperty(),
@@ -3028,6 +3261,12 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   source,
 		   new String[] {
 			   "body", "owningElement"
+		   });
+		addAnnotation
+		  (getUmlPackage_PackagedElement(),
+		   source,
+		   new String[] {
+			   "body", "owningPackage"
 		   });
 		addAnnotation
 		  (getDocument_SuperseedingRelationship(),
@@ -3084,22 +3323,16 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 			   "body", "spiceelement"
 		   });
 		addAnnotation
-		  (getDirectedRelationship_Source(),
+		  (getUmlDirectedRelationship_Source(),
 		   source,
 		   new String[] {
-			   "body", "relationshipAsSource"
+			   "body", "directedRelationship"
 		   });
 		addAnnotation
-		  (getDirectedRelationship_Target(),
+		  (getUmlDirectedRelationship_Target(),
 		   source,
 		   new String[] {
-			   "body", "relationshipAsTarget"
-		   });
-		addAnnotation
-		  (getRelationship_RelatedElement(),
-		   source,
-		   new String[] {
-			   "body", "relationship"
+			   "body", "directedRelationship"
 		   });
 		addAnnotation
 		  (getTerm_TermDefinition(),
@@ -3108,81 +3341,16 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 			   "body", "term"
 		   });
 		addAnnotation
-		  (getAssociation_End(),
-		   source,
-		   new String[] {
-			   "body", "association"
-		   });
-		addAnnotation
 		  (getBasePractise_FacilitatedWorkProduct(),
 		   source,
 		   new String[] {
 			   "body", "facilitatingBacePractise"
 		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>union</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUnionAnnotations() {
-		String source = "union";
 		addAnnotation
-		  (getNamedElement_Domain(),
+		  (getDomainElement_Domain(),
 		   source,
 		   new String[] {
-		   });
-		addAnnotation
-		  (getElement_OwnedElement(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getElement_Owner(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getNamespace_OwnedMember(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getPackage_NestedPackage(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getSection_FacilitatingElement(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getSpiceElement_Role(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getDirectedRelationship_Source(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getDirectedRelationship_Target(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getRelationship_RelatedElement(),
-		   source,
-		   new String[] {
-		   });
-		addAnnotation
-		  (getTerm_TermDefinition(),
-		   source,
-		   new String[] {
+			   "body", "namedelement"
 		   });
 	}
 
@@ -3195,34 +3363,10 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
-		  (getNamespace_OwnedMember(),
-		   source,
-		   new String[] {
-			   "kind", "element"
-		   });
-		addAnnotation
-		  (getPackage_PackagedElement(),
-		   source,
-		   new String[] {
-			   "kind", "element"
-		   });
-		addAnnotation
 		  (getWorkProduct_OwningWorkProductGroup(),
 		   source,
 		   new String[] {
 			   "kind", "attribute"
-		   });
-		addAnnotation
-		  (getWorkProduct_OwnedCharacteristic(),
-		   source,
-		   new String[] {
-			   "kind", "element"
-		   });
-		addAnnotation
-		  (getWorkProduct_OwnedContent(),
-		   source,
-		   new String[] {
-			   "kind", "element"
 		   });
 		addAnnotation
 		  (getWorkProduct_FacilitatingOutcome(),
@@ -3247,101 +3391,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   source,
 		   new String[] {
 			   "kind", "element"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation
-		  (getAuthor__AuthoredDocument(),
-		   source,
-		   new String[] {
-			   "body", "model().ownedElement->select(oclIsKindOf(QWiki::Document)).oclAsType(QWiki::Document)->select(author->includes(self))->asSet()"
-		   });
-		addAnnotation
-		  (getAuthor__AuthoredStandard(),
-		   source,
-		   new String[] {
-			   "body", "authoredDocument()->select(documentType = DocumentType::Standard)"
-		   });
-		addAnnotation
-		  (namedElementEClass,
-		   source,
-		   new String[] {
-			   "has_no_qualified_name", "(self.name->isEmpty() or self.allNamespaces()->select(ns | ns.name->isEmpty())->notEmpty())\r\nimplies self.qualifiedName()->isEmpty()"
-		   });
-		addAnnotation
-		  (getNamedElement__QualifiedName(),
-		   source,
-		   new String[] {
-			   "body", "if (self.name->notEmpty() and self.allNamespaces()->select(ns | ns.name->isEmpty())->isEmpty()) then \r\n    self.allNamespaces()->iterate( ns : Namespace; result: String = self.name | ns.name + self.separator() + result)\r\nelse\r\n    null\r\nendif"
-		   });
-		addAnnotation
-		  (getNamedElement__AllNamespaces(),
-		   source,
-		   new String[] {
-			   "body", "if (self.namespace->isEmpty()) then\r\n  Sequence{}\r\nelse\r\n  self.namespace.allNamespaces()->prepend(self.namespace)\r\nendif"
-		   });
-		addAnnotation
-		  (getNamedElement__Separator(),
-		   source,
-		   new String[] {
-			   "body", "\'::\'"
-		   });
-		addAnnotation
-		  (elementEClass,
-		   source,
-		   new String[] {
-			   "not_own_self", "not self.allOwnedElements()->includes(self)",
-			   "has_owner", "self.mustBeOwned() implies owner->notEmpty()"
-		   });
-		addAnnotation
-		  (getElement__AllOwnedElements(),
-		   source,
-		   new String[] {
-			   "body", "ownedElement->union(ownedElement->collect(e | e.allOwnedElements()))->asSet()"
-		   });
-		addAnnotation
-		  (getElement__MustBeOwned(),
-		   source,
-		   new String[] {
-			   "body", "true"
-		   });
-		addAnnotation
-		  (getElement__Model(),
-		   source,
-		   new String[] {
-			   "body", "if (model->notEmpty()) then\r\n  model\r\nelse if (owner->notEmpty()) then\r\n  owner.model()\r\nelse\r\n  null\r\nendif\r\nendif"
-		   });
-		addAnnotation
-		  (getElement__Oid(),
-		   source,
-		   new String[] {
-			   "body", "uuid"
-		   });
-		addAnnotation
-		  (getSection__DocumentVersion(),
-		   source,
-		   new String[] {
-			   "body", "if (owningDocument->notEmpty()) then owningDocument else owningSection.documentVersion() endif"
-		   });
-		addAnnotation
-		  (getSection__QualifiedNumber(),
-		   source,
-		   new String[] {
-			   "body", "if (owningSection->notEmpty()) then\r\n  owningSection.qualifiedNumber() + \'.\' + number\r\nelse\r\n  number\r\nendif"
-		   });
-		addAnnotation
-		  (getProcessReferenceModel__OidForDomain(),
-		   source,
-		   new String[] {
-			   "body", "\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
 		   });
 	}
 

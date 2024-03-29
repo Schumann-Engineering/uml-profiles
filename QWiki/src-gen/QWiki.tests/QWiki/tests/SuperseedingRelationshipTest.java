@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SuperseedingRelationshipTest extends DirectedRelationshipTest {
+public class SuperseedingRelationshipTest extends UmlDirectedRelationshipTest {
 
 	/**
 	 * <!-- begin-user-doc -->

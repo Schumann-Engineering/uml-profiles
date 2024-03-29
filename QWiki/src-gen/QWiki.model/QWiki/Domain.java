@@ -23,8 +23,8 @@ import org.eclipse.emf.common.util.EList;
 public interface Domain extends I18nNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Domain Element</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.NamedElement}.
-	 * It is bidirectional and its opposite is '{@link QWiki.NamedElement#getAssignedDomain <em>Assigned Domain</em>}'.
+	 * The list contents are of type {@link QWiki.DomainElement}.
+	 * It is bidirectional and its opposite is '{@link QWiki.DomainElement#getAssignedDomain <em>Assigned Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Domain Element</em>' reference list isn't clear,
@@ -33,11 +33,11 @@ public interface Domain extends I18nNamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Domain Element</em>' reference list.
 	 * @see QWiki.QWikiPackage#getDomain_DomainElement()
-	 * @see QWiki.NamedElement#getAssignedDomain
+	 * @see QWiki.DomainElement#getAssignedDomain
 	 * @model opposite="assignedDomain" transient="true" ordered="false"
 	 * @generated
 	 */
-	EList<NamedElement> getDomainElement();
+	EList<DomainElement> getDomainElement();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,6 +45,6 @@ public interface Domain extends I18nNamedElement {
 	 * @model ordered="false"
 	 * @generated
 	 */
-	EList<NamedElement> allDomainElement();
+	EList<DomainElement> allDomainElement();
 
 } // Domain

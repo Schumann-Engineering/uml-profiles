@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class SuperseedingRelationshipImpl extends DirectedRelationshipImpl implements SuperseedingRelationship {
+public class SuperseedingRelationshipImpl extends UmlDirectedRelationshipImpl implements SuperseedingRelationship {
 	/**
 	 * The default value of the '{@link #getSuperseedingType() <em>Superseeding Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

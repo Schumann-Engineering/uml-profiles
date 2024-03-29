@@ -3,7 +3,7 @@
 package QWiki.impl;
 
 import QWiki.Domain;
-import QWiki.NamedElement;
+import QWiki.DomainElement;
 import QWiki.QWikiPackage;
 
 import java.lang.reflect.InvocationTargetException;
@@ -42,7 +42,7 @@ public class DomainImpl extends I18nNamedElementImpl implements Domain {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<NamedElement> domainElement;
+	protected EList<DomainElement> domainElement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,9 +69,9 @@ public class DomainImpl extends I18nNamedElementImpl implements Domain {
 	 * @generated
 	 */
 	@Override
-	public EList<NamedElement> getDomainElement() {
+	public EList<DomainElement> getDomainElement() {
 		if (domainElement == null) {
-			domainElement = new EObjectWithInverseResolvingEList<NamedElement>(NamedElement.class, this, QWikiPackage.DOMAIN__DOMAIN_ELEMENT, QWikiPackage.NAMED_ELEMENT__ASSIGNED_DOMAIN);
+			domainElement = new EObjectWithInverseResolvingEList<DomainElement>(DomainElement.class, this, QWikiPackage.DOMAIN__DOMAIN_ELEMENT, QWikiPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
 		}
 		return domainElement;
 	}
@@ -81,7 +81,7 @@ public class DomainImpl extends I18nNamedElementImpl implements Domain {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<NamedElement> allDomainElement() {
+	public EList<DomainElement> allDomainElement() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -141,7 +141,7 @@ public class DomainImpl extends I18nNamedElementImpl implements Domain {
 		switch (featureID) {
 			case QWikiPackage.DOMAIN__DOMAIN_ELEMENT:
 				getDomainElement().clear();
-				getDomainElement().addAll((Collection<? extends NamedElement>)newValue);
+				getDomainElement().addAll((Collection<? extends DomainElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

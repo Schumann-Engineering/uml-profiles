@@ -29,7 +29,7 @@ public interface GenericWorkProduct extends WorkProduct {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

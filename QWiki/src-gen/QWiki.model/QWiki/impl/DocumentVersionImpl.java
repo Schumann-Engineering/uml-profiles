@@ -5,20 +5,21 @@ package QWiki.impl;
 import QWiki.Document;
 import QWiki.DocumentVersion;
 import QWiki.DocumentVersionType;
-import QWiki.Element;
 import QWiki.QWikiPackage;
 import QWiki.Section;
 import QWiki.SuperseedingRelationship;
+import QWiki.UmlElement;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -51,7 +52,7 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *
  * @generated
  */
-public class DocumentVersionImpl extends ElementImpl implements DocumentVersion {
+public class DocumentVersionImpl extends ModelElementImpl implements DocumentVersion {
 	/**
 	 * The default value of the '{@link #getPublicationYear() <em>Publication Year</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -147,8 +148,8 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.DOCUMENT_VERSION__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.DOCUMENT_VERSION__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -167,9 +168,9 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -178,7 +179,7 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		Document owningDocument = getOwningDocument();			
 		if (owningDocument != null) {
 			return owningDocument;
@@ -331,7 +332,7 @@ public class DocumentVersionImpl extends ElementImpl implements DocumentVersion 
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->

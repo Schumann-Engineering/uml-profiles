@@ -4,6 +4,7 @@ package QWiki.tests;
 
 import QWiki.QWikiFactory;
 import QWiki.QWikiModel;
+
 import junit.textui.TestRunner;
 
 /**
@@ -18,7 +19,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class QWikiModelTest extends ElementTest {
+public class QWikiModelTest extends UmlPackageTest {
 
 	/**
 	 * <!-- begin-user-doc -->

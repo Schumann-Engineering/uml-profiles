@@ -6,12 +6,15 @@ package QWiki.provider;
 import QWiki.QWikiFactory;
 import QWiki.QWikiModel;
 import QWiki.QWikiPackage;
+
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -21,8 +24,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class QWikiModelItemProvider 
-	extends ElementItemProvider {
+public class QWikiModelItemProvider extends UmlPackageItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -97,7 +99,7 @@ public class QWikiModelItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QWikiModel)object).getUuid();
+		String label = ((QWikiModel)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_QWikiModel_type") :
 			getString("_UI_QWikiModel_type") + " " + label;
@@ -142,22 +144,12 @@ public class QWikiModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createComment()));
+				 QWikiFactory.eINSTANCE.createUmlPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
 				 QWikiFactory.eINSTANCE.createQWikiModel()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createDomain()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -187,27 +179,12 @@ public class QWikiModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createSuperseedingRelationship()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
 				 QWikiFactory.eINSTANCE.createTerm()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
 				 QWikiFactory.eINSTANCE.createTermDefinition()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createAssociation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
-				 QWikiFactory.eINSTANCE.createRelationshipType()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -238,6 +215,16 @@ public class QWikiModelItemProvider
 			(createChildParameter
 				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
 				 QWikiFactory.eINSTANCE.createGenericWorkProduct()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
+				 QWikiFactory.eINSTANCE.createDomain()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT,
+				 QWikiFactory.eINSTANCE.createDO_NOT_USE_RelationshipType()));
 	}
 
 	/**
@@ -252,7 +239,8 @@ public class QWikiModelItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == QWikiPackage.Literals.ELEMENT__OWNED_COMMENT ||
+			childFeature == QWikiPackage.Literals.UML_PACKAGE__PACKAGED_ELEMENT ||
+			childFeature == QWikiPackage.Literals.UML_PACKAGE__NESTED_PACKAGE ||
 			childFeature == QWikiPackage.Literals.QWIKI_MODEL__OWNED_MODEL_ELEMENT;
 
 		if (qualify) {

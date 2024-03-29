@@ -10,7 +10,7 @@ import QWiki.TaggedElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class TaggedElementTest extends ElementTest {
+public abstract class TaggedElementTest extends UmlElementTest {
 
 	/**
 	 * Constructs a new Tagged Element test case with the given name.

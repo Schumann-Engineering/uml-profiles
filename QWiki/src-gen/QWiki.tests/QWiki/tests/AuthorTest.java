@@ -21,7 +21,7 @@ import junit.textui.TestRunner;
  * </p>
  * @generated
  */
-public class AuthorTest extends NamedElementTest {
+public class AuthorTest extends UmlNamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->

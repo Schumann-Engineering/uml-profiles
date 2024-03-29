@@ -31,22 +31,22 @@ public interface QWikiFactory extends EFactory {
 	Author createAuthor();
 
 	/**
-	 * Returns a new object of class '<em>Comment</em>'.
+	 * Returns a new object of class '<em>Uml Comment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Comment</em>'.
+	 * @return a new object of class '<em>Uml Comment</em>'.
 	 * @generated
 	 */
-	Comment createComment();
+	UmlComment createUmlComment();
 
 	/**
-	 * Returns a new object of class '<em>I1 8n String</em>'.
+	 * Returns a new object of class '<em>I1 8n Keyed String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>I1 8n String</em>'.
+	 * @return a new object of class '<em>I1 8n Keyed String</em>'.
 	 * @generated
 	 */
-	I18nString createI18nString();
+	I18nKeyedString createI18nKeyedString();
 
 	/**
 	 * Returns a new object of class '<em>I1 8n Base String</em>'.
@@ -67,33 +67,6 @@ public interface QWikiFactory extends EFactory {
 	I18nValue createI18nValue();
 
 	/**
-	 * Returns a new object of class '<em>Association</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Association</em>'.
-	 * @generated
-	 */
-	Association createAssociation();
-
-	/**
-	 * Returns a new object of class '<em>Relationship Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Relationship Type</em>'.
-	 * @generated
-	 */
-	RelationshipType createRelationshipType();
-
-	/**
-	 * Returns a new object of class '<em>I1 8n Keyed String</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>I1 8n Keyed String</em>'.
-	 * @generated
-	 */
-	I18nKeyedString createI18nKeyedString();
-
-	/**
 	 * Returns a new object of class '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,22 +76,13 @@ public interface QWikiFactory extends EFactory {
 	QWikiModel createQWikiModel();
 
 	/**
-	 * Returns a new object of class '<em>Domain</em>'.
+	 * Returns a new object of class '<em>Uml Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Domain</em>'.
+	 * @return a new object of class '<em>Uml Package</em>'.
 	 * @generated
 	 */
-	Domain createDomain();
-
-	/**
-	 * Returns a new object of class '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
-	 * @generated
-	 */
-	Package createPackage();
+	UmlPackage createUmlPackage();
 
 	/**
 	 * Returns a new object of class '<em>Document</em>'.
@@ -128,6 +92,15 @@ public interface QWikiFactory extends EFactory {
 	 * @generated
 	 */
 	Document createDocument();
+
+	/**
+	 * Returns a new object of class '<em>I1 8n String</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>I1 8n String</em>'.
+	 * @generated
+	 */
+	I18nString createI18nString();
 
 	/**
 	 * Returns a new object of class '<em>Document Version</em>'.
@@ -245,6 +218,33 @@ public interface QWikiFactory extends EFactory {
 	 * @generated
 	 */
 	GenericWorkProduct createGenericWorkProduct();
+
+	/**
+	 * Returns a new object of class '<em>Domain</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Domain</em>'.
+	 * @generated
+	 */
+	Domain createDomain();
+
+	/**
+	 * Returns a new object of class '<em>DO NOT USE Relationship Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>DO NOT USE Relationship Type</em>'.
+	 * @generated
+	 */
+	DO_NOT_USE_RelationshipType createDO_NOT_USE_RelationshipType();
+
+	/**
+	 * Returns a new object of class '<em>Uml Association</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Uml Association</em>'.
+	 * @generated
+	 */
+	UmlAssociation createUmlAssociation();
 
 	/**
 	 * Returns the package supported by this factory.

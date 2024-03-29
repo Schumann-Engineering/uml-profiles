@@ -2,10 +2,10 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.QWikiPackage;
 import QWiki.Term;
 import QWiki.TermDefinition;
+import QWiki.UmlElement;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -57,9 +57,9 @@ public class TermDefinitionImpl extends I18nDescriptiveElementImpl implements Te
 	 * @generated
 	 */
 	@Override
-	public Element getOwner() {
-		Element owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (Element)eResolveProxy((InternalEObject)owner) : owner;
+	public UmlElement getOwner() {
+		UmlElement owner = basicGetOwner();
+		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class TermDefinitionImpl extends I18nDescriptiveElementImpl implements Te
 	 * @generated
 	 */
 	@Override
-	public Element basicGetOwner() {
+	public UmlElement basicGetOwner() {
 		Term owningTerm = getOwningTerm();			
 		if (owningTerm != null) {
 			return owningTerm;

@@ -32,7 +32,7 @@ public interface Process extends SpiceElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -68,7 +68,7 @@ public interface Process extends SpiceElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -109,7 +109,7 @@ public interface Process extends SpiceElement {
 	 * It is bidirectional and its opposite is '{@link QWiki.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Facilitated Work Product</em>' reference isn't clear,
+	 * If the meaning of the '<em>Facilitated Work Product</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -129,7 +129,7 @@ public interface Process extends SpiceElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

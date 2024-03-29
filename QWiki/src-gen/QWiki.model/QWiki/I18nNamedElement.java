@@ -19,7 +19,7 @@ package QWiki;
  * @model abstract="true"
  * @generated
  */
-public interface I18nNamedElement extends NamedElement {
+public interface I18nNamedElement extends UmlNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

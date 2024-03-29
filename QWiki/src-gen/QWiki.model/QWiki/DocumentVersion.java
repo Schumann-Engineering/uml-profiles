@@ -25,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="duplicates"
  * @generated
  */
-public interface DocumentVersion extends Element {
+public interface DocumentVersion extends ModelElement {
 	/**
 	 * Returns the value of the '<em><b>Publication Year</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public interface DocumentVersion extends Element {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -157,7 +157,7 @@ public interface DocumentVersion extends Element {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

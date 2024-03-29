@@ -27,12 +27,6 @@ import org.eclipse.emf.common.util.EList;
 public interface Term extends I18nNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Acronym</b></em>' containment reference.
-	 * <p>
-	 * This feature subsets the following features:
-	 * </p>
-	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
-	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Acronym</em>' containment reference isn't clear,
@@ -42,8 +36,7 @@ public interface Term extends I18nNamedElement {
 	 * @return the value of the '<em>Acronym</em>' containment reference.
 	 * @see #setAcronym(I18nString)
 	 * @see QWiki.QWikiPackage#getTerm_Acronym()
-	 * @model containment="true" transient="true" ordered="false"
-	 *        annotation="subsets"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getAcronym();
@@ -60,12 +53,6 @@ public interface Term extends I18nNamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Synonym</b></em>' containment reference.
-	 * <p>
-	 * This feature subsets the following features:
-	 * </p>
-	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
-	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Synonym</em>' containment reference isn't clear,
@@ -75,8 +62,7 @@ public interface Term extends I18nNamedElement {
 	 * @return the value of the '<em>Synonym</em>' containment reference.
 	 * @see #setSynonym(I18nString)
 	 * @see QWiki.QWikiPackage#getTerm_Synonym()
-	 * @model containment="true" transient="true" ordered="false"
-	 *        annotation="subsets"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	I18nString getSynonym();
@@ -118,8 +104,8 @@ public interface Term extends I18nNamedElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
 	 *   <li>'{@link QWiki.Term#getTermDefinition() <em>Term Definition</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>

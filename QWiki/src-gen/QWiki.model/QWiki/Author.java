@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="duplicates"
  * @generated
  */
-public interface Author extends NamedElement {
+public interface Author extends UmlNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Author Type</b></em>' attribute.
 	 * The default value is <code>"Person"</code>.

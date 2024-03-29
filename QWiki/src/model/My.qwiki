@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QWiki:QWikiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QWiki="http://schumann.engineering/qwiki/1.0">
-  <ownedModelElement xsi:type="QWiki:Document" uuid="8278ae2d-f529-4089-b75d-ef3987c62d0b" name="IEC 62304" assignedDomain="1ea4b576-cde6-4f0e-979a-e61691c204f4" number="62304" documentType="Standard" author="98f45956-00f7-4242-8f53-00a1056f2168">
-    <ownedVersion uuid="67638160-defa-4b00-b765-44a7fc6c6290" publicationYear="2009" edition="2009">
-      <ownedSection uuid="d536d93d-e807-40ad-9163-62d6e6794c53" number="1">
-        <displayName>
-          <value language="EN" body="First Chapter"/>
-        </displayName>
-        <body>
-          <value language="EN" body="body"/>
-        </body>
-        <ownedSection uuid="86a75897-f40b-45fe-b5c8-045c9e70c152"/>
-      </ownedSection>
-      <ownedSection uuid="d75215b0-529b-4970-a6c5-3c6ba3170222"/>
-      <ownedSection uuid="df4c89a5-ebc1-4974-9b74-32c33bd9e219"/>
-      <ownedSection uuid="3f79acb2-188e-4265-84fd-1d9d88f74bb6"/>
-    </ownedVersion>
-  </ownedModelElement>
+  <ownedModelElement xsi:type="QWiki:Document" uuid="8278ae2d-f529-4089-b75d-ef3987c62d0b" name="IEC 62304" number="62304" documentType="Standard"/>
   <ownedModelElement xsi:type="QWiki:Author" uuid="98f45956-00f7-4242-8f53-00a1056f2168" name="IEC" authorType="StandardsDevelopmentOrganization"/>
-  <ownedModelElement xsi:type="QWiki:Domain" uuid="1ea4b576-cde6-4f0e-979a-e61691c204f4" name="Software Engineering" domainElement="8278ae2d-f529-4089-b75d-ef3987c62d0b"/>
+  <ownedModelElement xsi:type="QWiki:Domain" uuid="1ea4b576-cde6-4f0e-979a-e61691c204f4" name="Software Engineering"/>
 </QWiki:QWikiModel>

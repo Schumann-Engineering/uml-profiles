@@ -2,23 +2,24 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.I18nDescriptiveElement;
 import QWiki.I18nString;
 import QWiki.QWikiPackage;
 import QWiki.Section;
 import QWiki.Term;
 import QWiki.TermDefinition;
+import QWiki.UmlElement;
 
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -39,8 +40,8 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.impl.TermImpl#getOwnedElement <em>Owned Element</em>}</li>
  *   <li>{@link QWiki.impl.TermImpl#getTermDefinition <em>Term Definition</em>}</li>
+ *   <li>{@link QWiki.impl.TermImpl#getOwnedElement <em>Owned Element</em>}</li>
  *   <li>{@link QWiki.impl.TermImpl#getAcronym <em>Acronym</em>}</li>
  *   <li>{@link QWiki.impl.TermImpl#getSynonym <em>Synonym</em>}</li>
  *   <li>{@link QWiki.impl.TermImpl#getOwnedTermDefinition <em>Owned Term Definition</em>}</li>
@@ -115,8 +116,8 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * @generated
 	 */
 	@Override
-	public EList<I18nDescriptiveElement> getTermDefinition() {
-		return new DerivedUnionEObjectEList<I18nDescriptiveElement>(I18nDescriptiveElement.class, this, QWikiPackage.TERM__TERM_DEFINITION, TERM_DEFINITION_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.TERM__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -125,19 +126,9 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.TERM__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<I18nDescriptiveElement> getTermDefinition() {
+		return new DerivedUnionEObjectEList<I18nDescriptiveElement>(I18nDescriptiveElement.class, this, QWikiPackage.TERM__TERM_DEFINITION, TERM_DEFINITION_ESUBSETS);
 	}
-
-	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.TERM__OWNED_COMMENT, QWikiPackage.TERM__ACRONYM, QWikiPackage.TERM__SYNONYM, QWikiPackage.TERM__OWNED_TERM_DEFINITION};
 
 	/**
 	 * The array of subset feature identifiers for the '{@link #getTermDefinition() <em>Term Definition</em>}' reference list.
@@ -148,6 +139,16 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * @ordered
 	 */
 	protected static final int[] TERM_DEFINITION_ESUBSETS = new int[] {QWikiPackage.TERM__OWNED_TERM_DEFINITION, QWikiPackage.TERM__EXTERNAL_TERM_DEFINITION};
+
+	/**
+	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.TERM__OWNED_COMMENT, QWikiPackage.TERM__OWNED_TERM_DEFINITION};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -273,7 +274,7 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)QWikiPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -408,10 +409,10 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QWikiPackage.TERM__OWNED_ELEMENT:
-				return isSetOwnedElement();
 			case QWikiPackage.TERM__TERM_DEFINITION:
 				return isSetTermDefinition();
+			case QWikiPackage.TERM__OWNED_ELEMENT:
+				return isSetOwnedElement();
 			case QWikiPackage.TERM__ACRONYM:
 				return acronym != null;
 			case QWikiPackage.TERM__SYNONYM:
@@ -443,9 +444,10 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isSetTermDefinition() {
-		return eIsSet(QWikiPackage.TERM__OWNED_TERM_DEFINITION)
-			|| eIsSet(QWikiPackage.TERM__EXTERNAL_TERM_DEFINITION);
+	@Override
+	public boolean isSetOwnedElement() {
+		return super.isSetOwnedElement()
+			|| eIsSet(QWikiPackage.TERM__OWNED_TERM_DEFINITION);
 	}
 
 	/**
@@ -453,12 +455,9 @@ public class TermImpl extends I18nNamedElementImpl implements Term {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
-			|| eIsSet(QWikiPackage.TERM__ACRONYM)
-			|| eIsSet(QWikiPackage.TERM__SYNONYM)
-			|| eIsSet(QWikiPackage.TERM__OWNED_TERM_DEFINITION);
+	public boolean isSetTermDefinition() {
+		return eIsSet(QWikiPackage.TERM__OWNED_TERM_DEFINITION)
+			|| eIsSet(QWikiPackage.TERM__EXTERNAL_TERM_DEFINITION);
 	}
 
 } //TermImpl

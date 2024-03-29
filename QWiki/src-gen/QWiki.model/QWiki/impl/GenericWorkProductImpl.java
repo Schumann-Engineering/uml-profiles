@@ -2,9 +2,9 @@
  */
 package QWiki.impl;
 
-import QWiki.Element;
 import QWiki.GenericWorkProduct;
 import QWiki.QWikiPackage;
+import QWiki.UmlElement;
 import QWiki.WorkProduct;
 
 import java.util.Collection;
@@ -71,8 +71,8 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 * @generated
 	 */
 	@Override
-	public EList<Element> getOwnedElement() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<UmlElement> getOwnedElement() {
+		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
 	}
 
 	/**
@@ -83,7 +83,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CHARACTERISTIC, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_CONTENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
+	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT, QWikiPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->

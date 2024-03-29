@@ -19,7 +19,7 @@ package QWiki;
  * @model
  * @generated
  */
-public interface SuperseedingRelationship extends DirectedRelationship {
+public interface SuperseedingRelationship extends UmlDirectedRelationship {
 	/**
 	 * Returns the value of the '<em><b>Superseeding Type</b></em>' attribute.
 	 * The default value is <code>"Equal"</code>.

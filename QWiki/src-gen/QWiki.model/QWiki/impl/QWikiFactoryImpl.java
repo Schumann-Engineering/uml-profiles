@@ -2,11 +2,10 @@
  */
 package QWiki.impl;
 
-import QWiki.Association;
 import QWiki.Author;
 import QWiki.AuthorType;
 import QWiki.BasePractise;
-import QWiki.Comment;
+import QWiki.DO_NOT_USE_RelationshipType;
 import QWiki.Document;
 import QWiki.DocumentType;
 import QWiki.DocumentVersion;
@@ -24,13 +23,15 @@ import QWiki.ProcessReferenceModelDomain;
 import QWiki.QWikiFactory;
 import QWiki.QWikiModel;
 import QWiki.QWikiPackage;
-import QWiki.RelationshipType;
 import QWiki.Role;
 import QWiki.Section;
 import QWiki.SuperseedingRelationship;
 import QWiki.SuperseedingType;
 import QWiki.Term;
 import QWiki.TermDefinition;
+import QWiki.UmlAssociation;
+import QWiki.UmlComment;
+import QWiki.UmlPackage;
 import QWiki.WorkProduct;
 import QWiki.WorkProductType;
 
@@ -88,15 +89,14 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case QWikiPackage.AUTHOR: return createAuthor();
-			case QWikiPackage.COMMENT: return createComment();
-			case QWikiPackage.I1_8N_STRING: return createI18nString();
+			case QWikiPackage.UML_COMMENT: return createUmlComment();
+			case QWikiPackage.I1_8N_KEYED_STRING: return createI18nKeyedString();
 			case QWikiPackage.I1_8N_BASE_STRING: return createI18nBaseString();
 			case QWikiPackage.I1_8N_VALUE: return createI18nValue();
 			case QWikiPackage.QWIKI_MODEL: return createQWikiModel();
-			case QWikiPackage.I1_8N_KEYED_STRING: return createI18nKeyedString();
-			case QWikiPackage.DOMAIN: return createDomain();
-			case QWikiPackage.PACKAGE: return createPackage();
+			case QWikiPackage.UML_PACKAGE: return createUmlPackage();
 			case QWikiPackage.DOCUMENT: return createDocument();
+			case QWikiPackage.I1_8N_STRING: return createI18nString();
 			case QWikiPackage.DOCUMENT_VERSION: return createDocumentVersion();
 			case QWikiPackage.SECTION: return createSection();
 			case QWikiPackage.ROLE: return createRole();
@@ -104,14 +104,15 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 			case QWikiPackage.SUPERSEEDING_RELATIONSHIP: return createSuperseedingRelationship();
 			case QWikiPackage.TERM: return createTerm();
 			case QWikiPackage.TERM_DEFINITION: return createTermDefinition();
-			case QWikiPackage.ASSOCIATION: return createAssociation();
-			case QWikiPackage.RELATIONSHIP_TYPE: return createRelationshipType();
 			case QWikiPackage.BASE_PRACTISE: return createBasePractise();
 			case QWikiPackage.PROCESS: return createProcess();
 			case QWikiPackage.PROCESS_GROUP: return createProcessGroup();
 			case QWikiPackage.OUTCOME: return createOutcome();
 			case QWikiPackage.WORK_PRODUCT: return createWorkProduct();
 			case QWikiPackage.GENERIC_WORK_PRODUCT: return createGenericWorkProduct();
+			case QWikiPackage.DOMAIN: return createDomain();
+			case QWikiPackage.DO_NOT_USE_RELATIONSHIP_TYPE: return createDO_NOT_USE_RelationshipType();
+			case QWikiPackage.UML_ASSOCIATION: return createUmlAssociation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -184,9 +185,9 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
-	public Comment createComment() {
-		CommentImpl comment = new CommentImpl();
-		return comment;
+	public UmlComment createUmlComment() {
+		UmlCommentImpl umlComment = new UmlCommentImpl();
+		return umlComment;
 	}
 
 	/**
@@ -195,9 +196,9 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
-	public I18nString createI18nString() {
-		I18nStringImpl i18nString = new I18nStringImpl();
-		return i18nString;
+	public I18nKeyedString createI18nKeyedString() {
+		I18nKeyedStringImpl i18nKeyedString = new I18nKeyedStringImpl();
+		return i18nKeyedString;
 	}
 
 	/**
@@ -228,39 +229,6 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
-	public Association createAssociation() {
-		AssociationImpl association = new AssociationImpl();
-		return association;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RelationshipType createRelationshipType() {
-		RelationshipTypeImpl relationshipType = new RelationshipTypeImpl();
-		return relationshipType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public I18nKeyedString createI18nKeyedString() {
-		I18nKeyedStringImpl i18nKeyedString = new I18nKeyedStringImpl();
-		return i18nKeyedString;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public QWikiModel createQWikiModel() {
 		QWikiModelImpl qWikiModel = new QWikiModelImpl();
 		return qWikiModel;
@@ -272,20 +240,9 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
-	public Domain createDomain() {
-		DomainImpl domain = new DomainImpl();
-		return domain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public QWiki.Package createPackage() {
-		PackageImpl package_ = new PackageImpl();
-		return package_;
+	public UmlPackage createUmlPackage() {
+		UmlPackageImpl umlPackage = new UmlPackageImpl();
+		return umlPackage;
 	}
 
 	/**
@@ -297,6 +254,17 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	public Document createDocument() {
 		DocumentImpl document = new DocumentImpl();
 		return document;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public I18nString createI18nString() {
+		I18nStringImpl i18nString = new I18nStringImpl();
+		return i18nString;
 	}
 
 	/**
@@ -440,6 +408,39 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	public GenericWorkProduct createGenericWorkProduct() {
 		GenericWorkProductImpl genericWorkProduct = new GenericWorkProductImpl();
 		return genericWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Domain createDomain() {
+		DomainImpl domain = new DomainImpl();
+		return domain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DO_NOT_USE_RelationshipType createDO_NOT_USE_RelationshipType() {
+		DO_NOT_USE_RelationshipTypeImpl dO_NOT_USE_RelationshipType = new DO_NOT_USE_RelationshipTypeImpl();
+		return dO_NOT_USE_RelationshipType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UmlAssociation createUmlAssociation() {
+		UmlAssociationImpl umlAssociation = new UmlAssociationImpl();
+		return umlAssociation;
 	}
 
 	/**

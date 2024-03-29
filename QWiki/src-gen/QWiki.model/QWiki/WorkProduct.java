@@ -14,8 +14,8 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link QWiki.WorkProduct#getOwningWorkProductGroup <em>Owning Work Product Group</em>}</li>
- *   <li>{@link QWiki.WorkProduct#getOwnedCharacteristic <em>Owned Characteristic</em>}</li>
- *   <li>{@link QWiki.WorkProduct#getOwnedContent <em>Owned Content</em>}</li>
+ *   <li>{@link QWiki.WorkProduct#getCharacteristic <em>Characteristic</em>}</li>
+ *   <li>{@link QWiki.WorkProduct#getContent <em>Content</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatingOutcome <em>Facilitating Outcome</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatedProcess <em>Facilitated Process</em>}</li>
  *   <li>{@link QWiki.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}</li>
@@ -35,7 +35,7 @@ public interface WorkProduct extends SpiceElement {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwner() <em>Owner</em>}'</li>
+	 *   <li>'{@link QWiki.UmlElement#getOwner() <em>Owner</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -65,52 +65,36 @@ public interface WorkProduct extends SpiceElement {
 	void setOwningWorkProductGroup(GenericWorkProduct value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Characteristic</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Characteristic</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.I18nString}.
-	 * <p>
-	 * This feature subsets the following features:
-	 * </p>
-	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
-	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Characteristic</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Characteristic</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Characteristic</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getWorkProduct_OwnedCharacteristic()
-	 * @model containment="true" transient="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
-	 *        annotation="subsets"
+	 * @return the value of the '<em>Characteristic</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getWorkProduct_Characteristic()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<I18nString> getOwnedCharacteristic();
+	EList<I18nString> getCharacteristic();
 
 	/**
-	 * Returns the value of the '<em><b>Owned Content</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.I18nString}.
-	 * <p>
-	 * This feature subsets the following features:
-	 * </p>
-	 * <ul>
-	 *   <li>'{@link QWiki.Element#getOwnedElement() <em>Owned Element</em>}'</li>
-	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Content</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Content</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getWorkProduct_OwnedContent()
-	 * @model containment="true" transient="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
-	 *        annotation="subsets"
+	 * @return the value of the '<em>Content</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getWorkProduct_Content()
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	EList<I18nString> getOwnedContent();
+	EList<I18nString> getContent();
 
 	/**
 	 * Returns the value of the '<em><b>Facilitating Outcome</b></em>' reference list.

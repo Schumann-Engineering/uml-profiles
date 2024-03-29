@@ -84,47 +84,46 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Author/authoredDocument"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Author/authoredStandard"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//NamedElement">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//NamedElement/name"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//NamedElement/assignedDomain"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlNamedElement">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//NamedElement/domain"/>
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlNamedElement/namespace"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//UmlNamedElement/name"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="false"
+          ecoreFeature="ecore:EAttribute QWiki.ecore#//UmlNamedElement/qualifiedName.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//UmlNamedElement/allNamespaces"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//UmlNamedElement/separator"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//UmlNamedElement/qualifiedName"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlElement/ownedElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlElement/owner"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//UmlElement/ownedComment"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//UmlElement/allOwnedElements"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//UmlElement/mustBeOwned"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//UmlComment">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//UmlComment/body"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//NamedElement/namespace"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//UmlComment/annotatedElement"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//ModelElement">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//ModelElement/uuid"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference QWiki.ecore#//NamedElement/owningPackage"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//NamedElement/qualifiedName"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//NamedElement/allNamespaces"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//NamedElement/separator"/>
+          ecoreFeature="ecore:EReference QWiki.ecore#//ModelElement/model.1"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//ModelElement/model"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//ModelElement/oid"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//TaggedElement">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//TaggedElement/tag"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//TaggedElement/customProperty"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Element">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//Element/ownedComment"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Element/ownedElement"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Element/owner"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//Element/uuid"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference QWiki.ecore#//Element/model.1"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Element/allOwnedElements"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Element/mustBeOwned"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Element/model"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Element/oid"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//I18nKeyedString">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//I18nKeyedString/key"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Comment">
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//Comment/body"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
-          ecoreFeature="ecore:EReference QWiki.ecore#//Comment/owningElement"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//I18nString"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//I18nBaseString">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//I18nBaseString/value.1"/>
@@ -140,29 +139,22 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//QWikiModel/ownedModelElement"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//I18nKeyedString">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//I18nKeyedString/key"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Domain">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Domain/domainElement"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Domain/allDomainElement"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//I18nNamedElement">
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//UmlPackage">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//I18nNamedElement/displayName"/>
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//UmlPackage/packagedElement"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference QWiki.ecore#//UmlPackage/nestedPackage"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//UmlPackage/nestingPackage"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Namespace">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlPackageableElement"/>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlNamespace">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Namespace/ownedMember"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Package">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Package/nestingPackage"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" createChild="true"
-          ecoreFeature="ecore:EReference QWiki.ecore#//Package/nestedPackage"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//Package/packagedElement"/>
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlNamespace/importedMember"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlNamespace/ownedMember"/>
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlNamespace/member"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Document">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//Document/number"/>
@@ -180,6 +172,11 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//I18nDescriptiveElement/body"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//I18nNamedElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//I18nNamedElement/displayName"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//I18nString"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//DocumentVersion">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//DocumentVersion/publicationYear"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//DocumentVersion/documentVersionType"/>
@@ -261,15 +258,15 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//SuperseedingRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//SuperseedingRelationship/superseedingType"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//DirectedRelationship">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlDirectedRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//DirectedRelationship/source"/>
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlDirectedRelationship/source"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//DirectedRelationship/target"/>
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlDirectedRelationship/target"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Relationship">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//UmlRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Relationship/relatedElement"/>
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//UmlRelationship/relatedElement"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Term">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
@@ -286,16 +283,6 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//TermDefinition">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference QWiki.ecore#//TermDefinition/owningTerm"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Association">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Association/end"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Association/endRelationshipType"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//RelationshipType">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//RelationshipType/typedAssociation"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//BasePractise">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
@@ -335,9 +322,9 @@
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/owningWorkProductGroup"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/ownedCharacteristic"/>
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/characteristic"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/ownedContent"/>
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/content"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//WorkProduct/facilitatingOutcome"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -351,6 +338,22 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//GenericWorkProduct">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//GenericWorkProduct/ownedWorkProduct"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Domain">
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Domain/domainElement"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Domain/allDomainElement"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//DomainElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+          createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//DomainElement/domain"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//DomainElement/assignedDomain"/>
+    </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//DO_NOT_USE_Relationship"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//DO_NOT_USE_RelationshipType"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//UmlAssociation">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//UmlAssociation/isDerived"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -54,4 +54,5 @@
             contributorClass="QWiki.presentation.QWikiActionBarContributor">
       </editor>
    </extension>
+
 </plugin>
