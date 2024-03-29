@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QWiki.Model:ModelRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:QWiki.Model="http:///QWiki/Model.ecore"  xmlns:QWiki.Document="http:///QWiki/Document.ecore">
+	<ownedModelElement xsi:type="QWiki.Document:DocumentDocument" name="Test"/>
+</QWiki.Model:ModelRoot>

@@ -1,0 +1,195 @@
+/**
+ */
+package QWiki.Kernel.impl;
+
+import QWiki.I18N.impl.I18nNamedElementImpl;
+
+import QWiki.Kernel.KernelPackage;
+import QWiki.Kernel.ModelDomain;
+import QWiki.Kernel.ModelDomainElement;
+
+import java.lang.reflect.InvocationTargetException;
+
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Model Domain</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link QWiki.Kernel.impl.ModelDomainImpl#getDomainElement <em>Domain Element</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ModelDomainImpl extends I18nNamedElementImpl implements ModelDomain {
+	/**
+	 * The cached value of the '{@link #getDomainElement() <em>Domain Element</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDomainElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ModelDomainElement> domainElement;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ModelDomainImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return KernelPackage.Literals.MODEL_DOMAIN;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ModelDomainElement> getDomainElement() {
+		if (domainElement == null) {
+			domainElement = new EObjectWithInverseResolvingEList<ModelDomainElement>(ModelDomainElement.class, this, KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT, KernelPackage.MODEL_DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
+		}
+		return domainElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ModelDomainElement> allDomainElement() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getDomainElement()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				return ((InternalEList<?>)getDomainElement()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				return getDomainElement();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				getDomainElement().clear();
+				getDomainElement().addAll((Collection<? extends ModelDomainElement>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				getDomainElement().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case KernelPackage.MODEL_DOMAIN__DOMAIN_ELEMENT:
+				return domainElement != null && !domainElement.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case KernelPackage.MODEL_DOMAIN___ALL_DOMAIN_ELEMENT:
+				return allDomainElement();
+		}
+		return super.eInvoke(operationID, arguments);
+	}
+
+} //ModelDomainImpl

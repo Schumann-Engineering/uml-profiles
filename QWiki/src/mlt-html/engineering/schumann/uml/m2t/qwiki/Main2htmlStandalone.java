@@ -22,9 +22,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.uml2.uml.resources.util.UMLResourcesUtil;
 
-import QWiki.QWikiFactory;
-import QWiki.QWikiPackage;
-
 //import engineering.schumann.uml.m2t.common.services.AcceleoGeneratorHelper;
 //import engineering.schumann.uml.m2t.common.services.VariableServiceImpl;
 
@@ -147,10 +144,12 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
         /* ====================
          * QWiki
          * ==================== */
+/*
 		resourceSet.getPackageRegistry().putIfAbsent(
 				QWikiPackage.eINSTANCE.getNsURI(),
 				QWikiPackage.eINSTANCE
-		);			
+		);
+*/			
 		
 		
         /* ====================
@@ -163,10 +162,12 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
     public void registerResourceFactories(ResourceSet resourceSet) {
         super.registerResourceFactories(resourceSet);
         
+/*
         resourceSet.getResourceFactoryRegistry().getProtocolToFactoryMap().putIfAbsent(
         		"qwiki",
         		QWikiFactory.eINSTANCE
         );
+/*
         
         /*
          * Some metamodels require a very complex setup for standalone usage. For example, if you want to use a generator
