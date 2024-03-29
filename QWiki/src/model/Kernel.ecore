@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Kernel" nsURI="http:///Kernel.ecore" nsPrefix="Kernel">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Extension" eSuperTypes="UML.ecore#//StructuredClassifiers/Association">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An extension is used to indicate that the properties of a metaclass are extended through a stereotype, and gives the ability to flexibly add (and later remove) stereotypes to classes.&#xD;&#xA;metaclassEnd()->notEmpty() and metaclassEnd().type.oclIsKindOf(Class)&#xD;&#xA;memberEnd->size() = 2"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="non_owned_end is_binary"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="non_owned_end" value="metaclassEnd()->notEmpty() and metaclassEnd().type.oclIsKindOf(Class)"/>
+      <details key="is_binary" value="memberEnd->size() = 2"/>
+    </eAnnotations>
+    <eOperations name="isRequired" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isRequired() is true if the owned end has a multiplicity with the lower bound of 1."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="ownedEnd.lowerBound() = 1"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="metaclass" ordered="false" lowerBound="1" eType="ecore:EClass UML.ecore#//StructuredClassifiers/Class">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query metaclass() returns the metaclass that is being extended (as opposed to the extending stereotype)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="metaclassEnd().type.oclAsType(Class)"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="metaclassEnd" ordered="false" lowerBound="1" eType="ecore:EClass UML.ecore#//Classification/Property">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query metaclassEnd() returns the Property that is typed by a metaclass (as opposed to a stereotype)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="memberEnd->reject(p | ownedEnd->includes(p.oclAsType(ExtensionEnd)))->any(true)"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRequired" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean" changeable="false"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates whether an instance of the extending stereotype must be created when an instance of the extended class is created. The attribute value is derived from the value of the lower property of the ExtensionEnd referenced by Extension::ownedEnd; a lower value of 1 means that isRequired is true, but otherwise it is false. Since the default value of ExtensionEnd::lower is 0, the default value of isRequired is false."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaclass" ordered="false"
+        lowerBound="1" eType="ecore:EClass UML.ecore#//StructuredClassifiers/Class"
+        changeable="false" volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Class that is extended through an Extension. The property is derived from the type of the memberEnd that is not the ownedEnd."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedEnd" ordered="false"
+        lowerBound="1" eType="#//ExtensionEnd" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="extension"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the end of the extension that is typed by a Stereotype."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="UML.ecore#//StructuredClassifiers/Association/ownedEnd"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtensionEnd" eSuperTypes="UML.ecore#//Classification/Property">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An extension end is used to tie an extension to a stereotype when extending a metaclass.&#xA;The default multiplicity of an extension end is 0..1.&#xD;&#xA;(lowerBound() = 0 or lowerBound() = 1) and upperBound() = 1&#xD;&#xA;self.aggregation = AggregationKind::composite"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="multiplicity aggregation"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="multiplicity" value="(lowerBound() = 0 or lowerBound() = 1) and upperBound() = 1"/>
+      <details key="aggregation" value="self.aggregation = AggregationKind::composite"/>
+    </eAnnotations>
+    <eOperations name="lowerBound" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query lowerBound() returns the lower bound of the multiplicity as an Integer. This is a redefinition of the default lower bound, which normally, for MultiplicityElements, evaluates to 1 if empty."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if lowerValue=null then 0 else lowerValue.integerValue() endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//Integer" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This redefinition changes the default multiplicity of association ends, since model elements are usually extended by 0 or 1 instance of the extension stereotype."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" lowerBound="1"
+        eType="#//Stereotype">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="extensionEnd"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the type of the ExtensionEnd. Note that this association restricts the possible types of an ExtensionEnd to only be Stereotypes."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="UML.ecore#//CommonStructure/TypedElement/type"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stereotype" eSuperTypes="UML.ecore#//StructuredClassifiers/Class">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A stereotype defines how an existing metaclass may be extended, and enables the use of platform or domain specific terminology or notation in place of, or in addition to, the ones used for the extended metaclass.&#xD;&#xA;ownedAttribute.association->forAll(memberEnd->size()=2)&#xD;&#xA;allParents()->forAll(oclIsKindOf(Stereotype)) &#xD;&#xA;and Classifier.allInstances()->forAll(c | c.allParents()->exists(oclIsKindOf(Stereotype)) implies c.oclIsKindOf(Stereotype))&#xD;&#xA;ownedAttribute&#xD;&#xA;->select(association->notEmpty() and not association.oclIsKindOf(Extension) and not type.oclIsKindOf(Stereotype))&#xD;&#xA;->forAll(opposite.owner = association)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="binaryAssociationsOnly generalize name_not_clash associationEndOwnership base_property_upper_bound base_property_multiplicity_single_extension base_property_multiplicity_multiple_extension"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="binaryAssociationsOnly" value="ownedAttribute.association->forAll(memberEnd->size()=2)"/>
+      <details key="generalize" value="allParents()->forAll(oclIsKindOf(Stereotype)) &#xD;&#xA;and Classifier.allInstances()->forAll(c | c.allParents()->exists(oclIsKindOf(Stereotype)) implies c.oclIsKindOf(Stereotype))"/>
+      <details key="associationEndOwnership" value="ownedAttribute&#xD;&#xA;->select(association->notEmpty() and not association.oclIsKindOf(Extension) and not type.oclIsKindOf(Stereotype))&#xD;&#xA;->forAll(opposite.owner = association)"/>
+    </eAnnotations>
+    <eOperations name="containingProfile" ordered="false" lowerBound="1" eType="#//Profile">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query containingProfile returns the closest profile directly or indirectly containing this stereotype."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.namespace.oclAsType(Package).containingProfile()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="profile" ordered="false" lowerBound="1" eType="#//Profile">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A stereotype must be contained, directly or indirectly, in a profile."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.containingProfile()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="icon" ordered="false" upperBound="-1"
+        eType="#//Image" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="stereotype"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Stereotype can change the graphical appearance of the extended model element by using attached icons. When this association is not null, it references the location of the icon content to be displayed within diagrams presenting the extended model elements."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="UML.ecore#//CommonStructure/Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profile" ordered="false"
+        lowerBound="1" eType="#//Profile" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="stereotype"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The profile that directly or indirectly contains this stereotype."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Physical definition of a graphical image."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This contains the serialization of the image according to the format. The value could represent a bitmap, image such as a GIF file, or drawing 'instructions' using a standard such as Scalable Vector Graphic (SVG) (which is XML based)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This indicates the format of the content, which is how the string content should be interpreted. The following values are reserved: SVG, GIF, PNG, JPG, WMF, EMF, BMP. In addition the prefix 'MIME: ' is also reserved. This option can be used as an alternative to express the reserved values above, for example &quot;SVG&quot; could instead be expressed as &quot;MIME: image/svg+xml&quot;."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This contains a location that can be used by a tool to locate the image as an alternative to embedding it in the stereotype."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An Element is a constituent of a model. As such, it has the capability of owning other Elements.&#xD;&#xA;mustBeOwned() implies owner->notEmpty()&#xD;&#xA;not allOwnedElements()->includes(self)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="has_owner not_own_self"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="has_owner" value="mustBeOwned() implies owner->notEmpty()"/>
+      <details key="not_own_self" value="not allOwnedElements()->includes(self)"/>
+    </eAnnotations>
+    <eOperations name="model" ordered="false" eType="#//Model">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if (owner = null) then&#xD;&#xA;  null&#xD;&#xA;else if (owner.oclIsKindOf(Model)) then&#xD;&#xA;  owner.oclAsType(Model)&#xD;&#xA;else&#xD;&#xA;  owner.model()&#xD;&#xA;endif&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="allOwnedElements" ordered="false" upperBound="-1" eType="#//Element">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query allOwnedElements() gives all of the direct and indirect ownedElements of an Element."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="ownedElement->union(ownedElement->collect(e | e.allOwnedElements()))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="mustBeOwned" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query mustBeOwned() indicates whether Elements of this type must have an owner. Subclasses of Element that do not require an owner must override this operation."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="true"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" ordered="false"
+        upperBound="-1" eType="#//Comment" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Comments owned by this Element."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" ordered="false"
+        upperBound="-1" eType="#//Element" changeable="false" volatile="true" transient="true"
+        derived="true" eOpposite="#//Element/owner">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Elements owned by this Element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" ordered="false"
+        eType="#//Element" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Element/ownedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Element that owns this Element."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Comment is a textual annotation that can be attached to a set of Elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="annotatedElement" ordered="false"
+        upperBound="-1" eType="#//Element">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="comment"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Element(s) being commented."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies a string that is the comment."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Model" eSuperTypes="#//Package">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A model captures a view of a physical system. It is an abstraction of the physical system, with a certain purpose. This purpose determines what is to be included in the model and what is irrelevant. Thus the model completely describes those aspects of the physical system that are relevant to the purpose of the model, at the appropriate level of detail."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewpoint" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the viewpoint that is expressed by a model (this name may refer to a profile definition)."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Namespace #//PackageableElement #//TemplateableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A package can have one or more profile applications to indicate which profiles have been applied. Because a profile is a package, it is possible to apply a profile not only to packages, but also to profiles.&#xA;Package specializes TemplateableElement and PackageableElement specializes ParameterableElement to specify that a package can be used as a template and a PackageableElement as a template parameter.&#xA;A package is used to group elements, and provides a namespace for the grouped elements.&#xD;&#xA;packagedElement->forAll(e | e.visibility&lt;> null implies e.visibility = VisibilityKind::public or e.visibility = VisibilityKind::private)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="elements_public_or_private"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="elements_public_or_private" value="packagedElement->forAll(e | e.visibility&lt;> null implies e.visibility = VisibilityKind::public or e.visibility = VisibilityKind::private)"/>
+    </eAnnotations>
+    <eOperations name="allApplicableStereotypes" ordered="false" upperBound="-1" eType="#//Stereotype">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query allApplicableStereotypes() returns all the directly or indirectly owned stereotypes, including stereotypes contained in sub-profiles."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="let ownedPackages : Bag(Package) = ownedMember->select(oclIsKindOf(Package))->collect(oclAsType(Package)) in&#xD;&#xA; ownedStereotype->union(ownedPackages.allApplicableStereotypes())->flatten()->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="containingProfile" ordered="false" eType="#//Profile">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query containingProfile() returns the closest profile directly or indirectly containing this package (or this package itself, if it is a profile)."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if self.oclIsKindOf(Profile) then &#xD;&#xA;&#x9;self.oclAsType(Profile)&#xD;&#xA;else&#xD;&#xA;&#x9;self.namespace.oclAsType(Package).containingProfile()&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="makesVisible" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query makesVisible() defines whether a Package makes an element visible outside itself. Elements with no visibility and elements with public visibility are made visible."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="ownedMember->includes(el) or&#xA;(elementImport->select(ei|ei.importedElement = VisibilityKind::public)->collect(importedElement.oclAsType(NamedElement))->includes(el)) or&#xA;(packageImport->select(visibility = VisibilityKind::public)->collect(importedPackage.member->includes(el))->notEmpty())"/>
+      </eAnnotations>
+      <eParameters name="el" ordered="false" lowerBound="1" eType="#//NamedElement"/>
+    </eOperations>
+    <eOperations name="mustBeOwned" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query mustBeOwned() indicates whether elements of this type must have an owner."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//Element/mustBeOwned"/>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="false"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="nestedPackage" ordered="false" upperBound="-1" eType="#//Package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derivation for Package::/nestedPackage"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="packagedElement->select(oclIsKindOf(Package))->collect(oclAsType(Package))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="ownedStereotype" ordered="false" upperBound="-1" eType="#//Stereotype">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derivation for Package::/ownedStereotype"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="packagedElement->select(oclIsKindOf(Stereotype))->collect(oclAsType(Stereotype))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="ownedType" ordered="false" upperBound="-1" eType="#//Type">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Derivation for Package::/ownedType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="packagedElement->select(oclIsKindOf(Type))->collect(oclAsType(Type))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="visibleMembers" ordered="false" upperBound="-1" eType="#//PackageableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query visibleMembers() defines which members of a Package can be accessed outside it."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="member->select( m | m.oclIsKindOf(PackageableElement) and self.makesVisible(m))->collect(oclAsType(PackageableElement))->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="URI" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Provides an identifier for the package that can be used for many purposes. A URI is the universally unique identification of the package following the IETF URI specification, RFC 2396 http://www.ietf.org/rfc/rfc2396.txt and it must comply with those syntax rules."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestedPackage" ordered="false"
+        upperBound="-1" eType="#//Package" volatile="true" transient="true" derived="true"
+        eOpposite="#//Package/nestingPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the packaged elements that are Packages."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Package/packagedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nestingPackage" ordered="false"
+        eType="#//Package" volatile="true" transient="true" derived="true" eOpposite="#//Package/nestedPackage.1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Package that owns this Package."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedStereotype" ordered="false"
+        upperBound="-1" eType="#//Stereotype" changeable="false" volatile="true" transient="true"
+        derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningPackage"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Stereotypes that are owned by the Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Package/packagedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedType" ordered="false"
+        upperBound="-1" eType="#//Type" volatile="true" transient="true" derived="true"
+        eOpposite="#//Type/package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the packaged elements that are Types."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Package/packagedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packageMerge" ordered="false"
+        upperBound="-1" eType="#//PackageMerge" containment="true" eOpposite="#//PackageMerge/receivingPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the PackageMerges that are owned by this Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packagedElement" ordered="false"
+        upperBound="-1" eType="#//PackageableElement" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningPackage"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the packageable elements that are owned by this Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Namespace/ownedMember"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="profileApplication" ordered="false"
+        upperBound="-1" eType="#//ProfileApplication" containment="true" eOpposite="#//ProfileApplication/applyingPackage">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the ProfileApplications that indicate which profiles have been applied to the Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageableElement" abstract="true"
+      eSuperTypes="#//NamedElement #//ParameterableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A PackageableElement is a NamedElement that may be owned directly by a Package. A PackageableElement is also able to serve as the parameteredElement of a TemplateParameter.&#xD;&#xA;visibility = null implies namespace = null"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="namespace_needs_visibility"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="namespace_needs_visibility" value="visibility = null implies namespace = null"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        eType="#//VisibilityKind" defaultValueLiteral="public">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A PackageableElement must have a visibility specified if it is owned by a Namespace. The default visibility is public."/>
+      </eAnnotations>
+      <eAnnotations source="redefines" references="#//NamedElement/visibility"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterableElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A ParameterableElement is an Element that can be exposed as a formal TemplateParameter for a template, or specified as an actual parameter in a binding of a template."/>
+    </eAnnotations>
+    <eOperations name="isCompatibleWith" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isCompatibleWith() determines if this ParameterableElement is compatible with the specified ParameterableElement. By default, this ParameterableElement is compatible with another ParameterableElement p if the kind of this ParameterableElement is the same as or a subtype of the kind of p. Subclasses of ParameterableElement should override this operation to specify different compatibility constraints."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.oclIsKindOf(p.oclType())"/>
+      </eAnnotations>
+      <eParameters name="p" ordered="false" lowerBound="1" eType="#//ParameterableElement"/>
+    </eOperations>
+    <eOperations name="isTemplateParameter" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isTemplateParameter() determines if this ParameterableElement is exposed as a formal TemplateParameter."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="templateParameter->notEmpty()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningTemplateParameter"
+        ordered="false" eType="#//TemplateParameter" eOpposite="#//TemplateParameter/ownedParameteredElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The formal TemplateParameter that owns this ParameterableElement."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/owner #//ParameterableElement/templateParameter"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateParameter" ordered="false"
+        eType="#//TemplateParameter" eOpposite="#//TemplateParameter/parameteredElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateParameter that exposes this ParameterableElement as a formal parameter."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateParameter" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TemplateParameter exposes a ParameterableElement as a formal parameter of a template.&#xD;&#xA;default &lt;> null implies default.isCompatibleWith(parameteredElement)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="must_be_compatible"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="must_be_compatible" value="default &lt;> null implies default.isCompatibleWith(parameteredElement)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="default" ordered="false"
+        eType="#//ParameterableElement">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateParameter"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement that is the default for this formal TemplateParameter."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedDefault" ordered="false"
+        eType="#//ParameterableElement" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateParameter"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement that is owned by this TemplateParameter for the purpose of providing a default."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//TemplateParameter/default"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameteredElement" ordered="false"
+        lowerBound="1" eType="#//ParameterableElement" eOpposite="#//ParameterableElement/templateParameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement exposed by this TemplateParameter."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" ordered="false"
+        lowerBound="1" eType="#//TemplateSignature" eOpposite="#//TemplateSignature/ownedParameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateSignature that owns this TemplateParameter."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameteredElement"
+        ordered="false" eType="#//ParameterableElement" containment="true" eOpposite="#//ParameterableElement/owningTemplateParameter">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement that is owned by this TemplateParameter for the purpose of exposing it as the parameteredElement."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//TemplateParameter/parameteredElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateSignature" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Template Signature bundles the set of formal TemplateParameters for a template.&#xD;&#xA;template.ownedElement->includesAll(parameter.parameteredElement->asSet() - parameter.ownedParameteredElement->asSet())&#xD;&#xA;parameter->forAll( p1, p2 | (p1 &lt;> p2 and p1.parameteredElement.oclIsKindOf(NamedElement) and p2.parameteredElement.oclIsKindOf(NamedElement) ) implies&#xD;&#xA;   p1.parameteredElement.oclAsType(NamedElement).name &lt;> p2.parameteredElement.oclAsType(NamedElement).name)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="own_elements unique_parameters"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="own_elements" value="template.ownedElement->includesAll(parameter.parameteredElement->asSet() - parameter.ownedParameteredElement->asSet())"/>
+      <details key="unique_parameters" value="parameter->forAll( p1, p2 | (p1 &lt;> p2 and p1.parameteredElement.oclIsKindOf(NamedElement) and p2.parameteredElement.oclIsKindOf(NamedElement) ) implies&#xD;&#xA;   p1.parameteredElement.oclAsType(NamedElement).name &lt;> p2.parameteredElement.oclAsType(NamedElement).name)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1"
+        upperBound="-1" eType="#//TemplateParameter">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateSignature"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ordered set of all formal TemplateParameters for this TemplateSignature."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" ordered="false"
+        lowerBound="1" eType="#//TemplateableElement" eOpposite="#//TemplateableElement/ownedTemplateSignature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateableElement that owns this TemplateSignature."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameter" upperBound="-1"
+        eType="#//TemplateParameter" containment="true" eOpposite="#//TemplateParameter/signature">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The formal parameters that are owned by this TemplateSignature."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//TemplateSignature/parameter"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateableElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TemplateableElement is an Element that can optionally be defined as a template and bound to other templates."/>
+    </eAnnotations>
+    <eOperations name="isTemplate" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isTemplate() returns whether this TemplateableElement is actually a template."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="ownedTemplateSignature &lt;> null"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="parameterableElements" ordered="false" upperBound="-1" eType="#//ParameterableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query parameterableElements() returns the set of ParameterableElements that may be used as the parameteredElements for a TemplateParameter of this TemplateableElement. By default, this set includes all the ownedElements. Subclasses may override this operation if they choose to restrict the set of ParameterableElements."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.allOwnedElements()->select(oclIsKindOf(ParameterableElement)).oclAsType(ParameterableElement)->asSet()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
+        upperBound="-1" eType="#//TemplateBinding" containment="true" eOpposite="#//TemplateBinding/boundElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The optional TemplateBindings from this TemplateableElement to one or more templates."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedTemplateSignature"
+        ordered="false" eType="#//TemplateSignature" containment="true" eOpposite="#//TemplateSignature/template">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The optional TemplateSignature specifying the formal TemplateParameters for this TemplateableElement. If a TemplateableElement has a TemplateSignature, then it is a template."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateBinding" eSuperTypes="#//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TemplateBinding is a DirectedRelationship between a TemplateableElement and a template. A TemplateBinding specifies the TemplateParameterSubstitutions of actual parameters for the formal parameters of the template.&#xD;&#xA;parameterSubstitution->forAll(b | signature.parameter->includes(b.formal))&#xD;&#xA;signature.parameter->forAll(p | parameterSubstitution->select(b | b.formal = p)->size() &lt;= 1)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="parameter_substitution_formal one_parameter_substitution"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="parameter_substitution_formal" value="parameterSubstitution->forAll(b | signature.parameter->includes(b.formal))"/>
+      <details key="one_parameter_substitution" value="signature.parameter->forAll(p | parameterSubstitution->select(b | b.formal = p)->size() &lt;= 1)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameterSubstitution"
+        ordered="false" upperBound="-1" eType="#//TemplateParameterSubstitution" containment="true"
+        eOpposite="#//TemplateParameterSubstitution/templateBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateParameterSubstitutions owned by this TemplateBinding."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="signature" ordered="false"
+        lowerBound="1" eType="#//TemplateSignature">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateBinding"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateSignature for the template that is the target of this TemplateBinding."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="boundElement" ordered="false"
+        lowerBound="1" eType="#//TemplateableElement" eOpposite="#//TemplateableElement/templateBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateableElement that is bound by this TemplateBinding."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source #//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DirectedRelationship" abstract="true"
+      eSuperTypes="#//Relationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A DirectedRelationship represents a relationship between a collection of source model Elements and a collection of target model Elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="directedRelationship"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the source Element(s) of the DirectedRelationship."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="directedRelationship"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the target Element(s) of the DirectedRelationship."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Relationship/relatedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Relationship is an abstract concept that specifies some kind of relationship between Elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relatedElement" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//Element" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="relationship"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the elements related by the Relationship."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateParameterSubstitution" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TemplateParameterSubstitution relates the actual parameter to a formal TemplateParameter as part of a template binding.&#xD;&#xA;actual->forAll(a | a.isCompatibleWith(formal.parameteredElement))"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="must_be_compatible"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="must_be_compatible" value="actual->forAll(a | a.isCompatibleWith(formal.parameteredElement))"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actual" ordered="false"
+        lowerBound="1" eType="#//ParameterableElement">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateParameterSubstitution"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement that is the actual parameter for this TemplateParameterSubstitution."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="formal" ordered="false"
+        lowerBound="1" eType="#//TemplateParameter">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="templateParameterSubstitution"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The formal TemplateParameter that is associated with this TemplateParameterSubstitution."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedActual" ordered="false"
+        eType="#//ParameterableElement" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningTemplateParameterSubstitution"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ParameterableElement that is owned by this TemplateParameterSubstitution as its actual parameter."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//TemplateParameterSubstitution/actual"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templateBinding" ordered="false"
+        lowerBound="1" eType="#//TemplateBinding" eOpposite="#//TemplateBinding/parameterSubstitution">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The TemplateBinding that owns this TemplateParameterSubstitution."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="VisibilityKind">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="VisibilityKind is an enumeration type that defines literals to determine the visibility of Elements in a model."/>
+    </eAnnotations>
+    <eLiterals name="public">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A Named Element with public visibility is visible to all elements that can access the contents of the Namespace that owns it."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="private" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A NamedElement with private visibility is only visible inside the Namespace that owns it."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="protected" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A NamedElement with protected visibility is visible to Elements that have a generalization relationship to the Namespace that owns it."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="package" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A NamedElement with package visibility is visible to all Elements within the nearest enclosing Package (given that other owning Elements have proper visibility). Outside the nearest enclosing Package, a NamedElement marked as having package visibility is not visible.  Only NamedElements that are not owned by Packages can be marked as having package visibility."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Namespace" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Namespace is an Element in a model that owns and/or imports a set of NamedElements that can be identified by name.&#xD;&#xA;membersAreDistinguishable()&#xD;&#xA;packageImport.importedPackage.oclAsType(Namespace)->excludes(self)&#xD;&#xA;elementImport.importedElement.oclAsType(Element)->excludesAll(ownedMember)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="members_distinguishable cannot_import_self cannot_import_ownedMembers"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="members_distinguishable" value="membersAreDistinguishable()"/>
+      <details key="cannot_import_self" value="packageImport.importedPackage.oclAsType(Namespace)->excludes(self)"/>
+      <details key="cannot_import_ownedMembers" value="elementImport.importedElement.oclAsType(Element)->excludesAll(ownedMember)"/>
+    </eAnnotations>
+    <eOperations name="excludeCollisions" ordered="false" upperBound="-1" eType="#//PackageableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query excludeCollisions() excludes from a set of PackageableElements any that would not be distinguishable from each other in this Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="imps->reject(imp1  | imps->exists(imp2 | not imp1.isDistinguishableFrom(imp2, self)))"/>
+      </eAnnotations>
+      <eParameters name="imps" ordered="false" upperBound="-1" eType="#//PackageableElement"/>
+    </eOperations>
+    <eOperations name="getNamesOfMember" ordered="false" upperBound="-1" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query getNamesOfMember() gives a set of all of the names that a member would have in a Namespace, taking importing into account. In general a member can have multiple names in a Namespace if it is imported more than once with different aliases."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if self.ownedMember ->includes(element)&#xA;then Set{element.name}&#xA;else let elementImports : Set(ElementImport) = self.elementImport->select(ei | ei.importedElement = element) in&#xA;  if elementImports->notEmpty()&#xA;  then&#xA;     elementImports->collect(el | el.getName())->asSet()&#xA;  else &#xA;     self.packageImport->select(pi | pi.importedPackage.visibleMembers().oclAsType(NamedElement)->includes(element))-> collect(pi | pi.importedPackage.getNamesOfMember(element))->asSet()&#xA;  endif&#xA;endif"/>
+      </eAnnotations>
+      <eParameters name="element" ordered="false" lowerBound="1" eType="#//NamedElement"/>
+    </eOperations>
+    <eOperations name="importMembers" ordered="false" upperBound="-1" eType="#//PackageableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query importMembers() defines which of a set of PackageableElements are actually imported into the Namespace. This excludes hidden ones, i.e., those which have names that conflict with names of ownedMembers, and it also excludes PackageableElements that would have the indistinguishable names when imported."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.excludeCollisions(imps)->select(imp | self.ownedMember->forAll(mem | imp.isDistinguishableFrom(mem, self)))"/>
+      </eAnnotations>
+      <eParameters name="imps" ordered="false" upperBound="-1" eType="#//PackageableElement"/>
+    </eOperations>
+    <eOperations name="importedMember" ordered="false" upperBound="-1" eType="#//PackageableElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The importedMember property is derived as the PackageableElements that are members of this Namespace as a result of either PackageImports or ElementImports."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="self.importMembers(elementImport.importedElement->asSet()->union(packageImport.importedPackage->collect(p | p.visibleMembers()))->asSet())"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="membersAreDistinguishable" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Boolean query membersAreDistinguishable() determines whether all of the Namespace's members are distinguishable within it."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="member->forAll( memb |&#xA;   member->excluding(memb)->forAll(other |&#xA;       memb.isDistinguishableFrom(other, self)))"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementImport" ordered="false"
+        upperBound="-1" eType="#//ElementImport" containment="true" eOpposite="#//ElementImport/importingNamespace">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the ElementImports owned by the Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedMember" ordered="false"
+        upperBound="-1" eType="#//PackageableElement" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="namespace"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the PackageableElements that are members of this Namespace as a result of either PackageImports or ElementImports."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Namespace/member"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="member" ordered="false"
+        upperBound="-1" eType="#//NamedElement" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="memberNamespace"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A collection of NamedElements identifiable within the Namespace, either by being owned or by being introduced by importing or inheritance."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedMember" ordered="false"
+        upperBound="-1" eType="#//NamedElement" changeable="false" volatile="true"
+        transient="true" derived="true" eOpposite="#//NamedElement/namespace">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A collection of NamedElements owned by the Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Element/ownedElement #//Namespace/member"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRule" ordered="false"
+        upperBound="-1" eType="#//Constraint" containment="true" eOpposite="#//Constraint/context">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies a set of Constraints owned by this Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Namespace/ownedMember"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packageImport" ordered="false"
+        upperBound="-1" eType="#//PackageImport" containment="true" eOpposite="#//PackageImport/importingNamespace">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the PackageImports owned by the Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementImport" eSuperTypes="#//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An ElementImport identifies a NamedElement in a Namespace other than the one that owns that NamedElement and allows the NamedElement to be referenced using an unqualified name in the Namespace owning the ElementImport.&#xD;&#xA;importedElement.visibility &lt;> null implies importedElement.visibility = VisibilityKind::public&#xD;&#xA;visibility = VisibilityKind::public or visibility = VisibilityKind::private"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="imported_element_is_public visibility_public_or_private"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="imported_element_is_public" value="importedElement.visibility &lt;> null implies importedElement.visibility = VisibilityKind::public"/>
+      <details key="visibility_public_or_private" value="visibility = VisibilityKind::public or visibility = VisibilityKind::private"/>
+    </eAnnotations>
+    <eOperations name="getName" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query getName() returns the name under which the imported PackageableElement will be known in the importing namespace."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if alias->notEmpty() then&#xA;  alias&#xA;else&#xA;  importedElement.name&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="alias" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the name that should be added to the importing Namespace in lieu of the name of the imported PackagableElement. The alias must not clash with any other member in the importing Namespace. By default, no alias is used."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedElement" ordered="false"
+        lowerBound="1" eType="#//PackageableElement">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="import"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the PackageableElement whose name is to be added to a Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind" defaultValueLiteral="public">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the visibility of the imported PackageableElement within the importingNamespace, i.e., whether the  importedElement will in turn be visible to other Namespaces. If the ElementImport is public, the importedElement will be visible outside the importingNamespace while, if the ElementImport is private, it will not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importingNamespace" ordered="false"
+        lowerBound="1" eType="#//Namespace" eOpposite="#//Namespace/elementImport">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the Namespace that imports a PackageableElement from another Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source #//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//PackageableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Constraint is a condition or restriction expressed in natural language text or in a machine readable language for the purpose of declaring some of the semantics of an Element or set of Elements.&#xD;&#xA;not constrainedElement->includes(self)"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="boolean_value no_side_effects not_apply_to_self"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="not_apply_to_self" value="not constrainedElement->includes(self)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedElement" upperBound="-1"
+        eType="#//Element">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="constraint"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ordered set of Elements referenced by this Constraint."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specification" ordered="false"
+        lowerBound="1" eType="ecore:EClass UML.ecore#//Values/ValueSpecification"
+        containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningConstraint"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A condition that must be true when evaluated in order for the Constraint to be satisfied."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" ordered="false"
+        eType="#//Namespace" eOpposite="#//Namespace/ownedRule">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the Namespace that owns the Constraint."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//NamedElement/namespace"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageImport" eSuperTypes="#//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A PackageImport is a Relationship that imports all the non-private members of a Package into the Namespace owning the PackageImport, so that those Elements may be referred to by their unqualified names in the importingNamespace.&#xD;&#xA;visibility = VisibilityKind::public or visibility = VisibilityKind::private"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="public_or_private"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="public_or_private" value="visibility = VisibilityKind::public or visibility = VisibilityKind::private"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importedPackage" ordered="false"
+        lowerBound="1" eType="#//Package">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="packageImport"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the Package whose members are imported into a Namespace."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        lowerBound="1" eType="#//VisibilityKind" defaultValueLiteral="public">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the visibility of the imported PackageableElements within the importingNamespace, i.e., whether imported Elements will in turn be visible to other Namespaces. If the PackageImport is public, the imported Elements will be visible outside the importingNamespace, while, if the PackageImport is private, they will not."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="importingNamespace" ordered="false"
+        lowerBound="1" eType="#//Namespace" eOpposite="#//Namespace/packageImport">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the Namespace that imports the members from a Package."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source #//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" abstract="true" eSuperTypes="#//PackageableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Type constrains the values represented by a TypedElement."/>
+    </eAnnotations>
+    <eOperations name="conformsTo" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query conformsTo() gives true for a Type that conforms to another. By default, two Types do not conform to each other. This query is intended to be redefined for specific conformance situations."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="false"/>
+      </eAnnotations>
+      <eParameters name="other" ordered="false" lowerBound="1" eType="#//Type"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" ordered="false"
+        eType="#//Package" volatile="true" transient="true" derived="true" eOpposite="#//Package/ownedType.1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the owning Package of this Type, if any."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageMerge" eSuperTypes="#//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A package merge defines how the contents of one package are extended by the contents of another package."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mergedPackage" ordered="false"
+        lowerBound="1" eType="#//Package">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="packageMerge"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Package that is to be merged with the receiving package of the PackageMerge."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receivingPackage" ordered="false"
+        lowerBound="1" eType="#//Package" eOpposite="#//Package/packageMerge">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Package that is being extended with the contents of the merged package of the PackageMerge."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source #//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProfileApplication" eSuperTypes="#//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A profile application is used to show which profiles have been applied to a package."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appliedProfile" ordered="false"
+        lowerBound="1" eType="#//Profile">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="profileApplication"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References the Profiles that are applied to a Package through this ProfileApplication."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStrict" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean" defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies that the Profile filtering rules for the metaclasses of the referenced metamodel shall be strictly applied."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applyingPackage" ordered="false"
+        lowerBound="1" eType="#//Package" eOpposite="#//Package/profileApplication">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The package that owns the profile application."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source #//Element/owner"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Profile" eSuperTypes="#//Package">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A profile defines limited extensions to a reference metamodel with the purpose of adapting the metamodel to a specific platform or domain.&#xD;&#xA;metaclassReference.importedElement->&#xD;&#xA;&#x9;select(c | c.oclIsKindOf(Classifier) and&#xD;&#xA;&#x9;&#x9;(c.oclAsType(Classifier).allParents()->collect(namespace)->includes(self)))->isEmpty()&#xD;&#xA;and &#xD;&#xA;packagedElement->&#xD;&#xA;    select(oclIsKindOf(Classifier))->collect(oclAsType(Classifier).allParents())->&#xD;&#xA;       intersection(metaclassReference.importedElement->select(oclIsKindOf(Classifier))->collect(oclAsType(Classifier)))->isEmpty()&#xD;&#xA;metamodelReference.importedPackage.elementImport.importedElement.allOwningPackages()->&#xD;&#xA;  union(metaclassReference.importedElement.allOwningPackages() )->notEmpty()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="metaclass_reference_not_specialized references_same_metamodel"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="metaclass_reference_not_specialized" value="metaclassReference.importedElement->&#xD;&#xA;&#x9;select(c | c.oclIsKindOf(Classifier) and&#xD;&#xA;&#x9;&#x9;(c.oclAsType(Classifier).allParents()->collect(namespace)->includes(self)))->isEmpty()&#xD;&#xA;and &#xD;&#xA;packagedElement->&#xD;&#xA;    select(oclIsKindOf(Classifier))->collect(oclAsType(Classifier).allParents())->&#xD;&#xA;       intersection(metaclassReference.importedElement->select(oclIsKindOf(Classifier))->collect(oclAsType(Classifier)))->isEmpty()"/>
+      <details key="references_same_metamodel" value="metamodelReference.importedPackage.elementImport.importedElement.allOwningPackages()->&#xD;&#xA;  union(metaclassReference.importedElement.allOwningPackages() )->notEmpty()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metaclassReference" ordered="false"
+        upperBound="-1" eType="#//ElementImport">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="profile"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References a metaclass that may be extended."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Namespace/elementImport"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metamodelReference" ordered="false"
+        upperBound="-1" eType="#//PackageImport">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="profile"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="References a package containing (directly or indirectly) metaclasses that may be extended."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Namespace/packageImport"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Abstraction" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An Abstraction is a Relationship that relates two Elements or sets of Elements that represent the same concept at different levels of abstraction or from different viewpoints."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" ordered="false"
+        eType="ecore:EClass UML.ecore#//Values/OpaqueExpression" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="abstraction"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="An OpaqueExpression that states the abstraction relationship between the supplier(s) and the client(s). In some cases, such as derivation, it is usually formal and unidirectional; in other cases, such as trace, it is usually informal and bidirectional. The mapping expression is optional and may be omitted if the precise relationship between the Elements is not specified."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//PackageableElement #//DirectedRelationship">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Dependency is a Relationship that signifies that a single model Element or a set of model Elements requires other model Elements for their specification or implementation. This means that the complete semantics of the client Element(s) are either semantically or structurally dependent on the definition of the supplier Element(s)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="client" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//NamedElement" volatile="true" transient="true"
+        derived="true" eOpposite="#//NamedElement/clientDependency.1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Element(s) dependent on the supplier Element(s). In some cases (such as a trace Abstraction) the assignment of direction (that is, the designation of the client Element) is at the discretion of the modeler and is a stipulation."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/source"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="supplier" ordered="false"
+        lowerBound="1" upperBound="-1" eType="#//NamedElement">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="supplierDependency"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The Element(s) on which the client Element(s) depend in some respect. The modeler may stipulate a sense of Dependency direction suitable for their domain."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//DirectedRelationship/target"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" abstract="true"
+      eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A multiplicity is a definition of an inclusive interval of non-negative integers beginning with a lower bound and ending with a (possibly infinite) upper bound. A MultiplicityElement embeds this information to specify the allowable cardinalities for an instantiation of the Element.&#xD;&#xA;upperBound() >= lowerBound()&#xD;&#xA;lowerBound() >= 0&#xD;&#xA;lowerValue &lt;> null implies lowerValue.integerValue() &lt;> null&#xD;&#xA;upperValue &lt;> null implies upperValue.unlimitedValue() &lt;> null"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="upper_ge_lower lower_ge_0 value_specification_no_side_effects value_specification_constant lower_is_integer upper_is_unlimitedNatural"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="upper_ge_lower" value="upperBound() >= lowerBound()"/>
+      <details key="lower_ge_0" value="lowerBound() >= 0"/>
+      <details key="lower_is_integer" value="lowerValue &lt;> null implies lowerValue.integerValue() &lt;> null"/>
+      <details key="upper_is_unlimitedNatural" value="upperValue &lt;> null implies upperValue.unlimitedValue() &lt;> null"/>
+    </eAnnotations>
+    <eOperations name="compatibleWith" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The operation compatibleWith takes another multiplicity as input. It returns true if the other multiplicity is wider than, or the same as, self."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="(other.lowerBound() &lt;= self.lowerBound()) and ((other.upperBound() = *) or (self.upperBound() &lt;= other.upperBound()))"/>
+      </eAnnotations>
+      <eParameters name="other" ordered="false" lowerBound="1" eType="#//MultiplicityElement"/>
+    </eOperations>
+    <eOperations name="includesMultiplicity" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query includesMultiplicity() checks whether this multiplicity includes all the cardinalities allowed by the specified multiplicity."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="(self.lowerBound() &lt;= M.lowerBound()) and (self.upperBound() >= M.upperBound())"/>
+      </eAnnotations>
+      <eParameters name="M" ordered="false" lowerBound="1" eType="#//MultiplicityElement"/>
+    </eOperations>
+    <eOperations name="is" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The operation is determines if the upper and lower bound of the ranges are the ones given."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="lowerbound = self.lowerBound() and upperbound = self.upperBound()"/>
+      </eAnnotations>
+      <eParameters name="lowerbound" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Integer"/>
+      <eParameters name="upperbound" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//UnlimitedNatural"/>
+    </eOperations>
+    <eOperations name="isMultivalued" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isMultivalued() checks whether this multiplicity has an upper bound greater than one."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="upperBound() > 1"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="lower" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The derived lower attribute must equal the lowerBound."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="lowerBound()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="lowerBound" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Integer">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query lowerBound() returns the lower bound of the multiplicity as an integer, which is the integerValue of lowerValue, if this is given, and 1 otherwise."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if (lowerValue=null or lowerValue.integerValue()=null) then 1 else lowerValue.integerValue() endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="upper" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//UnlimitedNatural">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The derived upper attribute must equal the upperBound."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="upperBound()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="upperBound" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//UnlimitedNatural">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query upperBound() returns the upper bound of the multiplicity for a bounded multiplicity as an unlimited natural, which is the unlimitedNaturalValue of upperValue, if given, and 1, otherwise."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if (upperValue=null or upperValue.unlimitedValue()=null) then 1 else upperValue.unlimitedValue() endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isOrdered" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean" defaultValueLiteral="false">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="For a multivalued multiplicity, this attribute specifies whether the values in an instantiation of this MultiplicityElement are sequentially ordered."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isUnique" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean" defaultValueLiteral="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="For a multivalued multiplicity, this attributes specifies whether the values in an instantiation of this MultiplicityElement are unique."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Integer" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The lower bound of the multiplicity interval."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="lowerValue" ordered="false"
+        eType="ecore:EClass UML.ecore#//Values/ValueSpecification" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningLower"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The specification of the lower bound for this multiplicity."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" ordered="false"
+        lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//UnlimitedNatural"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The upper bound of the multiplicity interval."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="upperValue" ordered="false"
+        eType="ecore:EClass UML.ecore#//Values/ValueSpecification" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="owningUpper"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The specification of the upper bound for this multiplicity."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Realization" eSuperTypes="#//Abstraction">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Realization is a specialized Abstraction relationship between two sets of model Elements, one representing a specification (the supplier) and the other represents an implementation of the latter (the client). Realization can be used to model stepwise refinement, optimizations, transformations, templates, model synthesis, framework composition, etc."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A TypedElement is a NamedElement that may have a Type specified for it."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" ordered="false" eType="#//Type">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="typedElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of the TypedElement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Usage" eSuperTypes="#//Dependency">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Usage is a Dependency in which the client Element requires the supplier Element (or set of Elements) for its full implementation or operation."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true" eSuperTypes="#//Element">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A NamedElement is an Element in a model that may have a name. The name may be given directly and/or via the use of a StringExpression.&#xD;&#xA;(namespace = null and owner &lt;> null) implies visibility = null&#xD;&#xA;(name &lt;> null and allNamespaces()->select(ns | ns.name = null)->isEmpty()) implies&#xA;  qualifiedName = allNamespaces()->iterate( ns : Namespace; agg: String = name | ns.name.concat(self.separator()).concat(agg))&#xD;&#xA;name=null or allNamespaces()->select( ns | ns.name=null )->notEmpty() implies qualifiedName = null"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="visibility_needs_ownership has_qualified_name has_no_qualified_name"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+      <details key="visibility_needs_ownership" value="(namespace = null and owner &lt;> null) implies visibility = null"/>
+      <details key="has_qualified_name" value="(name &lt;> null and allNamespaces()->select(ns | ns.name = null)->isEmpty()) implies&#xA;  qualifiedName = allNamespaces()->iterate( ns : Namespace; agg: String = name | ns.name.concat(self.separator()).concat(agg))"/>
+      <details key="has_no_qualified_name" value="name=null or allNamespaces()->select( ns | ns.name=null )->notEmpty() implies qualifiedName = null"/>
+    </eAnnotations>
+    <eOperations name="allNamespaces" upperBound="-1" eType="#//Namespace">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query allNamespaces() gives the sequence of Namespaces in which the NamedElement is nested, working outwards."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if owner = null&#xA;  then OrderedSet{}&#xA;else&#xA;  let enclosingNamespace : Namespace =&#xA;    if owner.oclIsKindOf(TemplateParameter) and owner.oclAsType(TemplateParameter).signature.template.oclIsKindOf(Namespace)&#xA;      then owner.oclAsType(TemplateParameter).signature.template.oclAsType(Namespace)&#xA;    else&#xA;      namespace&#xA;    endif&#xA;  in enclosingNamespace.allNamespaces()->prepend(enclosingNamespace)&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="allOwningPackages" ordered="false" upperBound="-1" eType="#//Package">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query allOwningPackages() returns the set of all the enclosing Namespaces of this NamedElement, working outwards, that are Packages, up to but not including the first such Namespace that is not a Package."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if namespace.oclIsKindOf(Package)&#xD;&#xA;then&#xD;&#xA;  let owningPackage : Package = namespace.oclAsType(Package) in&#xD;&#xA;    owningPackage->union(owningPackage.allOwningPackages())&#xD;&#xA;else&#xD;&#xA;  null&#xD;&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="isDistinguishableFrom" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//Boolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query isDistinguishableFrom() determines whether two NamedElements may logically co-exist within a Namespace. By default, two named elements are distinguishable if (a) they have types neither of which is a kind of the other or (b) they have different names."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="(self.oclIsKindOf(n.oclType()) or n.oclIsKindOf(self.oclType())) implies&#xA;    ns.getNamesOfMember(self)->intersection(ns.getNamesOfMember(n))->isEmpty()"/>
+      </eAnnotations>
+      <eParameters name="n" ordered="false" lowerBound="1" eType="#//NamedElement"/>
+      <eParameters name="ns" ordered="false" lowerBound="1" eType="#//Namespace"/>
+    </eOperations>
+    <eOperations name="qualifiedName" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="When a NamedElement has a name, and all of its containing Namespaces have a name, the qualifiedName is constructed from the name of the NamedElement and the names of the containing Namespaces."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="if self.name &lt;> null and self.allNamespaces()->select( ns | ns.name=null )->isEmpty()&#xA;then &#xA;    self.allNamespaces()->iterate( ns : Namespace; agg: String = self.name | ns.name.concat(self.separator()).concat(agg))&#xA;else&#xA;   null&#xA;endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="separator" ordered="false" lowerBound="1" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The query separator() gives the string that is used to separate names when constructing a qualifiedName."/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="'::'"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="clientDependency" ordered="false" upperBound="-1" eType="#//Dependency">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
+        <details key="body" value="Dependency.allInstances()->select(d | d.client->includes(self))"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namespace" ordered="false"
+        eType="#//Namespace" changeable="false" volatile="true" transient="true" derived="true"
+        eOpposite="#//Namespace/ownedMember">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Specifies the Namespace that owns the NamedElement."/>
+      </eAnnotations>
+      <eAnnotations source="union"/>
+      <eAnnotations source="subsets" references="#//Element/owner"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clientDependency" ordered="false"
+        upperBound="-1" eType="#//Dependency" volatile="true" transient="true" derived="true"
+        eOpposite="#//Dependency/client">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Indicates the Dependencies that reference this NamedElement as a client."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" eType="ecore:EDataType PrimitiveTypes.ecore#//String">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the NamedElement."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nameExpression" ordered="false"
+        eType="ecore:EClass UML.ecore#//Values/StringExpression" containment="true">
+      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+        <details key="body" value="namedElement"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The StringExpression used to define the name of this NamedElement."/>
+      </eAnnotations>
+      <eAnnotations source="subsets" references="#//Element/ownedElement"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="qualifiedName" ordered="false"
+        eType="ecore:EDataType PrimitiveTypes.ecore#//String" changeable="false" volatile="true"
+        transient="true" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A name that allows the NamedElement to be identified within a hierarchy of nested Namespaces. It is constructed from the names of the containing Namespaces starting at the root of the hierarchy and ending with the name of the NamedElement itself."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" ordered="false"
+        eType="#//VisibilityKind">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Determines whether and how the NamedElement is visible outside its owning Namespace."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

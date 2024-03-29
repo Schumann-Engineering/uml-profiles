@@ -11,7 +11,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/infrastructure"
             class="QWiki.Infrastructure.InfrastructurePackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
 
@@ -27,7 +27,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/kernel"
             class="QWiki.Kernel.KernelPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -35,7 +35,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/i18n"
             class="QWiki.I18N.I18NPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -43,7 +43,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/spice"
             class="QWiki.SPICE.SPICEPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser">
@@ -58,7 +58,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/rasci"
             class="QWiki.RASCI.RASCIPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -66,7 +66,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/bibliography"
             class="QWiki.Bibliography.BibliographyPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -74,7 +74,7 @@
       <package
             uri="http://schumann.engineering/qwiki/1.0/glossary"
             class="QWiki.Glossary.GlossaryPackage"
-            genModel="src/ecore/QWiki.genmodel"/>
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
