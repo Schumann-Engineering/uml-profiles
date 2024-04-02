@@ -1,12 +1,13 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
-import QWiki.I18N.I18NPackage;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Kernel.KernelPackage;
+
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.ProcessGroup} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.ProcessGroup} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -155,9 +156,9 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

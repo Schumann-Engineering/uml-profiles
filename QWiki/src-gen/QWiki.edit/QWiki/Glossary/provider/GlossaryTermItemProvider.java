@@ -9,9 +9,10 @@ import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 
-import QWiki.I18N.I18NFactory;
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.provider.I18nNamedElementItemProvider;
+import QWiki.Kernel.KernelFactory;
+import QWiki.Kernel.KernelPackage;
+
+import QWiki.Kernel.provider.I18nNamedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -203,12 +204,12 @@ public class GlossaryTermItemProvider extends I18nNamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(GlossaryPackage.Literals.GLOSSARY_TERM__ACRONYM,
-				 I18NFactory.eINSTANCE.createI18nString()));
+				 KernelFactory.eINSTANCE.createI18nString()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(GlossaryPackage.Literals.GLOSSARY_TERM__SYNONYM,
-				 I18NFactory.eINSTANCE.createI18nString()));
+				 KernelFactory.eINSTANCE.createI18nString()));
 	}
 
 	/**
@@ -223,7 +224,7 @@ public class GlossaryTermItemProvider extends I18nNamedElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == GlossaryPackage.Literals.GLOSSARY_TERM__ACRONYM ||
 			childFeature == GlossaryPackage.Literals.GLOSSARY_TERM__SYNONYM;
 

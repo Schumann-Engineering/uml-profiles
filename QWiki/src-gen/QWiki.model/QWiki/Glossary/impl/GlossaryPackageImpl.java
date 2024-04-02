@@ -2,40 +2,48 @@
  */
 package QWiki.Glossary.impl;
 
-import QWiki.Bibliography.BibliographyPackage;
+import QWiki.Domain.DomainPackage;
 
-import QWiki.Bibliography.impl.BibliographyPackageImpl;
+import QWiki.Domain.impl.DomainPackageImpl;
 
 import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.impl.I18NPackageImpl;
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.Infrastructure.impl.InfrastructurePackageImpl;
-
 import QWiki.Kernel.KernelPackage;
+
+import QWiki.Kernel.Relationships.RelationshipsPackage;
+
+import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
 
 import QWiki.Kernel.impl.KernelPackageImpl;
 
-import QWiki.RASCI.RASCIPackage;
+import QWiki.Rasci.RASCIPackage;
 
-import QWiki.RASCI.impl.RASCIPackageImpl;
+import QWiki.Rasci.impl.RASCIPackageImpl;
 
-import QWiki.SPICE.SPICEPackage;
+import QWiki.References.ReferencesPackage;
 
-import QWiki.SPICE.impl.SPICEPackageImpl;
+import QWiki.References.impl.ReferencesPackageImpl;
+
+import QWiki.Spice.SPICEPackage;
+
+import QWiki.Spice.impl.SPICEPackageImpl;
 
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,37 +112,42 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		UMLPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(registeredPackage instanceof InfrastructurePackageImpl ? registeredPackage : InfrastructurePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(registeredPackage instanceof KernelPackageImpl ? registeredPackage : KernelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		I18NPackageImpl theI18NPackage = (I18NPackageImpl)(registeredPackage instanceof I18NPackageImpl ? registeredPackage : I18NPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
 		SPICEPackageImpl theSPICEPackage = (SPICEPackageImpl)(registeredPackage instanceof SPICEPackageImpl ? registeredPackage : SPICEPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
 		RASCIPackageImpl theRASCIPackage = (RASCIPackageImpl)(registeredPackage instanceof RASCIPackageImpl ? registeredPackage : RASCIPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
-		BibliographyPackageImpl theBibliographyPackage = (BibliographyPackageImpl)(registeredPackage instanceof BibliographyPackageImpl ? registeredPackage : BibliographyPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
+		ReferencesPackageImpl theReferencesPackage = (ReferencesPackageImpl)(registeredPackage instanceof ReferencesPackageImpl ? registeredPackage : ReferencesPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
+		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGlossaryPackage.createPackageContents();
-		theInfrastructurePackage.createPackageContents();
 		theKernelPackage.createPackageContents();
-		theI18NPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 		theSPICEPackage.createPackageContents();
 		theRASCIPackage.createPackageContents();
-		theBibliographyPackage.createPackageContents();
+		theReferencesPackage.createPackageContents();
+		theDomainPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGlossaryPackage.initializePackageContents();
-		theInfrastructurePackage.initializePackageContents();
 		theKernelPackage.initializePackageContents();
-		theI18NPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 		theSPICEPackage.initializePackageContents();
 		theRASCIPackage.initializePackageContents();
-		theBibliographyPackage.initializePackageContents();
+		theReferencesPackage.initializePackageContents();
+		theDomainPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGlossaryPackage.freeze();
@@ -230,6 +243,16 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	 * @generated
 	 */
 	@Override
+	public EOperation getGlossaryTerm__Oid_1() {
+		return glossaryTermEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public GlossaryFactory getGlossaryFactory() {
 		return (GlossaryFactory)getEFactoryInstance();
 	}
@@ -262,6 +285,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__SYNONYM);
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__TERM_DEFINITION);
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION);
+		createEOperation(glossaryTermEClass, GLOSSARY_TERM___OID);
 	}
 
 	/**
@@ -288,16 +312,16 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		I18NPackage theI18NPackage = (I18NPackage)EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		BibliographyPackage theBibliographyPackage = (BibliographyPackage)EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
+		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
+		ReferencesPackage theReferencesPackage = (ReferencesPackage)EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		glossaryTermDefinitionEClass.getESuperTypes().add(theI18NPackage.getI18nDescriptiveElement());
-		glossaryTermEClass.getESuperTypes().add(theI18NPackage.getI18nNamedElement());
+		glossaryTermDefinitionEClass.getESuperTypes().add(theKernelPackage.getI18nDescriptiveElement());
+		glossaryTermEClass.getESuperTypes().add(theKernelPackage.getI18nNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(glossaryTermDefinitionEClass, GlossaryTermDefinition.class, "GlossaryTermDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -305,10 +329,12 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 
 		initEClass(glossaryTermEClass, GlossaryTerm.class, "GlossaryTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGlossaryTerm_OwnedTermDefinition(), this.getGlossaryTermDefinition(), this.getGlossaryTermDefinition_OwningTerm(), "ownedTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_Acronym(), theI18NPackage.getI18nString(), null, "acronym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_Synonym(), theI18NPackage.getI18nString(), null, "synonym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_TermDefinition(), theI18NPackage.getI18nDescriptiveElement(), null, "termDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_ExternalTermDefinition(), theBibliographyPackage.getSection(), theBibliographyPackage.getSection_Term(), "externalTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_Acronym(), theKernelPackage.getI18nString(), null, "acronym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_Synonym(), theKernelPackage.getI18nString(), null, "synonym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_TermDefinition(), theKernelPackage.getI18nDescriptiveElement(), null, "termDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_ExternalTermDefinition(), theReferencesPackage.getSection(), theReferencesPackage.getSection_Term(), "externalTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getGlossaryTerm__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -316,10 +342,12 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// redefines
+		createRedefinesAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 		// subsets
 		createSubsetsAnnotations();
-		// duplicates
-		createDuplicatesAnnotations();
 		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
 		createEmofAnnotations();
 		// union
@@ -343,6 +371,40 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	}
 
 	/**
+	 * Initializes the annotations for <b>redefines</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
+		addAnnotation
+		  (getGlossaryTerm__Oid_1(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (getGlossaryTerm__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "\'t/\' + name"
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>subsets</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -351,21 +413,12 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";
 		addAnnotation
-		  (getGlossaryTermDefinition_OwningTerm(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
-		   });
-		addAnnotation
 		  (getGlossaryTerm_OwnedTermDefinition(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//GlossaryTerm/termDefinition"),
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(eNS_URI).appendFragment("//GlossaryTerm/termDefinition")
 		   });
 		addAnnotation
 		  (getGlossaryTerm_ExternalTermDefinition(),
@@ -374,21 +427,6 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		   },
 		   new URI[] {
 			 URI.createURI(eNS_URI).appendFragment("//GlossaryTerm/termDefinition")
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>duplicates</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";
-		addAnnotation
-		  (glossaryTermEClass,
-		   source,
-		   new String[] {
 		   });
 	}
 

@@ -1,16 +1,17 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.provider.I18nDescriptiveElementItemProvider;
+import QWiki.Kernel.KernelPackage;
 
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Kernel.provider.QWikiContainerItemProvider;
+
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -28,12 +29,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.ProcessReferenceModel} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.ProcessReferenceModel} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ProcessReferenceModelItemProvider extends I18nDescriptiveElementItemProvider {
+public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -198,7 +199,7 @@ public class ProcessReferenceModelItemProvider extends I18nDescriptiveElementIte
 		newChildDescriptors.add
 			(createChildParameter
 				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createSpiceBasePractise()));
+				 SPICEFactory.eINSTANCE.createBasePractise()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -233,9 +234,9 @@ public class ProcessReferenceModelItemProvider extends I18nDescriptiveElementIte
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

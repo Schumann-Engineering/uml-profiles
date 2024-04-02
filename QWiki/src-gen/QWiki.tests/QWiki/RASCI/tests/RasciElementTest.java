@@ -1,10 +1,10 @@
 /**
  */
-package QWiki.RASCI.tests;
+package QWiki.Rasci.tests;
 
-import QWiki.I18N.tests.I18nDescriptiveElementTest;
+import QWiki.Kernel.tests.I18nDescriptiveElementTest;
 
-import QWiki.RASCI.RasciElement;
+import QWiki.Rasci.RasciElement;
 
 /**
  * <!-- begin-user-doc -->

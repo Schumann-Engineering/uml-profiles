@@ -2,7 +2,7 @@
  */
 package QWiki.Glossary;
 
-import QWiki.I18N.I18nDescriptiveElement;
+import QWiki.Kernel.I18nDescriptiveElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,12 +24,6 @@ public interface GlossaryTermDefinition extends I18nDescriptiveElement {
 	/**
 	 * Returns the value of the '<em><b>Owning Term</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link QWiki.Glossary.GlossaryTerm#getOwnedTermDefinition <em>Owned Term Definition</em>}'.
-	 * <p>
-	 * This feature subsets the following features:
-	 * </p>
-	 * <ul>
-	 *   <li>'{@link QWiki.Infrastructure.UmlElement#getOwner() <em>Owner</em>}'</li>
-	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owning Term</em>' container reference isn't clear,
@@ -41,7 +35,6 @@ public interface GlossaryTermDefinition extends I18nDescriptiveElement {
 	 * @see QWiki.Glossary.GlossaryPackage#getGlossaryTermDefinition_OwningTerm()
 	 * @see QWiki.Glossary.GlossaryTerm#getOwnedTermDefinition
 	 * @model opposite="ownedTermDefinition" ordered="false"
-	 *        annotation="subsets"
 	 * @generated
 	 */
 	GlossaryTerm getOwningTerm();

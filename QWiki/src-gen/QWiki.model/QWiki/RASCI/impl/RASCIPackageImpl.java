@@ -1,39 +1,47 @@
 /**
  */
-package QWiki.RASCI.impl;
+package QWiki.Rasci.impl;
 
-import QWiki.Bibliography.BibliographyPackage;
+import QWiki.Domain.DomainPackage;
 
-import QWiki.Bibliography.impl.BibliographyPackageImpl;
+import QWiki.Domain.impl.DomainPackageImpl;
 
 import QWiki.Glossary.GlossaryPackage;
 
 import QWiki.Glossary.impl.GlossaryPackageImpl;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.impl.I18NPackageImpl;
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.Infrastructure.impl.InfrastructurePackageImpl;
-
 import QWiki.Kernel.KernelPackage;
+
+import QWiki.Kernel.Relationships.RelationshipsPackage;
+
+import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
 
 import QWiki.Kernel.impl.KernelPackageImpl;
 
-import QWiki.RASCI.RASCIFactory;
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.RasciElement;
-import QWiki.RASCI.Role;
+import QWiki.Rasci.RASCIFactory;
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciElement;
+import QWiki.Rasci.Role;
 
-import QWiki.SPICE.SPICEPackage;
+import QWiki.References.ReferencesPackage;
 
-import QWiki.SPICE.impl.SPICEPackageImpl;
+import QWiki.References.impl.ReferencesPackageImpl;
+
+import QWiki.Spice.SPICEPackage;
+
+import QWiki.Spice.impl.SPICEPackageImpl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,7 +75,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see QWiki.RASCI.RASCIPackage#eNS_URI
+	 * @see QWiki.Rasci.RASCIPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -102,37 +110,42 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		UMLPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(registeredPackage instanceof InfrastructurePackageImpl ? registeredPackage : InfrastructurePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(registeredPackage instanceof KernelPackageImpl ? registeredPackage : KernelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		I18NPackageImpl theI18NPackage = (I18NPackageImpl)(registeredPackage instanceof I18NPackageImpl ? registeredPackage : I18NPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
 		SPICEPackageImpl theSPICEPackage = (SPICEPackageImpl)(registeredPackage instanceof SPICEPackageImpl ? registeredPackage : SPICEPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
-		BibliographyPackageImpl theBibliographyPackage = (BibliographyPackageImpl)(registeredPackage instanceof BibliographyPackageImpl ? registeredPackage : BibliographyPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
+		ReferencesPackageImpl theReferencesPackage = (ReferencesPackageImpl)(registeredPackage instanceof ReferencesPackageImpl ? registeredPackage : ReferencesPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GlossaryPackage.eNS_URI);
 		GlossaryPackageImpl theGlossaryPackage = (GlossaryPackageImpl)(registeredPackage instanceof GlossaryPackageImpl ? registeredPackage : GlossaryPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
+		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theRASCIPackage.createPackageContents();
-		theInfrastructurePackage.createPackageContents();
 		theKernelPackage.createPackageContents();
-		theI18NPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 		theSPICEPackage.createPackageContents();
-		theBibliographyPackage.createPackageContents();
+		theReferencesPackage.createPackageContents();
 		theGlossaryPackage.createPackageContents();
+		theDomainPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theRASCIPackage.initializePackageContents();
-		theInfrastructurePackage.initializePackageContents();
 		theKernelPackage.initializePackageContents();
-		theI18NPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 		theSPICEPackage.initializePackageContents();
-		theBibliographyPackage.initializePackageContents();
+		theReferencesPackage.initializePackageContents();
 		theGlossaryPackage.initializePackageContents();
+		theDomainPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theRASCIPackage.freeze();
@@ -218,6 +231,16 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getRole__Oid_1() {
+		return roleEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRasciElement() {
 		return rasciElementEClass;
 	}
@@ -248,7 +271,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRasciElement_SupportingRole() {
+	public EReference getRasciElement_SupportRole() {
 		return (EReference)rasciElementEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -258,7 +281,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRasciElement_ConsultingRole() {
+	public EReference getRasciElement_ConsultedRole() {
 		return (EReference)rasciElementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -308,12 +331,13 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 		createEReference(roleEClass, ROLE__SUPPORTING_ELEMENT);
 		createEReference(roleEClass, ROLE__CONSULTING_ELEMENT);
 		createEReference(roleEClass, ROLE__INFORMED_ELEMENT);
+		createEOperation(roleEClass, ROLE___OID);
 
 		rasciElementEClass = createEClass(RASCI_ELEMENT);
 		createEReference(rasciElementEClass, RASCI_ELEMENT__RESPONSIBLE_ROLE);
 		createEReference(rasciElementEClass, RASCI_ELEMENT__ACCOUNTABLE_ROLE);
-		createEReference(rasciElementEClass, RASCI_ELEMENT__SUPPORTING_ROLE);
-		createEReference(rasciElementEClass, RASCI_ELEMENT__CONSULTING_ROLE);
+		createEReference(rasciElementEClass, RASCI_ELEMENT__SUPPORT_ROLE);
+		createEReference(rasciElementEClass, RASCI_ELEMENT__CONSULTED_ROLE);
 		createEReference(rasciElementEClass, RASCI_ELEMENT__INFORMED_ROLE);
 	}
 
@@ -341,40 +365,60 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		I18NPackage theI18NPackage = (I18NPackage)EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
+		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		roleEClass.getESuperTypes().add(theI18NPackage.getI18nDescriptiveElement());
-		rasciElementEClass.getESuperTypes().add(theI18NPackage.getI18nDescriptiveElement());
+		roleEClass.getESuperTypes().add(theKernelPackage.getI18nDescriptiveElement());
+		rasciElementEClass.getESuperTypes().add(theKernelPackage.getI18nDescriptiveElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRole_Skills(), theI18NPackage.getI18nString(), null, "skills", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRole_Skills(), theKernelPackage.getI18nString(), null, "skills", null, 0, 1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRole_ResponsibleElement(), this.getRasciElement(), this.getRasciElement_ResponsibleRole(), "responsibleElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRole_AccountableElement(), this.getRasciElement(), this.getRasciElement_AccountableRole(), "accountableElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRole_SupportingElement(), this.getRasciElement(), this.getRasciElement_SupportingRole(), "supportingElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRole_ConsultingElement(), this.getRasciElement(), this.getRasciElement_ConsultingRole(), "consultingElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRole_SupportingElement(), this.getRasciElement(), this.getRasciElement_SupportRole(), "supportingElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRole_ConsultingElement(), this.getRasciElement(), this.getRasciElement_ConsultedRole(), "consultingElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRole_InformedElement(), this.getRasciElement(), this.getRasciElement_InformedRole(), "informedElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getRole__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(rasciElementEClass, RasciElement.class, "RasciElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRasciElement_ResponsibleRole(), this.getRole(), this.getRole_ResponsibleElement(), "responsibleRole", null, 1, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRasciElement_AccountableRole(), this.getRole(), this.getRole_AccountableElement(), "accountableRole", null, 0, 1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRasciElement_SupportingRole(), this.getRole(), this.getRole_SupportingElement(), "supportingRole", null, 0, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRasciElement_ConsultingRole(), this.getRole(), this.getRole_ConsultingElement(), "consultingRole", null, 0, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRasciElement_SupportRole(), this.getRole(), this.getRole_SupportingElement(), "supportRole", null, 0, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRasciElement_ConsultedRole(), this.getRole(), this.getRole_ConsultingElement(), "consultedRole", null, 0, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRasciElement_InformedRole(), this.getRole(), this.getRole_InformedElement(), "informedRole", null, 0, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// duplicates
-		createDuplicatesAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "originalName", "RASCI"
+		   });
 	}
 
 	/**
@@ -394,17 +438,18 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>duplicates</b>.
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (roleEClass,
+		  (getRole__Oid_1(),
 		   source,
 		   new String[] {
+			   "body", "\'r/\' + name"
 		   });
 	}
 

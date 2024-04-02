@@ -2,21 +2,17 @@
  */
 package QWiki.Glossary.impl;
 
-import QWiki.Bibliography.BibliographyPackage;
-import QWiki.Bibliography.Section;
-
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nString;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nString;
 
-import QWiki.I18N.impl.I18nNamedElementImpl;
+import QWiki.Kernel.impl.I18nNamedElementImpl;
 
-import QWiki.Infrastructure.UmlElement;
-
-import QWiki.Kernel.KernelPackage;
+import QWiki.References.ReferencesPackage;
+import QWiki.References.Section;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -49,7 +45,6 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * </p>
  * <ul>
  *   <li>{@link QWiki.Glossary.impl.GlossaryTermImpl#getTermDefinition <em>Term Definition</em>}</li>
- *   <li>{@link QWiki.Glossary.impl.GlossaryTermImpl#getOwnedElement <em>Owned Element</em>}</li>
  *   <li>{@link QWiki.Glossary.impl.GlossaryTermImpl#getOwnedTermDefinition <em>Owned Term Definition</em>}</li>
  *   <li>{@link QWiki.Glossary.impl.GlossaryTermImpl#getAcronym <em>Acronym</em>}</li>
  *   <li>{@link QWiki.Glossary.impl.GlossaryTermImpl#getSynonym <em>Synonym</em>}</li>
@@ -143,20 +138,25 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<UmlElement> getOwnedElement() {
-		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, GlossaryPackage.GLOSSARY_TERM__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public I18nDescriptiveElement getTermDefinition(String name) {
+		return getTermDefinition(name, false, null);
 	}
 
 	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
 	 * @generated
-	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {GlossaryPackage.GLOSSARY_TERM__OWNED_COMMENT, GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION};
+	public I18nDescriptiveElement getTermDefinition(String name, boolean ignoreCase, EClass eClass) {
+		termDefinitionLoop: for (I18nDescriptiveElement termDefinition : getTermDefinition()) {
+			if (eClass != null && !eClass.isInstance(termDefinition))
+				continue termDefinitionLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(termDefinition.getName()) : name.equals(termDefinition.getName())))
+				continue termDefinitionLoop;
+			return termDefinition;
+		}
+		return null;
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -169,6 +169,29 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 			ownedTermDefinition = new EObjectContainmentWithInverseEList<GlossaryTermDefinition>(GlossaryTermDefinition.class, this, GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION, GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNING_TERM);
 		}
 		return ownedTermDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlossaryTermDefinition getOwnedTermDefinition(String name) {
+		return getOwnedTermDefinition(name, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlossaryTermDefinition getOwnedTermDefinition(String name, boolean ignoreCase) {
+		ownedTermDefinitionLoop: for (GlossaryTermDefinition ownedTermDefinition : getOwnedTermDefinition()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedTermDefinition.getName()) : name.equals(ownedTermDefinition.getName())))
+				continue ownedTermDefinitionLoop;
+			return ownedTermDefinition;
+		}
+		return null;
 	}
 
 	/**
@@ -269,9 +292,32 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	@Override
 	public EList<Section> getExternalTermDefinition() {
 		if (externalTermDefinition == null) {
-			externalTermDefinition = new EObjectWithInverseResolvingEList.ManyInverse<Section>(Section.class, this, GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION, BibliographyPackage.SECTION__TERM);
+			externalTermDefinition = new EObjectWithInverseResolvingEList.ManyInverse<Section>(Section.class, this, GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION, ReferencesPackage.SECTION__TERM);
 		}
 		return externalTermDefinition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Section getExternalTermDefinition(String name) {
+		return getExternalTermDefinition(name, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Section getExternalTermDefinition(String name, boolean ignoreCase) {
+		externalTermDefinitionLoop: for (Section externalTermDefinition : getExternalTermDefinition()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(externalTermDefinition.getName()) : name.equals(externalTermDefinition.getName())))
+				continue externalTermDefinitionLoop;
+			return externalTermDefinition;
+		}
+		return null;
 	}
 
 	/**
@@ -282,17 +328,16 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)KernelPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)GlossaryPackage.Literals.GLOSSARY_TERM___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String oid() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -419,8 +464,6 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 		switch (featureID) {
 			case GlossaryPackage.GLOSSARY_TERM__TERM_DEFINITION:
 				return isSetTermDefinition();
-			case GlossaryPackage.GLOSSARY_TERM__OWNED_ELEMENT:
-				return isSetOwnedElement();
 			case GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION:
 				return ownedTermDefinition != null && !ownedTermDefinition.isEmpty();
 			case GlossaryPackage.GLOSSARY_TERM__ACRONYM:
@@ -455,17 +498,6 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	public boolean isSetTermDefinition() {
 		return eIsSet(GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION)
 			|| eIsSet(GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
-			|| eIsSet(GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION);
 	}
 
 } //GlossaryTermImpl

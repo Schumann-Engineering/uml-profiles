@@ -9,32 +9,23 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated QWiki -->
       <package
-            uri="http://schumann.engineering/qwiki/1.0/infrastructure"
-            class="QWiki.Infrastructure.InfrastructurePackage"
-            genModel="src/model/QWiki.genmodel"/>
-   </extension>
-
-
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated QWiki -->
-      <parser
-            type="infrastructure"
-            class="QWiki.Infrastructure.util.InfrastructureResourceFactoryImpl"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated QWiki -->
-      <package
             uri="http://schumann.engineering/qwiki/1.0/kernel"
             class="QWiki.Kernel.KernelPackage"
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated QWiki -->
+      <parser
+            type="kernel"
+            class="QWiki.Kernel.util.KernelResourceFactoryImpl"/>
+   </extension>
+
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated QWiki -->
       <package
-            uri="http://schumann.engineering/qwiki/1.0/i18n"
-            class="QWiki.I18N.I18NPackage"
+            uri="http:///QWiki/Kernel/Relationships.ecore"
+            class="QWiki.Kernel.Relationships.RelationshipsPackage"
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
@@ -42,7 +33,7 @@
       <!-- @generated QWiki -->
       <package
             uri="http://schumann.engineering/qwiki/1.0/spice"
-            class="QWiki.SPICE.SPICEPackage"
+            class="QWiki.Spice.SPICEPackage"
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
@@ -50,22 +41,22 @@
       <!-- @generated QWiki -->
       <parser
             type="spice"
-            class="QWiki.SPICE.util.SPICEResourceFactoryImpl"/>
+            class="QWiki.Spice.util.SPICEResourceFactoryImpl"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated QWiki -->
       <package
             uri="http://schumann.engineering/qwiki/1.0/rasci"
-            class="QWiki.RASCI.RASCIPackage"
+            class="QWiki.Rasci.RASCIPackage"
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated QWiki -->
       <package
-            uri="http://schumann.engineering/qwiki/1.0/bibliography"
-            class="QWiki.Bibliography.BibliographyPackage"
+            uri="http://schumann.engineering/qwiki/1.0/references"
+            class="QWiki.References.ReferencesPackage"
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
@@ -77,17 +68,12 @@
             genModel="src/model/QWiki.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+   <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated QWiki -->
-      <factory
-            uri="http://schumann.engineering/qwiki/1.0/infrastructure"
-            class="QWiki.Infrastructure.provider.InfrastructureItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+      <package
+            uri="http://schumann.engineering/qwiki/1.0/domain"
+            class="QWiki.Domain.DomainPackage"
+            genModel="src/model/QWiki.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
@@ -106,8 +92,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated QWiki -->
       <factory
-            uri="http://schumann.engineering/qwiki/1.0/i18n"
-            class="QWiki.I18N.provider.I18NItemProviderAdapterFactory"
+            uri="http:///QWiki/Kernel/Relationships.ecore"
+            class="QWiki.Kernel.Relationships.provider.RelationshipsItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -120,7 +106,7 @@
       <!-- @generated QWiki -->
       <factory
             uri="http://schumann.engineering/qwiki/1.0/spice"
-            class="QWiki.SPICE.provider.SPICEItemProviderAdapterFactory"
+            class="QWiki.Spice.provider.SPICEItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -133,7 +119,7 @@
       <!-- @generated QWiki -->
       <factory
             uri="http://schumann.engineering/qwiki/1.0/rasci"
-            class="QWiki.RASCI.provider.RASCIItemProviderAdapterFactory"
+            class="QWiki.Rasci.provider.RASCIItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -145,8 +131,8 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated QWiki -->
       <factory
-            uri="http://schumann.engineering/qwiki/1.0/bibliography"
-            class="QWiki.Bibliography.provider.BibliographyItemProviderAdapterFactory"
+            uri="http://schumann.engineering/qwiki/1.0/references"
+            class="QWiki.References.provider.ReferencesItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
                org.eclipse.emf.edit.provider.IStructuredItemContentProvider
@@ -168,32 +154,17 @@
                org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
-   <extension point="org.eclipse.ui.newWizards">
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated QWiki -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
-            id="QWiki.Infrastructure.presentation.InfrastructureModelWizardID"
-            name="%_UI_InfrastructureModelWizard_label"
-            class="QWiki.Infrastructure.presentation.InfrastructureModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/InfrastructureModelFile.gif">
-         <description>%_UI_InfrastructureModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated QWiki -->
-      <editor
-            id="QWiki.Infrastructure.presentation.InfrastructureEditorID"
-            name="%_UI_InfrastructureEditor_label"
-            icon="icons/full/obj16/InfrastructureModelFile.gif"
-            extensions="infrastructure"
-            class="QWiki.Infrastructure.presentation.InfrastructureEditor"
-            contributorClass="QWiki.Infrastructure.presentation.InfrastructureActionBarContributor">
-      </editor>
+      <factory
+            uri="http://schumann.engineering/qwiki/1.0/domain"
+            class="QWiki.Domain.provider.DomainItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
    </extension>
 
    <extension point="org.eclipse.ui.newWizards">
@@ -230,12 +201,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="QWiki.I18N.presentation.I18NModelWizardID"
-            name="%_UI_I18NModelWizard_label"
-            class="QWiki.I18N.presentation.I18NModelWizard"
+            id="QWiki.Kernel.Relationships.presentation.RelationshipsModelWizardID"
+            name="%_UI_RelationshipsModelWizard_label"
+            class="QWiki.Kernel.Relationships.presentation.RelationshipsModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/I18NModelFile.gif">
-         <description>%_UI_I18NModelWizard_description</description>
+            icon="icons/full/obj16/RelationshipsModelFile.gif">
+         <description>%_UI_RelationshipsModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -243,12 +214,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated QWiki -->
       <editor
-            id="QWiki.I18N.presentation.I18NEditorID"
-            name="%_UI_I18NEditor_label"
-            icon="icons/full/obj16/I18NModelFile.gif"
-            extensions="i18n"
-            class="QWiki.I18N.presentation.I18NEditor"
-            contributorClass="QWiki.I18N.presentation.I18NActionBarContributor">
+            id="QWiki.Kernel.Relationships.presentation.RelationshipsEditorID"
+            name="%_UI_RelationshipsEditor_label"
+            icon="icons/full/obj16/RelationshipsModelFile.gif"
+            extensions="relationships"
+            class="QWiki.Kernel.Relationships.presentation.RelationshipsEditor"
+            contributorClass="QWiki.Kernel.Relationships.presentation.RelationshipsActionBarContributor">
       </editor>
    </extension>
 
@@ -258,9 +229,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="QWiki.SPICE.presentation.SPICEModelWizardID"
+            id="QWiki.Spice.presentation.SPICEModelWizardID"
             name="%_UI_SPICEModelWizard_label"
-            class="QWiki.SPICE.presentation.SPICEModelWizard"
+            class="QWiki.Spice.presentation.SPICEModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/SPICEModelFile.gif">
          <description>%_UI_SPICEModelWizard_description</description>
@@ -271,12 +242,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated QWiki -->
       <editor
-            id="QWiki.SPICE.presentation.SPICEEditorID"
+            id="QWiki.Spice.presentation.SPICEEditorID"
             name="%_UI_SPICEEditor_label"
             icon="icons/full/obj16/SPICEModelFile.gif"
             extensions="spice"
-            class="QWiki.SPICE.presentation.SPICEEditor"
-            contributorClass="QWiki.SPICE.presentation.SPICEActionBarContributor">
+            class="QWiki.Spice.presentation.SPICEEditor"
+            contributorClass="QWiki.Spice.presentation.SPICEActionBarContributor">
       </editor>
    </extension>
 
@@ -286,9 +257,9 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="QWiki.RASCI.presentation.RASCIModelWizardID"
+            id="QWiki.Rasci.presentation.RASCIModelWizardID"
             name="%_UI_RASCIModelWizard_label"
-            class="QWiki.RASCI.presentation.RASCIModelWizard"
+            class="QWiki.Rasci.presentation.RASCIModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
             icon="icons/full/obj16/RASCIModelFile.gif">
          <description>%_UI_RASCIModelWizard_description</description>
@@ -299,12 +270,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated QWiki -->
       <editor
-            id="QWiki.RASCI.presentation.RASCIEditorID"
+            id="QWiki.Rasci.presentation.RASCIEditorID"
             name="%_UI_RASCIEditor_label"
             icon="icons/full/obj16/RASCIModelFile.gif"
             extensions="rasci"
-            class="QWiki.RASCI.presentation.RASCIEditor"
-            contributorClass="QWiki.RASCI.presentation.RASCIActionBarContributor">
+            class="QWiki.Rasci.presentation.RASCIEditor"
+            contributorClass="QWiki.Rasci.presentation.RASCIActionBarContributor">
       </editor>
    </extension>
 
@@ -314,12 +285,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="QWiki.Bibliography.presentation.BibliographyModelWizardID"
-            name="%_UI_BibliographyModelWizard_label"
-            class="QWiki.Bibliography.presentation.BibliographyModelWizard"
+            id="QWiki.References.presentation.ReferencesModelWizardID"
+            name="%_UI_ReferencesModelWizard_label"
+            class="QWiki.References.presentation.ReferencesModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/BibliographyModelFile.gif">
-         <description>%_UI_BibliographyModelWizard_description</description>
+            icon="icons/full/obj16/ReferencesModelFile.gif">
+         <description>%_UI_ReferencesModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -327,12 +298,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated QWiki -->
       <editor
-            id="QWiki.Bibliography.presentation.BibliographyEditorID"
-            name="%_UI_BibliographyEditor_label"
-            icon="icons/full/obj16/BibliographyModelFile.gif"
-            extensions="bibliography"
-            class="QWiki.Bibliography.presentation.BibliographyEditor"
-            contributorClass="QWiki.Bibliography.presentation.BibliographyActionBarContributor">
+            id="QWiki.References.presentation.ReferencesEditorID"
+            name="%_UI_ReferencesEditor_label"
+            icon="icons/full/obj16/ReferencesModelFile.gif"
+            extensions="references"
+            class="QWiki.References.presentation.ReferencesEditor"
+            contributorClass="QWiki.References.presentation.ReferencesActionBarContributor">
       </editor>
    </extension>
 
@@ -361,6 +332,34 @@
             extensions="glossary"
             class="QWiki.Glossary.presentation.GlossaryEditor"
             contributorClass="QWiki.Glossary.presentation.GlossaryActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated QWiki -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="QWiki.Domain.presentation.DomainModelWizardID"
+            name="%_UI_DomainModelWizard_label"
+            class="QWiki.Domain.presentation.DomainModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DomainModelFile.gif">
+         <description>%_UI_DomainModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated QWiki -->
+      <editor
+            id="QWiki.Domain.presentation.DomainEditorID"
+            name="%_UI_DomainEditor_label"
+            icon="icons/full/obj16/DomainModelFile.gif"
+            extensions="domain"
+            class="QWiki.Domain.presentation.DomainEditor"
+            contributorClass="QWiki.Domain.presentation.DomainActionBarContributor">
       </editor>
    </extension>
 </plugin>

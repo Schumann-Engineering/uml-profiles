@@ -1,15 +1,18 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.RASCI.provider.RasciElementItemProvider;
+import QWiki.Kernel.KernelPackage;
 
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceElement;
+import QWiki.Kernel.provider.QWikiContainerItemProvider;
+
+import QWiki.Rasci.RASCIPackage;
+
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceElement;
 
 import java.util.Collection;
 import java.util.List;
@@ -25,12 +28,12 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.SpiceElement} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.SpiceElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SpiceElementItemProvider extends RasciElementItemProvider {
+public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -52,14 +55,129 @@ public class SpiceElementItemProvider extends RasciElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addResponsibleRolePropertyDescriptor(object);
+			addAccountableRolePropertyDescriptor(object);
+			addSupportRolePropertyDescriptor(object);
+			addConsultedRolePropertyDescriptor(object);
+			addInformedRolePropertyDescriptor(object);
 			addNumberPropertyDescriptor(object);
 			addFacilitatedSectionPropertyDescriptor(object);
-			addOwningRolePropertyDescriptor(object);
-			addManagingRolePropertyDescriptor(object);
-			addParticipatingRolePropertyDescriptor(object);
+			addOwnerRolePropertyDescriptor(object);
+			addManagerRolePropertyDescriptor(object);
+			addParticipantRolePropertyDescriptor(object);
 			addRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Responsible Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addResponsibleRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RasciElement_responsibleRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_responsibleRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__RESPONSIBLE_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Accountable Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAccountableRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RasciElement_accountableRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_accountableRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__ACCOUNTABLE_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Support Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSupportRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RasciElement_supportRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_supportRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Consulted Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addConsultedRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RasciElement_consultedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_consultedRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Informed Role feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInformedRolePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RasciElement_informedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_informedRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__INFORMED_ROLE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -107,19 +225,19 @@ public class SpiceElementItemProvider extends RasciElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Owning Role feature.
+	 * This adds a property descriptor for the Owner Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addOwningRolePropertyDescriptor(Object object) {
+	protected void addOwnerRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SpiceElement_owningRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_owningRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__OWNING_ROLE,
+				 getString("_UI_SpiceElement_ownerRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_ownerRole_feature", "_UI_SpiceElement_type"),
+				 SPICEPackage.Literals.SPICE_ELEMENT__OWNER_ROLE,
 				 true,
 				 false,
 				 true,
@@ -129,19 +247,19 @@ public class SpiceElementItemProvider extends RasciElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Managing Role feature.
+	 * This adds a property descriptor for the Manager Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addManagingRolePropertyDescriptor(Object object) {
+	protected void addManagerRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SpiceElement_managingRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_managingRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__MANAGING_ROLE,
+				 getString("_UI_SpiceElement_managerRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_managerRole_feature", "_UI_SpiceElement_type"),
+				 SPICEPackage.Literals.SPICE_ELEMENT__MANAGER_ROLE,
 				 true,
 				 false,
 				 true,
@@ -151,19 +269,19 @@ public class SpiceElementItemProvider extends RasciElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Participating Role feature.
+	 * This adds a property descriptor for the Participant Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addParticipatingRolePropertyDescriptor(Object object) {
+	protected void addParticipantRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_SpiceElement_participatingRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_participatingRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__PARTICIPATING_ROLE,
+				 getString("_UI_SpiceElement_participantRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_participantRole_feature", "_UI_SpiceElement_type"),
+				 SPICEPackage.Literals.SPICE_ELEMENT__PARTICIPANT_ROLE,
 				 true,
 				 false,
 				 true,
@@ -252,9 +370,9 @@ public class SpiceElementItemProvider extends RasciElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

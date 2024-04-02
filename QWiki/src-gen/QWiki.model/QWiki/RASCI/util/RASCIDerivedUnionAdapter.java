@@ -1,11 +1,9 @@
 /**
  */
-package QWiki.RASCI.util;
+package QWiki.Rasci.util;
 
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.Role;
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.Role;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,11 +13,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.uml2.uml.UMLPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An adapter that propagates notifications for derived unions.
  * <!-- end-user-doc -->
- * @see QWiki.RASCI.RASCIPackage
+ * @see QWiki.Rasci.RASCIPackage
  * @generated
  */
 public class RASCIDerivedUnionAdapter extends AdapterImpl {
@@ -100,19 +100,13 @@ public class RASCIDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyRoleChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(Role.class)) {
 			case RASCIPackage.ROLE__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case RASCIPackage.ROLE__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case RASCIPackage.ROLE__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case RASCIPackage.ROLE__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case RASCIPackage.ROLE__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case RASCIPackage.ROLE__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}

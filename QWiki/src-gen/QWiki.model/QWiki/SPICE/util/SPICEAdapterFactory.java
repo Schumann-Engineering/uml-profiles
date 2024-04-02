@@ -1,40 +1,43 @@
 /**
  */
-package QWiki.SPICE.util;
+package QWiki.Spice.util;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nNamedElement;
+import QWiki.Kernel.QWikiContainer;
+import QWiki.Kernel.QWikiElement;
+import QWiki.Kernel.QWikiNamedElement;
+import QWiki.Kernel.QWikiNamespace;
 
-import QWiki.Infrastructure.UmlElement;
-import QWiki.Infrastructure.UmlNamedElement;
+import QWiki.Rasci.RasciElement;
 
-import QWiki.Kernel.ModelElement;
-import QWiki.Kernel.ModelTaggedElement;
-
-import QWiki.RASCI.RasciElement;
-
-import QWiki.SPICE.GenericWorkProduct;
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
-import QWiki.SPICE.SpiceElement;
-import QWiki.SPICE.WorkProduct;
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.GenericWorkProduct;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceElement;
+import QWiki.Spice.WorkProduct;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.SPICE.SPICEPackage
+ * @see QWiki.Spice.SPICEPackage
  * @generated
  */
 public class SPICEAdapterFactory extends AdapterFactoryImpl {
@@ -86,8 +89,8 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	protected SPICESwitch<Adapter> modelSwitch =
 		new SPICESwitch<Adapter>() {
 			@Override
-			public Adapter caseSpiceBasePractise(SpiceBasePractise object) {
-				return createSpiceBasePractiseAdapter();
+			public Adapter caseBasePractise(BasePractise object) {
+				return createBasePractiseAdapter();
 			}
 			@Override
 			public Adapter caseSpiceElement(SpiceElement object) {
@@ -98,7 +101,7 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 				return createProcessReferenceModelAdapter();
 			}
 			@Override
-			public Adapter caseProcess(QWiki.SPICE.Process object) {
+			public Adapter caseProcess(QWiki.Spice.Process object) {
 				return createProcessAdapter();
 			}
 			@Override
@@ -118,28 +121,44 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 				return createGenericWorkProductAdapter();
 			}
 			@Override
-			public Adapter caseUmlElement(UmlElement object) {
-				return createUmlElementAdapter();
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
 			}
 			@Override
-			public Adapter caseModelTaggedElement(ModelTaggedElement object) {
-				return createModelTaggedElementAdapter();
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(ModelElement object) {
-				return createModelElementAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlNamedElement(UmlNamedElement object) {
-				return createUmlNamedElementAdapter();
+			public Adapter caseNamespace(Namespace object) {
+				return createNamespaceAdapter();
+			}
+			@Override
+			public Adapter caseQWikiElement(QWikiElement object) {
+				return createQWikiElementAdapter();
+			}
+			@Override
+			public Adapter caseQWikiNamedElement(QWikiNamedElement object) {
+				return createQWikiNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseI18nNamedElement(I18nNamedElement object) {
 				return createI18nNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseQWikiNamespace(QWikiNamespace object) {
+				return createQWikiNamespaceAdapter();
+			}
+			@Override
 			public Adapter caseI18nDescriptiveElement(I18nDescriptiveElement object) {
 				return createI18nDescriptiveElementAdapter();
+			}
+			@Override
+			public Adapter caseQWikiContainer(QWikiContainer object) {
+				return createQWikiContainerAdapter();
 			}
 			@Override
 			public Adapter caseRasciElement(RasciElement object) {
@@ -166,27 +185,27 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.SpiceBasePractise <em>Spice Base Practise</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.BasePractise <em>Base Practise</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.SpiceBasePractise
+	 * @see QWiki.Spice.BasePractise
 	 * @generated
 	 */
-	public Adapter createSpiceBasePractiseAdapter() {
+	public Adapter createBasePractiseAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.SpiceElement <em>Spice Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.SpiceElement <em>Spice Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.SpiceElement
+	 * @see QWiki.Spice.SpiceElement
 	 * @generated
 	 */
 	public Adapter createSpiceElementAdapter() {
@@ -194,13 +213,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.ProcessReferenceModel <em>Process Reference Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.ProcessReferenceModel <em>Process Reference Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.ProcessReferenceModel
+	 * @see QWiki.Spice.ProcessReferenceModel
 	 * @generated
 	 */
 	public Adapter createProcessReferenceModelAdapter() {
@@ -208,13 +227,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.Process <em>Process</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.Process <em>Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.Process
+	 * @see QWiki.Spice.Process
 	 * @generated
 	 */
 	public Adapter createProcessAdapter() {
@@ -222,13 +241,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.ProcessGroup <em>Process Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.ProcessGroup <em>Process Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.ProcessGroup
+	 * @see QWiki.Spice.ProcessGroup
 	 * @generated
 	 */
 	public Adapter createProcessGroupAdapter() {
@@ -236,13 +255,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.Outcome <em>Outcome</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.Outcome <em>Outcome</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.Outcome
+	 * @see QWiki.Spice.Outcome
 	 * @generated
 	 */
 	public Adapter createOutcomeAdapter() {
@@ -250,13 +269,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.WorkProduct <em>Work Product</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.WorkProduct <em>Work Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.WorkProduct
+	 * @see QWiki.Spice.WorkProduct
 	 * @generated
 	 */
 	public Adapter createWorkProductAdapter() {
@@ -264,13 +283,13 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.SPICE.GenericWorkProduct <em>Generic Work Product</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.GenericWorkProduct <em>Generic Work Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.SPICE.GenericWorkProduct
+	 * @see QWiki.Spice.GenericWorkProduct
 	 * @generated
 	 */
 	public Adapter createGenericWorkProductAdapter() {
@@ -278,69 +297,97 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlElement <em>Uml Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlElement
+	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
 	 */
-	public Adapter createUmlElementAdapter() {
+	public Adapter createEModelElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelTaggedElement <em>Model Tagged Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelTaggedElement
+	 * @see org.eclipse.uml2.uml.Element
 	 * @generated
 	 */
-	public Adapter createModelTaggedElementAdapter() {
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelElement <em>Model Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelElement
+	 * @see org.eclipse.uml2.uml.NamedElement
 	 * @generated
 	 */
-	public Adapter createModelElementAdapter() {
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlNamedElement <em>Uml Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Namespace <em>Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlNamedElement
+	 * @see org.eclipse.uml2.uml.Namespace
 	 * @generated
 	 */
-	public Adapter createUmlNamedElementAdapter() {
+	public Adapter createNamespaceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nNamedElement
+	 * @see QWiki.Kernel.QWikiElement
+	 * @generated
+	 */
+	public Adapter createQWikiElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamedElement <em>QWiki Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.QWikiNamedElement
+	 * @generated
+	 */
+	public Adapter createQWikiNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nNamedElement
 	 * @generated
 	 */
 	public Adapter createI18nNamedElementAdapter() {
@@ -348,13 +395,27 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamespace <em>QWiki Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nDescriptiveElement
+	 * @see QWiki.Kernel.QWikiNamespace
+	 * @generated
+	 */
+	public Adapter createQWikiNamespaceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nDescriptiveElement
 	 * @generated
 	 */
 	public Adapter createI18nDescriptiveElementAdapter() {
@@ -362,13 +423,27 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.RASCI.RasciElement <em>Rasci Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiContainer <em>QWiki Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.RASCI.RasciElement
+	 * @see QWiki.Kernel.QWikiContainer
+	 * @generated
+	 */
+	public Adapter createQWikiContainerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Rasci.RasciElement <em>Rasci Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Rasci.RasciElement
 	 * @generated
 	 */
 	public Adapter createRasciElementAdapter() {

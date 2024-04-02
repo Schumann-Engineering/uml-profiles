@@ -22,40 +22,58 @@ public interface KernelFactory extends EFactory {
 	KernelFactory eINSTANCE = QWiki.Kernel.impl.KernelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Model Domain</em>'.
+	 * Returns a new object of class '<em>I1 8n Keyed String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Domain</em>'.
+	 * @return a new object of class '<em>I1 8n Keyed String</em>'.
 	 * @generated
 	 */
-	ModelDomain createModelDomain();
+	I18nKeyedString createI18nKeyedString();
 
 	/**
-	 * Returns a new object of class '<em>Model Root</em>'.
+	 * Returns a new object of class '<em>I1 8n Base String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Model Root</em>'.
+	 * @return a new object of class '<em>I1 8n Base String</em>'.
 	 * @generated
 	 */
-	ModelRoot createModelRoot();
+	I18nBaseString createI18nBaseString();
 
 	/**
-	 * Returns a new object of class '<em>DO NOT USE Relationship Type</em>'.
+	 * Returns a new object of class '<em>I1 8n Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DO NOT USE Relationship Type</em>'.
+	 * @return a new object of class '<em>I1 8n Value</em>'.
 	 * @generated
 	 */
-	DO_NOT_USE_RelationshipType createDO_NOT_USE_RelationshipType();
+	I18nValue createI18nValue();
 
 	/**
-	 * Returns a new object of class '<em>Superseeding Relationship</em>'.
+	 * Returns a new object of class '<em>I1 8n String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Superseeding Relationship</em>'.
+	 * @return a new object of class '<em>I1 8n String</em>'.
 	 * @generated
 	 */
-	SuperseedingRelationship createSuperseedingRelationship();
+	I18nString createI18nString();
+
+	/**
+	 * Returns a new object of class '<em>QWiki Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>QWiki Comment</em>'.
+	 * @generated
+	 */
+	QWikiComment createQWikiComment();
+
+	/**
+	 * Returns a new object of class '<em>QWiki Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>QWiki Container</em>'.
+	 * @generated
+	 */
+	QWikiContainer createQWikiContainer();
 
 	/**
 	 * Returns the package supported by this factory.

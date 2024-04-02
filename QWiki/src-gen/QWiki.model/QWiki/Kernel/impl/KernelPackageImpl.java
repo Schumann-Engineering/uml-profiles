@@ -2,50 +2,58 @@
  */
 package QWiki.Kernel.impl;
 
-import QWiki.Bibliography.BibliographyPackage;
+import QWiki.Domain.DomainPackage;
 
-import QWiki.Bibliography.impl.BibliographyPackageImpl;
+import QWiki.Domain.impl.DomainPackageImpl;
 
 import QWiki.Glossary.GlossaryPackage;
 
 import QWiki.Glossary.impl.GlossaryPackageImpl;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.impl.I18NPackageImpl;
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.Infrastructure.impl.InfrastructurePackageImpl;
-
-import QWiki.Kernel.DO_NOT_USE_Relationship;
-import QWiki.Kernel.DO_NOT_USE_RelationshipType;
+import QWiki.Kernel.I18nBaseString;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nKeyedString;
+import QWiki.Kernel.I18nNamedElement;
+import QWiki.Kernel.I18nString;
+import QWiki.Kernel.I18nValue;
 import QWiki.Kernel.KernelFactory;
 import QWiki.Kernel.KernelPackage;
-import QWiki.Kernel.ModelDomain;
-import QWiki.Kernel.ModelDomainElement;
-import QWiki.Kernel.ModelElement;
-import QWiki.Kernel.ModelRoot;
-import QWiki.Kernel.ModelTaggedElement;
-import QWiki.Kernel.SuperseedingRelationship;
-import QWiki.Kernel.SuperseedingType;
+import QWiki.Kernel.QWikiComment;
+import QWiki.Kernel.QWikiContainer;
+import QWiki.Kernel.QWikiElement;
+import QWiki.Kernel.QWikiNamedElement;
+import QWiki.Kernel.QWikiNamespace;
 
-import QWiki.RASCI.RASCIPackage;
+import QWiki.Kernel.Relationships.RelationshipsPackage;
 
-import QWiki.RASCI.impl.RASCIPackageImpl;
+import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
 
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Rasci.RASCIPackage;
 
-import QWiki.SPICE.impl.SPICEPackageImpl;
+import QWiki.Rasci.impl.RASCIPackageImpl;
+
+import QWiki.References.ReferencesPackage;
+
+import QWiki.References.impl.ReferencesPackageImpl;
+
+import QWiki.Spice.SPICEPackage;
+
+import QWiki.Spice.impl.SPICEPackageImpl;
 
 import org.eclipse.emf.common.util.URI;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,63 +67,77 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelDomainEClass = null;
+	private EClass i18nNamedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelDomainElementEClass = null;
+	private EClass qWikiNamedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelRootEClass = null;
+	private EClass qWikiElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelTaggedElementEClass = null;
+	private EClass i18nKeyedStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dO_NOT_USE_RelationshipEClass = null;
+	private EClass i18nBaseStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dO_NOT_USE_RelationshipTypeEClass = null;
+	private EClass i18nValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass superseedingRelationshipEClass = null;
+	private EClass i18nStringEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass modelElementEClass = null;
+	private EClass qWikiCommentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum superseedingTypeEEnum = null;
+	private EClass i18nDescriptiveElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qWikiNamespaceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qWikiContainerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -163,37 +185,42 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		UMLPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(registeredPackage instanceof InfrastructurePackageImpl ? registeredPackage : InfrastructurePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		I18NPackageImpl theI18NPackage = (I18NPackageImpl)(registeredPackage instanceof I18NPackageImpl ? registeredPackage : I18NPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
 		SPICEPackageImpl theSPICEPackage = (SPICEPackageImpl)(registeredPackage instanceof SPICEPackageImpl ? registeredPackage : SPICEPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
 		RASCIPackageImpl theRASCIPackage = (RASCIPackageImpl)(registeredPackage instanceof RASCIPackageImpl ? registeredPackage : RASCIPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
-		BibliographyPackageImpl theBibliographyPackage = (BibliographyPackageImpl)(registeredPackage instanceof BibliographyPackageImpl ? registeredPackage : BibliographyPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
+		ReferencesPackageImpl theReferencesPackage = (ReferencesPackageImpl)(registeredPackage instanceof ReferencesPackageImpl ? registeredPackage : ReferencesPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GlossaryPackage.eNS_URI);
 		GlossaryPackageImpl theGlossaryPackage = (GlossaryPackageImpl)(registeredPackage instanceof GlossaryPackageImpl ? registeredPackage : GlossaryPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
+		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theKernelPackage.createPackageContents();
-		theInfrastructurePackage.createPackageContents();
-		theI18NPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 		theSPICEPackage.createPackageContents();
 		theRASCIPackage.createPackageContents();
-		theBibliographyPackage.createPackageContents();
+		theReferencesPackage.createPackageContents();
 		theGlossaryPackage.createPackageContents();
+		theDomainPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theKernelPackage.initializePackageContents();
-		theInfrastructurePackage.initializePackageContents();
-		theI18NPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 		theSPICEPackage.initializePackageContents();
 		theRASCIPackage.initializePackageContents();
-		theBibliographyPackage.initializePackageContents();
+		theReferencesPackage.initializePackageContents();
 		theGlossaryPackage.initializePackageContents();
+		theDomainPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theKernelPackage.freeze();
@@ -209,8 +236,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelDomain() {
-		return modelDomainEClass;
+	public EClass getI18nNamedElement() {
+		return i18nNamedElementEClass;
 	}
 
 	/**
@@ -219,8 +246,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelDomain_DomainElement() {
-		return (EReference)modelDomainEClass.getEStructuralFeatures().get(0);
+	public EReference getI18nNamedElement_DisplayName() {
+		return (EReference)i18nNamedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -229,8 +256,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelDomain__AllDomainElement() {
-		return modelDomainEClass.getEOperations().get(0);
+	public EClass getQWikiNamedElement() {
+		return qWikiNamedElementEClass;
 	}
 
 	/**
@@ -239,8 +266,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelDomainElement() {
-		return modelDomainElementEClass;
+	public EClass getQWikiElement() {
+		return qWikiElementEClass;
 	}
 
 	/**
@@ -249,8 +276,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelDomainElement_Domain() {
-		return (EReference)modelDomainElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getQWikiElement_Uuid() {
+		return (EAttribute)qWikiElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -259,8 +286,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelDomainElement_AssignedDomain() {
-		return (EReference)modelDomainElementEClass.getEStructuralFeatures().get(1);
+	public EReference getQWikiElement_CustomProperty() {
+		return (EReference)qWikiElementEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -269,8 +296,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelRoot() {
-		return modelRootEClass;
+	public EAttribute getQWikiElement_Tag() {
+		return (EAttribute)qWikiElementEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -279,8 +306,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelRoot_OwnedModelElement() {
-		return (EReference)modelRootEClass.getEStructuralFeatures().get(0);
+	public EOperation getQWikiElement__Oid() {
+		return qWikiElementEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -289,8 +316,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelTaggedElement() {
-		return modelTaggedElementEClass;
+	public EClass getI18nKeyedString() {
+		return i18nKeyedStringEClass;
 	}
 
 	/**
@@ -299,8 +326,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getModelTaggedElement_Tag() {
-		return (EAttribute)modelTaggedElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getI18nKeyedString_Key() {
+		return (EAttribute)i18nKeyedStringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -309,8 +336,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelTaggedElement_CustomProperty() {
-		return (EReference)modelTaggedElementEClass.getEStructuralFeatures().get(1);
+	public EClass getI18nBaseString() {
+		return i18nBaseStringEClass;
 	}
 
 	/**
@@ -319,8 +346,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDO_NOT_USE_Relationship() {
-		return dO_NOT_USE_RelationshipEClass;
+	public EReference getI18nBaseString_Value() {
+		return (EReference)i18nBaseStringEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -329,8 +356,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getDO_NOT_USE_RelationshipType() {
-		return dO_NOT_USE_RelationshipTypeEClass;
+	public EOperation getI18nBaseString__Value__String() {
+		return i18nBaseStringEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -339,8 +366,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getSuperseedingRelationship() {
-		return superseedingRelationshipEClass;
+	public EClass getI18nValue() {
+		return i18nValueEClass;
 	}
 
 	/**
@@ -349,8 +376,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSuperseedingRelationship_SuperseedingType() {
-		return (EAttribute)superseedingRelationshipEClass.getEStructuralFeatures().get(0);
+	public EAttribute getI18nValue_Language() {
+		return (EAttribute)i18nValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -359,8 +386,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getModelElement() {
-		return modelElementEClass;
+	public EAttribute getI18nValue_Body() {
+		return (EAttribute)i18nValueEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -369,8 +396,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelElement_Model() {
-		return (EReference)modelElementEClass.getEStructuralFeatures().get(0);
+	public EClass getI18nString() {
+		return i18nStringEClass;
 	}
 
 	/**
@@ -379,8 +406,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getModelElement_Uuid() {
-		return (EAttribute)modelElementEClass.getEStructuralFeatures().get(1);
+	public EClass getQWikiComment() {
+		return qWikiCommentEClass;
 	}
 
 	/**
@@ -389,8 +416,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getModelElement_SuperseedingRelationship() {
-		return (EReference)modelElementEClass.getEStructuralFeatures().get(2);
+	public EReference getQWikiComment_Content() {
+		return (EReference)qWikiCommentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -399,8 +426,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelElement__Model() {
-		return modelElementEClass.getEOperations().get(0);
+	public EClass getI18nDescriptiveElement() {
+		return i18nDescriptiveElementEClass;
 	}
 
 	/**
@@ -409,8 +436,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getModelElement__Oid() {
-		return modelElementEClass.getEOperations().get(1);
+	public EReference getI18nDescriptiveElement_Purpose() {
+		return (EReference)i18nDescriptiveElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -419,8 +446,28 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getSuperseedingType() {
-		return superseedingTypeEEnum;
+	public EReference getI18nDescriptiveElement_Content() {
+		return (EReference)i18nDescriptiveElementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQWikiNamespace() {
+		return qWikiNamespaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQWikiContainer() {
+		return qWikiContainerEClass;
 	}
 
 	/**
@@ -452,37 +499,40 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		modelDomainEClass = createEClass(MODEL_DOMAIN);
-		createEReference(modelDomainEClass, MODEL_DOMAIN__DOMAIN_ELEMENT);
-		createEOperation(modelDomainEClass, MODEL_DOMAIN___ALL_DOMAIN_ELEMENT);
+		i18nNamedElementEClass = createEClass(I1_8N_NAMED_ELEMENT);
+		createEReference(i18nNamedElementEClass, I1_8N_NAMED_ELEMENT__DISPLAY_NAME);
 
-		modelDomainElementEClass = createEClass(MODEL_DOMAIN_ELEMENT);
-		createEReference(modelDomainElementEClass, MODEL_DOMAIN_ELEMENT__DOMAIN);
-		createEReference(modelDomainElementEClass, MODEL_DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
+		qWikiNamedElementEClass = createEClass(QWIKI_NAMED_ELEMENT);
 
-		modelRootEClass = createEClass(MODEL_ROOT);
-		createEReference(modelRootEClass, MODEL_ROOT__OWNED_MODEL_ELEMENT);
+		qWikiElementEClass = createEClass(QWIKI_ELEMENT);
+		createEAttribute(qWikiElementEClass, QWIKI_ELEMENT__UUID);
+		createEReference(qWikiElementEClass, QWIKI_ELEMENT__CUSTOM_PROPERTY);
+		createEAttribute(qWikiElementEClass, QWIKI_ELEMENT__TAG);
+		createEOperation(qWikiElementEClass, QWIKI_ELEMENT___OID);
 
-		modelTaggedElementEClass = createEClass(MODEL_TAGGED_ELEMENT);
-		createEAttribute(modelTaggedElementEClass, MODEL_TAGGED_ELEMENT__TAG);
-		createEReference(modelTaggedElementEClass, MODEL_TAGGED_ELEMENT__CUSTOM_PROPERTY);
+		i18nKeyedStringEClass = createEClass(I1_8N_KEYED_STRING);
+		createEAttribute(i18nKeyedStringEClass, I1_8N_KEYED_STRING__KEY);
 
-		dO_NOT_USE_RelationshipEClass = createEClass(DO_NOT_USE_RELATIONSHIP);
+		i18nBaseStringEClass = createEClass(I1_8N_BASE_STRING);
+		createEReference(i18nBaseStringEClass, I1_8N_BASE_STRING__VALUE);
+		createEOperation(i18nBaseStringEClass, I1_8N_BASE_STRING___VALUE__STRING);
 
-		dO_NOT_USE_RelationshipTypeEClass = createEClass(DO_NOT_USE_RELATIONSHIP_TYPE);
+		i18nValueEClass = createEClass(I1_8N_VALUE);
+		createEAttribute(i18nValueEClass, I1_8N_VALUE__LANGUAGE);
+		createEAttribute(i18nValueEClass, I1_8N_VALUE__BODY);
 
-		superseedingRelationshipEClass = createEClass(SUPERSEEDING_RELATIONSHIP);
-		createEAttribute(superseedingRelationshipEClass, SUPERSEEDING_RELATIONSHIP__SUPERSEEDING_TYPE);
+		i18nStringEClass = createEClass(I1_8N_STRING);
 
-		modelElementEClass = createEClass(MODEL_ELEMENT);
-		createEReference(modelElementEClass, MODEL_ELEMENT__MODEL);
-		createEAttribute(modelElementEClass, MODEL_ELEMENT__UUID);
-		createEReference(modelElementEClass, MODEL_ELEMENT__SUPERSEEDING_RELATIONSHIP);
-		createEOperation(modelElementEClass, MODEL_ELEMENT___MODEL);
-		createEOperation(modelElementEClass, MODEL_ELEMENT___OID);
+		qWikiCommentEClass = createEClass(QWIKI_COMMENT);
+		createEReference(qWikiCommentEClass, QWIKI_COMMENT__CONTENT);
 
-		// Create enums
-		superseedingTypeEEnum = createEEnum(SUPERSEEDING_TYPE);
+		i18nDescriptiveElementEClass = createEClass(I1_8N_DESCRIPTIVE_ELEMENT);
+		createEReference(i18nDescriptiveElementEClass, I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE);
+		createEReference(i18nDescriptiveElementEClass, I1_8N_DESCRIPTIVE_ELEMENT__CONTENT);
+
+		qWikiNamespaceEClass = createEClass(QWIKI_NAMESPACE);
+
+		qWikiContainerEClass = createEClass(QWIKI_CONTAINER);
 	}
 
 	/**
@@ -509,62 +559,70 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		I18NPackage theI18NPackage = (I18NPackage)EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		InfrastructurePackage theInfrastructurePackage = (InfrastructurePackage)EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
+		RelationshipsPackage theRelationshipsPackage = (RelationshipsPackage)EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theRelationshipsPackage);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		modelDomainEClass.getESuperTypes().add(theI18NPackage.getI18nNamedElement());
-		modelDomainElementEClass.getESuperTypes().add(theInfrastructurePackage.getUmlNamedElement());
-		modelRootEClass.getESuperTypes().add(theInfrastructurePackage.getUmlPackage());
-		modelTaggedElementEClass.getESuperTypes().add(theInfrastructurePackage.getUmlElement());
-		dO_NOT_USE_RelationshipTypeEClass.getESuperTypes().add(theI18NPackage.getI18nNamedElement());
-		superseedingRelationshipEClass.getESuperTypes().add(theInfrastructurePackage.getUmlDirectedRelationship());
-		modelElementEClass.getESuperTypes().add(this.getModelTaggedElement());
+		i18nNamedElementEClass.getESuperTypes().add(this.getQWikiNamedElement());
+		qWikiNamedElementEClass.getESuperTypes().add(theUMLPackage.getNamedElement());
+		qWikiNamedElementEClass.getESuperTypes().add(this.getQWikiElement());
+		qWikiElementEClass.getESuperTypes().add(theUMLPackage.getElement());
+		i18nKeyedStringEClass.getESuperTypes().add(this.getI18nBaseString());
+		i18nStringEClass.getESuperTypes().add(this.getI18nBaseString());
+		qWikiCommentEClass.getESuperTypes().add(this.getQWikiElement());
+		qWikiCommentEClass.getESuperTypes().add(theUMLPackage.getComment());
+		i18nDescriptiveElementEClass.getESuperTypes().add(this.getI18nNamedElement());
+		qWikiNamespaceEClass.getESuperTypes().add(theUMLPackage.getNamespace());
+		qWikiNamespaceEClass.getESuperTypes().add(this.getI18nNamedElement());
+		qWikiNamespaceEClass.getESuperTypes().add(this.getQWikiElement());
+		qWikiContainerEClass.getESuperTypes().add(this.getQWikiNamespace());
+		qWikiContainerEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(modelDomainEClass, ModelDomain.class, "ModelDomain", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelDomain_DomainElement(), this.getModelDomainElement(), this.getModelDomainElement_AssignedDomain(), "domainElement", null, 0, -1, ModelDomain.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(i18nNamedElementEClass, I18nNamedElement.class, "I18nNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getI18nNamedElement_DisplayName(), this.getI18nString(), null, "displayName", null, 0, 1, I18nNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getModelDomain__AllDomainElement(), this.getModelDomainElement(), "allDomainElement", 0, -1, IS_UNIQUE, !IS_ORDERED);
+		initEClass(qWikiNamedElementEClass, QWikiNamedElement.class, "QWikiNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(modelDomainElementEClass, ModelDomainElement.class, "ModelDomainElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelDomainElement_Domain(), this.getModelDomain(), null, "domain", null, 0, 1, ModelDomainElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getModelDomainElement_AssignedDomain(), this.getModelDomain(), this.getModelDomain_DomainElement(), "assignedDomain", null, 0, 1, ModelDomainElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(qWikiElementEClass, QWikiElement.class, "QWikiElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getQWikiElement_Uuid(), ecorePackage.getEString(), "uuid", null, 0, 1, QWikiElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getQWikiElement_CustomProperty(), this.getI18nKeyedString(), null, "customProperty", null, 0, -1, QWikiElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getQWikiElement_Tag(), ecorePackage.getEString(), "tag", null, 0, -1, QWikiElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(modelRootEClass, ModelRoot.class, "ModelRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelRoot_OwnedModelElement(), this.getModelElement(), this.getModelElement_Model(), "ownedModelElement", null, 0, -1, ModelRoot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEOperation(getQWikiElement__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(modelTaggedElementEClass, ModelTaggedElement.class, "ModelTaggedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getModelTaggedElement_Tag(), ecorePackage.getEString(), "tag", null, 0, -1, ModelTaggedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getModelTaggedElement_CustomProperty(), theI18NPackage.getI18nKeyedString(), null, "customProperty", null, 0, -1, ModelTaggedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(i18nKeyedStringEClass, I18nKeyedString.class, "I18nKeyedString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getI18nKeyedString_Key(), ecorePackage.getEString(), "key", null, 1, 1, I18nKeyedString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(dO_NOT_USE_RelationshipEClass, DO_NOT_USE_Relationship.class, "DO_NOT_USE_Relationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(i18nBaseStringEClass, I18nBaseString.class, "I18nBaseString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getI18nBaseString_Value(), this.getI18nValue(), null, "value", null, 0, -1, I18nBaseString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(dO_NOT_USE_RelationshipTypeEClass, DO_NOT_USE_RelationshipType.class, "DO_NOT_USE_RelationshipType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		EOperation op = initEOperation(getI18nBaseString__Value__String(), ecorePackage.getEString(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "language", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(superseedingRelationshipEClass, SuperseedingRelationship.class, "SuperseedingRelationship", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSuperseedingRelationship_SuperseedingType(), this.getSuperseedingType(), "superseedingType", "Equal", 1, 1, SuperseedingRelationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(i18nValueEClass, I18nValue.class, "I18nValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getI18nValue_Language(), ecorePackage.getEString(), "language", null, 1, 1, I18nValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getI18nValue_Body(), ecorePackage.getEString(), "body", null, 1, 1, I18nValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(modelElementEClass, ModelElement.class, "ModelElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelElement_Model(), this.getModelRoot(), this.getModelRoot_OwnedModelElement(), "model", null, 0, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getModelElement_Uuid(), ecorePackage.getEString(), "uuid", null, 1, 1, ModelElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getModelElement_SuperseedingRelationship(), this.getSuperseedingRelationship(), null, "superseedingRelationship", null, 0, -1, ModelElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(i18nStringEClass, I18nString.class, "I18nString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEOperation(getModelElement__Model(), this.getModelRoot(), "model", 0, 1, IS_UNIQUE, !IS_ORDERED);
+		initEClass(qWikiCommentEClass, QWikiComment.class, "QWikiComment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQWikiComment_Content(), this.getI18nString(), null, "content", null, 0, 1, QWikiComment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getModelElement__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEClass(i18nDescriptiveElementEClass, I18nDescriptiveElement.class, "I18nDescriptiveElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getI18nDescriptiveElement_Purpose(), this.getI18nString(), null, "purpose", null, 0, 1, I18nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getI18nDescriptiveElement_Content(), this.getI18nString(), null, "content", null, 0, 1, I18nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(superseedingTypeEEnum, SuperseedingType.class, "SuperseedingType");
-		addEEnumLiteral(superseedingTypeEEnum, SuperseedingType.ADDED);
-		addEEnumLiteral(superseedingTypeEEnum, SuperseedingType.EQUAL);
-		addEEnumLiteral(superseedingTypeEEnum, SuperseedingType.UPDATED_MAJOR);
-		addEEnumLiteral(superseedingTypeEEnum, SuperseedingType.UPDATED_MINOR);
-		addEEnumLiteral(superseedingTypeEEnum, SuperseedingType.REMOVED);
+		initEClass(qWikiNamespaceEClass, QWikiNamespace.class, "QWikiNamespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(qWikiContainerEClass, QWikiContainer.class, "QWikiContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -572,16 +630,14 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
-		createEmofAnnotations();
-		// union
-		createUnionAnnotations();
-		// subsets
-		createSubsetsAnnotations();
-		// duplicates
-		createDuplicatesAnnotations();
+		// redefines
+		createRedefinesAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
+		createEmofAnnotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
 	}
 
 	/**
@@ -601,102 +657,20 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName</b>.
+	 * Initializes the annotations for <b>redefines</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createEmofAnnotations() {
-		String source = "http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName";
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
 		addAnnotation
-		  (getModelDomainElement_Domain(),
-		   source,
-		   new String[] {
-			   "body", "namedelement"
-		   });
-		addAnnotation
-		  (getModelTaggedElement_CustomProperty(),
-		   source,
-		   new String[] {
-			   "body", "owningElement"
-		   });
-		addAnnotation
-		  (getModelElement_SuperseedingRelationship(),
-		   source,
-		   new String[] {
-			   "body", "document"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>union</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUnionAnnotations() {
-		String source = "union";
-		addAnnotation
-		  (getModelDomainElement_Domain(),
-		   source,
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>subsets</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createSubsetsAnnotations() {
-		String source = "subsets";
-		addAnnotation
-		  (getModelDomainElement_AssignedDomain(),
+		  (getQWikiElement__Oid(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//ModelDomainElement/domain")
-		   });
-		addAnnotation
-		  (getModelRoot_OwnedModelElement(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
-		   });
-		addAnnotation
-		  (getModelElement_Model(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
-		   });
-		addAnnotation
-		  (getModelElement_SuperseedingRelationship(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/relationship")
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>duplicates</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";
-		addAnnotation
-		  (modelRootEClass,
-		   source,
-		   new String[] {
+			 URI.createURI(eNS_URI).appendFragment("//QWikiElement/oid")
 		   });
 	}
 
@@ -709,16 +683,48 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getModelElement__Model(),
-		   source,
-		   new String[] {
-			   "body", "if (model->notEmpty()) then\r\n  model\r\nelse if (owner->notEmpty() and owner->oclIsKindOf(ModelElement)) then\r\n  owner.oclAsType(ModelElement).model()\r\nelse\r\n  null\r\nendif\r\nendif"
-		   });
-		addAnnotation
-		  (getModelElement__Oid(),
+		  (getQWikiElement__Oid(),
 		   source,
 		   new String[] {
 			   "body", "uuid"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEmofAnnotations() {
+		String source = "http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName";
+		addAnnotation
+		  (getQWikiElement_CustomProperty(),
+		   source,
+		   new String[] {
+			   "body", "owningElement"
+		   });
+		addAnnotation
+		  (getI18nBaseString_Value(),
+		   source,
+		   new String[] {
+			   "body", "owningElement"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (getQWikiElement_CustomProperty(),
+		   source,
+		   new String[] {
+			   "kind", "element"
 		   });
 	}
 

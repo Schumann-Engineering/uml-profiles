@@ -1,12 +1,13 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
-import QWiki.I18N.I18NFactory;
-import QWiki.I18N.I18NPackage;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.WorkProduct;
+import QWiki.Kernel.KernelFactory;
+import QWiki.Kernel.KernelPackage;
+
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.WorkProduct;
 
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +23,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.WorkProduct} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.WorkProduct} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -181,7 +182,6 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC);
-			childrenFeatures.add(SPICEPackage.Literals.WORK_PRODUCT__CONTENT);
 		}
 		return childrenFeatures;
 	}
@@ -241,7 +241,6 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SPICEPackage.WORK_PRODUCT__CHARACTERISTIC:
-			case SPICEPackage.WORK_PRODUCT__CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,12 +261,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC,
-				 I18NFactory.eINSTANCE.createI18nString()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SPICEPackage.Literals.WORK_PRODUCT__CONTENT,
-				 I18NFactory.eINSTANCE.createI18nString()));
+				 KernelFactory.eINSTANCE.createI18nString()));
 	}
 
 	/**
@@ -282,11 +276,10 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY ||
-			childFeature == SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC ||
-			childFeature == SPICEPackage.Literals.WORK_PRODUCT__CONTENT;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC;
 
 		if (qualify) {
 			return getString

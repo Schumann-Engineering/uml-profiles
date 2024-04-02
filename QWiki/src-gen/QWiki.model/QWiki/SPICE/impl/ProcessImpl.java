@@ -1,16 +1,12 @@
 /**
  */
-package QWiki.SPICE.impl;
+package QWiki.Spice.impl;
 
-import QWiki.Infrastructure.UmlElement;
-
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
-import QWiki.SPICE.WorkProduct;
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.WorkProduct;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -35,6 +31,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Process</b></em>'.
@@ -43,18 +42,18 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getOwner <em>Owner</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getOwnedElement <em>Owned Element</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getOwningProcessGroup <em>Owning Process Group</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getOwnedOutcome <em>Owned Outcome</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getFacilitatingWorkProduct <em>Facilitating Work Product</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessImpl#getOwnedBasePractise <em>Owned Base Practise</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getOwnedMembers <em>Owned Member</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getOwningProcessGroup <em>Owning Process Group</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getOwnedOutcome <em>Owned Outcome</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getFacilitatingWorkProduct <em>Facilitating Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessImpl#getOwnedBasePractise <em>Owned Base Practise</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process {
+public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process {
 	/**
 	 * The cached value of the '{@link #getOwnedOutcome() <em>Owned Outcome</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -93,7 +92,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SpiceBasePractise> ownedBasePractise;
+	protected EList<BasePractise> ownedBasePractise;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -120,9 +119,9 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 */
 	@Override
-	public UmlElement getOwner() {
-		UmlElement owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
+	public Namespace getNamespace() {
+		Namespace namespace = basicGetNamespace();
+		return namespace != null && namespace.eIsProxy() ? (Namespace)eResolveProxy((InternalEObject)namespace) : namespace;
 	}
 
 	/**
@@ -131,12 +130,12 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 */
 	@Override
-	public UmlElement basicGetOwner() {
+	public Namespace basicGetNamespace() {
 		ProcessGroup owningProcessGroup = getOwningProcessGroup();			
 		if (owningProcessGroup != null) {
 			return owningProcessGroup;
 		}
-		return super.basicGetOwner();
+		return super.basicGetNamespace();
 	}
 
 	/**
@@ -145,19 +144,19 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 */
 	@Override
-	public EList<UmlElement> getOwnedElement() {
-		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, SPICEPackage.PROCESS__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<NamedElement> getOwnedMembers() {
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
+	 * The array of subset feature identifiers for the '{@link #getOwnedMembers() <em>Owned Member</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
+	 * @see #getOwnedMembers()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {SPICEPackage.PROCESS__OWNED_COMMENT, SPICEPackage.PROCESS__OWNED_OUTCOME, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS__OWNED_RULE, SPICEPackage.PROCESS__OWNED_OUTCOME, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,12 +219,60 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Outcome getOwnedOutcome(String name) {
+		return getOwnedOutcome(name, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Outcome getOwnedOutcome(String name, boolean ignoreCase) {
+		ownedOutcomeLoop: for (Outcome ownedOutcome : getOwnedOutcome()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedOutcome.getName()) : name.equals(ownedOutcome.getName())))
+				continue ownedOutcomeLoop;
+			return ownedOutcome;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EList<WorkProduct> getFacilitatingWorkProduct() {
 		if (facilitatingWorkProduct == null) {
 			facilitatingWorkProduct = new EObjectWithInverseResolvingEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__FACILITATED_PROCESS);
 		}
 		return facilitatingWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getFacilitatingWorkProduct(String name) {
+		return getFacilitatingWorkProduct(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getFacilitatingWorkProduct(String name, boolean ignoreCase, EClass eClass) {
+		facilitatingWorkProductLoop: for (WorkProduct facilitatingWorkProduct : getFacilitatingWorkProduct()) {
+			if (eClass != null && !eClass.isInstance(facilitatingWorkProduct))
+				continue facilitatingWorkProductLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(facilitatingWorkProduct.getName()) : name.equals(facilitatingWorkProduct.getName())))
+				continue facilitatingWorkProductLoop;
+			return facilitatingWorkProduct;
+		}
+		return null;
 	}
 
 	/**
@@ -246,12 +293,60 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public WorkProduct getFacilitatedWorkProduct(String name) {
+		return getFacilitatedWorkProduct(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getFacilitatedWorkProduct(String name, boolean ignoreCase, EClass eClass) {
+		facilitatedWorkProductLoop: for (WorkProduct facilitatedWorkProduct : getFacilitatedWorkProduct()) {
+			if (eClass != null && !eClass.isInstance(facilitatedWorkProduct))
+				continue facilitatedWorkProductLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(facilitatedWorkProduct.getName()) : name.equals(facilitatedWorkProduct.getName())))
+				continue facilitatedWorkProductLoop;
+			return facilitatedWorkProduct;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
-	public EList<SpiceBasePractise> getOwnedBasePractise() {
+	public EList<BasePractise> getOwnedBasePractise() {
 		if (ownedBasePractise == null) {
-			ownedBasePractise = new EObjectContainmentWithInverseEList<SpiceBasePractise>(SpiceBasePractise.class, this, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE, SPICEPackage.SPICE_BASE_PRACTISE__OWNING_PROCESS);
+			ownedBasePractise = new EObjectContainmentWithInverseEList<BasePractise>(BasePractise.class, this, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE, SPICEPackage.BASE_PRACTISE__OWNING_PROCESS);
 		}
 		return ownedBasePractise;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BasePractise getOwnedBasePractise(String name) {
+		return getOwnedBasePractise(name, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BasePractise getOwnedBasePractise(String name, boolean ignoreCase) {
+		ownedBasePractiseLoop: for (BasePractise ownedBasePractise : getOwnedBasePractise()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedBasePractise.getName()) : name.equals(ownedBasePractise.getName())))
+				continue ownedBasePractiseLoop;
+			return ownedBasePractise;
+		}
+		return null;
 	}
 
 	/**
@@ -262,17 +357,16 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)KernelPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String oid() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -388,7 +482,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 				return;
 			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
 				getOwnedBasePractise().clear();
-				getOwnedBasePractise().addAll((Collection<? extends SpiceBasePractise>)newValue);
+				getOwnedBasePractise().addAll((Collection<? extends BasePractise>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -429,10 +523,10 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNER:
-				return isSetOwner();
-			case SPICEPackage.PROCESS__OWNED_ELEMENT:
-				return isSetOwnedElement();
+			case SPICEPackage.PROCESS__NAMESPACE:
+				return isSetNamespace();
+			case SPICEPackage.PROCESS__OWNED_MEMBER:
+				return isSetOwnedMembers();
 			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
 				return getOwningProcessGroup() != null;
 			case SPICEPackage.PROCESS__OWNED_OUTCOME:
@@ -467,8 +561,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 */
 	@Override
-	public boolean isSetOwner() {
-		return super.isSetOwner()
+	public boolean isSetNamespace() {
+		return super.isSetNamespace()
 			|| eIsSet(SPICEPackage.PROCESS__OWNING_PROCESS_GROUP);
 	}
 
@@ -478,8 +572,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.SPICE.Process
 	 * @generated
 	 */
 	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
+	public boolean isSetOwnedMembers() {
+		return super.isSetOwnedMembers()
 			|| eIsSet(SPICEPackage.PROCESS__OWNED_OUTCOME)
 			|| eIsSet(SPICEPackage.PROCESS__OWNED_BASE_PRACTISE);
 	}

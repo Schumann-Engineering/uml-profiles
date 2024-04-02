@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.SPICE;
+package QWiki.Spice;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Work Product Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see QWiki.SPICE.SPICEPackage#getWorkProductType()
+ * @see QWiki.Spice.SPICEPackage#getWorkProductType()
  * @model
  * @generated
  */

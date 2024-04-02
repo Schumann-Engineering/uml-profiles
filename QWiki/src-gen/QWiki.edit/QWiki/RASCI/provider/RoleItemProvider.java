@@ -1,16 +1,17 @@
 /**
  */
-package QWiki.RASCI.provider;
+package QWiki.Rasci.provider;
 
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.I18NFactory;
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.provider.I18nDescriptiveElementItemProvider;
+import QWiki.Kernel.KernelFactory;
+import QWiki.Kernel.KernelPackage;
 
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.Role;
+import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
+
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.Role;
 
 import java.util.Collection;
 import java.util.List;
@@ -27,7 +28,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.RASCI.Role} object.
+ * This is the item provider adapter for a {@link QWiki.Rasci.Role} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -262,7 +263,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(RASCIPackage.Literals.ROLE__SKILLS,
-				 I18NFactory.eINSTANCE.createI18nString()));
+				 KernelFactory.eINSTANCE.createI18nString()));
 	}
 
 	/**
@@ -277,9 +278,9 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY ||
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT ||
 			childFeature == RASCIPackage.Literals.ROLE__SKILLS;
 
 		if (qualify) {

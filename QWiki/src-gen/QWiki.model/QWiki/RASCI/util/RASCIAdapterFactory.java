@@ -1,31 +1,31 @@
 /**
  */
-package QWiki.RASCI.util;
+package QWiki.Rasci.util;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nNamedElement;
+import QWiki.Kernel.QWikiElement;
+import QWiki.Kernel.QWikiNamedElement;
 
-import QWiki.Infrastructure.UmlElement;
-import QWiki.Infrastructure.UmlNamedElement;
-
-import QWiki.Kernel.ModelElement;
-import QWiki.Kernel.ModelTaggedElement;
-
-import QWiki.RASCI.*;
+import QWiki.Rasci.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.RASCI.RASCIPackage
+ * @see QWiki.Rasci.RASCIPackage
  * @generated
  */
 public class RASCIAdapterFactory extends AdapterFactoryImpl {
@@ -85,20 +85,24 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 				return createRasciElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlElement(UmlElement object) {
-				return createUmlElementAdapter();
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
 			}
 			@Override
-			public Adapter caseModelTaggedElement(ModelTaggedElement object) {
-				return createModelTaggedElementAdapter();
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
 			}
 			@Override
-			public Adapter caseModelElement(ModelElement object) {
-				return createModelElementAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlNamedElement(UmlNamedElement object) {
-				return createUmlNamedElementAdapter();
+			public Adapter caseQWikiElement(QWikiElement object) {
+				return createQWikiElementAdapter();
+			}
+			@Override
+			public Adapter caseQWikiNamedElement(QWikiNamedElement object) {
+				return createQWikiNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseI18nNamedElement(I18nNamedElement object) {
@@ -129,13 +133,13 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.RASCI.Role <em>Role</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Rasci.Role <em>Role</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.RASCI.Role
+	 * @see QWiki.Rasci.Role
 	 * @generated
 	 */
 	public Adapter createRoleAdapter() {
@@ -143,13 +147,13 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.RASCI.RasciElement <em>Rasci Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Rasci.RasciElement <em>Rasci Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.RASCI.RasciElement
+	 * @see QWiki.Rasci.RasciElement
 	 * @generated
 	 */
 	public Adapter createRasciElementAdapter() {
@@ -157,69 +161,83 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlElement <em>Uml Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlElement
+	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
 	 */
-	public Adapter createUmlElementAdapter() {
+	public Adapter createEModelElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelTaggedElement <em>Model Tagged Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelTaggedElement
+	 * @see org.eclipse.uml2.uml.Element
 	 * @generated
 	 */
-	public Adapter createModelTaggedElementAdapter() {
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelElement <em>Model Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelElement
+	 * @see org.eclipse.uml2.uml.NamedElement
 	 * @generated
 	 */
-	public Adapter createModelElementAdapter() {
+	public Adapter createNamedElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlNamedElement <em>Uml Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlNamedElement
+	 * @see QWiki.Kernel.QWikiElement
 	 * @generated
 	 */
-	public Adapter createUmlNamedElementAdapter() {
+	public Adapter createQWikiElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamedElement <em>QWiki Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nNamedElement
+	 * @see QWiki.Kernel.QWikiNamedElement
+	 * @generated
+	 */
+	public Adapter createQWikiNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nNamedElement
 	 * @generated
 	 */
 	public Adapter createI18nNamedElementAdapter() {
@@ -227,13 +245,13 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nDescriptiveElement
+	 * @see QWiki.Kernel.I18nDescriptiveElement
 	 * @generated
 	 */
 	public Adapter createI18nDescriptiveElementAdapter() {

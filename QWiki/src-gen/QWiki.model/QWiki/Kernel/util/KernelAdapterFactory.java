@@ -2,17 +2,6 @@
  */
 package QWiki.Kernel.util;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
-
-import QWiki.Infrastructure.UmlDirectedRelationship;
-import QWiki.Infrastructure.UmlElement;
-import QWiki.Infrastructure.UmlNamedElement;
-import QWiki.Infrastructure.UmlNamespace;
-import QWiki.Infrastructure.UmlPackage;
-import QWiki.Infrastructure.UmlPackageableElement;
-import QWiki.Infrastructure.UmlRelationship;
-
 import QWiki.Kernel.*;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -20,7 +9,13 @@ import org.eclipse.emf.common.notify.Notifier;
 
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 
 /**
  * <!-- begin-user-doc -->
@@ -79,72 +74,68 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 	protected KernelSwitch<Adapter> modelSwitch =
 		new KernelSwitch<Adapter>() {
 			@Override
-			public Adapter caseModelDomain(ModelDomain object) {
-				return createModelDomainAdapter();
-			}
-			@Override
-			public Adapter caseModelDomainElement(ModelDomainElement object) {
-				return createModelDomainElementAdapter();
-			}
-			@Override
-			public Adapter caseModelRoot(ModelRoot object) {
-				return createModelRootAdapter();
-			}
-			@Override
-			public Adapter caseModelTaggedElement(ModelTaggedElement object) {
-				return createModelTaggedElementAdapter();
-			}
-			@Override
-			public Adapter caseDO_NOT_USE_Relationship(DO_NOT_USE_Relationship object) {
-				return createDO_NOT_USE_RelationshipAdapter();
-			}
-			@Override
-			public Adapter caseDO_NOT_USE_RelationshipType(DO_NOT_USE_RelationshipType object) {
-				return createDO_NOT_USE_RelationshipTypeAdapter();
-			}
-			@Override
-			public Adapter caseSuperseedingRelationship(SuperseedingRelationship object) {
-				return createSuperseedingRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseModelElement(ModelElement object) {
-				return createModelElementAdapter();
-			}
-			@Override
-			public Adapter caseUmlElement(UmlElement object) {
-				return createUmlElementAdapter();
-			}
-			@Override
-			public Adapter caseUmlNamedElement(UmlNamedElement object) {
-				return createUmlNamedElementAdapter();
-			}
-			@Override
 			public Adapter caseI18nNamedElement(I18nNamedElement object) {
 				return createI18nNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseQWikiNamedElement(QWikiNamedElement object) {
+				return createQWikiNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseQWikiElement(QWikiElement object) {
+				return createQWikiElementAdapter();
+			}
+			@Override
+			public Adapter caseI18nKeyedString(I18nKeyedString object) {
+				return createI18nKeyedStringAdapter();
+			}
+			@Override
+			public Adapter caseI18nBaseString(I18nBaseString object) {
+				return createI18nBaseStringAdapter();
+			}
+			@Override
+			public Adapter caseI18nValue(I18nValue object) {
+				return createI18nValueAdapter();
+			}
+			@Override
+			public Adapter caseI18nString(I18nString object) {
+				return createI18nStringAdapter();
+			}
+			@Override
+			public Adapter caseQWikiComment(QWikiComment object) {
+				return createQWikiCommentAdapter();
 			}
 			@Override
 			public Adapter caseI18nDescriptiveElement(I18nDescriptiveElement object) {
 				return createI18nDescriptiveElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlNamespace(UmlNamespace object) {
-				return createUmlNamespaceAdapter();
+			public Adapter caseQWikiNamespace(QWikiNamespace object) {
+				return createQWikiNamespaceAdapter();
 			}
 			@Override
-			public Adapter caseUmlPackageableElement(UmlPackageableElement object) {
-				return createUmlPackageableElementAdapter();
+			public Adapter caseQWikiContainer(QWikiContainer object) {
+				return createQWikiContainerAdapter();
 			}
 			@Override
-			public Adapter caseUmlPackage(UmlPackage object) {
-				return createUmlPackageAdapter();
+			public Adapter caseEModelElement(EModelElement object) {
+				return createEModelElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlRelationship(UmlRelationship object) {
-				return createUmlRelationshipAdapter();
+			public Adapter caseElement(Element object) {
+				return createElementAdapter();
 			}
 			@Override
-			public Adapter caseUmlDirectedRelationship(UmlDirectedRelationship object) {
-				return createUmlDirectedRelationshipAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseComment(Comment object) {
+				return createCommentAdapter();
+			}
+			@Override
+			public Adapter caseNamespace(Namespace object) {
+				return createNamespaceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -167,153 +158,13 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelDomain <em>Model Domain</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nNamedElement <em>I1 8n Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelDomain
-	 * @generated
-	 */
-	public Adapter createModelDomainAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelDomainElement <em>Model Domain Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelDomainElement
-	 * @generated
-	 */
-	public Adapter createModelDomainElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelRoot <em>Model Root</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelRoot
-	 * @generated
-	 */
-	public Adapter createModelRootAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelTaggedElement <em>Model Tagged Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelTaggedElement
-	 * @generated
-	 */
-	public Adapter createModelTaggedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.DO_NOT_USE_Relationship <em>DO NOT USE Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.DO_NOT_USE_Relationship
-	 * @generated
-	 */
-	public Adapter createDO_NOT_USE_RelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.DO_NOT_USE_RelationshipType <em>DO NOT USE Relationship Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.DO_NOT_USE_RelationshipType
-	 * @generated
-	 */
-	public Adapter createDO_NOT_USE_RelationshipTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.SuperseedingRelationship <em>Superseeding Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.SuperseedingRelationship
-	 * @generated
-	 */
-	public Adapter createSuperseedingRelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.ModelElement <em>Model Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Kernel.ModelElement
-	 * @generated
-	 */
-	public Adapter createModelElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlElement <em>Uml Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlElement
-	 * @generated
-	 */
-	public Adapter createUmlElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlNamedElement <em>Uml Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlNamedElement
-	 * @generated
-	 */
-	public Adapter createUmlNamedElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nNamedElement <em>I1 8n Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nNamedElement
+	 * @see QWiki.Kernel.I18nNamedElement
 	 * @generated
 	 */
 	public Adapter createI18nNamedElementAdapter() {
@@ -321,13 +172,111 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.I18N.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamedElement <em>QWiki Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.I18N.I18nDescriptiveElement
+	 * @see QWiki.Kernel.QWikiNamedElement
+	 * @generated
+	 */
+	public Adapter createQWikiNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.QWikiElement
+	 * @generated
+	 */
+	public Adapter createQWikiElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nKeyedString <em>I1 8n Keyed String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nKeyedString
+	 * @generated
+	 */
+	public Adapter createI18nKeyedStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nBaseString <em>I1 8n Base String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nBaseString
+	 * @generated
+	 */
+	public Adapter createI18nBaseStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nValue <em>I1 8n Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nValue
+	 * @generated
+	 */
+	public Adapter createI18nValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nString <em>I1 8n String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nString
+	 * @generated
+	 */
+	public Adapter createI18nStringAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiComment <em>QWiki Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.QWikiComment
+	 * @generated
+	 */
+	public Adapter createQWikiCommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.I18nDescriptiveElement
 	 * @generated
 	 */
 	public Adapter createI18nDescriptiveElementAdapter() {
@@ -335,72 +284,100 @@ public class KernelAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlNamespace <em>Uml Namespace</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamespace <em>QWiki Namespace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlNamespace
+	 * @see QWiki.Kernel.QWikiNamespace
 	 * @generated
 	 */
-	public Adapter createUmlNamespaceAdapter() {
+	public Adapter createQWikiNamespaceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlPackageableElement <em>Uml Packageable Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiContainer <em>QWiki Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlPackageableElement
+	 * @see QWiki.Kernel.QWikiContainer
 	 * @generated
 	 */
-	public Adapter createUmlPackageableElementAdapter() {
+	public Adapter createQWikiContainerAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlPackage <em>Uml Package</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.emf.ecore.EModelElement <em>EModel Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlPackage
+	 * @see org.eclipse.emf.ecore.EModelElement
 	 * @generated
 	 */
-	public Adapter createUmlPackageAdapter() {
+	public Adapter createEModelElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlRelationship <em>Uml Relationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Element <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlRelationship
+	 * @see org.eclipse.uml2.uml.Element
 	 * @generated
 	 */
-	public Adapter createUmlRelationshipAdapter() {
+	public Adapter createElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Infrastructure.UmlDirectedRelationship <em>Uml Directed Relationship</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Infrastructure.UmlDirectedRelationship
+	 * @see org.eclipse.uml2.uml.NamedElement
 	 * @generated
 	 */
-	public Adapter createUmlDirectedRelationshipAdapter() {
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Comment <em>Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.Comment
+	 * @generated
+	 */
+	public Adapter createCommentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Namespace <em>Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.Namespace
+	 * @generated
+	 */
+	public Adapter createNamespaceAdapter() {
 		return null;
 	}
 

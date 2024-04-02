@@ -6,9 +6,7 @@ import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.I18N.impl.I18nDescriptiveElementImpl;
-
-import QWiki.Infrastructure.UmlElement;
+import QWiki.Kernel.impl.I18nDescriptiveElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,7 +26,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.Glossary.impl.GlossaryTermDefinitionImpl#getOwner <em>Owner</em>}</li>
  *   <li>{@link QWiki.Glossary.impl.GlossaryTermDefinitionImpl#getOwningTerm <em>Owning Term</em>}</li>
  * </ul>
  *
@@ -52,31 +49,6 @@ public class GlossaryTermDefinitionImpl extends I18nDescriptiveElementImpl imple
 	@Override
 	protected EClass eStaticClass() {
 		return GlossaryPackage.Literals.GLOSSARY_TERM_DEFINITION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UmlElement getOwner() {
-		UmlElement owner = basicGetOwner();
-		return owner != null && owner.eIsProxy() ? (UmlElement)eResolveProxy((InternalEObject)owner) : owner;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UmlElement basicGetOwner() {
-		GlossaryTerm owningTerm = getOwningTerm();			
-		if (owningTerm != null) {
-			return owningTerm;
-		}
-		return super.basicGetOwner();
 	}
 
 	/**
@@ -218,23 +190,10 @@ public class GlossaryTermDefinitionImpl extends I18nDescriptiveElementImpl imple
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNER:
-				return isSetOwner();
 			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNING_TERM:
 				return getOwningTerm() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean isSetOwner() {
-		return super.isSetOwner()
-			|| eIsSet(GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNING_TERM);
 	}
 
 } //GlossaryTermDefinitionImpl

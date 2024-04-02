@@ -2,13 +2,15 @@
  */
 package QWiki.Glossary;
 
-import QWiki.Bibliography.Section;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nNamedElement;
+import QWiki.Kernel.I18nString;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
-import QWiki.I18N.I18nString;
+import QWiki.References.Section;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see QWiki.Glossary.GlossaryPackage#getGlossaryTerm()
- * @model annotation="duplicates"
+ * @model
  * @generated
  */
 public interface GlossaryTerm extends I18nNamedElement {
@@ -40,7 +42,6 @@ public interface GlossaryTerm extends I18nNamedElement {
 	 * </p>
 	 * <ul>
 	 *   <li>'{@link QWiki.Glossary.GlossaryTerm#getTermDefinition() <em>Term Definition</em>}'</li>
-	 *   <li>'{@link QWiki.Infrastructure.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -56,6 +57,29 @@ public interface GlossaryTerm extends I18nNamedElement {
 	 * @generated
 	 */
 	EList<GlossaryTermDefinition> getOwnedTermDefinition();
+
+	/**
+	 * Retrieves the first {@link QWiki.Glossary.GlossaryTermDefinition} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Term Definition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Glossary.GlossaryTermDefinition} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Glossary.GlossaryTermDefinition} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedTermDefinition()
+	 * @generated
+	 */
+	GlossaryTermDefinition getOwnedTermDefinition(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Glossary.GlossaryTermDefinition} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Term Definition</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Glossary.GlossaryTermDefinition} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Glossary.GlossaryTermDefinition} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedTermDefinition()
+	 * @generated
+	 */
+	GlossaryTermDefinition getOwnedTermDefinition(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Acronym</b></em>' containment reference.
@@ -111,7 +135,7 @@ public interface GlossaryTerm extends I18nNamedElement {
 
 	/**
 	 * Returns the value of the '<em><b>Term Definition</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.I18N.I18nDescriptiveElement}.
+	 * The list contents are of type {@link QWiki.Kernel.I18nDescriptiveElement}.
 	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -129,9 +153,33 @@ public interface GlossaryTerm extends I18nNamedElement {
 	EList<I18nDescriptiveElement> getTermDefinition();
 
 	/**
+	 * Retrieves the first {@link QWiki.Kernel.I18nDescriptiveElement} with the specified '<em><b>Name</b></em>' from the '<em><b>Term Definition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Kernel.I18nDescriptiveElement} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Kernel.I18nDescriptiveElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getTermDefinition()
+	 * @generated
+	 */
+	I18nDescriptiveElement getTermDefinition(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Kernel.I18nDescriptiveElement} with the specified '<em><b>Name</b></em>' from the '<em><b>Term Definition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Kernel.I18nDescriptiveElement} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass The Ecore class of the {@link QWiki.Kernel.I18nDescriptiveElement} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Kernel.I18nDescriptiveElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getTermDefinition()
+	 * @generated
+	 */
+	I18nDescriptiveElement getTermDefinition(String name, boolean ignoreCase, EClass eClass);
+
+	/**
 	 * Returns the value of the '<em><b>External Term Definition</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.Bibliography.Section}.
-	 * It is bidirectional and its opposite is '{@link QWiki.Bibliography.Section#getTerm <em>Term</em>}'.
+	 * The list contents are of type {@link QWiki.References.Section}.
+	 * It is bidirectional and its opposite is '{@link QWiki.References.Section#getTerm <em>Term</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
 	 * </p>
@@ -146,11 +194,50 @@ public interface GlossaryTerm extends I18nNamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>External Term Definition</em>' reference list.
 	 * @see QWiki.Glossary.GlossaryPackage#getGlossaryTerm_ExternalTermDefinition()
-	 * @see QWiki.Bibliography.Section#getTerm
+	 * @see QWiki.References.Section#getTerm
 	 * @model opposite="term" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
 	EList<Section> getExternalTermDefinition();
+
+	/**
+	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>External Term Definition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getExternalTermDefinition()
+	 * @generated
+	 */
+	Section getExternalTermDefinition(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>External Term Definition</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getExternalTermDefinition()
+	 * @generated
+	 */
+	Section getExternalTermDefinition(String name, boolean ignoreCase);
+
+	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
+	 * </ul>
+	 * </p>
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="redefines"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'t/\' + name'"
+	 * @generated
+	 */
+	String oid();
 
 } // GlossaryTerm

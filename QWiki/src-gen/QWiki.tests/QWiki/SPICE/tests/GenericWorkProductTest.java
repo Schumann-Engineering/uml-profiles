@@ -1,9 +1,9 @@
 /**
  */
-package QWiki.SPICE.tests;
+package QWiki.Spice.tests;
 
-import QWiki.SPICE.GenericWorkProduct;
-import QWiki.SPICE.SPICEFactory;
+import QWiki.Spice.GenericWorkProduct;
+import QWiki.Spice.SPICEFactory;
 
 import junit.textui.TestRunner;
 

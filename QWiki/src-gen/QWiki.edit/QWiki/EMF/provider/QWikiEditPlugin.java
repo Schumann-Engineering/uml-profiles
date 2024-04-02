@@ -8,6 +8,10 @@ import org.eclipse.emf.common.ui.EclipseUIPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.provider.EcoreEditPlugin;
+
+import org.eclipse.uml2.uml.edit.UMLEditPlugin;
+
 /**
  * This is the central singleton for the QWiki editor plugin.
  * <!-- begin-user-doc -->
@@ -40,6 +44,8 @@ public final class QWikiEditPlugin extends EMFPlugin {
 	public QWikiEditPlugin() {
 		super
 			(new ResourceLocator [] {
+				EcoreEditPlugin.INSTANCE,
+				UMLEditPlugin.INSTANCE,
 			});
 	}
 

@@ -72,95 +72,141 @@ public class KernelItemProviderAdapterFactory extends KernelAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.ModelDomain} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.I18nKeyedString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelDomainItemProvider modelDomainItemProvider;
+	protected I18nKeyedStringItemProvider i18nKeyedStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Kernel.ModelDomain}.
+	 * This creates an adapter for a {@link QWiki.Kernel.I18nKeyedString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelDomainAdapter() {
-		if (modelDomainItemProvider == null) {
-			modelDomainItemProvider = new ModelDomainItemProvider(this);
+	public Adapter createI18nKeyedStringAdapter() {
+		if (i18nKeyedStringItemProvider == null) {
+			i18nKeyedStringItemProvider = new I18nKeyedStringItemProvider(this);
 		}
 
-		return modelDomainItemProvider;
+		return i18nKeyedStringItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.ModelRoot} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.I18nBaseString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ModelRootItemProvider modelRootItemProvider;
+	protected I18nBaseStringItemProvider i18nBaseStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Kernel.ModelRoot}.
+	 * This creates an adapter for a {@link QWiki.Kernel.I18nBaseString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createModelRootAdapter() {
-		if (modelRootItemProvider == null) {
-			modelRootItemProvider = new ModelRootItemProvider(this);
+	public Adapter createI18nBaseStringAdapter() {
+		if (i18nBaseStringItemProvider == null) {
+			i18nBaseStringItemProvider = new I18nBaseStringItemProvider(this);
 		}
 
-		return modelRootItemProvider;
+		return i18nBaseStringItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.DO_NOT_USE_RelationshipType} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.I18nValue} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DO_NOT_USE_RelationshipTypeItemProvider dO_NOT_USE_RelationshipTypeItemProvider;
+	protected I18nValueItemProvider i18nValueItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Kernel.DO_NOT_USE_RelationshipType}.
+	 * This creates an adapter for a {@link QWiki.Kernel.I18nValue}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDO_NOT_USE_RelationshipTypeAdapter() {
-		if (dO_NOT_USE_RelationshipTypeItemProvider == null) {
-			dO_NOT_USE_RelationshipTypeItemProvider = new DO_NOT_USE_RelationshipTypeItemProvider(this);
+	public Adapter createI18nValueAdapter() {
+		if (i18nValueItemProvider == null) {
+			i18nValueItemProvider = new I18nValueItemProvider(this);
 		}
 
-		return dO_NOT_USE_RelationshipTypeItemProvider;
+		return i18nValueItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.SuperseedingRelationship} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.I18nString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SuperseedingRelationshipItemProvider superseedingRelationshipItemProvider;
+	protected I18nStringItemProvider i18nStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.Kernel.SuperseedingRelationship}.
+	 * This creates an adapter for a {@link QWiki.Kernel.I18nString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSuperseedingRelationshipAdapter() {
-		if (superseedingRelationshipItemProvider == null) {
-			superseedingRelationshipItemProvider = new SuperseedingRelationshipItemProvider(this);
+	public Adapter createI18nStringAdapter() {
+		if (i18nStringItemProvider == null) {
+			i18nStringItemProvider = new I18nStringItemProvider(this);
 		}
 
-		return superseedingRelationshipItemProvider;
+		return i18nStringItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.QWikiComment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QWikiCommentItemProvider qWikiCommentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Kernel.QWikiComment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQWikiCommentAdapter() {
+		if (qWikiCommentItemProvider == null) {
+			qWikiCommentItemProvider = new QWikiCommentItemProvider(this);
+		}
+
+		return qWikiCommentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Kernel.QWikiContainer} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected QWikiContainerItemProvider qWikiContainerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Kernel.QWikiContainer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createQWikiContainerAdapter() {
+		if (qWikiContainerItemProvider == null) {
+			qWikiContainerItemProvider = new QWikiContainerItemProvider(this);
+		}
+
+		return qWikiContainerItemProvider;
 	}
 
 	/**
@@ -268,10 +314,12 @@ public class KernelItemProviderAdapterFactory extends KernelAdapterFactory imple
 	 */
 	@Override
 	public void dispose() {
-		if (modelDomainItemProvider != null) modelDomainItemProvider.dispose();
-		if (modelRootItemProvider != null) modelRootItemProvider.dispose();
-		if (dO_NOT_USE_RelationshipTypeItemProvider != null) dO_NOT_USE_RelationshipTypeItemProvider.dispose();
-		if (superseedingRelationshipItemProvider != null) superseedingRelationshipItemProvider.dispose();
+		if (i18nKeyedStringItemProvider != null) i18nKeyedStringItemProvider.dispose();
+		if (i18nBaseStringItemProvider != null) i18nBaseStringItemProvider.dispose();
+		if (i18nValueItemProvider != null) i18nValueItemProvider.dispose();
+		if (i18nStringItemProvider != null) i18nStringItemProvider.dispose();
+		if (qWikiCommentItemProvider != null) qWikiCommentItemProvider.dispose();
+		if (qWikiContainerItemProvider != null) qWikiContainerItemProvider.dispose();
 	}
 
 }

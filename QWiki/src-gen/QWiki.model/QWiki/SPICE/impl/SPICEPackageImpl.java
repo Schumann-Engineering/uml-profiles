@@ -1,40 +1,42 @@
 /**
  */
-package QWiki.SPICE.impl;
+package QWiki.Spice.impl;
 
-import QWiki.Bibliography.BibliographyPackage;
+import QWiki.Domain.DomainPackage;
 
-import QWiki.Bibliography.impl.BibliographyPackageImpl;
+import QWiki.Domain.impl.DomainPackageImpl;
 
 import QWiki.Glossary.GlossaryPackage;
 
 import QWiki.Glossary.impl.GlossaryPackageImpl;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.impl.I18NPackageImpl;
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.Infrastructure.impl.InfrastructurePackageImpl;
-
 import QWiki.Kernel.KernelPackage;
+
+import QWiki.Kernel.Relationships.RelationshipsPackage;
+
+import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
 
 import QWiki.Kernel.impl.KernelPackageImpl;
 
-import QWiki.RASCI.RASCIPackage;
+import QWiki.Rasci.RASCIPackage;
 
-import QWiki.RASCI.impl.RASCIPackageImpl;
+import QWiki.Rasci.impl.RASCIPackageImpl;
 
-import QWiki.SPICE.GenericWorkProduct;
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.ProcessReferenceModelDomain;
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
-import QWiki.SPICE.SpiceElement;
-import QWiki.SPICE.WorkProduct;
-import QWiki.SPICE.WorkProductType;
+import QWiki.References.ReferencesPackage;
+
+import QWiki.References.impl.ReferencesPackageImpl;
+
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.GenericWorkProduct;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.ProcessReferenceModelDomain;
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceElement;
+import QWiki.Spice.WorkProduct;
+import QWiki.Spice.WorkProductType;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -44,8 +46,13 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.eclipse.uml2.types.TypesPackage;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +66,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass spiceBasePractiseEClass = null;
+	private EClass basePractiseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -135,7 +142,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see QWiki.SPICE.SPICEPackage#eNS_URI
+	 * @see QWiki.Spice.SPICEPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
@@ -170,37 +177,42 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		TypesPackage.eINSTANCE.eClass();
+		UMLPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(InfrastructurePackage.eNS_URI);
-		InfrastructurePackageImpl theInfrastructurePackage = (InfrastructurePackageImpl)(registeredPackage instanceof InfrastructurePackageImpl ? registeredPackage : InfrastructurePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
 		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(registeredPackage instanceof KernelPackageImpl ? registeredPackage : KernelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
-		I18NPackageImpl theI18NPackage = (I18NPackageImpl)(registeredPackage instanceof I18NPackageImpl ? registeredPackage : I18NPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
 		RASCIPackageImpl theRASCIPackage = (RASCIPackageImpl)(registeredPackage instanceof RASCIPackageImpl ? registeredPackage : RASCIPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
-		BibliographyPackageImpl theBibliographyPackage = (BibliographyPackageImpl)(registeredPackage instanceof BibliographyPackageImpl ? registeredPackage : BibliographyPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
+		ReferencesPackageImpl theReferencesPackage = (ReferencesPackageImpl)(registeredPackage instanceof ReferencesPackageImpl ? registeredPackage : ReferencesPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GlossaryPackage.eNS_URI);
 		GlossaryPackageImpl theGlossaryPackage = (GlossaryPackageImpl)(registeredPackage instanceof GlossaryPackageImpl ? registeredPackage : GlossaryPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
+		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theSPICEPackage.createPackageContents();
-		theInfrastructurePackage.createPackageContents();
 		theKernelPackage.createPackageContents();
-		theI18NPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 		theRASCIPackage.createPackageContents();
-		theBibliographyPackage.createPackageContents();
+		theReferencesPackage.createPackageContents();
 		theGlossaryPackage.createPackageContents();
+		theDomainPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theSPICEPackage.initializePackageContents();
-		theInfrastructurePackage.initializePackageContents();
 		theKernelPackage.initializePackageContents();
-		theI18NPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 		theRASCIPackage.initializePackageContents();
-		theBibliographyPackage.initializePackageContents();
+		theReferencesPackage.initializePackageContents();
 		theGlossaryPackage.initializePackageContents();
+		theDomainPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theSPICEPackage.freeze();
@@ -216,8 +228,8 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getSpiceBasePractise() {
-		return spiceBasePractiseEClass;
+	public EClass getBasePractise() {
+		return basePractiseEClass;
 	}
 
 	/**
@@ -226,8 +238,8 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceBasePractise_OwningProcess() {
-		return (EReference)spiceBasePractiseEClass.getEStructuralFeatures().get(0);
+	public EReference getBasePractise_OwningProcess() {
+		return (EReference)basePractiseEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -236,8 +248,8 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceBasePractise_FacilitatedOutcome() {
-		return (EReference)spiceBasePractiseEClass.getEStructuralFeatures().get(1);
+	public EReference getBasePractise_FacilitatedOutcome() {
+		return (EReference)basePractiseEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -246,8 +258,18 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceBasePractise_FacilitatedWorkProduct() {
-		return (EReference)spiceBasePractiseEClass.getEStructuralFeatures().get(2);
+	public EReference getBasePractise_FacilitatedWorkProduct() {
+		return (EReference)basePractiseEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getBasePractise__Oid_1() {
+		return basePractiseEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -296,7 +318,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceElement_OwningRole() {
+	public EReference getSpiceElement_OwnerRole() {
 		return (EReference)spiceElementEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -306,7 +328,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceElement_ManagingRole() {
+	public EReference getSpiceElement_ManagerRole() {
 		return (EReference)spiceElementEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -316,7 +338,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getSpiceElement_ParticipatingRole() {
+	public EReference getSpiceElement_ParticipantRole() {
 		return (EReference)spiceElementEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -386,6 +408,16 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProcessReferenceModel__Oid_1() {
+		return processReferenceModelEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProcess() {
 		return processEClass;
 	}
@@ -446,6 +478,16 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getProcess__Oid_1() {
+		return processEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProcessGroup() {
 		return processGroupEClass;
 	}
@@ -458,6 +500,16 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	@Override
 	public EReference getProcessGroup_OwnedProcess() {
 		return (EReference)processGroupEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getProcessGroup__Oid_1() {
+		return processGroupEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -516,6 +568,16 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
+	public EOperation getOutcome__Oid_1() {
+		return outcomeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getWorkProduct() {
 		return workProductEClass;
 	}
@@ -546,7 +608,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_Content() {
+	public EReference getWorkProduct_FacilitatingOutcome() {
 		return (EReference)workProductEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -556,7 +618,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_FacilitatingOutcome() {
+	public EReference getWorkProduct_FacilitatedProcess() {
 		return (EReference)workProductEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -566,7 +628,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_FacilitatedProcess() {
+	public EReference getWorkProduct_FacilitatingProcess() {
 		return (EReference)workProductEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -576,18 +638,8 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getWorkProduct_FacilitatingProcess() {
-		return (EReference)workProductEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getWorkProduct_WorkProductType() {
-		return (EAttribute)workProductEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)workProductEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -597,7 +649,17 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	 */
 	@Override
 	public EReference getWorkProduct_FacilitatedOutcome() {
-		return (EReference)workProductEClass.getEStructuralFeatures().get(7);
+		return (EReference)workProductEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getWorkProduct__Oid_1() {
+		return workProductEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -669,18 +731,19 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		spiceBasePractiseEClass = createEClass(SPICE_BASE_PRACTISE);
-		createEReference(spiceBasePractiseEClass, SPICE_BASE_PRACTISE__OWNING_PROCESS);
-		createEReference(spiceBasePractiseEClass, SPICE_BASE_PRACTISE__FACILITATED_OUTCOME);
-		createEReference(spiceBasePractiseEClass, SPICE_BASE_PRACTISE__FACILITATED_WORK_PRODUCT);
+		basePractiseEClass = createEClass(BASE_PRACTISE);
+		createEReference(basePractiseEClass, BASE_PRACTISE__OWNING_PROCESS);
+		createEReference(basePractiseEClass, BASE_PRACTISE__FACILITATED_OUTCOME);
+		createEReference(basePractiseEClass, BASE_PRACTISE__FACILITATED_WORK_PRODUCT);
+		createEOperation(basePractiseEClass, BASE_PRACTISE___OID);
 
 		spiceElementEClass = createEClass(SPICE_ELEMENT);
 		createEReference(spiceElementEClass, SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL);
 		createEAttribute(spiceElementEClass, SPICE_ELEMENT__NUMBER);
 		createEReference(spiceElementEClass, SPICE_ELEMENT__FACILITATED_SECTION);
-		createEReference(spiceElementEClass, SPICE_ELEMENT__OWNING_ROLE);
-		createEReference(spiceElementEClass, SPICE_ELEMENT__MANAGING_ROLE);
-		createEReference(spiceElementEClass, SPICE_ELEMENT__PARTICIPATING_ROLE);
+		createEReference(spiceElementEClass, SPICE_ELEMENT__OWNER_ROLE);
+		createEReference(spiceElementEClass, SPICE_ELEMENT__MANAGER_ROLE);
+		createEReference(spiceElementEClass, SPICE_ELEMENT__PARTICIPANT_ROLE);
 		createEReference(spiceElementEClass, SPICE_ELEMENT__ROLE);
 
 		processReferenceModelEClass = createEClass(PROCESS_REFERENCE_MODEL);
@@ -688,6 +751,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		createEAttribute(processReferenceModelEClass, PROCESS_REFERENCE_MODEL__PRM_DOMAIN);
 		createEReference(processReferenceModelEClass, PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
 		createEOperation(processReferenceModelEClass, PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN);
+		createEOperation(processReferenceModelEClass, PROCESS_REFERENCE_MODEL___OID);
 
 		processEClass = createEClass(PROCESS);
 		createEReference(processEClass, PROCESS__OWNING_PROCESS_GROUP);
@@ -695,25 +759,28 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		createEReference(processEClass, PROCESS__FACILITATING_WORK_PRODUCT);
 		createEReference(processEClass, PROCESS__FACILITATED_WORK_PRODUCT);
 		createEReference(processEClass, PROCESS__OWNED_BASE_PRACTISE);
+		createEOperation(processEClass, PROCESS___OID);
 
 		processGroupEClass = createEClass(PROCESS_GROUP);
 		createEReference(processGroupEClass, PROCESS_GROUP__OWNED_PROCESS);
+		createEOperation(processGroupEClass, PROCESS_GROUP___OID);
 
 		outcomeEClass = createEClass(OUTCOME);
 		createEReference(outcomeEClass, OUTCOME__FACILITATING_BASE_PRACTISE);
 		createEReference(outcomeEClass, OUTCOME__REQUIRED_WORKPRODUCT);
 		createEReference(outcomeEClass, OUTCOME__RESULTING_WORKPRODUCT);
 		createEReference(outcomeEClass, OUTCOME__OWNING_PROCESS);
+		createEOperation(outcomeEClass, OUTCOME___OID);
 
 		workProductEClass = createEClass(WORK_PRODUCT);
 		createEReference(workProductEClass, WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
 		createEReference(workProductEClass, WORK_PRODUCT__CHARACTERISTIC);
-		createEReference(workProductEClass, WORK_PRODUCT__CONTENT);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATING_OUTCOME);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATED_PROCESS);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATING_PROCESS);
 		createEAttribute(workProductEClass, WORK_PRODUCT__WORK_PRODUCT_TYPE);
 		createEReference(workProductEClass, WORK_PRODUCT__FACILITATED_OUTCOME);
+		createEOperation(workProductEClass, WORK_PRODUCT___OID);
 
 		genericWorkProductEClass = createEClass(GENERIC_WORK_PRODUCT);
 		createEReference(genericWorkProductEClass, GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
@@ -747,37 +814,40 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
+		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
 		RASCIPackage theRASCIPackage = (RASCIPackage)EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
-		BibliographyPackage theBibliographyPackage = (BibliographyPackage)EPackage.Registry.INSTANCE.getEPackage(BibliographyPackage.eNS_URI);
-		I18NPackage theI18NPackage = (I18NPackage)EPackage.Registry.INSTANCE.getEPackage(I18NPackage.eNS_URI);
+		ReferencesPackage theReferencesPackage = (ReferencesPackage)EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		spiceBasePractiseEClass.getESuperTypes().add(this.getSpiceElement());
+		basePractiseEClass.getESuperTypes().add(this.getSpiceElement());
+		spiceElementEClass.getESuperTypes().add(theKernelPackage.getQWikiContainer());
 		spiceElementEClass.getESuperTypes().add(theRASCIPackage.getRasciElement());
-		processReferenceModelEClass.getESuperTypes().add(theI18NPackage.getI18nDescriptiveElement());
+		processReferenceModelEClass.getESuperTypes().add(theKernelPackage.getQWikiContainer());
 		processEClass.getESuperTypes().add(this.getSpiceElement());
 		processGroupEClass.getESuperTypes().add(this.getSpiceElement());
-		outcomeEClass.getESuperTypes().add(theI18NPackage.getI18nNamedElement());
+		outcomeEClass.getESuperTypes().add(theKernelPackage.getI18nNamedElement());
 		workProductEClass.getESuperTypes().add(this.getSpiceElement());
 		genericWorkProductEClass.getESuperTypes().add(this.getWorkProduct());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(spiceBasePractiseEClass, SpiceBasePractise.class, "SpiceBasePractise", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSpiceBasePractise_OwningProcess(), this.getProcess(), this.getProcess_OwnedBasePractise(), "owningProcess", null, 1, 1, SpiceBasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceBasePractise_FacilitatedOutcome(), this.getOutcome(), this.getOutcome_FacilitatingBasePractise(), "facilitatedOutcome", null, 1, -1, SpiceBasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceBasePractise_FacilitatedWorkProduct(), this.getWorkProduct(), null, "facilitatedWorkProduct", null, 0, 1, SpiceBasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(basePractiseEClass, BasePractise.class, "BasePractise", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBasePractise_OwningProcess(), this.getProcess(), this.getProcess_OwnedBasePractise(), "owningProcess", null, 1, 1, BasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBasePractise_FacilitatedOutcome(), this.getOutcome(), this.getOutcome_FacilitatingBasePractise(), "facilitatedOutcome", null, 1, -1, BasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBasePractise_FacilitatedWorkProduct(), this.getWorkProduct(), null, "facilitatedWorkProduct", null, 0, 1, BasePractise.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getBasePractise__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(spiceElementEClass, SpiceElement.class, "SpiceElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSpiceElement_OwningProcessReferenceModel(), this.getProcessReferenceModel(), this.getProcessReferenceModel_OwnedSpiceElement(), "owningProcessReferenceModel", null, 0, 1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getSpiceElement_Number(), ecorePackage.getEString(), "number", null, 1, 1, SpiceElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceElement_FacilitatedSection(), theBibliographyPackage.getSection(), theBibliographyPackage.getSection_FacilitatingSpiceElement(), "facilitatedSection", null, 0, -1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceElement_OwningRole(), theRASCIPackage.getRole(), null, "owningRole", null, 0, 1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceElement_ManagingRole(), theRASCIPackage.getRole(), null, "managingRole", null, 0, 1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSpiceElement_ParticipatingRole(), theRASCIPackage.getRole(), null, "participatingRole", null, 0, -1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpiceElement_FacilitatedSection(), theReferencesPackage.getSection(), theReferencesPackage.getSection_FacilitatingSpiceElement(), "facilitatedSection", null, 0, -1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpiceElement_OwnerRole(), theRASCIPackage.getRole(), null, "ownerRole", null, 0, 1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpiceElement_ManagerRole(), theRASCIPackage.getRole(), null, "managerRole", null, 0, 1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getSpiceElement_ParticipantRole(), theRASCIPackage.getRole(), null, "participantRole", null, 0, -1, SpiceElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getSpiceElement_Role(), theRASCIPackage.getRole(), null, "role", null, 0, -1, SpiceElement.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(processReferenceModelEClass, ProcessReferenceModel.class, "ProcessReferenceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -787,31 +857,40 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 
 		initEOperation(getProcessReferenceModel__OidForDomain(), ecorePackage.getEString(), "oidForDomain", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(processEClass, QWiki.SPICE.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcess_OwningProcessGroup(), this.getProcessGroup(), this.getProcessGroup_OwnedProcess(), "owningProcessGroup", null, 0, 1, QWiki.SPICE.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getProcess_OwnedOutcome(), this.getOutcome(), this.getOutcome_OwningProcess(), "ownedOutcome", null, 0, -1, QWiki.SPICE.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProcess_FacilitatingWorkProduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatedProcess(), "facilitatingWorkProduct", null, 0, -1, QWiki.SPICE.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getProcess_FacilitatedWorkProduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatingProcess(), "facilitatedWorkProduct", null, 0, -1, QWiki.SPICE.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getProcess_OwnedBasePractise(), this.getSpiceBasePractise(), this.getSpiceBasePractise_OwningProcess(), "ownedBasePractise", null, 0, -1, QWiki.SPICE.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEOperation(getProcessReferenceModel__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(processEClass, QWiki.Spice.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcess_OwningProcessGroup(), this.getProcessGroup(), this.getProcessGroup_OwnedProcess(), "owningProcessGroup", null, 0, 1, QWiki.Spice.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getProcess_OwnedOutcome(), this.getOutcome(), this.getOutcome_OwningProcess(), "ownedOutcome", null, 0, -1, QWiki.Spice.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcess_FacilitatingWorkProduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatedProcess(), "facilitatingWorkProduct", null, 0, -1, QWiki.Spice.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getProcess_FacilitatedWorkProduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatingProcess(), "facilitatedWorkProduct", null, 0, -1, QWiki.Spice.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getProcess_OwnedBasePractise(), this.getBasePractise(), this.getBasePractise_OwningProcess(), "ownedBasePractise", null, 0, -1, QWiki.Spice.Process.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getProcess__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(processGroupEClass, ProcessGroup.class, "ProcessGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcessGroup_OwnedProcess(), this.getProcess(), this.getProcess_OwningProcessGroup(), "ownedProcess", null, 0, -1, ProcessGroup.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getProcessGroup__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(outcomeEClass, Outcome.class, "Outcome", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutcome_FacilitatingBasePractise(), this.getSpiceBasePractise(), this.getSpiceBasePractise_FacilitatedOutcome(), "facilitatingBasePractise", null, 1, -1, Outcome.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getOutcome_FacilitatingBasePractise(), this.getBasePractise(), this.getBasePractise_FacilitatedOutcome(), "facilitatingBasePractise", null, 1, -1, Outcome.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOutcome_RequiredWorkproduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatedOutcome(), "requiredWorkproduct", null, 0, -1, Outcome.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOutcome_ResultingWorkproduct(), this.getWorkProduct(), this.getWorkProduct_FacilitatingOutcome(), "resultingWorkproduct", null, 0, -1, Outcome.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getOutcome_OwningProcess(), this.getProcess(), this.getProcess_OwnedOutcome(), "owningProcess", null, 0, 1, Outcome.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
+		initEOperation(getOutcome__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(workProductEClass, WorkProduct.class, "WorkProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getWorkProduct_OwningWorkProductGroup(), this.getGenericWorkProduct(), this.getGenericWorkProduct_OwnedWorkProduct(), "owningWorkProductGroup", null, 0, 1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWorkProduct_Characteristic(), theI18NPackage.getI18nString(), null, "characteristic", null, 0, -1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getWorkProduct_Content(), theI18NPackage.getI18nString(), null, "content", null, 0, -1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getWorkProduct_Characteristic(), theKernelPackage.getI18nString(), null, "characteristic", null, 0, 1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatingOutcome(), this.getOutcome(), this.getOutcome_ResultingWorkproduct(), "facilitatingOutcome", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatedProcess(), this.getProcess(), this.getProcess_FacilitatingWorkProduct(), "facilitatedProcess", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatingProcess(), this.getProcess(), this.getProcess_FacilitatedWorkProduct(), "facilitatingProcess", null, 0, 1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getWorkProduct_WorkProductType(), this.getWorkProductType(), "workProductType", null, 1, 1, WorkProduct.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getWorkProduct_FacilitatedOutcome(), this.getOutcome(), this.getOutcome_RequiredWorkproduct(), "facilitatedOutcome", null, 0, -1, WorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEOperation(getWorkProduct__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(genericWorkProductEClass, GenericWorkProduct.class, "GenericWorkProduct", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGenericWorkProduct_OwnedWorkProduct(), this.getWorkProduct(), this.getWorkProduct_OwningWorkProductGroup(), "ownedWorkProduct", null, 0, -1, GenericWorkProduct.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -839,20 +918,38 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/uml2/2.0.0/UML
+		createUMLAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// duplicates
-		createDuplicatesAnnotations();
+		// redefines
+		createRedefinesAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL
+		createOCLAnnotations();
 		// subsets
 		createSubsetsAnnotations();
 		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
 		createEmofAnnotations();
 		// union
 		createUnionAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUMLAnnotations() {
+		String source = "http://www.eclipse.org/uml2/2.0.0/UML";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "originalName", "SPICE"
+		   });
 	}
 
 	/**
@@ -872,42 +969,104 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	}
 
 	/**
-	 * Initializes the annotations for <b>duplicates</b>.
+	 * Initializes the annotations for <b>redefines</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createDuplicatesAnnotations() {
-		String source = "duplicates";
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
 		addAnnotation
-		  (spiceBasePractiseEClass,
+		  (getBasePractise__Oid_1(),
 		   source,
 		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
 		   });
 		addAnnotation
-		  (processReferenceModelEClass,
+		  (getProcess__Oid_1(),
 		   source,
 		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
 		   });
 		addAnnotation
-		  (processEClass,
+		  (getProcessGroup__Oid_1(),
 		   source,
 		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
 		   });
 		addAnnotation
-		  (processGroupEClass,
+		  (getOutcome__Oid_1(),
 		   source,
 		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
 		   });
 		addAnnotation
-		  (outcomeEClass,
+		  (getWorkProduct__Oid_1(),
 		   source,
 		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createOCLAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
+		addAnnotation
+		  (getBasePractise__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "\'bp/\' + number + \'@\' + owningProcess.oid()"
 		   });
 		addAnnotation
-		  (workProductEClass,
+		  (getProcessReferenceModel__OidForDomain(),
 		   source,
 		   new String[] {
+			   "body", "\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
+		   });
+		addAnnotation
+		  (getProcessReferenceModel__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "if (isNonStandard = true) then oidForDomain() + \'-xt\' else oidForDomain() + \'\' endif"
+		   });
+		addAnnotation
+		  (getProcess__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "owningProcessGroup.oid() +  \'.\' + number"
+		   });
+		addAnnotation
+		  (getProcessGroup__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "\'p/\' + number"
+		   });
+		addAnnotation
+		  (getOutcome__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "\'oc/\' + uuid + \'@\' + owningProcess.oid()"
+		   });
+		addAnnotation
+		  (getWorkProduct__Oid_1(),
+		   source,
+		   new String[] {
+			   "body", "\'wp/\' + if (owningWorkProductGroup->notEmpty()) then owningWorkProductGroup.number + \'-\' else \'\' endif + number + \'/\' + owningProcessReferenceModel.oid()"
 		   });
 	}
 
@@ -920,12 +1079,12 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";
 		addAnnotation
-		  (getSpiceBasePractise_OwningProcess(),
+		  (getBasePractise_OwningProcess(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
 		   });
 		addAnnotation
 		  (getSpiceElement_OwningProcessReferenceModel(),
@@ -933,10 +1092,10 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
 		   });
 		addAnnotation
-		  (getSpiceElement_OwningRole(),
+		  (getSpiceElement_OwnerRole(),
 		   source,
 		   new String[] {
 		   },
@@ -944,7 +1103,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 			 URI.createURI(eNS_URI).appendFragment("//SpiceElement/role")
 		   });
 		addAnnotation
-		  (getSpiceElement_ManagingRole(),
+		  (getSpiceElement_ManagerRole(),
 		   source,
 		   new String[] {
 		   },
@@ -952,7 +1111,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 			 URI.createURI(eNS_URI).appendFragment("//SpiceElement/role")
 		   });
 		addAnnotation
-		  (getSpiceElement_ParticipatingRole(),
+		  (getSpiceElement_ParticipantRole(),
 		   source,
 		   new String[] {
 		   },
@@ -965,7 +1124,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 		addAnnotation
 		  (getProcess_OwningProcessGroup(),
@@ -973,7 +1132,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
 		   });
 		addAnnotation
 		  (getProcess_OwnedOutcome(),
@@ -981,7 +1140,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 		addAnnotation
 		  (getProcess_OwnedBasePractise(),
@@ -989,7 +1148,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 		addAnnotation
 		  (getProcessGroup_OwnedProcess(),
@@ -997,7 +1156,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 		addAnnotation
 		  (getOutcome_OwningProcess(),
@@ -1005,7 +1164,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
 		   });
 		addAnnotation
 		  (getWorkProduct_OwningWorkProductGroup(),
@@ -1013,7 +1172,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/owner")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
 		   });
 		addAnnotation
 		  (getGenericWorkProduct_OwnedWorkProduct(),
@@ -1021,7 +1180,7 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(InfrastructurePackage.eNS_URI).appendFragment("//UmlElement/ownedElement")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 	}
 
@@ -1034,25 +1193,25 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 	protected void createEmofAnnotations() {
 		String source = "http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName";
 		addAnnotation
-		  (getSpiceBasePractise_FacilitatedWorkProduct(),
+		  (getBasePractise_FacilitatedWorkProduct(),
 		   source,
 		   new String[] {
 			   "body", "facilitatingBacePractise"
 		   });
 		addAnnotation
-		  (getSpiceElement_OwningRole(),
+		  (getSpiceElement_OwnerRole(),
 		   source,
 		   new String[] {
 			   "body", "spiceelement"
 		   });
 		addAnnotation
-		  (getSpiceElement_ManagingRole(),
+		  (getSpiceElement_ManagerRole(),
 		   source,
 		   new String[] {
 			   "body", "spiceelement"
 		   });
 		addAnnotation
-		  (getSpiceElement_ParticipatingRole(),
+		  (getSpiceElement_ParticipantRole(),
 		   source,
 		   new String[] {
 			   "body", "spiceelement"
@@ -1077,22 +1236,6 @@ public class SPICEPackageImpl extends EPackageImpl implements SPICEPackage {
 		  (getSpiceElement_Role(),
 		   source,
 		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation
-		  (getProcessReferenceModel__OidForDomain(),
-		   source,
-		   new String[] {
-			   "body", "\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
 		   });
 	}
 

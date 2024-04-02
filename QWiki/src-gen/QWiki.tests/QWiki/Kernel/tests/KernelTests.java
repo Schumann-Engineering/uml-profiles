@@ -31,10 +31,11 @@ public class KernelTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new KernelTests("Kernel Tests");
-		suite.addTestSuite(ModelDomainTest.class);
-		suite.addTestSuite(ModelRootTest.class);
-		suite.addTestSuite(DO_NOT_USE_RelationshipTypeTest.class);
-		suite.addTestSuite(SuperseedingRelationshipTest.class);
+		suite.addTestSuite(I18nKeyedStringTest.class);
+		suite.addTestSuite(I18nBaseStringTest.class);
+		suite.addTestSuite(I18nStringTest.class);
+		suite.addTestSuite(QWikiCommentTest.class);
+		suite.addTestSuite(QWikiContainerTest.class);
 		return suite;
 	}
 

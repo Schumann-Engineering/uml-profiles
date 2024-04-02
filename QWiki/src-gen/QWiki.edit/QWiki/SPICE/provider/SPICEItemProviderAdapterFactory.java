@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
-import QWiki.SPICE.util.SPICEAdapterFactory;
+import QWiki.Spice.util.SPICEAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -72,30 +72,30 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.SpiceBasePractise} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.BasePractise} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SpiceBasePractiseItemProvider spiceBasePractiseItemProvider;
+	protected BasePractiseItemProvider basePractiseItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.SpiceBasePractise}.
+	 * This creates an adapter for a {@link QWiki.Spice.BasePractise}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSpiceBasePractiseAdapter() {
-		if (spiceBasePractiseItemProvider == null) {
-			spiceBasePractiseItemProvider = new SpiceBasePractiseItemProvider(this);
+	public Adapter createBasePractiseAdapter() {
+		if (basePractiseItemProvider == null) {
+			basePractiseItemProvider = new BasePractiseItemProvider(this);
 		}
 
-		return spiceBasePractiseItemProvider;
+		return basePractiseItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.ProcessReferenceModel} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.ProcessReferenceModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -103,7 +103,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected ProcessReferenceModelItemProvider processReferenceModelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.ProcessReferenceModel}.
+	 * This creates an adapter for a {@link QWiki.Spice.ProcessReferenceModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -118,7 +118,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.Process} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.Process} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -126,7 +126,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected ProcessItemProvider processItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.Process}.
+	 * This creates an adapter for a {@link QWiki.Spice.Process}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -141,7 +141,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.ProcessGroup} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.ProcessGroup} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -149,7 +149,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected ProcessGroupItemProvider processGroupItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.ProcessGroup}.
+	 * This creates an adapter for a {@link QWiki.Spice.ProcessGroup}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -164,7 +164,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.Outcome} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.Outcome} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -172,7 +172,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected OutcomeItemProvider outcomeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.Outcome}.
+	 * This creates an adapter for a {@link QWiki.Spice.Outcome}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -187,7 +187,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.WorkProduct} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.WorkProduct} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,7 +195,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected WorkProductItemProvider workProductItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.WorkProduct}.
+	 * This creates an adapter for a {@link QWiki.Spice.WorkProduct}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -210,7 +210,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.SPICE.GenericWorkProduct} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.GenericWorkProduct} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -218,7 +218,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	protected GenericWorkProductItemProvider genericWorkProductItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.SPICE.GenericWorkProduct}.
+	 * This creates an adapter for a {@link QWiki.Spice.GenericWorkProduct}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -337,7 +337,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	 */
 	@Override
 	public void dispose() {
-		if (spiceBasePractiseItemProvider != null) spiceBasePractiseItemProvider.dispose();
+		if (basePractiseItemProvider != null) basePractiseItemProvider.dispose();
 		if (processReferenceModelItemProvider != null) processReferenceModelItemProvider.dispose();
 		if (processItemProvider != null) processItemProvider.dispose();
 		if (processGroupItemProvider != null) processGroupItemProvider.dispose();

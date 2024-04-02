@@ -157,20 +157,25 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import QWiki.Glossary.provider.GlossaryItemProviderAdapterFactory;
 
-import QWiki.Bibliography.provider.BibliographyItemProviderAdapterFactory;
+import QWiki.Domain.provider.DomainItemProviderAdapterFactory;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.provider.I18NItemProviderAdapterFactory;
-import QWiki.Infrastructure.provider.InfrastructureItemProviderAdapterFactory;
+import QWiki.Kernel.Relationships.provider.RelationshipsItemProviderAdapterFactory;
 
 import QWiki.Kernel.provider.KernelItemProviderAdapterFactory;
 
-import QWiki.RASCI.provider.RASCIItemProviderAdapterFactory;
+import QWiki.Rasci.provider.RASCIItemProviderAdapterFactory;
 
-import QWiki.SPICE.provider.SPICEItemProviderAdapterFactory;
+import QWiki.References.provider.ReferencesItemProviderAdapterFactory;
+
+import QWiki.Spice.provider.SPICEItemProviderAdapterFactory;
+
+import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
 
 /**
@@ -723,13 +728,15 @@ public class GlossaryEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new InfrastructureItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new KernelItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new I18NItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RelationshipsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SPICEItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new RASCIItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new BibliographyItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ReferencesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new DomainItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new UMLItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

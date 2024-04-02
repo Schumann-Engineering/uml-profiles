@@ -4,19 +4,19 @@ package QWiki.Glossary.util;
 
 import QWiki.Glossary.*;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
+import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.Kernel.I18nNamedElement;
+import QWiki.Kernel.QWikiElement;
+import QWiki.Kernel.QWikiNamedElement;
 
-import QWiki.Infrastructure.UmlElement;
-import QWiki.Infrastructure.UmlNamedElement;
-
-import QWiki.Kernel.ModelElement;
-import QWiki.Kernel.ModelTaggedElement;
-
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,10 +80,11 @@ public class GlossarySwitch<T> extends Switch<T> {
 				T result = caseGlossaryTermDefinition(glossaryTermDefinition);
 				if (result == null) result = caseI18nDescriptiveElement(glossaryTermDefinition);
 				if (result == null) result = caseI18nNamedElement(glossaryTermDefinition);
-				if (result == null) result = caseUmlNamedElement(glossaryTermDefinition);
-				if (result == null) result = caseModelElement(glossaryTermDefinition);
-				if (result == null) result = caseModelTaggedElement(glossaryTermDefinition);
-				if (result == null) result = caseUmlElement(glossaryTermDefinition);
+				if (result == null) result = caseQWikiNamedElement(glossaryTermDefinition);
+				if (result == null) result = caseNamedElement(glossaryTermDefinition);
+				if (result == null) result = caseQWikiElement(glossaryTermDefinition);
+				if (result == null) result = caseElement(glossaryTermDefinition);
+				if (result == null) result = caseEModelElement(glossaryTermDefinition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -91,10 +92,11 @@ public class GlossarySwitch<T> extends Switch<T> {
 				GlossaryTerm glossaryTerm = (GlossaryTerm)theEObject;
 				T result = caseGlossaryTerm(glossaryTerm);
 				if (result == null) result = caseI18nNamedElement(glossaryTerm);
-				if (result == null) result = caseUmlNamedElement(glossaryTerm);
-				if (result == null) result = caseModelElement(glossaryTerm);
-				if (result == null) result = caseModelTaggedElement(glossaryTerm);
-				if (result == null) result = caseUmlElement(glossaryTerm);
+				if (result == null) result = caseQWikiNamedElement(glossaryTerm);
+				if (result == null) result = caseNamedElement(glossaryTerm);
+				if (result == null) result = caseQWikiElement(glossaryTerm);
+				if (result == null) result = caseElement(glossaryTerm);
+				if (result == null) result = caseEModelElement(glossaryTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -133,62 +135,77 @@ public class GlossarySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlElement(UmlElement object) {
+	public T caseEModelElement(EModelElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Tagged Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Tagged Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelTaggedElement(ModelTaggedElement object) {
+	public T caseElement(Element object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseModelElement(ModelElement object) {
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlNamedElement(UmlNamedElement object) {
+	public T caseQWikiElement(QWikiElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiNamedElement(QWikiNamedElement object) {
 		return null;
 	}
 

@@ -1,13 +1,9 @@
 /**
  */
-package QWiki.SPICE.impl;
+package QWiki.Spice.impl;
 
-import QWiki.Infrastructure.UmlElement;
-
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.SPICEPackage;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -27,6 +23,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
+import org.eclipse.uml2.uml.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Process Group</b></em>'.
@@ -35,8 +33,8 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.SPICE.impl.ProcessGroupImpl#getOwnedElement <em>Owned Element</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessGroupImpl#getOwnedProcess <em>Owned Process</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessGroupImpl#getOwnedMembers <em>Owned Member</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessGroupImpl#getOwnedProcess <em>Owned Process</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,7 +48,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<QWiki.SPICE.Process> ownedProcess;
+	protected EList<QWiki.Spice.Process> ownedProcess;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,19 +75,19 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 */
 	@Override
-	public EList<UmlElement> getOwnedElement() {
-		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, SPICEPackage.PROCESS_GROUP__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<NamedElement> getOwnedMembers() {
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS_GROUP__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
+	 * The array of subset feature identifiers for the '{@link #getOwnedMembers() <em>Owned Member</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
+	 * @see #getOwnedMembers()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {SPICEPackage.PROCESS_GROUP__OWNED_COMMENT, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS_GROUP__OWNED_RULE, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,11 +95,34 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 */
 	@Override
-	public EList<QWiki.SPICE.Process> getOwnedProcess() {
+	public EList<QWiki.Spice.Process> getOwnedProcess() {
 		if (ownedProcess == null) {
-			ownedProcess = new EObjectContainmentWithInverseEList<QWiki.SPICE.Process>(QWiki.SPICE.Process.class, this, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS, SPICEPackage.PROCESS__OWNING_PROCESS_GROUP);
+			ownedProcess = new EObjectContainmentWithInverseEList<QWiki.Spice.Process>(QWiki.Spice.Process.class, this, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS, SPICEPackage.PROCESS__OWNING_PROCESS_GROUP);
 		}
 		return ownedProcess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QWiki.Spice.Process getOwnedProcess(String name) {
+		return getOwnedProcess(name, false);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QWiki.Spice.Process getOwnedProcess(String name, boolean ignoreCase) {
+		ownedProcessLoop: for (QWiki.Spice.Process ownedProcess : getOwnedProcess()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedProcess.getName()) : name.equals(ownedProcess.getName())))
+				continue ownedProcessLoop;
+			return ownedProcess;
+		}
+		return null;
 	}
 
 	/**
@@ -112,17 +133,16 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)KernelPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_GROUP___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String oid() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -183,7 +203,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 		switch (featureID) {
 			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
 				getOwnedProcess().clear();
-				getOwnedProcess().addAll((Collection<? extends QWiki.SPICE.Process>)newValue);
+				getOwnedProcess().addAll((Collection<? extends QWiki.Spice.Process>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,8 +232,8 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_ELEMENT:
-				return isSetOwnedElement();
+			case SPICEPackage.PROCESS_GROUP__OWNED_MEMBER:
+				return isSetOwnedMembers();
 			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
 				return ownedProcess != null && !ownedProcess.isEmpty();
 		}
@@ -240,8 +260,8 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 */
 	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
+	public boolean isSetOwnedMembers() {
+		return super.isSetOwnedMembers()
 			|| eIsSet(SPICEPackage.PROCESS_GROUP__OWNED_PROCESS);
 	}
 

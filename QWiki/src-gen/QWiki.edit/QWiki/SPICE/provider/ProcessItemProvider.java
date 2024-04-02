@@ -1,11 +1,12 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
-import QWiki.I18N.I18NPackage;
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Kernel.KernelPackage;
+
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +21,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.Process} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.Process} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -147,7 +148,7 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((QWiki.SPICE.Process)object).getName();
+		String label = ((QWiki.Spice.Process)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Process_type") :
 			getString("_UI_Process_type") + " " + label;
@@ -165,7 +166,7 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(QWiki.SPICE.Process.class)) {
+		switch (notification.getFeatureID(QWiki.Spice.Process.class)) {
 			case SPICEPackage.PROCESS__OWNED_OUTCOME:
 			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -193,7 +194,7 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(SPICEPackage.Literals.PROCESS__OWNED_BASE_PRACTISE,
-				 SPICEFactory.eINSTANCE.createSpiceBasePractise()));
+				 SPICEFactory.eINSTANCE.createBasePractise()));
 	}
 
 	/**
@@ -208,9 +209,9 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

@@ -1,10 +1,12 @@
 /**
  */
-package QWiki.SPICE;
+package QWiki.Spice;
 
-import QWiki.I18N.I18nDescriptiveElement;
+import QWiki.Kernel.QWikiContainer;
 
 import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,16 +17,16 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.SPICE.ProcessReferenceModel#isNonStandard <em>Is Non Standard</em>}</li>
- *   <li>{@link QWiki.SPICE.ProcessReferenceModel#getPrmDomain <em>Prm Domain</em>}</li>
- *   <li>{@link QWiki.SPICE.ProcessReferenceModel#getOwnedSpiceElement <em>Owned Spice Element</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#isNonStandard <em>Is Non Standard</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#getPrmDomain <em>Prm Domain</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#getOwnedSpiceElement <em>Owned Spice Element</em>}</li>
  * </ul>
  *
- * @see QWiki.SPICE.SPICEPackage#getProcessReferenceModel()
- * @model annotation="duplicates"
+ * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel()
+ * @model
  * @generated
  */
-public interface ProcessReferenceModel extends I18nDescriptiveElement {
+public interface ProcessReferenceModel extends QWikiContainer {
 	/**
 	 * Returns the value of the '<em><b>Is Non Standard</b></em>' attribute.
 	 * The default value is <code>"false"</code>.
@@ -36,14 +38,14 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Non Standard</em>' attribute.
 	 * @see #setIsNonStandard(boolean)
-	 * @see QWiki.SPICE.SPICEPackage#getProcessReferenceModel_IsNonStandard()
+	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_IsNonStandard()
 	 * @model default="false" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isNonStandard();
 
 	/**
-	 * Sets the value of the '{@link QWiki.SPICE.ProcessReferenceModel#isNonStandard <em>Is Non Standard</em>}' attribute.
+	 * Sets the value of the '{@link QWiki.Spice.ProcessReferenceModel#isNonStandard <em>Is Non Standard</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Non Standard</em>' attribute.
@@ -54,7 +56,7 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 
 	/**
 	 * Returns the value of the '<em><b>Prm Domain</b></em>' attribute.
-	 * The literals are from the enumeration {@link QWiki.SPICE.ProcessReferenceModelDomain}.
+	 * The literals are from the enumeration {@link QWiki.Spice.ProcessReferenceModelDomain}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Prm Domain</em>' attribute isn't clear,
@@ -62,20 +64,20 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Prm Domain</em>' attribute.
-	 * @see QWiki.SPICE.ProcessReferenceModelDomain
+	 * @see QWiki.Spice.ProcessReferenceModelDomain
 	 * @see #setPrmDomain(ProcessReferenceModelDomain)
-	 * @see QWiki.SPICE.SPICEPackage#getProcessReferenceModel_PrmDomain()
+	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_PrmDomain()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	ProcessReferenceModelDomain getPrmDomain();
 
 	/**
-	 * Sets the value of the '{@link QWiki.SPICE.ProcessReferenceModel#getPrmDomain <em>Prm Domain</em>}' attribute.
+	 * Sets the value of the '{@link QWiki.Spice.ProcessReferenceModel#getPrmDomain <em>Prm Domain</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Prm Domain</em>' attribute.
-	 * @see QWiki.SPICE.ProcessReferenceModelDomain
+	 * @see QWiki.Spice.ProcessReferenceModelDomain
 	 * @see #getPrmDomain()
 	 * @generated
 	 */
@@ -83,13 +85,13 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 
 	/**
 	 * Returns the value of the '<em><b>Owned Spice Element</b></em>' containment reference list.
-	 * The list contents are of type {@link QWiki.SPICE.SpiceElement}.
-	 * It is bidirectional and its opposite is '{@link QWiki.SPICE.SpiceElement#getOwningProcessReferenceModel <em>Owning Process Reference Model</em>}'.
+	 * The list contents are of type {@link QWiki.Spice.SpiceElement}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Spice.SpiceElement#getOwningProcessReferenceModel <em>Owning Process Reference Model</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Infrastructure.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link org.eclipse.uml2.uml.Namespace#getOwnedMembers() <em>Owned Member</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -98,13 +100,37 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Spice Element</em>' containment reference list.
-	 * @see QWiki.SPICE.SPICEPackage#getProcessReferenceModel_OwnedSpiceElement()
-	 * @see QWiki.SPICE.SpiceElement#getOwningProcessReferenceModel
+	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_OwnedSpiceElement()
+	 * @see QWiki.Spice.SpiceElement#getOwningProcessReferenceModel
 	 * @model opposite="owningProcessReferenceModel" containment="true" transient="true" ordered="false"
 	 *        annotation="subsets"
 	 * @generated
 	 */
 	EList<SpiceElement> getOwnedSpiceElement();
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.SpiceElement} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Spice Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.SpiceElement} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.SpiceElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedSpiceElement()
+	 * @generated
+	 */
+	SpiceElement getOwnedSpiceElement(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.SpiceElement} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Spice Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.SpiceElement} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass The Ecore class of the {@link QWiki.Spice.SpiceElement} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.SpiceElement} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedSpiceElement()
+	 * @generated
+	 */
+	SpiceElement getOwnedSpiceElement(String name, boolean ignoreCase, EClass eClass);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,5 +140,14 @@ public interface ProcessReferenceModel extends I18nDescriptiveElement {
 	 * @generated
 	 */
 	String oidForDomain();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (isNonStandard = true) then oidForDomain() + \'-xt\' else oidForDomain() + \'\' endif'"
+	 * @generated
+	 */
+	String oid();
 
 } // ProcessReferenceModel

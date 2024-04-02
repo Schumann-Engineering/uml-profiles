@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.RASCI.impl;
+package QWiki.Rasci.impl;
 
-import QWiki.RASCI.*;
+import QWiki.Rasci.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;

@@ -1,17 +1,13 @@
 /**
  */
-package QWiki.SPICE.impl;
+package QWiki.Spice.impl;
 
-import QWiki.I18N.impl.I18nDescriptiveElementImpl;
+import QWiki.Kernel.impl.QWikiContainerImpl;
 
-import QWiki.Infrastructure.UmlElement;
-
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.ProcessReferenceModelDomain;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceElement;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.ProcessReferenceModelDomain;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceElement;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -34,6 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 
+import org.eclipse.uml2.uml.NamedElement;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Process Reference Model</b></em>'.
@@ -42,15 +40,15 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.SPICE.impl.ProcessReferenceModelImpl#getOwnedElement <em>Owned Element</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessReferenceModelImpl#isNonStandard <em>Is Non Standard</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessReferenceModelImpl#getPrmDomain <em>Prm Domain</em>}</li>
- *   <li>{@link QWiki.SPICE.impl.ProcessReferenceModelImpl#getOwnedSpiceElement <em>Owned Spice Element</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessReferenceModelImpl#getOwnedMembers <em>Owned Member</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessReferenceModelImpl#isNonStandard <em>Is Non Standard</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessReferenceModelImpl#getPrmDomain <em>Prm Domain</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.ProcessReferenceModelImpl#getOwnedSpiceElement <em>Owned Spice Element</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implements ProcessReferenceModel {
+public class ProcessReferenceModelImpl extends QWikiContainerImpl implements ProcessReferenceModel {
 	/**
 	 * The default value of the '{@link #isNonStandard() <em>Is Non Standard</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -126,19 +124,19 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public EList<UmlElement> getOwnedElement() {
-		return new DerivedUnionEObjectEList<UmlElement>(UmlElement.class, this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_ELEMENT, OWNED_ELEMENT_ESUBSETS);
+	public EList<NamedElement> getOwnedMembers() {
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
-	 * The array of subset feature identifiers for the '{@link #getOwnedElement() <em>Owned Element</em>}' reference list.
+	 * The array of subset feature identifiers for the '{@link #getOwnedMembers() <em>Owned Member</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedElement()
+	 * @see #getOwnedMembers()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_ELEMENT_ESUBSETS = new int[] {SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_COMMENT, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_RULE, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -200,6 +198,31 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SpiceElement getOwnedSpiceElement(String name) {
+		return getOwnedSpiceElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SpiceElement getOwnedSpiceElement(String name, boolean ignoreCase, EClass eClass) {
+		ownedSpiceElementLoop: for (SpiceElement ownedSpiceElement : getOwnedSpiceElement()) {
+			if (eClass != null && !eClass.isInstance(ownedSpiceElement))
+				continue ownedSpiceElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedSpiceElement.getName()) : name.equals(ownedSpiceElement.getName())))
+				continue ownedSpiceElementLoop;
+			return ownedSpiceElement;
+		}
+		return null;
+	}
+
+	/**
 	 * The cached invocation delegate for the '{@link #oidForDomain() <em>Oid For Domain</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,17 +254,16 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)KernelPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_REFERENCE_MODEL___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String oid() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -347,8 +369,8 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_ELEMENT:
-				return isSetOwnedElement();
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER:
+				return isSetOwnedMembers();
 			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
 				return isNonStandard != IS_NON_STANDARD_EDEFAULT;
 			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
@@ -399,8 +421,8 @@ public class ProcessReferenceModelImpl extends I18nDescriptiveElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public boolean isSetOwnedElement() {
-		return super.isSetOwnedElement()
+	public boolean isSetOwnedMembers() {
+		return super.isSetOwnedMembers()
 			|| eIsSet(SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
 	}
 

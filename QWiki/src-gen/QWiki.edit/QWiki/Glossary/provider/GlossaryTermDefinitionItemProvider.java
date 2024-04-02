@@ -7,8 +7,9 @@ import QWiki.EMF.provider.QWikiEditPlugin;
 
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.provider.I18nDescriptiveElementItemProvider;
+import QWiki.Kernel.KernelPackage;
+
+import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -115,9 +116,9 @@ public class GlossaryTermDefinitionItemProvider extends I18nDescriptiveElementIt
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

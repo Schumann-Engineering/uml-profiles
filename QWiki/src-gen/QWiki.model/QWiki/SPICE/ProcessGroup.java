@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.SPICE;
+package QWiki.Spice;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -13,23 +13,23 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.SPICE.ProcessGroup#getOwnedProcess <em>Owned Process</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessGroup#getOwnedProcess <em>Owned Process</em>}</li>
  * </ul>
  *
- * @see QWiki.SPICE.SPICEPackage#getProcessGroup()
- * @model annotation="duplicates"
+ * @see QWiki.Spice.SPICEPackage#getProcessGroup()
+ * @model
  * @generated
  */
 public interface ProcessGroup extends SpiceElement {
 	/**
 	 * Returns the value of the '<em><b>Owned Process</b></em>' containment reference list.
-	 * The list contents are of type {@link QWiki.SPICE.Process}.
-	 * It is bidirectional and its opposite is '{@link QWiki.SPICE.Process#getOwningProcessGroup <em>Owning Process Group</em>}'.
+	 * The list contents are of type {@link QWiki.Spice.Process}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Spice.Process#getOwningProcessGroup <em>Owning Process Group</em>}'.
 	 * <p>
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Infrastructure.UmlElement#getOwnedElement() <em>Owned Element</em>}'</li>
+	 *   <li>'{@link org.eclipse.uml2.uml.Namespace#getOwnedMembers() <em>Owned Member</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -38,12 +38,51 @@ public interface ProcessGroup extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Process</em>' containment reference list.
-	 * @see QWiki.SPICE.SPICEPackage#getProcessGroup_OwnedProcess()
-	 * @see QWiki.SPICE.Process#getOwningProcessGroup
+	 * @see QWiki.Spice.SPICEPackage#getProcessGroup_OwnedProcess()
+	 * @see QWiki.Spice.Process#getOwningProcessGroup
 	 * @model opposite="owningProcessGroup" containment="true" transient="true"
 	 *        annotation="subsets"
 	 * @generated
 	 */
-	EList<QWiki.SPICE.Process> getOwnedProcess();
+	EList<QWiki.Spice.Process> getOwnedProcess();
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Process</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.Process} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedProcess()
+	 * @generated
+	 */
+	QWiki.Spice.Process getOwnedProcess(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Process</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.Process} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedProcess()
+	 * @generated
+	 */
+	QWiki.Spice.Process getOwnedProcess(String name, boolean ignoreCase);
+
+	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
+	 * </ul>
+	 * </p>
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false"
+	 *        annotation="redefines"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'p/\' + number'"
+	 * @generated
+	 */
+	String oid();
 
 } // ProcessGroup

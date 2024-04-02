@@ -1,17 +1,17 @@
 /**
  */
-package QWiki.SPICE.impl;
+package QWiki.Spice.impl;
 
-import QWiki.SPICE.GenericWorkProduct;
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.ProcessReferenceModelDomain;
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
-import QWiki.SPICE.WorkProduct;
-import QWiki.SPICE.WorkProductType;
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.GenericWorkProduct;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.ProcessReferenceModelDomain;
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.WorkProduct;
+import QWiki.Spice.WorkProductType;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -66,7 +66,7 @@ public class SPICEFactoryImpl extends EFactoryImpl implements SPICEFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SPICEPackage.SPICE_BASE_PRACTISE: return createSpiceBasePractise();
+			case SPICEPackage.BASE_PRACTISE: return createBasePractise();
 			case SPICEPackage.PROCESS_REFERENCE_MODEL: return createProcessReferenceModel();
 			case SPICEPackage.PROCESS: return createProcess();
 			case SPICEPackage.PROCESS_GROUP: return createProcessGroup();
@@ -118,9 +118,9 @@ public class SPICEFactoryImpl extends EFactoryImpl implements SPICEFactory {
 	 * @generated
 	 */
 	@Override
-	public SpiceBasePractise createSpiceBasePractise() {
-		SpiceBasePractiseImpl spiceBasePractise = new SpiceBasePractiseImpl();
-		return spiceBasePractise;
+	public BasePractise createBasePractise() {
+		BasePractiseImpl basePractise = new BasePractiseImpl();
+		return basePractise;
 	}
 
 	/**
@@ -140,7 +140,7 @@ public class SPICEFactoryImpl extends EFactoryImpl implements SPICEFactory {
 	 * @generated
 	 */
 	@Override
-	public QWiki.SPICE.Process createProcess() {
+	public QWiki.Spice.Process createProcess() {
 		ProcessImpl process = new ProcessImpl();
 		return process;
 	}

@@ -2,23 +2,18 @@
  */
 package QWiki.Kernel.util;
 
-import QWiki.I18N.I18nDescriptiveElement;
-import QWiki.I18N.I18nNamedElement;
-
-import QWiki.Infrastructure.UmlDirectedRelationship;
-import QWiki.Infrastructure.UmlElement;
-import QWiki.Infrastructure.UmlNamedElement;
-import QWiki.Infrastructure.UmlNamespace;
-import QWiki.Infrastructure.UmlPackage;
-import QWiki.Infrastructure.UmlPackageableElement;
-import QWiki.Infrastructure.UmlRelationship;
-
 import QWiki.Kernel.*;
 
+import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
+import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 
 /**
  * <!-- begin-user-doc -->
@@ -77,235 +72,113 @@ public class KernelSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case KernelPackage.MODEL_DOMAIN: {
-				ModelDomain modelDomain = (ModelDomain)theEObject;
-				T result = caseModelDomain(modelDomain);
-				if (result == null) result = caseI18nNamedElement(modelDomain);
-				if (result == null) result = caseUmlNamedElement(modelDomain);
-				if (result == null) result = caseModelElement(modelDomain);
-				if (result == null) result = caseModelTaggedElement(modelDomain);
-				if (result == null) result = caseUmlElement(modelDomain);
+			case KernelPackage.I1_8N_NAMED_ELEMENT: {
+				I18nNamedElement i18nNamedElement = (I18nNamedElement)theEObject;
+				T result = caseI18nNamedElement(i18nNamedElement);
+				if (result == null) result = caseQWikiNamedElement(i18nNamedElement);
+				if (result == null) result = caseNamedElement(i18nNamedElement);
+				if (result == null) result = caseQWikiElement(i18nNamedElement);
+				if (result == null) result = caseElement(i18nNamedElement);
+				if (result == null) result = caseEModelElement(i18nNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.MODEL_DOMAIN_ELEMENT: {
-				ModelDomainElement modelDomainElement = (ModelDomainElement)theEObject;
-				T result = caseModelDomainElement(modelDomainElement);
-				if (result == null) result = caseUmlNamedElement(modelDomainElement);
-				if (result == null) result = caseModelElement(modelDomainElement);
-				if (result == null) result = caseModelTaggedElement(modelDomainElement);
-				if (result == null) result = caseUmlElement(modelDomainElement);
+			case KernelPackage.QWIKI_NAMED_ELEMENT: {
+				QWikiNamedElement qWikiNamedElement = (QWikiNamedElement)theEObject;
+				T result = caseQWikiNamedElement(qWikiNamedElement);
+				if (result == null) result = caseNamedElement(qWikiNamedElement);
+				if (result == null) result = caseQWikiElement(qWikiNamedElement);
+				if (result == null) result = caseElement(qWikiNamedElement);
+				if (result == null) result = caseEModelElement(qWikiNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.MODEL_ROOT: {
-				ModelRoot modelRoot = (ModelRoot)theEObject;
-				T result = caseModelRoot(modelRoot);
-				if (result == null) result = caseUmlPackage(modelRoot);
-				if (result == null) result = caseUmlNamespace(modelRoot);
-				if (result == null) result = caseUmlPackageableElement(modelRoot);
-				if (result == null) result = caseI18nDescriptiveElement(modelRoot);
-				if (result == null) result = caseI18nNamedElement(modelRoot);
-				if (result == null) result = caseUmlNamedElement(modelRoot);
-				if (result == null) result = caseModelElement(modelRoot);
-				if (result == null) result = caseModelTaggedElement(modelRoot);
-				if (result == null) result = caseUmlElement(modelRoot);
+			case KernelPackage.QWIKI_ELEMENT: {
+				QWikiElement qWikiElement = (QWikiElement)theEObject;
+				T result = caseQWikiElement(qWikiElement);
+				if (result == null) result = caseElement(qWikiElement);
+				if (result == null) result = caseEModelElement(qWikiElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.MODEL_TAGGED_ELEMENT: {
-				ModelTaggedElement modelTaggedElement = (ModelTaggedElement)theEObject;
-				T result = caseModelTaggedElement(modelTaggedElement);
-				if (result == null) result = caseUmlElement(modelTaggedElement);
+			case KernelPackage.I1_8N_KEYED_STRING: {
+				I18nKeyedString i18nKeyedString = (I18nKeyedString)theEObject;
+				T result = caseI18nKeyedString(i18nKeyedString);
+				if (result == null) result = caseI18nBaseString(i18nKeyedString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP: {
-				DO_NOT_USE_Relationship dO_NOT_USE_Relationship = (DO_NOT_USE_Relationship)theEObject;
-				T result = caseDO_NOT_USE_Relationship(dO_NOT_USE_Relationship);
+			case KernelPackage.I1_8N_BASE_STRING: {
+				I18nBaseString i18nBaseString = (I18nBaseString)theEObject;
+				T result = caseI18nBaseString(i18nBaseString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE: {
-				DO_NOT_USE_RelationshipType dO_NOT_USE_RelationshipType = (DO_NOT_USE_RelationshipType)theEObject;
-				T result = caseDO_NOT_USE_RelationshipType(dO_NOT_USE_RelationshipType);
-				if (result == null) result = caseI18nNamedElement(dO_NOT_USE_RelationshipType);
-				if (result == null) result = caseUmlNamedElement(dO_NOT_USE_RelationshipType);
-				if (result == null) result = caseModelElement(dO_NOT_USE_RelationshipType);
-				if (result == null) result = caseModelTaggedElement(dO_NOT_USE_RelationshipType);
-				if (result == null) result = caseUmlElement(dO_NOT_USE_RelationshipType);
+			case KernelPackage.I1_8N_VALUE: {
+				I18nValue i18nValue = (I18nValue)theEObject;
+				T result = caseI18nValue(i18nValue);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP: {
-				SuperseedingRelationship superseedingRelationship = (SuperseedingRelationship)theEObject;
-				T result = caseSuperseedingRelationship(superseedingRelationship);
-				if (result == null) result = caseUmlDirectedRelationship(superseedingRelationship);
-				if (result == null) result = caseUmlRelationship(superseedingRelationship);
-				if (result == null) result = caseUmlElement(superseedingRelationship);
+			case KernelPackage.I1_8N_STRING: {
+				I18nString i18nString = (I18nString)theEObject;
+				T result = caseI18nString(i18nString);
+				if (result == null) result = caseI18nBaseString(i18nString);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KernelPackage.MODEL_ELEMENT: {
-				ModelElement modelElement = (ModelElement)theEObject;
-				T result = caseModelElement(modelElement);
-				if (result == null) result = caseModelTaggedElement(modelElement);
-				if (result == null) result = caseUmlElement(modelElement);
+			case KernelPackage.QWIKI_COMMENT: {
+				QWikiComment qWikiComment = (QWikiComment)theEObject;
+				T result = caseQWikiComment(qWikiComment);
+				if (result == null) result = caseQWikiElement(qWikiComment);
+				if (result == null) result = caseComment(qWikiComment);
+				if (result == null) result = caseElement(qWikiComment);
+				if (result == null) result = caseEModelElement(qWikiComment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT: {
+				I18nDescriptiveElement i18nDescriptiveElement = (I18nDescriptiveElement)theEObject;
+				T result = caseI18nDescriptiveElement(i18nDescriptiveElement);
+				if (result == null) result = caseI18nNamedElement(i18nDescriptiveElement);
+				if (result == null) result = caseQWikiNamedElement(i18nDescriptiveElement);
+				if (result == null) result = caseNamedElement(i18nDescriptiveElement);
+				if (result == null) result = caseQWikiElement(i18nDescriptiveElement);
+				if (result == null) result = caseElement(i18nDescriptiveElement);
+				if (result == null) result = caseEModelElement(i18nDescriptiveElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.QWIKI_NAMESPACE: {
+				QWikiNamespace qWikiNamespace = (QWikiNamespace)theEObject;
+				T result = caseQWikiNamespace(qWikiNamespace);
+				if (result == null) result = caseNamespace(qWikiNamespace);
+				if (result == null) result = caseI18nNamedElement(qWikiNamespace);
+				if (result == null) result = caseQWikiNamedElement(qWikiNamespace);
+				if (result == null) result = caseNamedElement(qWikiNamespace);
+				if (result == null) result = caseQWikiElement(qWikiNamespace);
+				if (result == null) result = caseElement(qWikiNamespace);
+				if (result == null) result = caseEModelElement(qWikiNamespace);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.QWIKI_CONTAINER: {
+				QWikiContainer qWikiContainer = (QWikiContainer)theEObject;
+				T result = caseQWikiContainer(qWikiContainer);
+				if (result == null) result = caseQWikiNamespace(qWikiContainer);
+				if (result == null) result = caseI18nDescriptiveElement(qWikiContainer);
+				if (result == null) result = caseNamespace(qWikiContainer);
+				if (result == null) result = caseI18nNamedElement(qWikiContainer);
+				if (result == null) result = caseQWikiNamedElement(qWikiContainer);
+				if (result == null) result = caseNamedElement(qWikiContainer);
+				if (result == null) result = caseQWikiElement(qWikiContainer);
+				if (result == null) result = caseElement(qWikiContainer);
+				if (result == null) result = caseEModelElement(qWikiContainer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Domain</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Domain</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelDomain(ModelDomain object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Domain Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Domain Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelDomainElement(ModelDomainElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Root</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Root</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelRoot(ModelRoot object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Tagged Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Tagged Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelTaggedElement(ModelTaggedElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DO NOT USE Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DO NOT USE Relationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDO_NOT_USE_Relationship(DO_NOT_USE_Relationship object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DO NOT USE Relationship Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DO NOT USE Relationship Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDO_NOT_USE_RelationshipType(DO_NOT_USE_RelationshipType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Superseeding Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Superseeding Relationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSuperseedingRelationship(SuperseedingRelationship object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Model Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Model Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseModelElement(ModelElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUmlElement(UmlElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseUmlNamedElement(UmlNamedElement object) {
-		return null;
 	}
 
 	/**
@@ -320,6 +193,111 @@ public class KernelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseI18nNamedElement(I18nNamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiNamedElement(QWikiNamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiElement(QWikiElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Keyed String</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>I1 8n Keyed String</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseI18nKeyedString(I18nKeyedString object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Base String</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>I1 8n Base String</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseI18nBaseString(I18nBaseString object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>I1 8n Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseI18nValue(I18nValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>I1 8n String</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>I1 8n String</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseI18nString(I18nString object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiComment(QWikiComment object) {
 		return null;
 	}
 
@@ -339,77 +317,107 @@ public class KernelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Namespace</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Namespace</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlNamespace(UmlNamespace object) {
+	public T caseQWikiNamespace(QWikiNamespace object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Packageable Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Packageable Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlPackageableElement(UmlPackageableElement object) {
+	public T caseQWikiContainer(QWikiContainer object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Package</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Package</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlPackage(UmlPackage object) {
+	public T caseEModelElement(EModelElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Relationship</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Relationship</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlRelationship(UmlRelationship object) {
+	public T caseElement(Element object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Uml Directed Relationship</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Uml Directed Relationship</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUmlDirectedRelationship(UmlDirectedRelationship object) {
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comment</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComment(Comment object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamespace(Namespace object) {
 		return null;
 	}
 

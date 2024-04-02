@@ -2,15 +2,13 @@
  */
 package QWiki.Kernel;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.Infrastructure.InfrastructurePackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -63,32 +61,23 @@ public interface KernelPackage extends EPackage {
 	KernelPackage eINSTANCE = QWiki.Kernel.impl.KernelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.ModelTaggedElementImpl <em>Model Tagged Element</em>}' class.
+	 * The meta object id for the '{@link QWiki.Kernel.impl.QWikiNamedElementImpl <em>QWiki Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.ModelTaggedElementImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelTaggedElement()
+	 * @see QWiki.Kernel.impl.QWikiNamedElementImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiNamedElement()
 	 * @generated
 	 */
-	int MODEL_TAGGED_ELEMENT = 3;
+	int QWIKI_NAMED_ELEMENT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_TAGGED_ELEMENT__OWNED_ELEMENT = InfrastructurePackage.UML_ELEMENT__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT__OWNER = InfrastructurePackage.UML_ELEMENT__OWNER;
+	int QWIKI_NAMED_ELEMENT__EANNOTATIONS = UMLPackage.NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -97,89 +86,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_TAGGED_ELEMENT__OWNED_COMMENT = InfrastructurePackage.UML_ELEMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT__DIRECTED_RELATIONSHIP = InfrastructurePackage.UML_ELEMENT__DIRECTED_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT__RELATIONSHIP = InfrastructurePackage.UML_ELEMENT__RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT__TAG = InfrastructurePackage.UML_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT__CUSTOM_PROPERTY = InfrastructurePackage.UML_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Model Tagged Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT_FEATURE_COUNT = InfrastructurePackage.UML_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>All Owned Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT___ALL_OWNED_ELEMENTS = InfrastructurePackage.UML_ELEMENT___ALL_OWNED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Must Be Owned</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT___MUST_BE_OWNED = InfrastructurePackage.UML_ELEMENT___MUST_BE_OWNED;
-
-	/**
-	 * The number of operations of the '<em>Model Tagged Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_TAGGED_ELEMENT_OPERATION_COUNT = InfrastructurePackage.UML_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.ModelElementImpl <em>Model Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.ModelElementImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelElement()
-	 * @generated
-	 */
-	int MODEL_ELEMENT = 7;
+	int QWIKI_NAMED_ELEMENT__OWNED_COMMENT = UMLPackage.NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -188,7 +95,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__OWNED_ELEMENT = MODEL_TAGGED_ELEMENT__OWNED_ELEMENT;
+	int QWIKI_NAMED_ELEMENT__OWNED_ELEMENT = UMLPackage.NAMED_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -197,242 +104,16 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__OWNER = MODEL_TAGGED_ELEMENT__OWNER;
+	int QWIKI_NAMED_ELEMENT__OWNER = UMLPackage.NAMED_ELEMENT__OWNER;
 
 	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ELEMENT__OWNED_COMMENT = MODEL_TAGGED_ELEMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__DIRECTED_RELATIONSHIP = MODEL_TAGGED_ELEMENT__DIRECTED_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__RELATIONSHIP = MODEL_TAGGED_ELEMENT__RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__TAG = MODEL_TAGGED_ELEMENT__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__CUSTOM_PROPERTY = MODEL_TAGGED_ELEMENT__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__MODEL = MODEL_TAGGED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__UUID = MODEL_TAGGED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT__SUPERSEEDING_RELATIONSHIP = MODEL_TAGGED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Model Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT_FEATURE_COUNT = MODEL_TAGGED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>All Owned Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT___ALL_OWNED_ELEMENTS = MODEL_TAGGED_ELEMENT___ALL_OWNED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Must Be Owned</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT___MUST_BE_OWNED = MODEL_TAGGED_ELEMENT___MUST_BE_OWNED;
-
-	/**
-	 * The operation id for the '<em>Model</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT___MODEL = MODEL_TAGGED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT___OID = MODEL_TAGGED_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Model Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ELEMENT_OPERATION_COUNT = MODEL_TAGGED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.ModelDomainImpl <em>Model Domain</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.ModelDomainImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelDomain()
-	 * @generated
-	 */
-	int MODEL_DOMAIN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__OWNED_ELEMENT = I18NPackage.I1_8N_NAMED_ELEMENT__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__OWNER = I18NPackage.I1_8N_NAMED_ELEMENT__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__OWNED_COMMENT = I18NPackage.I1_8N_NAMED_ELEMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__DIRECTED_RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__DIRECTED_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__TAG = I18NPackage.I1_8N_NAMED_ELEMENT__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__CUSTOM_PROPERTY = I18NPackage.I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__MODEL = I18NPackage.I1_8N_NAMED_ELEMENT__MODEL;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__UUID = I18NPackage.I1_8N_NAMED_ELEMENT__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__SUPERSEEDING_RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__SUPERSEEDING_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN__NAMESPACE = I18NPackage.I1_8N_NAMED_ELEMENT__NAMESPACE;
+	int QWIKI_NAMED_ELEMENT__CLIENT_DEPENDENCY = UMLPackage.NAMED_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -441,7 +122,25 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN__NAME = I18NPackage.I1_8N_NAMED_ELEMENT__NAME;
+	int QWIKI_NAMED_ELEMENT__NAME = UMLPackage.NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT__NAME_EXPRESSION = UMLPackage.NAMED_ELEMENT__NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT__NAMESPACE = UMLPackage.NAMED_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -450,34 +149,367 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN__QUALIFIED_NAME = I18NPackage.I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
+	int QWIKI_NAMED_ELEMENT__QUALIFIED_NAME = UMLPackage.NAMED_ELEMENT__QUALIFIED_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN__DISPLAY_NAME = I18NPackage.I1_8N_NAMED_ELEMENT__DISPLAY_NAME;
+	int QWIKI_NAMED_ELEMENT__VISIBILITY = UMLPackage.NAMED_ELEMENT__VISIBILITY;
 
 	/**
-	 * The feature id for the '<em><b>Domain Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN__DOMAIN_ELEMENT = I18NPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int QWIKI_NAMED_ELEMENT__UUID = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Model Domain</em>' class.
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN_FEATURE_COUNT = I18NPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int QWIKI_NAMED_ELEMENT__CUSTOM_PROPERTY = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT__TAG = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>QWiki Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT_FEATURE_COUNT = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_EANNOTATION__STRING = UMLPackage.NAMED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___ADD_KEYWORD__STRING = UMLPackage.NAMED_ELEMENT___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = UMLPackage.NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___CREATE_EANNOTATION__STRING = UMLPackage.NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___DESTROY = UMLPackage.NAMED_ELEMENT___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_KEYWORDS = UMLPackage.NAMED_ELEMENT___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = UMLPackage.NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES = UMLPackage.NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = UMLPackage.NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES = UMLPackage.NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = UMLPackage.NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = UMLPackage.NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_MODEL = UMLPackage.NAMED_ELEMENT___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_NEAREST_PACKAGE = UMLPackage.NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS = UMLPackage.NAMED_ELEMENT___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS = UMLPackage.NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = UMLPackage.NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES = UMLPackage.NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = UMLPackage.NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = UMLPackage.NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS = UMLPackage.NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = UMLPackage.NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING = UMLPackage.NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___HAS_KEYWORD__STRING = UMLPackage.NAMED_ELEMENT___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = UMLPackage.NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = UMLPackage.NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = UMLPackage.NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = UMLPackage.NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___REMOVE_KEYWORD__STRING = UMLPackage.NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = UMLPackage.NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = UMLPackage.NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -486,7 +518,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___ALL_OWNED_ELEMENTS = I18NPackage.I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+	int QWIKI_NAMED_ELEMENT___ALL_OWNED_ELEMENTS = UMLPackage.NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -495,25 +527,79 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___MUST_BE_OWNED = I18NPackage.I1_8N_NAMED_ELEMENT___MUST_BE_OWNED;
+	int QWIKI_NAMED_ELEMENT___MUST_BE_OWNED = UMLPackage.NAMED_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Model</em>' operation.
+	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___MODEL = I18NPackage.I1_8N_NAMED_ELEMENT___MODEL;
+	int QWIKI_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___OID = I18NPackage.I1_8N_NAMED_ELEMENT___OID;
+	int QWIKI_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Create Dependency</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = UMLPackage.NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Create Usage</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT = UMLPackage.NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_LABEL = UMLPackage.NAMED_ELEMENT___GET_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_LABEL__BOOLEAN = UMLPackage.NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Get Namespace</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_NAMESPACE = UMLPackage.NAMED_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -522,7 +608,34 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___ALL_NAMESPACES = I18NPackage.I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+	int QWIKI_NAMED_ELEMENT___ALL_NAMESPACES = UMLPackage.NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>All Owning Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___ALL_OWNING_PACKAGES = UMLPackage.NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = UMLPackage.NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+
+	/**
+	 * The operation id for the '<em>Get Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT___GET_QUALIFIED_NAME = UMLPackage.NAMED_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -531,215 +644,16 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___SEPARATOR = I18NPackage.I1_8N_NAMED_ELEMENT___SEPARATOR;
+	int QWIKI_NAMED_ELEMENT___SEPARATOR = UMLPackage.NAMED_ELEMENT___SEPARATOR;
 
 	/**
-	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN___QUALIFIED_NAME = I18NPackage.I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
-
-	/**
-	 * The operation id for the '<em>All Domain Element</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN___ALL_DOMAIN_ELEMENT = I18NPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Model Domain</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_OPERATION_COUNT = I18NPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.ModelDomainElementImpl <em>Model Domain Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.ModelDomainElementImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelDomainElement()
-	 * @generated
-	 */
-	int MODEL_DOMAIN_ELEMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__OWNED_ELEMENT = InfrastructurePackage.UML_NAMED_ELEMENT__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__OWNER = InfrastructurePackage.UML_NAMED_ELEMENT__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__OWNED_COMMENT = InfrastructurePackage.UML_NAMED_ELEMENT__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__DIRECTED_RELATIONSHIP = InfrastructurePackage.UML_NAMED_ELEMENT__DIRECTED_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__RELATIONSHIP = InfrastructurePackage.UML_NAMED_ELEMENT__RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__TAG = InfrastructurePackage.UML_NAMED_ELEMENT__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__CUSTOM_PROPERTY = InfrastructurePackage.UML_NAMED_ELEMENT__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__MODEL = InfrastructurePackage.UML_NAMED_ELEMENT__MODEL;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__UUID = InfrastructurePackage.UML_NAMED_ELEMENT__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__SUPERSEEDING_RELATIONSHIP = InfrastructurePackage.UML_NAMED_ELEMENT__SUPERSEEDING_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__NAMESPACE = InfrastructurePackage.UML_NAMED_ELEMENT__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__NAME = InfrastructurePackage.UML_NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__QUALIFIED_NAME = InfrastructurePackage.UML_NAMED_ELEMENT__QUALIFIED_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__DOMAIN = InfrastructurePackage.UML_NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT__ASSIGNED_DOMAIN = InfrastructurePackage.UML_NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Model Domain Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT_FEATURE_COUNT = InfrastructurePackage.UML_NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>All Owned Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT___ALL_OWNED_ELEMENTS = InfrastructurePackage.UML_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Must Be Owned</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT___MUST_BE_OWNED = InfrastructurePackage.UML_NAMED_ELEMENT___MUST_BE_OWNED;
-
-	/**
-	 * The operation id for the '<em>Model</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT___MODEL = InfrastructurePackage.UML_NAMED_ELEMENT___MODEL;
+	int QWIKI_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES = UMLPackage.NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
 	 * The operation id for the '<em>Oid</em>' operation.
@@ -748,71 +662,35 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN_ELEMENT___OID = InfrastructurePackage.UML_NAMED_ELEMENT___OID;
+	int QWIKI_NAMED_ELEMENT___OID = UMLPackage.NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * The number of operations of the '<em>QWiki Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN_ELEMENT___ALL_NAMESPACES = InfrastructurePackage.UML_NAMED_ELEMENT___ALL_NAMESPACES;
+	int QWIKI_NAMED_ELEMENT_OPERATION_COUNT = UMLPackage.NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Separator</em>' operation.
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nNamedElementImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nNamedElement()
+	 * @generated
+	 */
+	int I1_8N_NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_DOMAIN_ELEMENT___SEPARATOR = InfrastructurePackage.UML_NAMED_ELEMENT___SEPARATOR;
-
-	/**
-	 * The operation id for the '<em>Qualified Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT___QUALIFIED_NAME = InfrastructurePackage.UML_NAMED_ELEMENT___QUALIFIED_NAME;
-
-	/**
-	 * The number of operations of the '<em>Model Domain Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_DOMAIN_ELEMENT_OPERATION_COUNT = InfrastructurePackage.UML_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.ModelRootImpl <em>Model Root</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.ModelRootImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelRoot()
-	 * @generated
-	 */
-	int MODEL_ROOT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__OWNED_ELEMENT = InfrastructurePackage.UML_PACKAGE__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__OWNER = InfrastructurePackage.UML_PACKAGE__OWNER;
+	int I1_8N_NAMED_ELEMENT__EANNOTATIONS = QWIKI_NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -821,79 +699,34 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__OWNED_COMMENT = InfrastructurePackage.UML_PACKAGE__OWNED_COMMENT;
+	int I1_8N_NAMED_ELEMENT__OWNED_COMMENT = QWIKI_NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__DIRECTED_RELATIONSHIP = InfrastructurePackage.UML_PACKAGE__DIRECTED_RELATIONSHIP;
+	int I1_8N_NAMED_ELEMENT__OWNED_ELEMENT = QWIKI_NAMED_ELEMENT__OWNED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__RELATIONSHIP = InfrastructurePackage.UML_PACKAGE__RELATIONSHIP;
+	int I1_8N_NAMED_ELEMENT__OWNER = QWIKI_NAMED_ELEMENT__OWNER;
 
 	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__TAG = InfrastructurePackage.UML_PACKAGE__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__CUSTOM_PROPERTY = InfrastructurePackage.UML_PACKAGE__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__MODEL = InfrastructurePackage.UML_PACKAGE__MODEL;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__UUID = InfrastructurePackage.UML_PACKAGE__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__SUPERSEEDING_RELATIONSHIP = InfrastructurePackage.UML_PACKAGE__SUPERSEEDING_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_ROOT__NAMESPACE = InfrastructurePackage.UML_PACKAGE__NAMESPACE;
+	int I1_8N_NAMED_ELEMENT__CLIENT_DEPENDENCY = QWIKI_NAMED_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -902,7 +735,25 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__NAME = InfrastructurePackage.UML_PACKAGE__NAME;
+	int I1_8N_NAMED_ELEMENT__NAME = QWIKI_NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__NAME_EXPRESSION = QWIKI_NAMED_ELEMENT__NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__NAMESPACE = QWIKI_NAMED_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -911,7 +762,43 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__QUALIFIED_NAME = InfrastructurePackage.UML_PACKAGE__QUALIFIED_NAME;
+	int I1_8N_NAMED_ELEMENT__QUALIFIED_NAME = QWIKI_NAMED_ELEMENT__QUALIFIED_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__VISIBILITY = QWIKI_NAMED_ELEMENT__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__UUID = QWIKI_NAMED_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY = QWIKI_NAMED_ELEMENT__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT__TAG = QWIKI_NAMED_ELEMENT__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -920,7 +807,1715 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__DISPLAY_NAME = InfrastructurePackage.UML_PACKAGE__DISPLAY_NAME;
+	int I1_8N_NAMED_ELEMENT__DISPLAY_NAME = QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>I1 8n Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT_FEATURE_COUNT = QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_EANNOTATION__STRING = QWIKI_NAMED_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWIKI_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWIKI_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___ADD_KEYWORD__STRING = QWIKI_NAMED_ELEMENT___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = QWIKI_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING = QWIKI_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___DESTROY = QWIKI_NAMED_ELEMENT___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_KEYWORDS = QWIKI_NAMED_ELEMENT___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES = QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES = QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_MODEL = QWIKI_NAMED_ELEMENT___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_NEAREST_PACKAGE = QWIKI_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS = QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS = QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES = QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS = QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING = QWIKI_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___HAS_KEYWORD__STRING = QWIKI_NAMED_ELEMENT___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = QWIKI_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING = QWIKI_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWIKI_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = QWIKI_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>All Owned Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS = QWIKI_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Must Be Owned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___MUST_BE_OWNED = QWIKI_NAMED_ELEMENT___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWIKI_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWIKI_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWIKI_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Create Dependency</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = QWIKI_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Create Usage</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT = QWIKI_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_LABEL = QWIKI_NAMED_ELEMENT___GET_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_LABEL__BOOLEAN = QWIKI_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Get Namespace</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_NAMESPACE = QWIKI_NAMED_ELEMENT___GET_NAMESPACE;
+
+	/**
+	 * The operation id for the '<em>All Namespaces</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___ALL_NAMESPACES = QWIKI_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>All Owning Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___ALL_OWNING_PACKAGES = QWIKI_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWIKI_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+
+	/**
+	 * The operation id for the '<em>Get Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_QUALIFIED_NAME = QWIKI_NAMED_ELEMENT___GET_QUALIFIED_NAME;
+
+	/**
+	 * The operation id for the '<em>Separator</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___SEPARATOR = QWIKI_NAMED_ELEMENT___SEPARATOR;
+
+	/**
+	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES = QWIKI_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT___OID = QWIKI_NAMED_ELEMENT___OID;
+
+	/**
+	 * The number of operations of the '<em>I1 8n Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_NAMED_ELEMENT_OPERATION_COUNT = QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.QWikiElementImpl <em>QWiki Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.QWikiElementImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiElement()
+	 * @generated
+	 */
+	int QWIKI_ELEMENT = 2;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__EANNOTATIONS = UMLPackage.ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__OWNED_COMMENT = UMLPackage.ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__OWNED_ELEMENT = UMLPackage.ELEMENT__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__OWNER = UMLPackage.ELEMENT__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__UUID = UMLPackage.ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__CUSTOM_PROPERTY = UMLPackage.ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT__TAG = UMLPackage.ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>QWiki Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT_FEATURE_COUNT = UMLPackage.ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_EANNOTATION__STRING = UMLPackage.ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = UMLPackage.ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = UMLPackage.ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___ADD_KEYWORD__STRING = UMLPackage.ELEMENT___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = UMLPackage.ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___CREATE_EANNOTATION__STRING = UMLPackage.ELEMENT___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___DESTROY = UMLPackage.ELEMENT___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_KEYWORDS = UMLPackage.ELEMENT___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = UMLPackage.ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES = UMLPackage.ELEMENT___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = UMLPackage.ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES = UMLPackage.ELEMENT___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = UMLPackage.ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = UMLPackage.ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_MODEL = UMLPackage.ELEMENT___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_NEAREST_PACKAGE = UMLPackage.ELEMENT___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_RELATIONSHIPS = UMLPackage.ELEMENT___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS = UMLPackage.ELEMENT___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = UMLPackage.ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES = UMLPackage.ELEMENT___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = UMLPackage.ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = UMLPackage.ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS = UMLPackage.ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = UMLPackage.ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING = UMLPackage.ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___HAS_KEYWORD__STRING = UMLPackage.ELEMENT___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = UMLPackage.ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = UMLPackage.ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = UMLPackage.ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = UMLPackage.ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___REMOVE_KEYWORD__STRING = UMLPackage.ELEMENT___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = UMLPackage.ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = UMLPackage.ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>All Owned Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___ALL_OWNED_ELEMENTS = UMLPackage.ELEMENT___ALL_OWNED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Must Be Owned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___MUST_BE_OWNED = UMLPackage.ELEMENT___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT___OID = UMLPackage.ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>QWiki Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ELEMENT_OPERATION_COUNT = UMLPackage.ELEMENT_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nBaseStringImpl <em>I1 8n Base String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nBaseStringImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nBaseString()
+	 * @generated
+	 */
+	int I1_8N_BASE_STRING = 4;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_BASE_STRING__VALUE = 0;
+
+	/**
+	 * The number of structural features of the '<em>I1 8n Base String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_BASE_STRING_FEATURE_COUNT = 1;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_BASE_STRING___VALUE__STRING = 0;
+
+	/**
+	 * The number of operations of the '<em>I1 8n Base String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_BASE_STRING_OPERATION_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nKeyedStringImpl <em>I1 8n Keyed String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nKeyedStringImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nKeyedString()
+	 * @generated
+	 */
+	int I1_8N_KEYED_STRING = 3;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_KEYED_STRING__VALUE = I1_8N_BASE_STRING__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_KEYED_STRING__KEY = I1_8N_BASE_STRING_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>I1 8n Keyed String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_KEYED_STRING_FEATURE_COUNT = I1_8N_BASE_STRING_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_KEYED_STRING___VALUE__STRING = I1_8N_BASE_STRING___VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>I1 8n Keyed String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_KEYED_STRING_OPERATION_COUNT = I1_8N_BASE_STRING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nValueImpl <em>I1 8n Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nValueImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nValue()
+	 * @generated
+	 */
+	int I1_8N_VALUE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Language</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_VALUE__LANGUAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_VALUE__BODY = 1;
+
+	/**
+	 * The number of structural features of the '<em>I1 8n Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_VALUE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>I1 8n Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_VALUE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nStringImpl <em>I1 8n String</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nStringImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nString()
+	 * @generated
+	 */
+	int I1_8N_STRING = 6;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_STRING__VALUE = I1_8N_BASE_STRING__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>I1 8n String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_STRING_FEATURE_COUNT = I1_8N_BASE_STRING_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_STRING___VALUE__STRING = I1_8N_BASE_STRING___VALUE__STRING;
+
+	/**
+	 * The number of operations of the '<em>I1 8n String</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_STRING_OPERATION_COUNT = I1_8N_BASE_STRING_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.QWikiCommentImpl <em>QWiki Comment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.QWikiCommentImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiComment()
+	 * @generated
+	 */
+	int QWIKI_COMMENT = 7;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__EANNOTATIONS = QWIKI_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__OWNED_COMMENT = QWIKI_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__OWNED_ELEMENT = QWIKI_ELEMENT__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__OWNER = QWIKI_ELEMENT__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__UUID = QWIKI_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__CUSTOM_PROPERTY = QWIKI_ELEMENT__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__TAG = QWIKI_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Annotated Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__ANNOTATED_ELEMENT = QWIKI_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__BODY = QWIKI_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT__CONTENT = QWIKI_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>QWiki Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT_FEATURE_COUNT = QWIKI_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_EANNOTATION__STRING = QWIKI_ELEMENT___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___ADD_KEYWORD__STRING = QWIKI_ELEMENT___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___APPLY_STEREOTYPE__STEREOTYPE = QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___CREATE_EANNOTATION__STRING = QWIKI_ELEMENT___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___DESTROY = QWIKI_ELEMENT___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_KEYWORDS = QWIKI_ELEMENT___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLICABLE_STEREOTYPE__STRING = QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLICABLE_STEREOTYPES = QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLIED_STEREOTYPE__STRING = QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLIED_STEREOTYPES = QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_MODEL = QWIKI_ELEMENT___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_NEAREST_PACKAGE = QWIKI_ELEMENT___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_RELATIONSHIPS = QWIKI_ELEMENT___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_RELATIONSHIPS__ECLASS = QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_REQUIRED_STEREOTYPE__STRING = QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_REQUIRED_STEREOTYPES = QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_STEREOTYPE_APPLICATIONS = QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___GET_VALUE__STEREOTYPE_STRING = QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___HAS_KEYWORD__STRING = QWIKI_ELEMENT___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___HAS_VALUE__STEREOTYPE_STRING = QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___REMOVE_KEYWORD__STRING = QWIKI_ELEMENT___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>All Owned Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___ALL_OWNED_ELEMENTS = QWIKI_ELEMENT___ALL_OWNED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Must Be Owned</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___MUST_BE_OWNED = QWIKI_ELEMENT___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT___OID = QWIKI_ELEMENT___OID;
+
+	/**
+	 * The number of operations of the '<em>QWiki Comment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_COMMENT_OPERATION_COUNT = QWIKI_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.I18nDescriptiveElementImpl <em>I1 8n Descriptive Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.I18nDescriptiveElementImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nDescriptiveElement()
+	 * @generated
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT = 8;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__EANNOTATIONS = I1_8N_NAMED_ELEMENT__EANNOTATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT = I1_8N_NAMED_ELEMENT__OWNED_COMMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT = I1_8N_NAMED_ELEMENT__OWNED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__OWNER = I1_8N_NAMED_ELEMENT__OWNER;
+
+	/**
+	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY = I1_8N_NAMED_ELEMENT__CLIENT_DEPENDENCY;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__NAME = I1_8N_NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION = I1_8N_NAMED_ELEMENT__NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE = I1_8N_NAMED_ELEMENT__NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME = I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__VISIBILITY = I1_8N_NAMED_ELEMENT__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__UUID = I1_8N_NAMED_ELEMENT__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY = I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__TAG = I1_8N_NAMED_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME = I1_8N_NAMED_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
@@ -929,79 +2524,340 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__PURPOSE = InfrastructurePackage.UML_PACKAGE__PURPOSE;
+	int I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE = I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__BODY = InfrastructurePackage.UML_PACKAGE__BODY;
+	int I1_8N_DESCRIPTIVE_ELEMENT__CONTENT = I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
+	 * The number of structural features of the '<em>I1 8n Descriptive Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__OWNED_MEMBER = InfrastructurePackage.UML_PACKAGE__OWNED_MEMBER;
+	int I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT = I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Member</b></em>' reference list.
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__MEMBER = InfrastructurePackage.UML_PACKAGE__MEMBER;
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING = I1_8N_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
-	 * The feature id for the '<em><b>Packaged Element</b></em>' containment reference list.
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__PACKAGED_ELEMENT = InfrastructurePackage.UML_PACKAGE__PACKAGED_ELEMENT;
+	int I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = I1_8N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The feature id for the '<em><b>Nested Package</b></em>' reference list.
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__NESTED_PACKAGE = InfrastructurePackage.UML_PACKAGE__NESTED_PACKAGE;
+	int I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = I1_8N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The feature id for the '<em><b>Nesting Package</b></em>' reference.
+	 * The operation id for the '<em>Add Keyword</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__NESTING_PACKAGE = InfrastructurePackage.UML_PACKAGE__NESTING_PACKAGE;
+	int I1_8N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING = I1_8N_NAMED_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
-	 * The feature id for the '<em><b>Owned Model Element</b></em>' containment reference list.
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT__OWNED_MODEL_ELEMENT = InfrastructurePackage.UML_PACKAGE_FEATURE_COUNT + 0;
+	int I1_8N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = I1_8N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
-	 * The number of structural features of the '<em>Model Root</em>' class.
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT_FEATURE_COUNT = InfrastructurePackage.UML_PACKAGE_FEATURE_COUNT + 1;
+	int I1_8N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING = I1_8N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___DESTROY = I1_8N_NAMED_ELEMENT___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS = I1_8N_NAMED_ELEMENT___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES = I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES = I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_MODEL = I1_8N_NAMED_ELEMENT___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE = I1_8N_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS = I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS = I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES = I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS = I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING = I1_8N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING = I1_8N_NAMED_ELEMENT___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = I1_8N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING = I1_8N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = I1_8N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = I1_8N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1010,7 +2866,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___ALL_OWNED_ELEMENTS = InfrastructurePackage.UML_PACKAGE___ALL_OWNED_ELEMENTS;
+	int I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS = I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1019,25 +2875,79 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___MUST_BE_OWNED = InfrastructurePackage.UML_PACKAGE___MUST_BE_OWNED;
+	int I1_8N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED = I1_8N_NAMED_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Model</em>' operation.
+	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___MODEL = InfrastructurePackage.UML_PACKAGE___MODEL;
+	int I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = I1_8N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___OID = InfrastructurePackage.UML_PACKAGE___OID;
+	int I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = I1_8N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = I1_8N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Create Dependency</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = I1_8N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Create Usage</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT = I1_8N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL = I1_8N_NAMED_ELEMENT___GET_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN = I1_8N_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Get Namespace</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE = I1_8N_NAMED_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1046,7 +2956,34 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___ALL_NAMESPACES = InfrastructurePackage.UML_PACKAGE___ALL_NAMESPACES;
+	int I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES = I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>All Owning Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES = I1_8N_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = I1_8N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+
+	/**
+	 * The operation id for the '<em>Get Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME = I1_8N_NAMED_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -1055,81 +2992,53 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___SEPARATOR = InfrastructurePackage.UML_PACKAGE___SEPARATOR;
+	int I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR = I1_8N_NAMED_ELEMENT___SEPARATOR;
 
 	/**
-	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT___QUALIFIED_NAME = InfrastructurePackage.UML_PACKAGE___QUALIFIED_NAME;
+	int I1_8N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES = I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The number of operations of the '<em>Model Root</em>' class.
+	 * The operation id for the '<em>Oid</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_ROOT_OPERATION_COUNT = InfrastructurePackage.UML_PACKAGE_OPERATION_COUNT + 0;
+	int I1_8N_DESCRIPTIVE_ELEMENT___OID = I1_8N_NAMED_ELEMENT___OID;
 
 	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.DO_NOT_USE_RelationshipImpl <em>DO NOT USE Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.DO_NOT_USE_RelationshipImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getDO_NOT_USE_Relationship()
-	 * @generated
-	 */
-	int DO_NOT_USE_RELATIONSHIP = 4;
-
-	/**
-	 * The number of structural features of the '<em>DO NOT USE Relationship</em>' class.
+	 * The number of operations of the '<em>I1 8n Descriptive Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_FEATURE_COUNT = 0;
+	int I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT = I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>DO NOT USE Relationship</em>' class.
+	 * The meta object id for the '{@link QWiki.Kernel.impl.QWikiNamespaceImpl <em>QWiki Namespace</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.QWikiNamespaceImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiNamespace()
+	 * @generated
+	 */
+	int QWIKI_NAMESPACE = 9;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.DO_NOT_USE_RelationshipTypeImpl <em>DO NOT USE Relationship Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.DO_NOT_USE_RelationshipTypeImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getDO_NOT_USE_RelationshipType()
-	 * @generated
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__OWNED_ELEMENT = I18NPackage.I1_8N_NAMED_ELEMENT__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__OWNER = I18NPackage.I1_8N_NAMED_ELEMENT__OWNER;
+	int QWIKI_NAMESPACE__EANNOTATIONS = UMLPackage.NAMESPACE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1138,79 +3047,34 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__OWNED_COMMENT = I18NPackage.I1_8N_NAMED_ELEMENT__OWNED_COMMENT;
+	int QWIKI_NAMESPACE__OWNED_COMMENT = UMLPackage.NAMESPACE__OWNED_COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__DIRECTED_RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__DIRECTED_RELATIONSHIP;
+	int QWIKI_NAMESPACE__OWNED_ELEMENT = UMLPackage.NAMESPACE__OWNED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__RELATIONSHIP;
+	int QWIKI_NAMESPACE__OWNER = UMLPackage.NAMESPACE__OWNER;
 
 	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__TAG = I18NPackage.I1_8N_NAMED_ELEMENT__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__CUSTOM_PROPERTY = I18NPackage.I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Model</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__MODEL = I18NPackage.I1_8N_NAMED_ELEMENT__MODEL;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__UUID = I18NPackage.I1_8N_NAMED_ELEMENT__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Superseeding Relationship</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__SUPERSEEDING_RELATIONSHIP = I18NPackage.I1_8N_NAMED_ELEMENT__SUPERSEEDING_RELATIONSHIP;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__NAMESPACE = I18NPackage.I1_8N_NAMED_ELEMENT__NAMESPACE;
+	int QWIKI_NAMESPACE__CLIENT_DEPENDENCY = UMLPackage.NAMESPACE__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1219,7 +3083,25 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__NAME = I18NPackage.I1_8N_NAMED_ELEMENT__NAME;
+	int QWIKI_NAMESPACE__NAME = UMLPackage.NAMESPACE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__NAME_EXPRESSION = UMLPackage.NAMESPACE__NAME_EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__NAMESPACE = UMLPackage.NAMESPACE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -1228,7 +3110,97 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__QUALIFIED_NAME = I18NPackage.I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
+	int QWIKI_NAMESPACE__QUALIFIED_NAME = UMLPackage.NAMESPACE__QUALIFIED_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__VISIBILITY = UMLPackage.NAMESPACE__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__OWNED_RULE = UMLPackage.NAMESPACE__OWNED_RULE;
+
+	/**
+	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__ELEMENT_IMPORT = UMLPackage.NAMESPACE__ELEMENT_IMPORT;
+
+	/**
+	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__PACKAGE_IMPORT = UMLPackage.NAMESPACE__PACKAGE_IMPORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__OWNED_MEMBER = UMLPackage.NAMESPACE__OWNED_MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__IMPORTED_MEMBER = UMLPackage.NAMESPACE__IMPORTED_MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__MEMBER = UMLPackage.NAMESPACE__MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__UUID = UMLPackage.NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__CUSTOM_PROPERTY = UMLPackage.NAMESPACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__TAG = UMLPackage.NAMESPACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1237,16 +3209,331 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE__DISPLAY_NAME = I18NPackage.I1_8N_NAMED_ELEMENT__DISPLAY_NAME;
+	int QWIKI_NAMESPACE__DISPLAY_NAME = UMLPackage.NAMESPACE_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>DO NOT USE Relationship Type</em>' class.
+	 * The number of structural features of the '<em>QWiki Namespace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE_FEATURE_COUNT = I18NPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int QWIKI_NAMESPACE_FEATURE_COUNT = UMLPackage.NAMESPACE_FEATURE_COUNT + 4;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_EANNOTATION__STRING = UMLPackage.NAMESPACE___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___ADD_KEYWORD__STRING = UMLPackage.NAMESPACE___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE = UMLPackage.NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___CREATE_EANNOTATION__STRING = UMLPackage.NAMESPACE___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___DESTROY = UMLPackage.NAMESPACE___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_KEYWORDS = UMLPackage.NAMESPACE___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING = UMLPackage.NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPES = UMLPackage.NAMESPACE___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPE__STRING = UMLPackage.NAMESPACE___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPES = UMLPackage.NAMESPACE___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = UMLPackage.NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = UMLPackage.NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_MODEL = UMLPackage.NAMESPACE___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_NEAREST_PACKAGE = UMLPackage.NAMESPACE___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_RELATIONSHIPS = UMLPackage.NAMESPACE___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_RELATIONSHIPS__ECLASS = UMLPackage.NAMESPACE___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING = UMLPackage.NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPES = UMLPackage.NAMESPACE___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS = UMLPackage.NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = UMLPackage.NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATIONS = UMLPackage.NAMESPACE___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS = UMLPackage.NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = UMLPackage.NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_VALUE__STEREOTYPE_STRING = UMLPackage.NAMESPACE___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___HAS_KEYWORD__STRING = UMLPackage.NAMESPACE___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___HAS_VALUE__STEREOTYPE_STRING = UMLPackage.NAMESPACE___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = UMLPackage.NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE = UMLPackage.NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = UMLPackage.NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___REMOVE_KEYWORD__STRING = UMLPackage.NAMESPACE___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT = UMLPackage.NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE = UMLPackage.NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1255,7 +3542,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___ALL_OWNED_ELEMENTS = I18NPackage.I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+	int QWIKI_NAMESPACE___ALL_OWNED_ELEMENTS = UMLPackage.NAMESPACE___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1264,25 +3551,79 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___MUST_BE_OWNED = I18NPackage.I1_8N_NAMED_ELEMENT___MUST_BE_OWNED;
+	int QWIKI_NAMESPACE___MUST_BE_OWNED = UMLPackage.NAMESPACE___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Model</em>' operation.
+	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___MODEL = I18NPackage.I1_8N_NAMED_ELEMENT___MODEL;
+	int QWIKI_NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___OID = I18NPackage.I1_8N_NAMED_ELEMENT___OID;
+	int QWIKI_NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Create Dependency</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT = UMLPackage.NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Create Usage</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___CREATE_USAGE__NAMEDELEMENT = UMLPackage.NAMESPACE___CREATE_USAGE__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_LABEL = UMLPackage.NAMESPACE___GET_LABEL;
+
+	/**
+	 * The operation id for the '<em>Get Label</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_LABEL__BOOLEAN = UMLPackage.NAMESPACE___GET_LABEL__BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Get Namespace</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_NAMESPACE = UMLPackage.NAMESPACE___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1291,7 +3632,34 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___ALL_NAMESPACES = I18NPackage.I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+	int QWIKI_NAMESPACE___ALL_NAMESPACES = UMLPackage.NAMESPACE___ALL_NAMESPACES;
+
+	/**
+	 * The operation id for the '<em>All Owning Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___ALL_OWNING_PACKAGES = UMLPackage.NAMESPACE___ALL_OWNING_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = UMLPackage.NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+
+	/**
+	 * The operation id for the '<em>Get Qualified Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_QUALIFIED_NAME = UMLPackage.NAMESPACE___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -1300,53 +3668,170 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___SEPARATOR = I18NPackage.I1_8N_NAMED_ELEMENT___SEPARATOR;
+	int QWIKI_NAMESPACE___SEPARATOR = UMLPackage.NAMESPACE___SEPARATOR;
 
 	/**
-	 * The operation id for the '<em>Qualified Name</em>' operation.
+	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___QUALIFIED_NAME = I18NPackage.I1_8N_NAMED_ELEMENT___QUALIFIED_NAME;
+	int QWIKI_NAMESPACE___GET_CLIENT_DEPENDENCIES = UMLPackage.NAMESPACE___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The number of operations of the '<em>DO NOT USE Relationship Type</em>' class.
+	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE_OPERATION_COUNT = I18NPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int QWIKI_NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The meta object id for the '{@link QWiki.Kernel.impl.SuperseedingRelationshipImpl <em>Superseeding Relationship</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.impl.SuperseedingRelationshipImpl
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getSuperseedingRelationship()
-	 * @generated
-	 */
-	int SUPERSEEDING_RELATIONSHIP = 6;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
+	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__OWNED_ELEMENT = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__OWNED_ELEMENT;
+	int QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
+	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__OWNER = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__OWNER;
+	int QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = UMLPackage.NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Create Element Import</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = UMLPackage.NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
+
+	/**
+	 * The operation id for the '<em>Create Package Import</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = UMLPackage.NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
+
+	/**
+	 * The operation id for the '<em>Get Imported Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_IMPORTED_ELEMENTS = UMLPackage.NAMESPACE___GET_IMPORTED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Imported Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_IMPORTED_PACKAGES = UMLPackage.NAMESPACE___GET_IMPORTED_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Get Owned Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_OWNED_MEMBERS = UMLPackage.NAMESPACE___GET_OWNED_MEMBERS;
+
+	/**
+	 * The operation id for the '<em>Exclude Collisions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___EXCLUDE_COLLISIONS__ELIST = UMLPackage.NAMESPACE___EXCLUDE_COLLISIONS__ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Names Of Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT = UMLPackage.NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Import Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___IMPORT_MEMBERS__ELIST = UMLPackage.NAMESPACE___IMPORT_MEMBERS__ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Imported Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___GET_IMPORTED_MEMBERS = UMLPackage.NAMESPACE___GET_IMPORTED_MEMBERS;
+
+	/**
+	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE = UMLPackage.NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE___OID = UMLPackage.NAMESPACE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>QWiki Namespace</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE_OPERATION_COUNT = UMLPackage.NAMESPACE_OPERATION_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link QWiki.Kernel.impl.QWikiContainerImpl <em>QWiki Container</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see QWiki.Kernel.impl.QWikiContainerImpl
+	 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiContainer()
+	 * @generated
+	 */
+	int QWIKI_CONTAINER = 10;
+
+	/**
+	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__EANNOTATIONS = QWIKI_NAMESPACE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1355,70 +3840,511 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__OWNED_COMMENT = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__OWNED_COMMENT;
+	int QWIKI_CONTAINER__OWNED_COMMENT = QWIKI_NAMESPACE__OWNED_COMMENT;
 
 	/**
-	 * The feature id for the '<em><b>Directed Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__DIRECTED_RELATIONSHIP = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__DIRECTED_RELATIONSHIP;
+	int QWIKI_CONTAINER__OWNED_ELEMENT = QWIKI_NAMESPACE__OWNED_ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
+	 * The feature id for the '<em><b>Owner</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__RELATIONSHIP = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__RELATIONSHIP;
+	int QWIKI_CONTAINER__OWNER = QWIKI_NAMESPACE__OWNER;
 
 	/**
-	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
+	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__RELATED_ELEMENT = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__RELATED_ELEMENT;
+	int QWIKI_CONTAINER__CLIENT_DEPENDENCY = QWIKI_NAMESPACE__CLIENT_DEPENDENCY;
 
 	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference list.
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__TARGET = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__TARGET;
+	int QWIKI_CONTAINER__NAME = QWIKI_NAMESPACE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference list.
+	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__SOURCE = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP__SOURCE;
+	int QWIKI_CONTAINER__NAME_EXPRESSION = QWIKI_NAMESPACE__NAME_EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Superseeding Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Namespace</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP__SUPERSEEDING_TYPE = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP_FEATURE_COUNT + 0;
+	int QWIKI_CONTAINER__NAMESPACE = QWIKI_NAMESPACE__NAMESPACE;
 
 	/**
-	 * The number of structural features of the '<em>Superseeding Relationship</em>' class.
+	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP_FEATURE_COUNT = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP_FEATURE_COUNT + 1;
+	int QWIKI_CONTAINER__QUALIFIED_NAME = QWIKI_NAMESPACE__QUALIFIED_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__VISIBILITY = QWIKI_NAMESPACE__VISIBILITY;
+
+	/**
+	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__OWNED_RULE = QWIKI_NAMESPACE__OWNED_RULE;
+
+	/**
+	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__ELEMENT_IMPORT = QWIKI_NAMESPACE__ELEMENT_IMPORT;
+
+	/**
+	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__PACKAGE_IMPORT = QWIKI_NAMESPACE__PACKAGE_IMPORT;
+
+	/**
+	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__OWNED_MEMBER = QWIKI_NAMESPACE__OWNED_MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__IMPORTED_MEMBER = QWIKI_NAMESPACE__IMPORTED_MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Member</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__MEMBER = QWIKI_NAMESPACE__MEMBER;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__UUID = QWIKI_NAMESPACE__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__CUSTOM_PROPERTY = QWIKI_NAMESPACE__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__TAG = QWIKI_NAMESPACE__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__DISPLAY_NAME = QWIKI_NAMESPACE__DISPLAY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__PURPOSE = QWIKI_NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__CONTENT = QWIKI_NAMESPACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>QWiki Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER_FEATURE_COUNT = QWIKI_NAMESPACE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_EANNOTATION__STRING = QWIKI_NAMESPACE___GET_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Validate Has Owner</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+
+	/**
+	 * The operation id for the '<em>Add Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___ADD_KEYWORD__STRING = QWIKI_NAMESPACE___ADD_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Apply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE = QWIKI_NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Create EAnnotation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___CREATE_EANNOTATION__STRING = QWIKI_NAMESPACE___CREATE_EANNOTATION__STRING;
+
+	/**
+	 * The operation id for the '<em>Destroy</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___DESTROY = QWIKI_NAMESPACE___DESTROY;
+
+	/**
+	 * The operation id for the '<em>Get Keywords</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_KEYWORDS = QWIKI_NAMESPACE___GET_KEYWORDS;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING = QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES = QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING = QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES = QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_MODEL = QWIKI_NAMESPACE___GET_MODEL;
+
+	/**
+	 * The operation id for the '<em>Get Nearest Package</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_NEAREST_PACKAGE = QWIKI_NAMESPACE___GET_NEAREST_PACKAGE;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_RELATIONSHIPS = QWIKI_NAMESPACE___GET_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS = QWIKI_NAMESPACE___GET_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING = QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES = QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPES;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS = QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATIONS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS = QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS;
+
+	/**
+	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+
+	/**
+	 * The operation id for the '<em>Get Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING = QWIKI_NAMESPACE___GET_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Has Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___HAS_KEYWORD__STRING = QWIKI_NAMESPACE___HAS_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Has Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING = QWIKI_NAMESPACE___HAS_VALUE__STEREOTYPE_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWIKI_NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWIKI_NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWIKI_NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+
+	/**
+	 * The operation id for the '<em>Remove Keyword</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___REMOVE_KEYWORD__STRING = QWIKI_NAMESPACE___REMOVE_KEYWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Set Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWIKI_NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+
+	/**
+	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE = QWIKI_NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1427,7 +4353,7 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP___ALL_OWNED_ELEMENTS = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP___ALL_OWNED_ELEMENTS;
+	int QWIKI_CONTAINER___ALL_OWNED_ELEMENTS = QWIKI_NAMESPACE___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1436,257 +4362,520 @@ public interface KernelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP___MUST_BE_OWNED = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP___MUST_BE_OWNED;
+	int QWIKI_CONTAINER___MUST_BE_OWNED = QWIKI_NAMESPACE___MUST_BE_OWNED;
 
 	/**
-	 * The number of operations of the '<em>Superseeding Relationship</em>' class.
+	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUPERSEEDING_RELATIONSHIP_OPERATION_COUNT = InfrastructurePackage.UML_DIRECTED_RELATIONSHIP_OPERATION_COUNT + 0;
+	int QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * The meta object id for the '{@link QWiki.Kernel.SuperseedingType <em>Superseeding Type</em>}' enum.
+	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Kernel.SuperseedingType
-	 * @see QWiki.Kernel.impl.KernelPackageImpl#getSuperseedingType()
 	 * @generated
+	 * @ordered
 	 */
-	int SUPERSEEDING_TYPE = 8;
-
+	int QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.ModelDomain <em>Model Domain</em>}'.
+	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Domain</em>'.
-	 * @see QWiki.Kernel.ModelDomain
 	 * @generated
+	 * @ordered
 	 */
-	EClass getModelDomain();
+	int QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * Returns the meta object for the reference list '{@link QWiki.Kernel.ModelDomain#getDomainElement <em>Domain Element</em>}'.
+	 * The operation id for the '<em>Create Dependency</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Domain Element</em>'.
-	 * @see QWiki.Kernel.ModelDomain#getDomainElement()
-	 * @see #getModelDomain()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelDomain_DomainElement();
+	int QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT = QWIKI_NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Kernel.ModelDomain#allDomainElement() <em>All Domain Element</em>}' operation.
+	 * The operation id for the '<em>Create Usage</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>All Domain Element</em>' operation.
-	 * @see QWiki.Kernel.ModelDomain#allDomainElement()
 	 * @generated
+	 * @ordered
 	 */
-	EOperation getModelDomain__AllDomainElement();
+	int QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT = QWIKI_NAMESPACE___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.ModelDomainElement <em>Model Domain Element</em>}'.
+	 * The operation id for the '<em>Get Label</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Domain Element</em>'.
-	 * @see QWiki.Kernel.ModelDomainElement
 	 * @generated
+	 * @ordered
 	 */
-	EClass getModelDomainElement();
+	int QWIKI_CONTAINER___GET_LABEL = QWIKI_NAMESPACE___GET_LABEL;
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Kernel.ModelDomainElement#getDomain <em>Domain</em>}'.
+	 * The operation id for the '<em>Get Label</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Domain</em>'.
-	 * @see QWiki.Kernel.ModelDomainElement#getDomain()
-	 * @see #getModelDomainElement()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelDomainElement_Domain();
+	int QWIKI_CONTAINER___GET_LABEL__BOOLEAN = QWIKI_NAMESPACE___GET_LABEL__BOOLEAN;
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Kernel.ModelDomainElement#getAssignedDomain <em>Assigned Domain</em>}'.
+	 * The operation id for the '<em>Get Namespace</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Assigned Domain</em>'.
-	 * @see QWiki.Kernel.ModelDomainElement#getAssignedDomain()
-	 * @see #getModelDomainElement()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelDomainElement_AssignedDomain();
+	int QWIKI_CONTAINER___GET_NAMESPACE = QWIKI_NAMESPACE___GET_NAMESPACE;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.ModelRoot <em>Model Root</em>}'.
+	 * The operation id for the '<em>All Namespaces</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Root</em>'.
-	 * @see QWiki.Kernel.ModelRoot
 	 * @generated
+	 * @ordered
 	 */
-	EClass getModelRoot();
+	int QWIKI_CONTAINER___ALL_NAMESPACES = QWIKI_NAMESPACE___ALL_NAMESPACES;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.Kernel.ModelRoot#getOwnedModelElement <em>Owned Model Element</em>}'.
+	 * The operation id for the '<em>All Owning Packages</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Model Element</em>'.
-	 * @see QWiki.Kernel.ModelRoot#getOwnedModelElement()
-	 * @see #getModelRoot()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelRoot_OwnedModelElement();
+	int QWIKI_CONTAINER___ALL_OWNING_PACKAGES = QWIKI_NAMESPACE___ALL_OWNING_PACKAGES;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.ModelTaggedElement <em>Model Tagged Element</em>}'.
+	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Tagged Element</em>'.
-	 * @see QWiki.Kernel.ModelTaggedElement
 	 * @generated
+	 * @ordered
 	 */
-	EClass getModelTaggedElement();
+	int QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWIKI_NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
-	 * Returns the meta object for the attribute list '{@link QWiki.Kernel.ModelTaggedElement#getTag <em>Tag</em>}'.
+	 * The operation id for the '<em>Get Qualified Name</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Tag</em>'.
-	 * @see QWiki.Kernel.ModelTaggedElement#getTag()
-	 * @see #getModelTaggedElement()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getModelTaggedElement_Tag();
+	int QWIKI_CONTAINER___GET_QUALIFIED_NAME = QWIKI_NAMESPACE___GET_QUALIFIED_NAME;
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.Kernel.ModelTaggedElement#getCustomProperty <em>Custom Property</em>}'.
+	 * The operation id for the '<em>Separator</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Custom Property</em>'.
-	 * @see QWiki.Kernel.ModelTaggedElement#getCustomProperty()
-	 * @see #getModelTaggedElement()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelTaggedElement_CustomProperty();
+	int QWIKI_CONTAINER___SEPARATOR = QWIKI_NAMESPACE___SEPARATOR;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.DO_NOT_USE_Relationship <em>DO NOT USE Relationship</em>}'.
+	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>DO NOT USE Relationship</em>'.
-	 * @see QWiki.Kernel.DO_NOT_USE_Relationship
 	 * @generated
+	 * @ordered
 	 */
-	EClass getDO_NOT_USE_Relationship();
+	int QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES = QWIKI_NAMESPACE___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.DO_NOT_USE_RelationshipType <em>DO NOT USE Relationship Type</em>}'.
+	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>DO NOT USE Relationship Type</em>'.
-	 * @see QWiki.Kernel.DO_NOT_USE_RelationshipType
 	 * @generated
+	 * @ordered
 	 */
-	EClass getDO_NOT_USE_RelationshipType();
+	int QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.SuperseedingRelationship <em>Superseeding Relationship</em>}'.
+	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Superseeding Relationship</em>'.
-	 * @see QWiki.Kernel.SuperseedingRelationship
 	 * @generated
+	 * @ordered
 	 */
-	EClass getSuperseedingRelationship();
+	int QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.Kernel.SuperseedingRelationship#getSuperseedingType <em>Superseeding Type</em>}'.
+	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Superseeding Type</em>'.
-	 * @see QWiki.Kernel.SuperseedingRelationship#getSuperseedingType()
-	 * @see #getSuperseedingRelationship()
 	 * @generated
+	 * @ordered
 	 */
-	EAttribute getSuperseedingRelationship_SuperseedingType();
+	int QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Kernel.ModelElement <em>Model Element</em>}'.
+	 * The operation id for the '<em>Create Element Import</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Model Element</em>'.
-	 * @see QWiki.Kernel.ModelElement
 	 * @generated
+	 * @ordered
 	 */
-	EClass getModelElement();
+	int QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = QWIKI_NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
 
 	/**
-	 * Returns the meta object for the container reference '{@link QWiki.Kernel.ModelElement#getModel <em>Model</em>}'.
+	 * The operation id for the '<em>Create Package Import</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Model</em>'.
-	 * @see QWiki.Kernel.ModelElement#getModel()
-	 * @see #getModelElement()
 	 * @generated
+	 * @ordered
 	 */
-	EReference getModelElement_Model();
+	int QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = QWIKI_NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.Kernel.ModelElement#getUuid <em>Uuid</em>}'.
+	 * The operation id for the '<em>Get Imported Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS = QWIKI_NAMESPACE___GET_IMPORTED_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Imported Packages</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_IMPORTED_PACKAGES = QWIKI_NAMESPACE___GET_IMPORTED_PACKAGES;
+
+	/**
+	 * The operation id for the '<em>Get Owned Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_OWNED_MEMBERS = QWIKI_NAMESPACE___GET_OWNED_MEMBERS;
+
+	/**
+	 * The operation id for the '<em>Exclude Collisions</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST = QWIKI_NAMESPACE___EXCLUDE_COLLISIONS__ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Names Of Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT = QWIKI_NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+
+	/**
+	 * The operation id for the '<em>Import Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST = QWIKI_NAMESPACE___IMPORT_MEMBERS__ELIST;
+
+	/**
+	 * The operation id for the '<em>Get Imported Members</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___GET_IMPORTED_MEMBERS = QWIKI_NAMESPACE___GET_IMPORTED_MEMBERS;
+
+	/**
+	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE = QWIKI_NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE;
+
+	/**
+	 * The operation id for the '<em>Oid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER___OID = QWIKI_NAMESPACE___OID;
+
+	/**
+	 * The number of operations of the '<em>QWiki Container</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER_OPERATION_COUNT = QWIKI_NAMESPACE_OPERATION_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n Named Element</em>'.
+	 * @see QWiki.Kernel.I18nNamedElement
+	 * @generated
+	 */
+	EClass getI18nNamedElement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link QWiki.Kernel.I18nNamedElement#getDisplayName <em>Display Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Display Name</em>'.
+	 * @see QWiki.Kernel.I18nNamedElement#getDisplayName()
+	 * @see #getI18nNamedElement()
+	 * @generated
+	 */
+	EReference getI18nNamedElement_DisplayName();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.QWikiNamedElement <em>QWiki Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>QWiki Named Element</em>'.
+	 * @see QWiki.Kernel.QWikiNamedElement
+	 * @generated
+	 */
+	EClass getQWikiNamedElement();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>QWiki Element</em>'.
+	 * @see QWiki.Kernel.QWikiElement
+	 * @generated
+	 */
+	EClass getQWikiElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link QWiki.Kernel.QWikiElement#getUuid <em>Uuid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Uuid</em>'.
-	 * @see QWiki.Kernel.ModelElement#getUuid()
-	 * @see #getModelElement()
+	 * @see QWiki.Kernel.QWikiElement#getUuid()
+	 * @see #getQWikiElement()
 	 * @generated
 	 */
-	EAttribute getModelElement_Uuid();
+	EAttribute getQWikiElement_Uuid();
 
 	/**
-	 * Returns the meta object for the reference list '{@link QWiki.Kernel.ModelElement#getSuperseedingRelationship <em>Superseeding Relationship</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.Kernel.QWikiElement#getCustomProperty <em>Custom Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Superseeding Relationship</em>'.
-	 * @see QWiki.Kernel.ModelElement#getSuperseedingRelationship()
-	 * @see #getModelElement()
+	 * @return the meta object for the containment reference list '<em>Custom Property</em>'.
+	 * @see QWiki.Kernel.QWikiElement#getCustomProperty()
+	 * @see #getQWikiElement()
 	 * @generated
 	 */
-	EReference getModelElement_SuperseedingRelationship();
+	EReference getQWikiElement_CustomProperty();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Kernel.ModelElement#model() <em>Model</em>}' operation.
+	 * Returns the meta object for the attribute list '{@link QWiki.Kernel.QWikiElement#getTag <em>Tag</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Model</em>' operation.
-	 * @see QWiki.Kernel.ModelElement#model()
+	 * @return the meta object for the attribute list '<em>Tag</em>'.
+	 * @see QWiki.Kernel.QWikiElement#getTag()
+	 * @see #getQWikiElement()
 	 * @generated
 	 */
-	EOperation getModelElement__Model();
+	EAttribute getQWikiElement_Tag();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Kernel.ModelElement#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Kernel.ModelElement#oid()
+	 * @see QWiki.Kernel.QWikiElement#oid()
 	 * @generated
 	 */
-	EOperation getModelElement__Oid();
+	EOperation getQWikiElement__Oid();
 
 	/**
-	 * Returns the meta object for enum '{@link QWiki.Kernel.SuperseedingType <em>Superseeding Type</em>}'.
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nKeyedString <em>I1 8n Keyed String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Superseeding Type</em>'.
-	 * @see QWiki.Kernel.SuperseedingType
+	 * @return the meta object for class '<em>I1 8n Keyed String</em>'.
+	 * @see QWiki.Kernel.I18nKeyedString
 	 * @generated
 	 */
-	EEnum getSuperseedingType();
+	EClass getI18nKeyedString();
+
+	/**
+	 * Returns the meta object for the attribute '{@link QWiki.Kernel.I18nKeyedString#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see QWiki.Kernel.I18nKeyedString#getKey()
+	 * @see #getI18nKeyedString()
+	 * @generated
+	 */
+	EAttribute getI18nKeyedString_Key();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nBaseString <em>I1 8n Base String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n Base String</em>'.
+	 * @see QWiki.Kernel.I18nBaseString
+	 * @generated
+	 */
+	EClass getI18nBaseString();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link QWiki.Kernel.I18nBaseString#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Value</em>'.
+	 * @see QWiki.Kernel.I18nBaseString#getValue()
+	 * @see #getI18nBaseString()
+	 * @generated
+	 */
+	EReference getI18nBaseString_Value();
+
+	/**
+	 * Returns the meta object for the '{@link QWiki.Kernel.I18nBaseString#value(java.lang.String) <em>Value</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Value</em>' operation.
+	 * @see QWiki.Kernel.I18nBaseString#value(java.lang.String)
+	 * @generated
+	 */
+	EOperation getI18nBaseString__Value__String();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nValue <em>I1 8n Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n Value</em>'.
+	 * @see QWiki.Kernel.I18nValue
+	 * @generated
+	 */
+	EClass getI18nValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link QWiki.Kernel.I18nValue#getLanguage <em>Language</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Language</em>'.
+	 * @see QWiki.Kernel.I18nValue#getLanguage()
+	 * @see #getI18nValue()
+	 * @generated
+	 */
+	EAttribute getI18nValue_Language();
+
+	/**
+	 * Returns the meta object for the attribute '{@link QWiki.Kernel.I18nValue#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Body</em>'.
+	 * @see QWiki.Kernel.I18nValue#getBody()
+	 * @see #getI18nValue()
+	 * @generated
+	 */
+	EAttribute getI18nValue_Body();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nString <em>I1 8n String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n String</em>'.
+	 * @see QWiki.Kernel.I18nString
+	 * @generated
+	 */
+	EClass getI18nString();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.QWikiComment <em>QWiki Comment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>QWiki Comment</em>'.
+	 * @see QWiki.Kernel.QWikiComment
+	 * @generated
+	 */
+	EClass getQWikiComment();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link QWiki.Kernel.QWikiComment#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see QWiki.Kernel.QWikiComment#getContent()
+	 * @see #getQWikiComment()
+	 * @generated
+	 */
+	EReference getQWikiComment_Content();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>I1 8n Descriptive Element</em>'.
+	 * @see QWiki.Kernel.I18nDescriptiveElement
+	 * @generated
+	 */
+	EClass getI18nDescriptiveElement();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link QWiki.Kernel.I18nDescriptiveElement#getPurpose <em>Purpose</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Purpose</em>'.
+	 * @see QWiki.Kernel.I18nDescriptiveElement#getPurpose()
+	 * @see #getI18nDescriptiveElement()
+	 * @generated
+	 */
+	EReference getI18nDescriptiveElement_Purpose();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link QWiki.Kernel.I18nDescriptiveElement#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Content</em>'.
+	 * @see QWiki.Kernel.I18nDescriptiveElement#getContent()
+	 * @see #getI18nDescriptiveElement()
+	 * @generated
+	 */
+	EReference getI18nDescriptiveElement_Content();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.QWikiNamespace <em>QWiki Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>QWiki Namespace</em>'.
+	 * @see QWiki.Kernel.QWikiNamespace
+	 * @generated
+	 */
+	EClass getQWikiNamespace();
+
+	/**
+	 * Returns the meta object for class '{@link QWiki.Kernel.QWikiContainer <em>QWiki Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>QWiki Container</em>'.
+	 * @see QWiki.Kernel.QWikiContainer
+	 * @generated
+	 */
+	EClass getQWikiContainer();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1712,156 +4901,42 @@ public interface KernelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.ModelDomainImpl <em>Model Domain</em>}' class.
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nNamedElementImpl <em>I1 8n Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.ModelDomainImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelDomain()
+		 * @see QWiki.Kernel.impl.I18nNamedElementImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nNamedElement()
 		 * @generated
 		 */
-		EClass MODEL_DOMAIN = eINSTANCE.getModelDomain();
+		EClass I1_8N_NAMED_ELEMENT = eINSTANCE.getI18nNamedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Domain Element</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Display Name</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL_DOMAIN__DOMAIN_ELEMENT = eINSTANCE.getModelDomain_DomainElement();
+		EReference I1_8N_NAMED_ELEMENT__DISPLAY_NAME = eINSTANCE.getI18nNamedElement_DisplayName();
 
 		/**
-		 * The meta object literal for the '<em><b>All Domain Element</b></em>' operation.
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.QWikiNamedElementImpl <em>QWiki Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.QWikiNamedElementImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiNamedElement()
 		 * @generated
 		 */
-		EOperation MODEL_DOMAIN___ALL_DOMAIN_ELEMENT = eINSTANCE.getModelDomain__AllDomainElement();
+		EClass QWIKI_NAMED_ELEMENT = eINSTANCE.getQWikiNamedElement();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.ModelDomainElementImpl <em>Model Domain Element</em>}' class.
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.QWikiElementImpl <em>QWiki Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.ModelDomainElementImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelDomainElement()
+		 * @see QWiki.Kernel.impl.QWikiElementImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiElement()
 		 * @generated
 		 */
-		EClass MODEL_DOMAIN_ELEMENT = eINSTANCE.getModelDomainElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Domain</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_DOMAIN_ELEMENT__DOMAIN = eINSTANCE.getModelDomainElement_Domain();
-
-		/**
-		 * The meta object literal for the '<em><b>Assigned Domain</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_DOMAIN_ELEMENT__ASSIGNED_DOMAIN = eINSTANCE.getModelDomainElement_AssignedDomain();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.ModelRootImpl <em>Model Root</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.ModelRootImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelRoot()
-		 * @generated
-		 */
-		EClass MODEL_ROOT = eINSTANCE.getModelRoot();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Model Element</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_ROOT__OWNED_MODEL_ELEMENT = eINSTANCE.getModelRoot_OwnedModelElement();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.ModelTaggedElementImpl <em>Model Tagged Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.ModelTaggedElementImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelTaggedElement()
-		 * @generated
-		 */
-		EClass MODEL_TAGGED_ELEMENT = eINSTANCE.getModelTaggedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Tag</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MODEL_TAGGED_ELEMENT__TAG = eINSTANCE.getModelTaggedElement_Tag();
-
-		/**
-		 * The meta object literal for the '<em><b>Custom Property</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_TAGGED_ELEMENT__CUSTOM_PROPERTY = eINSTANCE.getModelTaggedElement_CustomProperty();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.DO_NOT_USE_RelationshipImpl <em>DO NOT USE Relationship</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.DO_NOT_USE_RelationshipImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getDO_NOT_USE_Relationship()
-		 * @generated
-		 */
-		EClass DO_NOT_USE_RELATIONSHIP = eINSTANCE.getDO_NOT_USE_Relationship();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.DO_NOT_USE_RelationshipTypeImpl <em>DO NOT USE Relationship Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.DO_NOT_USE_RelationshipTypeImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getDO_NOT_USE_RelationshipType()
-		 * @generated
-		 */
-		EClass DO_NOT_USE_RELATIONSHIP_TYPE = eINSTANCE.getDO_NOT_USE_RelationshipType();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.SuperseedingRelationshipImpl <em>Superseeding Relationship</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.SuperseedingRelationshipImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getSuperseedingRelationship()
-		 * @generated
-		 */
-		EClass SUPERSEEDING_RELATIONSHIP = eINSTANCE.getSuperseedingRelationship();
-
-		/**
-		 * The meta object literal for the '<em><b>Superseeding Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SUPERSEEDING_RELATIONSHIP__SUPERSEEDING_TYPE = eINSTANCE.getSuperseedingRelationship_SuperseedingType();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.impl.ModelElementImpl <em>Model Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.impl.ModelElementImpl
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getModelElement()
-		 * @generated
-		 */
-		EClass MODEL_ELEMENT = eINSTANCE.getModelElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Model</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL_ELEMENT__MODEL = eINSTANCE.getModelElement_Model();
+		EClass QWIKI_ELEMENT = eINSTANCE.getQWikiElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Uuid</b></em>' attribute feature.
@@ -1869,23 +4944,23 @@ public interface KernelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MODEL_ELEMENT__UUID = eINSTANCE.getModelElement_Uuid();
+		EAttribute QWIKI_ELEMENT__UUID = eINSTANCE.getQWikiElement_Uuid();
 
 		/**
-		 * The meta object literal for the '<em><b>Superseeding Relationship</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Custom Property</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL_ELEMENT__SUPERSEEDING_RELATIONSHIP = eINSTANCE.getModelElement_SuperseedingRelationship();
+		EReference QWIKI_ELEMENT__CUSTOM_PROPERTY = eINSTANCE.getQWikiElement_CustomProperty();
 
 		/**
-		 * The meta object literal for the '<em><b>Model</b></em>' operation.
+		 * The meta object literal for the '<em><b>Tag</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_ELEMENT___MODEL = eINSTANCE.getModelElement__Model();
+		EAttribute QWIKI_ELEMENT__TAG = eINSTANCE.getQWikiElement_Tag();
 
 		/**
 		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
@@ -1893,17 +4968,151 @@ public interface KernelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation MODEL_ELEMENT___OID = eINSTANCE.getModelElement__Oid();
+		EOperation QWIKI_ELEMENT___OID = eINSTANCE.getQWikiElement__Oid();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.Kernel.SuperseedingType <em>Superseeding Type</em>}' enum.
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nKeyedStringImpl <em>I1 8n Keyed String</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.Kernel.SuperseedingType
-		 * @see QWiki.Kernel.impl.KernelPackageImpl#getSuperseedingType()
+		 * @see QWiki.Kernel.impl.I18nKeyedStringImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nKeyedString()
 		 * @generated
 		 */
-		EEnum SUPERSEEDING_TYPE = eINSTANCE.getSuperseedingType();
+		EClass I1_8N_KEYED_STRING = eINSTANCE.getI18nKeyedString();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute I1_8N_KEYED_STRING__KEY = eINSTANCE.getI18nKeyedString_Key();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nBaseStringImpl <em>I1 8n Base String</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.I18nBaseStringImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nBaseString()
+		 * @generated
+		 */
+		EClass I1_8N_BASE_STRING = eINSTANCE.getI18nBaseString();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference I1_8N_BASE_STRING__VALUE = eINSTANCE.getI18nBaseString_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation I1_8N_BASE_STRING___VALUE__STRING = eINSTANCE.getI18nBaseString__Value__String();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nValueImpl <em>I1 8n Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.I18nValueImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nValue()
+		 * @generated
+		 */
+		EClass I1_8N_VALUE = eINSTANCE.getI18nValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute I1_8N_VALUE__LANGUAGE = eINSTANCE.getI18nValue_Language();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute I1_8N_VALUE__BODY = eINSTANCE.getI18nValue_Body();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nStringImpl <em>I1 8n String</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.I18nStringImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nString()
+		 * @generated
+		 */
+		EClass I1_8N_STRING = eINSTANCE.getI18nString();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.QWikiCommentImpl <em>QWiki Comment</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.QWikiCommentImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiComment()
+		 * @generated
+		 */
+		EClass QWIKI_COMMENT = eINSTANCE.getQWikiComment();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QWIKI_COMMENT__CONTENT = eINSTANCE.getQWikiComment_Content();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.I18nDescriptiveElementImpl <em>I1 8n Descriptive Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.I18nDescriptiveElementImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getI18nDescriptiveElement()
+		 * @generated
+		 */
+		EClass I1_8N_DESCRIPTIVE_ELEMENT = eINSTANCE.getI18nDescriptiveElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Purpose</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE = eINSTANCE.getI18nDescriptiveElement_Purpose();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference I1_8N_DESCRIPTIVE_ELEMENT__CONTENT = eINSTANCE.getI18nDescriptiveElement_Content();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.QWikiNamespaceImpl <em>QWiki Namespace</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.QWikiNamespaceImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiNamespace()
+		 * @generated
+		 */
+		EClass QWIKI_NAMESPACE = eINSTANCE.getQWikiNamespace();
+
+		/**
+		 * The meta object literal for the '{@link QWiki.Kernel.impl.QWikiContainerImpl <em>QWiki Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see QWiki.Kernel.impl.QWikiContainerImpl
+		 * @see QWiki.Kernel.impl.KernelPackageImpl#getQWikiContainer()
+		 * @generated
+		 */
+		EClass QWIKI_CONTAINER = eINSTANCE.getQWikiContainer();
 
 	}
 

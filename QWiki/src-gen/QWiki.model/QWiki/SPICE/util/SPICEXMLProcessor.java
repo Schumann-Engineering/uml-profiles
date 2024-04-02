@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.SPICE.util;
+package QWiki.Spice.util;
 
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Spice.SPICEPackage;
 
 import java.util.Map;
 

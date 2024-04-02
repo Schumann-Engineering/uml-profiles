@@ -1,11 +1,11 @@
 /**
  */
-package QWiki.RASCI.tests;
+package QWiki.Rasci.tests;
 
-import QWiki.I18N.tests.I18nDescriptiveElementTest;
+import QWiki.Kernel.tests.I18nDescriptiveElementTest;
 
-import QWiki.RASCI.RASCIFactory;
-import QWiki.RASCI.Role;
+import QWiki.Rasci.RASCIFactory;
+import QWiki.Rasci.Role;
 
 import junit.textui.TestRunner;
 
@@ -16,7 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.RASCI.Role#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Rasci.Role#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -76,13 +76,13 @@ public class RoleTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.RASCI.Role#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Rasci.Role#oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.RASCI.Role#oid()
+	 * @see QWiki.Rasci.Role#oid()
 	 * @generated
 	 */
-	public void testOid() {
+	public void testOid_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

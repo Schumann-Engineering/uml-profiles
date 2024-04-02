@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.RASCI;
+package QWiki.Rasci;
 
-import QWiki.I18N.I18nDescriptiveElement;
+import QWiki.Kernel.I18nDescriptiveElement;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,22 +15,22 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.RASCI.RasciElement#getResponsibleRole <em>Responsible Role</em>}</li>
- *   <li>{@link QWiki.RASCI.RasciElement#getAccountableRole <em>Accountable Role</em>}</li>
- *   <li>{@link QWiki.RASCI.RasciElement#getSupportingRole <em>Supporting Role</em>}</li>
- *   <li>{@link QWiki.RASCI.RasciElement#getConsultingRole <em>Consulting Role</em>}</li>
- *   <li>{@link QWiki.RASCI.RasciElement#getInformedRole <em>Informed Role</em>}</li>
+ *   <li>{@link QWiki.Rasci.RasciElement#getResponsibleRole <em>Responsible Role</em>}</li>
+ *   <li>{@link QWiki.Rasci.RasciElement#getAccountableRole <em>Accountable Role</em>}</li>
+ *   <li>{@link QWiki.Rasci.RasciElement#getSupportRole <em>Support Role</em>}</li>
+ *   <li>{@link QWiki.Rasci.RasciElement#getConsultedRole <em>Consulted Role</em>}</li>
+ *   <li>{@link QWiki.Rasci.RasciElement#getInformedRole <em>Informed Role</em>}</li>
  * </ul>
  *
- * @see QWiki.RASCI.RASCIPackage#getRasciElement()
+ * @see QWiki.Rasci.RASCIPackage#getRasciElement()
  * @model abstract="true"
  * @generated
  */
 public interface RasciElement extends I18nDescriptiveElement {
 	/**
 	 * Returns the value of the '<em><b>Responsible Role</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.RASCI.Role}.
-	 * It is bidirectional and its opposite is '{@link QWiki.RASCI.Role#getResponsibleElement <em>Responsible Element</em>}'.
+	 * The list contents are of type {@link QWiki.Rasci.Role}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Rasci.Role#getResponsibleElement <em>Responsible Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Responsible Role</em>' reference list isn't clear,
@@ -38,16 +38,39 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Responsible Role</em>' reference list.
-	 * @see QWiki.RASCI.RASCIPackage#getRasciElement_ResponsibleRole()
-	 * @see QWiki.RASCI.Role#getResponsibleElement
+	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_ResponsibleRole()
+	 * @see QWiki.Rasci.Role#getResponsibleElement
 	 * @model opposite="responsibleElement" required="true" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getResponsibleRole();
 
 	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Responsible Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getResponsibleRole()
+	 * @generated
+	 */
+	Role getResponsibleRole(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Responsible Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getResponsibleRole()
+	 * @generated
+	 */
+	Role getResponsibleRole(String name, boolean ignoreCase);
+
+	/**
 	 * Returns the value of the '<em><b>Accountable Role</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link QWiki.RASCI.Role#getAccountableElement <em>Accountable Element</em>}'.
+	 * It is bidirectional and its opposite is '{@link QWiki.Rasci.Role#getAccountableElement <em>Accountable Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Accountable Role</em>' reference isn't clear,
@@ -56,15 +79,15 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accountable Role</em>' reference.
 	 * @see #setAccountableRole(Role)
-	 * @see QWiki.RASCI.RASCIPackage#getRasciElement_AccountableRole()
-	 * @see QWiki.RASCI.Role#getAccountableElement
+	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_AccountableRole()
+	 * @see QWiki.Rasci.Role#getAccountableElement
 	 * @model opposite="accountableElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	Role getAccountableRole();
 
 	/**
-	 * Sets the value of the '{@link QWiki.RASCI.RasciElement#getAccountableRole <em>Accountable Role</em>}' reference.
+	 * Sets the value of the '{@link QWiki.Rasci.RasciElement#getAccountableRole <em>Accountable Role</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Accountable Role</em>' reference.
@@ -74,45 +97,91 @@ public interface RasciElement extends I18nDescriptiveElement {
 	void setAccountableRole(Role value);
 
 	/**
-	 * Returns the value of the '<em><b>Supporting Role</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.RASCI.Role}.
-	 * It is bidirectional and its opposite is '{@link QWiki.RASCI.Role#getSupportingElement <em>Supporting Element</em>}'.
+	 * Returns the value of the '<em><b>Support Role</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Rasci.Role}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Rasci.Role#getSupportingElement <em>Supporting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Supporting Role</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Support Role</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Supporting Role</em>' reference list.
-	 * @see QWiki.RASCI.RASCIPackage#getRasciElement_SupportingRole()
-	 * @see QWiki.RASCI.Role#getSupportingElement
+	 * @return the value of the '<em>Support Role</em>' reference list.
+	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_SupportRole()
+	 * @see QWiki.Rasci.Role#getSupportingElement
 	 * @model opposite="supportingElement" transient="true" ordered="false"
 	 * @generated
 	 */
-	EList<Role> getSupportingRole();
+	EList<Role> getSupportRole();
 
 	/**
-	 * Returns the value of the '<em><b>Consulting Role</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.RASCI.Role}.
-	 * It is bidirectional and its opposite is '{@link QWiki.RASCI.Role#getConsultingElement <em>Consulting Element</em>}'.
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Support Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getSupportRole()
+	 * @generated
+	 */
+	Role getSupportRole(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Support Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getSupportRole()
+	 * @generated
+	 */
+	Role getSupportRole(String name, boolean ignoreCase);
+
+	/**
+	 * Returns the value of the '<em><b>Consulted Role</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Rasci.Role}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Rasci.Role#getConsultingElement <em>Consulting Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Consulting Role</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Consulted Role</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Consulting Role</em>' reference list.
-	 * @see QWiki.RASCI.RASCIPackage#getRasciElement_ConsultingRole()
-	 * @see QWiki.RASCI.Role#getConsultingElement
+	 * @return the value of the '<em>Consulted Role</em>' reference list.
+	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_ConsultedRole()
+	 * @see QWiki.Rasci.Role#getConsultingElement
 	 * @model opposite="consultingElement" transient="true" ordered="false"
 	 * @generated
 	 */
-	EList<Role> getConsultingRole();
+	EList<Role> getConsultedRole();
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Consulted Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getConsultedRole()
+	 * @generated
+	 */
+	Role getConsultedRole(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Consulted Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getConsultedRole()
+	 * @generated
+	 */
+	Role getConsultedRole(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Informed Role</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.RASCI.Role}.
-	 * It is bidirectional and its opposite is '{@link QWiki.RASCI.Role#getInformedElement <em>Informed Element</em>}'.
+	 * The list contents are of type {@link QWiki.Rasci.Role}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Rasci.Role#getInformedElement <em>Informed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Informed Role</em>' reference list isn't clear,
@@ -120,11 +189,34 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Informed Role</em>' reference list.
-	 * @see QWiki.RASCI.RASCIPackage#getRasciElement_InformedRole()
-	 * @see QWiki.RASCI.Role#getInformedElement
+	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_InformedRole()
+	 * @see QWiki.Rasci.Role#getInformedElement
 	 * @model opposite="informedElement" transient="true" ordered="false"
 	 * @generated
 	 */
 	EList<Role> getInformedRole();
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Informed Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getInformedRole()
+	 * @generated
+	 */
+	Role getInformedRole(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>' from the '<em><b>Informed Role</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Rasci.Role} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Rasci.Role} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getInformedRole()
+	 * @generated
+	 */
+	Role getInformedRole(String name, boolean ignoreCase);
 
 } // RasciElement

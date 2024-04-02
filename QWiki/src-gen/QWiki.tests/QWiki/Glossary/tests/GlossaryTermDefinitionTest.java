@@ -5,7 +5,7 @@ package QWiki.Glossary.tests;
 import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.I18N.tests.I18nDescriptiveElementTest;
+import QWiki.Kernel.tests.I18nDescriptiveElementTest;
 
 import junit.textui.TestRunner;
 

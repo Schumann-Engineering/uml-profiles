@@ -1,21 +1,20 @@
 /**
  */
-package QWiki.RASCI.impl;
+package QWiki.Rasci.impl;
 
-import QWiki.I18N.I18nString;
+import QWiki.Kernel.I18nString;
 
-import QWiki.I18N.impl.I18nDescriptiveElementImpl;
+import QWiki.Kernel.impl.I18nDescriptiveElementImpl;
 
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.RasciElement;
-import QWiki.RASCI.Role;
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciElement;
+import QWiki.Rasci.Role;
 
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -25,7 +24,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -37,26 +37,26 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getSkills <em>Skills</em>}</li>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getResponsibleElement <em>Responsible Element</em>}</li>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getAccountableElement <em>Accountable Element</em>}</li>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getSupportingElement <em>Supporting Element</em>}</li>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getConsultingElement <em>Consulting Element</em>}</li>
- *   <li>{@link QWiki.RASCI.impl.RoleImpl#getInformedElement <em>Informed Element</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getSkills <em>Skills</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getResponsibleElement <em>Responsible Element</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getAccountableElement <em>Accountable Element</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getSupportingElement <em>Supporting Element</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getConsultingElement <em>Consulting Element</em>}</li>
+ *   <li>{@link QWiki.Rasci.impl.RoleImpl#getInformedElement <em>Informed Element</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	/**
-	 * The cached value of the '{@link #getSkills() <em>Skills</em>}' containment reference list.
+	 * The cached value of the '{@link #getSkills() <em>Skills</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSkills()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<I18nString> skills;
+	protected I18nString skills;
 
 	/**
 	 * The cached value of the '{@link #getResponsibleElement() <em>Responsible Element</em>}' reference list.
@@ -133,11 +133,43 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 * @generated
 	 */
 	@Override
-	public EList<I18nString> getSkills() {
-		if (skills == null) {
-			skills = new EObjectContainmentEList<I18nString>(I18nString.class, this, RASCIPackage.ROLE__SKILLS);
-		}
+	public I18nString getSkills() {
 		return skills;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSkills(I18nString newSkills, NotificationChain msgs) {
+		I18nString oldSkills = skills;
+		skills = newSkills;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RASCIPackage.ROLE__SKILLS, oldSkills, newSkills);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setSkills(I18nString newSkills) {
+		if (newSkills != skills) {
+			NotificationChain msgs = null;
+			if (skills != null)
+				msgs = ((InternalEObject)skills).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RASCIPackage.ROLE__SKILLS, null, msgs);
+			if (newSkills != null)
+				msgs = ((InternalEObject)newSkills).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RASCIPackage.ROLE__SKILLS, null, msgs);
+			msgs = basicSetSkills(newSkills, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RASCIPackage.ROLE__SKILLS, newSkills, newSkills));
 	}
 
 	/**
@@ -158,6 +190,31 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RasciElement getResponsibleElement(String name) {
+		return getResponsibleElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getResponsibleElement(String name, boolean ignoreCase, EClass eClass) {
+		responsibleElementLoop: for (RasciElement responsibleElement : getResponsibleElement()) {
+			if (eClass != null && !eClass.isInstance(responsibleElement))
+				continue responsibleElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(responsibleElement.getName()) : name.equals(responsibleElement.getName())))
+				continue responsibleElementLoop;
+			return responsibleElement;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EList<RasciElement> getAccountableElement() {
 		if (accountableElement == null) {
@@ -171,12 +228,62 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RasciElement getAccountableElement(String name) {
+		return getAccountableElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getAccountableElement(String name, boolean ignoreCase, EClass eClass) {
+		accountableElementLoop: for (RasciElement accountableElement : getAccountableElement()) {
+			if (eClass != null && !eClass.isInstance(accountableElement))
+				continue accountableElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(accountableElement.getName()) : name.equals(accountableElement.getName())))
+				continue accountableElementLoop;
+			return accountableElement;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public EList<RasciElement> getSupportingElement() {
 		if (supportingElement == null) {
-			supportingElement = new EObjectWithInverseResolvingEList.ManyInverse<RasciElement>(RasciElement.class, this, RASCIPackage.ROLE__SUPPORTING_ELEMENT, RASCIPackage.RASCI_ELEMENT__SUPPORTING_ROLE);
+			supportingElement = new EObjectWithInverseResolvingEList.ManyInverse<RasciElement>(RasciElement.class, this, RASCIPackage.ROLE__SUPPORTING_ELEMENT, RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE);
 		}
 		return supportingElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getSupportingElement(String name) {
+		return getSupportingElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getSupportingElement(String name, boolean ignoreCase, EClass eClass) {
+		supportingElementLoop: for (RasciElement supportingElement : getSupportingElement()) {
+			if (eClass != null && !eClass.isInstance(supportingElement))
+				continue supportingElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(supportingElement.getName()) : name.equals(supportingElement.getName())))
+				continue supportingElementLoop;
+			return supportingElement;
+		}
+		return null;
 	}
 
 	/**
@@ -187,9 +294,34 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	@Override
 	public EList<RasciElement> getConsultingElement() {
 		if (consultingElement == null) {
-			consultingElement = new EObjectWithInverseResolvingEList.ManyInverse<RasciElement>(RasciElement.class, this, RASCIPackage.ROLE__CONSULTING_ELEMENT, RASCIPackage.RASCI_ELEMENT__CONSULTING_ROLE);
+			consultingElement = new EObjectWithInverseResolvingEList.ManyInverse<RasciElement>(RasciElement.class, this, RASCIPackage.ROLE__CONSULTING_ELEMENT, RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE);
 		}
 		return consultingElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getConsultingElement(String name) {
+		return getConsultingElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getConsultingElement(String name, boolean ignoreCase, EClass eClass) {
+		consultingElementLoop: for (RasciElement consultingElement : getConsultingElement()) {
+			if (eClass != null && !eClass.isInstance(consultingElement))
+				continue consultingElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(consultingElement.getName()) : name.equals(consultingElement.getName())))
+				continue consultingElementLoop;
+			return consultingElement;
+		}
+		return null;
 	}
 
 	/**
@@ -206,6 +338,31 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getInformedElement(String name) {
+		return getInformedElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RasciElement getInformedElement(String name, boolean ignoreCase, EClass eClass) {
+		informedElementLoop: for (RasciElement informedElement : getInformedElement()) {
+			if (eClass != null && !eClass.isInstance(informedElement))
+				continue informedElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(informedElement.getName()) : name.equals(informedElement.getName())))
+				continue informedElementLoop;
+			return informedElement;
+		}
+		return null;
+	}
+
+	/**
 	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,17 +370,16 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)KernelPackage.Literals.MODEL_ELEMENT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)RASCIPackage.Literals.ROLE___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String oid() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -262,7 +418,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case RASCIPackage.ROLE__SKILLS:
-				return ((InternalEList<?>)getSkills()).basicRemove(otherEnd, msgs);
+				return basicSetSkills(null, msgs);
 			case RASCIPackage.ROLE__RESPONSIBLE_ELEMENT:
 				return ((InternalEList<?>)getResponsibleElement()).basicRemove(otherEnd, msgs);
 			case RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT:
@@ -311,8 +467,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RASCIPackage.ROLE__SKILLS:
-				getSkills().clear();
-				getSkills().addAll((Collection<? extends I18nString>)newValue);
+				setSkills((I18nString)newValue);
 				return;
 			case RASCIPackage.ROLE__RESPONSIBLE_ELEMENT:
 				getResponsibleElement().clear();
@@ -347,7 +502,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RASCIPackage.ROLE__SKILLS:
-				getSkills().clear();
+				setSkills((I18nString)null);
 				return;
 			case RASCIPackage.ROLE__RESPONSIBLE_ELEMENT:
 				getResponsibleElement().clear();
@@ -377,7 +532,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RASCIPackage.ROLE__SKILLS:
-				return skills != null && !skills.isEmpty();
+				return skills != null;
 			case RASCIPackage.ROLE__RESPONSIBLE_ELEMENT:
 				return responsibleElement != null && !responsibleElement.isEmpty();
 			case RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT:

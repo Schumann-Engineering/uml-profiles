@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.SPICE.tests;
+package QWiki.Spice.tests;
 
-import QWiki.SPICE.SPICEFactory;
+import QWiki.Spice.SPICEFactory;
 
 import junit.textui.TestRunner;
 
@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.SPICE.Process#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.Process#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -46,8 +46,8 @@ public class ProcessTest extends SpiceElementTest {
 	 * @generated
 	 */
 	@Override
-	protected QWiki.SPICE.Process getFixture() {
-		return (QWiki.SPICE.Process)fixture;
+	protected QWiki.Spice.Process getFixture() {
+		return (QWiki.Spice.Process)fixture;
 	}
 
 	/**
@@ -73,13 +73,13 @@ public class ProcessTest extends SpiceElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.SPICE.Process#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.Process#oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.SPICE.Process#oid()
+	 * @see QWiki.Spice.Process#oid()
 	 * @generated
 	 */
-	public void testOid() {
+	public void testOid_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

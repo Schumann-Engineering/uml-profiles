@@ -1,8 +1,8 @@
 /**
  */
-package QWiki.RASCI.provider;
+package QWiki.Rasci.provider;
 
-import QWiki.RASCI.util.RASCIAdapterFactory;
+import QWiki.Rasci.util.RASCIAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -72,7 +72,7 @@ public class RASCIItemProviderAdapterFactory extends RASCIAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.RASCI.Role} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.Rasci.Role} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -80,7 +80,7 @@ public class RASCIItemProviderAdapterFactory extends RASCIAdapterFactory impleme
 	protected RoleItemProvider roleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.RASCI.Role}.
+	 * This creates an adapter for a {@link QWiki.Rasci.Role}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

@@ -1,11 +1,11 @@
 /**
  */
-package QWiki.SPICE.tests;
+package QWiki.Spice.tests;
 
-import QWiki.I18N.tests.I18nDescriptiveElementTest;
+import QWiki.Kernel.tests.QWikiContainerTest;
 
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.SPICEFactory;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.SPICEFactory;
 
 import junit.textui.TestRunner;
 
@@ -16,13 +16,13 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.SPICE.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}</li>
- *   <li>{@link QWiki.SPICE.ProcessReferenceModel#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#oid() <em>Oid</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class ProcessReferenceModelTest extends I18nDescriptiveElementTest {
+public class ProcessReferenceModelTest extends QWikiContainerTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,10 +77,10 @@ public class ProcessReferenceModelTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.SPICE.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.SPICE.ProcessReferenceModel#oidForDomain()
+	 * @see QWiki.Spice.ProcessReferenceModel#oidForDomain()
 	 * @generated
 	 */
 	public void testOidForDomain() {
@@ -90,13 +90,13 @@ public class ProcessReferenceModelTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.SPICE.ProcessReferenceModel#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#oid() <em>Oid</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.SPICE.ProcessReferenceModel#oid()
+	 * @see QWiki.Spice.ProcessReferenceModel#oid()
 	 * @generated
 	 */
-	public void testOid() {
+	public void testOid_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

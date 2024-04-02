@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.SPICE;
+package QWiki.Spice;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.SPICE.SPICEPackage
+ * @see QWiki.Spice.SPICEPackage
  * @generated
  */
 public interface SPICEFactory extends EFactory {
@@ -19,16 +19,16 @@ public interface SPICEFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SPICEFactory eINSTANCE = QWiki.SPICE.impl.SPICEFactoryImpl.init();
+	SPICEFactory eINSTANCE = QWiki.Spice.impl.SPICEFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Spice Base Practise</em>'.
+	 * Returns a new object of class '<em>Base Practise</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Spice Base Practise</em>'.
+	 * @return a new object of class '<em>Base Practise</em>'.
 	 * @generated
 	 */
-	SpiceBasePractise createSpiceBasePractise();
+	BasePractise createBasePractise();
 
 	/**
 	 * Returns a new object of class '<em>Process Reference Model</em>'.

@@ -1,15 +1,16 @@
 /**
  */
-package QWiki.RASCI.provider;
+package QWiki.Rasci.provider;
 
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.I18NPackage;
-import QWiki.I18N.provider.I18nDescriptiveElementItemProvider;
+import QWiki.Kernel.KernelPackage;
 
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.RasciElement;
+import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
+
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciElement;
 
 import java.util.Collection;
 import java.util.List;
@@ -23,7 +24,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link QWiki.RASCI.RasciElement} object.
+ * This is the item provider adapter for a {@link QWiki.Rasci.RasciElement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
@@ -52,8 +53,8 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 
 			addResponsibleRolePropertyDescriptor(object);
 			addAccountableRolePropertyDescriptor(object);
-			addSupportingRolePropertyDescriptor(object);
-			addConsultingRolePropertyDescriptor(object);
+			addSupportRolePropertyDescriptor(object);
+			addConsultedRolePropertyDescriptor(object);
 			addInformedRolePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -104,19 +105,19 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Supporting Role feature.
+	 * This adds a property descriptor for the Support Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSupportingRolePropertyDescriptor(Object object) {
+	protected void addSupportRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RasciElement_supportingRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_supportingRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__SUPPORTING_ROLE,
+				 getString("_UI_RasciElement_supportRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_supportRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
 				 true,
 				 false,
 				 true,
@@ -126,19 +127,19 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Consulting Role feature.
+	 * This adds a property descriptor for the Consulted Role feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConsultingRolePropertyDescriptor(Object object) {
+	protected void addConsultedRolePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RasciElement_consultingRole_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_consultingRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__CONSULTING_ROLE,
+				 getString("_UI_RasciElement_consultedRole_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_consultedRole_feature", "_UI_RasciElement_type"),
+				 RASCIPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -221,9 +222,9 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == I18NPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == I18NPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__BODY;
+			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

@@ -1,14 +1,14 @@
 /**
  */
-package QWiki.SPICE.provider;
+package QWiki.Spice.provider;
 
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.I18N.provider.I18nNamedElementItemProvider;
+import QWiki.Kernel.provider.I18nNamedElementItemProvider;
 
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.SPICEPackage;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.SPICEPackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -22,7 +22,7 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
- * This is the item provider adapter for a {@link QWiki.SPICE.Outcome} object.
+ * This is the item provider adapter for a {@link QWiki.Spice.Outcome} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

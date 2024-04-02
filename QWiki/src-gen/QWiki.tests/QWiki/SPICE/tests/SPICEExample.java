@@ -1,12 +1,12 @@
 /**
  */
-package QWiki.SPICE.tests;
+package QWiki.Spice.tests;
 
-import QWiki.SPICE.SPICEFactory;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SPICEPackage;
 
-import QWiki.SPICE.util.SPICEResourceFactoryImpl;
+import QWiki.Spice.util.SPICEResourceFactoryImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>SPICE</b></em>' package.
+ * A sample utility for the '<em><b>Spice</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
@@ -60,7 +60,7 @@ public class SPICEExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.spice"));
-				SpiceBasePractise root = SPICEFactory.eINSTANCE.createSpiceBasePractise();
+				BasePractise root = SPICEFactory.eINSTANCE.createBasePractise();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

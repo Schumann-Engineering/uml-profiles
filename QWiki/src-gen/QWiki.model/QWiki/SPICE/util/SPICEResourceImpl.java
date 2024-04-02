@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.SPICE.util;
+package QWiki.Spice.util;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * @see QWiki.SPICE.util.SPICEResourceFactoryImpl
+ * @see QWiki.Spice.util.SPICEResourceFactoryImpl
  * @generated
  */
 public class SPICEResourceImpl extends XMLResourceImpl {

@@ -2,9 +2,11 @@
  */
 package QWiki.Kernel.tests;
 
+import QWiki.Kernel.I18nKeyedString;
 import QWiki.Kernel.KernelFactory;
 import QWiki.Kernel.KernelPackage;
-import QWiki.Kernel.ModelDomain;
+
+import QWiki.Kernel.util.KernelResourceFactoryImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +22,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 import org.eclipse.emf.ecore.util.Diagnostician;
-
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public class KernelExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new XMIResourceFactoryImpl());
+			 new KernelResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//
@@ -60,7 +60,7 @@ public class KernelExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.kernel"));
-				ModelDomain root = KernelFactory.eINSTANCE.createModelDomain();
+				I18nKeyedString root = KernelFactory.eINSTANCE.createI18nKeyedString();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}

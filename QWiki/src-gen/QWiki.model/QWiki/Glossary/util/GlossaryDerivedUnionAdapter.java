@@ -6,8 +6,6 @@ import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.Infrastructure.InfrastructurePackage;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -15,6 +13,8 @@ import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -104,22 +104,13 @@ public class GlossaryDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyGlossaryTermDefinitionChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(GlossaryTermDefinition.class)) {
 			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__OWNING_TERM:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -135,23 +126,16 @@ public class GlossaryDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyGlossaryTermChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(GlossaryTerm.class)) {
 			case GlossaryPackage.GLOSSARY_TERM__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case GlossaryPackage.GLOSSARY_TERM__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case GlossaryPackage.GLOSSARY_TERM__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case GlossaryPackage.GLOSSARY_TERM__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case GlossaryPackage.GLOSSARY_TERM__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION:
 				notifyChanged(notification, eClass, GlossaryPackage.Literals.GLOSSARY_TERM__TERM_DEFINITION);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION:
 				notifyChanged(notification, eClass, GlossaryPackage.Literals.GLOSSARY_TERM__TERM_DEFINITION);

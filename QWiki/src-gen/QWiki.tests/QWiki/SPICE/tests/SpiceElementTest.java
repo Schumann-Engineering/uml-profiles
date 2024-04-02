@@ -1,10 +1,10 @@
 /**
  */
-package QWiki.SPICE.tests;
+package QWiki.Spice.tests;
 
-import QWiki.RASCI.tests.RasciElementTest;
+import QWiki.Kernel.tests.QWikiContainerTest;
 
-import QWiki.SPICE.SpiceElement;
+import QWiki.Spice.SpiceElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,7 +12,7 @@ import QWiki.SPICE.SpiceElement;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class SpiceElementTest extends RasciElementTest {
+public abstract class SpiceElementTest extends QWikiContainerTest {
 
 	/**
 	 * Constructs a new Spice Element test case with the given name.

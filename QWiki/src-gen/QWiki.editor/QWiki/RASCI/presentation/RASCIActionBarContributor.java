@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.RASCI.presentation;
+package QWiki.Rasci.presentation;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
@@ -181,7 +181,7 @@ public class RASCIActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_RASCIEditor_menu"), "QWiki.RASCIMenuID");
+		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_RASCIEditor_menu"), "QWiki.RasciMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

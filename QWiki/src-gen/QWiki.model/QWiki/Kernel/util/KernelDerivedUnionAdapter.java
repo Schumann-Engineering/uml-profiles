@@ -2,13 +2,9 @@
  */
 package QWiki.Kernel.util;
 
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.Kernel.DO_NOT_USE_RelationshipType;
 import QWiki.Kernel.KernelPackage;
-import QWiki.Kernel.ModelDomain;
-import QWiki.Kernel.ModelRoot;
-import QWiki.Kernel.SuperseedingRelationship;
+import QWiki.Kernel.QWikiComment;
+import QWiki.Kernel.QWikiContainer;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,6 +13,8 @@ import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
+import org.eclipse.uml2.uml.UMLPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -73,17 +71,11 @@ public class KernelDerivedUnionAdapter extends AdapterImpl {
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case KernelPackage.MODEL_DOMAIN:
-				notifyModelDomainChanged(notification, eClass);
+			case KernelPackage.QWIKI_COMMENT:
+				notifyQWikiCommentChanged(notification, eClass);
 				break;
-			case KernelPackage.MODEL_ROOT:
-				notifyModelRootChanged(notification, eClass);
-				break;
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE:
-				notifyDO_NOT_USE_RelationshipTypeChanged(notification, eClass);
-				break;
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP:
-				notifySuperseedingRelationshipChanged(notification, eClass);
+			case KernelPackage.QWIKI_CONTAINER:
+				notifyQWikiContainerChanged(notification, eClass);
 				break;
 		}
 	}
@@ -109,22 +101,10 @@ public class KernelDerivedUnionAdapter extends AdapterImpl {
 	 * @param eClass the Ecore class of the notifier.
 	 * @generated
 	 */
-	protected void notifyModelDomainChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(ModelDomain.class)) {
-			case KernelPackage.MODEL_DOMAIN__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
-				break;
-			case KernelPackage.MODEL_DOMAIN__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case KernelPackage.MODEL_DOMAIN__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case KernelPackage.MODEL_DOMAIN__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case KernelPackage.MODEL_DOMAIN__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+	protected void notifyQWikiCommentChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(QWikiComment.class)) {
+			case KernelPackage.QWIKI_COMMENT__OWNED_COMMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 		}
 	}
@@ -137,96 +117,34 @@ public class KernelDerivedUnionAdapter extends AdapterImpl {
 	 * @param eClass the Ecore class of the notifier.
 	 * @generated
 	 */
-	protected void notifyModelRootChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(ModelRoot.class)) {
-			case KernelPackage.MODEL_ROOT__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+	protected void notifyQWikiContainerChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(QWikiContainer.class)) {
+			case KernelPackage.QWIKI_CONTAINER__OWNED_COMMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case KernelPackage.MODEL_ROOT__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case KernelPackage.QWIKI_CONTAINER__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case KernelPackage.MODEL_ROOT__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case KernelPackage.QWIKI_CONTAINER__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case KernelPackage.MODEL_ROOT__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case KernelPackage.QWIKI_CONTAINER__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
-			case KernelPackage.MODEL_ROOT__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case KernelPackage.QWIKI_CONTAINER__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case KernelPackage.MODEL_ROOT__OWNED_MEMBER:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMESPACE__MEMBER);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+			case KernelPackage.QWIKI_CONTAINER__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case KernelPackage.MODEL_ROOT__PACKAGED_ELEMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMESPACE__OWNED_MEMBER);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMESPACE__MEMBER);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+			case KernelPackage.QWIKI_CONTAINER__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
-			case KernelPackage.MODEL_ROOT__NESTED_PACKAGE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMESPACE__OWNED_MEMBER);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMESPACE__MEMBER);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
-				break;
-			case KernelPackage.MODEL_ROOT__NESTING_PACKAGE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_NAMED_ELEMENT__NAMESPACE);
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case KernelPackage.MODEL_ROOT__OWNED_MODEL_ELEMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
-				break;
-		}
-	}
-
-	/**
-	 * Calls <code>notifyChanged</code> for each affected derived union.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
-	 * @generated
-	 */
-	protected void notifyDO_NOT_USE_RelationshipTypeChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(DO_NOT_USE_RelationshipType.class)) {
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
-				break;
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case KernelPackage.DO_NOT_USE_RELATIONSHIP_TYPE__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-		}
-	}
-
-	/**
-	 * Calls <code>notifyChanged</code> for each affected derived union.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
-	 * @generated
-	 */
-	protected void notifySuperseedingRelationshipChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(SuperseedingRelationship.class)) {
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
-				break;
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP__TARGET:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_RELATIONSHIP__RELATED_ELEMENT);
-				break;
-			case KernelPackage.SUPERSEEDING_RELATIONSHIP__SOURCE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_RELATIONSHIP__RELATED_ELEMENT);
+			case KernelPackage.QWIKI_CONTAINER__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
 	}

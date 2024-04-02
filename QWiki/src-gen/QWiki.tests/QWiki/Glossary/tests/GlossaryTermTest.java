@@ -5,7 +5,7 @@ package QWiki.Glossary.tests;
 import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryTerm;
 
-import QWiki.I18N.tests.I18nNamedElementTest;
+import QWiki.Kernel.tests.I18nNamedElementTest;
 
 import junit.textui.TestRunner;
 
@@ -82,7 +82,7 @@ public class GlossaryTermTest extends I18nNamedElementTest {
 	 * @see QWiki.Glossary.GlossaryTerm#oid()
 	 * @generated
 	 */
-	public void testOid() {
+	public void testOid_1() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

@@ -1,10 +1,10 @@
 /**
  */
-package QWiki.RASCI.tests;
+package QWiki.Rasci.tests;
 
-import QWiki.RASCI.RASCIFactory;
-import QWiki.RASCI.RASCIPackage;
-import QWiki.RASCI.Role;
+import QWiki.Rasci.RASCIFactory;
+import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.Role;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 /**
  * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>RASCI</b></em>' package.
+ * A sample utility for the '<em><b>Rasci</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */

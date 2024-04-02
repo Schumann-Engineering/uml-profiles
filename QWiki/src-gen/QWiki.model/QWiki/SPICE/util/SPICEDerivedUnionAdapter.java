@@ -1,16 +1,14 @@
 /**
  */
-package QWiki.SPICE.util;
+package QWiki.Spice.util;
 
-import QWiki.Infrastructure.InfrastructurePackage;
-
-import QWiki.SPICE.GenericWorkProduct;
-import QWiki.SPICE.Outcome;
-import QWiki.SPICE.ProcessGroup;
-import QWiki.SPICE.ProcessReferenceModel;
-import QWiki.SPICE.SPICEPackage;
-import QWiki.SPICE.SpiceBasePractise;
-import QWiki.SPICE.WorkProduct;
+import QWiki.Spice.BasePractise;
+import QWiki.Spice.GenericWorkProduct;
+import QWiki.Spice.Outcome;
+import QWiki.Spice.ProcessGroup;
+import QWiki.Spice.ProcessReferenceModel;
+import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.WorkProduct;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,11 +18,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.uml2.uml.UMLPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An adapter that propagates notifications for derived unions.
  * <!-- end-user-doc -->
- * @see QWiki.SPICE.SPICEPackage
+ * @see QWiki.Spice.SPICEPackage
  * @generated
  */
 public class SPICEDerivedUnionAdapter extends AdapterImpl {
@@ -75,8 +75,8 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case SPICEPackage.SPICE_BASE_PRACTISE:
-				notifySpiceBasePractiseChanged(notification, eClass);
+			case SPICEPackage.BASE_PRACTISE:
+				notifyBasePractiseChanged(notification, eClass);
 				break;
 			case SPICEPackage.PROCESS_REFERENCE_MODEL:
 				notifyProcessReferenceModelChanged(notification, eClass);
@@ -120,37 +120,51 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	 * @param eClass the Ecore class of the notifier.
 	 * @generated
 	 */
-	protected void notifySpiceBasePractiseChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(SpiceBasePractise.class)) {
-			case SPICEPackage.SPICE_BASE_PRACTISE__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+	protected void notifyBasePractiseChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(BasePractise.class)) {
+			case SPICEPackage.BASE_PRACTISE__OWNED_COMMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.BASE_PRACTISE__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case SPICEPackage.BASE_PRACTISE__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.BASE_PRACTISE__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case SPICEPackage.BASE_PRACTISE__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__OWNING_PROCESS_REFERENCE_MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case SPICEPackage.BASE_PRACTISE__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__OWNING_ROLE:
+			case SPICEPackage.BASE_PRACTISE__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.BASE_PRACTISE__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.BASE_PRACTISE__OWNING_PROCESS_REFERENCE_MODEL:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.BASE_PRACTISE__OWNER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__MANAGING_ROLE:
+			case SPICEPackage.BASE_PRACTISE__MANAGER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__PARTICIPATING_ROLE:
+			case SPICEPackage.BASE_PRACTISE__PARTICIPANT_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.SPICE_BASE_PRACTISE__OWNING_PROCESS:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+			case SPICEPackage.BASE_PRACTISE__OWNING_PROCESS:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -166,22 +180,36 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyProcessReferenceModelChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(ProcessReferenceModel.class)) {
 			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.PROCESS_REFERENCE_MODEL__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS_REFERENCE_MODEL__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
 	}
@@ -195,42 +223,60 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	 * @generated
 	 */
 	protected void notifyProcessChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(QWiki.SPICE.Process.class)) {
+		switch (notification.getFeatureID(QWiki.Spice.Process.class)) {
 			case SPICEPackage.PROCESS__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.PROCESS__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.PROCESS__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.PROCESS__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.PROCESS__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.PROCESS__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.PROCESS__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.PROCESS__OWNING_PROCESS_REFERENCE_MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case SPICEPackage.PROCESS__OWNING_ROLE:
+			case SPICEPackage.PROCESS__OWNER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.PROCESS__MANAGING_ROLE:
+			case SPICEPackage.PROCESS__MANAGER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.PROCESS__PARTICIPATING_ROLE:
+			case SPICEPackage.PROCESS__PARTICIPANT_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
 			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 			case SPICEPackage.PROCESS__OWNED_OUTCOME:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
 	}
@@ -246,34 +292,49 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyProcessGroupChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(ProcessGroup.class)) {
 			case SPICEPackage.PROCESS_GROUP__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.PROCESS_GROUP__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.PROCESS_GROUP__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.PROCESS_GROUP__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.PROCESS_GROUP__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.PROCESS_GROUP__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.PROCESS_GROUP__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS_GROUP__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS_GROUP__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.PROCESS_GROUP__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.PROCESS_GROUP__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.PROCESS_GROUP__OWNING_PROCESS_REFERENCE_MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case SPICEPackage.PROCESS_GROUP__OWNING_ROLE:
+			case SPICEPackage.PROCESS_GROUP__OWNER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.PROCESS_GROUP__MANAGING_ROLE:
+			case SPICEPackage.PROCESS_GROUP__MANAGER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.PROCESS_GROUP__PARTICIPATING_ROLE:
+			case SPICEPackage.PROCESS_GROUP__PARTICIPANT_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
 			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
 	}
@@ -289,22 +350,17 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyOutcomeChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(Outcome.class)) {
 			case SPICEPackage.OUTCOME__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.OUTCOME__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.OUTCOME__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.OUTCOME__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.OUTCOME__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.OUTCOME__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 			case SPICEPackage.OUTCOME__OWNING_PROCESS:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -320,34 +376,48 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyWorkProductChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(WorkProduct.class)) {
 			case SPICEPackage.WORK_PRODUCT__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.WORK_PRODUCT__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.WORK_PRODUCT__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.WORK_PRODUCT__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.WORK_PRODUCT__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.WORK_PRODUCT__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.WORK_PRODUCT__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.WORK_PRODUCT__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.WORK_PRODUCT__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.WORK_PRODUCT__OWNING_PROCESS_REFERENCE_MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case SPICEPackage.WORK_PRODUCT__OWNING_ROLE:
+			case SPICEPackage.WORK_PRODUCT__OWNER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.WORK_PRODUCT__MANAGING_ROLE:
+			case SPICEPackage.WORK_PRODUCT__MANAGER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.WORK_PRODUCT__PARTICIPATING_ROLE:
+			case SPICEPackage.WORK_PRODUCT__PARTICIPANT_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
 			case SPICEPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
@@ -363,37 +433,53 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 	protected void notifyGenericWorkProductChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(GenericWorkProduct.class)) {
 			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_COMMENT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__DIRECTED_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
-				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
-				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__SUPERSEEDING_RELATIONSHIP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__RELATIONSHIP);
+			case SPICEPackage.GENERIC_WORK_PRODUCT__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT__NAMESPACE:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_RULE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__ELEMENT_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__PACKAGE_IMPORT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNING_PROCESS_REFERENCE_MODEL:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNING_ROLE:
+			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__MANAGING_ROLE:
+			case SPICEPackage.GENERIC_WORK_PRODUCT__MANAGER_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
-			case SPICEPackage.GENERIC_WORK_PRODUCT__PARTICIPATING_ROLE:
+			case SPICEPackage.GENERIC_WORK_PRODUCT__PARTICIPANT_ROLE:
 				notifyChanged(notification, eClass, SPICEPackage.Literals.SPICE_ELEMENT__ROLE);
 				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
-				notifyChanged(notification, eClass, InfrastructurePackage.Literals.UML_ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
 	}

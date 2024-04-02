@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.SPICE.presentation;
+package QWiki.Spice.presentation;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
@@ -181,7 +181,7 @@ public class SPICEActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_SPICEEditor_menu"), "QWiki.SPICEMenuID");
+		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_SPICEEditor_menu"), "QWiki.SpiceMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

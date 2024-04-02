@@ -1,6 +1,6 @@
 /**
  */
-package QWiki.RASCI.presentation;
+package QWiki.Rasci.presentation;
 
 
 import java.util.ArrayList;
@@ -69,8 +69,8 @@ import org.eclipse.ui.dialogs.WizardNewFileCreationPage;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.part.ISetSelectionTarget;
 
-import QWiki.RASCI.RASCIFactory;
-import QWiki.RASCI.RASCIPackage;
+import QWiki.Rasci.RASCIFactory;
+import QWiki.Rasci.RASCIPackage;
 import QWiki.EMF.provider.QWikiEditPlugin;
 
 
@@ -398,7 +398,8 @@ public class RASCIModelWizard extends Wizard implements INewWizard {
 		 */
 		@Override
 		public void createControl(Composite parent) {
-			Composite composite = new Composite(parent, SWT.NONE); {
+			Composite composite = new Composite(parent, SWT.NONE);
+			{
 				GridLayout layout = new GridLayout();
 				layout.numColumns = 1;
 				layout.verticalSpacing = 12;
