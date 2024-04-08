@@ -13,9 +13,7 @@ import QWiki.Kernel.impl.I18nNamedElementImpl;
 
 import QWiki.References.ReferencesPackage;
 import QWiki.References.Section;
-
 import java.lang.reflect.InvocationTargetException;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -23,7 +21,6 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -328,7 +325,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)GlossaryPackage.Literals.GLOSSARY_TERM___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)GlossaryPackage.Literals.GLOSSARY_TERM___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -337,7 +334,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

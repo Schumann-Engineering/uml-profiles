@@ -237,7 +237,7 @@ public class BasePractiseImpl extends SpiceElementImpl implements BasePractise {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.BASE_PRACTISE___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.BASE_PRACTISE___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -246,7 +246,7 @@ public class BasePractiseImpl extends SpiceElementImpl implements BasePractise {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -408,6 +408,16 @@ public class BasePractiseImpl extends SpiceElementImpl implements BasePractise {
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
 			|| eIsSet(SPICEPackage.BASE_PRACTISE__OWNING_PROCESS);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oidBasic() {
+		return oid();
 	}
 
 } //BasePractiseImpl

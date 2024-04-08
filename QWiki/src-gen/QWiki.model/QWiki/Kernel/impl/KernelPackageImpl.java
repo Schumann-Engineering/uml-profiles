@@ -24,6 +24,8 @@ import QWiki.Kernel.QWikiElement;
 import QWiki.Kernel.QWikiNamedElement;
 import QWiki.Kernel.QWikiNamespace;
 
+import QWiki.Kernel.QWikiRelationship;
+import QWiki.Kernel.QWikiRelationshipType;
 import QWiki.Kernel.Relationships.RelationshipsPackage;
 
 import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
@@ -39,9 +41,6 @@ import QWiki.References.impl.ReferencesPackageImpl;
 import QWiki.Spice.SPICEPackage;
 
 import QWiki.Spice.impl.SPICEPackageImpl;
-
-import org.eclipse.emf.common.util.URI;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -138,6 +137,20 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	private EClass qWikiContainerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qWikiRelationshipEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass qWikiRelationshipTypeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -306,7 +319,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getQWikiElement__Oid() {
+	public EOperation getQWikiElement__OidBasic() {
 		return qWikiElementEClass.getEOperations().get(0);
 	}
 
@@ -476,6 +489,46 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getQWikiRelationship() {
+		return qWikiRelationshipEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQWikiRelationship_RelationshipType() {
+		return (EReference)qWikiRelationshipEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getQWikiRelationshipType() {
+		return qWikiRelationshipTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQWikiRelationshipType_Relationship() {
+		return (EReference)qWikiRelationshipTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public KernelFactory getKernelFactory() {
 		return (KernelFactory)getEFactoryInstance();
 	}
@@ -508,7 +561,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		createEAttribute(qWikiElementEClass, QWIKI_ELEMENT__UUID);
 		createEReference(qWikiElementEClass, QWIKI_ELEMENT__CUSTOM_PROPERTY);
 		createEAttribute(qWikiElementEClass, QWIKI_ELEMENT__TAG);
-		createEOperation(qWikiElementEClass, QWIKI_ELEMENT___OID);
+		createEOperation(qWikiElementEClass, QWIKI_ELEMENT___OID_BASIC);
 
 		i18nKeyedStringEClass = createEClass(I1_8N_KEYED_STRING);
 		createEAttribute(i18nKeyedStringEClass, I1_8N_KEYED_STRING__KEY);
@@ -533,6 +586,12 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		qWikiNamespaceEClass = createEClass(QWIKI_NAMESPACE);
 
 		qWikiContainerEClass = createEClass(QWIKI_CONTAINER);
+
+		qWikiRelationshipEClass = createEClass(QWIKI_RELATIONSHIP);
+		createEReference(qWikiRelationshipEClass, QWIKI_RELATIONSHIP__RELATIONSHIP_TYPE);
+
+		qWikiRelationshipTypeEClass = createEClass(QWIKI_RELATIONSHIP_TYPE);
+		createEReference(qWikiRelationshipTypeEClass, QWIKI_RELATIONSHIP_TYPE__RELATIONSHIP);
 	}
 
 	/**
@@ -584,6 +643,8 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		qWikiNamespaceEClass.getESuperTypes().add(this.getQWikiElement());
 		qWikiContainerEClass.getESuperTypes().add(this.getQWikiNamespace());
 		qWikiContainerEClass.getESuperTypes().add(this.getI18nDescriptiveElement());
+		qWikiRelationshipEClass.getESuperTypes().add(theUMLPackage.getDirectedRelationship());
+		qWikiRelationshipTypeEClass.getESuperTypes().add(this.getQWikiNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(i18nNamedElementEClass, I18nNamedElement.class, "I18nNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -596,7 +657,7 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		initEReference(getQWikiElement_CustomProperty(), this.getI18nKeyedString(), null, "customProperty", null, 0, -1, QWikiElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getQWikiElement_Tag(), ecorePackage.getEString(), "tag", null, 0, -1, QWikiElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getQWikiElement__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getQWikiElement__OidBasic(), ecorePackage.getEString(), "oidBasic", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(i18nKeyedStringEClass, I18nKeyedString.class, "I18nKeyedString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getI18nKeyedString_Key(), ecorePackage.getEString(), "key", null, 1, 1, I18nKeyedString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -624,70 +685,22 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 
 		initEClass(qWikiContainerEClass, QWikiContainer.class, "QWikiContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(qWikiRelationshipEClass, QWikiRelationship.class, "QWikiRelationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQWikiRelationship_RelationshipType(), this.getQWikiRelationshipType(), this.getQWikiRelationshipType_Relationship(), "relationshipType", null, 0, 1, QWikiRelationship.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+
+		initEClass(qWikiRelationshipTypeEClass, QWikiRelationshipType.class, "QWikiRelationshipType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQWikiRelationshipType_Relationship(), this.getQWikiRelationship(), this.getQWikiRelationship_RelationshipType(), "relationship", null, 0, -1, QWikiRelationshipType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
-		// http://www.eclipse.org/emf/2002/Ecore
-		createEcoreAnnotations();
-		// redefines
-		createRedefinesAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL
-		createOCLAnnotations();
 		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
 		createEmofAnnotations();
 		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
 		createExtendedMetaDataAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createEcoreAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore";
-		addAnnotation
-		  (this,
-		   source,
-		   new String[] {
-			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>redefines</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRedefinesAnnotations() {
-		String source = "redefines";
-		addAnnotation
-		  (getQWikiElement__Oid(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//QWikiElement/oid")
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createOCLAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
-		addAnnotation
-		  (getQWikiElement__Oid(),
-		   source,
-		   new String[] {
-			   "body", "uuid"
-		   });
+		// union
+		createUnionAnnotations();
 	}
 
 	/**
@@ -725,6 +738,38 @@ public class KernelPackageImpl extends EPackageImpl implements KernelPackage {
 		   source,
 		   new String[] {
 			   "kind", "element"
+		   });
+		addAnnotation
+		  (getQWikiRelationship_RelationshipType(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getQWikiRelationshipType_Relationship(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>union</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createUnionAnnotations() {
+		String source = "union";
+		addAnnotation
+		  (getQWikiRelationship_RelationshipType(),
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (getQWikiRelationshipType_Relationship(),
+		   source,
+		   new String[] {
 		   });
 	}
 

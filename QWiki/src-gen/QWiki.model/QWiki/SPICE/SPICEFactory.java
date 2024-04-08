@@ -85,6 +85,24 @@ public interface SPICEFactory extends EFactory {
 	GenericWorkProduct createGenericWorkProduct();
 
 	/**
+	 * Returns a new object of class '<em>Work Product Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Work Product Relationship</em>'.
+	 * @generated
+	 */
+	WorkProductRelationship createWorkProductRelationship();
+
+	/**
+	 * Returns a new object of class '<em>Work Product Relationship Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Work Product Relationship Type</em>'.
+	 * @generated
+	 */
+	WorkProductRelationshipType createWorkProductRelationshipType();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

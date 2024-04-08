@@ -3,7 +3,6 @@
 package QWiki.Domain.util;
 
 import QWiki.Domain.*;
-
 import QWiki.Kernel.QWikiElement;
 
 import org.eclipse.emf.ecore.EModelElement;
@@ -11,7 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.uml2.uml.Element;
 
 /**

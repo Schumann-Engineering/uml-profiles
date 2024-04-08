@@ -286,7 +286,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.OUTCOME___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.OUTCOME___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -295,7 +295,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -476,6 +476,16 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
 			|| eIsSet(SPICEPackage.OUTCOME__OWNING_PROCESS);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oidBasic() {
+		return oid();
 	}
 
 } //OutcomeImpl

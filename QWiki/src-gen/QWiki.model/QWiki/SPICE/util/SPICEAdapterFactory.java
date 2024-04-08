@@ -9,6 +9,8 @@ import QWiki.Kernel.QWikiElement;
 import QWiki.Kernel.QWikiNamedElement;
 import QWiki.Kernel.QWikiNamespace;
 
+import QWiki.Kernel.QWikiRelationship;
+import QWiki.Kernel.QWikiRelationshipType;
 import QWiki.Rasci.RasciElement;
 
 import QWiki.Spice.BasePractise;
@@ -20,6 +22,8 @@ import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.SpiceElement;
 import QWiki.Spice.WorkProduct;
 
+import QWiki.Spice.WorkProductRelationship;
+import QWiki.Spice.WorkProductRelationshipType;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 
@@ -27,10 +31,11 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
-
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Relationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -121,6 +126,14 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 				return createGenericWorkProductAdapter();
 			}
 			@Override
+			public Adapter caseWorkProductRelationship(WorkProductRelationship object) {
+				return createWorkProductRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseWorkProductRelationshipType(WorkProductRelationshipType object) {
+				return createWorkProductRelationshipTypeAdapter();
+			}
+			@Override
 			public Adapter caseEModelElement(EModelElement object) {
 				return createEModelElementAdapter();
 			}
@@ -163,6 +176,22 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseRasciElement(RasciElement object) {
 				return createRasciElementAdapter();
+			}
+			@Override
+			public Adapter caseRelationship(Relationship object) {
+				return createRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseDirectedRelationship(DirectedRelationship object) {
+				return createDirectedRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseQWikiRelationship(QWikiRelationship object) {
+				return createQWikiRelationshipAdapter();
+			}
+			@Override
+			public Adapter caseQWikiRelationshipType(QWikiRelationshipType object) {
+				return createQWikiRelationshipTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -293,6 +322,34 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGenericWorkProductAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.WorkProductRelationship <em>Work Product Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Spice.WorkProductRelationship
+	 * @generated
+	 */
+	public Adapter createWorkProductRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Spice.WorkProductRelationshipType <em>Work Product Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Spice.WorkProductRelationshipType
+	 * @generated
+	 */
+	public Adapter createWorkProductRelationshipTypeAdapter() {
 		return null;
 	}
 
@@ -447,6 +504,62 @@ public class SPICEAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRasciElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.Relationship <em>Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.Relationship
+	 * @generated
+	 */
+	public Adapter createRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.eclipse.uml2.uml.DirectedRelationship <em>Directed Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.eclipse.uml2.uml.DirectedRelationship
+	 * @generated
+	 */
+	public Adapter createDirectedRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiRelationship <em>QWiki Relationship</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.QWikiRelationship
+	 * @generated
+	 */
+	public Adapter createQWikiRelationshipAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiRelationshipType <em>QWiki Relationship Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see QWiki.Kernel.QWikiRelationshipType
+	 * @generated
+	 */
+	public Adapter createQWikiRelationshipTypeAdapter() {
 		return null;
 	}
 

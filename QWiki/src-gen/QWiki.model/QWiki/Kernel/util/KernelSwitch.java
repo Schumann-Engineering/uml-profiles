@@ -9,11 +9,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
-
 import org.eclipse.uml2.uml.Comment;
+import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
+import org.eclipse.uml2.uml.Relationship;
 
 /**
  * <!-- begin-user-doc -->
@@ -174,6 +175,27 @@ public class KernelSwitch<T> extends Switch<T> {
 				if (result == null) result = caseQWikiElement(qWikiContainer);
 				if (result == null) result = caseElement(qWikiContainer);
 				if (result == null) result = caseEModelElement(qWikiContainer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.QWIKI_RELATIONSHIP: {
+				QWikiRelationship qWikiRelationship = (QWikiRelationship)theEObject;
+				T result = caseQWikiRelationship(qWikiRelationship);
+				if (result == null) result = caseDirectedRelationship(qWikiRelationship);
+				if (result == null) result = caseRelationship(qWikiRelationship);
+				if (result == null) result = caseElement(qWikiRelationship);
+				if (result == null) result = caseEModelElement(qWikiRelationship);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KernelPackage.QWIKI_RELATIONSHIP_TYPE: {
+				QWikiRelationshipType qWikiRelationshipType = (QWikiRelationshipType)theEObject;
+				T result = caseQWikiRelationshipType(qWikiRelationshipType);
+				if (result == null) result = caseQWikiNamedElement(qWikiRelationshipType);
+				if (result == null) result = caseNamedElement(qWikiRelationshipType);
+				if (result == null) result = caseQWikiElement(qWikiRelationshipType);
+				if (result == null) result = caseElement(qWikiRelationshipType);
+				if (result == null) result = caseEModelElement(qWikiRelationshipType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -347,6 +369,36 @@ public class KernelSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiRelationship(QWikiRelationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>QWiki Relationship Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>QWiki Relationship Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseQWikiRelationshipType(QWikiRelationshipType object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -418,6 +470,36 @@ public class KernelSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamespace(Namespace object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRelationship(Relationship object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Directed Relationship</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Directed Relationship</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDirectedRelationship(DirectedRelationship object) {
 		return null;
 	}
 

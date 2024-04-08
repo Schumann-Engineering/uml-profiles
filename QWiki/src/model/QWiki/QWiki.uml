@@ -135,13 +135,7 @@ contains&#xD;
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IaFuMOnJEe6pm5wa6vzbpQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IaQGQOnJEe6pm5wa6vzbpQ" value="*"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_NYefQOz0Ee6arr42GsuYxg" name="oid" bodyCondition="_UM5ZYOz0Ee6arr42GsuYxg" isQuery="true" redefinedOperation="_NYefQOz0Ee6arr42GsuYxg">
-          <ownedRule xmi:type="uml:Constraint" xmi:id="_UM5ZYOz0Ee6arr42GsuYxg" name="spec" constrainedElement="_NYefQOz0Ee6arr42GsuYxg">
-            <specification xmi:type="uml:OpaqueExpression" xmi:id="_XxlBEOz0Ee6arr42GsuYxg">
-              <language>OCL</language>
-              <body>uuid</body>
-            </specification>
-          </ownedRule>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_NYefQOz0Ee6arr42GsuYxg" name="oid" isAbstract="true">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_SG1r0Oz0Ee6arr42GsuYxg" name="result" direction="return">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           </ownedParameter>
@@ -168,6 +162,21 @@ contains&#xD;
       <packagedElement xmi:type="uml:Class" xmi:id="_QCzlEO9FEe6MqtNwAzLkvA" name="QWikiContainer">
         <generalization xmi:type="uml:Generalization" xmi:id="_TGPg4O9FEe6MqtNwAzLkvA" general="_emVVYO9EEe6MqtNwAzLkvA"/>
         <generalization xmi:type="uml:Generalization" xmi:id="_Xa1ikO9FEe6MqtNwAzLkvA" general="_oo9J8OnrEe6LY_dHFA6_Jw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_Cb3_APKrEe6TpdN_RktbHQ" name="QWikiRelationship" isAbstract="true">
+        <generalization xmi:type="uml:Generalization" xmi:id="_im7cIPKpEe6TpdN_RktbHQ">
+          <general xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DirectedRelationship"/>
+        </generalization>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_WK_1AvKrEe6TpdN_RktbHQ" name="relationshipType" type="_K3VIYPKrEe6TpdN_RktbHQ" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_WK_N8PKrEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bDfN8PKrEe6TpdN_RktbHQ"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_K3VIYPKrEe6TpdN_RktbHQ" name="QWikiRelationshipType" isAbstract="true">
+        <generalization xmi:type="uml:Generalization" xmi:id="_25W-EPKqEe6TpdN_RktbHQ" general="_U4z8oO9DEe6MqtNwAzLkvA"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_WK_1BfKrEe6TpdN_RktbHQ" name="relationship" type="_Cb3_APKrEe6TpdN_RktbHQ" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_WK_N8PKrEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eW1OAPKrEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eXR58PKrEe6TpdN_RktbHQ" value="*"/>
+        </ownedAttribute>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_SGm5AOnYEe6pm5wa6vzbpQ" memberEnd="_SGngEunYEe6pm5wa6vzbpQ _SGngFenYEe6pm5wa6vzbpQ">
@@ -415,6 +424,21 @@ endif</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_L0FiEOz5Ee6p4qQ9OedHIg"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_5teb4ungEe6pm5wa6vzbpQ" name="workProductType" type="_nWv8MOngEe6pm5wa6vzbpQ" association="_5td00OngEe6pm5wa6vzbpQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_867RMPKlEe6TpdN_RktbHQ" name="containedWorkProduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" subsettedProperty="_Pa-PgvKnEe6TpdN_RktbHQ" association="_863m0PKlEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_86_ioPKlEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_87B-4PKlEe6TpdN_RktbHQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_87EbIPKlEe6TpdN_RktbHQ" name="containingWorkProduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" subsettedProperty="_Pa-PgvKnEe6TpdN_RktbHQ" association="_863m0PKlEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oPRFAPKmEe6TpdN_RktbHQ"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_Pa-PgvKnEe6TpdN_RktbHQ" name="linkedWorkProduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" isReadOnly="true" isDerived="true" isDerivedUnion="true" association="_Pa9ocPKnEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Pa-Pg_KnEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Pa-PhPKnEe6TpdN_RktbHQ" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mpkyMPKpEe6TpdN_RktbHQ" name="link" type="_fWJn4PKpEe6TpdN_RktbHQ" association="_mperkPKpEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_s5db4PKpEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_s56u4PKpEe6TpdN_RktbHQ" value="*"/>
+        </ownedAttribute>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_JKaG4Oz1Ee6arr42GsuYxg" name="oid" bodyCondition="_JKaG4ez1Ee6arr42GsuYxg" isQuery="true" redefinedOperation="_NYefQOz0Ee6arr42GsuYxg">
           <ownedRule xmi:type="uml:Constraint" xmi:id="_JKaG4ez1Ee6arr42GsuYxg" name="spec" constrainedElement="_JKaG4Oz1Ee6arr42GsuYxg">
             <specification xmi:type="uml:OpaqueExpression" xmi:id="_CZ7VwezuEe6arr42GsuYxg">
@@ -542,6 +566,65 @@ endif</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ric9EOoaEe6LY_dHFA6_Jw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_RiqYcOoaEe6LY_dHFA6_Jw" value="*"/>
         </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_863m0PKlEe6TpdN_RktbHQ" memberEnd="_867RMPKlEe6TpdN_RktbHQ _87EbIPKlEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_866DEPKlEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_866qIPKlEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Pa9ocPKnEe6TpdN_RktbHQ" memberEnd="_Pa-PgvKnEe6TpdN_RktbHQ _Pa-PhfKnEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Pa-PgPKnEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Pa-PgfKnEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_Pa-PhfKnEe6TpdN_RktbHQ" name="workproduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" association="_Pa9ocPKnEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ahzaAPKnEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_aiWzoPKnEe6TpdN_RktbHQ" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_fWJn4PKpEe6TpdN_RktbHQ" name="WorkProductRelationship">
+        <generalization xmi:type="uml:Generalization" xmi:id="_J9SiAPKrEe6TpdN_RktbHQ" general="_Cb3_APKrEe6TpdN_RktbHQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mpfSovKpEe6TpdN_RktbHQ" name="linkedWorkProduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" association="_mperkPKpEe6TpdN_RktbHQ">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mpi9APKpEe6TpdN_RktbHQ" value="*"/>
+          <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DirectedRelationship-target"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_2vYYI_KpEe6TpdN_RktbHQ" name="linkingWorkProduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" association="_2vYYIPKpEe6TpdN_RktbHQ">
+          <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#DirectedRelationship-source"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_38AG0fKqEe6TpdN_RktbHQ" name="workProductRelationshipType" type="_ofQsAPKqEe6TpdN_RktbHQ" association="_37_fwPKqEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_38AG0vKqEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_38AG0_KqEe6TpdN_RktbHQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_mperkPKpEe6TpdN_RktbHQ" memberEnd="_mpfSovKpEe6TpdN_RktbHQ _mpkyMPKpEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_mpfSoPKpEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_mpfSofKpEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_2vYYIPKpEe6TpdN_RktbHQ" memberEnd="_2vYYI_KpEe6TpdN_RktbHQ _2vYYJvKpEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2vYYIfKpEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2vYYIvKpEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_2vYYJvKpEe6TpdN_RktbHQ" name="workproductlink" type="_fWJn4PKpEe6TpdN_RktbHQ" association="_2vYYIPKpEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_66yBkPKpEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_67OtgPKpEe6TpdN_RktbHQ" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ofQsAPKqEe6TpdN_RktbHQ" name="WorkProductRelationshipType">
+        <generalization xmi:type="uml:Generalization" xmi:id="_SIV34PKrEe6TpdN_RktbHQ" general="_K3VIYPKrEe6TpdN_RktbHQ"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_38AG1PKqEe6TpdN_RktbHQ" name="workProductRelationship" type="_fWJn4PKpEe6TpdN_RktbHQ" subsettedProperty="_WK_1BfKrEe6TpdN_RktbHQ" association="_37_fwPKqEe6TpdN_RktbHQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_hVia0PKrEe6TpdN_RktbHQ"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_hVzgkPKrEe6TpdN_RktbHQ" value="*"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_37_fwPKqEe6TpdN_RktbHQ" memberEnd="_38AG0fKqEe6TpdN_RktbHQ _38AG1PKqEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_37_fwfKqEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_38AG0PKqEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_WK_N8PKrEe6TpdN_RktbHQ" memberEnd="_WK_1AvKrEe6TpdN_RktbHQ _WK_1BfKrEe6TpdN_RktbHQ">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_WK_1APKrEe6TpdN_RktbHQ" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WK_1AfKrEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
+        </eAnnotations>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_sntfMO20Ee6p4qQ9OedHIg" name="RASCI">
@@ -910,7 +993,7 @@ endif</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__8J58OoHEe6LY_dHFA6_Jw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__8J58eoHEe6LY_dHFA6_Jw" value="*"/>
         </ownedAttribute>
-        <ownedOperation xmi:type="uml:Operation" xmi:id="_HE7oIOz1Ee6arr42GsuYxg" name="oid" bodyCondition="_HE7oIez1Ee6arr42GsuYxg" isQuery="true" redefinedOperation="_NYefQOz0Ee6arr42GsuYxg">
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_HE7oIOz1Ee6arr42GsuYxg" name="oid" bodyCondition="_HE7oIez1Ee6arr42GsuYxg" isQuery="true">
           <ownedRule xmi:type="uml:Constraint" xmi:id="_HE7oIez1Ee6arr42GsuYxg" name="spec" constrainedElement="_HE7oIOz1Ee6arr42GsuYxg">
             <specification xmi:type="uml:OpaqueExpression" xmi:id="_-dtX0eztEe6arr42GsuYxg">
               <language>OCL</language>
@@ -1045,4 +1128,6 @@ endif</body>
   <Ecore:EPackage xmi:id="_KE5jkO9CEe6MqtNwAzLkvA" base_Package="UML-Extensions-Package" packageName="Kernel" nsURI="http://schumann.engineering/qwiki/1.0/kernel"/>
   <Ecore:EAttribute xmi:id="_5gqfwO9CEe6MqtNwAzLkvA" base_Property="_CF4skOnGEe6pm5wa6vzbpQ" isID="true"/>
   <Ecore:EReference xmi:id="_7h9pIO9CEe6MqtNwAzLkvA" isTransient="true" xmlFeatureKind="Element" base_Property="_KgQlIun4Ee6LY_dHFA6_Jw"/>
+  <Ecore:EReference xmi:id="_qcexMPKrEe6TpdN_RktbHQ" isTransient="true" xmlFeatureKind="Element" base_Property="_WK_1AvKrEe6TpdN_RktbHQ"/>
+  <Ecore:EReference xmi:id="_u9dCAPKrEe6TpdN_RktbHQ" isTransient="true" xmlFeatureKind="Element" base_Property="_WK_1BfKrEe6TpdN_RktbHQ"/>
 </xmi:XMI>

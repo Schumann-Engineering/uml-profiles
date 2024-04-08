@@ -691,13 +691,13 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM_DEFINITION___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Oid Basic</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___OID;
+	int GLOSSARY_TERM_DEFINITION___OID_BASIC = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___OID_BASIC;
 
 	/**
 	 * The number of operations of the '<em>Term Definition</em>' class.
@@ -1358,13 +1358,13 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Oid Basic</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___OID = KernelPackage.I1_8N_NAMED_ELEMENT___OID;
+	int GLOSSARY_TERM___OID_BASIC = KernelPackage.I1_8N_NAMED_ELEMENT___OID_BASIC;
 
 	/**
 	 * The operation id for the '<em>Oid</em>' operation.
@@ -1479,7 +1479,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @see QWiki.Glossary.GlossaryTerm#oid()
 	 * @generated
 	 */
-	EOperation getGlossaryTerm__Oid_1();
+	EOperation getGlossaryTerm__Oid();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1578,7 +1578,7 @@ public interface GlossaryPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GLOSSARY_TERM___OID = eINSTANCE.getGlossaryTerm__Oid_1();
+		EOperation GLOSSARY_TERM___OID = eINSTANCE.getGlossaryTerm__Oid();
 
 	}
 

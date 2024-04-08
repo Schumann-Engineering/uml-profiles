@@ -231,7 +231,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getRole__Oid_1() {
+	public EOperation getRole__Oid() {
 		return roleEClass.getEOperations().get(0);
 	}
 
@@ -384,7 +384,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 		initEReference(getRole_ConsultingElement(), this.getRasciElement(), this.getRasciElement_ConsultedRole(), "consultingElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRole_InformedElement(), this.getRasciElement(), this.getRasciElement_InformedRole(), "informedElement", null, 0, -1, Role.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getRole__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getRole__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(rasciElementEClass, RasciElement.class, "RasciElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRasciElement_ResponsibleRole(), this.getRole(), this.getRole_ResponsibleElement(), "responsibleRole", null, 1, -1, RasciElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -446,7 +446,7 @@ public class RASCIPackageImpl extends EPackageImpl implements RASCIPackage {
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getRole__Oid_1(),
+		  (getRole__Oid(),
 		   source,
 		   new String[] {
 			   "body", "\'r/\' + name"

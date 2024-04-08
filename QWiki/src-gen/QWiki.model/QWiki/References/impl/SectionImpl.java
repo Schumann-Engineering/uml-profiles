@@ -399,7 +399,7 @@ public class SectionImpl extends QWikiNamespaceImpl implements Section {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.SECTION___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.SECTION___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -408,7 +408,7 @@ public class SectionImpl extends QWikiNamespaceImpl implements Section {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

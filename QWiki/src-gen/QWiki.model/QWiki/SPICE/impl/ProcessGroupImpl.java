@@ -133,8 +133,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_GROUP___OID).getInvocationDelegate();
-
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_GROUP___OID).getInvocationDelegate();
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -142,7 +141,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -263,6 +262,16 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	public boolean isSetOwnedMembers() {
 		return super.isSetOwnedMembers()
 			|| eIsSet(SPICEPackage.PROCESS_GROUP__OWNED_PROCESS);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oidBasic() {
+		return oid();
 	}
 
 } //ProcessGroupImpl

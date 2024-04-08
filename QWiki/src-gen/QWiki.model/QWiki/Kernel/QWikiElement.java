@@ -3,7 +3,6 @@
 package QWiki.Kernel;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -86,19 +85,11 @@ public interface QWikiElement extends Element {
 	EList<String> getTag();
 
 	/**
-	 * <p>
-	 * This operation redefines the following operations:
-	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
-	 *        annotation="redefines"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='uuid'"
 	 * @generated
 	 */
-	String oid();
+	String oidBasic();
 
 } // QWikiElement

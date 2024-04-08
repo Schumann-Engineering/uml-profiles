@@ -8,6 +8,7 @@ import QWiki.Spice.GenericWorkProduct;
 import QWiki.Spice.Outcome;
 import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.WorkProduct;
+import QWiki.Spice.WorkProductRelationship;
 import QWiki.Spice.WorkProductType;
 
 import java.lang.reflect.InvocationTargetException;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
 import org.eclipse.uml2.uml.Namespace;
 
 /**
@@ -41,12 +43,16 @@ import org.eclipse.uml2.uml.Namespace;
  * </p>
  * <ul>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getLinkedWorkProduct <em>Linked Work Product</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getOwningWorkProductGroup <em>Owning Work Product Group</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getCharacteristic <em>Characteristic</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getFacilitatingOutcome <em>Facilitating Outcome</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getFacilitatedProcess <em>Facilitated Process</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getFacilitatingProcess <em>Facilitating Process</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getWorkProductType <em>Work Product Type</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getContainedWorkProduct <em>Contained Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getContainingWorkProduct <em>Containing Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getLink <em>Link</em>}</li>
  *   <li>{@link QWiki.Spice.impl.WorkProductImpl#getFacilitatedOutcome <em>Facilitated Outcome</em>}</li>
  * </ul>
  *
@@ -114,6 +120,36 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	protected WorkProductType workProductType = WORK_PRODUCT_TYPE_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getContainedWorkProduct() <em>Contained Work Product</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainedWorkProduct()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<WorkProduct> containedWorkProduct;
+
+	/**
+	 * The cached value of the '{@link #getContainingWorkProduct() <em>Containing Work Product</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContainingWorkProduct()
+	 * @generated
+	 * @ordered
+	 */
+	protected WorkProduct containingWorkProduct;
+
+	/**
+	 * The cached value of the '{@link #getLink() <em>Link</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLink()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<WorkProductRelationship> link;
+
+	/**
 	 * The cached value of the '{@link #getFacilitatedOutcome() <em>Facilitated Outcome</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -165,6 +201,51 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			return owningWorkProductGroup;
 		}
 		return super.basicGetNamespace();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<WorkProduct> getLinkedWorkProduct() {
+		return new DerivedUnionEObjectEList<WorkProduct>(WorkProduct.class, this, SPICEPackage.WORK_PRODUCT__LINKED_WORK_PRODUCT, LINKED_WORK_PRODUCT_ESUBSETS);
+	}
+
+	/**
+	 * The array of subset feature identifiers for the '{@link #getLinkedWorkProduct() <em>Linked Work Product</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinkedWorkProduct()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int[] LINKED_WORK_PRODUCT_ESUBSETS = new int[] {SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT};
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getLinkedWorkProduct(String name) {
+		return getLinkedWorkProduct(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getLinkedWorkProduct(String name, boolean ignoreCase, EClass eClass) {
+		linkedWorkProductLoop: for (WorkProduct linkedWorkProduct : getLinkedWorkProduct()) {
+			if (eClass != null && !eClass.isInstance(linkedWorkProduct))
+				continue linkedWorkProductLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(linkedWorkProduct.getName()) : name.equals(linkedWorkProduct.getName())))
+				continue linkedWorkProductLoop;
+			return linkedWorkProduct;
+		}
+		return null;
 	}
 
 	/**
@@ -418,6 +499,119 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 */
 	@Override
+	public EList<WorkProduct> getContainedWorkProduct() {
+		if (containedWorkProduct == null) {
+			containedWorkProduct = new EObjectWithInverseResolvingEList<WorkProduct>(WorkProduct.class, this, SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT);
+		}
+		return containedWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getContainedWorkProduct(String name) {
+		return getContainedWorkProduct(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct getContainedWorkProduct(String name, boolean ignoreCase, EClass eClass) {
+		containedWorkProductLoop: for (WorkProduct containedWorkProduct : getContainedWorkProduct()) {
+			if (eClass != null && !eClass.isInstance(containedWorkProduct))
+				continue containedWorkProductLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(containedWorkProduct.getName()) : name.equals(containedWorkProduct.getName())))
+				continue containedWorkProductLoop;
+			return containedWorkProduct;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WorkProduct getContainingWorkProduct() {
+		if (containingWorkProduct != null && containingWorkProduct.eIsProxy()) {
+			InternalEObject oldContainingWorkProduct = (InternalEObject)containingWorkProduct;
+			containingWorkProduct = (WorkProduct)eResolveProxy(oldContainingWorkProduct);
+			if (containingWorkProduct != oldContainingWorkProduct) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT, oldContainingWorkProduct, containingWorkProduct));
+			}
+		}
+		return containingWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WorkProduct basicGetContainingWorkProduct() {
+		return containingWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContainingWorkProduct(WorkProduct newContainingWorkProduct, NotificationChain msgs) {
+		WorkProduct oldContainingWorkProduct = containingWorkProduct;
+		containingWorkProduct = newContainingWorkProduct;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT, oldContainingWorkProduct, newContainingWorkProduct);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContainingWorkProduct(WorkProduct newContainingWorkProduct) {
+		if (newContainingWorkProduct != containingWorkProduct) {
+			NotificationChain msgs = null;
+			if (containingWorkProduct != null)
+				msgs = ((InternalEObject)containingWorkProduct).eInverseRemove(this, SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT, WorkProduct.class, msgs);
+			if (newContainingWorkProduct != null)
+				msgs = ((InternalEObject)newContainingWorkProduct).eInverseAdd(this, SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT, WorkProduct.class, msgs);
+			msgs = basicSetContainingWorkProduct(newContainingWorkProduct, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT, newContainingWorkProduct, newContainingWorkProduct));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<WorkProductRelationship> getLink() {
+		if (link == null) {
+			link = new EObjectWithInverseResolvingEList.ManyInverse<WorkProductRelationship>(WorkProductRelationship.class, this, SPICEPackage.WORK_PRODUCT__LINK, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT);
+		}
+		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Outcome> getFacilitatedOutcome() {
 		if (facilitatedOutcome == null) {
 			facilitatedOutcome = new EObjectWithInverseResolvingEList.ManyInverse<Outcome>(Outcome.class, this, SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME, SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT);
@@ -456,7 +650,7 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.WORK_PRODUCT___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.WORK_PRODUCT___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -465,7 +659,7 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -493,6 +687,14 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 				if (facilitatingProcess != null)
 					msgs = ((InternalEObject)facilitatingProcess).eInverseRemove(this, SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT, QWiki.Spice.Process.class, msgs);
 				return basicSetFacilitatingProcess((QWiki.Spice.Process)otherEnd, msgs);
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getContainedWorkProduct()).basicAdd(otherEnd, msgs);
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				if (containingWorkProduct != null)
+					msgs = ((InternalEObject)containingWorkProduct).eInverseRemove(this, SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT, WorkProduct.class, msgs);
+				return basicSetContainingWorkProduct((WorkProduct)otherEnd, msgs);
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLink()).basicAdd(otherEnd, msgs);
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatedOutcome()).basicAdd(otherEnd, msgs);
 		}
@@ -517,6 +719,12 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 				return ((InternalEList<?>)getFacilitatedProcess()).basicRemove(otherEnd, msgs);
 			case SPICEPackage.WORK_PRODUCT__FACILITATING_PROCESS:
 				return basicSetFacilitatingProcess(null, msgs);
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				return ((InternalEList<?>)getContainedWorkProduct()).basicRemove(otherEnd, msgs);
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				return basicSetContainingWorkProduct(null, msgs);
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				return ((InternalEList<?>)getLink()).basicRemove(otherEnd, msgs);
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				return ((InternalEList<?>)getFacilitatedOutcome()).basicRemove(otherEnd, msgs);
 		}
@@ -545,6 +753,8 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case SPICEPackage.WORK_PRODUCT__LINKED_WORK_PRODUCT:
+				return getLinkedWorkProduct();
 			case SPICEPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return getOwningWorkProductGroup();
 			case SPICEPackage.WORK_PRODUCT__CHARACTERISTIC:
@@ -558,6 +768,13 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 				return basicGetFacilitatingProcess();
 			case SPICEPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				return getWorkProductType();
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				return getContainedWorkProduct();
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				if (resolve) return getContainingWorkProduct();
+				return basicGetContainingWorkProduct();
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				return getLink();
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				return getFacilitatedOutcome();
 		}
@@ -593,6 +810,17 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			case SPICEPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				setWorkProductType((WorkProductType)newValue);
 				return;
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				getContainedWorkProduct().clear();
+				getContainedWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
+				return;
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				setContainingWorkProduct((WorkProduct)newValue);
+				return;
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				getLink().clear();
+				getLink().addAll((Collection<? extends WorkProductRelationship>)newValue);
+				return;
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				getFacilitatedOutcome().clear();
 				getFacilitatedOutcome().addAll((Collection<? extends Outcome>)newValue);
@@ -627,6 +855,15 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			case SPICEPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				setWorkProductType(WORK_PRODUCT_TYPE_EDEFAULT);
 				return;
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				getContainedWorkProduct().clear();
+				return;
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				setContainingWorkProduct((WorkProduct)null);
+				return;
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				getLink().clear();
+				return;
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				getFacilitatedOutcome().clear();
 				return;
@@ -644,6 +881,8 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 		switch (featureID) {
 			case SPICEPackage.WORK_PRODUCT__NAMESPACE:
 				return isSetNamespace();
+			case SPICEPackage.WORK_PRODUCT__LINKED_WORK_PRODUCT:
+				return isSetLinkedWorkProduct();
 			case SPICEPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return getOwningWorkProductGroup() != null;
 			case SPICEPackage.WORK_PRODUCT__CHARACTERISTIC:
@@ -656,6 +895,12 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 				return facilitatingProcess != null;
 			case SPICEPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				return workProductType != WORK_PRODUCT_TYPE_EDEFAULT;
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				return containedWorkProduct != null && !containedWorkProduct.isEmpty();
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				return containingWorkProduct != null;
+			case SPICEPackage.WORK_PRODUCT__LINK:
+				return link != null && !link.isEmpty();
 			case SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME:
 				return facilitatedOutcome != null && !facilitatedOutcome.isEmpty();
 		}
@@ -701,6 +946,26 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
 			|| eIsSet(SPICEPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isSetLinkedWorkProduct() {
+		return eIsSet(SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT)
+			|| eIsSet(SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oidBasic() {
+		return oid();
 	}
 
 } //WorkProductImpl

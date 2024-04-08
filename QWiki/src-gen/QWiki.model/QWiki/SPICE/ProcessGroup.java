@@ -73,7 +73,7 @@ public interface ProcessGroup extends SpiceElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
+	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->

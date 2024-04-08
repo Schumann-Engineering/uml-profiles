@@ -255,7 +255,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getAuthor__Oid_1() {
+	public EOperation getAuthor__Oid() {
 		return authorEClass.getEOperations().get(2);
 	}
 
@@ -315,7 +315,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getReference__Oid_1() {
+	public EOperation getReference__Oid() {
 		return referenceEClass.getEOperations().get(0);
 	}
 
@@ -385,7 +385,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getReferenceVersion__Oid_1() {
+	public EOperation getReferenceVersion__Oid() {
 		return referenceVersionEClass.getEOperations().get(0);
 	}
 
@@ -485,7 +485,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getSection__Oid_1() {
+	public EOperation getSection__Oid() {
 		return sectionEClass.getEOperations().get(1);
 	}
 
@@ -645,7 +645,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 
 		initEOperation(getAuthor__AuthoredStandard(), this.getReference(), "authoredStandard", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getAuthor__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getAuthor__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_Number(), ecorePackage.getEString(), "number", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -653,7 +653,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		initEAttribute(getReference_ReferenceType(), this.getReferenceType(), "referenceType", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReference_Author(), this.getAuthor(), null, "author", null, 1, -1, Reference.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getReference__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getReference__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(referenceVersionEClass, ReferenceVersion.class, "ReferenceVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReferenceVersion_PublicationYear(), ecorePackage.getEString(), "publicationYear", null, 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -662,7 +662,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		initEReference(getReferenceVersion_OwnedSection(), this.getSection(), this.getSection_OwningReferenceVersion(), "ownedSection", null, 0, -1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_OwnedVersion(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getReferenceVersion__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getReferenceVersion__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSection_OwningReferenceVersion(), this.getReferenceVersion(), this.getReferenceVersion_OwnedSection(), "owningReferenceVersion", null, 0, 1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -675,7 +675,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 
 		initEOperation(getSection__DocumentVersion(), this.getReferenceVersion(), "documentVersion", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEOperation(getSection__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getSection__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getSection__QualifiedNumber(), ecorePackage.getEString(), "qualifiedNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -753,19 +753,19 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 			   "body", "authoredDocument()->select(documentType = DocumentType::Standard)"
 		   });
 		addAnnotation
-		  (getAuthor__Oid_1(),
+		  (getAuthor__Oid(),
 		   source,
 		   new String[] {
 			   "body", "if (abbreviation->notEmpty()) then \'a/\' + abbreviation else \'a/\' + uuid endif"
 		   });
 		addAnnotation
-		  (getReference__Oid_1(),
+		  (getReference__Oid(),
 		   source,
 		   new String[] {
 			   "body", "if (documentType = DocumentType::Document) then \'d/\' + number else \r\nif (documentType = DocumentType::Guideline) then \'g/\' + number else\r\nif (documentType = DocumentType::Hyperlink) then \'href/\' + number else\r\nif (documentType = DocumentType::Legislation) then \'l/\' + number else\r\nif (documentType = DocumentType::Process) then \'p/\' + number else\r\nif (documentType = DocumentType::Standard) then \'s/\' + number else\r\nif (documentType = DocumentType::TechnicalReport) then \'tr/\' + number else \r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
 		   });
 		addAnnotation
-		  (getReferenceVersion__Oid_1(),
+		  (getReferenceVersion__Oid(),
 		   source,
 		   new String[] {
 			   "body", "owningDocument.oid() + \'/\' + edition + if (owningDocument.documentType = DocumentType::Standard) then \'<SDO-TBD>\' else \'\' endif"
@@ -777,7 +777,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 			   "body", "if (owningDocument->notEmpty()) then owningDocument else owningSection.documentVersion() endif"
 		   });
 		addAnnotation
-		  (getSection__Oid_1(),
+		  (getSection__Oid(),
 		   source,
 		   new String[] {
 			   "body", "qualifiedNumber() + \'@\' + documentVersion().oid()"

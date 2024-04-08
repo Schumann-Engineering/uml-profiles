@@ -225,16 +225,9 @@ public interface GlossaryTerm extends I18nNamedElement {
 	Section getExternalTermDefinition(String name, boolean ignoreCase);
 
 	/**
-	 * <p>
-	 * This operation redefines the following operations:
-	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
-	 * </ul>
-	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
-	 *        annotation="redefines"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'t/\' + name'"
 	 * @generated
 	 */

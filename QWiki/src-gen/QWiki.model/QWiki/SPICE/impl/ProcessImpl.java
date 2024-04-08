@@ -357,7 +357,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -366,7 +366,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -576,6 +576,16 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 		return super.isSetOwnedMembers()
 			|| eIsSet(SPICEPackage.PROCESS__OWNED_OUTCOME)
 			|| eIsSet(SPICEPackage.PROCESS__OWNED_BASE_PRACTISE);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String oidBasic() {
+		return oid();
 	}
 
 } //ProcessImpl

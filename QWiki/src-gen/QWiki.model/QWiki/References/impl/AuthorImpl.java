@@ -199,7 +199,7 @@ public class AuthorImpl extends QWikiNamedElementImpl implements Author {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -208,7 +208,7 @@ public class AuthorImpl extends QWikiNamedElementImpl implements Author {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

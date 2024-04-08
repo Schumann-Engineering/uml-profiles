@@ -5,6 +5,7 @@ package QWiki.Spice;
 import QWiki.Kernel.I18nString;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +22,10 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Spice.WorkProduct#getFacilitatedProcess <em>Facilitated Process</em>}</li>
  *   <li>{@link QWiki.Spice.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}</li>
  *   <li>{@link QWiki.Spice.WorkProduct#getWorkProductType <em>Work Product Type</em>}</li>
+ *   <li>{@link QWiki.Spice.WorkProduct#getContainedWorkProduct <em>Contained Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.WorkProduct#getContainingWorkProduct <em>Containing Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.WorkProduct#getLinkedWorkProduct <em>Linked Work Product</em>}</li>
+ *   <li>{@link QWiki.Spice.WorkProduct#getLink <em>Link</em>}</li>
  *   <li>{@link QWiki.Spice.WorkProduct#getFacilitatedOutcome <em>Facilitated Outcome</em>}</li>
  * </ul>
  *
@@ -234,6 +239,151 @@ public interface WorkProduct extends SpiceElement {
 	void setWorkProductType(WorkProductType value);
 
 	/**
+	 * Returns the value of the '<em><b>Contained Work Product</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Spice.WorkProduct}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Spice.WorkProduct#getContainingWorkProduct <em>Containing Work Product</em>}'.
+	 * <p>
+	 * This feature subsets the following features:
+	 * </p>
+	 * <ul>
+	 *   <li>'{@link QWiki.Spice.WorkProduct#getLinkedWorkProduct() <em>Linked Work Product</em>}'</li>
+	 * </ul>
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Contained Work Product</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contained Work Product</em>' reference list.
+	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_ContainedWorkProduct()
+	 * @see QWiki.Spice.WorkProduct#getContainingWorkProduct
+	 * @model opposite="containingWorkProduct" ordered="false"
+	 *        annotation="subsets"
+	 * @generated
+	 */
+	EList<WorkProduct> getContainedWorkProduct();
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>' from the '<em><b>Contained Work Product</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getContainedWorkProduct()
+	 * @generated
+	 */
+	WorkProduct getContainedWorkProduct(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>' from the '<em><b>Contained Work Product</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass The Ecore class of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getContainedWorkProduct()
+	 * @generated
+	 */
+	WorkProduct getContainedWorkProduct(String name, boolean ignoreCase, EClass eClass);
+
+	/**
+	 * Returns the value of the '<em><b>Containing Work Product</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link QWiki.Spice.WorkProduct#getContainedWorkProduct <em>Contained Work Product</em>}'.
+	 * <p>
+	 * This feature subsets the following features:
+	 * </p>
+	 * <ul>
+	 *   <li>'{@link QWiki.Spice.WorkProduct#getLinkedWorkProduct() <em>Linked Work Product</em>}'</li>
+	 * </ul>
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Containing Work Product</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Containing Work Product</em>' reference.
+	 * @see #setContainingWorkProduct(WorkProduct)
+	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_ContainingWorkProduct()
+	 * @see QWiki.Spice.WorkProduct#getContainedWorkProduct
+	 * @model opposite="containedWorkProduct" ordered="false"
+	 *        annotation="subsets"
+	 * @generated
+	 */
+	WorkProduct getContainingWorkProduct();
+
+	/**
+	 * Sets the value of the '{@link QWiki.Spice.WorkProduct#getContainingWorkProduct <em>Containing Work Product</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Containing Work Product</em>' reference.
+	 * @see #getContainingWorkProduct()
+	 * @generated
+	 */
+	void setContainingWorkProduct(WorkProduct value);
+
+	/**
+	 * Returns the value of the '<em><b>Linked Work Product</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Spice.WorkProduct}.
+	 * This feature is a derived union.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Linked Work Product</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Linked Work Product</em>' reference list.
+	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_LinkedWorkProduct()
+	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='workproduct'"
+	 *        annotation="union"
+	 * @generated
+	 */
+	EList<WorkProduct> getLinkedWorkProduct();
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>' from the '<em><b>Linked Work Product</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getLinkedWorkProduct()
+	 * @generated
+	 */
+	WorkProduct getLinkedWorkProduct(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>' from the '<em><b>Linked Work Product</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @param eClass The Ecore class of the {@link QWiki.Spice.WorkProduct} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.WorkProduct} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getLinkedWorkProduct()
+	 * @generated
+	 */
+	WorkProduct getLinkedWorkProduct(String name, boolean ignoreCase, EClass eClass);
+
+	/**
+	 * Returns the value of the '<em><b>Link</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Spice.WorkProductRelationship}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Spice.WorkProductRelationship#getLinkedWorkProduct <em>Linked Work Product</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Link</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Link</em>' reference list.
+	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_Link()
+	 * @see QWiki.Spice.WorkProductRelationship#getLinkedWorkProduct
+	 * @model opposite="linkedWorkProduct" ordered="false"
+	 * @generated
+	 */
+	EList<WorkProductRelationship> getLink();
+
+	/**
 	 * Returns the value of the '<em><b>Facilitated Outcome</b></em>' reference list.
 	 * The list contents are of type {@link QWiki.Spice.Outcome}.
 	 * It is bidirectional and its opposite is '{@link QWiki.Spice.Outcome#getRequiredWorkproduct <em>Required Workproduct</em>}'.
@@ -279,7 +429,7 @@ public interface WorkProduct extends SpiceElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oid() <em>Oid</em>}' </li>
+	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->

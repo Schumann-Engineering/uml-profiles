@@ -254,7 +254,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_REFERENCE_MODEL___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_REFERENCE_MODEL___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -263,7 +263,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

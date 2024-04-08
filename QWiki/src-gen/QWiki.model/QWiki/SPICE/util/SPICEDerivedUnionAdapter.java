@@ -2,6 +2,7 @@
  */
 package QWiki.Spice.util;
 
+import QWiki.Kernel.KernelPackage;
 import QWiki.Spice.BasePractise;
 import QWiki.Spice.GenericWorkProduct;
 import QWiki.Spice.Outcome;
@@ -10,6 +11,8 @@ import QWiki.Spice.ProcessReferenceModel;
 import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.WorkProduct;
 
+import QWiki.Spice.WorkProductRelationship;
+import QWiki.Spice.WorkProductRelationshipType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -95,6 +98,12 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT:
 				notifyGenericWorkProductChanged(notification, eClass);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP:
+				notifyWorkProductRelationshipChanged(notification, eClass);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE:
+				notifyWorkProductRelationshipTypeChanged(notification, eClass);
 				break;
 		}
 	}
@@ -419,6 +428,12 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case SPICEPackage.WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				notifyChanged(notification, eClass, SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT);
+				break;
+			case SPICEPackage.WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				notifyChanged(notification, eClass, SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT);
+				break;
 		}
 	}
 
@@ -476,10 +491,71 @@ public class SPICEDerivedUnionAdapter extends AdapterImpl {
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__CONTAINED_WORK_PRODUCT:
+				notifyChanged(notification, eClass, SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT);
+				break;
+			case SPICEPackage.GENERIC_WORK_PRODUCT__CONTAINING_WORK_PRODUCT:
+				notifyChanged(notification, eClass, SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT);
+				break;
 			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+		}
+	}
+
+	/**
+	 * Calls <code>notifyChanged</code> for each affected derived union.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param notification a description of the change.
+	 * @param eClass the Ecore class of the notifier.
+	 * @generated
+	 */
+	protected void notifyWorkProductRelationshipChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(WorkProductRelationship.class)) {
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__OWNED_COMMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__SOURCE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.RELATIONSHIP__RELATED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__TARGET:
+				notifyChanged(notification, eClass, UMLPackage.Literals.RELATIONSHIP__RELATED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.DIRECTED_RELATIONSHIP__SOURCE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.RELATIONSHIP__RELATED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.DIRECTED_RELATIONSHIP__TARGET);
+				notifyChanged(notification, eClass, UMLPackage.Literals.RELATIONSHIP__RELATED_ELEMENT);
+				break;
+		}
+	}
+
+	/**
+	 * Calls <code>notifyChanged</code> for each affected derived union.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param notification a description of the change.
+	 * @param eClass the Ecore class of the notifier.
+	 * @generated
+	 */
+	protected void notifyWorkProductRelationshipTypeChanged(Notification notification, EClass eClass) {
+		switch (notification.getFeatureID(WorkProductRelationshipType.class)) {
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__OWNED_COMMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__NAME_EXPRESSION:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP:
+				notifyChanged(notification, eClass, KernelPackage.Literals.QWIKI_RELATIONSHIP_TYPE__RELATIONSHIP);
 				break;
 		}
 	}

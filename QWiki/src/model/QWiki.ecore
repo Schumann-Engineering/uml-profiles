@@ -3,9 +3,6 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="QWiki" nsURI="http://schumann.engineering/qwiki/1.0" nsPrefix="QWiki">
   <eSubpackages name="Kernel" nsURI="http://schumann.engineering/qwiki/1.0/kernel"
       nsPrefix="QWiki.Kernel">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL"/>
-    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="I18nNamedElement" abstract="true"
         eSuperTypes="#//Kernel/QWikiNamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
@@ -14,12 +11,7 @@
     <eClassifiers xsi:type="ecore:EClass" name="QWikiNamedElement" abstract="true"
         eSuperTypes="../../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement #//Kernel/QWikiElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="QWikiElement" abstract="true" eSuperTypes="../../../org.eclipse.uml2.uml/model/UML.ecore#//Element">
-      <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
-        <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
-          <details key="body" value="uuid"/>
-        </eAnnotations>
-      </eOperations>
+      <eOperations name="oidBasic" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
           iD="true"/>
@@ -70,6 +62,28 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="QWikiNamespace" abstract="true" eSuperTypes="../../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace #//Kernel/I18nNamedElement #//Kernel/QWikiElement"/>
     <eClassifiers xsi:type="ecore:EClass" name="QWikiContainer" eSuperTypes="#//Kernel/QWikiNamespace #//Kernel/I18nDescriptiveElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="QWikiRelationship" abstract="true"
+        eSuperTypes="../../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipType" ordered="false"
+          eType="#//Kernel/QWikiRelationshipType" changeable="false" volatile="true"
+          transient="true" derived="true" eOpposite="#//Kernel/QWikiRelationshipType/relationship">
+        <eAnnotations source="union"/>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="QWikiRelationshipType" abstract="true"
+        eSuperTypes="#//Kernel/QWikiNamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="relationship" ordered="false"
+          upperBound="-1" eType="#//Kernel/QWikiRelationship" changeable="false" volatile="true"
+          transient="true" derived="true" eOpposite="#//Kernel/QWikiRelationship/relationshipType">
+        <eAnnotations source="union"/>
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="element"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
     <eSubpackages name="Relationships" nsURI="http:///QWiki/Kernel/Relationships.ecore"
         nsPrefix="QWiki.Kernel.Relationships">
       <eClassifiers xsi:type="ecore:EClass" name="DO_NOT_USE_Relationship" abstract="true"/>
@@ -106,7 +120,7 @@
     </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="BasePractise" eSuperTypes="#//Spice/SpiceElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
+        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oidBasic"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'bp/' + number + '@' + owningProcess.oid()"/>
         </eAnnotations>
@@ -201,7 +215,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Spice/SpiceElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
+        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oidBasic"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="owningProcessGroup.oid() +  '.' + number"/>
         </eAnnotations>
@@ -227,7 +241,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ProcessGroup" eSuperTypes="#//Spice/SpiceElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
+        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oidBasic"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'p/' + number"/>
         </eAnnotations>
@@ -239,7 +253,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Outcome" eSuperTypes="#//Kernel/I18nNamedElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
+        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oidBasic"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'oc/' + uuid + '@' + owningProcess.oid()"/>
         </eAnnotations>
@@ -260,7 +274,7 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="WorkProduct" eSuperTypes="#//Spice/SpiceElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
+        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oidBasic"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'wp/' + if (owningWorkProductGroup->notEmpty()) then owningWorkProductGroup.number + '-' else '' endif + number + '/' + owningProcessReferenceModel.oid()"/>
         </eAnnotations>
@@ -295,6 +309,24 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="workProductType" ordered="false"
           lowerBound="1" eType="#//Spice/WorkProductType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containedWorkProduct"
+          ordered="false" upperBound="-1" eType="#//Spice/WorkProduct" eOpposite="#//Spice/WorkProduct/containingWorkProduct">
+        <eAnnotations source="subsets" references="#//Spice/WorkProduct/linkedWorkProduct"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="containingWorkProduct"
+          ordered="false" eType="#//Spice/WorkProduct" eOpposite="#//Spice/WorkProduct/containedWorkProduct">
+        <eAnnotations source="subsets" references="#//Spice/WorkProduct/linkedWorkProduct"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkedWorkProduct" ordered="false"
+          upperBound="-1" eType="#//Spice/WorkProduct" changeable="false" volatile="true"
+          transient="true" derived="true">
+        <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+          <details key="body" value="workproduct"/>
+        </eAnnotations>
+        <eAnnotations source="union"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="link" ordered="false"
+          upperBound="-1" eType="#//Spice/WorkProductRelationship" eOpposite="#//Spice/WorkProductRelationship/linkedWorkProduct"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatedOutcome" ordered="false"
           upperBound="-1" eType="#//Spice/Outcome" transient="true" eOpposite="#//Spice/Outcome/requiredWorkproduct">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -314,6 +346,28 @@
       <eLiterals name="Document" value="1"/>
       <eLiterals name="Generic" value="2"/>
       <eLiterals name="Shippable" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WorkProductRelationship" eSuperTypes="#//Kernel/QWikiRelationship">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkingWorkProduct" ordered="false"
+          lowerBound="1" eType="#//Spice/WorkProduct">
+        <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
+          <details key="body" value="workproductlink"/>
+        </eAnnotations>
+        <eAnnotations source="subsets" references="../../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship/source"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="workProductRelationshipType"
+          ordered="false" eType="#//Spice/WorkProductRelationshipType" eOpposite="#//Spice/WorkProductRelationshipType/workProductRelationship"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="linkedWorkProduct" ordered="false"
+          lowerBound="1" upperBound="-1" eType="#//Spice/WorkProduct" eOpposite="#//Spice/WorkProduct/link">
+        <eAnnotations source="subsets" references="../../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship/target"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WorkProductRelationshipType" eSuperTypes="#//Kernel/QWikiRelationshipType">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="workProductRelationship"
+          ordered="false" upperBound="-1" eType="#//Spice/WorkProductRelationship"
+          eOpposite="#//Spice/WorkProductRelationship/workProductRelationshipType">
+        <eAnnotations source="subsets" references="#//Kernel/QWikiRelationshipType/relationship"/>
+      </eStructuralFeatures>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="Rasci" nsURI="http://schumann.engineering/qwiki/1.0/rasci" nsPrefix="QWiki.RASCI">
@@ -494,7 +548,6 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="GlossaryTerm" eSuperTypes="#//Kernel/I18nNamedElement">
       <eOperations name="oid" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-        <eAnnotations source="redefines" references="#//Kernel/QWikiElement/oid"/>
         <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL">
           <details key="body" value="'t/' + name"/>
         </eAnnotations>

@@ -243,7 +243,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlossaryTerm__Oid_1() {
+	public EOperation getGlossaryTerm__Oid() {
 		return glossaryTermEClass.getEOperations().get(0);
 	}
 
@@ -334,7 +334,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		initEReference(getGlossaryTerm_TermDefinition(), theKernelPackage.getI18nDescriptiveElement(), null, "termDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 		initEReference(getGlossaryTerm_ExternalTermDefinition(), theReferencesPackage.getSection(), theReferencesPackage.getSection_Term(), "externalTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getGlossaryTerm__Oid_1(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getGlossaryTerm__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -342,8 +342,6 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// redefines
-		createRedefinesAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 		// subsets
@@ -371,24 +369,6 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	}
 
 	/**
-	 * Initializes the annotations for <b>redefines</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRedefinesAnnotations() {
-		String source = "redefines";
-		addAnnotation
-		  (getGlossaryTerm__Oid_1(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(KernelPackage.eNS_URI).appendFragment("//QWikiElement/oid")
-		   });
-	}
-
-	/**
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +377,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getGlossaryTerm__Oid_1(),
+		  (getGlossaryTerm__Oid(),
 		   source,
 		   new String[] {
 			   "body", "\'t/\' + name"

@@ -54,6 +54,10 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 			addFacilitatedProcessPropertyDescriptor(object);
 			addFacilitatingProcessPropertyDescriptor(object);
 			addWorkProductTypePropertyDescriptor(object);
+			addContainedWorkProductPropertyDescriptor(object);
+			addContainingWorkProductPropertyDescriptor(object);
+			addLinkedWorkProductPropertyDescriptor(object);
+			addLinkPropertyDescriptor(object);
 			addFacilitatedOutcomePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -143,6 +147,94 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Contained Work Product feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainedWorkProductPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WorkProduct_containedWorkProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_containedWorkProduct_feature", "_UI_WorkProduct_type"),
+				 SPICEPackage.Literals.WORK_PRODUCT__CONTAINED_WORK_PRODUCT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Containing Work Product feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addContainingWorkProductPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WorkProduct_containingWorkProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_containingWorkProduct_feature", "_UI_WorkProduct_type"),
+				 SPICEPackage.Literals.WORK_PRODUCT__CONTAINING_WORK_PRODUCT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Linked Work Product feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkedWorkProductPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WorkProduct_linkedWorkProduct_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_linkedWorkProduct_feature", "_UI_WorkProduct_type"),
+				 SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT,
+				 false,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Link feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLinkPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_WorkProduct_link_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_link_feature", "_UI_WorkProduct_type"),
+				 SPICEPackage.Literals.WORK_PRODUCT__LINK,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

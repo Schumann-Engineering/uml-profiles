@@ -11,6 +11,8 @@ import QWiki.Spice.ProcessReferenceModelDomain;
 import QWiki.Spice.SPICEFactory;
 import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.WorkProduct;
+import QWiki.Spice.WorkProductRelationship;
+import QWiki.Spice.WorkProductRelationshipType;
 import QWiki.Spice.WorkProductType;
 
 import org.eclipse.emf.ecore.EClass;
@@ -73,6 +75,8 @@ public class SPICEFactoryImpl extends EFactoryImpl implements SPICEFactory {
 			case SPICEPackage.OUTCOME: return createOutcome();
 			case SPICEPackage.WORK_PRODUCT: return createWorkProduct();
 			case SPICEPackage.GENERIC_WORK_PRODUCT: return createGenericWorkProduct();
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP: return createWorkProductRelationship();
+			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE: return createWorkProductRelationshipType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -187,6 +191,28 @@ public class SPICEFactoryImpl extends EFactoryImpl implements SPICEFactory {
 	public GenericWorkProduct createGenericWorkProduct() {
 		GenericWorkProductImpl genericWorkProduct = new GenericWorkProductImpl();
 		return genericWorkProduct;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WorkProductRelationship createWorkProductRelationship() {
+		WorkProductRelationshipImpl workProductRelationship = new WorkProductRelationshipImpl();
+		return workProductRelationship;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WorkProductRelationshipType createWorkProductRelationshipType() {
+		WorkProductRelationshipTypeImpl workProductRelationshipType = new WorkProductRelationshipTypeImpl();
+		return workProductRelationshipType;
 	}
 
 	/**

@@ -370,7 +370,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_1__EINVOCATION_DELEGATE = ((EOperation.Internal)RASCIPackage.Literals.ROLE___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)RASCIPackage.Literals.ROLE___OID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -379,7 +379,7 @@ public class RoleImpl extends I18nDescriptiveElementImpl implements Role {
 	 */
 	public String oid() {
 		try {
-			return (String)OID_1__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);

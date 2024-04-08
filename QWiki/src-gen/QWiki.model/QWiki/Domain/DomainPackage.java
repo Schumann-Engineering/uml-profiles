@@ -483,13 +483,13 @@ public interface DomainPackage extends EPackage {
 	int DOMAIN___MUST_BE_OWNED = KernelPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Oid Basic</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___OID = KernelPackage.QWIKI_ELEMENT___OID;
+	int DOMAIN___OID_BASIC = KernelPackage.QWIKI_ELEMENT___OID_BASIC;
 
 	/**
 	 * The operation id for the '<em>All Domain Element</em>' operation.
@@ -943,13 +943,13 @@ public interface DomainPackage extends EPackage {
 	int DOMAIN_ELEMENT___MUST_BE_OWNED = KernelPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Oid Basic</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___OID = KernelPackage.QWIKI_ELEMENT___OID;
+	int DOMAIN_ELEMENT___OID_BASIC = KernelPackage.QWIKI_ELEMENT___OID_BASIC;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.

@@ -38,6 +38,8 @@ public class SPICETests extends TestSuite {
 		suite.addTestSuite(OutcomeTest.class);
 		suite.addTestSuite(WorkProductTest.class);
 		suite.addTestSuite(GenericWorkProductTest.class);
+		suite.addTestSuite(WorkProductRelationshipTest.class);
+		suite.addTestSuite(WorkProductRelationshipTypeTest.class);
 		return suite;
 	}
 

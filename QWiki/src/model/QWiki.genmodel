@@ -47,7 +47,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//Kernel/QWikiElement/customProperty"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//Kernel/QWikiElement/tag"/>
-        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Kernel/QWikiElement/oid"/>
+        <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Kernel/QWikiElement/oidBasic"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Kernel/I18nKeyedString">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//Kernel/I18nKeyedString/key"/>
@@ -76,6 +76,14 @@
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Kernel/QWikiNamespace"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Kernel/QWikiContainer"/>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Kernel/QWikiRelationship">
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Kernel/QWikiRelationship/relationshipType"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//Kernel/QWikiRelationshipType">
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Kernel/QWikiRelationshipType/relationship"/>
+      </genClasses>
       <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Relationships" basePackage="QWiki.Kernel"
           disposableProviderFactory="true" ecorePackage="QWiki.ecore#//Kernel/Relationships">
         <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="QWiki.ecore#//Kernel/Relationships/DO_NOT_USE_SuperseedingType">
@@ -190,12 +198,32 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/facilitatingProcess"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//Spice/WorkProduct/workProductType"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/containedWorkProduct"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/containingWorkProduct"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
+            createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/linkedWorkProduct"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/link"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProduct/facilitatedOutcome"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//Spice/WorkProduct/oid"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Spice/GenericWorkProduct">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/GenericWorkProduct/ownedWorkProduct"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Spice/WorkProductRelationship">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProductRelationship/linkingWorkProduct"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProductRelationship/workProductRelationshipType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProductRelationship/linkedWorkProduct"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//Spice/WorkProductRelationshipType">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//Spice/WorkProductRelationshipType/workProductRelationship"/>
       </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="RASCI" basePackage="QWiki"

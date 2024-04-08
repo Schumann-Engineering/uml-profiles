@@ -694,13 +694,13 @@ public interface RelationshipsPackage extends EPackage {
 	int DO_NOT_USE_RELATIONSHIP_TYPE___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Oid Basic</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_NOT_USE_RELATIONSHIP_TYPE___OID = KernelPackage.I1_8N_NAMED_ELEMENT___OID;
+	int DO_NOT_USE_RELATIONSHIP_TYPE___OID_BASIC = KernelPackage.I1_8N_NAMED_ELEMENT___OID_BASIC;
 
 	/**
 	 * The number of operations of the '<em>DO NOT USE Relationship Type</em>' class.

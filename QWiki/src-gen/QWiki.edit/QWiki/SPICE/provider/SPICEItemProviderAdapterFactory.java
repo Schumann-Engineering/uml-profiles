@@ -233,6 +233,52 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.WorkProductRelationship} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WorkProductRelationshipItemProvider workProductRelationshipItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Spice.WorkProductRelationship}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWorkProductRelationshipAdapter() {
+		if (workProductRelationshipItemProvider == null) {
+			workProductRelationshipItemProvider = new WorkProductRelationshipItemProvider(this);
+		}
+
+		return workProductRelationshipItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.Spice.WorkProductRelationshipType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected WorkProductRelationshipTypeItemProvider workProductRelationshipTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.Spice.WorkProductRelationshipType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createWorkProductRelationshipTypeAdapter() {
+		if (workProductRelationshipTypeItemProvider == null) {
+			workProductRelationshipTypeItemProvider = new WorkProductRelationshipTypeItemProvider(this);
+		}
+
+		return workProductRelationshipTypeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,6 +390,8 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 		if (outcomeItemProvider != null) outcomeItemProvider.dispose();
 		if (workProductItemProvider != null) workProductItemProvider.dispose();
 		if (genericWorkProductItemProvider != null) genericWorkProductItemProvider.dispose();
+		if (workProductRelationshipItemProvider != null) workProductRelationshipItemProvider.dispose();
+		if (workProductRelationshipTypeItemProvider != null) workProductRelationshipTypeItemProvider.dispose();
 	}
 
 }
