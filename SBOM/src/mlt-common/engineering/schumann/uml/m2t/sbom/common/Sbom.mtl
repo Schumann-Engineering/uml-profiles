@@ -3,7 +3,6 @@
 )/]
 
 
-[import engineering::schumann::uml::m2t::sbom::common::System /]
 [import engineering::schumann::uml::m2t::sbom::common::Component /]
 [import engineering::schumann::uml::m2t::sbom::common::Dt_License /]
 

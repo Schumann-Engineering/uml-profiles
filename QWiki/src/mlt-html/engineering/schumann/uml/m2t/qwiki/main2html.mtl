@@ -1,0 +1,19 @@
+[comment encoding = UTF-8 /]
+[module main2html(
+	'http://schumann.engineering/qwiki/1.0/bibliography'
+)/]
+
+
+[template public main2html(
+	this : Document
+)]
+	
+	[comment @main /]
+	[file (this.name.concat('.html'), false, 'UTF-8')]
+Author:
+		[for (author)]
+- [name /], [authorType /]
+		[/for]
+	[/file]
+	
+[/template]
