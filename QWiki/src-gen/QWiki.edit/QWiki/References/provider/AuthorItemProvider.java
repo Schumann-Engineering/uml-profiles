@@ -5,10 +5,10 @@ package QWiki.References.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiNamedElementItemProvider;
-
 import QWiki.References.Author;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.provider.QWikiNamedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;

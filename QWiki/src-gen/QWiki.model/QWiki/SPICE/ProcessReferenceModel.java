@@ -2,7 +2,7 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.QWikiContainer;
+import QWiki.QWikiContainer;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.ProcessReferenceModel#getOwnedSpiceElement <em>Owned Spice Element</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel()
+ * @see QWiki.Spice.SpicePackage#getProcessReferenceModel()
  * @model
  * @generated
  */
@@ -38,8 +38,9 @@ public interface ProcessReferenceModel extends QWikiContainer {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Non Standard</em>' attribute.
 	 * @see #setIsNonStandard(boolean)
-	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_IsNonStandard()
+	 * @see QWiki.Spice.SpicePackage#getProcessReferenceModel_IsNonStandard()
 	 * @model default="false" required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	boolean isNonStandard();
@@ -66,7 +67,7 @@ public interface ProcessReferenceModel extends QWikiContainer {
 	 * @return the value of the '<em>Prm Domain</em>' attribute.
 	 * @see QWiki.Spice.ProcessReferenceModelDomain
 	 * @see #setPrmDomain(ProcessReferenceModelDomain)
-	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_PrmDomain()
+	 * @see QWiki.Spice.SpicePackage#getProcessReferenceModel_PrmDomain()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -100,9 +101,10 @@ public interface ProcessReferenceModel extends QWikiContainer {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Spice Element</em>' containment reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcessReferenceModel_OwnedSpiceElement()
+	 * @see QWiki.Spice.SpicePackage#getProcessReferenceModel_OwnedSpiceElement()
 	 * @see QWiki.Spice.SpiceElement#getOwningProcessReferenceModel
-	 * @model opposite="owningProcessReferenceModel" containment="true" transient="true" ordered="false"
+	 * @model opposite="owningProcessReferenceModel" containment="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -139,15 +141,22 @@ public interface ProcessReferenceModel extends QWikiContainer {
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\tif (prmDomain = ProcessReferenceModelDomain::Agile) then \'Agl\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Automotive) then \'A\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Cybersecurity) then \'CS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::DataManagement) then \'DM\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Hardware) then \'HW\' else\r\nif (prmDomain = ProcessReferenceModelDomain::ITServices) then \'ITS\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Mechanical) then \'ME\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Medical) then \'M\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Organizational) then \'Org\' else\r\nif (prmDomain = ProcessReferenceModelDomain::Test) then \'T\' else\r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif'"
 	 * @generated
 	 */
-	String oidForDomain();
+	String objectIdForDomain();
 
 	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (isNonStandard = true) then oidForDomain() + \'-xt\' else oidForDomain() + \'\' endif'"
+	 *        annotation="redefines"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (isNonStandard = true) then objectIdForDomain() + \'-xt\' else objectIdForDomain() + \'\' endif'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // ProcessReferenceModel

@@ -2,8 +2,8 @@
  */
 package QWiki.Rasci.tests;
 
-import QWiki.Rasci.RASCIFactory;
-import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciFactory;
+import QWiki.Rasci.RasciPackage;
 import QWiki.Rasci.Role;
 
 import java.io.File;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RASCIExample {
+public class RasciExample {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
@@ -51,8 +51,8 @@ public class RASCIExample {
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(RASCIPackage.eNS_URI, 
-			 RASCIPackage.eINSTANCE);
+			(RasciPackage.eNS_URI, 
+			 RasciPackage.eINSTANCE);
         
 		// If there are no arguments, emit an appropriate usage message.
 		//
@@ -60,7 +60,7 @@ public class RASCIExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.rasci"));
-				Role root = RASCIFactory.eINSTANCE.createRole();
+				Role root = RasciFactory.eINSTANCE.createRole();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}
@@ -118,4 +118,4 @@ public class RASCIExample {
 		}
 	}
 
-} //RASCIExample
+} //RasciExample

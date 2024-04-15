@@ -9,11 +9,9 @@ import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 
-import QWiki.Kernel.KernelFactory;
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.Kernel.provider.I18nNamedElementItemProvider;
-
+import QWiki.QWikiFactory;
+import QWiki.QWikiPackage;
+import QWiki.provider.L10nNamedElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -34,7 +32,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GlossaryTermItemProvider extends I18nNamedElementItemProvider {
+public class GlossaryTermItemProvider extends L10nNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -204,12 +202,12 @@ public class GlossaryTermItemProvider extends I18nNamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(GlossaryPackage.Literals.GLOSSARY_TERM__ACRONYM,
-				 KernelFactory.eINSTANCE.createI18nString()));
+				 QWikiFactory.eINSTANCE.createL10nString()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(GlossaryPackage.Literals.GLOSSARY_TERM__SYNONYM,
-				 KernelFactory.eINSTANCE.createI18nString()));
+				 QWikiFactory.eINSTANCE.createL10nString()));
 	}
 
 	/**
@@ -224,7 +222,7 @@ public class GlossaryTermItemProvider extends I18nNamedElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == GlossaryPackage.Literals.GLOSSARY_TERM__ACRONYM ||
 			childFeature == GlossaryPackage.Literals.GLOSSARY_TERM__SYNONYM;
 

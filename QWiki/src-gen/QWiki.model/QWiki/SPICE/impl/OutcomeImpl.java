@@ -2,13 +2,15 @@
  */
 package QWiki.Spice.impl;
 
-import QWiki.Kernel.impl.I18nNamedElementImpl;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.BasePractise;
 import QWiki.Spice.Outcome;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
-
+import QWiki.impl.L10nNamedElementImpl;
 import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
@@ -25,7 +27,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -48,7 +50,7 @@ import org.eclipse.uml2.uml.Namespace;
  *
  * @generated
  */
-public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
+public class OutcomeImpl extends L10nNamedElementImpl implements Outcome {
 	/**
 	 * The cached value of the '{@link #getFacilitatingBasePractise() <em>Facilitating Base Practise</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -95,7 +97,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.OUTCOME;
+		return SpicePackage.Literals.OUTCOME;
 	}
 
 	/**
@@ -131,7 +133,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public EList<BasePractise> getFacilitatingBasePractise() {
 		if (facilitatingBasePractise == null) {
-			facilitatingBasePractise = new EObjectWithInverseResolvingEList.ManyInverse<BasePractise>(BasePractise.class, this, SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE, SPICEPackage.BASE_PRACTISE__FACILITATED_OUTCOME);
+			facilitatingBasePractise = new EObjectWithInverseEList.ManyInverse<BasePractise>(BasePractise.class, this, SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE, SpicePackage.BASE_PRACTISE__FACILITATED_OUTCOME);
 		}
 		return facilitatingBasePractise;
 	}
@@ -167,7 +169,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public EList<WorkProduct> getRequiredWorkproduct() {
 		if (requiredWorkproduct == null) {
-			requiredWorkproduct = new EObjectWithInverseResolvingEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT, SPICEPackage.WORK_PRODUCT__FACILITATED_OUTCOME);
+			requiredWorkproduct = new EObjectWithInverseEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT, SpicePackage.WORK_PRODUCT__FACILITATED_OUTCOME);
 		}
 		return requiredWorkproduct;
 	}
@@ -205,7 +207,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public EList<WorkProduct> getResultingWorkproduct() {
 		if (resultingWorkproduct == null) {
-			resultingWorkproduct = new EObjectWithInverseResolvingEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT, SPICEPackage.WORK_PRODUCT__FACILITATING_OUTCOME);
+			resultingWorkproduct = new EObjectWithInverseEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SpicePackage.OUTCOME__RESULTING_WORKPRODUCT, SpicePackage.WORK_PRODUCT__FACILITATING_OUTCOME);
 		}
 		return resultingWorkproduct;
 	}
@@ -242,7 +244,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 */
 	@Override
 	public QWiki.Spice.Process getOwningProcess() {
-		if (eContainerFeatureID() != SPICEPackage.OUTCOME__OWNING_PROCESS) return null;
+		if (eContainerFeatureID() != SpicePackage.OUTCOME__OWNING_PROCESS) return null;
 		return (QWiki.Spice.Process)eInternalContainer();
 	}
 
@@ -252,7 +254,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 * @generated
 	 */
 	public NotificationChain basicSetOwningProcess(QWiki.Spice.Process newOwningProcess, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwningProcess, SPICEPackage.OUTCOME__OWNING_PROCESS, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newOwningProcess, SpicePackage.OUTCOME__OWNING_PROCESS, msgs);
 		return msgs;
 	}
 
@@ -263,39 +265,39 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 */
 	@Override
 	public void setOwningProcess(QWiki.Spice.Process newOwningProcess) {
-		if (newOwningProcess != eInternalContainer() || (eContainerFeatureID() != SPICEPackage.OUTCOME__OWNING_PROCESS && newOwningProcess != null)) {
+		if (newOwningProcess != eInternalContainer() || (eContainerFeatureID() != SpicePackage.OUTCOME__OWNING_PROCESS && newOwningProcess != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningProcess))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningProcess != null)
-				msgs = ((InternalEObject)newOwningProcess).eInverseAdd(this, SPICEPackage.PROCESS__OWNED_OUTCOME, QWiki.Spice.Process.class, msgs);
+				msgs = ((InternalEObject)newOwningProcess).eInverseAdd(this, SpicePackage.PROCESS__OWNED_OUTCOME, QWiki.Spice.Process.class, msgs);
 			msgs = basicSetOwningProcess(newOwningProcess, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.OUTCOME__OWNING_PROCESS, newOwningProcess, newOwningProcess));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.OUTCOME__OWNING_PROCESS, newOwningProcess, newOwningProcess));
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.OUTCOME___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)SpicePackage.Literals.OUTCOME___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -311,13 +313,13 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatingBasePractise()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRequiredWorkproduct()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getResultingWorkproduct()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningProcess((QWiki.Spice.Process)otherEnd, msgs);
@@ -333,13 +335,13 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				return ((InternalEList<?>)getFacilitatingBasePractise()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				return ((InternalEList<?>)getRequiredWorkproduct()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				return ((InternalEList<?>)getResultingWorkproduct()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				return basicSetOwningProcess(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -353,8 +355,8 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
-				return eInternalContainer().eInverseRemove(this, SPICEPackage.PROCESS__OWNED_OUTCOME, QWiki.Spice.Process.class, msgs);
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
+				return eInternalContainer().eInverseRemove(this, SpicePackage.PROCESS__OWNED_OUTCOME, QWiki.Spice.Process.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -367,13 +369,13 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				return getFacilitatingBasePractise();
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				return getRequiredWorkproduct();
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				return getResultingWorkproduct();
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				return getOwningProcess();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -388,19 +390,19 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				getFacilitatingBasePractise().clear();
 				getFacilitatingBasePractise().addAll((Collection<? extends BasePractise>)newValue);
 				return;
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				getRequiredWorkproduct().clear();
 				getRequiredWorkproduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				getResultingWorkproduct().clear();
 				getResultingWorkproduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				setOwningProcess((QWiki.Spice.Process)newValue);
 				return;
 		}
@@ -415,16 +417,16 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				getFacilitatingBasePractise().clear();
 				return;
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				getRequiredWorkproduct().clear();
 				return;
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				getResultingWorkproduct().clear();
 				return;
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				setOwningProcess((QWiki.Spice.Process)null);
 				return;
 		}
@@ -439,15 +441,15 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.OUTCOME__NAMESPACE:
+			case SpicePackage.OUTCOME__NAMESPACE:
 				return isSetNamespace();
-			case SPICEPackage.OUTCOME__FACILITATING_BASE_PRACTISE:
+			case SpicePackage.OUTCOME__FACILITATING_BASE_PRACTISE:
 				return facilitatingBasePractise != null && !facilitatingBasePractise.isEmpty();
-			case SPICEPackage.OUTCOME__REQUIRED_WORKPRODUCT:
+			case SpicePackage.OUTCOME__REQUIRED_WORKPRODUCT:
 				return requiredWorkproduct != null && !requiredWorkproduct.isEmpty();
-			case SPICEPackage.OUTCOME__RESULTING_WORKPRODUCT:
+			case SpicePackage.OUTCOME__RESULTING_WORKPRODUCT:
 				return resultingWorkproduct != null && !resultingWorkproduct.isEmpty();
-			case SPICEPackage.OUTCOME__OWNING_PROCESS:
+			case SpicePackage.OUTCOME__OWNING_PROCESS:
 				return getOwningProcess() != null;
 		}
 		return super.eIsSet(featureID);
@@ -459,10 +461,32 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return SpicePackage.OUTCOME___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return SpicePackage.OUTCOME___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case SPICEPackage.OUTCOME___OID:
-				return oid();
+			case SpicePackage.OUTCOME___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -475,17 +499,7 @@ public class OutcomeImpl extends I18nNamedElementImpl implements Outcome {
 	@Override
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
-			|| eIsSet(SPICEPackage.OUTCOME__OWNING_PROCESS);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String oidBasic() {
-		return oid();
+			|| eIsSet(SpicePackage.OUTCOME__OWNING_PROCESS);
 	}
 
 } //OutcomeImpl

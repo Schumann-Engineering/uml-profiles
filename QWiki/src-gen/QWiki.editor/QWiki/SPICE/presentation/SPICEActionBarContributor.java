@@ -42,12 +42,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the SPICE model editor.
+ * This is the action bar contributor for the Spice model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICEActionBarContributor
+public class SpiceActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -150,7 +150,7 @@ public class SPICEActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICEActionBarContributor() {
+	public SpiceActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -181,7 +181,7 @@ public class SPICEActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_SPICEEditor_menu"), "QWiki.SpiceMenuID");
+		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_SpiceEditor_menu"), "QWiki.SpiceMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

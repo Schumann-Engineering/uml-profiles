@@ -2,7 +2,7 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.QWikiRelationship;
+import QWiki.QWikiRelationship;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.WorkProductRelationship#getLinkedWorkProduct <em>Linked Work Product</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getWorkProductRelationship()
+ * @see QWiki.Spice.SpicePackage#getWorkProductRelationship()
  * @model
  * @generated
  */
@@ -43,9 +43,10 @@ public interface WorkProductRelationship extends QWikiRelationship {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Linking Work Product</em>' reference.
 	 * @see #setLinkingWorkProduct(WorkProduct)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProductRelationship_LinkingWorkProduct()
-	 * @model required="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getWorkProductRelationship_LinkingWorkProduct()
+	 * @model resolveProxies="false" required="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='workproductlink'"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -72,9 +73,10 @@ public interface WorkProductRelationship extends QWikiRelationship {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Product Relationship Type</em>' reference.
 	 * @see #setWorkProductRelationshipType(WorkProductRelationshipType)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProductRelationship_WorkProductRelationshipType()
+	 * @see QWiki.Spice.SpicePackage#getWorkProductRelationship_WorkProductRelationshipType()
 	 * @see QWiki.Spice.WorkProductRelationshipType#getWorkProductRelationship
-	 * @model opposite="workProductRelationship" ordered="false"
+	 * @model opposite="workProductRelationship" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	WorkProductRelationshipType getWorkProductRelationshipType();
@@ -106,9 +108,10 @@ public interface WorkProductRelationship extends QWikiRelationship {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Linked Work Product</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProductRelationship_LinkedWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getWorkProductRelationship_LinkedWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getLink
-	 * @model opposite="link" required="true" ordered="false"
+	 * @model opposite="link" resolveProxies="false" required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */

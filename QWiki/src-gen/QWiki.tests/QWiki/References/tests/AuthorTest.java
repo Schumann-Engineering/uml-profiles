@@ -2,10 +2,10 @@
  */
 package QWiki.References.tests;
 
-import QWiki.Kernel.tests.QWikiNamedElementTest;
-
 import QWiki.References.Author;
 import QWiki.References.ReferencesFactory;
+
+import QWiki.tests.QWikiNamedElementTest;
 
 import junit.textui.TestRunner;
 
@@ -16,9 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.References.Author#authoredDocument() <em>Authored Document</em>}</li>
- *   <li>{@link QWiki.References.Author#authoredStandard() <em>Authored Standard</em>}</li>
- *   <li>{@link QWiki.References.Author#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.References.Author#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -78,39 +76,13 @@ public class AuthorTest extends QWikiNamedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.References.Author#authoredDocument() <em>Authored Document</em>}' operation.
+	 * Tests the '{@link QWiki.References.Author#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.References.Author#authoredDocument()
+	 * @see QWiki.References.Author#objectId()
 	 * @generated
 	 */
-	public void testAuthoredDocument() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link QWiki.References.Author#authoredStandard() <em>Authored Standard</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.References.Author#authoredStandard()
-	 * @generated
-	 */
-	public void testAuthoredStandard() {
-		// TODO: implement this operation test method
-		// Ensure that you remove @generated or mark it @generated NOT
-		fail();
-	}
-
-	/**
-	 * Tests the '{@link QWiki.References.Author#oid() <em>Oid</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.References.Author#oid()
-	 * @generated
-	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

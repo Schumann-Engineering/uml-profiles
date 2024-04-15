@@ -8,7 +8,7 @@
  * Contributors:
  *     Obeo - initial API and implementation
  *******************************************************************************/
-package engineering.schumann.uml.m2t.qwiki;
+package mlt-html.engineering.schumann.uml.m2t.qwiki;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class Main2html extends AbstractAcceleoGenerator {
      *
      * @generated
      */
-    public static final String MODULE_FILE_NAME = "/engineering/schumann/uml/m2t/qwiki/main2html";
+    public static final String MODULE_FILE_NAME = "/mlt-html/engineering/schumann/uml/m2t/qwiki/main2html";
     
     /**
      * The name of the templates that are to be generated.

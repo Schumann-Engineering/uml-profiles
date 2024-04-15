@@ -157,19 +157,20 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import QWiki.Domain.provider.DomainItemProviderAdapterFactory;
 
+import QWiki.Content.provider.ContentItemProviderAdapterFactory;
 import QWiki.EMF.provider.QWikiEditPlugin;
 
 import QWiki.Glossary.provider.GlossaryItemProviderAdapterFactory;
 
-import QWiki.Kernel.Relationships.provider.RelationshipsItemProviderAdapterFactory;
-
-import QWiki.Kernel.provider.KernelItemProviderAdapterFactory;
-
-import QWiki.Rasci.provider.RASCIItemProviderAdapterFactory;
+import QWiki.Rasci.provider.RasciItemProviderAdapterFactory;
 
 import QWiki.References.provider.ReferencesItemProviderAdapterFactory;
 
-import QWiki.Spice.provider.SPICEItemProviderAdapterFactory;
+import QWiki.Relationships.provider.RelationshipsItemProviderAdapterFactory;
+
+import QWiki.Spice.provider.SpiceItemProviderAdapterFactory;
+
+import QWiki.provider.QWikiItemProviderAdapterFactory;
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
@@ -728,13 +729,14 @@ public class DomainEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new KernelItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new RelationshipsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SPICEItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new RASCIItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ReferencesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new QWikiItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SpiceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RasciItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ContentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ReferencesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DomainItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RelationshipsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UMLItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

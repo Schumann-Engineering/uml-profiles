@@ -2,12 +2,10 @@
  */
 package QWiki.Rasci.impl;
 
-import QWiki.Kernel.impl.I18nDescriptiveElementImpl;
-
-import QWiki.Rasci.RASCIPackage;
 import QWiki.Rasci.RasciElement;
+import QWiki.Rasci.RasciPackage;
 import QWiki.Rasci.Role;
-
+import QWiki.impl.L10nDescriptiveElementImpl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -20,12 +18,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Rasci Element</b></em>'.
+ * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -40,7 +38,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implements RasciElement {
+public abstract class RasciElementImpl extends L10nDescriptiveElementImpl implements RasciElement {
 	/**
 	 * The cached value of the '{@link #getResponsibleRole() <em>Responsible Role</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -107,7 +105,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return RASCIPackage.Literals.RASCI_ELEMENT;
+		return RasciPackage.Literals.RASCI_ELEMENT;
 	}
 
 	/**
@@ -118,7 +116,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public EList<Role> getResponsibleRole() {
 		if (responsibleRole == null) {
-			responsibleRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE, RASCIPackage.ROLE__RESPONSIBLE_ELEMENT);
+			responsibleRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE, RasciPackage.ROLE__RESPONSIBLE_ELEMENT);
 		}
 		return responsibleRole;
 	}
@@ -153,23 +151,6 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	 */
 	@Override
 	public Role getAccountableRole() {
-		if (accountableRole != null && accountableRole.eIsProxy()) {
-			InternalEObject oldAccountableRole = (InternalEObject)accountableRole;
-			accountableRole = (Role)eResolveProxy(oldAccountableRole);
-			if (accountableRole != oldAccountableRole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, accountableRole));
-			}
-		}
-		return accountableRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetAccountableRole() {
 		return accountableRole;
 	}
 
@@ -182,7 +163,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 		Role oldAccountableRole = accountableRole;
 		accountableRole = newAccountableRole;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, newAccountableRole);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, newAccountableRole);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -198,14 +179,14 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 		if (newAccountableRole != accountableRole) {
 			NotificationChain msgs = null;
 			if (accountableRole != null)
-				msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+				msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 			if (newAccountableRole != null)
-				msgs = ((InternalEObject)newAccountableRole).eInverseAdd(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+				msgs = ((InternalEObject)newAccountableRole).eInverseAdd(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 			msgs = basicSetAccountableRole(newAccountableRole, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE, newAccountableRole, newAccountableRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE, newAccountableRole, newAccountableRole));
 	}
 
 	/**
@@ -216,7 +197,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public EList<Role> getSupportRole() {
 		if (supportRole == null) {
-			supportRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE, RASCIPackage.ROLE__SUPPORTING_ELEMENT);
+			supportRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE, RasciPackage.ROLE__SUPPORTING_ELEMENT);
 		}
 		return supportRole;
 	}
@@ -252,7 +233,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public EList<Role> getConsultedRole() {
 		if (consultedRole == null) {
-			consultedRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE, RASCIPackage.ROLE__CONSULTING_ELEMENT);
+			consultedRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE, RasciPackage.ROLE__CONSULTING_ELEMENT);
 		}
 		return consultedRole;
 	}
@@ -288,7 +269,7 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public EList<Role> getInformedRole() {
 		if (informedRole == null) {
-			informedRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE, RASCIPackage.ROLE__INFORMED_ELEMENT);
+			informedRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, RasciPackage.RASCI_ELEMENT__INFORMED_ROLE, RasciPackage.ROLE__INFORMED_ELEMENT);
 		}
 		return informedRole;
 	}
@@ -325,17 +306,17 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getResponsibleRole()).basicAdd(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
 				if (accountableRole != null)
-					msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+					msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 				return basicSetAccountableRole((Role)otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSupportRole()).basicAdd(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConsultedRole()).basicAdd(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInformedRole()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -349,15 +330,15 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				return ((InternalEList<?>)getResponsibleRole()).basicRemove(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
 				return basicSetAccountableRole(null, msgs);
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				return ((InternalEList<?>)getSupportRole()).basicRemove(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				return ((InternalEList<?>)getConsultedRole()).basicRemove(otherEnd, msgs);
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				return ((InternalEList<?>)getInformedRole()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -371,16 +352,15 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				return getResponsibleRole();
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
-				if (resolve) return getAccountableRole();
-				return basicGetAccountableRole();
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+				return getAccountableRole();
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				return getSupportRole();
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				return getConsultedRole();
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				return getInformedRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -395,22 +375,22 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				getResponsibleRole().clear();
 				getResponsibleRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
 				setAccountableRole((Role)newValue);
 				return;
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				getSupportRole().clear();
 				getSupportRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				getConsultedRole().clear();
 				getConsultedRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				getInformedRole().clear();
 				getInformedRole().addAll((Collection<? extends Role>)newValue);
 				return;
@@ -426,19 +406,19 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				getResponsibleRole().clear();
 				return;
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
 				setAccountableRole((Role)null);
 				return;
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				getSupportRole().clear();
 				return;
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				getConsultedRole().clear();
 				return;
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				getInformedRole().clear();
 				return;
 		}
@@ -453,15 +433,15 @@ public abstract class RasciElementImpl extends I18nDescriptiveElementImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE:
 				return responsibleRole != null && !responsibleRole.isEmpty();
-			case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
+			case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE:
 				return accountableRole != null;
-			case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE:
+			case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE:
 				return supportRole != null && !supportRole.isEmpty();
-			case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE:
 				return consultedRole != null && !consultedRole.isEmpty();
-			case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE:
+			case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE:
 				return informedRole != null && !informedRole.isEmpty();
 		}
 		return super.eIsSet(featureID);

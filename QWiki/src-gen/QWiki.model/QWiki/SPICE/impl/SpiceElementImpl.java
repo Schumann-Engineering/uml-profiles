@@ -2,18 +2,16 @@
  */
 package QWiki.Spice.impl;
 
-import QWiki.Kernel.impl.QWikiContainerImpl;
-
-import QWiki.Rasci.RASCIPackage;
+import QWiki.Content.ContentPackage;
+import QWiki.Content.Section;
 import QWiki.Rasci.RasciElement;
+import QWiki.Rasci.RasciPackage;
 import QWiki.Rasci.Role;
-
-import QWiki.References.ReferencesPackage;
-import QWiki.References.Section;
-
 import QWiki.Spice.ProcessReferenceModel;
-import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.SpiceElement;
+import QWiki.Spice.SpicePackage;
+
+import QWiki.impl.QWikiContainerImpl;
 
 import java.util.Collection;
 
@@ -27,8 +25,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -38,7 +36,7 @@ import org.eclipse.uml2.uml.Namespace;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Spice Element</b></em>'.
+ * An implementation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -188,7 +186,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.SPICE_ELEMENT;
+		return SpicePackage.Literals.SPICE_ELEMENT;
 	}
 
 	/**
@@ -199,7 +197,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Role> getResponsibleRole() {
 		if (responsibleRole == null) {
-			responsibleRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE, RASCIPackage.ROLE__RESPONSIBLE_ELEMENT);
+			responsibleRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE, RasciPackage.ROLE__RESPONSIBLE_ELEMENT);
 		}
 		return responsibleRole;
 	}
@@ -234,23 +232,6 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public Role getAccountableRole() {
-		if (accountableRole != null && accountableRole.eIsProxy()) {
-			InternalEObject oldAccountableRole = (InternalEObject)accountableRole;
-			accountableRole = (Role)eResolveProxy(oldAccountableRole);
-			if (accountableRole != oldAccountableRole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, accountableRole));
-			}
-		}
-		return accountableRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetAccountableRole() {
 		return accountableRole;
 	}
 
@@ -263,7 +244,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 		Role oldAccountableRole = accountableRole;
 		accountableRole = newAccountableRole;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, newAccountableRole);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE, oldAccountableRole, newAccountableRole);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -279,14 +260,14 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 		if (newAccountableRole != accountableRole) {
 			NotificationChain msgs = null;
 			if (accountableRole != null)
-				msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+				msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 			if (newAccountableRole != null)
-				msgs = ((InternalEObject)newAccountableRole).eInverseAdd(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+				msgs = ((InternalEObject)newAccountableRole).eInverseAdd(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 			msgs = basicSetAccountableRole(newAccountableRole, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE, newAccountableRole, newAccountableRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE, newAccountableRole, newAccountableRole));
 	}
 
 	/**
@@ -297,7 +278,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Role> getSupportRole() {
 		if (supportRole == null) {
-			supportRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE, RASCIPackage.ROLE__SUPPORTING_ELEMENT);
+			supportRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE, RasciPackage.ROLE__SUPPORTING_ELEMENT);
 		}
 		return supportRole;
 	}
@@ -333,7 +314,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Role> getConsultedRole() {
 		if (consultedRole == null) {
-			consultedRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE, RASCIPackage.ROLE__CONSULTING_ELEMENT);
+			consultedRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE, RasciPackage.ROLE__CONSULTING_ELEMENT);
 		}
 		return consultedRole;
 	}
@@ -369,7 +350,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Role> getInformedRole() {
 		if (informedRole == null) {
-			informedRole = new EObjectWithInverseResolvingEList.ManyInverse<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE, RASCIPackage.ROLE__INFORMED_ELEMENT);
+			informedRole = new EObjectWithInverseEList.ManyInverse<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__INFORMED_ROLE, RasciPackage.ROLE__INFORMED_ELEMENT);
 		}
 		return informedRole;
 	}
@@ -429,7 +410,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public EList<Role> getRole() {
-		return new DerivedUnionEObjectEList<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__ROLE, ROLE_ESUBSETS);
+		return new DerivedUnionEObjectEList<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__ROLE, ROLE_ESUBSETS);
 	}
 
 	/**
@@ -440,7 +421,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] ROLE_ESUBSETS = new int[] {SPICEPackage.SPICE_ELEMENT__OWNER_ROLE, SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE, SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE};
+	protected static final int[] ROLE_ESUBSETS = new int[] {SpicePackage.SPICE_ELEMENT__OWNER_ROLE, SpicePackage.SPICE_ELEMENT__MANAGER_ROLE, SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -472,7 +453,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public ProcessReferenceModel getOwningProcessReferenceModel() {
-		if (eContainerFeatureID() != SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL) return null;
+		if (eContainerFeatureID() != SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL) return null;
 		return (ProcessReferenceModel)eInternalContainer();
 	}
 
@@ -482,7 +463,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 * @generated
 	 */
 	public NotificationChain basicSetOwningProcessReferenceModel(ProcessReferenceModel newOwningProcessReferenceModel, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwningProcessReferenceModel, SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newOwningProcessReferenceModel, SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL, msgs);
 		return msgs;
 	}
 
@@ -493,19 +474,19 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public void setOwningProcessReferenceModel(ProcessReferenceModel newOwningProcessReferenceModel) {
-		if (newOwningProcessReferenceModel != eInternalContainer() || (eContainerFeatureID() != SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL && newOwningProcessReferenceModel != null)) {
+		if (newOwningProcessReferenceModel != eInternalContainer() || (eContainerFeatureID() != SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL && newOwningProcessReferenceModel != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningProcessReferenceModel))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningProcessReferenceModel != null)
-				msgs = ((InternalEObject)newOwningProcessReferenceModel).eInverseAdd(this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, ProcessReferenceModel.class, msgs);
+				msgs = ((InternalEObject)newOwningProcessReferenceModel).eInverseAdd(this, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, ProcessReferenceModel.class, msgs);
 			msgs = basicSetOwningProcessReferenceModel(newOwningProcessReferenceModel, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL, newOwningProcessReferenceModel, newOwningProcessReferenceModel));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL, newOwningProcessReferenceModel, newOwningProcessReferenceModel));
 	}
 
 	/**
@@ -528,7 +509,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 		String oldNumber = number;
 		number = newNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__NUMBER, oldNumber, number));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__NUMBER, oldNumber, number));
 	}
 
 	/**
@@ -539,7 +520,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Section> getFacilitatedSection() {
 		if (facilitatedSection == null) {
-			facilitatedSection = new EObjectWithInverseResolvingEList.ManyInverse<Section>(Section.class, this, SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION, ReferencesPackage.SECTION__FACILITATING_SPICE_ELEMENT);
+			facilitatedSection = new EObjectWithInverseEList.ManyInverse<Section>(Section.class, this, SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION, ContentPackage.SECTION__FACILITATING_SPICE_ELEMENT);
 		}
 		return facilitatedSection;
 	}
@@ -574,23 +555,6 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public Role getOwnerRole() {
-		if (ownerRole != null && ownerRole.eIsProxy()) {
-			InternalEObject oldOwnerRole = (InternalEObject)ownerRole;
-			ownerRole = (Role)eResolveProxy(oldOwnerRole);
-			if (ownerRole != oldOwnerRole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.SPICE_ELEMENT__OWNER_ROLE, oldOwnerRole, ownerRole));
-			}
-		}
-		return ownerRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetOwnerRole() {
 		return ownerRole;
 	}
 
@@ -604,7 +568,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 		Role oldOwnerRole = ownerRole;
 		ownerRole = newOwnerRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__OWNER_ROLE, oldOwnerRole, ownerRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__OWNER_ROLE, oldOwnerRole, ownerRole));
 	}
 
 	/**
@@ -614,23 +578,6 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 */
 	@Override
 	public Role getManagerRole() {
-		if (managerRole != null && managerRole.eIsProxy()) {
-			InternalEObject oldManagerRole = (InternalEObject)managerRole;
-			managerRole = (Role)eResolveProxy(oldManagerRole);
-			if (managerRole != oldManagerRole) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE, oldManagerRole, managerRole));
-			}
-		}
-		return managerRole;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Role basicGetManagerRole() {
 		return managerRole;
 	}
 
@@ -644,7 +591,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 		Role oldManagerRole = managerRole;
 		managerRole = newManagerRole;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE, oldManagerRole, managerRole));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.SPICE_ELEMENT__MANAGER_ROLE, oldManagerRole, managerRole));
 	}
 
 	/**
@@ -655,7 +602,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public EList<Role> getParticipantRole() {
 		if (participantRole == null) {
-			participantRole = new EObjectResolvingEList<Role>(Role.class, this, SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE);
+			participantRole = new EObjectEList<Role>(Role.class, this, SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE);
 		}
 		return participantRole;
 	}
@@ -692,23 +639,23 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getResponsibleRole()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
 				if (accountableRole != null)
-					msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RASCIPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
+					msgs = ((InternalEObject)accountableRole).eInverseRemove(this, RasciPackage.ROLE__ACCOUNTABLE_ELEMENT, Role.class, msgs);
 				return basicSetAccountableRole((Role)otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSupportRole()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConsultedRole()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInformedRole()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningProcessReferenceModel((ProcessReferenceModel)otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatedSection()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -722,19 +669,19 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				return ((InternalEList<?>)getResponsibleRole()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
 				return basicSetAccountableRole(null, msgs);
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				return ((InternalEList<?>)getSupportRole()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				return ((InternalEList<?>)getConsultedRole()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				return ((InternalEList<?>)getInformedRole()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				return basicSetOwningProcessReferenceModel(null, msgs);
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				return ((InternalEList<?>)getFacilitatedSection()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -748,8 +695,8 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
-				return eInternalContainer().eInverseRemove(this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, ProcessReferenceModel.class, msgs);
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+				return eInternalContainer().eInverseRemove(this, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, ProcessReferenceModel.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -762,32 +709,29 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				return getResponsibleRole();
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
-				if (resolve) return getAccountableRole();
-				return basicGetAccountableRole();
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+				return getAccountableRole();
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				return getSupportRole();
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				return getConsultedRole();
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				return getInformedRole();
-			case SPICEPackage.SPICE_ELEMENT__ROLE:
+			case SpicePackage.SPICE_ELEMENT__ROLE:
 				return getRole();
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				return getOwningProcessReferenceModel();
-			case SPICEPackage.SPICE_ELEMENT__NUMBER:
+			case SpicePackage.SPICE_ELEMENT__NUMBER:
 				return getNumber();
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				return getFacilitatedSection();
-			case SPICEPackage.SPICE_ELEMENT__OWNER_ROLE:
-				if (resolve) return getOwnerRole();
-				return basicGetOwnerRole();
-			case SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE:
-				if (resolve) return getManagerRole();
-				return basicGetManagerRole();
-			case SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__OWNER_ROLE:
+				return getOwnerRole();
+			case SpicePackage.SPICE_ELEMENT__MANAGER_ROLE:
+				return getManagerRole();
+			case SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
 				return getParticipantRole();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -802,42 +746,42 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				getResponsibleRole().clear();
 				getResponsibleRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
 				setAccountableRole((Role)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				getSupportRole().clear();
 				getSupportRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				getConsultedRole().clear();
 				getConsultedRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				getInformedRole().clear();
 				getInformedRole().addAll((Collection<? extends Role>)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				setOwningProcessReferenceModel((ProcessReferenceModel)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__NUMBER:
+			case SpicePackage.SPICE_ELEMENT__NUMBER:
 				setNumber((String)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				getFacilitatedSection().clear();
 				getFacilitatedSection().addAll((Collection<? extends Section>)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__OWNER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__OWNER_ROLE:
 				setOwnerRole((Role)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__MANAGER_ROLE:
 				setManagerRole((Role)newValue);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
 				getParticipantRole().clear();
 				getParticipantRole().addAll((Collection<? extends Role>)newValue);
 				return;
@@ -853,37 +797,37 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				getResponsibleRole().clear();
 				return;
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
 				setAccountableRole((Role)null);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				getSupportRole().clear();
 				return;
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				getConsultedRole().clear();
 				return;
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				getInformedRole().clear();
 				return;
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				setOwningProcessReferenceModel((ProcessReferenceModel)null);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__NUMBER:
+			case SpicePackage.SPICE_ELEMENT__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				getFacilitatedSection().clear();
 				return;
-			case SPICEPackage.SPICE_ELEMENT__OWNER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__OWNER_ROLE:
 				setOwnerRole((Role)null);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__MANAGER_ROLE:
 				setManagerRole((Role)null);
 				return;
-			case SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
 				getParticipantRole().clear();
 				return;
 		}
@@ -898,31 +842,31 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE:
 				return responsibleRole != null && !responsibleRole.isEmpty();
-			case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
+			case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE:
 				return accountableRole != null;
-			case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE:
 				return supportRole != null && !supportRole.isEmpty();
-			case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE:
 				return consultedRole != null && !consultedRole.isEmpty();
-			case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE:
+			case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE:
 				return informedRole != null && !informedRole.isEmpty();
-			case SPICEPackage.SPICE_ELEMENT__NAMESPACE:
+			case SpicePackage.SPICE_ELEMENT__NAMESPACE:
 				return isSetNamespace();
-			case SPICEPackage.SPICE_ELEMENT__ROLE:
+			case SpicePackage.SPICE_ELEMENT__ROLE:
 				return isSetRole();
-			case SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
+			case SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL:
 				return getOwningProcessReferenceModel() != null;
-			case SPICEPackage.SPICE_ELEMENT__NUMBER:
+			case SpicePackage.SPICE_ELEMENT__NUMBER:
 				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
-			case SPICEPackage.SPICE_ELEMENT__FACILITATED_SECTION:
+			case SpicePackage.SPICE_ELEMENT__FACILITATED_SECTION:
 				return facilitatedSection != null && !facilitatedSection.isEmpty();
-			case SPICEPackage.SPICE_ELEMENT__OWNER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__OWNER_ROLE:
 				return ownerRole != null;
-			case SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE:
+			case SpicePackage.SPICE_ELEMENT__MANAGER_ROLE:
 				return managerRole != null;
-			case SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
+			case SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE:
 				return participantRole != null && !participantRole.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -937,11 +881,11 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == RasciElement.class) {
 			switch (derivedFeatureID) {
-				case SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE: return RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE;
-				case SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE: return RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE;
-				case SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE: return RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE;
-				case SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE: return RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE;
-				case SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE: return RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE;
+				case SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE: return RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE;
+				case SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE: return RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE;
+				case SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE: return RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE;
+				case SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE: return RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE;
+				case SpicePackage.SPICE_ELEMENT__INFORMED_ROLE: return RasciPackage.RASCI_ELEMENT__INFORMED_ROLE;
 				default: return -1;
 			}
 		}
@@ -957,11 +901,11 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == RasciElement.class) {
 			switch (baseFeatureID) {
-				case RASCIPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE: return SPICEPackage.SPICE_ELEMENT__RESPONSIBLE_ROLE;
-				case RASCIPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE: return SPICEPackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE;
-				case RASCIPackage.RASCI_ELEMENT__SUPPORT_ROLE: return SPICEPackage.SPICE_ELEMENT__SUPPORT_ROLE;
-				case RASCIPackage.RASCI_ELEMENT__CONSULTED_ROLE: return SPICEPackage.SPICE_ELEMENT__CONSULTED_ROLE;
-				case RASCIPackage.RASCI_ELEMENT__INFORMED_ROLE: return SPICEPackage.SPICE_ELEMENT__INFORMED_ROLE;
+				case RasciPackage.RASCI_ELEMENT__RESPONSIBLE_ROLE: return SpicePackage.SPICE_ELEMENT__RESPONSIBLE_ROLE;
+				case RasciPackage.RASCI_ELEMENT__ACCOUNTABLE_ROLE: return SpicePackage.SPICE_ELEMENT__ACCOUNTABLE_ROLE;
+				case RasciPackage.RASCI_ELEMENT__SUPPORT_ROLE: return SpicePackage.SPICE_ELEMENT__SUPPORT_ROLE;
+				case RasciPackage.RASCI_ELEMENT__CONSULTED_ROLE: return SpicePackage.SPICE_ELEMENT__CONSULTED_ROLE;
+				case RasciPackage.RASCI_ELEMENT__INFORMED_ROLE: return SpicePackage.SPICE_ELEMENT__INFORMED_ROLE;
 				default: return -1;
 			}
 		}
@@ -992,7 +936,7 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	@Override
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
-			|| eIsSet(SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL);
+			|| eIsSet(SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL);
 	}
 
 	/**
@@ -1001,9 +945,9 @@ public abstract class SpiceElementImpl extends QWikiContainerImpl implements Spi
 	 * @generated
 	 */
 	public boolean isSetRole() {
-		return eIsSet(SPICEPackage.SPICE_ELEMENT__OWNER_ROLE)
-			|| eIsSet(SPICEPackage.SPICE_ELEMENT__MANAGER_ROLE)
-			|| eIsSet(SPICEPackage.SPICE_ELEMENT__PARTICIPANT_ROLE);
+		return eIsSet(SpicePackage.SPICE_ELEMENT__OWNER_ROLE)
+			|| eIsSet(SpicePackage.SPICE_ELEMENT__MANAGER_ROLE)
+			|| eIsSet(SpicePackage.SPICE_ELEMENT__PARTICIPANT_ROLE);
 	}
 
 } //SpiceElementImpl

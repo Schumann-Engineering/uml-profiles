@@ -3,7 +3,7 @@
 package QWiki.Spice.tests;
 
 import QWiki.Spice.GenericWorkProduct;
-import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SpiceFactory;
 
 import junit.textui.TestRunner;
 
@@ -53,7 +53,7 @@ public class GenericWorkProductTest extends WorkProductTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createGenericWorkProduct());
+		setFixture(SpiceFactory.eINSTANCE.createGenericWorkProduct());
 	}
 
 	/**

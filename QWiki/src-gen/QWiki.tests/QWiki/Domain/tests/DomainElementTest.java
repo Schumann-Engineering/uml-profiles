@@ -4,7 +4,7 @@ package QWiki.Domain.tests;
 
 import QWiki.Domain.DomainElement;
 
-import QWiki.Kernel.tests.QWikiElementTest;
+import QWiki.tests.QWikiElementTest;
 
 /**
  * <!-- begin-user-doc -->

@@ -3,7 +3,8 @@
 package QWiki.Domain.util;
 
 import QWiki.Domain.*;
-import QWiki.Kernel.QWikiElement;
+
+import QWiki.QWikiElement;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -12,6 +13,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Element;
 
 /**
@@ -167,13 +169,13 @@ public class DomainAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.QWikiElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.QWikiElement
+	 * @see QWiki.QWikiElement
 	 * @generated
 	 */
 	public Adapter createQWikiElementAdapter() {

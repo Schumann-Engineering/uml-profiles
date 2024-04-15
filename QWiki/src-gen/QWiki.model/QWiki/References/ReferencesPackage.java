@@ -2,7 +2,7 @@
  */
 package QWiki.References;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -78,7 +78,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__EANNOTATIONS = KernelPackage.QWIKI_NAMED_ELEMENT__EANNOTATIONS;
+	int AUTHOR__EANNOTATIONS = QWikiPackage.QWIKI_NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -87,7 +87,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__OWNED_COMMENT = KernelPackage.QWIKI_NAMED_ELEMENT__OWNED_COMMENT;
+	int AUTHOR__OWNED_COMMENT = QWikiPackage.QWIKI_NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -96,7 +96,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__OWNED_ELEMENT = KernelPackage.QWIKI_NAMED_ELEMENT__OWNED_ELEMENT;
+	int AUTHOR__OWNED_ELEMENT = QWikiPackage.QWIKI_NAMED_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -105,7 +105,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__OWNER = KernelPackage.QWIKI_NAMED_ELEMENT__OWNER;
+	int AUTHOR__OWNER = QWikiPackage.QWIKI_NAMED_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -114,7 +114,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__CLIENT_DEPENDENCY = KernelPackage.QWIKI_NAMED_ELEMENT__CLIENT_DEPENDENCY;
+	int AUTHOR__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_NAMED_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -123,7 +123,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__NAME = KernelPackage.QWIKI_NAMED_ELEMENT__NAME;
+	int AUTHOR__NAME = QWikiPackage.QWIKI_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -132,7 +132,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__NAME_EXPRESSION = KernelPackage.QWIKI_NAMED_ELEMENT__NAME_EXPRESSION;
+	int AUTHOR__NAME_EXPRESSION = QWikiPackage.QWIKI_NAMED_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -141,7 +141,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__NAMESPACE = KernelPackage.QWIKI_NAMED_ELEMENT__NAMESPACE;
+	int AUTHOR__NAMESPACE = QWikiPackage.QWIKI_NAMED_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -150,7 +150,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__QUALIFIED_NAME = KernelPackage.QWIKI_NAMED_ELEMENT__QUALIFIED_NAME;
+	int AUTHOR__QUALIFIED_NAME = QWikiPackage.QWIKI_NAMED_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -159,7 +159,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__VISIBILITY = KernelPackage.QWIKI_NAMED_ELEMENT__VISIBILITY;
+	int AUTHOR__VISIBILITY = QWikiPackage.QWIKI_NAMED_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -168,7 +168,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__UUID = KernelPackage.QWIKI_NAMED_ELEMENT__UUID;
+	int AUTHOR__UUID = QWikiPackage.QWIKI_NAMED_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -177,7 +177,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__CUSTOM_PROPERTY = KernelPackage.QWIKI_NAMED_ELEMENT__CUSTOM_PROPERTY;
+	int AUTHOR__CUSTOM_PROPERTY = QWikiPackage.QWIKI_NAMED_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -186,7 +186,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__TAG = KernelPackage.QWIKI_NAMED_ELEMENT__TAG;
+	int AUTHOR__TAG = QWikiPackage.QWIKI_NAMED_ELEMENT__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Author Type</b></em>' attribute.
@@ -195,7 +195,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__AUTHOR_TYPE = KernelPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int AUTHOR__AUTHOR_TYPE = QWikiPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Abbreviation</b></em>' attribute.
@@ -204,7 +204,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR__ABBREVIATION = KernelPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int AUTHOR__ABBREVIATION = QWikiPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Author</em>' class.
@@ -213,7 +213,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_FEATURE_COUNT = KernelPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int AUTHOR_FEATURE_COUNT = QWikiPackage.QWIKI_NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -222,7 +222,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_EANNOTATION__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int AUTHOR___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -231,7 +231,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int AUTHOR___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -240,7 +240,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int AUTHOR___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -249,7 +249,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___ADD_KEYWORD__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___ADD_KEYWORD__STRING;
+	int AUTHOR___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -258,7 +258,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int AUTHOR___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -267,7 +267,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+	int AUTHOR___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -276,7 +276,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___DESTROY = KernelPackage.QWIKI_NAMED_ELEMENT___DESTROY;
+	int AUTHOR___DESTROY = QWikiPackage.QWIKI_NAMED_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -285,7 +285,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_KEYWORDS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_KEYWORDS;
+	int AUTHOR___GET_KEYWORDS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -294,7 +294,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int AUTHOR___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -303,7 +303,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int AUTHOR___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -312,7 +312,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int AUTHOR___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -321,7 +321,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int AUTHOR___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -330,7 +330,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int AUTHOR___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -339,7 +339,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int AUTHOR___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -348,7 +348,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_MODEL = KernelPackage.QWIKI_NAMED_ELEMENT___GET_MODEL;
+	int AUTHOR___GET_MODEL = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -357,7 +357,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+	int AUTHOR___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -366,7 +366,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_RELATIONSHIPS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS;
+	int AUTHOR___GET_RELATIONSHIPS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -375,7 +375,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int AUTHOR___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -384,7 +384,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int AUTHOR___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -393,7 +393,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int AUTHOR___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -402,7 +402,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int AUTHOR___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -411,7 +411,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int AUTHOR___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -420,7 +420,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int AUTHOR___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -429,7 +429,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int AUTHOR___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -438,7 +438,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int AUTHOR___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -447,7 +447,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int AUTHOR___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -456,7 +456,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int AUTHOR___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -465,7 +465,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___HAS_KEYWORD__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___HAS_KEYWORD__STRING;
+	int AUTHOR___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -474,7 +474,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int AUTHOR___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -483,7 +483,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int AUTHOR___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -492,7 +492,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int AUTHOR___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -501,7 +501,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int AUTHOR___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -510,7 +510,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+	int AUTHOR___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -519,7 +519,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int AUTHOR___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -528,7 +528,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int AUTHOR___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -537,7 +537,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+	int AUTHOR___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -546,7 +546,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___MUST_BE_OWNED = KernelPackage.QWIKI_NAMED_ELEMENT___MUST_BE_OWNED;
+	int AUTHOR___MUST_BE_OWNED = QWikiPackage.QWIKI_NAMED_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -555,7 +555,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int AUTHOR___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -564,7 +564,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int AUTHOR___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -573,7 +573,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int AUTHOR___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -582,7 +582,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int AUTHOR___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -591,7 +591,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int AUTHOR___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -600,7 +600,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_LABEL = KernelPackage.QWIKI_NAMED_ELEMENT___GET_LABEL;
+	int AUTHOR___GET_LABEL = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -609,7 +609,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+	int AUTHOR___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -618,7 +618,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_NAMESPACE = KernelPackage.QWIKI_NAMED_ELEMENT___GET_NAMESPACE;
+	int AUTHOR___GET_NAMESPACE = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -627,7 +627,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___ALL_NAMESPACES = KernelPackage.QWIKI_NAMED_ELEMENT___ALL_NAMESPACES;
+	int AUTHOR___ALL_NAMESPACES = QWikiPackage.QWIKI_NAMED_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -636,7 +636,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+	int AUTHOR___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -645,7 +645,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int AUTHOR___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -654,7 +654,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_QUALIFIED_NAME = KernelPackage.QWIKI_NAMED_ELEMENT___GET_QUALIFIED_NAME;
+	int AUTHOR___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -663,7 +663,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___SEPARATOR = KernelPackage.QWIKI_NAMED_ELEMENT___SEPARATOR;
+	int AUTHOR___SEPARATOR = QWikiPackage.QWIKI_NAMED_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -672,304 +672,25 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int AUTHOR___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___OID_BASIC = KernelPackage.QWIKI_NAMED_ELEMENT___OID_BASIC;
+	int AUTHOR___QWIKI_MODEL = QWikiPackage.QWIKI_NAMED_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Authored Document</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___AUTHORED_DOCUMENT = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Authored Standard</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___AUTHORED_STANDARD = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int AUTHOR___OID = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 2;
+	int AUTHOR___OBJECT_ID = QWikiPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Author</em>' class.
@@ -978,7 +699,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int AUTHOR_OPERATION_COUNT = KernelPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 3;
+	int AUTHOR_OPERATION_COUNT = QWikiPackage.QWIKI_NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link QWiki.References.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -997,7 +718,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__EANNOTATIONS = KernelPackage.QWIKI_CONTAINER__EANNOTATIONS;
+	int REFERENCE__EANNOTATIONS = QWikiPackage.QWIKI_CONTAINER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1006,7 +727,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_COMMENT = KernelPackage.QWIKI_CONTAINER__OWNED_COMMENT;
+	int REFERENCE__OWNED_COMMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1015,7 +736,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_ELEMENT = KernelPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
+	int REFERENCE__OWNED_ELEMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1024,7 +745,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNER = KernelPackage.QWIKI_CONTAINER__OWNER;
+	int REFERENCE__OWNER = QWikiPackage.QWIKI_CONTAINER__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -1033,7 +754,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__CLIENT_DEPENDENCY = KernelPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
+	int REFERENCE__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1042,7 +763,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__NAME = KernelPackage.QWIKI_CONTAINER__NAME;
+	int REFERENCE__NAME = QWikiPackage.QWIKI_CONTAINER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -1051,7 +772,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__NAME_EXPRESSION = KernelPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
+	int REFERENCE__NAME_EXPRESSION = QWikiPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -1060,7 +781,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__NAMESPACE = KernelPackage.QWIKI_CONTAINER__NAMESPACE;
+	int REFERENCE__NAMESPACE = QWikiPackage.QWIKI_CONTAINER__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -1069,7 +790,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
+	int REFERENCE__QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1078,7 +799,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__VISIBILITY = KernelPackage.QWIKI_CONTAINER__VISIBILITY;
+	int REFERENCE__VISIBILITY = QWikiPackage.QWIKI_CONTAINER__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
@@ -1087,7 +808,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_RULE = KernelPackage.QWIKI_CONTAINER__OWNED_RULE;
+	int REFERENCE__OWNED_RULE = QWikiPackage.QWIKI_CONTAINER__OWNED_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
@@ -1096,7 +817,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__ELEMENT_IMPORT = KernelPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
+	int REFERENCE__ELEMENT_IMPORT = QWikiPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
@@ -1105,7 +826,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__PACKAGE_IMPORT = KernelPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
+	int REFERENCE__PACKAGE_IMPORT = QWikiPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
@@ -1114,7 +835,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_MEMBER = KernelPackage.QWIKI_CONTAINER__OWNED_MEMBER;
+	int REFERENCE__OWNED_MEMBER = QWikiPackage.QWIKI_CONTAINER__OWNED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
@@ -1123,7 +844,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__IMPORTED_MEMBER = KernelPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
+	int REFERENCE__IMPORTED_MEMBER = QWikiPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Member</b></em>' reference list.
@@ -1132,7 +853,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__MEMBER = KernelPackage.QWIKI_CONTAINER__MEMBER;
+	int REFERENCE__MEMBER = QWikiPackage.QWIKI_CONTAINER__MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1141,7 +862,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__UUID = KernelPackage.QWIKI_CONTAINER__UUID;
+	int REFERENCE__UUID = QWikiPackage.QWIKI_CONTAINER__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -1150,7 +871,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__CUSTOM_PROPERTY = KernelPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
+	int REFERENCE__CUSTOM_PROPERTY = QWikiPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1159,34 +880,34 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__TAG = KernelPackage.QWIKI_CONTAINER__TAG;
+	int REFERENCE__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__DISPLAY_NAME = KernelPackage.QWIKI_CONTAINER__DISPLAY_NAME;
+	int REFERENCE__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__PURPOSE = KernelPackage.QWIKI_CONTAINER__PURPOSE;
+	int REFERENCE__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__CONTENT = KernelPackage.QWIKI_CONTAINER__CONTENT;
+	int REFERENCE__CONTENT = QWikiPackage.QWIKI_CONTAINER__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -1195,7 +916,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__NUMBER = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
+	int REFERENCE__NUMBER = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Owned Version</b></em>' containment reference list.
@@ -1204,7 +925,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_VERSION = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
+	int REFERENCE__OWNED_VERSION = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Reference Type</b></em>' attribute.
@@ -1213,7 +934,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__REFERENCE_TYPE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
+	int REFERENCE__REFERENCE_TYPE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Author</b></em>' reference list.
@@ -1222,7 +943,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__AUTHOR = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
+	int REFERENCE__AUTHOR = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Reference</em>' class.
@@ -1231,7 +952,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_FEATURE_COUNT = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 4;
+	int REFERENCE_FEATURE_COUNT = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1240,7 +961,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
+	int REFERENCE___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -1249,7 +970,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -1258,7 +979,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -1267,7 +988,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___ADD_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
+	int REFERENCE___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -1276,7 +997,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
+	int REFERENCE___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -1285,7 +1006,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
+	int REFERENCE___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -1294,7 +1015,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___DESTROY = KernelPackage.QWIKI_CONTAINER___DESTROY;
+	int REFERENCE___DESTROY = QWikiPackage.QWIKI_CONTAINER___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -1303,7 +1024,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_KEYWORDS = KernelPackage.QWIKI_CONTAINER___GET_KEYWORDS;
+	int REFERENCE___GET_KEYWORDS = QWikiPackage.QWIKI_CONTAINER___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -1312,7 +1033,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
+	int REFERENCE___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -1321,7 +1042,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
+	int REFERENCE___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -1330,7 +1051,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
+	int REFERENCE___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -1339,7 +1060,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
+	int REFERENCE___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -1348,7 +1069,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int REFERENCE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -1357,7 +1078,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int REFERENCE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -1366,7 +1087,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_MODEL = KernelPackage.QWIKI_CONTAINER___GET_MODEL;
+	int REFERENCE___GET_MODEL = QWikiPackage.QWIKI_CONTAINER___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -1375,7 +1096,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
+	int REFERENCE___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1384,7 +1105,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
+	int REFERENCE___GET_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1393,7 +1114,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
+	int REFERENCE___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -1402,7 +1123,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
+	int REFERENCE___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -1411,7 +1132,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
+	int REFERENCE___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1420,7 +1141,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int REFERENCE___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1429,7 +1150,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int REFERENCE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -1438,7 +1159,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int REFERENCE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -1447,7 +1168,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
+	int REFERENCE___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1456,7 +1177,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int REFERENCE___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1465,7 +1186,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int REFERENCE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -1474,7 +1195,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
+	int REFERENCE___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -1483,7 +1204,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___HAS_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
+	int REFERENCE___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -1492,7 +1213,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
+	int REFERENCE___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -1501,7 +1222,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int REFERENCE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -1510,7 +1231,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int REFERENCE___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -1519,7 +1240,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int REFERENCE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -1528,7 +1249,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
+	int REFERENCE___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -1537,7 +1258,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int REFERENCE___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -1546,7 +1267,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int REFERENCE___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1555,7 +1276,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
+	int REFERENCE___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1564,7 +1285,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___MUST_BE_OWNED = KernelPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
+	int REFERENCE___MUST_BE_OWNED = QWikiPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -1573,7 +1294,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -1582,7 +1303,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -1591,7 +1312,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -1600,7 +1321,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int REFERENCE___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -1609,7 +1330,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
+	int REFERENCE___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1618,7 +1339,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_LABEL = KernelPackage.QWIKI_CONTAINER___GET_LABEL;
+	int REFERENCE___GET_LABEL = QWikiPackage.QWIKI_CONTAINER___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1627,7 +1348,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
+	int REFERENCE___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -1636,7 +1357,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_NAMESPACE = KernelPackage.QWIKI_CONTAINER___GET_NAMESPACE;
+	int REFERENCE___GET_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1645,7 +1366,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___ALL_NAMESPACES = KernelPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
+	int REFERENCE___ALL_NAMESPACES = QWikiPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -1654,7 +1375,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
+	int REFERENCE___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -1663,7 +1384,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int REFERENCE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -1672,7 +1393,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
+	int REFERENCE___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -1681,7 +1402,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___SEPARATOR = KernelPackage.QWIKI_CONTAINER___SEPARATOR;
+	int REFERENCE___SEPARATOR = QWikiPackage.QWIKI_CONTAINER___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -1690,7 +1411,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
+	int REFERENCE___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
 
 	/**
 	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
@@ -1699,7 +1420,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
@@ -1708,7 +1429,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
@@ -1717,7 +1438,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Element Import</em>' operation.
@@ -1726,7 +1447,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
+	int REFERENCE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Create Package Import</em>' operation.
@@ -1735,7 +1456,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
+	int REFERENCE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Get Imported Elements</em>' operation.
@@ -1744,7 +1465,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_IMPORTED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
+	int REFERENCE___GET_IMPORTED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Get Imported Packages</em>' operation.
@@ -1753,7 +1474,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_IMPORTED_PACKAGES = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
+	int REFERENCE___GET_IMPORTED_PACKAGES = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Get Owned Members</em>' operation.
@@ -1762,7 +1483,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_OWNED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
+	int REFERENCE___GET_OWNED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Exclude Collisions</em>' operation.
@@ -1771,7 +1492,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___EXCLUDE_COLLISIONS__ELIST = KernelPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
+	int REFERENCE___EXCLUDE_COLLISIONS__ELIST = QWikiPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Names Of Member</em>' operation.
@@ -1780,7 +1501,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_NAMES_OF_MEMBER__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+	int REFERENCE___GET_NAMES_OF_MEMBER__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Import Members</em>' operation.
@@ -1789,7 +1510,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___IMPORT_MEMBERS__ELIST = KernelPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
+	int REFERENCE___IMPORT_MEMBERS__ELIST = QWikiPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Imported Members</em>' operation.
@@ -1798,7 +1519,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___GET_IMPORTED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
+	int REFERENCE___GET_IMPORTED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
@@ -1807,286 +1528,25 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___MEMBERS_ARE_DISTINGUISHABLE = KernelPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
+	int REFERENCE___MEMBERS_ARE_DISTINGUISHABLE = QWikiPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___OID_BASIC = KernelPackage.QWIKI_CONTAINER___OID_BASIC;
+	int REFERENCE___QWIKI_MODEL = QWikiPackage.QWIKI_CONTAINER___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
+	int REFERENCE___OBJECT_ID = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Reference</em>' class.
@@ -2095,7 +1555,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_OPERATION_COUNT = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
+	int REFERENCE_OPERATION_COUNT = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link QWiki.References.impl.ReferenceVersionImpl <em>Reference Version</em>}' class.
@@ -2114,7 +1574,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__EANNOTATIONS = KernelPackage.QWIKI_NAMESPACE__EANNOTATIONS;
+	int REFERENCE_VERSION__EANNOTATIONS = QWikiPackage.QWIKI_NAMESPACE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2123,7 +1583,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNED_COMMENT = KernelPackage.QWIKI_NAMESPACE__OWNED_COMMENT;
+	int REFERENCE_VERSION__OWNED_COMMENT = QWikiPackage.QWIKI_NAMESPACE__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -2132,7 +1592,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNED_ELEMENT = KernelPackage.QWIKI_NAMESPACE__OWNED_ELEMENT;
+	int REFERENCE_VERSION__OWNED_ELEMENT = QWikiPackage.QWIKI_NAMESPACE__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -2141,7 +1601,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNER = KernelPackage.QWIKI_NAMESPACE__OWNER;
+	int REFERENCE_VERSION__OWNER = QWikiPackage.QWIKI_NAMESPACE__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -2150,7 +1610,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__CLIENT_DEPENDENCY = KernelPackage.QWIKI_NAMESPACE__CLIENT_DEPENDENCY;
+	int REFERENCE_VERSION__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_NAMESPACE__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2159,7 +1619,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__NAME = KernelPackage.QWIKI_NAMESPACE__NAME;
+	int REFERENCE_VERSION__NAME = QWikiPackage.QWIKI_NAMESPACE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -2168,7 +1628,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__NAME_EXPRESSION = KernelPackage.QWIKI_NAMESPACE__NAME_EXPRESSION;
+	int REFERENCE_VERSION__NAME_EXPRESSION = QWikiPackage.QWIKI_NAMESPACE__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -2177,7 +1637,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__NAMESPACE = KernelPackage.QWIKI_NAMESPACE__NAMESPACE;
+	int REFERENCE_VERSION__NAMESPACE = QWikiPackage.QWIKI_NAMESPACE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -2186,7 +1646,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__QUALIFIED_NAME = KernelPackage.QWIKI_NAMESPACE__QUALIFIED_NAME;
+	int REFERENCE_VERSION__QUALIFIED_NAME = QWikiPackage.QWIKI_NAMESPACE__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2195,7 +1655,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__VISIBILITY = KernelPackage.QWIKI_NAMESPACE__VISIBILITY;
+	int REFERENCE_VERSION__VISIBILITY = QWikiPackage.QWIKI_NAMESPACE__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
@@ -2204,7 +1664,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNED_RULE = KernelPackage.QWIKI_NAMESPACE__OWNED_RULE;
+	int REFERENCE_VERSION__OWNED_RULE = QWikiPackage.QWIKI_NAMESPACE__OWNED_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
@@ -2213,7 +1673,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__ELEMENT_IMPORT = KernelPackage.QWIKI_NAMESPACE__ELEMENT_IMPORT;
+	int REFERENCE_VERSION__ELEMENT_IMPORT = QWikiPackage.QWIKI_NAMESPACE__ELEMENT_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
@@ -2222,7 +1682,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__PACKAGE_IMPORT = KernelPackage.QWIKI_NAMESPACE__PACKAGE_IMPORT;
+	int REFERENCE_VERSION__PACKAGE_IMPORT = QWikiPackage.QWIKI_NAMESPACE__PACKAGE_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
@@ -2231,7 +1691,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNED_MEMBER = KernelPackage.QWIKI_NAMESPACE__OWNED_MEMBER;
+	int REFERENCE_VERSION__OWNED_MEMBER = QWikiPackage.QWIKI_NAMESPACE__OWNED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
@@ -2240,7 +1700,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__IMPORTED_MEMBER = KernelPackage.QWIKI_NAMESPACE__IMPORTED_MEMBER;
+	int REFERENCE_VERSION__IMPORTED_MEMBER = QWikiPackage.QWIKI_NAMESPACE__IMPORTED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Member</b></em>' reference list.
@@ -2249,7 +1709,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__MEMBER = KernelPackage.QWIKI_NAMESPACE__MEMBER;
+	int REFERENCE_VERSION__MEMBER = QWikiPackage.QWIKI_NAMESPACE__MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2258,7 +1718,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__UUID = KernelPackage.QWIKI_NAMESPACE__UUID;
+	int REFERENCE_VERSION__UUID = QWikiPackage.QWIKI_NAMESPACE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -2267,7 +1727,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__CUSTOM_PROPERTY = KernelPackage.QWIKI_NAMESPACE__CUSTOM_PROPERTY;
+	int REFERENCE_VERSION__CUSTOM_PROPERTY = QWikiPackage.QWIKI_NAMESPACE__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2276,52 +1736,16 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__TAG = KernelPackage.QWIKI_NAMESPACE__TAG;
+	int REFERENCE_VERSION__TAG = QWikiPackage.QWIKI_NAMESPACE__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__DISPLAY_NAME = KernelPackage.QWIKI_NAMESPACE__DISPLAY_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Publication Year</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION__PUBLICATION_YEAR = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Reference Version Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION__REFERENCE_VERSION_TYPE = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Edition</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION__EDITION = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Owned Section</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION__OWNED_SECTION = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 3;
+	int REFERENCE_VERSION__DISPLAY_NAME = QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owning Reference</b></em>' container reference.
@@ -2330,7 +1754,43 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNING_REFERENCE = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 4;
+	int REFERENCE_VERSION__OWNING_REFERENCE = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Publication Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__PUBLICATION_YEAR = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Reference Version Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__REFERENCE_VERSION_TYPE = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Edition</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__EDITION = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Owned Content</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__OWNED_CONTENT = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Reference Version</em>' class.
@@ -2339,7 +1799,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION_FEATURE_COUNT = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 5;
+	int REFERENCE_VERSION_FEATURE_COUNT = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2348,7 +1808,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_EANNOTATION__STRING = KernelPackage.QWIKI_NAMESPACE___GET_EANNOTATION__STRING;
+	int REFERENCE_VERSION___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_NAMESPACE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -2357,7 +1817,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -2366,7 +1826,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -2375,7 +1835,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___ADD_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___ADD_KEYWORD__STRING;
+	int REFERENCE_VERSION___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_NAMESPACE___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -2384,7 +1844,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE;
+	int REFERENCE_VERSION___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -2393,7 +1853,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_NAMESPACE___CREATE_EANNOTATION__STRING;
+	int REFERENCE_VERSION___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_NAMESPACE___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -2402,7 +1862,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___DESTROY = KernelPackage.QWIKI_NAMESPACE___DESTROY;
+	int REFERENCE_VERSION___DESTROY = QWikiPackage.QWIKI_NAMESPACE___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -2411,7 +1871,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_KEYWORDS = KernelPackage.QWIKI_NAMESPACE___GET_KEYWORDS;
+	int REFERENCE_VERSION___GET_KEYWORDS = QWikiPackage.QWIKI_NAMESPACE___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -2420,7 +1880,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING;
+	int REFERENCE_VERSION___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -2429,7 +1889,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPES;
+	int REFERENCE_VERSION___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -2438,7 +1898,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPE__STRING;
+	int REFERENCE_VERSION___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -2447,7 +1907,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPES;
+	int REFERENCE_VERSION___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -2456,7 +1916,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int REFERENCE_VERSION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -2465,7 +1925,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int REFERENCE_VERSION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -2474,7 +1934,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_MODEL = KernelPackage.QWIKI_NAMESPACE___GET_MODEL;
+	int REFERENCE_VERSION___GET_MODEL = QWikiPackage.QWIKI_NAMESPACE___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -2483,7 +1943,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_NAMESPACE___GET_NEAREST_PACKAGE;
+	int REFERENCE_VERSION___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_NAMESPACE___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2492,7 +1952,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS;
+	int REFERENCE_VERSION___GET_RELATIONSHIPS = QWikiPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2501,7 +1961,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS__ECLASS;
+	int REFERENCE_VERSION___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -2510,7 +1970,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING;
+	int REFERENCE_VERSION___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -2519,7 +1979,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPES;
+	int REFERENCE_VERSION___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2528,7 +1988,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int REFERENCE_VERSION___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2537,7 +1997,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int REFERENCE_VERSION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -2546,7 +2006,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int REFERENCE_VERSION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -2555,7 +2015,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATIONS;
+	int REFERENCE_VERSION___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2564,7 +2024,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int REFERENCE_VERSION___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2573,7 +2033,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int REFERENCE_VERSION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -2582,7 +2042,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___GET_VALUE__STEREOTYPE_STRING;
+	int REFERENCE_VERSION___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMESPACE___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -2591,7 +2051,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___HAS_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___HAS_KEYWORD__STRING;
+	int REFERENCE_VERSION___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_NAMESPACE___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -2600,7 +2060,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___HAS_VALUE__STEREOTYPE_STRING;
+	int REFERENCE_VERSION___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_NAMESPACE___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -2609,7 +2069,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int REFERENCE_VERSION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -2618,7 +2078,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int REFERENCE_VERSION___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -2627,7 +2087,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int REFERENCE_VERSION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -2636,7 +2096,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___REMOVE_KEYWORD__STRING;
+	int REFERENCE_VERSION___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_NAMESPACE___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -2645,7 +2105,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int REFERENCE_VERSION___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -2654,7 +2114,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int REFERENCE_VERSION___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -2663,7 +2123,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_NAMESPACE___ALL_OWNED_ELEMENTS;
+	int REFERENCE_VERSION___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_NAMESPACE___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -2672,7 +2132,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___MUST_BE_OWNED = KernelPackage.QWIKI_NAMESPACE___MUST_BE_OWNED;
+	int REFERENCE_VERSION___MUST_BE_OWNED = QWikiPackage.QWIKI_NAMESPACE___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -2681,7 +2141,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -2690,7 +2150,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -2699,7 +2159,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -2708,7 +2168,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int REFERENCE_VERSION___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -2717,7 +2177,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___CREATE_USAGE__NAMEDELEMENT;
+	int REFERENCE_VERSION___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_NAMESPACE___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -2726,7 +2186,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_LABEL = KernelPackage.QWIKI_NAMESPACE___GET_LABEL;
+	int REFERENCE_VERSION___GET_LABEL = QWikiPackage.QWIKI_NAMESPACE___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -2735,7 +2195,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_NAMESPACE___GET_LABEL__BOOLEAN;
+	int REFERENCE_VERSION___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_NAMESPACE___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -2744,7 +2204,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_NAMESPACE = KernelPackage.QWIKI_NAMESPACE___GET_NAMESPACE;
+	int REFERENCE_VERSION___GET_NAMESPACE = QWikiPackage.QWIKI_NAMESPACE___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -2753,7 +2213,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___ALL_NAMESPACES = KernelPackage.QWIKI_NAMESPACE___ALL_NAMESPACES;
+	int REFERENCE_VERSION___ALL_NAMESPACES = QWikiPackage.QWIKI_NAMESPACE___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -2762,7 +2222,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_NAMESPACE___ALL_OWNING_PACKAGES;
+	int REFERENCE_VERSION___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_NAMESPACE___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -2771,7 +2231,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int REFERENCE_VERSION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -2780,7 +2240,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_QUALIFIED_NAME = KernelPackage.QWIKI_NAMESPACE___GET_QUALIFIED_NAME;
+	int REFERENCE_VERSION___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_NAMESPACE___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -2789,7 +2249,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___SEPARATOR = KernelPackage.QWIKI_NAMESPACE___SEPARATOR;
+	int REFERENCE_VERSION___SEPARATOR = QWikiPackage.QWIKI_NAMESPACE___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -2798,7 +2258,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_NAMESPACE___GET_CLIENT_DEPENDENCIES;
+	int REFERENCE_VERSION___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_NAMESPACE___GET_CLIENT_DEPENDENCIES;
 
 	/**
 	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
@@ -2807,7 +2267,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
@@ -2816,7 +2276,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
@@ -2825,7 +2285,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
+	int REFERENCE_VERSION___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Element Import</em>' operation.
@@ -2834,7 +2294,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = KernelPackage.QWIKI_NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
+	int REFERENCE_VERSION___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = QWikiPackage.QWIKI_NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Create Package Import</em>' operation.
@@ -2843,7 +2303,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = KernelPackage.QWIKI_NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
+	int REFERENCE_VERSION___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = QWikiPackage.QWIKI_NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Get Imported Elements</em>' operation.
@@ -2852,7 +2312,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_IMPORTED_ELEMENTS = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_ELEMENTS;
+	int REFERENCE_VERSION___GET_IMPORTED_ELEMENTS = QWikiPackage.QWIKI_NAMESPACE___GET_IMPORTED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Get Imported Packages</em>' operation.
@@ -2861,7 +2321,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_IMPORTED_PACKAGES = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_PACKAGES;
+	int REFERENCE_VERSION___GET_IMPORTED_PACKAGES = QWikiPackage.QWIKI_NAMESPACE___GET_IMPORTED_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Get Owned Members</em>' operation.
@@ -2870,7 +2330,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_OWNED_MEMBERS = KernelPackage.QWIKI_NAMESPACE___GET_OWNED_MEMBERS;
+	int REFERENCE_VERSION___GET_OWNED_MEMBERS = QWikiPackage.QWIKI_NAMESPACE___GET_OWNED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Exclude Collisions</em>' operation.
@@ -2879,7 +2339,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___EXCLUDE_COLLISIONS__ELIST = KernelPackage.QWIKI_NAMESPACE___EXCLUDE_COLLISIONS__ELIST;
+	int REFERENCE_VERSION___EXCLUDE_COLLISIONS__ELIST = QWikiPackage.QWIKI_NAMESPACE___EXCLUDE_COLLISIONS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Names Of Member</em>' operation.
@@ -2888,7 +2348,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_NAMES_OF_MEMBER__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+	int REFERENCE_VERSION___GET_NAMES_OF_MEMBER__NAMEDELEMENT = QWikiPackage.QWIKI_NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Import Members</em>' operation.
@@ -2897,7 +2357,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___IMPORT_MEMBERS__ELIST = KernelPackage.QWIKI_NAMESPACE___IMPORT_MEMBERS__ELIST;
+	int REFERENCE_VERSION___IMPORT_MEMBERS__ELIST = QWikiPackage.QWIKI_NAMESPACE___IMPORT_MEMBERS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Imported Members</em>' operation.
@@ -2906,7 +2366,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___GET_IMPORTED_MEMBERS = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_MEMBERS;
+	int REFERENCE_VERSION___GET_IMPORTED_MEMBERS = QWikiPackage.QWIKI_NAMESPACE___GET_IMPORTED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
@@ -2915,286 +2375,25 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___MEMBERS_ARE_DISTINGUISHABLE = KernelPackage.QWIKI_NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE;
+	int REFERENCE_VERSION___MEMBERS_ARE_DISTINGUISHABLE = QWikiPackage.QWIKI_NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___OID_BASIC = KernelPackage.QWIKI_NAMESPACE___OID_BASIC;
+	int REFERENCE_VERSION___QWIKI_MODEL = QWikiPackage.QWIKI_NAMESPACE___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REFERENCE_VERSION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
+	int REFERENCE_VERSION___OBJECT_ID = QWikiPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Reference Version</em>' class.
@@ -3203,1151 +2402,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION_OPERATION_COUNT = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The meta object id for the '{@link QWiki.References.impl.SectionImpl <em>Section</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see QWiki.References.impl.SectionImpl
-	 * @see QWiki.References.impl.ReferencesPackageImpl#getSection()
-	 * @generated
-	 */
-	int SECTION = 3;
-
-	/**
-	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__EANNOTATIONS = KernelPackage.QWIKI_NAMESPACE__EANNOTATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNED_COMMENT = KernelPackage.QWIKI_NAMESPACE__OWNED_COMMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNED_ELEMENT = KernelPackage.QWIKI_NAMESPACE__OWNED_ELEMENT;
-
-	/**
-	 * The feature id for the '<em><b>Owner</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNER = KernelPackage.QWIKI_NAMESPACE__OWNER;
-
-	/**
-	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__CLIENT_DEPENDENCY = KernelPackage.QWIKI_NAMESPACE__CLIENT_DEPENDENCY;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__NAME = KernelPackage.QWIKI_NAMESPACE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__NAME_EXPRESSION = KernelPackage.QWIKI_NAMESPACE__NAME_EXPRESSION;
-
-	/**
-	 * The feature id for the '<em><b>Namespace</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__NAMESPACE = KernelPackage.QWIKI_NAMESPACE__NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__QUALIFIED_NAME = KernelPackage.QWIKI_NAMESPACE__QUALIFIED_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__VISIBILITY = KernelPackage.QWIKI_NAMESPACE__VISIBILITY;
-
-	/**
-	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNED_RULE = KernelPackage.QWIKI_NAMESPACE__OWNED_RULE;
-
-	/**
-	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__ELEMENT_IMPORT = KernelPackage.QWIKI_NAMESPACE__ELEMENT_IMPORT;
-
-	/**
-	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__PACKAGE_IMPORT = KernelPackage.QWIKI_NAMESPACE__PACKAGE_IMPORT;
-
-	/**
-	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNED_MEMBER = KernelPackage.QWIKI_NAMESPACE__OWNED_MEMBER;
-
-	/**
-	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__IMPORTED_MEMBER = KernelPackage.QWIKI_NAMESPACE__IMPORTED_MEMBER;
-
-	/**
-	 * The feature id for the '<em><b>Member</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__MEMBER = KernelPackage.QWIKI_NAMESPACE__MEMBER;
-
-	/**
-	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__UUID = KernelPackage.QWIKI_NAMESPACE__UUID;
-
-	/**
-	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__CUSTOM_PROPERTY = KernelPackage.QWIKI_NAMESPACE__CUSTOM_PROPERTY;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__TAG = KernelPackage.QWIKI_NAMESPACE__TAG;
-
-	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__DISPLAY_NAME = KernelPackage.QWIKI_NAMESPACE__DISPLAY_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Owning Reference Version</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNING_REFERENCE_VERSION = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Owned Section</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNED_SECTION = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Owning Section</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__OWNING_SECTION = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__NUMBER = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Facilitating Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__FACILITATING_ELEMENT = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 4;
-
-	/**
-	 * The feature id for the '<em><b>Term</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__TERM = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 5;
-
-	/**
-	 * The feature id for the '<em><b>Facilitating Spice Element</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION__FACILITATING_SPICE_ELEMENT = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 6;
-
-	/**
-	 * The number of structural features of the '<em>Section</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION_FEATURE_COUNT = KernelPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 7;
-
-	/**
-	 * The operation id for the '<em>Get EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_EANNOTATION__STRING = KernelPackage.QWIKI_NAMESPACE___GET_EANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Validate Has Owner</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Add Keyword</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___ADD_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___ADD_KEYWORD__STRING;
-
-	/**
-	 * The operation id for the '<em>Apply Stereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___APPLY_STEREOTYPE__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Create EAnnotation</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_NAMESPACE___CREATE_EANNOTATION__STRING;
-
-	/**
-	 * The operation id for the '<em>Destroy</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___DESTROY = KernelPackage.QWIKI_NAMESPACE___DESTROY;
-
-	/**
-	 * The operation id for the '<em>Get Keywords</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_KEYWORDS = KernelPackage.QWIKI_NAMESPACE___GET_KEYWORDS;
-
-	/**
-	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPE__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_APPLICABLE_STEREOTYPES;
-
-	/**
-	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPE__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_STEREOTYPES;
-
-	/**
-	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
-
-	/**
-	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Get Model</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_MODEL = KernelPackage.QWIKI_NAMESPACE___GET_MODEL;
-
-	/**
-	 * The operation id for the '<em>Get Nearest Package</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_NAMESPACE___GET_NEAREST_PACKAGE;
-
-	/**
-	 * The operation id for the '<em>Get Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS;
-
-	/**
-	 * The operation id for the '<em>Get Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_RELATIONSHIPS__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPE__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_NAMESPACE___GET_REQUIRED_STEREOTYPES;
-
-	/**
-	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
-
-	/**
-	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_NAMESPACE___GET_STEREOTYPE_APPLICATIONS;
-
-	/**
-	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS;
-
-	/**
-	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_NAMESPACE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
-
-	/**
-	 * The operation id for the '<em>Get Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___GET_VALUE__STEREOTYPE_STRING;
-
-	/**
-	 * The operation id for the '<em>Has Keyword</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___HAS_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___HAS_KEYWORD__STRING;
-
-	/**
-	 * The operation id for the '<em>Has Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_NAMESPACE___HAS_VALUE__STEREOTYPE_STRING;
-
-	/**
-	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>Remove Keyword</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_NAMESPACE___REMOVE_KEYWORD__STRING;
-
-	/**
-	 * The operation id for the '<em>Set Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_NAMESPACE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
-
-	/**
-	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_NAMESPACE___UNAPPLY_STEREOTYPE__STEREOTYPE;
-
-	/**
-	 * The operation id for the '<em>All Owned Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_NAMESPACE___ALL_OWNED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Must Be Owned</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___MUST_BE_OWNED = KernelPackage.QWIKI_NAMESPACE___MUST_BE_OWNED;
-
-	/**
-	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Create Dependency</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___CREATE_DEPENDENCY__NAMEDELEMENT;
-
-	/**
-	 * The operation id for the '<em>Create Usage</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___CREATE_USAGE__NAMEDELEMENT;
-
-	/**
-	 * The operation id for the '<em>Get Label</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_LABEL = KernelPackage.QWIKI_NAMESPACE___GET_LABEL;
-
-	/**
-	 * The operation id for the '<em>Get Label</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_NAMESPACE___GET_LABEL__BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Get Namespace</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_NAMESPACE = KernelPackage.QWIKI_NAMESPACE___GET_NAMESPACE;
-
-	/**
-	 * The operation id for the '<em>All Namespaces</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___ALL_NAMESPACES = KernelPackage.QWIKI_NAMESPACE___ALL_NAMESPACES;
-
-	/**
-	 * The operation id for the '<em>All Owning Packages</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_NAMESPACE___ALL_OWNING_PACKAGES;
-
-	/**
-	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_NAMESPACE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
-
-	/**
-	 * The operation id for the '<em>Get Qualified Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_QUALIFIED_NAME = KernelPackage.QWIKI_NAMESPACE___GET_QUALIFIED_NAME;
-
-	/**
-	 * The operation id for the '<em>Separator</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___SEPARATOR = KernelPackage.QWIKI_NAMESPACE___SEPARATOR;
-
-	/**
-	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_NAMESPACE___GET_CLIENT_DEPENDENCIES;
-
-	/**
-	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_NAMESPACE___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
-
-	/**
-	 * The operation id for the '<em>Create Element Import</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = KernelPackage.QWIKI_NAMESPACE___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
-
-	/**
-	 * The operation id for the '<em>Create Package Import</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = KernelPackage.QWIKI_NAMESPACE___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
-
-	/**
-	 * The operation id for the '<em>Get Imported Elements</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_IMPORTED_ELEMENTS = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_ELEMENTS;
-
-	/**
-	 * The operation id for the '<em>Get Imported Packages</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_IMPORTED_PACKAGES = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_PACKAGES;
-
-	/**
-	 * The operation id for the '<em>Get Owned Members</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_OWNED_MEMBERS = KernelPackage.QWIKI_NAMESPACE___GET_OWNED_MEMBERS;
-
-	/**
-	 * The operation id for the '<em>Exclude Collisions</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___EXCLUDE_COLLISIONS__ELIST = KernelPackage.QWIKI_NAMESPACE___EXCLUDE_COLLISIONS__ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Names Of Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_NAMES_OF_MEMBER__NAMEDELEMENT = KernelPackage.QWIKI_NAMESPACE___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
-
-	/**
-	 * The operation id for the '<em>Import Members</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___IMPORT_MEMBERS__ELIST = KernelPackage.QWIKI_NAMESPACE___IMPORT_MEMBERS__ELIST;
-
-	/**
-	 * The operation id for the '<em>Get Imported Members</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___GET_IMPORTED_MEMBERS = KernelPackage.QWIKI_NAMESPACE___GET_IMPORTED_MEMBERS;
-
-	/**
-	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___MEMBERS_ARE_DISTINGUISHABLE = KernelPackage.QWIKI_NAMESPACE___MEMBERS_ARE_DISTINGUISHABLE;
-
-	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID_BASIC = KernelPackage.QWIKI_NAMESPACE___OID_BASIC;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Document Version</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___DOCUMENT_VERSION = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___OID = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Qualified Number</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION___QUALIFIED_NUMBER = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Section</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SECTION_OPERATION_COUNT = KernelPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 3;
+	int REFERENCE_VERSION_OPERATION_COUNT = QWikiPackage.QWIKI_NAMESPACE_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link QWiki.References.AuthorType <em>Author Type</em>}' enum.
@@ -4357,7 +2412,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @see QWiki.References.impl.ReferencesPackageImpl#getAuthorType()
 	 * @generated
 	 */
-	int AUTHOR_TYPE = 4;
+	int AUTHOR_TYPE = 3;
 
 	/**
 	 * The meta object id for the '{@link QWiki.References.ReferenceVersionType <em>Reference Version Type</em>}' enum.
@@ -4377,7 +2432,7 @@ public interface ReferencesPackage extends EPackage {
 	 * @see QWiki.References.impl.ReferencesPackageImpl#getReferenceType()
 	 * @generated
 	 */
-	int REFERENCE_TYPE = 6;
+	int REFERENCE_TYPE = 4;
 
 
 	/**
@@ -4413,34 +2468,14 @@ public interface ReferencesPackage extends EPackage {
 	EAttribute getAuthor_Abbreviation();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.References.Author#authoredDocument() <em>Authored Document</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.References.Author#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Authored Document</em>' operation.
-	 * @see QWiki.References.Author#authoredDocument()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.References.Author#objectId()
 	 * @generated
 	 */
-	EOperation getAuthor__AuthoredDocument();
-
-	/**
-	 * Returns the meta object for the '{@link QWiki.References.Author#authoredStandard() <em>Authored Standard</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Authored Standard</em>' operation.
-	 * @see QWiki.References.Author#authoredStandard()
-	 * @generated
-	 */
-	EOperation getAuthor__AuthoredStandard();
-
-	/**
-	 * Returns the meta object for the '{@link QWiki.References.Author#oid() <em>Oid</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.References.Author#oid()
-	 * @generated
-	 */
-	EOperation getAuthor__Oid();
+	EOperation getAuthor__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.References.Reference <em>Reference</em>}'.
@@ -4497,14 +2532,14 @@ public interface ReferencesPackage extends EPackage {
 	EReference getReference_Author();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.References.Reference#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.References.Reference#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.References.Reference#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.References.Reference#objectId()
 	 * @generated
 	 */
-	EOperation getReference__Oid();
+	EOperation getReference__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.References.ReferenceVersion <em>Reference Version</em>}'.
@@ -4550,15 +2585,15 @@ public interface ReferencesPackage extends EPackage {
 	EAttribute getReferenceVersion_Edition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.References.ReferenceVersion#getOwnedSection <em>Owned Section</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Section</em>'.
-	 * @see QWiki.References.ReferenceVersion#getOwnedSection()
+	 * @return the meta object for the containment reference list '<em>Owned Content</em>'.
+	 * @see QWiki.References.ReferenceVersion#getOwnedContent()
 	 * @see #getReferenceVersion()
 	 * @generated
 	 */
-	EReference getReferenceVersion_OwnedSection();
+	EReference getReferenceVersion_OwnedContent();
 
 	/**
 	 * Returns the meta object for the container reference '{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}'.
@@ -4572,131 +2607,14 @@ public interface ReferencesPackage extends EPackage {
 	EReference getReferenceVersion_OwningReference();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.References.ReferenceVersion#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.References.ReferenceVersion#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.References.ReferenceVersion#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.References.ReferenceVersion#objectId()
 	 * @generated
 	 */
-	EOperation getReferenceVersion__Oid();
-
-	/**
-	 * Returns the meta object for class '{@link QWiki.References.Section <em>Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Section</em>'.
-	 * @see QWiki.References.Section
-	 * @generated
-	 */
-	EClass getSection();
-
-	/**
-	 * Returns the meta object for the container reference '{@link QWiki.References.Section#getOwningReferenceVersion <em>Owning Reference Version</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Owning Reference Version</em>'.
-	 * @see QWiki.References.Section#getOwningReferenceVersion()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_OwningReferenceVersion();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.References.Section#getOwnedSection <em>Owned Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Section</em>'.
-	 * @see QWiki.References.Section#getOwnedSection()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_OwnedSection();
-
-	/**
-	 * Returns the meta object for the container reference '{@link QWiki.References.Section#getOwningSection <em>Owning Section</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Owning Section</em>'.
-	 * @see QWiki.References.Section#getOwningSection()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_OwningSection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link QWiki.References.Section#getNumber <em>Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Number</em>'.
-	 * @see QWiki.References.Section#getNumber()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EAttribute getSection_Number();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.References.Section#getFacilitatingElement <em>Facilitating Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Facilitating Element</em>'.
-	 * @see QWiki.References.Section#getFacilitatingElement()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_FacilitatingElement();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.References.Section#getTerm <em>Term</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Term</em>'.
-	 * @see QWiki.References.Section#getTerm()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_Term();
-
-	/**
-	 * Returns the meta object for the reference list '{@link QWiki.References.Section#getFacilitatingSpiceElement <em>Facilitating Spice Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Facilitating Spice Element</em>'.
-	 * @see QWiki.References.Section#getFacilitatingSpiceElement()
-	 * @see #getSection()
-	 * @generated
-	 */
-	EReference getSection_FacilitatingSpiceElement();
-
-	/**
-	 * Returns the meta object for the '{@link QWiki.References.Section#documentVersion() <em>Document Version</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Document Version</em>' operation.
-	 * @see QWiki.References.Section#documentVersion()
-	 * @generated
-	 */
-	EOperation getSection__DocumentVersion();
-
-	/**
-	 * Returns the meta object for the '{@link QWiki.References.Section#oid() <em>Oid</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.References.Section#oid()
-	 * @generated
-	 */
-	EOperation getSection__Oid();
-
-	/**
-	 * Returns the meta object for the '{@link QWiki.References.Section#qualifiedNumber() <em>Qualified Number</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Qualified Number</em>' operation.
-	 * @see QWiki.References.Section#qualifiedNumber()
-	 * @generated
-	 */
-	EOperation getSection__QualifiedNumber();
+	EOperation getReferenceVersion__ObjectId();
 
 	/**
 	 * Returns the meta object for enum '{@link QWiki.References.AuthorType <em>Author Type</em>}'.
@@ -4778,28 +2696,12 @@ public interface ReferencesPackage extends EPackage {
 		EAttribute AUTHOR__ABBREVIATION = eINSTANCE.getAuthor_Abbreviation();
 
 		/**
-		 * The meta object literal for the '<em><b>Authored Document</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation AUTHOR___AUTHORED_DOCUMENT = eINSTANCE.getAuthor__AuthoredDocument();
-
-		/**
-		 * The meta object literal for the '<em><b>Authored Standard</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AUTHOR___AUTHORED_STANDARD = eINSTANCE.getAuthor__AuthoredStandard();
-
-		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation AUTHOR___OID = eINSTANCE.getAuthor__Oid();
+		EOperation AUTHOR___OBJECT_ID = eINSTANCE.getAuthor__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.References.impl.ReferenceImpl <em>Reference</em>}' class.
@@ -4844,12 +2746,12 @@ public interface ReferencesPackage extends EPackage {
 		EReference REFERENCE__AUTHOR = eINSTANCE.getReference_Author();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation REFERENCE___OID = eINSTANCE.getReference__Oid();
+		EOperation REFERENCE___OBJECT_ID = eINSTANCE.getReference__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.References.impl.ReferenceVersionImpl <em>Reference Version</em>}' class.
@@ -4886,12 +2788,12 @@ public interface ReferencesPackage extends EPackage {
 		EAttribute REFERENCE_VERSION__EDITION = eINSTANCE.getReferenceVersion_Edition();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Section</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Owned Content</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFERENCE_VERSION__OWNED_SECTION = eINSTANCE.getReferenceVersion_OwnedSection();
+		EReference REFERENCE_VERSION__OWNED_CONTENT = eINSTANCE.getReferenceVersion_OwnedContent();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Reference</b></em>' container reference feature.
@@ -4902,102 +2804,12 @@ public interface ReferencesPackage extends EPackage {
 		EReference REFERENCE_VERSION__OWNING_REFERENCE = eINSTANCE.getReferenceVersion_OwningReference();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation REFERENCE_VERSION___OID = eINSTANCE.getReferenceVersion__Oid();
-
-		/**
-		 * The meta object literal for the '{@link QWiki.References.impl.SectionImpl <em>Section</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see QWiki.References.impl.SectionImpl
-		 * @see QWiki.References.impl.ReferencesPackageImpl#getSection()
-		 * @generated
-		 */
-		EClass SECTION = eINSTANCE.getSection();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Reference Version</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__OWNING_REFERENCE_VERSION = eINSTANCE.getSection_OwningReferenceVersion();
-
-		/**
-		 * The meta object literal for the '<em><b>Owned Section</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__OWNED_SECTION = eINSTANCE.getSection_OwnedSection();
-
-		/**
-		 * The meta object literal for the '<em><b>Owning Section</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__OWNING_SECTION = eINSTANCE.getSection_OwningSection();
-
-		/**
-		 * The meta object literal for the '<em><b>Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SECTION__NUMBER = eINSTANCE.getSection_Number();
-
-		/**
-		 * The meta object literal for the '<em><b>Facilitating Element</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__FACILITATING_ELEMENT = eINSTANCE.getSection_FacilitatingElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Term</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__TERM = eINSTANCE.getSection_Term();
-
-		/**
-		 * The meta object literal for the '<em><b>Facilitating Spice Element</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SECTION__FACILITATING_SPICE_ELEMENT = eINSTANCE.getSection_FacilitatingSpiceElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Document Version</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SECTION___DOCUMENT_VERSION = eINSTANCE.getSection__DocumentVersion();
-
-		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SECTION___OID = eINSTANCE.getSection__Oid();
-
-		/**
-		 * The meta object literal for the '<em><b>Qualified Number</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation SECTION___QUALIFIED_NUMBER = eINSTANCE.getSection__QualifiedNumber();
+		EOperation REFERENCE_VERSION___OBJECT_ID = eINSTANCE.getReferenceVersion__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.References.AuthorType <em>Author Type</em>}' enum.

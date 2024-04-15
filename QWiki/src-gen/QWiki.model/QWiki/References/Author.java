@@ -2,9 +2,7 @@
  */
 package QWiki.References;
 
-import QWiki.Kernel.QWikiNamedElement;
-
-import org.eclipse.emf.common.util.EList;
+import QWiki.QWikiNamedElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,6 +37,7 @@ public interface Author extends QWikiNamedElement {
 	 * @see #setAuthorType(AuthorType)
 	 * @see QWiki.References.ReferencesPackage#getAuthor_AuthorType()
 	 * @model default="Person" required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	AuthorType getAuthorType();
@@ -66,6 +65,7 @@ public interface Author extends QWikiNamedElement {
 	 * @see #setAbbreviation(String)
 	 * @see QWiki.References.ReferencesPackage#getAuthor_Abbreviation()
 	 * @model ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	String getAbbreviation();
@@ -81,30 +81,19 @@ public interface Author extends QWikiNamedElement {
 	void setAbbreviation(String value);
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='model().ownedElement-&gt;select(oclIsKindOf(QWiki::Bibliography::Document)).oclAsType(QWiki::Bibliography::Document)-&gt;select(author-&gt;includes(self))-&gt;asSet()'"
-	 * @generated
-	 */
-	EList<Reference> authoredDocument();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='authoredDocument()-&gt;select(documentType = DocumentType::Standard)'"
-	 * @generated
-	 */
-	EList<Reference> authoredStandard();
-
-	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
+	 *        annotation="redefines"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (abbreviation-&gt;notEmpty()) then \'a/\' + abbreviation else \'a/\' + uuid endif'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // Author

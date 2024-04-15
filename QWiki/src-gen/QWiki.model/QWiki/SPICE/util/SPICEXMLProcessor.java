@@ -2,7 +2,7 @@
  */
 package QWiki.Spice.util;
 
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 
 import java.util.Map;
 
@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.xmi.util.XMLProcessor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICEXMLProcessor extends XMLProcessor {
+public class SpiceXMLProcessor extends XMLProcessor {
 
 	/**
 	 * Public constructor to instantiate the helper.
@@ -26,13 +26,13 @@ public class SPICEXMLProcessor extends XMLProcessor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICEXMLProcessor() {
+	public SpiceXMLProcessor() {
 		super((EPackage.Registry.INSTANCE));
-		SPICEPackage.eINSTANCE.eClass();
+		SpicePackage.eINSTANCE.eClass();
 	}
 	
 	/**
-	 * Register for "*" and "xml" file extensions the SPICEResourceFactoryImpl factory.
+	 * Register for "*" and "xml" file extensions the SpiceResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -41,10 +41,10 @@ public class SPICEXMLProcessor extends XMLProcessor {
 	protected Map<String, Resource.Factory> getRegistrations() {
 		if (registrations == null) {
 			super.getRegistrations();
-			registrations.put(XML_EXTENSION, new SPICEResourceFactoryImpl());
-			registrations.put(STAR_EXTENSION, new SPICEResourceFactoryImpl());
+			registrations.put(XML_EXTENSION, new SpiceResourceFactoryImpl());
+			registrations.put(STAR_EXTENSION, new SpiceResourceFactoryImpl());
 		}
 		return registrations;
 	}
 
-} //SPICEXMLProcessor
+} //SpiceXMLProcessor

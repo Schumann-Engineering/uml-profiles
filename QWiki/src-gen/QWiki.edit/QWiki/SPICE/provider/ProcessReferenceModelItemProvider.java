@@ -5,13 +5,13 @@ package QWiki.Spice.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.Kernel.provider.QWikiContainerItemProvider;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.ProcessReferenceModel;
-import QWiki.Spice.SPICEFactory;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceFactory;
+import QWiki.Spice.SpicePackage;
+
+import QWiki.provider.QWikiContainerItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -75,7 +75,7 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 				 getResourceLocator(),
 				 getString("_UI_ProcessReferenceModel_isNonStandard_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ProcessReferenceModel_isNonStandard_feature", "_UI_ProcessReferenceModel_type"),
-				 SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD,
+				 SpicePackage.Literals.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD,
 				 true,
 				 false,
 				 false,
@@ -97,7 +97,7 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 				 getResourceLocator(),
 				 getString("_UI_ProcessReferenceModel_prmDomain_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ProcessReferenceModel_prmDomain_feature", "_UI_ProcessReferenceModel_type"),
-				 SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__PRM_DOMAIN,
+				 SpicePackage.Literals.PROCESS_REFERENCE_MODEL__PRM_DOMAIN,
 				 true,
 				 false,
 				 false,
@@ -118,7 +118,7 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
+			childrenFeatures.add(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -174,11 +174,11 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ProcessReferenceModel.class)) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -198,28 +198,28 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createBasePractise()));
+				(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
+				 SpiceFactory.eINSTANCE.createBasePractise()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createProcess()));
+				(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
+				 SpiceFactory.eINSTANCE.createProcess()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createProcessGroup()));
+				(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
+				 SpiceFactory.eINSTANCE.createProcessGroup()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createWorkProduct()));
+				(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
+				 SpiceFactory.eINSTANCE.createWorkProduct()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
-				 SPICEFactory.eINSTANCE.createGenericWorkProduct()));
+				(SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT,
+				 SpiceFactory.eINSTANCE.createGenericWorkProduct()));
 	}
 
 	/**
@@ -234,9 +234,9 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

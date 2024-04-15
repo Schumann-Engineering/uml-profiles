@@ -2,12 +2,15 @@
  */
 package QWiki.References.impl;
 
-import QWiki.Kernel.impl.QWikiNamedElementImpl;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiPackage;
 
 import QWiki.References.Author;
 import QWiki.References.AuthorType;
-import QWiki.References.Reference;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.impl.QWikiNamedElementImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -142,73 +145,23 @@ public class AuthorImpl extends QWikiNamedElementImpl implements Author {
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #authoredDocument() <em>Authored Document</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #authoredDocument()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate AUTHORED_DOCUMENT__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___AUTHORED_DOCUMENT).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	public EList<Reference> authoredDocument() {
+	public String objectId() {
 		try {
-			return (EList<Reference>)AUTHORED_DOCUMENT__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
-		}
-		catch (InvocationTargetException ite) {
-			throw new WrappedException(ite);
-		}
-	}
-
-	/**
-	 * The cached invocation delegate for the '{@link #authoredStandard() <em>Authored Standard</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #authoredStandard()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EOperation.Internal.InvocationDelegate AUTHORED_STANDARD__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___AUTHORED_STANDARD).getInvocationDelegate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	public EList<Reference> authoredStandard() {
-		try {
-			return (EList<Reference>)AUTHORED_STANDARD__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
-		}
-		catch (InvocationTargetException ite) {
-			throw new WrappedException(ite);
-		}
-	}
-
-	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #oid()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.AUTHOR___OID).getInvocationDelegate();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String oid() {
-		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -289,14 +242,32 @@ public class AuthorImpl extends QWikiNamedElementImpl implements Author {
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return ReferencesPackage.AUTHOR___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return ReferencesPackage.AUTHOR___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ReferencesPackage.AUTHOR___AUTHORED_DOCUMENT:
-				return authoredDocument();
-			case ReferencesPackage.AUTHOR___AUTHORED_STANDARD:
-				return authoredStandard();
-			case ReferencesPackage.AUTHOR___OID:
-				return oid();
+			case ReferencesPackage.AUTHOR___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

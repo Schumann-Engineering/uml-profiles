@@ -4,9 +4,7 @@ package QWiki.Glossary.tests;
 
 import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryTerm;
-
-import QWiki.Kernel.tests.I18nNamedElementTest;
-
+import QWiki.tests.L10nNamedElementTest;
 import junit.textui.TestRunner;
 
 /**
@@ -16,12 +14,12 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Glossary.GlossaryTerm#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Glossary.GlossaryTerm#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class GlossaryTermTest extends I18nNamedElementTest {
+public class GlossaryTermTest extends L10nNamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -76,13 +74,13 @@ public class GlossaryTermTest extends I18nNamedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Glossary.GlossaryTerm#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Glossary.GlossaryTerm#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Glossary.GlossaryTerm#oid()
+	 * @see QWiki.Glossary.GlossaryTerm#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

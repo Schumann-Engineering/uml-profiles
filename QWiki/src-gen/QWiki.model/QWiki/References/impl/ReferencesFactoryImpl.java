@@ -60,7 +60,6 @@ public class ReferencesFactoryImpl extends EFactoryImpl implements ReferencesFac
 			case ReferencesPackage.AUTHOR: return createAuthor();
 			case ReferencesPackage.REFERENCE: return createReference();
 			case ReferencesPackage.REFERENCE_VERSION: return createReferenceVersion();
-			case ReferencesPackage.SECTION: return createSection();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -76,10 +75,10 @@ public class ReferencesFactoryImpl extends EFactoryImpl implements ReferencesFac
 		switch (eDataType.getClassifierID()) {
 			case ReferencesPackage.AUTHOR_TYPE:
 				return createAuthorTypeFromString(eDataType, initialValue);
-			case ReferencesPackage.REFERENCE_VERSION_TYPE:
-				return createReferenceVersionTypeFromString(eDataType, initialValue);
 			case ReferencesPackage.REFERENCE_TYPE:
 				return createReferenceTypeFromString(eDataType, initialValue);
+			case ReferencesPackage.REFERENCE_VERSION_TYPE:
+				return createReferenceVersionTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,10 +94,10 @@ public class ReferencesFactoryImpl extends EFactoryImpl implements ReferencesFac
 		switch (eDataType.getClassifierID()) {
 			case ReferencesPackage.AUTHOR_TYPE:
 				return convertAuthorTypeToString(eDataType, instanceValue);
-			case ReferencesPackage.REFERENCE_VERSION_TYPE:
-				return convertReferenceVersionTypeToString(eDataType, instanceValue);
 			case ReferencesPackage.REFERENCE_TYPE:
 				return convertReferenceTypeToString(eDataType, instanceValue);
+			case ReferencesPackage.REFERENCE_VERSION_TYPE:
+				return convertReferenceVersionTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -135,17 +134,6 @@ public class ReferencesFactoryImpl extends EFactoryImpl implements ReferencesFac
 	public ReferenceVersion createReferenceVersion() {
 		ReferenceVersionImpl referenceVersion = new ReferenceVersionImpl();
 		return referenceVersion;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Section createSection() {
-		SectionImpl section = new SectionImpl();
-		return section;
 	}
 
 	/**

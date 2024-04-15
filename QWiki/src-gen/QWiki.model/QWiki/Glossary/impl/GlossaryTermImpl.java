@@ -2,18 +2,19 @@
  */
 package QWiki.Glossary.impl;
 
+import QWiki.Content.ContentPackage;
+import QWiki.Content.Section;
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
-
-import QWiki.Kernel.I18nDescriptiveElement;
-import QWiki.Kernel.I18nString;
-
-import QWiki.Kernel.impl.I18nNamedElementImpl;
-
-import QWiki.References.ReferencesPackage;
-import QWiki.References.Section;
+import QWiki.L10nDescriptiveElement;
+import QWiki.L10nString;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiPackage;
+import QWiki.impl.L10nNamedElementImpl;
 import java.lang.reflect.InvocationTargetException;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +22,7 @@ import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.WrappedException;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -28,7 +30,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
@@ -50,7 +52,7 @@ import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
  *
  * @generated
  */
-public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTerm {
+public class GlossaryTermImpl extends L10nNamedElementImpl implements GlossaryTerm {
 	/**
 	 * The cached value of the '{@link #getOwnedTermDefinition() <em>Owned Term Definition</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -69,7 +71,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 * @ordered
 	 */
-	protected I18nString acronym;
+	protected L10nString acronym;
 
 	/**
 	 * The cached value of the '{@link #getSynonym() <em>Synonym</em>}' containment reference.
@@ -79,7 +81,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 * @ordered
 	 */
-	protected I18nString synonym;
+	protected L10nString synonym;
 
 	/**
 	 * The cached value of the '{@link #getExternalTermDefinition() <em>External Term Definition</em>}' reference list.
@@ -116,8 +118,8 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
-	public EList<I18nDescriptiveElement> getTermDefinition() {
-		return new DerivedUnionEObjectEList<I18nDescriptiveElement>(I18nDescriptiveElement.class, this, GlossaryPackage.GLOSSARY_TERM__TERM_DEFINITION, TERM_DEFINITION_ESUBSETS);
+	public EList<L10nDescriptiveElement> getTermDefinition() {
+		return new DerivedUnionEObjectEList<L10nDescriptiveElement>(L10nDescriptiveElement.class, this, GlossaryPackage.GLOSSARY_TERM__TERM_DEFINITION, TERM_DEFINITION_ESUBSETS);
 	}
 
 	/**
@@ -135,7 +137,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public I18nDescriptiveElement getTermDefinition(String name) {
+	public L10nDescriptiveElement getTermDefinition(String name) {
 		return getTermDefinition(name, false, null);
 	}
 
@@ -144,8 +146,8 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public I18nDescriptiveElement getTermDefinition(String name, boolean ignoreCase, EClass eClass) {
-		termDefinitionLoop: for (I18nDescriptiveElement termDefinition : getTermDefinition()) {
+	public L10nDescriptiveElement getTermDefinition(String name, boolean ignoreCase, EClass eClass) {
+		termDefinitionLoop: for (L10nDescriptiveElement termDefinition : getTermDefinition()) {
 			if (eClass != null && !eClass.isInstance(termDefinition))
 				continue termDefinitionLoop;
 			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(termDefinition.getName()) : name.equals(termDefinition.getName())))
@@ -197,7 +199,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
-	public I18nString getAcronym() {
+	public L10nString getAcronym() {
 		return acronym;
 	}
 
@@ -206,8 +208,8 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAcronym(I18nString newAcronym, NotificationChain msgs) {
-		I18nString oldAcronym = acronym;
+	public NotificationChain basicSetAcronym(L10nString newAcronym, NotificationChain msgs) {
+		L10nString oldAcronym = acronym;
 		acronym = newAcronym;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GlossaryPackage.GLOSSARY_TERM__ACRONYM, oldAcronym, newAcronym);
@@ -222,7 +224,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
-	public void setAcronym(I18nString newAcronym) {
+	public void setAcronym(L10nString newAcronym) {
 		if (newAcronym != acronym) {
 			NotificationChain msgs = null;
 			if (acronym != null)
@@ -242,7 +244,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
-	public I18nString getSynonym() {
+	public L10nString getSynonym() {
 		return synonym;
 	}
 
@@ -251,8 +253,8 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetSynonym(I18nString newSynonym, NotificationChain msgs) {
-		I18nString oldSynonym = synonym;
+	public NotificationChain basicSetSynonym(L10nString newSynonym, NotificationChain msgs) {
+		L10nString oldSynonym = synonym;
 		synonym = newSynonym;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, GlossaryPackage.GLOSSARY_TERM__SYNONYM, oldSynonym, newSynonym);
@@ -267,7 +269,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
-	public void setSynonym(I18nString newSynonym) {
+	public void setSynonym(L10nString newSynonym) {
 		if (newSynonym != synonym) {
 			NotificationChain msgs = null;
 			if (synonym != null)
@@ -289,7 +291,7 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	@Override
 	public EList<Section> getExternalTermDefinition() {
 		if (externalTermDefinition == null) {
-			externalTermDefinition = new EObjectWithInverseResolvingEList.ManyInverse<Section>(Section.class, this, GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION, ReferencesPackage.SECTION__TERM);
+			externalTermDefinition = new EObjectWithInverseEList.ManyInverse<Section>(Section.class, this, GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION, ContentPackage.SECTION__TERM);
 		}
 		return externalTermDefinition;
 	}
@@ -318,23 +320,23 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)GlossaryPackage.Literals.GLOSSARY_TERM___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)GlossaryPackage.Literals.GLOSSARY_TERM___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -414,10 +416,10 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 				getOwnedTermDefinition().addAll((Collection<? extends GlossaryTermDefinition>)newValue);
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__ACRONYM:
-				setAcronym((I18nString)newValue);
+				setAcronym((L10nString)newValue);
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__SYNONYM:
-				setSynonym((I18nString)newValue);
+				setSynonym((L10nString)newValue);
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION:
 				getExternalTermDefinition().clear();
@@ -439,10 +441,10 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 				getOwnedTermDefinition().clear();
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__ACRONYM:
-				setAcronym((I18nString)null);
+				setAcronym((L10nString)null);
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__SYNONYM:
-				setSynonym((I18nString)null);
+				setSynonym((L10nString)null);
 				return;
 			case GlossaryPackage.GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION:
 				getExternalTermDefinition().clear();
@@ -479,10 +481,32 @@ public class GlossaryTermImpl extends I18nNamedElementImpl implements GlossaryTe
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return GlossaryPackage.GLOSSARY_TERM___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return GlossaryPackage.GLOSSARY_TERM___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case GlossaryPackage.GLOSSARY_TERM___OID:
-				return oid();
+			case GlossaryPackage.GLOSSARY_TERM___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -2,7 +2,7 @@
  */
 package QWiki.Domain;
 
-import QWiki.Kernel.QWikiElement;
+import QWiki.QWikiElement;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -36,7 +36,8 @@ public interface Domain extends QWikiElement {
 	 * @return the value of the '<em>Domain Element</em>' reference list.
 	 * @see QWiki.Domain.DomainPackage#getDomain_DomainElement()
 	 * @see QWiki.Domain.DomainElement#getAssignedDomain
-	 * @model opposite="assignedDomain" ordered="false"
+	 * @model opposite="assignedDomain" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<DomainElement> getDomainElement();

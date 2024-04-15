@@ -2,6 +2,8 @@
  */
 package QWiki.Glossary.impl;
 
+import QWiki.Content.ContentPackage;
+import QWiki.Content.impl.ContentPackageImpl;
 import QWiki.Domain.DomainPackage;
 
 import QWiki.Domain.impl.DomainPackageImpl;
@@ -11,25 +13,25 @@ import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
-import QWiki.Kernel.Relationships.RelationshipsPackage;
+import QWiki.Rasci.RasciPackage;
 
-import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
-
-import QWiki.Kernel.impl.KernelPackageImpl;
-
-import QWiki.Rasci.RASCIPackage;
-
-import QWiki.Rasci.impl.RASCIPackageImpl;
+import QWiki.Rasci.impl.RasciPackageImpl;
 
 import QWiki.References.ReferencesPackage;
 
 import QWiki.References.impl.ReferencesPackageImpl;
 
-import QWiki.Spice.SPICEPackage;
+import QWiki.Relationships.RelationshipsPackage;
 
-import QWiki.Spice.impl.SPICEPackageImpl;
+import QWiki.Relationships.impl.RelationshipsPackageImpl;
+
+import QWiki.Spice.SpicePackage;
+
+import QWiki.Spice.impl.SpicePackageImpl;
+
+import QWiki.impl.QWikiPackageImpl;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -118,36 +120,40 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(registeredPackage instanceof KernelPackageImpl ? registeredPackage : KernelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
-		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
-		SPICEPackageImpl theSPICEPackage = (SPICEPackageImpl)(registeredPackage instanceof SPICEPackageImpl ? registeredPackage : SPICEPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
-		RASCIPackageImpl theRASCIPackage = (RASCIPackageImpl)(registeredPackage instanceof RASCIPackageImpl ? registeredPackage : RASCIPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QWikiPackage.eNS_URI);
+		QWikiPackageImpl theQWikiPackage = (QWikiPackageImpl)(registeredPackage instanceof QWikiPackageImpl ? registeredPackage : QWikiPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpicePackage.eNS_URI);
+		SpicePackageImpl theSpicePackage = (SpicePackageImpl)(registeredPackage instanceof SpicePackageImpl ? registeredPackage : SpicePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RasciPackage.eNS_URI);
+		RasciPackageImpl theRasciPackage = (RasciPackageImpl)(registeredPackage instanceof RasciPackageImpl ? registeredPackage : RasciPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		ContentPackageImpl theContentPackage = (ContentPackageImpl)(registeredPackage instanceof ContentPackageImpl ? registeredPackage : ContentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
 		ReferencesPackageImpl theReferencesPackage = (ReferencesPackageImpl)(registeredPackage instanceof ReferencesPackageImpl ? registeredPackage : ReferencesPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
 		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theGlossaryPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theRelationshipsPackage.createPackageContents();
-		theSPICEPackage.createPackageContents();
-		theRASCIPackage.createPackageContents();
+		theQWikiPackage.createPackageContents();
+		theSpicePackage.createPackageContents();
+		theRasciPackage.createPackageContents();
+		theContentPackage.createPackageContents();
 		theReferencesPackage.createPackageContents();
 		theDomainPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theGlossaryPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theRelationshipsPackage.initializePackageContents();
-		theSPICEPackage.initializePackageContents();
-		theRASCIPackage.initializePackageContents();
+		theQWikiPackage.initializePackageContents();
+		theSpicePackage.initializePackageContents();
+		theRasciPackage.initializePackageContents();
+		theContentPackage.initializePackageContents();
 		theReferencesPackage.initializePackageContents();
 		theDomainPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theGlossaryPackage.freeze();
@@ -243,7 +249,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	 * @generated
 	 */
 	@Override
-	public EOperation getGlossaryTerm__Oid() {
+	public EOperation getGlossaryTerm__ObjectId() {
 		return glossaryTermEClass.getEOperations().get(0);
 	}
 
@@ -285,7 +291,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__SYNONYM);
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__TERM_DEFINITION);
 		createEReference(glossaryTermEClass, GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION);
-		createEOperation(glossaryTermEClass, GLOSSARY_TERM___OID);
+		createEOperation(glossaryTermEClass, GLOSSARY_TERM___OBJECT_ID);
 	}
 
 	/**
@@ -312,36 +318,37 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		ReferencesPackage theReferencesPackage = (ReferencesPackage)EPackage.Registry.INSTANCE.getEPackage(ReferencesPackage.eNS_URI);
+		QWikiPackage theQWikiPackage = (QWikiPackage)EPackage.Registry.INSTANCE.getEPackage(QWikiPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		glossaryTermDefinitionEClass.getESuperTypes().add(theKernelPackage.getI18nDescriptiveElement());
-		glossaryTermEClass.getESuperTypes().add(theKernelPackage.getI18nNamedElement());
+		glossaryTermDefinitionEClass.getESuperTypes().add(theQWikiPackage.getL10nDescriptiveElement());
+		glossaryTermEClass.getESuperTypes().add(theQWikiPackage.getL10nNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(glossaryTermDefinitionEClass, GlossaryTermDefinition.class, "GlossaryTermDefinition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGlossaryTermDefinition_OwningTerm(), this.getGlossaryTerm(), this.getGlossaryTerm_OwnedTermDefinition(), "owningTerm", null, 0, 1, GlossaryTermDefinition.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTermDefinition_OwningTerm(), this.getGlossaryTerm(), this.getGlossaryTerm_OwnedTermDefinition(), "owningTerm", null, 0, 1, GlossaryTermDefinition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(glossaryTermEClass, GlossaryTerm.class, "GlossaryTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGlossaryTerm_OwnedTermDefinition(), this.getGlossaryTermDefinition(), this.getGlossaryTermDefinition_OwningTerm(), "ownedTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_Acronym(), theKernelPackage.getI18nString(), null, "acronym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_Synonym(), theKernelPackage.getI18nString(), null, "synonym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_TermDefinition(), theKernelPackage.getI18nDescriptiveElement(), null, "termDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getGlossaryTerm_ExternalTermDefinition(), theReferencesPackage.getSection(), theReferencesPackage.getSection_Term(), "externalTermDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_OwnedTermDefinition(), this.getGlossaryTermDefinition(), this.getGlossaryTermDefinition_OwningTerm(), "ownedTermDefinition", null, 0, -1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_Acronym(), theQWikiPackage.getL10nString(), null, "acronym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_Synonym(), theQWikiPackage.getL10nString(), null, "synonym", null, 0, 1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_TermDefinition(), theQWikiPackage.getL10nDescriptiveElement(), null, "termDefinition", null, 0, -1, GlossaryTerm.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getGlossaryTerm_ExternalTermDefinition(), theContentPackage.getSection(), theContentPackage.getSection_Term(), "externalTermDefinition", null, 0, -1, GlossaryTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getGlossaryTerm__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		// Create resource
-		createResource(eNS_URI);
+		initEOperation(getGlossaryTerm__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
+		// redefines
+		createRedefinesAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
 		// subsets
@@ -369,6 +376,58 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	}
 
 	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (getGlossaryTermDefinition_OwningTerm(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getGlossaryTerm_OwnedTermDefinition(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getGlossaryTerm_TermDefinition(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getGlossaryTerm_ExternalTermDefinition(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>redefines</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
+		addAnnotation
+		  (getGlossaryTerm__ObjectId(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(QWikiPackage.eNS_URI).appendFragment("//QWikiElement/objectId")
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -377,7 +436,7 @@ public class GlossaryPackageImpl extends EPackageImpl implements GlossaryPackage
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getGlossaryTerm__Oid(),
+		  (getGlossaryTerm__ObjectId(),
 		   source,
 		   new String[] {
 			   "body", "\'t/\' + name"

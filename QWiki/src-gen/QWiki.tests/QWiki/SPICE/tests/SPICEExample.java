@@ -3,10 +3,10 @@
 package QWiki.Spice.tests;
 
 import QWiki.Spice.BasePractise;
-import QWiki.Spice.SPICEFactory;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceFactory;
+import QWiki.Spice.SpicePackage;
 
-import QWiki.Spice.util.SPICEResourceFactoryImpl;
+import QWiki.Spice.util.SpiceResourceFactoryImpl;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.Diagnostician;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICEExample {
+public class SpiceExample {
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
@@ -46,13 +46,13 @@ public class SPICEExample {
 		//
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
 			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
-			 new SPICEResourceFactoryImpl());
+			 new SpiceResourceFactoryImpl());
 
 		// Register the package to ensure it is available during loading.
 		//
 		resourceSet.getPackageRegistry().put
-			(SPICEPackage.eNS_URI, 
-			 SPICEPackage.eINSTANCE);
+			(SpicePackage.eNS_URI, 
+			 SpicePackage.eINSTANCE);
         
 		// If there are no arguments, emit an appropriate usage message.
 		//
@@ -60,7 +60,7 @@ public class SPICEExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.spice"));
-				BasePractise root = SPICEFactory.eINSTANCE.createBasePractise();
+				BasePractise root = SpiceFactory.eINSTANCE.createBasePractise();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			}
@@ -118,4 +118,4 @@ public class SPICEExample {
 		}
 	}
 
-} //SPICEExample
+} //SpiceExample

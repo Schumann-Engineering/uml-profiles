@@ -2,7 +2,7 @@
  */
 package QWiki.Glossary;
 
-import QWiki.Kernel.I18nDescriptiveElement;
+import QWiki.L10nDescriptiveElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +20,7 @@ import QWiki.Kernel.I18nDescriptiveElement;
  * @model
  * @generated
  */
-public interface GlossaryTermDefinition extends I18nDescriptiveElement {
+public interface GlossaryTermDefinition extends L10nDescriptiveElement {
 	/**
 	 * Returns the value of the '<em><b>Owning Term</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link QWiki.Glossary.GlossaryTerm#getOwnedTermDefinition <em>Owned Term Definition</em>}'.
@@ -34,7 +34,8 @@ public interface GlossaryTermDefinition extends I18nDescriptiveElement {
 	 * @see #setOwningTerm(GlossaryTerm)
 	 * @see QWiki.Glossary.GlossaryPackage#getGlossaryTermDefinition_OwningTerm()
 	 * @see QWiki.Glossary.GlossaryTerm#getOwnedTermDefinition
-	 * @model opposite="ownedTermDefinition" ordered="false"
+	 * @model opposite="ownedTermDefinition" resolveProxies="false" transient="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	GlossaryTerm getOwningTerm();

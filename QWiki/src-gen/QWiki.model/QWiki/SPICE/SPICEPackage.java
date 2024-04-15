@@ -2,7 +2,7 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -23,13 +23,12 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see QWiki.Spice.SPICEFactory
+ * @see QWiki.Spice.SpiceFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='SPICE'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
-public interface SPICEPackage extends EPackage {
+public interface SpicePackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -52,7 +51,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "QWiki.SPICE";
+	String eNS_PREFIX = "QWiki.Spice";
 
 	/**
 	 * The singleton instance of the package.
@@ -60,14 +59,14 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SPICEPackage eINSTANCE = QWiki.Spice.impl.SPICEPackageImpl.init();
+	SpicePackage eINSTANCE = QWiki.Spice.impl.SpicePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link QWiki.Spice.impl.SpiceElementImpl <em>Spice Element</em>}' class.
+	 * The meta object id for the '{@link QWiki.Spice.impl.SpiceElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.SpiceElementImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getSpiceElement()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getSpiceElement()
 	 * @generated
 	 */
 	int SPICE_ELEMENT = 1;
@@ -79,7 +78,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__EANNOTATIONS = KernelPackage.QWIKI_CONTAINER__EANNOTATIONS;
+	int SPICE_ELEMENT__EANNOTATIONS = QWikiPackage.QWIKI_CONTAINER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -88,7 +87,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNED_COMMENT = KernelPackage.QWIKI_CONTAINER__OWNED_COMMENT;
+	int SPICE_ELEMENT__OWNED_COMMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -97,7 +96,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNED_ELEMENT = KernelPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
+	int SPICE_ELEMENT__OWNED_ELEMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -106,7 +105,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNER = KernelPackage.QWIKI_CONTAINER__OWNER;
+	int SPICE_ELEMENT__OWNER = QWikiPackage.QWIKI_CONTAINER__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -115,7 +114,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__CLIENT_DEPENDENCY = KernelPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
+	int SPICE_ELEMENT__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -124,7 +123,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__NAME = KernelPackage.QWIKI_CONTAINER__NAME;
+	int SPICE_ELEMENT__NAME = QWikiPackage.QWIKI_CONTAINER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -133,7 +132,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__NAME_EXPRESSION = KernelPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
+	int SPICE_ELEMENT__NAME_EXPRESSION = QWikiPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -142,7 +141,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__NAMESPACE = KernelPackage.QWIKI_CONTAINER__NAMESPACE;
+	int SPICE_ELEMENT__NAMESPACE = QWikiPackage.QWIKI_CONTAINER__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -151,7 +150,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
+	int SPICE_ELEMENT__QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -160,7 +159,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__VISIBILITY = KernelPackage.QWIKI_CONTAINER__VISIBILITY;
+	int SPICE_ELEMENT__VISIBILITY = QWikiPackage.QWIKI_CONTAINER__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
@@ -169,7 +168,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNED_RULE = KernelPackage.QWIKI_CONTAINER__OWNED_RULE;
+	int SPICE_ELEMENT__OWNED_RULE = QWikiPackage.QWIKI_CONTAINER__OWNED_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
@@ -178,7 +177,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__ELEMENT_IMPORT = KernelPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
+	int SPICE_ELEMENT__ELEMENT_IMPORT = QWikiPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
@@ -187,7 +186,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__PACKAGE_IMPORT = KernelPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
+	int SPICE_ELEMENT__PACKAGE_IMPORT = QWikiPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
@@ -196,7 +195,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNED_MEMBER = KernelPackage.QWIKI_CONTAINER__OWNED_MEMBER;
+	int SPICE_ELEMENT__OWNED_MEMBER = QWikiPackage.QWIKI_CONTAINER__OWNED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
@@ -205,7 +204,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__IMPORTED_MEMBER = KernelPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
+	int SPICE_ELEMENT__IMPORTED_MEMBER = QWikiPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Member</b></em>' reference list.
@@ -214,16 +213,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__MEMBER = KernelPackage.QWIKI_CONTAINER__MEMBER;
-
-	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPICE_ELEMENT__ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 11;
+	int SPICE_ELEMENT__MEMBER = QWikiPackage.QWIKI_CONTAINER__MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -232,7 +222,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__UUID = KernelPackage.QWIKI_CONTAINER__UUID;
+	int SPICE_ELEMENT__UUID = QWikiPackage.QWIKI_CONTAINER__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -241,7 +231,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__CUSTOM_PROPERTY = KernelPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
+	int SPICE_ELEMENT__CUSTOM_PROPERTY = QWikiPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -250,34 +240,34 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__TAG = KernelPackage.QWIKI_CONTAINER__TAG;
+	int SPICE_ELEMENT__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__DISPLAY_NAME = KernelPackage.QWIKI_CONTAINER__DISPLAY_NAME;
+	int SPICE_ELEMENT__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__PURPOSE = KernelPackage.QWIKI_CONTAINER__PURPOSE;
+	int SPICE_ELEMENT__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__CONTENT = KernelPackage.QWIKI_CONTAINER__CONTENT;
+	int SPICE_ELEMENT__CONTENT = QWikiPackage.QWIKI_CONTAINER__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Role</b></em>' reference list.
@@ -286,7 +276,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__RESPONSIBLE_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
+	int SPICE_ELEMENT__RESPONSIBLE_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Accountable Role</b></em>' reference.
@@ -295,7 +285,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__ACCOUNTABLE_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
+	int SPICE_ELEMENT__ACCOUNTABLE_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Support Role</b></em>' reference list.
@@ -304,7 +294,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__SUPPORT_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
+	int SPICE_ELEMENT__SUPPORT_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Consulted Role</b></em>' reference list.
@@ -313,7 +303,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__CONSULTED_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
+	int SPICE_ELEMENT__CONSULTED_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Informed Role</b></em>' reference list.
@@ -322,7 +312,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__INFORMED_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 4;
+	int SPICE_ELEMENT__INFORMED_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Owning Process Reference Model</b></em>' container reference.
@@ -331,7 +321,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 5;
+	int SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Number</b></em>' attribute.
@@ -340,7 +330,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__NUMBER = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 6;
+	int SPICE_ELEMENT__NUMBER = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Facilitated Section</b></em>' reference list.
@@ -349,7 +339,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__FACILITATED_SECTION = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 7;
+	int SPICE_ELEMENT__FACILITATED_SECTION = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Owner Role</b></em>' reference.
@@ -358,7 +348,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__OWNER_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 8;
+	int SPICE_ELEMENT__OWNER_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Manager Role</b></em>' reference.
@@ -367,7 +357,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__MANAGER_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 9;
+	int SPICE_ELEMENT__MANAGER_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 9;
 
 	/**
 	 * The feature id for the '<em><b>Participant Role</b></em>' reference list.
@@ -376,7 +366,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__PARTICIPANT_ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 10;
+	int SPICE_ELEMENT__PARTICIPANT_ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 10;
 
 	/**
 	 * The feature id for the '<em><b>Role</b></em>' reference list.
@@ -385,16 +375,16 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT__ROLE = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 11;
+	int SPICE_ELEMENT__ROLE = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 11;
 
 	/**
-	 * The number of structural features of the '<em>Spice Element</em>' class.
+	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT_FEATURE_COUNT = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 12;
+	int SPICE_ELEMENT_FEATURE_COUNT = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 12;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -403,7 +393,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
+	int SPICE_ELEMENT___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -412,7 +402,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -421,7 +411,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -430,7 +420,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___ADD_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
+	int SPICE_ELEMENT___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -439,7 +429,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
+	int SPICE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -448,7 +438,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
+	int SPICE_ELEMENT___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -457,7 +447,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___DESTROY = KernelPackage.QWIKI_CONTAINER___DESTROY;
+	int SPICE_ELEMENT___DESTROY = QWikiPackage.QWIKI_CONTAINER___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -466,7 +456,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_KEYWORDS = KernelPackage.QWIKI_CONTAINER___GET_KEYWORDS;
+	int SPICE_ELEMENT___GET_KEYWORDS = QWikiPackage.QWIKI_CONTAINER___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -475,7 +465,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
+	int SPICE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -484,7 +474,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
+	int SPICE_ELEMENT___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -493,7 +483,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
+	int SPICE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -502,7 +492,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
+	int SPICE_ELEMENT___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -511,7 +501,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int SPICE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -520,7 +510,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int SPICE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -529,7 +519,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_MODEL = KernelPackage.QWIKI_CONTAINER___GET_MODEL;
+	int SPICE_ELEMENT___GET_MODEL = QWikiPackage.QWIKI_CONTAINER___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -538,7 +528,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
+	int SPICE_ELEMENT___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -547,7 +537,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
+	int SPICE_ELEMENT___GET_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -556,7 +546,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
+	int SPICE_ELEMENT___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -565,7 +555,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
+	int SPICE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -574,7 +564,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
+	int SPICE_ELEMENT___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -583,7 +573,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int SPICE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -592,7 +582,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int SPICE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -601,7 +591,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int SPICE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -610,7 +600,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
+	int SPICE_ELEMENT___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -619,7 +609,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int SPICE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -628,7 +618,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int SPICE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -637,7 +627,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
+	int SPICE_ELEMENT___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -646,7 +636,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___HAS_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
+	int SPICE_ELEMENT___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -655,7 +645,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
+	int SPICE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -664,7 +654,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int SPICE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -673,7 +663,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int SPICE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -682,7 +672,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int SPICE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -691,7 +681,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
+	int SPICE_ELEMENT___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -700,7 +690,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int SPICE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -709,7 +699,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int SPICE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -718,7 +708,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
+	int SPICE_ELEMENT___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -727,7 +717,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___MUST_BE_OWNED = KernelPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
+	int SPICE_ELEMENT___MUST_BE_OWNED = QWikiPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -736,7 +726,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -745,7 +735,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -754,7 +744,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -763,7 +753,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int SPICE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -772,7 +762,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
+	int SPICE_ELEMENT___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -781,7 +771,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_LABEL = KernelPackage.QWIKI_CONTAINER___GET_LABEL;
+	int SPICE_ELEMENT___GET_LABEL = QWikiPackage.QWIKI_CONTAINER___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -790,7 +780,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
+	int SPICE_ELEMENT___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -799,7 +789,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_NAMESPACE = KernelPackage.QWIKI_CONTAINER___GET_NAMESPACE;
+	int SPICE_ELEMENT___GET_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -808,7 +798,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___ALL_NAMESPACES = KernelPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
+	int SPICE_ELEMENT___ALL_NAMESPACES = QWikiPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -817,7 +807,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
+	int SPICE_ELEMENT___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -826,7 +816,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int SPICE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -835,7 +825,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
+	int SPICE_ELEMENT___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -844,7 +834,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___SEPARATOR = KernelPackage.QWIKI_CONTAINER___SEPARATOR;
+	int SPICE_ELEMENT___SEPARATOR = QWikiPackage.QWIKI_CONTAINER___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -853,7 +843,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
+	int SPICE_ELEMENT___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
 
 	/**
 	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
@@ -862,7 +852,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
@@ -871,7 +861,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
@@ -880,7 +870,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
+	int SPICE_ELEMENT___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Element Import</em>' operation.
@@ -889,7 +879,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
+	int SPICE_ELEMENT___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Create Package Import</em>' operation.
@@ -898,7 +888,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
+	int SPICE_ELEMENT___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Get Imported Elements</em>' operation.
@@ -907,7 +897,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_IMPORTED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
+	int SPICE_ELEMENT___GET_IMPORTED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Get Imported Packages</em>' operation.
@@ -916,7 +906,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_IMPORTED_PACKAGES = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
+	int SPICE_ELEMENT___GET_IMPORTED_PACKAGES = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Get Owned Members</em>' operation.
@@ -925,7 +915,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_OWNED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
+	int SPICE_ELEMENT___GET_OWNED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Exclude Collisions</em>' operation.
@@ -934,7 +924,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___EXCLUDE_COLLISIONS__ELIST = KernelPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
+	int SPICE_ELEMENT___EXCLUDE_COLLISIONS__ELIST = QWikiPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Names Of Member</em>' operation.
@@ -943,7 +933,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_NAMES_OF_MEMBER__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+	int SPICE_ELEMENT___GET_NAMES_OF_MEMBER__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Import Members</em>' operation.
@@ -952,7 +942,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___IMPORT_MEMBERS__ELIST = KernelPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
+	int SPICE_ELEMENT___IMPORT_MEMBERS__ELIST = QWikiPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Imported Members</em>' operation.
@@ -961,7 +951,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___GET_IMPORTED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
+	int SPICE_ELEMENT___GET_IMPORTED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
@@ -970,32 +960,41 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE = KernelPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
+	int SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE = QWikiPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT___OID_BASIC = KernelPackage.QWIKI_CONTAINER___OID_BASIC;
+	int SPICE_ELEMENT___OBJECT_ID = QWikiPackage.QWIKI_CONTAINER___OBJECT_ID;
 
 	/**
-	 * The number of operations of the '<em>Spice Element</em>' class.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPICE_ELEMENT_OPERATION_COUNT = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
+	int SPICE_ELEMENT___QWIKI_MODEL = QWikiPackage.QWIKI_CONTAINER___QWIKI_MODEL;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT_OPERATION_COUNT = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Spice.impl.BasePractiseImpl <em>Base Practise</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.BasePractiseImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getBasePractise()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getBasePractise()
 	 * @generated
 	 */
 	int BASE_PRACTISE = 0;
@@ -1145,15 +1144,6 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE__MEMBER = SPICE_ELEMENT__MEMBER;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE__ROLE = SPICE_ELEMENT__ROLE;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1181,7 +1171,7 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1190,7 +1180,7 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1199,7 +1189,7 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1334,7 +1324,7 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE__FACILITATED_OUTCOME = SPICE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Facilitated Work Product</b></em>' reference.
+	 * The feature id for the '<em><b>Facilitated Work Product</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1928,283 +1918,22 @@ public interface SPICEPackage extends EPackage {
 	int BASE_PRACTISE___MEMBERS_ARE_DISTINGUISHABLE = SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_PRACTISE___OID_BASIC = SPICE_ELEMENT___OID_BASIC;
+	int BASE_PRACTISE___QWIKI_MODEL = SPICE_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BASE_PRACTISE___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
+	int BASE_PRACTISE___OBJECT_ID = SPICE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Base Practise</em>' class.
@@ -2220,7 +1949,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.ProcessReferenceModelImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessReferenceModel()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessReferenceModel()
 	 * @generated
 	 */
 	int PROCESS_REFERENCE_MODEL = 2;
@@ -2232,7 +1961,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__EANNOTATIONS = KernelPackage.QWIKI_CONTAINER__EANNOTATIONS;
+	int PROCESS_REFERENCE_MODEL__EANNOTATIONS = QWikiPackage.QWIKI_CONTAINER__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -2241,7 +1970,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNED_COMMENT = KernelPackage.QWIKI_CONTAINER__OWNED_COMMENT;
+	int PROCESS_REFERENCE_MODEL__OWNED_COMMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -2250,7 +1979,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNED_ELEMENT = KernelPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
+	int PROCESS_REFERENCE_MODEL__OWNED_ELEMENT = QWikiPackage.QWIKI_CONTAINER__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -2259,7 +1988,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNER = KernelPackage.QWIKI_CONTAINER__OWNER;
+	int PROCESS_REFERENCE_MODEL__OWNER = QWikiPackage.QWIKI_CONTAINER__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -2268,7 +1997,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__CLIENT_DEPENDENCY = KernelPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
+	int PROCESS_REFERENCE_MODEL__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_CONTAINER__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2277,7 +2006,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__NAME = KernelPackage.QWIKI_CONTAINER__NAME;
+	int PROCESS_REFERENCE_MODEL__NAME = QWikiPackage.QWIKI_CONTAINER__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -2286,7 +2015,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__NAME_EXPRESSION = KernelPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
+	int PROCESS_REFERENCE_MODEL__NAME_EXPRESSION = QWikiPackage.QWIKI_CONTAINER__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -2295,7 +2024,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__NAMESPACE = KernelPackage.QWIKI_CONTAINER__NAMESPACE;
+	int PROCESS_REFERENCE_MODEL__NAMESPACE = QWikiPackage.QWIKI_CONTAINER__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -2304,7 +2033,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
+	int PROCESS_REFERENCE_MODEL__QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -2313,7 +2042,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__VISIBILITY = KernelPackage.QWIKI_CONTAINER__VISIBILITY;
+	int PROCESS_REFERENCE_MODEL__VISIBILITY = QWikiPackage.QWIKI_CONTAINER__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Owned Rule</b></em>' containment reference list.
@@ -2322,7 +2051,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNED_RULE = KernelPackage.QWIKI_CONTAINER__OWNED_RULE;
+	int PROCESS_REFERENCE_MODEL__OWNED_RULE = QWikiPackage.QWIKI_CONTAINER__OWNED_RULE;
 
 	/**
 	 * The feature id for the '<em><b>Element Import</b></em>' containment reference list.
@@ -2331,7 +2060,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__ELEMENT_IMPORT = KernelPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
+	int PROCESS_REFERENCE_MODEL__ELEMENT_IMPORT = QWikiPackage.QWIKI_CONTAINER__ELEMENT_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Package Import</b></em>' containment reference list.
@@ -2340,7 +2069,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__PACKAGE_IMPORT = KernelPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
+	int PROCESS_REFERENCE_MODEL__PACKAGE_IMPORT = QWikiPackage.QWIKI_CONTAINER__PACKAGE_IMPORT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Member</b></em>' reference list.
@@ -2349,7 +2078,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNED_MEMBER = KernelPackage.QWIKI_CONTAINER__OWNED_MEMBER;
+	int PROCESS_REFERENCE_MODEL__OWNED_MEMBER = QWikiPackage.QWIKI_CONTAINER__OWNED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Imported Member</b></em>' reference list.
@@ -2358,7 +2087,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__IMPORTED_MEMBER = KernelPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
+	int PROCESS_REFERENCE_MODEL__IMPORTED_MEMBER = QWikiPackage.QWIKI_CONTAINER__IMPORTED_MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Member</b></em>' reference list.
@@ -2367,7 +2096,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__MEMBER = KernelPackage.QWIKI_CONTAINER__MEMBER;
+	int PROCESS_REFERENCE_MODEL__MEMBER = QWikiPackage.QWIKI_CONTAINER__MEMBER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -2376,7 +2105,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__UUID = KernelPackage.QWIKI_CONTAINER__UUID;
+	int PROCESS_REFERENCE_MODEL__UUID = QWikiPackage.QWIKI_CONTAINER__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -2385,7 +2114,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__CUSTOM_PROPERTY = KernelPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
+	int PROCESS_REFERENCE_MODEL__CUSTOM_PROPERTY = QWikiPackage.QWIKI_CONTAINER__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -2394,34 +2123,34 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__TAG = KernelPackage.QWIKI_CONTAINER__TAG;
+	int PROCESS_REFERENCE_MODEL__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__DISPLAY_NAME = KernelPackage.QWIKI_CONTAINER__DISPLAY_NAME;
+	int PROCESS_REFERENCE_MODEL__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__PURPOSE = KernelPackage.QWIKI_CONTAINER__PURPOSE;
+	int PROCESS_REFERENCE_MODEL__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__CONTENT = KernelPackage.QWIKI_CONTAINER__CONTENT;
+	int PROCESS_REFERENCE_MODEL__CONTENT = QWikiPackage.QWIKI_CONTAINER__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Is Non Standard</b></em>' attribute.
@@ -2430,7 +2159,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__IS_NON_STANDARD = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
+	int PROCESS_REFERENCE_MODEL__IS_NON_STANDARD = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Prm Domain</b></em>' attribute.
@@ -2439,7 +2168,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__PRM_DOMAIN = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
+	int PROCESS_REFERENCE_MODEL__PRM_DOMAIN = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Owned Spice Element</b></em>' containment reference list.
@@ -2448,7 +2177,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
+	int PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Process Reference Model</em>' class.
@@ -2457,7 +2186,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL_FEATURE_COUNT = KernelPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
+	int PROCESS_REFERENCE_MODEL_FEATURE_COUNT = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -2466,7 +2195,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
+	int PROCESS_REFERENCE_MODEL___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -2475,7 +2204,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -2484,7 +2213,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -2493,7 +2222,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___ADD_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
+	int PROCESS_REFERENCE_MODEL___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -2502,7 +2231,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -2511,7 +2240,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
+	int PROCESS_REFERENCE_MODEL___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_CONTAINER___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -2520,7 +2249,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___DESTROY = KernelPackage.QWIKI_CONTAINER___DESTROY;
+	int PROCESS_REFERENCE_MODEL___DESTROY = QWikiPackage.QWIKI_CONTAINER___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -2529,7 +2258,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_KEYWORDS = KernelPackage.QWIKI_CONTAINER___GET_KEYWORDS;
+	int PROCESS_REFERENCE_MODEL___GET_KEYWORDS = QWikiPackage.QWIKI_CONTAINER___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -2538,7 +2267,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
+	int PROCESS_REFERENCE_MODEL___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -2547,7 +2276,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
+	int PROCESS_REFERENCE_MODEL___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -2556,7 +2285,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
+	int PROCESS_REFERENCE_MODEL___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -2565,7 +2294,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
+	int PROCESS_REFERENCE_MODEL___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -2574,7 +2303,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int PROCESS_REFERENCE_MODEL___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -2583,7 +2312,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -2592,7 +2321,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_MODEL = KernelPackage.QWIKI_CONTAINER___GET_MODEL;
+	int PROCESS_REFERENCE_MODEL___GET_MODEL = QWikiPackage.QWIKI_CONTAINER___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -2601,7 +2330,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
+	int PROCESS_REFERENCE_MODEL___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_CONTAINER___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2610,7 +2339,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
+	int PROCESS_REFERENCE_MODEL___GET_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -2619,7 +2348,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
+	int PROCESS_REFERENCE_MODEL___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -2628,7 +2357,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
+	int PROCESS_REFERENCE_MODEL___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -2637,7 +2366,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
+	int PROCESS_REFERENCE_MODEL___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_CONTAINER___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2646,7 +2375,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int PROCESS_REFERENCE_MODEL___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -2655,7 +2384,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int PROCESS_REFERENCE_MODEL___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -2664,7 +2393,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -2673,7 +2402,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
+	int PROCESS_REFERENCE_MODEL___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_CONTAINER___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2682,7 +2411,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int PROCESS_REFERENCE_MODEL___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -2691,7 +2420,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int PROCESS_REFERENCE_MODEL___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_CONTAINER___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -2700,7 +2429,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
+	int PROCESS_REFERENCE_MODEL___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -2709,7 +2438,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___HAS_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
+	int PROCESS_REFERENCE_MODEL___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -2718,7 +2447,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
+	int PROCESS_REFERENCE_MODEL___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_CONTAINER___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -2727,7 +2456,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -2736,7 +2465,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -2745,7 +2474,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -2754,7 +2483,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
+	int PROCESS_REFERENCE_MODEL___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_CONTAINER___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -2763,7 +2492,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int PROCESS_REFERENCE_MODEL___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_CONTAINER___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -2772,7 +2501,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int PROCESS_REFERENCE_MODEL___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_CONTAINER___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -2781,7 +2510,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
+	int PROCESS_REFERENCE_MODEL___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -2790,7 +2519,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___MUST_BE_OWNED = KernelPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
+	int PROCESS_REFERENCE_MODEL___MUST_BE_OWNED = QWikiPackage.QWIKI_CONTAINER___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -2799,7 +2528,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -2808,7 +2537,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -2817,7 +2546,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -2826,7 +2555,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int PROCESS_REFERENCE_MODEL___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -2835,7 +2564,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
+	int PROCESS_REFERENCE_MODEL___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -2844,7 +2573,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_LABEL = KernelPackage.QWIKI_CONTAINER___GET_LABEL;
+	int PROCESS_REFERENCE_MODEL___GET_LABEL = QWikiPackage.QWIKI_CONTAINER___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -2853,7 +2582,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
+	int PROCESS_REFERENCE_MODEL___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_CONTAINER___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -2862,7 +2591,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_NAMESPACE = KernelPackage.QWIKI_CONTAINER___GET_NAMESPACE;
+	int PROCESS_REFERENCE_MODEL___GET_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -2871,7 +2600,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___ALL_NAMESPACES = KernelPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
+	int PROCESS_REFERENCE_MODEL___ALL_NAMESPACES = QWikiPackage.QWIKI_CONTAINER___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -2880,7 +2609,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
+	int PROCESS_REFERENCE_MODEL___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_CONTAINER___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -2889,7 +2618,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int PROCESS_REFERENCE_MODEL___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_CONTAINER___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -2898,7 +2627,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_QUALIFIED_NAME = KernelPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
+	int PROCESS_REFERENCE_MODEL___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_CONTAINER___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -2907,7 +2636,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___SEPARATOR = KernelPackage.QWIKI_CONTAINER___SEPARATOR;
+	int PROCESS_REFERENCE_MODEL___SEPARATOR = QWikiPackage.QWIKI_CONTAINER___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -2916,7 +2645,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
+	int PROCESS_REFERENCE_MODEL___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_CONTAINER___GET_CLIENT_DEPENDENCIES;
 
 	/**
 	 * The operation id for the '<em>Validate Members Distinguishable</em>' operation.
@@ -2925,7 +2654,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_MEMBERS_DISTINGUISHABLE__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Self</em>' operation.
@@ -2934,7 +2663,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Cannot Import Owned Members</em>' operation.
@@ -2943,7 +2672,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
+	int PROCESS_REFERENCE_MODEL___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_CONTAINER___VALIDATE_CANNOT_IMPORT_OWNED_MEMBERS__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Element Import</em>' operation.
@@ -2952,7 +2681,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
+	int PROCESS_REFERENCE_MODEL___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_ELEMENT_IMPORT__PACKAGEABLEELEMENT_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Create Package Import</em>' operation.
@@ -2961,7 +2690,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = KernelPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
+	int PROCESS_REFERENCE_MODEL___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND = QWikiPackage.QWIKI_CONTAINER___CREATE_PACKAGE_IMPORT__PACKAGE_VISIBILITYKIND;
 
 	/**
 	 * The operation id for the '<em>Get Imported Elements</em>' operation.
@@ -2970,7 +2699,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_ELEMENTS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
+	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_ELEMENTS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Get Imported Packages</em>' operation.
@@ -2979,7 +2708,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_PACKAGES = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
+	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_PACKAGES = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Get Owned Members</em>' operation.
@@ -2988,7 +2717,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_OWNED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
+	int PROCESS_REFERENCE_MODEL___GET_OWNED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_OWNED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Exclude Collisions</em>' operation.
@@ -2997,7 +2726,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___EXCLUDE_COLLISIONS__ELIST = KernelPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
+	int PROCESS_REFERENCE_MODEL___EXCLUDE_COLLISIONS__ELIST = QWikiPackage.QWIKI_CONTAINER___EXCLUDE_COLLISIONS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Names Of Member</em>' operation.
@@ -3006,7 +2735,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_NAMES_OF_MEMBER__NAMEDELEMENT = KernelPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
+	int PROCESS_REFERENCE_MODEL___GET_NAMES_OF_MEMBER__NAMEDELEMENT = QWikiPackage.QWIKI_CONTAINER___GET_NAMES_OF_MEMBER__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Import Members</em>' operation.
@@ -3015,7 +2744,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___IMPORT_MEMBERS__ELIST = KernelPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
+	int PROCESS_REFERENCE_MODEL___IMPORT_MEMBERS__ELIST = QWikiPackage.QWIKI_CONTAINER___IMPORT_MEMBERS__ELIST;
 
 	/**
 	 * The operation id for the '<em>Get Imported Members</em>' operation.
@@ -3024,7 +2753,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_MEMBERS = KernelPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
+	int PROCESS_REFERENCE_MODEL___GET_IMPORTED_MEMBERS = QWikiPackage.QWIKI_CONTAINER___GET_IMPORTED_MEMBERS;
 
 	/**
 	 * The operation id for the '<em>Members Are Distinguishable</em>' operation.
@@ -3033,295 +2762,34 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___MEMBERS_ARE_DISTINGUISHABLE = KernelPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
+	int PROCESS_REFERENCE_MODEL___MEMBERS_ARE_DISTINGUISHABLE = QWikiPackage.QWIKI_CONTAINER___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___OID_BASIC = KernelPackage.QWIKI_CONTAINER___OID_BASIC;
+	int PROCESS_REFERENCE_MODEL___QWIKI_MODEL = QWikiPackage.QWIKI_CONTAINER___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id For Domain</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
+	int PROCESS_REFERENCE_MODEL___OBJECT_ID_FOR_DOMAIN = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Oid For Domain</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_REFERENCE_MODEL___OID = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
+	int PROCESS_REFERENCE_MODEL___OBJECT_ID = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Process Reference Model</em>' class.
@@ -3330,14 +2798,14 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_REFERENCE_MODEL_OPERATION_COUNT = KernelPackage.QWIKI_CONTAINER_OPERATION_COUNT + 2;
+	int PROCESS_REFERENCE_MODEL_OPERATION_COUNT = QWikiPackage.QWIKI_CONTAINER_OPERATION_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Spice.impl.ProcessImpl <em>Process</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.ProcessImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcess()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getProcess()
 	 * @generated
 	 */
 	int PROCESS = 3;
@@ -3487,15 +2955,6 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS__MEMBER = SPICE_ELEMENT__MEMBER;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS__ROLE = SPICE_ELEMENT__ROLE;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3523,7 +2982,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3532,7 +2991,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3541,7 +3000,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4288,283 +3747,22 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS___MEMBERS_ARE_DISTINGUISHABLE = SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS___OID_BASIC = SPICE_ELEMENT___OID_BASIC;
+	int PROCESS___QWIKI_MODEL = SPICE_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
+	int PROCESS___OBJECT_ID = SPICE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Process</em>' class.
@@ -4580,7 +3778,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.ProcessGroupImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessGroup()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessGroup()
 	 * @generated
 	 */
 	int PROCESS_GROUP = 4;
@@ -4730,15 +3928,6 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS_GROUP__MEMBER = SPICE_ELEMENT__MEMBER;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP__ROLE = SPICE_ELEMENT__ROLE;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4766,7 +3955,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS_GROUP__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4775,7 +3964,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS_GROUP__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4784,7 +3973,7 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS_GROUP__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5495,283 +4684,22 @@ public interface SPICEPackage extends EPackage {
 	int PROCESS_GROUP___MEMBERS_ARE_DISTINGUISHABLE = SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_GROUP___OID_BASIC = SPICE_ELEMENT___OID_BASIC;
+	int PROCESS_GROUP___QWIKI_MODEL = SPICE_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESS_GROUP___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
+	int PROCESS_GROUP___OBJECT_ID = SPICE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Process Group</em>' class.
@@ -5787,7 +4715,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.OutcomeImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getOutcome()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getOutcome()
 	 * @generated
 	 */
 	int OUTCOME = 5;
@@ -5799,7 +4727,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__EANNOTATIONS = KernelPackage.I1_8N_NAMED_ELEMENT__EANNOTATIONS;
+	int OUTCOME__EANNOTATIONS = QWikiPackage.L1_0N_NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -5808,7 +4736,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__OWNED_COMMENT = KernelPackage.I1_8N_NAMED_ELEMENT__OWNED_COMMENT;
+	int OUTCOME__OWNED_COMMENT = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -5817,7 +4745,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__OWNED_ELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT__OWNED_ELEMENT;
+	int OUTCOME__OWNED_ELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -5826,7 +4754,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__OWNER = KernelPackage.I1_8N_NAMED_ELEMENT__OWNER;
+	int OUTCOME__OWNER = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -5835,7 +4763,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__CLIENT_DEPENDENCY = KernelPackage.I1_8N_NAMED_ELEMENT__CLIENT_DEPENDENCY;
+	int OUTCOME__CLIENT_DEPENDENCY = QWikiPackage.L1_0N_NAMED_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -5844,7 +4772,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__NAME = KernelPackage.I1_8N_NAMED_ELEMENT__NAME;
+	int OUTCOME__NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -5853,7 +4781,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__NAME_EXPRESSION = KernelPackage.I1_8N_NAMED_ELEMENT__NAME_EXPRESSION;
+	int OUTCOME__NAME_EXPRESSION = QWikiPackage.L1_0N_NAMED_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -5862,7 +4790,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT__NAMESPACE;
+	int OUTCOME__NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -5871,7 +4799,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__QUALIFIED_NAME = KernelPackage.I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
+	int OUTCOME__QUALIFIED_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -5880,7 +4808,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__VISIBILITY = KernelPackage.I1_8N_NAMED_ELEMENT__VISIBILITY;
+	int OUTCOME__VISIBILITY = QWikiPackage.L1_0N_NAMED_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -5889,7 +4817,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__UUID = KernelPackage.I1_8N_NAMED_ELEMENT__UUID;
+	int OUTCOME__UUID = QWikiPackage.L1_0N_NAMED_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -5898,7 +4826,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__CUSTOM_PROPERTY = KernelPackage.I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY;
+	int OUTCOME__CUSTOM_PROPERTY = QWikiPackage.L1_0N_NAMED_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -5907,16 +4835,16 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__TAG = KernelPackage.I1_8N_NAMED_ELEMENT__TAG;
+	int OUTCOME__TAG = QWikiPackage.L1_0N_NAMED_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__DISPLAY_NAME = KernelPackage.I1_8N_NAMED_ELEMENT__DISPLAY_NAME;
+	int OUTCOME__DISPLAY_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Facilitating Base Practise</b></em>' reference list.
@@ -5925,7 +4853,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__FACILITATING_BASE_PRACTISE = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int OUTCOME__FACILITATING_BASE_PRACTISE = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Required Workproduct</b></em>' reference list.
@@ -5934,7 +4862,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__REQUIRED_WORKPRODUCT = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int OUTCOME__REQUIRED_WORKPRODUCT = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Resulting Workproduct</b></em>' reference list.
@@ -5943,7 +4871,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__RESULTING_WORKPRODUCT = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int OUTCOME__RESULTING_WORKPRODUCT = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Owning Process</b></em>' container reference.
@@ -5952,7 +4880,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME__OWNING_PROCESS = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int OUTCOME__OWNING_PROCESS = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Outcome</em>' class.
@@ -5961,7 +4889,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME_FEATURE_COUNT = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int OUTCOME_FEATURE_COUNT = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -5970,7 +4898,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_EANNOTATION__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int OUTCOME___GET_EANNOTATION__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -5979,7 +4907,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int OUTCOME___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -5988,7 +4916,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int OUTCOME___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -5997,7 +4925,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___ADD_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___ADD_KEYWORD__STRING;
+	int OUTCOME___ADD_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -6006,7 +4934,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int OUTCOME___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -6015,7 +4943,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___CREATE_EANNOTATION__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+	int OUTCOME___CREATE_EANNOTATION__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -6024,7 +4952,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___DESTROY = KernelPackage.I1_8N_NAMED_ELEMENT___DESTROY;
+	int OUTCOME___DESTROY = QWikiPackage.L1_0N_NAMED_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -6033,7 +4961,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_KEYWORDS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_KEYWORDS;
+	int OUTCOME___GET_KEYWORDS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -6042,7 +4970,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int OUTCOME___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -6051,7 +4979,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLICABLE_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int OUTCOME___GET_APPLICABLE_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -6060,7 +4988,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int OUTCOME___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -6069,7 +4997,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLIED_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int OUTCOME___GET_APPLIED_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -6078,7 +5006,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int OUTCOME___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -6087,7 +5015,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int OUTCOME___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -6096,7 +5024,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_MODEL = KernelPackage.I1_8N_NAMED_ELEMENT___GET_MODEL;
+	int OUTCOME___GET_MODEL = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -6105,7 +5033,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_NEAREST_PACKAGE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+	int OUTCOME___GET_NEAREST_PACKAGE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -6114,7 +5042,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS;
+	int OUTCOME___GET_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -6123,7 +5051,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int OUTCOME___GET_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -6132,7 +5060,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int OUTCOME___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -6141,7 +5069,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_REQUIRED_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int OUTCOME___GET_REQUIRED_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -6150,7 +5078,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int OUTCOME___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -6159,7 +5087,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int OUTCOME___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -6168,7 +5096,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int OUTCOME___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -6177,7 +5105,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_STEREOTYPE_APPLICATIONS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int OUTCOME___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -6186,7 +5114,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int OUTCOME___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -6195,7 +5123,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int OUTCOME___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -6204,7 +5132,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int OUTCOME___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -6213,7 +5141,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___HAS_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___HAS_KEYWORD__STRING;
+	int OUTCOME___HAS_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -6222,7 +5150,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int OUTCOME___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -6231,7 +5159,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int OUTCOME___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -6240,7 +5168,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int OUTCOME___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -6249,7 +5177,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int OUTCOME___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -6258,7 +5186,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___REMOVE_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+	int OUTCOME___REMOVE_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -6267,7 +5195,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.I1_8N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int OUTCOME___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.L1_0N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -6276,7 +5204,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int OUTCOME___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -6285,7 +5213,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___ALL_OWNED_ELEMENTS = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+	int OUTCOME___ALL_OWNED_ELEMENTS = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -6294,7 +5222,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___MUST_BE_OWNED = KernelPackage.I1_8N_NAMED_ELEMENT___MUST_BE_OWNED;
+	int OUTCOME___MUST_BE_OWNED = QWikiPackage.L1_0N_NAMED_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -6303,7 +5231,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int OUTCOME___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -6312,7 +5240,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int OUTCOME___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -6321,7 +5249,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int OUTCOME___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -6330,7 +5258,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int OUTCOME___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -6339,7 +5267,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___CREATE_USAGE__NAMEDELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int OUTCOME___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -6348,7 +5276,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_LABEL = KernelPackage.I1_8N_NAMED_ELEMENT___GET_LABEL;
+	int OUTCOME___GET_LABEL = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -6357,7 +5285,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_LABEL__BOOLEAN = KernelPackage.I1_8N_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+	int OUTCOME___GET_LABEL__BOOLEAN = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -6366,7 +5294,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_NAMESPACE;
+	int OUTCOME___GET_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -6375,7 +5303,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___ALL_NAMESPACES = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+	int OUTCOME___ALL_NAMESPACES = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -6384,7 +5312,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___ALL_OWNING_PACKAGES = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+	int OUTCOME___ALL_OWNING_PACKAGES = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -6393,7 +5321,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int OUTCOME___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -6402,7 +5330,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_QUALIFIED_NAME = KernelPackage.I1_8N_NAMED_ELEMENT___GET_QUALIFIED_NAME;
+	int OUTCOME___GET_QUALIFIED_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -6411,7 +5339,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___SEPARATOR = KernelPackage.I1_8N_NAMED_ELEMENT___SEPARATOR;
+	int OUTCOME___SEPARATOR = QWikiPackage.L1_0N_NAMED_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -6420,286 +5348,25 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int OUTCOME___GET_CLIENT_DEPENDENCIES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___OID_BASIC = KernelPackage.I1_8N_NAMED_ELEMENT___OID_BASIC;
+	int OUTCOME___QWIKI_MODEL = QWikiPackage.L1_0N_NAMED_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTCOME___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int OUTCOME___OBJECT_ID = QWikiPackage.L1_0N_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Outcome</em>' class.
@@ -6708,14 +5375,14 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTCOME_OPERATION_COUNT = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int OUTCOME_OPERATION_COUNT = QWikiPackage.L1_0N_NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Spice.impl.WorkProductImpl <em>Work Product</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.WorkProductImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProduct()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProduct()
 	 * @generated
 	 */
 	int WORK_PRODUCT = 6;
@@ -6865,15 +5532,6 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__MEMBER = SPICE_ELEMENT__MEMBER;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT__ROLE = SPICE_ELEMENT__ROLE;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6901,7 +5559,7 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6910,7 +5568,7 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6919,7 +5577,7 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7045,7 +5703,7 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = SPICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference.
+	 * The feature id for the '<em><b>Characteristic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7072,7 +5730,7 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT__FACILITATED_PROCESS = SPICE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Facilitating Process</b></em>' reference.
+	 * The feature id for the '<em><b>Facilitating Process</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7720,283 +6378,22 @@ public interface SPICEPackage extends EPackage {
 	int WORK_PRODUCT___MEMBERS_ARE_DISTINGUISHABLE = SPICE_ELEMENT___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT___OID_BASIC = SPICE_ELEMENT___OID_BASIC;
+	int WORK_PRODUCT___QWIKI_MODEL = SPICE_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WORK_PRODUCT___OID = SPICE_ELEMENT_OPERATION_COUNT + 0;
+	int WORK_PRODUCT___OBJECT_ID = SPICE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Work Product</em>' class.
@@ -8012,7 +6409,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.GenericWorkProductImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getGenericWorkProduct()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getGenericWorkProduct()
 	 * @generated
 	 */
 	int GENERIC_WORK_PRODUCT = 7;
@@ -8162,15 +6559,6 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__MEMBER = WORK_PRODUCT__MEMBER;
 
 	/**
-	 * The feature id for the '<em><b>Role</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT__ROLE = WORK_PRODUCT__ROLE;
-
-	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8198,7 +6586,7 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__TAG = WORK_PRODUCT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * The feature id for the '<em><b>Display Name</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8207,7 +6595,7 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__DISPLAY_NAME = WORK_PRODUCT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8216,7 +6604,7 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__PURPOSE = WORK_PRODUCT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8342,7 +6730,7 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference.
+	 * The feature id for the '<em><b>Characteristic</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8369,7 +6757,7 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__FACILITATED_PROCESS = WORK_PRODUCT__FACILITATED_PROCESS;
 
 	/**
-	 * The feature id for the '<em><b>Facilitating Process</b></em>' reference.
+	 * The feature id for the '<em><b>Facilitating Process</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -9026,283 +7414,22 @@ public interface SPICEPackage extends EPackage {
 	int GENERIC_WORK_PRODUCT___MEMBERS_ARE_DISTINGUISHABLE = WORK_PRODUCT___MEMBERS_ARE_DISTINGUISHABLE;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT___OID_BASIC = WORK_PRODUCT___OID_BASIC;
+	int GENERIC_WORK_PRODUCT___QWIKI_MODEL = WORK_PRODUCT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_WORK_PRODUCT___OID = WORK_PRODUCT___OID;
+	int GENERIC_WORK_PRODUCT___OBJECT_ID = WORK_PRODUCT___OBJECT_ID;
 
 	/**
 	 * The number of operations of the '<em>Generic Work Product</em>' class.
@@ -9318,7 +7445,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.WorkProductRelationshipImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductRelationship()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductRelationship()
 	 * @generated
 	 */
 	int WORK_PRODUCT_RELATIONSHIP = 8;
@@ -9330,7 +7457,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__EANNOTATIONS = KernelPackage.QWIKI_RELATIONSHIP__EANNOTATIONS;
+	int WORK_PRODUCT_RELATIONSHIP__EANNOTATIONS = QWikiPackage.QWIKI_RELATIONSHIP__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -9339,7 +7466,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__OWNED_COMMENT = KernelPackage.QWIKI_RELATIONSHIP__OWNED_COMMENT;
+	int WORK_PRODUCT_RELATIONSHIP__OWNED_COMMENT = QWikiPackage.QWIKI_RELATIONSHIP__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -9348,7 +7475,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__OWNED_ELEMENT = KernelPackage.QWIKI_RELATIONSHIP__OWNED_ELEMENT;
+	int WORK_PRODUCT_RELATIONSHIP__OWNED_ELEMENT = QWikiPackage.QWIKI_RELATIONSHIP__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -9357,7 +7484,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__OWNER = KernelPackage.QWIKI_RELATIONSHIP__OWNER;
+	int WORK_PRODUCT_RELATIONSHIP__OWNER = QWikiPackage.QWIKI_RELATIONSHIP__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Related Element</b></em>' reference list.
@@ -9366,7 +7493,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__RELATED_ELEMENT = KernelPackage.QWIKI_RELATIONSHIP__RELATED_ELEMENT;
+	int WORK_PRODUCT_RELATIONSHIP__RELATED_ELEMENT = QWikiPackage.QWIKI_RELATIONSHIP__RELATED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference list.
@@ -9375,7 +7502,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__SOURCE = KernelPackage.QWIKI_RELATIONSHIP__SOURCE;
+	int WORK_PRODUCT_RELATIONSHIP__SOURCE = QWikiPackage.QWIKI_RELATIONSHIP__SOURCE;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference list.
@@ -9384,7 +7511,34 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__TARGET = KernelPackage.QWIKI_RELATIONSHIP__TARGET;
+	int WORK_PRODUCT_RELATIONSHIP__TARGET = QWikiPackage.QWIKI_RELATIONSHIP__TARGET;
+
+	/**
+	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP__UUID = QWikiPackage.QWIKI_RELATIONSHIP__UUID;
+
+	/**
+	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP__CUSTOM_PROPERTY = QWikiPackage.QWIKI_RELATIONSHIP__CUSTOM_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP__TAG = QWikiPackage.QWIKI_RELATIONSHIP__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Relationship Type</b></em>' reference.
@@ -9393,7 +7547,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__RELATIONSHIP_TYPE = KernelPackage.QWIKI_RELATIONSHIP__RELATIONSHIP_TYPE;
+	int WORK_PRODUCT_RELATIONSHIP__RELATIONSHIP_TYPE = QWikiPackage.QWIKI_RELATIONSHIP__RELATIONSHIP_TYPE;
 
 	/**
 	 * The feature id for the '<em><b>Linking Work Product</b></em>' reference.
@@ -9402,7 +7556,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT = KernelPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 0;
+	int WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT = QWikiPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Work Product Relationship Type</b></em>' reference.
@@ -9411,7 +7565,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE = KernelPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 1;
+	int WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE = QWikiPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Linked Work Product</b></em>' reference list.
@@ -9420,7 +7574,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT = KernelPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 2;
+	int WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT = QWikiPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Work Product Relationship</em>' class.
@@ -9429,7 +7583,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_FEATURE_COUNT = KernelPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 3;
+	int WORK_PRODUCT_RELATIONSHIP_FEATURE_COUNT = QWikiPackage.QWIKI_RELATIONSHIP_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -9438,7 +7592,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_EANNOTATION__STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_EANNOTATION__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -9447,7 +7601,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -9456,7 +7610,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -9465,7 +7619,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___ADD_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP___ADD_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -9474,7 +7628,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___APPLY_STEREOTYPE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -9483,7 +7637,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_RELATIONSHIP___CREATE_EANNOTATION__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_RELATIONSHIP___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -9492,7 +7646,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___DESTROY = KernelPackage.QWIKI_RELATIONSHIP___DESTROY;
+	int WORK_PRODUCT_RELATIONSHIP___DESTROY = QWikiPackage.QWIKI_RELATIONSHIP___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -9501,7 +7655,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_KEYWORDS = KernelPackage.QWIKI_RELATIONSHIP___GET_KEYWORDS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_KEYWORDS = QWikiPackage.QWIKI_RELATIONSHIP___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -9510,7 +7664,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLICABLE_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -9519,7 +7673,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLICABLE_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -9528,7 +7682,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLIED_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -9537,7 +7691,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLIED_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -9546,7 +7700,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -9555,7 +7709,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -9564,7 +7718,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_MODEL = KernelPackage.QWIKI_RELATIONSHIP___GET_MODEL;
+	int WORK_PRODUCT_RELATIONSHIP___GET_MODEL = QWikiPackage.QWIKI_RELATIONSHIP___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -9573,7 +7727,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_RELATIONSHIP___GET_NEAREST_PACKAGE;
+	int WORK_PRODUCT_RELATIONSHIP___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_RELATIONSHIP___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -9582,7 +7736,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP___GET_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -9591,7 +7745,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP___GET_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -9600,7 +7754,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_REQUIRED_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -9609,7 +7763,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP___GET_REQUIRED_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -9618,7 +7772,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -9627,7 +7781,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -9636,7 +7790,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -9645,7 +7799,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_RELATIONSHIP___GET_STEREOTYPE_APPLICATIONS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_RELATIONSHIP___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -9654,7 +7808,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -9663,7 +7817,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -9672,7 +7826,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP___GET_VALUE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -9681,7 +7835,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___HAS_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP___HAS_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -9690,7 +7844,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP___HAS_VALUE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -9699,7 +7853,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -9708,7 +7862,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -9717,7 +7871,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -9726,7 +7880,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP___REMOVE_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -9735,7 +7889,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_RELATIONSHIP___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int WORK_PRODUCT_RELATIONSHIP___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_RELATIONSHIP___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -9744,7 +7898,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -9753,7 +7907,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_RELATIONSHIP___ALL_OWNED_ELEMENTS;
+	int WORK_PRODUCT_RELATIONSHIP___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_RELATIONSHIP___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -9762,7 +7916,16 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP___MUST_BE_OWNED = KernelPackage.QWIKI_RELATIONSHIP___MUST_BE_OWNED;
+	int WORK_PRODUCT_RELATIONSHIP___MUST_BE_OWNED = QWikiPackage.QWIKI_RELATIONSHIP___MUST_BE_OWNED;
+
+	/**
+	 * The operation id for the '<em>Object Id</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP___OBJECT_ID = QWikiPackage.QWIKI_RELATIONSHIP___OBJECT_ID;
 
 	/**
 	 * The number of operations of the '<em>Work Product Relationship</em>' class.
@@ -9771,14 +7934,14 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_OPERATION_COUNT = KernelPackage.QWIKI_RELATIONSHIP_OPERATION_COUNT + 0;
+	int WORK_PRODUCT_RELATIONSHIP_OPERATION_COUNT = QWikiPackage.QWIKI_RELATIONSHIP_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Spice.impl.WorkProductRelationshipTypeImpl <em>Work Product Relationship Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.impl.WorkProductRelationshipTypeImpl
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductRelationshipType()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductRelationshipType()
 	 * @generated
 	 */
 	int WORK_PRODUCT_RELATIONSHIP_TYPE = 9;
@@ -9790,7 +7953,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__EANNOTATIONS = KernelPackage.QWIKI_RELATIONSHIP_TYPE__EANNOTATIONS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__EANNOTATIONS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -9799,7 +7962,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNED_COMMENT = KernelPackage.QWIKI_RELATIONSHIP_TYPE__OWNED_COMMENT;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNED_COMMENT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -9808,7 +7971,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNED_ELEMENT = KernelPackage.QWIKI_RELATIONSHIP_TYPE__OWNED_ELEMENT;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNED_ELEMENT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -9817,7 +7980,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNER = KernelPackage.QWIKI_RELATIONSHIP_TYPE__OWNER;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__OWNER = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -9826,7 +7989,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__CLIENT_DEPENDENCY = KernelPackage.QWIKI_RELATIONSHIP_TYPE__CLIENT_DEPENDENCY;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__CLIENT_DEPENDENCY = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -9835,7 +7998,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAME = KernelPackage.QWIKI_RELATIONSHIP_TYPE__NAME;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAME = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -9844,7 +8007,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAME_EXPRESSION = KernelPackage.QWIKI_RELATIONSHIP_TYPE__NAME_EXPRESSION;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAME_EXPRESSION = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -9853,7 +8016,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAMESPACE = KernelPackage.QWIKI_RELATIONSHIP_TYPE__NAMESPACE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__NAMESPACE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -9862,7 +8025,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__QUALIFIED_NAME = KernelPackage.QWIKI_RELATIONSHIP_TYPE__QUALIFIED_NAME;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__QUALIFIED_NAME = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -9871,7 +8034,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__VISIBILITY = KernelPackage.QWIKI_RELATIONSHIP_TYPE__VISIBILITY;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__VISIBILITY = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -9880,7 +8043,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__UUID = KernelPackage.QWIKI_RELATIONSHIP_TYPE__UUID;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__UUID = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -9889,7 +8052,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__CUSTOM_PROPERTY = KernelPackage.QWIKI_RELATIONSHIP_TYPE__CUSTOM_PROPERTY;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__CUSTOM_PROPERTY = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -9898,7 +8061,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__TAG = KernelPackage.QWIKI_RELATIONSHIP_TYPE__TAG;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__TAG = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
@@ -9907,7 +8070,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__RELATIONSHIP = KernelPackage.QWIKI_RELATIONSHIP_TYPE__RELATIONSHIP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__RELATIONSHIP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__RELATIONSHIP;
 
 	/**
 	 * The feature id for the '<em><b>Work Product Relationship</b></em>' reference list.
@@ -9916,7 +8079,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP = KernelPackage.QWIKI_RELATIONSHIP_TYPE_FEATURE_COUNT + 0;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Work Product Relationship Type</em>' class.
@@ -9925,7 +8088,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE_FEATURE_COUNT = KernelPackage.QWIKI_RELATIONSHIP_TYPE_FEATURE_COUNT + 1;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE_FEATURE_COUNT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -9934,7 +8097,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_EANNOTATION__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_EANNOTATION__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -9943,7 +8106,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -9952,7 +8115,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -9961,7 +8124,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___ADD_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___ADD_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -9970,7 +8133,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___APPLY_STEREOTYPE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -9979,7 +8142,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_EANNOTATION__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -9988,7 +8151,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___DESTROY = KernelPackage.QWIKI_RELATIONSHIP_TYPE___DESTROY;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___DESTROY = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -9997,7 +8160,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_KEYWORDS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_KEYWORDS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_KEYWORDS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -10006,7 +8169,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -10015,7 +8178,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -10024,7 +8187,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -10033,7 +8196,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -10042,7 +8205,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -10051,7 +8214,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -10060,7 +8223,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_MODEL = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_MODEL;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_MODEL = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -10069,7 +8232,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_NEAREST_PACKAGE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -10078,7 +8241,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -10087,7 +8250,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -10096,7 +8259,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPE__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -10105,7 +8268,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -10114,7 +8277,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -10123,7 +8286,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -10132,7 +8295,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -10141,7 +8304,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATIONS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -10150,7 +8313,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -10159,7 +8322,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -10168,7 +8331,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_VALUE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -10177,7 +8340,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___HAS_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___HAS_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -10186,7 +8349,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___HAS_VALUE__STEREOTYPE_STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -10195,7 +8358,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -10204,7 +8367,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -10213,7 +8376,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -10222,7 +8385,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_RELATIONSHIP_TYPE___REMOVE_KEYWORD__STRING;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -10231,7 +8394,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_RELATIONSHIP_TYPE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -10240,7 +8403,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -10249,7 +8412,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_RELATIONSHIP_TYPE___ALL_OWNED_ELEMENTS;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -10258,7 +8421,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___MUST_BE_OWNED = KernelPackage.QWIKI_RELATIONSHIP_TYPE___MUST_BE_OWNED;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___MUST_BE_OWNED = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -10267,7 +8430,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -10276,7 +8439,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -10285,7 +8448,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -10294,7 +8457,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -10303,7 +8466,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_USAGE__NAMEDELEMENT = KernelPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_USAGE__NAMEDELEMENT;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -10312,7 +8475,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_LABEL = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_LABEL;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_LABEL = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -10321,7 +8484,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_LABEL__BOOLEAN = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_LABEL__BOOLEAN;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_LABEL__BOOLEAN = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -10330,7 +8493,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_NAMESPACE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_NAMESPACE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_NAMESPACE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -10339,7 +8502,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_NAMESPACES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___ALL_NAMESPACES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_NAMESPACES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -10348,7 +8511,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_OWNING_PACKAGES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___ALL_OWNING_PACKAGES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___ALL_OWNING_PACKAGES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -10357,7 +8520,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.QWIKI_RELATIONSHIP_TYPE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -10366,7 +8529,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_QUALIFIED_NAME = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_QUALIFIED_NAME;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_QUALIFIED_NAME = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -10375,7 +8538,7 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___SEPARATOR = KernelPackage.QWIKI_RELATIONSHIP_TYPE___SEPARATOR;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___SEPARATOR = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -10384,16 +8547,25 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_CLIENT_DEPENDENCIES = KernelPackage.QWIKI_RELATIONSHIP_TYPE___GET_CLIENT_DEPENDENCIES;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___GET_CLIENT_DEPENDENCIES = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE___OID_BASIC = KernelPackage.QWIKI_RELATIONSHIP_TYPE___OID_BASIC;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___OBJECT_ID = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___OBJECT_ID;
+
+	/**
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP_TYPE___QWIKI_MODEL = QWikiPackage.QWIKI_RELATIONSHIP_TYPE___QWIKI_MODEL;
 
 	/**
 	 * The number of operations of the '<em>Work Product Relationship Type</em>' class.
@@ -10402,14 +8574,14 @@ public interface SPICEPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int WORK_PRODUCT_RELATIONSHIP_TYPE_OPERATION_COUNT = KernelPackage.QWIKI_RELATIONSHIP_TYPE_OPERATION_COUNT + 0;
+	int WORK_PRODUCT_RELATIONSHIP_TYPE_OPERATION_COUNT = QWikiPackage.QWIKI_RELATIONSHIP_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Spice.ProcessReferenceModelDomain <em>Process Reference Model Domain</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.ProcessReferenceModelDomain
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessReferenceModelDomain()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessReferenceModelDomain()
 	 * @generated
 	 */
 	int PROCESS_REFERENCE_MODEL_DOMAIN = 10;
@@ -10419,7 +8591,7 @@ public interface SPICEPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Spice.WorkProductType
-	 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductType()
+	 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductType()
 	 * @generated
 	 */
 	int WORK_PRODUCT_TYPE = 11;
@@ -10458,10 +8630,10 @@ public interface SPICEPackage extends EPackage {
 	EReference getBasePractise_FacilitatedOutcome();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Spice.BasePractise#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}'.
+	 * Returns the meta object for the reference list '{@link QWiki.Spice.BasePractise#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Facilitated Work Product</em>'.
+	 * @return the meta object for the reference list '<em>Facilitated Work Product</em>'.
 	 * @see QWiki.Spice.BasePractise#getFacilitatedWorkProduct()
 	 * @see #getBasePractise()
 	 * @generated
@@ -10469,20 +8641,20 @@ public interface SPICEPackage extends EPackage {
 	EReference getBasePractise_FacilitatedWorkProduct();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.BasePractise#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.BasePractise#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.BasePractise#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.BasePractise#objectId()
 	 * @generated
 	 */
-	EOperation getBasePractise__Oid();
+	EOperation getBasePractise__ObjectId();
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Spice.SpiceElement <em>Spice Element</em>}'.
+	 * Returns the meta object for class '{@link QWiki.Spice.SpiceElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Spice Element</em>'.
+	 * @return the meta object for class '<em>Element</em>'.
 	 * @see QWiki.Spice.SpiceElement
 	 * @generated
 	 */
@@ -10609,24 +8781,24 @@ public interface SPICEPackage extends EPackage {
 	EReference getProcessReferenceModel_OwnedSpiceElement();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.ProcessReferenceModel#objectIdForDomain() <em>Object Id For Domain</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid For Domain</em>' operation.
-	 * @see QWiki.Spice.ProcessReferenceModel#oidForDomain()
+	 * @return the meta object for the '<em>Object Id For Domain</em>' operation.
+	 * @see QWiki.Spice.ProcessReferenceModel#objectIdForDomain()
 	 * @generated
 	 */
-	EOperation getProcessReferenceModel__OidForDomain();
+	EOperation getProcessReferenceModel__ObjectIdForDomain();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.ProcessReferenceModel#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.ProcessReferenceModel#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.ProcessReferenceModel#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.ProcessReferenceModel#objectId()
 	 * @generated
 	 */
-	EOperation getProcessReferenceModel__Oid();
+	EOperation getProcessReferenceModel__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Spice.Process <em>Process</em>}'.
@@ -10694,14 +8866,14 @@ public interface SPICEPackage extends EPackage {
 	EReference getProcess_OwnedBasePractise();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.Process#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.Process#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.Process#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.Process#objectId()
 	 * @generated
 	 */
-	EOperation getProcess__Oid();
+	EOperation getProcess__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Spice.ProcessGroup <em>Process Group</em>}'.
@@ -10725,14 +8897,14 @@ public interface SPICEPackage extends EPackage {
 	EReference getProcessGroup_OwnedProcess();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.ProcessGroup#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.ProcessGroup#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.ProcessGroup#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.ProcessGroup#objectId()
 	 * @generated
 	 */
-	EOperation getProcessGroup__Oid();
+	EOperation getProcessGroup__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Spice.Outcome <em>Outcome</em>}'.
@@ -10789,14 +8961,14 @@ public interface SPICEPackage extends EPackage {
 	EReference getOutcome_OwningProcess();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.Outcome#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.Outcome#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.Outcome#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.Outcome#objectId()
 	 * @generated
 	 */
-	EOperation getOutcome__Oid();
+	EOperation getOutcome__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Spice.WorkProduct <em>Work Product</em>}'.
@@ -10820,10 +8992,10 @@ public interface SPICEPackage extends EPackage {
 	EReference getWorkProduct_OwningWorkProductGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}'.
+	 * Returns the meta object for the reference '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Characteristic</em>'.
+	 * @return the meta object for the reference '<em>Characteristic</em>'.
 	 * @see QWiki.Spice.WorkProduct#getCharacteristic()
 	 * @see #getWorkProduct()
 	 * @generated
@@ -10853,10 +9025,10 @@ public interface SPICEPackage extends EPackage {
 	EReference getWorkProduct_FacilitatedProcess();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Spice.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}'.
+	 * Returns the meta object for the reference list '{@link QWiki.Spice.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Facilitating Process</em>'.
+	 * @return the meta object for the reference list '<em>Facilitating Process</em>'.
 	 * @see QWiki.Spice.WorkProduct#getFacilitatingProcess()
 	 * @see #getWorkProduct()
 	 * @generated
@@ -10930,14 +9102,14 @@ public interface SPICEPackage extends EPackage {
 	EReference getWorkProduct_FacilitatedOutcome();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Spice.WorkProduct#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Spice.WorkProduct#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Spice.WorkProduct#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Spice.WorkProduct#objectId()
 	 * @generated
 	 */
-	EOperation getWorkProduct__Oid();
+	EOperation getWorkProduct__ObjectId();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.Spice.GenericWorkProduct <em>Generic Work Product</em>}'.
@@ -11051,7 +9223,7 @@ public interface SPICEPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	SPICEFactory getSPICEFactory();
+	SpiceFactory getSpiceFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -11072,7 +9244,7 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.BasePractiseImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getBasePractise()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getBasePractise()
 		 * @generated
 		 */
 		EClass BASE_PRACTISE = eINSTANCE.getBasePractise();
@@ -11094,7 +9266,7 @@ public interface SPICEPackage extends EPackage {
 		EReference BASE_PRACTISE__FACILITATED_OUTCOME = eINSTANCE.getBasePractise_FacilitatedOutcome();
 
 		/**
-		 * The meta object literal for the '<em><b>Facilitated Work Product</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Facilitated Work Product</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -11102,19 +9274,19 @@ public interface SPICEPackage extends EPackage {
 		EReference BASE_PRACTISE__FACILITATED_WORK_PRODUCT = eINSTANCE.getBasePractise_FacilitatedWorkProduct();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BASE_PRACTISE___OID = eINSTANCE.getBasePractise__Oid();
+		EOperation BASE_PRACTISE___OBJECT_ID = eINSTANCE.getBasePractise__ObjectId();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.Spice.impl.SpiceElementImpl <em>Spice Element</em>}' class.
+		 * The meta object literal for the '{@link QWiki.Spice.impl.SpiceElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.SpiceElementImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getSpiceElement()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getSpiceElement()
 		 * @generated
 		 */
 		EClass SPICE_ELEMENT = eINSTANCE.getSpiceElement();
@@ -11180,7 +9352,7 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.ProcessReferenceModelImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessReferenceModel()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessReferenceModel()
 		 * @generated
 		 */
 		EClass PROCESS_REFERENCE_MODEL = eINSTANCE.getProcessReferenceModel();
@@ -11210,27 +9382,27 @@ public interface SPICEPackage extends EPackage {
 		EReference PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT = eINSTANCE.getProcessReferenceModel_OwnedSpiceElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid For Domain</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id For Domain</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN = eINSTANCE.getProcessReferenceModel__OidForDomain();
+		EOperation PROCESS_REFERENCE_MODEL___OBJECT_ID_FOR_DOMAIN = eINSTANCE.getProcessReferenceModel__ObjectIdForDomain();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROCESS_REFERENCE_MODEL___OID = eINSTANCE.getProcessReferenceModel__Oid();
+		EOperation PROCESS_REFERENCE_MODEL___OBJECT_ID = eINSTANCE.getProcessReferenceModel__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.Spice.impl.ProcessImpl <em>Process</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.ProcessImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcess()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getProcess()
 		 * @generated
 		 */
 		EClass PROCESS = eINSTANCE.getProcess();
@@ -11276,19 +9448,19 @@ public interface SPICEPackage extends EPackage {
 		EReference PROCESS__OWNED_BASE_PRACTISE = eINSTANCE.getProcess_OwnedBasePractise();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROCESS___OID = eINSTANCE.getProcess__Oid();
+		EOperation PROCESS___OBJECT_ID = eINSTANCE.getProcess__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.Spice.impl.ProcessGroupImpl <em>Process Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.ProcessGroupImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessGroup()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessGroup()
 		 * @generated
 		 */
 		EClass PROCESS_GROUP = eINSTANCE.getProcessGroup();
@@ -11302,19 +9474,19 @@ public interface SPICEPackage extends EPackage {
 		EReference PROCESS_GROUP__OWNED_PROCESS = eINSTANCE.getProcessGroup_OwnedProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation PROCESS_GROUP___OID = eINSTANCE.getProcessGroup__Oid();
+		EOperation PROCESS_GROUP___OBJECT_ID = eINSTANCE.getProcessGroup__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.Spice.impl.OutcomeImpl <em>Outcome</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.OutcomeImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getOutcome()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getOutcome()
 		 * @generated
 		 */
 		EClass OUTCOME = eINSTANCE.getOutcome();
@@ -11352,19 +9524,19 @@ public interface SPICEPackage extends EPackage {
 		EReference OUTCOME__OWNING_PROCESS = eINSTANCE.getOutcome_OwningProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation OUTCOME___OID = eINSTANCE.getOutcome__Oid();
+		EOperation OUTCOME___OBJECT_ID = eINSTANCE.getOutcome__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.Spice.impl.WorkProductImpl <em>Work Product</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.WorkProductImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProduct()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProduct()
 		 * @generated
 		 */
 		EClass WORK_PRODUCT = eINSTANCE.getWorkProduct();
@@ -11378,7 +9550,7 @@ public interface SPICEPackage extends EPackage {
 		EReference WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = eINSTANCE.getWorkProduct_OwningWorkProductGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Characteristic</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Characteristic</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -11402,7 +9574,7 @@ public interface SPICEPackage extends EPackage {
 		EReference WORK_PRODUCT__FACILITATED_PROCESS = eINSTANCE.getWorkProduct_FacilitatedProcess();
 
 		/**
-		 * The meta object literal for the '<em><b>Facilitating Process</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Facilitating Process</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -11458,19 +9630,19 @@ public interface SPICEPackage extends EPackage {
 		EReference WORK_PRODUCT__FACILITATED_OUTCOME = eINSTANCE.getWorkProduct_FacilitatedOutcome();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation WORK_PRODUCT___OID = eINSTANCE.getWorkProduct__Oid();
+		EOperation WORK_PRODUCT___OBJECT_ID = eINSTANCE.getWorkProduct__ObjectId();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.Spice.impl.GenericWorkProductImpl <em>Generic Work Product</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.GenericWorkProductImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getGenericWorkProduct()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getGenericWorkProduct()
 		 * @generated
 		 */
 		EClass GENERIC_WORK_PRODUCT = eINSTANCE.getGenericWorkProduct();
@@ -11488,7 +9660,7 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.WorkProductRelationshipImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductRelationship()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductRelationship()
 		 * @generated
 		 */
 		EClass WORK_PRODUCT_RELATIONSHIP = eINSTANCE.getWorkProductRelationship();
@@ -11522,7 +9694,7 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.impl.WorkProductRelationshipTypeImpl
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductRelationshipType()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductRelationshipType()
 		 * @generated
 		 */
 		EClass WORK_PRODUCT_RELATIONSHIP_TYPE = eINSTANCE.getWorkProductRelationshipType();
@@ -11540,7 +9712,7 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.ProcessReferenceModelDomain
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getProcessReferenceModelDomain()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getProcessReferenceModelDomain()
 		 * @generated
 		 */
 		EEnum PROCESS_REFERENCE_MODEL_DOMAIN = eINSTANCE.getProcessReferenceModelDomain();
@@ -11550,11 +9722,11 @@ public interface SPICEPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Spice.WorkProductType
-		 * @see QWiki.Spice.impl.SPICEPackageImpl#getWorkProductType()
+		 * @see QWiki.Spice.impl.SpicePackageImpl#getWorkProductType()
 		 * @generated
 		 */
 		EEnum WORK_PRODUCT_TYPE = eINSTANCE.getWorkProductType();
 
 	}
 
-} //SPICEPackage
+} //SpicePackage

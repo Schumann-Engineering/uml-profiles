@@ -2,7 +2,8 @@
  */
 package QWiki.References;
 
-import QWiki.Kernel.QWikiNamespace;
+import QWiki.Content.Section;
+import QWiki.QWikiNamespace;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,11 +16,11 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getPublicationYear <em>Publication Year</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getReferenceVersionType <em>Reference Version Type</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getEdition <em>Edition</em>}</li>
- *   <li>{@link QWiki.References.ReferenceVersion#getOwnedSection <em>Owned Section</em>}</li>
- *   <li>{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}</li>
+ *   <li>{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}</li>
  * </ul>
  *
  * @see QWiki.References.ReferencesPackage#getReferenceVersion()
@@ -39,6 +40,7 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setPublicationYear(String)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_PublicationYear()
 	 * @model required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	String getPublicationYear();
@@ -68,6 +70,7 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setReferenceVersionType(ReferenceVersionType)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_ReferenceVersionType()
 	 * @model default="FirstEdition" required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	ReferenceVersionType getReferenceVersionType();
@@ -95,6 +98,7 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setEdition(String)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_Edition()
 	 * @model ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	String getEdition();
@@ -110,45 +114,46 @@ public interface ReferenceVersion extends QWikiNamespace {
 	void setEdition(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Section</b></em>' containment reference list.
-	 * The list contents are of type {@link QWiki.References.Section}.
-	 * It is bidirectional and its opposite is '{@link QWiki.References.Section#getOwningReferenceVersion <em>Owning Reference Version</em>}'.
+	 * Returns the value of the '<em><b>Owned Content</b></em>' containment reference list.
+	 * The list contents are of type {@link QWiki.Content.Section}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Content.Section#getOwningReferenceVersion <em>Owning Reference Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Section</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Owned Content</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Section</em>' containment reference list.
-	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_OwnedSection()
-	 * @see QWiki.References.Section#getOwningReferenceVersion
-	 * @model opposite="owningReferenceVersion" containment="true" transient="true" ordered="false"
+	 * @return the value of the '<em>Owned Content</em>' containment reference list.
+	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_OwnedContent()
+	 * @see QWiki.Content.Section#getOwningReferenceVersion
+	 * @model opposite="owningReferenceVersion" containment="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
-	EList<Section> getOwnedSection();
+	EList<Section> getOwnedContent();
 
 	/**
-	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Section</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
-	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedSection()
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedContent()
 	 * @generated
 	 */
-	Section getOwnedSection(String name);
+	Section getOwnedContent(String name);
 
 	/**
-	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Section</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Content</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
 	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
-	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedSection()
+	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getOwnedContent()
 	 * @generated
 	 */
-	Section getOwnedSection(String name, boolean ignoreCase);
+	Section getOwnedContent(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Owning Reference</b></em>' container reference.
@@ -163,7 +168,8 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setOwningReference(Reference)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_OwningReference()
 	 * @see QWiki.References.Reference#getOwnedVersion
-	 * @model opposite="ownedVersion" ordered="false"
+	 * @model opposite="ownedVersion" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	Reference getOwningReference();
@@ -179,12 +185,19 @@ public interface ReferenceVersion extends QWikiNamespace {
 	void setOwningReference(Reference value);
 
 	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='owningDocument.oid() + \'/\' + edition + if (owningDocument.documentType = DocumentType::Standard) then \'&lt;SDO-TBD&gt;\' else \'\' endif'"
+	 *        annotation="redefines"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='owningReference.objectId() + \'/\' + edition + if (owningReference.referenceType = ReferenceType::Standard) then \'&lt;SDO-TBD&gt;\' else \'\' endif'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // ReferenceVersion

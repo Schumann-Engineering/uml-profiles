@@ -141,29 +141,6 @@ public class ReferencesItemProviderAdapterFactory extends ReferencesAdapterFacto
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.References.Section} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SectionItemProvider sectionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link QWiki.References.Section}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSectionAdapter() {
-		if (sectionItemProvider == null) {
-			sectionItemProvider = new SectionItemProvider(this);
-		}
-
-		return sectionItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -271,7 +248,6 @@ public class ReferencesItemProviderAdapterFactory extends ReferencesAdapterFacto
 		if (authorItemProvider != null) authorItemProvider.dispose();
 		if (referenceItemProvider != null) referenceItemProvider.dispose();
 		if (referenceVersionItemProvider != null) referenceVersionItemProvider.dispose();
-		if (sectionItemProvider != null) sectionItemProvider.dispose();
 	}
 
 }

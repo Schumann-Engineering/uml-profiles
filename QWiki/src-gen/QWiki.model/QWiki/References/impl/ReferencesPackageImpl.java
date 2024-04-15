@@ -2,6 +2,8 @@
  */
 package QWiki.References.impl;
 
+import QWiki.Content.ContentPackage;
+import QWiki.Content.impl.ContentPackageImpl;
 import QWiki.Domain.DomainPackage;
 
 import QWiki.Domain.impl.DomainPackageImpl;
@@ -10,17 +12,11 @@ import QWiki.Glossary.GlossaryPackage;
 
 import QWiki.Glossary.impl.GlossaryPackageImpl;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
-import QWiki.Kernel.Relationships.RelationshipsPackage;
+import QWiki.Rasci.RasciPackage;
 
-import QWiki.Kernel.Relationships.impl.RelationshipsPackageImpl;
-
-import QWiki.Kernel.impl.KernelPackageImpl;
-
-import QWiki.Rasci.RASCIPackage;
-
-import QWiki.Rasci.impl.RASCIPackageImpl;
+import QWiki.Rasci.impl.RasciPackageImpl;
 
 import QWiki.References.Author;
 import QWiki.References.AuthorType;
@@ -30,11 +26,15 @@ import QWiki.References.ReferenceVersion;
 import QWiki.References.ReferenceVersionType;
 import QWiki.References.ReferencesFactory;
 import QWiki.References.ReferencesPackage;
-import QWiki.References.Section;
+import QWiki.Relationships.RelationshipsPackage;
 
-import QWiki.Spice.SPICEPackage;
+import QWiki.Relationships.impl.RelationshipsPackageImpl;
 
-import QWiki.Spice.impl.SPICEPackageImpl;
+import QWiki.Spice.SpicePackage;
+
+import QWiki.Spice.impl.SpicePackageImpl;
+
+import QWiki.impl.QWikiPackageImpl;
 
 import org.eclipse.emf.common.util.URI;
 
@@ -79,13 +79,6 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	private EClass referenceVersionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass sectionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -160,36 +153,40 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		UMLPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		KernelPackageImpl theKernelPackage = (KernelPackageImpl)(registeredPackage instanceof KernelPackageImpl ? registeredPackage : KernelPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
-		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
-		SPICEPackageImpl theSPICEPackage = (SPICEPackageImpl)(registeredPackage instanceof SPICEPackageImpl ? registeredPackage : SPICEPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RASCIPackage.eNS_URI);
-		RASCIPackageImpl theRASCIPackage = (RASCIPackageImpl)(registeredPackage instanceof RASCIPackageImpl ? registeredPackage : RASCIPackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(QWikiPackage.eNS_URI);
+		QWikiPackageImpl theQWikiPackage = (QWikiPackageImpl)(registeredPackage instanceof QWikiPackageImpl ? registeredPackage : QWikiPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpicePackage.eNS_URI);
+		SpicePackageImpl theSpicePackage = (SpicePackageImpl)(registeredPackage instanceof SpicePackageImpl ? registeredPackage : SpicePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RasciPackage.eNS_URI);
+		RasciPackageImpl theRasciPackage = (RasciPackageImpl)(registeredPackage instanceof RasciPackageImpl ? registeredPackage : RasciPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
+		ContentPackageImpl theContentPackage = (ContentPackageImpl)(registeredPackage instanceof ContentPackageImpl ? registeredPackage : ContentPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(GlossaryPackage.eNS_URI);
 		GlossaryPackageImpl theGlossaryPackage = (GlossaryPackageImpl)(registeredPackage instanceof GlossaryPackageImpl ? registeredPackage : GlossaryPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DomainPackage.eNS_URI);
 		DomainPackageImpl theDomainPackage = (DomainPackageImpl)(registeredPackage instanceof DomainPackageImpl ? registeredPackage : DomainPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(RelationshipsPackage.eNS_URI);
+		RelationshipsPackageImpl theRelationshipsPackage = (RelationshipsPackageImpl)(registeredPackage instanceof RelationshipsPackageImpl ? registeredPackage : RelationshipsPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theReferencesPackage.createPackageContents();
-		theKernelPackage.createPackageContents();
-		theRelationshipsPackage.createPackageContents();
-		theSPICEPackage.createPackageContents();
-		theRASCIPackage.createPackageContents();
+		theQWikiPackage.createPackageContents();
+		theSpicePackage.createPackageContents();
+		theRasciPackage.createPackageContents();
+		theContentPackage.createPackageContents();
 		theGlossaryPackage.createPackageContents();
 		theDomainPackage.createPackageContents();
+		theRelationshipsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theReferencesPackage.initializePackageContents();
-		theKernelPackage.initializePackageContents();
-		theRelationshipsPackage.initializePackageContents();
-		theSPICEPackage.initializePackageContents();
-		theRASCIPackage.initializePackageContents();
+		theQWikiPackage.initializePackageContents();
+		theSpicePackage.initializePackageContents();
+		theRasciPackage.initializePackageContents();
+		theContentPackage.initializePackageContents();
 		theGlossaryPackage.initializePackageContents();
 		theDomainPackage.initializePackageContents();
+		theRelationshipsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theReferencesPackage.freeze();
@@ -235,28 +232,8 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getAuthor__AuthoredDocument() {
+	public EOperation getAuthor__ObjectId() {
 		return authorEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAuthor__AuthoredStandard() {
-		return authorEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getAuthor__Oid() {
-		return authorEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -315,7 +292,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getReference__Oid() {
+	public EOperation getReference__ObjectId() {
 		return referenceEClass.getEOperations().get(0);
 	}
 
@@ -336,16 +313,6 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 */
 	@Override
 	public EAttribute getReferenceVersion_PublicationYear() {
-		return (EAttribute)referenceVersionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getReferenceVersion_ReferenceVersionType() {
 		return (EAttribute)referenceVersionEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -355,7 +322,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReferenceVersion_Edition() {
+	public EAttribute getReferenceVersion_ReferenceVersionType() {
 		return (EAttribute)referenceVersionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -365,8 +332,8 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getReferenceVersion_OwnedSection() {
-		return (EReference)referenceVersionEClass.getEStructuralFeatures().get(3);
+	public EAttribute getReferenceVersion_Edition() {
+		return (EAttribute)referenceVersionEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -375,7 +342,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getReferenceVersion_OwningReference() {
+	public EReference getReferenceVersion_OwnedContent() {
 		return (EReference)referenceVersionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -385,118 +352,18 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EOperation getReferenceVersion__Oid() {
+	public EReference getReferenceVersion_OwningReference() {
+		return (EReference)referenceVersionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EOperation getReferenceVersion__ObjectId() {
 		return referenceVersionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSection() {
-		return sectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_OwningReferenceVersion() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_OwnedSection() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_OwningSection() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSection_Number() {
-		return (EAttribute)sectionEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_FacilitatingElement() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_Term() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSection_FacilitatingSpiceElement() {
-		return (EReference)sectionEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSection__DocumentVersion() {
-		return sectionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSection__Oid() {
-		return sectionEClass.getEOperations().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EOperation getSection__QualifiedNumber() {
-		return sectionEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -561,41 +428,27 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		authorEClass = createEClass(AUTHOR);
 		createEAttribute(authorEClass, AUTHOR__AUTHOR_TYPE);
 		createEAttribute(authorEClass, AUTHOR__ABBREVIATION);
-		createEOperation(authorEClass, AUTHOR___AUTHORED_DOCUMENT);
-		createEOperation(authorEClass, AUTHOR___AUTHORED_STANDARD);
-		createEOperation(authorEClass, AUTHOR___OID);
+		createEOperation(authorEClass, AUTHOR___OBJECT_ID);
 
 		referenceEClass = createEClass(REFERENCE);
 		createEAttribute(referenceEClass, REFERENCE__NUMBER);
 		createEReference(referenceEClass, REFERENCE__OWNED_VERSION);
 		createEAttribute(referenceEClass, REFERENCE__REFERENCE_TYPE);
 		createEReference(referenceEClass, REFERENCE__AUTHOR);
-		createEOperation(referenceEClass, REFERENCE___OID);
+		createEOperation(referenceEClass, REFERENCE___OBJECT_ID);
 
 		referenceVersionEClass = createEClass(REFERENCE_VERSION);
+		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNING_REFERENCE);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__PUBLICATION_YEAR);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__REFERENCE_VERSION_TYPE);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__EDITION);
-		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNED_SECTION);
-		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNING_REFERENCE);
-		createEOperation(referenceVersionEClass, REFERENCE_VERSION___OID);
-
-		sectionEClass = createEClass(SECTION);
-		createEReference(sectionEClass, SECTION__OWNING_REFERENCE_VERSION);
-		createEReference(sectionEClass, SECTION__OWNED_SECTION);
-		createEReference(sectionEClass, SECTION__OWNING_SECTION);
-		createEAttribute(sectionEClass, SECTION__NUMBER);
-		createEReference(sectionEClass, SECTION__FACILITATING_ELEMENT);
-		createEReference(sectionEClass, SECTION__TERM);
-		createEReference(sectionEClass, SECTION__FACILITATING_SPICE_ELEMENT);
-		createEOperation(sectionEClass, SECTION___DOCUMENT_VERSION);
-		createEOperation(sectionEClass, SECTION___OID);
-		createEOperation(sectionEClass, SECTION___QUALIFIED_NUMBER);
+		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNED_CONTENT);
+		createEOperation(referenceVersionEClass, REFERENCE_VERSION___OBJECT_ID);
 
 		// Create enums
 		authorTypeEEnum = createEEnum(AUTHOR_TYPE);
-		referenceVersionTypeEEnum = createEEnum(REFERENCE_VERSION_TYPE);
 		referenceTypeEEnum = createEEnum(REFERENCE_TYPE);
+		referenceVersionTypeEEnum = createEEnum(REFERENCE_VERSION_TYPE);
 	}
 
 	/**
@@ -622,74 +475,47 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		KernelPackage theKernelPackage = (KernelPackage)EPackage.Registry.INSTANCE.getEPackage(KernelPackage.eNS_URI);
-		GlossaryPackage theGlossaryPackage = (GlossaryPackage)EPackage.Registry.INSTANCE.getEPackage(GlossaryPackage.eNS_URI);
-		SPICEPackage theSPICEPackage = (SPICEPackage)EPackage.Registry.INSTANCE.getEPackage(SPICEPackage.eNS_URI);
+		QWikiPackage theQWikiPackage = (QWikiPackage)EPackage.Registry.INSTANCE.getEPackage(QWikiPackage.eNS_URI);
+		ContentPackage theContentPackage = (ContentPackage)EPackage.Registry.INSTANCE.getEPackage(ContentPackage.eNS_URI);
 
 		// Create type parameters
 
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		authorEClass.getESuperTypes().add(theKernelPackage.getQWikiNamedElement());
-		referenceEClass.getESuperTypes().add(theKernelPackage.getQWikiContainer());
-		referenceVersionEClass.getESuperTypes().add(theKernelPackage.getQWikiNamespace());
-		sectionEClass.getESuperTypes().add(theKernelPackage.getQWikiNamespace());
+		authorEClass.getESuperTypes().add(theQWikiPackage.getQWikiNamedElement());
+		referenceEClass.getESuperTypes().add(theQWikiPackage.getQWikiContainer());
+		referenceVersionEClass.getESuperTypes().add(theQWikiPackage.getQWikiNamespace());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(authorEClass, Author.class, "Author", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAuthor_AuthorType(), this.getAuthorType(), "authorType", "Person", 1, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getAuthor_Abbreviation(), ecorePackage.getEString(), "abbreviation", null, 0, 1, Author.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getAuthor__AuthoredDocument(), this.getReference(), "authoredDocument", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getAuthor__AuthoredStandard(), this.getReference(), "authoredStandard", 0, -1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getAuthor__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getAuthor__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_Number(), ecorePackage.getEString(), "number", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReference_OwnedVersion(), this.getReferenceVersion(), this.getReferenceVersion_OwningReference(), "ownedVersion", null, 0, -1, Reference.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReference_OwnedVersion(), this.getReferenceVersion(), this.getReferenceVersion_OwningReference(), "ownedVersion", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReference_ReferenceType(), this.getReferenceType(), "referenceType", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReference_Author(), this.getAuthor(), null, "author", null, 1, -1, Reference.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReference_Author(), this.getAuthor(), null, "author", null, 1, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getReference__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getReference__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(referenceVersionEClass, ReferenceVersion.class, "ReferenceVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_OwnedVersion(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_PublicationYear(), ecorePackage.getEString(), "publicationYear", null, 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_ReferenceVersionType(), this.getReferenceVersionType(), "referenceVersionType", "FirstEdition", 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_Edition(), ecorePackage.getEString(), "edition", null, 0, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReferenceVersion_OwnedSection(), this.getSection(), this.getSection_OwningReferenceVersion(), "ownedSection", null, 0, -1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_OwnedVersion(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReferenceVersion_OwnedContent(), theContentPackage.getSection(), theContentPackage.getSection_OwningReferenceVersion(), "ownedContent", null, 0, -1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEOperation(getReferenceVersion__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSection_OwningReferenceVersion(), this.getReferenceVersion(), this.getReferenceVersion_OwnedSection(), "owningReferenceVersion", null, 0, 1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_OwnedSection(), this.getSection(), this.getSection_OwningSection(), "ownedSection", null, 0, -1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_OwningSection(), this.getSection(), this.getSection_OwnedSection(), "owningSection", null, 0, 1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getSection_Number(), ecorePackage.getEString(), "number", null, 1, 1, Section.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_FacilitatingElement(), theKernelPackage.getQWikiElement(), null, "facilitatingElement", null, 0, -1, Section.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_Term(), theGlossaryPackage.getGlossaryTerm(), theGlossaryPackage.getGlossaryTerm_ExternalTermDefinition(), "term", null, 0, -1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getSection_FacilitatingSpiceElement(), theSPICEPackage.getSpiceElement(), theSPICEPackage.getSpiceElement_FacilitatedSection(), "facilitatingSpiceElement", null, 0, -1, Section.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getSection__DocumentVersion(), this.getReferenceVersion(), "documentVersion", 0, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getSection__Oid(), ecorePackage.getEString(), "oid", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getSection__QualifiedNumber(), ecorePackage.getEString(), "qualifiedNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEOperation(getReferenceVersion__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(authorTypeEEnum, AuthorType.class, "AuthorType");
 		addEEnumLiteral(authorTypeEEnum, AuthorType.PERSON);
 		addEEnumLiteral(authorTypeEEnum, AuthorType.ORGANIZATION);
 		addEEnumLiteral(authorTypeEEnum, AuthorType.STANDARDS_DEVELOPMENT_ORGANIZATION);
-
-		initEEnum(referenceVersionTypeEEnum, ReferenceVersionType.class, "ReferenceVersionType");
-		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.ADDENDUM);
-		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.AMENDMENT);
-		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.CORRIGENDUM);
-		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.FIRST_EDITION);
 
 		initEEnum(referenceTypeEEnum, ReferenceType.class, "ReferenceType");
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.DOCUMENT);
@@ -700,20 +526,23 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.STANDARD);
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.TECHNICAL_REPORT);
 
-		// Create resource
-		createResource(eNS_URI);
+		initEEnum(referenceVersionTypeEEnum, ReferenceVersionType.class, "ReferenceVersionType");
+		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.ADDENDUM);
+		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.AMENDMENT);
+		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.CORRIGENDUM);
+		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.FIRST_EDITION);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// redefines
+		createRedefinesAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
+		// http:///org/eclipse/emf/ecore/util/ExtendedMetaData
+		createExtendedMetaDataAnnotations();
 		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
 		createEmofAnnotations();
-		// union
-		createUnionAnnotations();
-		// subsets
-		createSubsetsAnnotations();
 	}
 
 	/**
@@ -733,6 +562,40 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	}
 
 	/**
+	 * Initializes the annotations for <b>redefines</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createRedefinesAnnotations() {
+		String source = "redefines";
+		addAnnotation
+		  (getAuthor__ObjectId(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(QWikiPackage.eNS_URI).appendFragment("//QWikiElement/objectId")
+		   });
+		addAnnotation
+		  (getReference__ObjectId(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(QWikiPackage.eNS_URI).appendFragment("//QWikiElement/objectId")
+		   });
+		addAnnotation
+		  (getReferenceVersion__ObjectId(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(QWikiPackage.eNS_URI).appendFragment("//QWikiElement/objectId")
+		   });
+	}
+
+	/**
 	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -741,52 +604,98 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	protected void createOCLAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL";
 		addAnnotation
-		  (getAuthor__AuthoredDocument(),
-		   source,
-		   new String[] {
-			   "body", "model().ownedElement->select(oclIsKindOf(QWiki::Bibliography::Document)).oclAsType(QWiki::Bibliography::Document)->select(author->includes(self))->asSet()"
-		   });
-		addAnnotation
-		  (getAuthor__AuthoredStandard(),
-		   source,
-		   new String[] {
-			   "body", "authoredDocument()->select(documentType = DocumentType::Standard)"
-		   });
-		addAnnotation
-		  (getAuthor__Oid(),
+		  (getAuthor__ObjectId(),
 		   source,
 		   new String[] {
 			   "body", "if (abbreviation->notEmpty()) then \'a/\' + abbreviation else \'a/\' + uuid endif"
 		   });
 		addAnnotation
-		  (getReference__Oid(),
+		  (getReference__ObjectId(),
 		   source,
 		   new String[] {
-			   "body", "if (documentType = DocumentType::Document) then \'d/\' + number else \r\nif (documentType = DocumentType::Guideline) then \'g/\' + number else\r\nif (documentType = DocumentType::Hyperlink) then \'href/\' + number else\r\nif (documentType = DocumentType::Legislation) then \'l/\' + number else\r\nif (documentType = DocumentType::Process) then \'p/\' + number else\r\nif (documentType = DocumentType::Standard) then \'s/\' + number else\r\nif (documentType = DocumentType::TechnicalReport) then \'tr/\' + number else \r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
+			   "body", "if (referenceType = ReferenceType::Document) then \'d/\' + number else \r\nif (referenceType = ReferenceType::Guideline) then \'g/\' + number else\r\nif (referenceType = ReferenceType::Hyperlink) then \'href/\' + number else\r\nif (referenceType = ReferenceType::Legislation) then \'l/\' + number else\r\nif (referenceType = ReferenceType::Process) then \'p/\' + number else\r\nif (referenceType = ReferenceType::Standard) then \'s/\' + number else\r\nif (referenceType = ReferenceType::TechnicalReport) then \'tr/\' + number else \r\n\'?\'\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif\r\nendif"
 		   });
 		addAnnotation
-		  (getReferenceVersion__Oid(),
+		  (getReferenceVersion__ObjectId(),
 		   source,
 		   new String[] {
-			   "body", "owningDocument.oid() + \'/\' + edition + if (owningDocument.documentType = DocumentType::Standard) then \'<SDO-TBD>\' else \'\' endif"
+			   "body", "owningReference.objectId() + \'/\' + edition + if (owningReference.referenceType = ReferenceType::Standard) then \'<SDO-TBD>\' else \'\' endif"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createExtendedMetaDataAnnotations() {
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation
+		  (getAuthor_AuthorType(),
+		   source,
+		   new String[] {
+			   "kind", "element"
 		   });
 		addAnnotation
-		  (getSection__DocumentVersion(),
+		  (getAuthor_Abbreviation(),
 		   source,
 		   new String[] {
-			   "body", "if (owningDocument->notEmpty()) then owningDocument else owningSection.documentVersion() endif"
+			   "kind", "element"
 		   });
 		addAnnotation
-		  (getSection__Oid(),
+		  (getReference_Number(),
 		   source,
 		   new String[] {
-			   "body", "qualifiedNumber() + \'@\' + documentVersion().oid()"
+			   "kind", "element"
 		   });
 		addAnnotation
-		  (getSection__QualifiedNumber(),
+		  (getReference_OwnedVersion(),
 		   source,
 		   new String[] {
-			   "body", "if (owningSection->notEmpty()) then\r\n  owningSection.qualifiedNumber() + \'.\' + number\r\nelse\r\n  number\r\nendif"
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReference_ReferenceType(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReference_Author(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReferenceVersion_OwningReference(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReferenceVersion_PublicationYear(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReferenceVersion_ReferenceVersionType(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReferenceVersion_Edition(),
+		   source,
+		   new String[] {
+			   "kind", "element"
+		   });
+		addAnnotation
+		  (getReferenceVersion_OwnedContent(),
+		   source,
+		   new String[] {
+			   "kind", "element"
 		   });
 	}
 
@@ -803,45 +712,6 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		   source,
 		   new String[] {
 			   "body", "authoredDocument"
-		   });
-		addAnnotation
-		  (getSection_FacilitatingElement(),
-		   source,
-		   new String[] {
-			   "body", "facilitatedSection"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>union</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUnionAnnotations() {
-		String source = "union";
-		addAnnotation
-		  (getSection_FacilitatingElement(),
-		   source,
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>subsets</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createSubsetsAnnotations() {
-		String source = "subsets";
-		addAnnotation
-		  (getSection_FacilitatingSpiceElement(),
-		   source,
-		   new String[] {
-		   },
-		   new URI[] {
-			 URI.createURI(eNS_URI).appendFragment("//Section/facilitatingElement")
 		   });
 	}
 

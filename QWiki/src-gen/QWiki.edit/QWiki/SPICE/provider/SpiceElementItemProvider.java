@@ -5,14 +5,14 @@ package QWiki.Spice.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
-import QWiki.Kernel.provider.QWikiContainerItemProvider;
+import QWiki.Rasci.RasciPackage;
 
-import QWiki.Rasci.RASCIPackage;
-
-import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.SpiceElement;
+import QWiki.Spice.SpicePackage;
+
+import QWiki.provider.QWikiContainerItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -83,7 +83,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_responsibleRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_responsibleRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__RESPONSIBLE_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__RESPONSIBLE_ROLE,
 				 true,
 				 false,
 				 true,
@@ -105,7 +105,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_accountableRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_accountableRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__ACCOUNTABLE_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__ACCOUNTABLE_ROLE,
 				 true,
 				 false,
 				 true,
@@ -127,7 +127,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_supportRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_supportRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
 				 true,
 				 false,
 				 true,
@@ -149,7 +149,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_consultedRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_consultedRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -171,7 +171,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_informedRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_informedRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__INFORMED_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__INFORMED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -193,7 +193,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_number_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_number_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__NUMBER,
+				 SpicePackage.Literals.SPICE_ELEMENT__NUMBER,
 				 true,
 				 false,
 				 false,
@@ -215,7 +215,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_facilitatedSection_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_facilitatedSection_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__FACILITATED_SECTION,
+				 SpicePackage.Literals.SPICE_ELEMENT__FACILITATED_SECTION,
 				 true,
 				 false,
 				 true,
@@ -237,7 +237,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_ownerRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_ownerRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__OWNER_ROLE,
+				 SpicePackage.Literals.SPICE_ELEMENT__OWNER_ROLE,
 				 true,
 				 false,
 				 true,
@@ -259,7 +259,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_managerRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_managerRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__MANAGER_ROLE,
+				 SpicePackage.Literals.SPICE_ELEMENT__MANAGER_ROLE,
 				 true,
 				 false,
 				 true,
@@ -281,7 +281,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_participantRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_participantRole_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__PARTICIPANT_ROLE,
+				 SpicePackage.Literals.SPICE_ELEMENT__PARTICIPANT_ROLE,
 				 true,
 				 false,
 				 true,
@@ -303,7 +303,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_SpiceElement_role_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_SpiceElement_role_feature", "_UI_SpiceElement_type"),
-				 SPICEPackage.Literals.SPICE_ELEMENT__ROLE,
+				 SpicePackage.Literals.SPICE_ELEMENT__ROLE,
 				 false,
 				 false,
 				 false,
@@ -339,7 +339,7 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SpiceElement.class)) {
-			case SPICEPackage.SPICE_ELEMENT__NUMBER:
+			case SpicePackage.SPICE_ELEMENT__NUMBER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -370,9 +370,9 @@ public class SpiceElementItemProvider extends QWikiContainerItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

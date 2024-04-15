@@ -2,8 +2,13 @@
  */
 package QWiki.Spice.impl;
 
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiPackage;
+
 import QWiki.Spice.ProcessGroup;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -66,7 +71,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.PROCESS_GROUP;
+		return SpicePackage.Literals.PROCESS_GROUP;
 	}
 
 	/**
@@ -76,7 +81,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 */
 	@Override
 	public EList<NamedElement> getOwnedMembers() {
-		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS_GROUP__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SpicePackage.PROCESS_GROUP__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
@@ -87,7 +92,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS_GROUP__OWNED_RULE, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_GROUP__OWNED_RULE, SpicePackage.PROCESS_GROUP__OWNED_PROCESS};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -97,7 +102,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public EList<QWiki.Spice.Process> getOwnedProcess() {
 		if (ownedProcess == null) {
-			ownedProcess = new EObjectContainmentWithInverseEList<QWiki.Spice.Process>(QWiki.Spice.Process.class, this, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS, SPICEPackage.PROCESS__OWNING_PROCESS_GROUP);
+			ownedProcess = new EObjectContainmentWithInverseEList<QWiki.Spice.Process>(QWiki.Spice.Process.class, this, SpicePackage.PROCESS_GROUP__OWNED_PROCESS, SpicePackage.PROCESS__OWNING_PROCESS_GROUP);
 		}
 		return ownedProcess;
 	}
@@ -126,22 +131,23 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_GROUP___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)SpicePackage.Literals.PROCESS_GROUP___OBJECT_ID).getInvocationDelegate();
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -157,7 +163,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedProcess()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -171,7 +177,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				return ((InternalEList<?>)getOwnedProcess()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -185,7 +191,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				return getOwnedProcess();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -200,7 +206,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				getOwnedProcess().clear();
 				getOwnedProcess().addAll((Collection<? extends QWiki.Spice.Process>)newValue);
 				return;
@@ -216,7 +222,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				getOwnedProcess().clear();
 				return;
 		}
@@ -231,9 +237,9 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_MEMBER:
+			case SpicePackage.PROCESS_GROUP__OWNED_MEMBER:
 				return isSetOwnedMembers();
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				return ownedProcess != null && !ownedProcess.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -245,10 +251,38 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS_GROUP___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS_GROUP___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamespace.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMESPACE___OBJECT_ID: return SpicePackage.PROCESS_GROUP___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case SPICEPackage.PROCESS_GROUP___OID:
-				return oid();
+			case SpicePackage.PROCESS_GROUP___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -261,17 +295,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	@Override
 	public boolean isSetOwnedMembers() {
 		return super.isSetOwnedMembers()
-			|| eIsSet(SPICEPackage.PROCESS_GROUP__OWNED_PROCESS);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String oidBasic() {
-		return oid();
+			|| eIsSet(SpicePackage.PROCESS_GROUP__OWNED_PROCESS);
 	}
 
 } //ProcessGroupImpl

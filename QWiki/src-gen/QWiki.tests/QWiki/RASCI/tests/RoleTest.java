@@ -2,11 +2,9 @@
  */
 package QWiki.Rasci.tests;
 
-import QWiki.Kernel.tests.I18nDescriptiveElementTest;
-
-import QWiki.Rasci.RASCIFactory;
+import QWiki.Rasci.RasciFactory;
 import QWiki.Rasci.Role;
-
+import QWiki.tests.L10nDescriptiveElementTest;
 import junit.textui.TestRunner;
 
 /**
@@ -16,12 +14,12 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Rasci.Role#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Rasci.Role#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class RoleTest extends I18nDescriptiveElementTest {
+public class RoleTest extends L10nDescriptiveElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +59,7 @@ public class RoleTest extends I18nDescriptiveElementTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(RASCIFactory.eINSTANCE.createRole());
+		setFixture(RasciFactory.eINSTANCE.createRole());
 	}
 
 	/**
@@ -76,13 +74,13 @@ public class RoleTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Rasci.Role#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Rasci.Role#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Rasci.Role#oid()
+	 * @see QWiki.Rasci.Role#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

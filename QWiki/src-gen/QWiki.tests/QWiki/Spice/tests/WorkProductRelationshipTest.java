@@ -2,10 +2,10 @@
  */
 package QWiki.Spice.tests;
 
-import QWiki.Kernel.tests.QWikiRelationshipTest;
-
-import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SpiceFactory;
 import QWiki.Spice.WorkProductRelationship;
+
+import QWiki.tests.QWikiRelationshipTest;
 
 import junit.textui.TestRunner;
 
@@ -55,7 +55,7 @@ public class WorkProductRelationshipTest extends QWikiRelationshipTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createWorkProductRelationship());
+		setFixture(SpiceFactory.eINSTANCE.createWorkProductRelationship());
 	}
 
 	/**

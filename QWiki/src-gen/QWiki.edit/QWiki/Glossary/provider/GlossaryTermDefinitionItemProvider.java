@@ -7,10 +7,8 @@ import QWiki.EMF.provider.QWikiEditPlugin;
 
 import QWiki.Glossary.GlossaryTermDefinition;
 
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
-
+import QWiki.QWikiPackage;
+import QWiki.provider.L10nDescriptiveElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +25,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GlossaryTermDefinitionItemProvider extends I18nDescriptiveElementItemProvider {
+public class GlossaryTermDefinitionItemProvider extends L10nDescriptiveElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -116,9 +114,9 @@ public class GlossaryTermDefinitionItemProvider extends I18nDescriptiveElementIt
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

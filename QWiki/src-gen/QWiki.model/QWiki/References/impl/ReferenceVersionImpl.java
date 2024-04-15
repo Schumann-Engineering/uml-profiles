@@ -2,13 +2,18 @@
  */
 package QWiki.References.impl;
 
-import QWiki.Kernel.impl.QWikiNamespaceImpl;
+import QWiki.Content.ContentPackage;
+import QWiki.Content.Section;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiPackage;
 
 import QWiki.References.Reference;
 import QWiki.References.ReferenceVersion;
 import QWiki.References.ReferenceVersionType;
 import QWiki.References.ReferencesPackage;
-import QWiki.References.Section;
+import QWiki.impl.QWikiNamespaceImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -38,11 +43,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwningReference <em>Owning Reference</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getPublicationYear <em>Publication Year</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getReferenceVersionType <em>Reference Version Type</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getEdition <em>Edition</em>}</li>
- *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwnedSection <em>Owned Section</em>}</li>
- *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwningReference <em>Owning Reference</em>}</li>
+ *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwnedContent <em>Owned Content</em>}</li>
  * </ul>
  *
  * @generated
@@ -109,14 +114,14 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	protected String edition = EDITION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOwnedSection() <em>Owned Section</em>}' containment reference list.
+	 * The cached value of the '{@link #getOwnedContent() <em>Owned Content</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedSection()
+	 * @see #getOwnedContent()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Section> ownedSection;
+	protected EList<Section> ownedContent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,11 +217,11 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * @generated
 	 */
 	@Override
-	public EList<Section> getOwnedSection() {
-		if (ownedSection == null) {
-			ownedSection = new EObjectContainmentWithInverseEList<Section>(Section.class, this, ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION, ReferencesPackage.SECTION__OWNING_REFERENCE_VERSION);
+	public EList<Section> getOwnedContent() {
+		if (ownedContent == null) {
+			ownedContent = new EObjectContainmentWithInverseEList<Section>(Section.class, this, ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT, ContentPackage.SECTION__OWNING_REFERENCE_VERSION);
 		}
-		return ownedSection;
+		return ownedContent;
 	}
 
 	/**
@@ -224,8 +229,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Section getOwnedSection(String name) {
-		return getOwnedSection(name, false);
+	public Section getOwnedContent(String name) {
+		return getOwnedContent(name, false);
 	}
 
 	/**
@@ -233,11 +238,11 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Section getOwnedSection(String name, boolean ignoreCase) {
-		ownedSectionLoop: for (Section ownedSection : getOwnedSection()) {
-			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedSection.getName()) : name.equals(ownedSection.getName())))
-				continue ownedSectionLoop;
-			return ownedSection;
+	public Section getOwnedContent(String name, boolean ignoreCase) {
+		ownedContentLoop: for (Section ownedContent : getOwnedContent()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedContent.getName()) : name.equals(ownedContent.getName())))
+				continue ownedContentLoop;
+			return ownedContent;
 		}
 		return null;
 	}
@@ -286,23 +291,23 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.REFERENCE_VERSION___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.REFERENCE_VERSION___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -318,12 +323,12 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedSection()).basicAdd(otherEnd, msgs);
 			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningReference((Reference)otherEnd, msgs);
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedContent()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -336,10 +341,10 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				return ((InternalEList<?>)getOwnedSection()).basicRemove(otherEnd, msgs);
 			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
 				return basicSetOwningReference(null, msgs);
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				return ((InternalEList<?>)getOwnedContent()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -366,16 +371,16 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
+				return getOwningReference();
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				return getPublicationYear();
 			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
 				return getReferenceVersionType();
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				return getEdition();
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				return getOwnedSection();
-			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
-				return getOwningReference();
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				return getOwnedContent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -389,6 +394,9 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
+				setOwningReference((Reference)newValue);
+				return;
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				setPublicationYear((String)newValue);
 				return;
@@ -398,12 +406,9 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				setEdition((String)newValue);
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				getOwnedSection().clear();
-				getOwnedSection().addAll((Collection<? extends Section>)newValue);
-				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
-				setOwningReference((Reference)newValue);
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				getOwnedContent().clear();
+				getOwnedContent().addAll((Collection<? extends Section>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -417,6 +422,9 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
+				setOwningReference((Reference)null);
+				return;
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				setPublicationYear(PUBLICATION_YEAR_EDEFAULT);
 				return;
@@ -426,11 +434,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				setEdition(EDITION_EDEFAULT);
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				getOwnedSection().clear();
-				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
-				setOwningReference((Reference)null);
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				getOwnedContent().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -444,16 +449,16 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
+				return getOwningReference() != null;
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				return PUBLICATION_YEAR_EDEFAULT == null ? publicationYear != null : !PUBLICATION_YEAR_EDEFAULT.equals(publicationYear);
 			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
 				return referenceVersionType != REFERENCE_VERSION_TYPE_EDEFAULT;
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				return EDITION_EDEFAULT == null ? edition != null : !EDITION_EDEFAULT.equals(edition);
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
-				return ownedSection != null && !ownedSection.isEmpty();
-			case ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE:
-				return getOwningReference() != null;
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+				return ownedContent != null && !ownedContent.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -464,10 +469,38 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return ReferencesPackage.REFERENCE_VERSION___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return ReferencesPackage.REFERENCE_VERSION___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamespace.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMESPACE___OBJECT_ID: return ReferencesPackage.REFERENCE_VERSION___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ReferencesPackage.REFERENCE_VERSION___OID:
-				return oid();
+			case ReferencesPackage.REFERENCE_VERSION___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

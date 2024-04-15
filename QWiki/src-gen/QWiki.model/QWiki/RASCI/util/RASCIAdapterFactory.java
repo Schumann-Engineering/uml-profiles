@@ -2,10 +2,10 @@
  */
 package QWiki.Rasci.util;
 
-import QWiki.Kernel.I18nDescriptiveElement;
-import QWiki.Kernel.I18nNamedElement;
-import QWiki.Kernel.QWikiElement;
-import QWiki.Kernel.QWikiNamedElement;
+import QWiki.L10nDescriptiveElement;
+import QWiki.L10nNamedElement;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
 
 import QWiki.Rasci.*;
 
@@ -16,6 +16,7 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
+
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 
@@ -24,17 +25,17 @@ import org.eclipse.uml2.uml.NamedElement;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.Rasci.RASCIPackage
+ * @see QWiki.Rasci.RasciPackage
  * @generated
  */
-public class RASCIAdapterFactory extends AdapterFactoryImpl {
+public class RasciAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static RASCIPackage modelPackage;
+	protected static RasciPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -42,9 +43,9 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCIAdapterFactory() {
+	public RasciAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = RASCIPackage.eINSTANCE;
+			modelPackage = RasciPackage.eINSTANCE;
 		}
 	}
 
@@ -73,8 +74,8 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected RASCISwitch<Adapter> modelSwitch =
-		new RASCISwitch<Adapter>() {
+	protected RasciSwitch<Adapter> modelSwitch =
+		new RasciSwitch<Adapter>() {
 			@Override
 			public Adapter caseRole(Role object) {
 				return createRoleAdapter();
@@ -104,12 +105,12 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 				return createQWikiNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseI18nNamedElement(I18nNamedElement object) {
-				return createI18nNamedElementAdapter();
+			public Adapter caseL10nNamedElement(L10nNamedElement object) {
+				return createL10nNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseI18nDescriptiveElement(I18nDescriptiveElement object) {
-				return createI18nDescriptiveElementAdapter();
+			public Adapter caseL10nDescriptiveElement(L10nDescriptiveElement object) {
+				return createL10nDescriptiveElementAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -146,7 +147,7 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Rasci.RasciElement <em>Rasci Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.Rasci.RasciElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
@@ -202,13 +203,13 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiElement <em>QWiki Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.QWikiElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.QWikiElement
+	 * @see QWiki.QWikiElement
 	 * @generated
 	 */
 	public Adapter createQWikiElementAdapter() {
@@ -216,13 +217,13 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.QWikiNamedElement <em>QWiki Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.QWikiNamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.QWikiNamedElement
+	 * @see QWiki.QWikiNamedElement
 	 * @generated
 	 */
 	public Adapter createQWikiNamedElementAdapter() {
@@ -230,30 +231,30 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nNamedElement <em>I1 8n Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.L10nNamedElement <em>L1 0n Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.I18nNamedElement
+	 * @see QWiki.L10nNamedElement
 	 * @generated
 	 */
-	public Adapter createI18nNamedElementAdapter() {
+	public Adapter createL10nNamedElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.Kernel.I18nDescriptiveElement <em>I1 8n Descriptive Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.L10nDescriptiveElement <em>L1 0n Descriptive Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.Kernel.I18nDescriptiveElement
+	 * @see QWiki.L10nDescriptiveElement
 	 * @generated
 	 */
-	public Adapter createI18nDescriptiveElementAdapter() {
+	public Adapter createL10nDescriptiveElementAdapter() {
 		return null;
 	}
 
@@ -269,4 +270,4 @@ public class RASCIAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //RASCIAdapterFactory
+} //RasciAdapterFactory

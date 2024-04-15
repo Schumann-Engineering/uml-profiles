@@ -2,15 +2,15 @@
  */
 package QWiki.Spice.util;
 
-import QWiki.Kernel.I18nDescriptiveElement;
-import QWiki.Kernel.I18nNamedElement;
-import QWiki.Kernel.QWikiContainer;
-import QWiki.Kernel.QWikiElement;
-import QWiki.Kernel.QWikiNamedElement;
-import QWiki.Kernel.QWikiNamespace;
+import QWiki.L10nDescriptiveElement;
+import QWiki.L10nNamedElement;
+import QWiki.QWikiContainer;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiRelationship;
+import QWiki.QWikiRelationshipType;
 
-import QWiki.Kernel.QWikiRelationship;
-import QWiki.Kernel.QWikiRelationshipType;
 import QWiki.Rasci.RasciElement;
 
 import QWiki.Spice.BasePractise;
@@ -18,17 +18,18 @@ import QWiki.Spice.GenericWorkProduct;
 import QWiki.Spice.Outcome;
 import QWiki.Spice.ProcessGroup;
 import QWiki.Spice.ProcessReferenceModel;
-import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.SpiceElement;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
-
 import QWiki.Spice.WorkProductRelationship;
 import QWiki.Spice.WorkProductRelationshipType;
+
 import org.eclipse.emf.ecore.EModelElement;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.eclipse.uml2.uml.DirectedRelationship;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
@@ -45,17 +46,17 @@ import org.eclipse.uml2.uml.Relationship;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see QWiki.Spice.SPICEPackage
+ * @see QWiki.Spice.SpicePackage
  * @generated
  */
-public class SPICESwitch<T> extends Switch<T> {
+public class SpiceSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static SPICEPackage modelPackage;
+	protected static SpicePackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -63,9 +64,9 @@ public class SPICESwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICESwitch() {
+	public SpiceSwitch() {
 		if (modelPackage == null) {
-			modelPackage = SPICEPackage.eINSTANCE;
+			modelPackage = SpicePackage.eINSTANCE;
 		}
 	}
 
@@ -92,16 +93,16 @@ public class SPICESwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case SPICEPackage.BASE_PRACTISE: {
+			case SpicePackage.BASE_PRACTISE: {
 				BasePractise basePractise = (BasePractise)theEObject;
 				T result = caseBasePractise(basePractise);
 				if (result == null) result = caseSpiceElement(basePractise);
 				if (result == null) result = caseQWikiContainer(basePractise);
 				if (result == null) result = caseRasciElement(basePractise);
 				if (result == null) result = caseQWikiNamespace(basePractise);
-				if (result == null) result = caseI18nDescriptiveElement(basePractise);
+				if (result == null) result = caseL10nDescriptiveElement(basePractise);
 				if (result == null) result = caseNamespace(basePractise);
-				if (result == null) result = caseI18nNamedElement(basePractise);
+				if (result == null) result = caseL10nNamedElement(basePractise);
 				if (result == null) result = caseQWikiNamedElement(basePractise);
 				if (result == null) result = caseNamedElement(basePractise);
 				if (result == null) result = caseQWikiElement(basePractise);
@@ -110,15 +111,15 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.SPICE_ELEMENT: {
+			case SpicePackage.SPICE_ELEMENT: {
 				SpiceElement spiceElement = (SpiceElement)theEObject;
 				T result = caseSpiceElement(spiceElement);
 				if (result == null) result = caseQWikiContainer(spiceElement);
 				if (result == null) result = caseRasciElement(spiceElement);
 				if (result == null) result = caseQWikiNamespace(spiceElement);
-				if (result == null) result = caseI18nDescriptiveElement(spiceElement);
+				if (result == null) result = caseL10nDescriptiveElement(spiceElement);
 				if (result == null) result = caseNamespace(spiceElement);
-				if (result == null) result = caseI18nNamedElement(spiceElement);
+				if (result == null) result = caseL10nNamedElement(spiceElement);
 				if (result == null) result = caseQWikiNamedElement(spiceElement);
 				if (result == null) result = caseNamedElement(spiceElement);
 				if (result == null) result = caseQWikiElement(spiceElement);
@@ -127,14 +128,14 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.PROCESS_REFERENCE_MODEL: {
+			case SpicePackage.PROCESS_REFERENCE_MODEL: {
 				ProcessReferenceModel processReferenceModel = (ProcessReferenceModel)theEObject;
 				T result = caseProcessReferenceModel(processReferenceModel);
 				if (result == null) result = caseQWikiContainer(processReferenceModel);
 				if (result == null) result = caseQWikiNamespace(processReferenceModel);
-				if (result == null) result = caseI18nDescriptiveElement(processReferenceModel);
+				if (result == null) result = caseL10nDescriptiveElement(processReferenceModel);
 				if (result == null) result = caseNamespace(processReferenceModel);
-				if (result == null) result = caseI18nNamedElement(processReferenceModel);
+				if (result == null) result = caseL10nNamedElement(processReferenceModel);
 				if (result == null) result = caseQWikiNamedElement(processReferenceModel);
 				if (result == null) result = caseNamedElement(processReferenceModel);
 				if (result == null) result = caseQWikiElement(processReferenceModel);
@@ -143,16 +144,16 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.PROCESS: {
+			case SpicePackage.PROCESS: {
 				QWiki.Spice.Process process = (QWiki.Spice.Process)theEObject;
 				T result = caseProcess(process);
 				if (result == null) result = caseSpiceElement(process);
 				if (result == null) result = caseQWikiContainer(process);
 				if (result == null) result = caseRasciElement(process);
 				if (result == null) result = caseQWikiNamespace(process);
-				if (result == null) result = caseI18nDescriptiveElement(process);
+				if (result == null) result = caseL10nDescriptiveElement(process);
 				if (result == null) result = caseNamespace(process);
-				if (result == null) result = caseI18nNamedElement(process);
+				if (result == null) result = caseL10nNamedElement(process);
 				if (result == null) result = caseQWikiNamedElement(process);
 				if (result == null) result = caseNamedElement(process);
 				if (result == null) result = caseQWikiElement(process);
@@ -161,16 +162,16 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.PROCESS_GROUP: {
+			case SpicePackage.PROCESS_GROUP: {
 				ProcessGroup processGroup = (ProcessGroup)theEObject;
 				T result = caseProcessGroup(processGroup);
 				if (result == null) result = caseSpiceElement(processGroup);
 				if (result == null) result = caseQWikiContainer(processGroup);
 				if (result == null) result = caseRasciElement(processGroup);
 				if (result == null) result = caseQWikiNamespace(processGroup);
-				if (result == null) result = caseI18nDescriptiveElement(processGroup);
+				if (result == null) result = caseL10nDescriptiveElement(processGroup);
 				if (result == null) result = caseNamespace(processGroup);
-				if (result == null) result = caseI18nNamedElement(processGroup);
+				if (result == null) result = caseL10nNamedElement(processGroup);
 				if (result == null) result = caseQWikiNamedElement(processGroup);
 				if (result == null) result = caseNamedElement(processGroup);
 				if (result == null) result = caseQWikiElement(processGroup);
@@ -179,10 +180,10 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.OUTCOME: {
+			case SpicePackage.OUTCOME: {
 				Outcome outcome = (Outcome)theEObject;
 				T result = caseOutcome(outcome);
-				if (result == null) result = caseI18nNamedElement(outcome);
+				if (result == null) result = caseL10nNamedElement(outcome);
 				if (result == null) result = caseQWikiNamedElement(outcome);
 				if (result == null) result = caseNamedElement(outcome);
 				if (result == null) result = caseQWikiElement(outcome);
@@ -191,16 +192,16 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.WORK_PRODUCT: {
+			case SpicePackage.WORK_PRODUCT: {
 				WorkProduct workProduct = (WorkProduct)theEObject;
 				T result = caseWorkProduct(workProduct);
 				if (result == null) result = caseSpiceElement(workProduct);
 				if (result == null) result = caseQWikiContainer(workProduct);
 				if (result == null) result = caseRasciElement(workProduct);
 				if (result == null) result = caseQWikiNamespace(workProduct);
-				if (result == null) result = caseI18nDescriptiveElement(workProduct);
+				if (result == null) result = caseL10nDescriptiveElement(workProduct);
 				if (result == null) result = caseNamespace(workProduct);
-				if (result == null) result = caseI18nNamedElement(workProduct);
+				if (result == null) result = caseL10nNamedElement(workProduct);
 				if (result == null) result = caseQWikiNamedElement(workProduct);
 				if (result == null) result = caseNamedElement(workProduct);
 				if (result == null) result = caseQWikiElement(workProduct);
@@ -209,7 +210,7 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.GENERIC_WORK_PRODUCT: {
+			case SpicePackage.GENERIC_WORK_PRODUCT: {
 				GenericWorkProduct genericWorkProduct = (GenericWorkProduct)theEObject;
 				T result = caseGenericWorkProduct(genericWorkProduct);
 				if (result == null) result = caseWorkProduct(genericWorkProduct);
@@ -217,9 +218,9 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = caseQWikiContainer(genericWorkProduct);
 				if (result == null) result = caseRasciElement(genericWorkProduct);
 				if (result == null) result = caseQWikiNamespace(genericWorkProduct);
-				if (result == null) result = caseI18nDescriptiveElement(genericWorkProduct);
+				if (result == null) result = caseL10nDescriptiveElement(genericWorkProduct);
 				if (result == null) result = caseNamespace(genericWorkProduct);
-				if (result == null) result = caseI18nNamedElement(genericWorkProduct);
+				if (result == null) result = caseL10nNamedElement(genericWorkProduct);
 				if (result == null) result = caseQWikiNamedElement(genericWorkProduct);
 				if (result == null) result = caseNamedElement(genericWorkProduct);
 				if (result == null) result = caseQWikiElement(genericWorkProduct);
@@ -228,18 +229,19 @@ public class SPICESwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP: {
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP: {
 				WorkProductRelationship workProductRelationship = (WorkProductRelationship)theEObject;
 				T result = caseWorkProductRelationship(workProductRelationship);
 				if (result == null) result = caseQWikiRelationship(workProductRelationship);
 				if (result == null) result = caseDirectedRelationship(workProductRelationship);
+				if (result == null) result = caseQWikiElement(workProductRelationship);
 				if (result == null) result = caseRelationship(workProductRelationship);
 				if (result == null) result = caseElement(workProductRelationship);
 				if (result == null) result = caseEModelElement(workProductRelationship);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE: {
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP_TYPE: {
 				WorkProductRelationshipType workProductRelationshipType = (WorkProductRelationshipType)theEObject;
 				T result = caseWorkProductRelationshipType(workProductRelationshipType);
 				if (result == null) result = caseQWikiRelationshipType(workProductRelationshipType);
@@ -271,13 +273,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Spice Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Spice Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -466,13 +468,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -481,13 +483,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -496,28 +498,28 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>I1 8n Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>L1 0n Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseI18nNamedElement(I18nNamedElement object) {
+	public T caseL10nNamedElement(L10nNamedElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -526,28 +528,28 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Descriptive Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Descriptive Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>I1 8n Descriptive Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>L1 0n Descriptive Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseI18nDescriptiveElement(I18nDescriptiveElement object) {
+	public T caseL10nDescriptiveElement(L10nDescriptiveElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -556,13 +558,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rasci Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rasci Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -601,13 +603,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Relationship</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Relationship</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -616,13 +618,13 @@ public class SPICESwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Relationship Type</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Relationship Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Relationship Type</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Relationship Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -646,4 +648,4 @@ public class SPICESwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //SPICESwitch
+} //SpiceSwitch

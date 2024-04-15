@@ -3,10 +3,10 @@
 package QWiki.Spice.provider;
 
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.BasePractise;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -64,7 +64,7 @@ public class BasePractiseItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_BasePractise_facilitatedOutcome_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BasePractise_facilitatedOutcome_feature", "_UI_BasePractise_type"),
-				 SPICEPackage.Literals.BASE_PRACTISE__FACILITATED_OUTCOME,
+				 SpicePackage.Literals.BASE_PRACTISE__FACILITATED_OUTCOME,
 				 true,
 				 false,
 				 true,
@@ -86,7 +86,7 @@ public class BasePractiseItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_BasePractise_facilitatedWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_BasePractise_facilitatedWorkProduct_feature", "_UI_BasePractise_type"),
-				 SPICEPackage.Literals.BASE_PRACTISE__FACILITATED_WORK_PRODUCT,
+				 SpicePackage.Literals.BASE_PRACTISE__FACILITATED_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -158,9 +158,9 @@ public class BasePractiseItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

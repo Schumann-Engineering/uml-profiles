@@ -2,10 +2,10 @@
  */
 package QWiki.Spice.tests;
 
-import QWiki.Kernel.tests.QWikiContainerTest;
-
 import QWiki.Spice.ProcessReferenceModel;
-import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SpiceFactory;
+
+import QWiki.tests.QWikiContainerTest;
 
 import junit.textui.TestRunner;
 
@@ -16,8 +16,8 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Spice.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}</li>
- *   <li>{@link QWiki.Spice.ProcessReferenceModel#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#objectIdForDomain() <em>Object Id For Domain</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessReferenceModel#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -62,7 +62,7 @@ public class ProcessReferenceModelTest extends QWikiContainerTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createProcessReferenceModel());
+		setFixture(SpiceFactory.eINSTANCE.createProcessReferenceModel());
 	}
 
 	/**
@@ -77,26 +77,26 @@ public class ProcessReferenceModelTest extends QWikiContainerTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#objectIdForDomain() <em>Object Id For Domain</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Spice.ProcessReferenceModel#oidForDomain()
+	 * @see QWiki.Spice.ProcessReferenceModel#objectIdForDomain()
 	 * @generated
 	 */
-	public void testOidForDomain() {
+	public void testObjectIdForDomain() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.ProcessReferenceModel#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Spice.ProcessReferenceModel#oid()
+	 * @see QWiki.Spice.ProcessReferenceModel#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

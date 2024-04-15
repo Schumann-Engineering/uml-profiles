@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICETests extends TestSuite {
+public class SpiceTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class SPICETests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new SPICETests("Spice Tests");
+		TestSuite suite = new SpiceTests("Spice Tests");
 		suite.addTestSuite(BasePractiseTest.class);
 		suite.addTestSuite(ProcessReferenceModelTest.class);
 		suite.addTestSuite(ProcessTest.class);
@@ -48,8 +48,8 @@ public class SPICETests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICETests(String name) {
+	public SpiceTests(String name) {
 		super(name);
 	}
 
-} //SPICETests
+} //SpiceTests

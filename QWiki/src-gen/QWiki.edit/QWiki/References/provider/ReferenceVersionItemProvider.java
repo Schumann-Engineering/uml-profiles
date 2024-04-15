@@ -3,13 +3,13 @@
 package QWiki.References.provider;
 
 
+import QWiki.Content.ContentFactory;
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiNamespaceItemProvider;
-
 import QWiki.References.ReferenceVersion;
-import QWiki.References.ReferencesFactory;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.provider.QWikiNamespaceItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -139,7 +139,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_SECTION);
+			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_CONTENT);
 		}
 		return childrenFeatures;
 	}
@@ -200,7 +200,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_SECTION:
+			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -220,8 +220,8 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_SECTION,
-				 ReferencesFactory.eINSTANCE.createSection()));
+				(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_CONTENT,
+				 ContentFactory.eINSTANCE.createSection()));
 	}
 
 	/**

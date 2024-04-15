@@ -8,7 +8,7 @@ import QWiki.Domain.DomainPackage;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiElementItemProvider;
+import QWiki.provider.QWikiElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;

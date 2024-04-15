@@ -2,13 +2,12 @@
  */
 package QWiki.Rasci;
 
-import QWiki.Kernel.I18nDescriptiveElement;
-
+import QWiki.L10nDescriptiveElement;
 import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Rasci Element</b></em>'.
+ * A representation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -22,11 +21,11 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Rasci.RasciElement#getInformedRole <em>Informed Role</em>}</li>
  * </ul>
  *
- * @see QWiki.Rasci.RASCIPackage#getRasciElement()
+ * @see QWiki.Rasci.RasciPackage#getRasciElement()
  * @model abstract="true"
  * @generated
  */
-public interface RasciElement extends I18nDescriptiveElement {
+public interface RasciElement extends L10nDescriptiveElement {
 	/**
 	 * Returns the value of the '<em><b>Responsible Role</b></em>' reference list.
 	 * The list contents are of type {@link QWiki.Rasci.Role}.
@@ -38,9 +37,10 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Responsible Role</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_ResponsibleRole()
+	 * @see QWiki.Rasci.RasciPackage#getRasciElement_ResponsibleRole()
 	 * @see QWiki.Rasci.Role#getResponsibleElement
-	 * @model opposite="responsibleElement" required="true" transient="true" ordered="false"
+	 * @model opposite="responsibleElement" resolveProxies="false" required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Role> getResponsibleRole();
@@ -79,9 +79,10 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accountable Role</em>' reference.
 	 * @see #setAccountableRole(Role)
-	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_AccountableRole()
+	 * @see QWiki.Rasci.RasciPackage#getRasciElement_AccountableRole()
 	 * @see QWiki.Rasci.Role#getAccountableElement
-	 * @model opposite="accountableElement" transient="true" ordered="false"
+	 * @model opposite="accountableElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	Role getAccountableRole();
@@ -107,9 +108,10 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Support Role</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_SupportRole()
+	 * @see QWiki.Rasci.RasciPackage#getRasciElement_SupportRole()
 	 * @see QWiki.Rasci.Role#getSupportingElement
-	 * @model opposite="supportingElement" transient="true" ordered="false"
+	 * @model opposite="supportingElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Role> getSupportRole();
@@ -148,9 +150,10 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Consulted Role</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_ConsultedRole()
+	 * @see QWiki.Rasci.RasciPackage#getRasciElement_ConsultedRole()
 	 * @see QWiki.Rasci.Role#getConsultingElement
-	 * @model opposite="consultingElement" transient="true" ordered="false"
+	 * @model opposite="consultingElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Role> getConsultedRole();
@@ -189,9 +192,10 @@ public interface RasciElement extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Informed Role</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRasciElement_InformedRole()
+	 * @see QWiki.Rasci.RasciPackage#getRasciElement_InformedRole()
 	 * @see QWiki.Rasci.Role#getInformedElement
-	 * @model opposite="informedElement" transient="true" ordered="false"
+	 * @model opposite="informedElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Role> getInformedRole();

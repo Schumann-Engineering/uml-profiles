@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.Spice.SPICEPackage
+ * @see QWiki.Spice.SpicePackage
  * @generated
  */
-public interface SPICEFactory extends EFactory {
+public interface SpiceFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	SPICEFactory eINSTANCE = QWiki.Spice.impl.SPICEFactoryImpl.init();
+	SpiceFactory eINSTANCE = QWiki.Spice.impl.SpiceFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Base Practise</em>'.
@@ -109,6 +109,6 @@ public interface SPICEFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	SPICEPackage getSPICEPackage();
+	SpicePackage getSpicePackage();
 
-} //SPICEFactory
+} //SpiceFactory

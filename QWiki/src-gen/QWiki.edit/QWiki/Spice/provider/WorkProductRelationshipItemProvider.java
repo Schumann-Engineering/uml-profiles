@@ -5,9 +5,10 @@ package QWiki.Spice.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiRelationshipItemProvider;
+import QWiki.Spice.SpicePackage;
+import QWiki.Spice.WorkProductRelationship;
 
-import QWiki.Spice.SPICEPackage;
+import QWiki.provider.QWikiRelationshipItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -68,7 +69,7 @@ public class WorkProductRelationshipItemProvider extends QWikiRelationshipItemPr
 				 getResourceLocator(),
 				 getString("_UI_WorkProductRelationship_linkingWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProductRelationship_linkingWorkProduct_feature", "_UI_WorkProductRelationship_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT,
+				 SpicePackage.Literals.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -90,7 +91,7 @@ public class WorkProductRelationshipItemProvider extends QWikiRelationshipItemPr
 				 getResourceLocator(),
 				 getString("_UI_WorkProductRelationship_workProductRelationshipType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProductRelationship_workProductRelationshipType_feature", "_UI_WorkProductRelationship_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE,
+				 SpicePackage.Literals.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE,
 				 true,
 				 false,
 				 true,
@@ -112,7 +113,7 @@ public class WorkProductRelationshipItemProvider extends QWikiRelationshipItemPr
 				 getResourceLocator(),
 				 getString("_UI_WorkProductRelationship_linkedWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProductRelationship_linkedWorkProduct_feature", "_UI_WorkProductRelationship_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT,
+				 SpicePackage.Literals.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -140,7 +141,10 @@ public class WorkProductRelationshipItemProvider extends QWikiRelationshipItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_WorkProductRelationship_type");
+		String label = ((WorkProductRelationship)object).getUuid();
+		return label == null || label.length() == 0 ?
+			getString("_UI_WorkProductRelationship_type") :
+			getString("_UI_WorkProductRelationship_type") + " " + label;
 	}
 
 

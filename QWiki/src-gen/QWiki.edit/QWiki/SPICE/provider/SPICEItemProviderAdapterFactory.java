@@ -2,7 +2,7 @@
  */
 package QWiki.Spice.provider;
 
-import QWiki.Spice.util.SPICEAdapterFactory;
+import QWiki.Spice.util.SpiceAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class SpiceItemProviderAdapterFactory extends SpiceAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class SPICEItemProviderAdapterFactory extends SPICEAdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICEItemProviderAdapterFactory() {
+	public SpiceItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);
