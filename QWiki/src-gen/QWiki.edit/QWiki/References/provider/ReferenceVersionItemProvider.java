@@ -55,7 +55,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPublicationYearPropertyDescriptor(object);
-			addReferenceVersionTypePropertyDescriptor(object);
+			addVersionTypePropertyDescriptor(object);
 			addEditionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -84,19 +84,19 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Reference Version Type feature.
+	 * This adds a property descriptor for the Version Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReferenceVersionTypePropertyDescriptor(Object object) {
+	protected void addVersionTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ReferenceVersion_referenceVersionType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ReferenceVersion_referenceVersionType_feature", "_UI_ReferenceVersion_type"),
-				 ReferencesPackage.Literals.REFERENCE_VERSION__REFERENCE_VERSION_TYPE,
+				 getString("_UI_ReferenceVersion_versionType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ReferenceVersion_versionType_feature", "_UI_ReferenceVersion_type"),
+				 ReferencesPackage.Literals.REFERENCE_VERSION__VERSION_TYPE,
 				 true,
 				 false,
 				 false,
@@ -196,7 +196,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 
 		switch (notification.getFeatureID(ReferenceVersion.class)) {
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
-			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
+			case ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE:
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

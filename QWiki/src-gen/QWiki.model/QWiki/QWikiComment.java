@@ -22,27 +22,27 @@ import org.eclipse.uml2.uml.Comment;
  */
 public interface QWikiComment extends QWikiElement, Comment {
 	/**
-	 * Returns the value of the '<em><b>Content</b></em>' reference.
+	 * Returns the value of the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Content</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Content</em>' reference.
+	 * @return the value of the '<em>Content</em>' containment reference.
 	 * @see #setContent(L10nString)
 	 * @see QWiki.QWikiPackage#getQWikiComment_Content()
-	 * @model resolveProxies="false" ordered="false"
+	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	L10nString getContent();
 
 	/**
-	 * Sets the value of the '{@link QWiki.QWikiComment#getContent <em>Content</em>}' reference.
+	 * Sets the value of the '{@link QWiki.QWikiComment#getContent <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Content</em>' reference.
+	 * @param value the new value of the '<em>Content</em>' containment reference.
 	 * @see #getContent()
 	 * @generated
 	 */

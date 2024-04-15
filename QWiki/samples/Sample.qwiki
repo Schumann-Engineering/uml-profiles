@@ -1,45 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QWiki:QWikiModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QWiki="http://schumann.engineering/qwiki/1.0" xmlns:QWiki.Content="http://schumann.engineering/qwiki/1.0/content" xmlns:QWiki.Rasci="http://schumann.engineering/qwiki/1.0/rasci" xmlns:QWiki.References="http://schumann.engineering/qwiki/1.0/references" xmlns:QWiki.Spice="http://schumann.engineering/qwiki/1.0/spice" xsi:schemaLocation="http://schumann.engineering/qwiki/1.0/content http://schumann.engineering/qwiki/1.0#//Content http://schumann.engineering/qwiki/1.0/rasci http://schumann.engineering/qwiki/1.0#//Rasci http://schumann.engineering/qwiki/1.0/references http://schumann.engineering/qwiki/1.0#//References http://schumann.engineering/qwiki/1.0/spice http://schumann.engineering/qwiki/1.0#//Spice" uuid="58f3c5a8-1830-40e3-a3f5-919b2980c4b3">
-  <ownedQwikiElement xsi:type="QWiki.References:Author" name="test" uuid="8be4d82b-fa35-4094-9607-1bc33532338d"/>
-  <ownedQwikiElement xsi:type="QWiki.References:Reference" name="reftest" uuid="2867c193-edcc-4422-9ecd-79b6d47003ef">
-    <author>8be4d82b-fa35-4094-9607-1bc33532338d</author>
-  </ownedQwikiElement>
-  <ownedQwikiElement xsi:type="QWiki.Rasci:Role" name="Product Manager" uuid="8610f815-201d-4b9d-ba70-5d21e9d67f49"/>
-  <ownedQwikiElement xsi:type="QWiki.Rasci:Role" name="Risk Manager" uuid="19203116-02bb-4d10-8efc-ef1a04112220"/>
-  <ownedQwikiElement xsi:type="QWiki.Spice:WorkProduct" uuid="161bc329-cca1-43c1-bb3b-556e49e7a2ed">
-    <tag>Test Tag</tag>
-    <displayName>
-      <value>
-        <language>test1</language>
-        <body>test</body>
-      </value>
-      <encryptionKey>b26894e0-8375-4c86-b958-38c633319800</encryptionKey>
-    </displayName>
-    <purpose/>
-    <responsibleRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</responsibleRole>
-    <responsibleRole>19203116-02bb-4d10-8efc-ef1a04112220</responsibleRole>
-    <accountableRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</accountableRole>
-    <supportRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</supportRole>
-    <supportRole>19203116-02bb-4d10-8efc-ef1a04112220</supportRole>
-    <consultedRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</consultedRole>
-    <consultedRole>19203116-02bb-4d10-8efc-ef1a04112220</consultedRole>
-    <informedRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</informedRole>
-    <informedRole>19203116-02bb-4d10-8efc-ef1a04112220</informedRole>
-    <facilitatedSection>86984fb7-bc1e-41dd-bc93-fc20545820be</facilitatedSection>
-    <ownerRole>19203116-02bb-4d10-8efc-ef1a04112220</ownerRole>
-    <managerRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</managerRole>
-    <participantRole>19203116-02bb-4d10-8efc-ef1a04112220</participantRole>
-    <participantRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</participantRole>
-  </ownedQwikiElement>
-  <ownedQwikiElement xsi:type="QWiki.References:ReferenceVersion" uuid="643e2dc0-f7e0-4848-bde2-884de49e37f1">
-    <ownedContent name="Section A" uuid="86984fb7-bc1e-41dd-bc93-fc20545820be">
-      <item xsi:type="QWiki.Content:Block" uuid="d11b9b82-9450-42f3-92a2-71ea9fa7f536" blockType="OrderedList">
-        <item xsi:type="QWiki.Content:Text" uuid="bad0b900-cf30-4ab5-a5d0-8541cfee557d"/>
-      </item>
-      <item xsi:type="QWiki.Content:Layout" uuid="1ae90e37-0645-4ddf-a5db-746b7e1d04ca" layoutType="HorizontalLine"/>
-      <number>3</number>
-    </ownedContent>
-  </ownedQwikiElement>
-  <ownedQwikiElement xsi:type="QWiki:QWikiContainer" name="Encryption Keys" uuid="1e742e35-b760-4d59-9146-65045b81a5b7"/>
-  <ownedQwikiElement xsi:type="QWiki:QWikiEncryptionKey" uuid="b26894e0-8375-4c86-b958-38c633319800"/>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Encryption Keys" uuid="1e742e35-b760-4d59-9146-65045b81a5b7">
+    <qwikiElement xsi:type="QWiki:QWikiEncryptionKey" uuid="b26894e0-8375-4c86-b958-38c633319800"/>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Roles" uuid="5216cdfe-5d76-4b52-8179-37c20a64abe0">
+    <qwikiElement xsi:type="QWiki.Rasci:Role" name="Product Manager" uuid="8610f815-201d-4b9d-ba70-5d21e9d67f49"/>
+    <qwikiElement xsi:type="QWiki.Rasci:Role" name="Risk Manager" uuid="19203116-02bb-4d10-8efc-ef1a04112220"/>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Authors" uuid="8c39d29d-602a-498c-af64-192ddd3a3165">
+    <qwikiElement xsi:type="QWiki.References:Author" name="test" uuid="8be4d82b-fa35-4094-9607-1bc33532338d"/>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="References" uuid="088c5384-c8e3-4a40-b1fb-db97857cd8ea">
+    <qwikiElement xsi:type="QWiki.References:Reference" name="Medical device software – Software life-cycle processes" uuid="2867c193-edcc-4422-9ecd-79b6d47003ef" number="62304" referenceType="Standard">
+      <ownedVersion uuid="643e2dc0-f7e0-4848-bde2-884de49e37f1" publicationYear="2006" versionType="Amendment" edition="2015">
+        <ownedContent name="General Requirements" uuid="86984fb7-bc1e-41dd-bc93-fc20545820be" number="4">
+          <item xsi:type="QWiki.Content:Section" name="Quality Management System" uuid="5ec553e9-fd5f-43b3-bc06-5d7663111fb6" number="4.1">
+            <item xsi:type="QWiki.Content:Text" uuid="0708c83a-9a99-492b-9b74-ee989665769e">
+              <body>
+                <text language="en">The MANUFACTURER of MEDICAL DEVICE SOFTWARE demonstrates the ability to provide MEDICAL DEVICE SOFTWARE that consistently meets customer requirements and applicable regulatory requirements</text>
+              </body>
+            </item>
+            <item xsi:type="QWiki.Content:Panel" uuid="0cb19b2e-b590-4758-818a-a8a0a5c7a329" panelType="Note">
+              <item xsi:type="QWiki.Content:Text" uuid="7dda6965-c07b-4c2c-8f66-02271e3c7fc7">
+                <body>
+                  <text language="en">demonstration of this ability can be by the use of a quality management system that complies with:</text>
+                </body>
+              </item>
+              <item xsi:type="QWiki.Content:Block" uuid="b5dddf14-3833-48ba-8efe-61fd49f198fa" blockType="UnorderedList">
+                <item xsi:type="QWiki.Content:Text" uuid="2eb33744-6106-42d5-9ec1-4d6bd22afd5e">
+                  <body>
+                    <text language="en">ISO 13485; or</text>
+                  </body>
+                </item>
+                <item xsi:type="QWiki.Content:Text" uuid="5db0d1d0-f631-4486-bf4b-800f8c97ef82">
+                  <body>
+                    <text language="en">a national quality management system standard; or</text>
+                  </body>
+                </item>
+                <item xsi:type="QWiki.Content:Text" uuid="2c958b1c-b161-4e27-a769-1c189c671376">
+                  <body>
+                    <text language="en">a quality management system required by national regulation.</text>
+                  </body>
+                </item>
+              </item>
+            </item>
+            <item xsi:type="QWiki.Content:Panel" uuid="677ac0b0-1729-45f3-8426-3a0c8e76d6fd" panelType="Note">
+              <item xsi:type="QWiki.Content:Text" uuid="e12d9e46-efe2-48e0-aa6b-7f47c1b20e93">
+                <body>
+                  <text language="en">guidance for applying quality management system requirements to software can be found in iso/iec 90003.</text>
+                </body>
+              </item>
+            </item>
+          </item>
+        </ownedContent>
+      </ownedVersion>
+      <author>8be4d82b-fa35-4094-9607-1bc33532338d</author>
+    </qwikiElement>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Work Products" uuid="7950fd2e-d7e1-417b-8872-c3d6fdb31bcd">
+    <qwikiElement xsi:type="QWiki.Spice:WorkProduct" uuid="161bc329-cca1-43c1-bb3b-556e49e7a2ed">
+      <tag>Test Tag</tag>
+      <displayName encryptionKey="b26894e0-8375-4c86-b958-38c633319800">
+        <text language="test">test</text>
+      </displayName>
+      <purpose>
+        <text language="test">purpose</text>
+      </purpose>
+      <responsibleRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</responsibleRole>
+      <responsibleRole>19203116-02bb-4d10-8efc-ef1a04112220</responsibleRole>
+      <accountableRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</accountableRole>
+      <supportRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</supportRole>
+      <supportRole>19203116-02bb-4d10-8efc-ef1a04112220</supportRole>
+      <consultedRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</consultedRole>
+      <consultedRole>19203116-02bb-4d10-8efc-ef1a04112220</consultedRole>
+      <informedRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</informedRole>
+      <informedRole>19203116-02bb-4d10-8efc-ef1a04112220</informedRole>
+      <ownerRole>19203116-02bb-4d10-8efc-ef1a04112220</ownerRole>
+      <managerRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</managerRole>
+      <participantRole>19203116-02bb-4d10-8efc-ef1a04112220</participantRole>
+      <participantRole>8610f815-201d-4b9d-ba70-5d21e9d67f49</participantRole>
+    </qwikiElement>
+  </qwikiElement>
 </QWiki:QWikiModel>

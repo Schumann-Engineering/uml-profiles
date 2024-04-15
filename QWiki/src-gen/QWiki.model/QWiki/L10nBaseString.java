@@ -15,31 +15,31 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link QWiki.L10nBaseString#getValue <em>Value</em>}</li>
+ *   <li>{@link QWiki.L10nBaseString#getText <em>Text</em>}</li>
  *   <li>{@link QWiki.L10nBaseString#getEncryptionKey <em>Encryption Key</em>}</li>
  * </ul>
  *
  * @see QWiki.QWikiPackage#getL10nBaseString()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface L10nBaseString extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' containment reference list.
-	 * The list contents are of type {@link QWiki.L10nValue}.
+	 * Returns the value of the '<em><b>Text</b></em>' containment reference list.
+	 * The list contents are of type {@link QWiki.L10nText}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Text</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' containment reference list.
-	 * @see QWiki.QWikiPackage#getL10nBaseString_Value()
+	 * @return the value of the '<em>Text</em>' containment reference list.
+	 * @see QWiki.QWikiPackage#getL10nBaseString_Text()
 	 * @model containment="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='owningElement'"
 	 * @generated
 	 */
-	EList<L10nValue> getValue();
+	EList<L10nText> getText();
 
 	/**
 	 * Returns the value of the '<em><b>Encryption Key</b></em>' reference.
@@ -54,7 +54,7 @@ public interface L10nBaseString extends EObject {
 	 * @see QWiki.QWikiPackage#getL10nBaseString_EncryptionKey()
 	 * @model resolveProxies="false" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='l10nbasestring'"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	QWikiEncryptionKey getEncryptionKey();

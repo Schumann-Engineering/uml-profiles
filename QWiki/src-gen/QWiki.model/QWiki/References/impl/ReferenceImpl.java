@@ -90,7 +90,7 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ReferenceType REFERENCE_TYPE_EDEFAULT = ReferenceType.DOCUMENT;
+	protected static final ReferenceType REFERENCE_TYPE_EDEFAULT = ReferenceType.UNSPECIFIED;
 
 	/**
 	 * The cached value of the '{@link #getReferenceType() <em>Reference Type</em>}' attribute.

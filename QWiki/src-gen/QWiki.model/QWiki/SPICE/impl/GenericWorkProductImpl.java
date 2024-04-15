@@ -84,7 +84,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.GENERIC_WORK_PRODUCT__OWNED_RULE, SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.GENERIC_WORK_PRODUCT__OWNED_RULE, SpicePackage.GENERIC_WORK_PRODUCT__QWIKI_ELEMENT, SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->

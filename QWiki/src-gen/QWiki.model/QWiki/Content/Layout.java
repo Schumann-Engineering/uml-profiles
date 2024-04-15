@@ -16,7 +16,7 @@ package QWiki.Content;
  * </ul>
  *
  * @see QWiki.Content.ContentPackage#getLayout()
- * @model
+ * @model extendedMetaData="kind='empty'"
  * @generated
  */
 public interface Layout extends Content {

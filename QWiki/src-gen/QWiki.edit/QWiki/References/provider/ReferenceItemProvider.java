@@ -178,7 +178,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Reference)object).getName();
+		String label = ((Reference)object).getQualifiedName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Reference_type") :
 			getString("_UI_Reference_type") + " " + label;
@@ -239,7 +239,9 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 		boolean qualify =
 			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == ReferencesPackage.Literals.REFERENCE__OWNED_VERSION;
 
 		if (qualify) {
 			return getString

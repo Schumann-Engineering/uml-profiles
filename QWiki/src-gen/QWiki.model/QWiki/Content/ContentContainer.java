@@ -27,26 +27,26 @@ import org.eclipse.uml2.uml.Namespace;
  */
 public interface ContentContainer extends Namespace, Content {
 	/**
-	 * Returns the value of the '<em><b>Caption</b></em>' reference.
+	 * Returns the value of the '<em><b>Caption</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Caption</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Caption</em>' reference.
+	 * @return the value of the '<em>Caption</em>' containment reference.
 	 * @see #setCaption(L10nString)
 	 * @see QWiki.Content.ContentPackage#getContentContainer_Caption()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	L10nString getCaption();
 
 	/**
-	 * Sets the value of the '{@link QWiki.Content.ContentContainer#getCaption <em>Caption</em>}' reference.
+	 * Sets the value of the '{@link QWiki.Content.ContentContainer#getCaption <em>Caption</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Caption</em>' reference.
+	 * @param value the new value of the '<em>Caption</em>' containment reference.
 	 * @see #getCaption()
 	 * @generated
 	 */

@@ -31,13 +31,22 @@ public interface QWikiFactory extends EFactory {
 	L10nKeyedString createL10nKeyedString();
 
 	/**
-	 * Returns a new object of class '<em>L1 0n Value</em>'.
+	 * Returns a new object of class '<em>L1 0n Base String</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>L1 0n Value</em>'.
+	 * @return a new object of class '<em>L1 0n Base String</em>'.
 	 * @generated
 	 */
-	L10nValue createL10nValue();
+	L10nBaseString createL10nBaseString();
+
+	/**
+	 * Returns a new object of class '<em>L1 0n Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>L1 0n Text</em>'.
+	 * @generated
+	 */
+	L10nText createL10nText();
 
 	/**
 	 * Returns a new object of class '<em>Encryption Key</em>'.

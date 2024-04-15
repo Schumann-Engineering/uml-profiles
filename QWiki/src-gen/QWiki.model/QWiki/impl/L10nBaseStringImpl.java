@@ -3,7 +3,7 @@
 package QWiki.impl;
 
 import QWiki.L10nBaseString;
-import QWiki.L10nValue;
+import QWiki.L10nText;
 import QWiki.QWikiEncryptionKey;
 import QWiki.QWikiPackage;
 
@@ -35,22 +35,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.impl.L10nBaseStringImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link QWiki.impl.L10nBaseStringImpl#getText <em>Text</em>}</li>
  *   <li>{@link QWiki.impl.L10nBaseStringImpl#getEncryptionKey <em>Encryption Key</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container implements L10nBaseString {
+public class L10nBaseStringImpl extends MinimalEObjectImpl.Container implements L10nBaseString {
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference list.
+	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getText()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<L10nValue> value;
+	protected EList<L10nText> text;
 
 	/**
 	 * The cached value of the '{@link #getEncryptionKey() <em>Encryption Key</em>}' reference.
@@ -87,11 +87,11 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	 * @generated
 	 */
 	@Override
-	public EList<L10nValue> getValue() {
-		if (value == null) {
-			value = new EObjectContainmentEList<L10nValue>(L10nValue.class, this, QWikiPackage.L1_0N_BASE_STRING__VALUE);
+	public EList<L10nText> getText() {
+		if (text == null) {
+			text = new EObjectContainmentEList<L10nText>(L10nText.class, this, QWikiPackage.L1_0N_BASE_STRING__TEXT);
 		}
-		return value;
+		return text;
 	}
 
 	/**
@@ -160,8 +160,8 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
-				return ((InternalEList<?>)getValue()).basicRemove(otherEnd, msgs);
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
+				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -174,8 +174,8 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
-				return getValue();
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
+				return getText();
 			case QWikiPackage.L1_0N_BASE_STRING__ENCRYPTION_KEY:
 				return getEncryptionKey();
 		}
@@ -191,9 +191,9 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
-				getValue().clear();
-				getValue().addAll((Collection<? extends L10nValue>)newValue);
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
+				getText().clear();
+				getText().addAll((Collection<? extends L10nText>)newValue);
 				return;
 			case QWikiPackage.L1_0N_BASE_STRING__ENCRYPTION_KEY:
 				setEncryptionKey((QWikiEncryptionKey)newValue);
@@ -210,8 +210,8 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
-				getValue().clear();
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
+				getText().clear();
 				return;
 			case QWikiPackage.L1_0N_BASE_STRING__ENCRYPTION_KEY:
 				setEncryptionKey((QWikiEncryptionKey)null);
@@ -228,8 +228,8 @@ public abstract class L10nBaseStringImpl extends MinimalEObjectImpl.Container im
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
-				return value != null && !value.isEmpty();
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
+				return text != null && !text.isEmpty();
 			case QWikiPackage.L1_0N_BASE_STRING__ENCRYPTION_KEY:
 				return encryptionKey != null;
 		}

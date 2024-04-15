@@ -2,7 +2,7 @@
  */
 package QWiki.tests;
 
-import QWiki.L10nValue;
+import QWiki.L10nText;
 import QWiki.QWikiFactory;
 
 import junit.framework.TestCase;
@@ -11,19 +11,19 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>L1 0n Value</b></em>'.
+ * A test case for the model object '<em><b>L1 0n Text</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class L10nValueTest extends TestCase {
+public class L10nTextTest extends TestCase {
 
 	/**
-	 * The fixture for this L1 0n Value test case.
+	 * The fixture for this L1 0n Text test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected L10nValue fixture = null;
+	protected L10nText fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class L10nValueTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(L10nValueTest.class);
+		TestRunner.run(L10nTextTest.class);
 	}
 
 	/**
-	 * Constructs a new L1 0n Value test case with the given name.
+	 * Constructs a new L1 0n Text test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public L10nValueTest(String name) {
+	public L10nTextTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this L1 0n Value test case.
+	 * Sets the fixture for this L1 0n Text test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(L10nValue fixture) {
+	protected void setFixture(L10nText fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this L1 0n Value test case.
+	 * Returns the fixture for this L1 0n Text test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected L10nValue getFixture() {
+	protected L10nText getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class L10nValueTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(QWikiFactory.eINSTANCE.createL10nValue());
+		setFixture(QWikiFactory.eINSTANCE.createL10nText());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class L10nValueTest extends TestCase {
 		setFixture(null);
 	}
 
-} //L10nValueTest
+} //L10nTextTest

@@ -19,6 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum AuthorType implements Enumerator {
 	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNSPECIFIED(0, "UNSPECIFIED", "UNSPECIFIED"), /**
 	 * The '<em><b>Person</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26,7 +34,7 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PERSON(0, "Person", "Person"),
+	PERSON(1, "Person", "Person"),
 
 	/**
 	 * The '<em><b>Organization</b></em>' literal object.
@@ -36,7 +44,7 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ORGANIZATION(1, "Organization", "Organization"),
+	ORGANIZATION(2, "Organization", "Organization"),
 
 	/**
 	 * The '<em><b>Standards Development Organization</b></em>' literal object.
@@ -46,7 +54,18 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STANDARDS_DEVELOPMENT_ORGANIZATION(2, "StandardsDevelopmentOrganization", "StandardsDevelopmentOrganization");
+	STANDARDS_DEVELOPMENT_ORGANIZATION(3, "StandardsDevelopmentOrganization", "StandardsDevelopmentOrganization");
+
+	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSPECIFIED_VALUE = 0;
 
 	/**
 	 * The '<em><b>Person</b></em>' literal value.
@@ -57,7 +76,7 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PERSON_VALUE = 0;
+	public static final int PERSON_VALUE = 1;
 
 	/**
 	 * The '<em><b>Organization</b></em>' literal value.
@@ -68,7 +87,7 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ORGANIZATION_VALUE = 1;
+	public static final int ORGANIZATION_VALUE = 2;
 
 	/**
 	 * The '<em><b>Standards Development Organization</b></em>' literal value.
@@ -79,7 +98,7 @@ public enum AuthorType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STANDARDS_DEVELOPMENT_ORGANIZATION_VALUE = 2;
+	public static final int STANDARDS_DEVELOPMENT_ORGANIZATION_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>Author Type</b></em>' enumerators.
@@ -89,6 +108,7 @@ public enum AuthorType implements Enumerator {
 	 */
 	private static final AuthorType[] VALUES_ARRAY =
 		new AuthorType[] {
+			UNSPECIFIED,
 			PERSON,
 			ORGANIZATION,
 			STANDARDS_DEVELOPMENT_ORGANIZATION,
@@ -148,6 +168,7 @@ public enum AuthorType implements Enumerator {
 	 */
 	public static AuthorType get(int value) {
 		switch (value) {
+			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case PERSON_VALUE: return PERSON;
 			case ORGANIZATION_VALUE: return ORGANIZATION;
 			case STANDARDS_DEVELOPMENT_ORGANIZATION_VALUE: return STANDARDS_DEVELOPMENT_ORGANIZATION;

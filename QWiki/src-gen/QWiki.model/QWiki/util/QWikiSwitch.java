@@ -128,9 +128,9 @@ public class QWikiSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case QWikiPackage.L1_0N_VALUE: {
-				L10nValue l10nValue = (L10nValue)theEObject;
-				T result = caseL10nValue(l10nValue);
+			case QWikiPackage.L1_0N_TEXT: {
+				L10nText l10nText = (L10nText)theEObject;
+				T result = caseL10nText(l10nText);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +142,19 @@ public class QWikiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseQWikiElement(qWikiEncryptionKey);
 				if (result == null) result = caseElement(qWikiEncryptionKey);
 				if (result == null) result = caseEModelElement(qWikiEncryptionKey);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case QWikiPackage.QWIKI_NAMESPACE: {
+				QWikiNamespace qWikiNamespace = (QWikiNamespace)theEObject;
+				T result = caseQWikiNamespace(qWikiNamespace);
+				if (result == null) result = caseNamespace(qWikiNamespace);
+				if (result == null) result = caseL10nNamedElement(qWikiNamespace);
+				if (result == null) result = caseQWikiNamedElement(qWikiNamespace);
+				if (result == null) result = caseNamedElement(qWikiNamespace);
+				if (result == null) result = caseQWikiElement(qWikiNamespace);
+				if (result == null) result = caseElement(qWikiNamespace);
+				if (result == null) result = caseEModelElement(qWikiNamespace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -173,19 +186,6 @@ public class QWikiSwitch<T> extends Switch<T> {
 				if (result == null) result = caseQWikiElement(qWikiContainer);
 				if (result == null) result = caseElement(qWikiContainer);
 				if (result == null) result = caseEModelElement(qWikiContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case QWikiPackage.QWIKI_NAMESPACE: {
-				QWikiNamespace qWikiNamespace = (QWikiNamespace)theEObject;
-				T result = caseQWikiNamespace(qWikiNamespace);
-				if (result == null) result = caseNamespace(qWikiNamespace);
-				if (result == null) result = caseL10nNamedElement(qWikiNamespace);
-				if (result == null) result = caseQWikiNamedElement(qWikiNamespace);
-				if (result == null) result = caseNamedElement(qWikiNamespace);
-				if (result == null) result = caseQWikiElement(qWikiNamespace);
-				if (result == null) result = caseElement(qWikiNamespace);
-				if (result == null) result = caseEModelElement(qWikiNamespace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -323,17 +323,17 @@ public class QWikiSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Value</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Text</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>L1 0n Value</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>L1 0n Text</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseL10nValue(L10nValue object) {
+	public T caseL10nText(L10nText object) {
 		return null;
 	}
 

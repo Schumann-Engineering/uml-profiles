@@ -38,7 +38,7 @@ public interface Reference extends QWikiContainer {
 	 * @see #setNumber(String)
 	 * @see QWiki.References.ReferencesPackage#getReference_Number()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	String getNumber();
@@ -109,7 +109,7 @@ public interface Reference extends QWikiContainer {
 	 * @see #setReferenceType(ReferenceType)
 	 * @see QWiki.References.ReferencesPackage#getReference_ReferenceType()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	ReferenceType getReferenceType();

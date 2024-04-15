@@ -189,6 +189,15 @@ public interface ReferencesPackage extends EPackage {
 	int AUTHOR__TAG = QWikiPackage.QWIKI_NAMED_ELEMENT__TAG;
 
 	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTHOR__QWIKI_NAMESPACE = QWikiPackage.QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
 	 * The feature id for the '<em><b>Author Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -883,7 +892,16 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__QWIKI_NAMESPACE = QWikiPackage.QWIKI_CONTAINER__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -892,7 +910,16 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE__QWIKI_ELEMENT = QWikiPackage.QWIKI_CONTAINER__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -901,7 +928,7 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1739,13 +1766,31 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE_VERSION__TAG = QWikiPackage.QWIKI_NAMESPACE__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__QWIKI_NAMESPACE = QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int REFERENCE_VERSION__DISPLAY_NAME = QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REFERENCE_VERSION__QWIKI_ELEMENT = QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owning Reference</b></em>' container reference.
@@ -1766,13 +1811,13 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE_VERSION__PUBLICATION_YEAR = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Reference Version Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Version Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__REFERENCE_VERSION_TYPE = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 2;
+	int REFERENCE_VERSION__VERSION_TYPE = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Edition</b></em>' attribute.
@@ -2563,15 +2608,15 @@ public interface ReferencesPackage extends EPackage {
 	EAttribute getReferenceVersion_PublicationYear();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.References.ReferenceVersion#getReferenceVersionType <em>Reference Version Type</em>}'.
+	 * Returns the meta object for the attribute '{@link QWiki.References.ReferenceVersion#getVersionType <em>Version Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reference Version Type</em>'.
-	 * @see QWiki.References.ReferenceVersion#getReferenceVersionType()
+	 * @return the meta object for the attribute '<em>Version Type</em>'.
+	 * @see QWiki.References.ReferenceVersion#getVersionType()
 	 * @see #getReferenceVersion()
 	 * @generated
 	 */
-	EAttribute getReferenceVersion_ReferenceVersionType();
+	EAttribute getReferenceVersion_VersionType();
 
 	/**
 	 * Returns the meta object for the attribute '{@link QWiki.References.ReferenceVersion#getEdition <em>Edition</em>}'.
@@ -2772,12 +2817,12 @@ public interface ReferencesPackage extends EPackage {
 		EAttribute REFERENCE_VERSION__PUBLICATION_YEAR = eINSTANCE.getReferenceVersion_PublicationYear();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference Version Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Version Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENCE_VERSION__REFERENCE_VERSION_TYPE = eINSTANCE.getReferenceVersion_ReferenceVersionType();
+		EAttribute REFERENCE_VERSION__VERSION_TYPE = eINSTANCE.getReferenceVersion_VersionType();
 
 		/**
 		 * The meta object literal for the '<em><b>Edition</b></em>' attribute feature.

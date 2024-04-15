@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see QWiki.QWikiPackage#getL10nValue()
- * @model
+ * @model extendedMetaData="kind='simple'"
  * @generated
  */
 public interface L10nValue extends EObject {
@@ -34,7 +34,7 @@ public interface L10nValue extends EObject {
 	 * @see #setLanguage(String)
 	 * @see QWiki.QWikiPackage#getL10nValue_Language()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	String getLanguage();
@@ -61,7 +61,7 @@ public interface L10nValue extends EObject {
 	 * @see #setBody(String)
 	 * @see QWiki.QWikiPackage#getL10nValue_Body()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='simple'"
 	 * @generated
 	 */
 	String getBody();

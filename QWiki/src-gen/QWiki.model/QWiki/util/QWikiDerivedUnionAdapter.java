@@ -120,6 +120,10 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.QWIKI_ENCRYPTION_KEY__NAMESPACE:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case QWikiPackage.QWIKI_ENCRYPTION_KEY__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
 		}
 	}
 
@@ -160,7 +164,13 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 			case QWikiPackage.QWIKI_MODEL__IMPORTED_MEMBER:
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
-			case QWikiPackage.QWIKI_MODEL__OWNED_QWIKI_ELEMENT:
+			case QWikiPackage.QWIKI_MODEL__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.QWIKI_MODEL__QWIKI_ELEMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}
@@ -201,6 +211,15 @@ public class QWikiDerivedUnionAdapter extends AdapterImpl {
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 			case QWikiPackage.QWIKI_CONTAINER__IMPORTED_MEMBER:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
+			case QWikiPackage.QWIKI_CONTAINER__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case QWikiPackage.QWIKI_CONTAINER__QWIKI_ELEMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
 		}

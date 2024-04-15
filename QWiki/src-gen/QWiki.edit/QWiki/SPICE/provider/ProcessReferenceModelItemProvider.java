@@ -236,7 +236,9 @@ public class ProcessReferenceModelItemProvider extends QWikiContainerItemProvide
 		boolean qualify =
 			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT;
 
 		if (qualify) {
 			return getString

@@ -188,13 +188,22 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_NAMED_ELEMENT__TAG = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_NAMED_ELEMENT_FEATURE_COUNT = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int QWIKI_NAMED_ELEMENT_FEATURE_COUNT = UMLPackage.NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -810,7 +819,16 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_NAMED_ELEMENT__TAG = QWIKI_NAMED_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int L1_0N_NAMED_ELEMENT__QWIKI_NAMESPACE = QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1441,7 +1459,16 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_DESCRIPTIVE_ELEMENT__TAG = L1_0N_NAMED_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE = L1_0N_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1450,7 +1477,7 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME = L1_0N_NAMED_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1459,7 +1486,7 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE = L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2406,13 +2433,13 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_BASE_STRING = 5;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Text</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_BASE_STRING__VALUE = 0;
+	int L1_0N_BASE_STRING__TEXT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Encryption Key</b></em>' reference.
@@ -2470,13 +2497,13 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_KEYED_STRING = 4;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Text</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_KEYED_STRING__VALUE = L1_0N_BASE_STRING__VALUE;
+	int L1_0N_KEYED_STRING__TEXT = L1_0N_BASE_STRING__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Encryption Key</b></em>' reference.
@@ -2533,14 +2560,14 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_KEYED_STRING_OPERATION_COUNT = L1_0N_BASE_STRING_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link QWiki.impl.L10nValueImpl <em>L1 0n Value</em>}' class.
+	 * The meta object id for the '{@link QWiki.impl.L10nTextImpl <em>L1 0n Text</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.impl.L10nValueImpl
-	 * @see QWiki.impl.QWikiPackageImpl#getL10nValue()
+	 * @see QWiki.impl.L10nTextImpl
+	 * @see QWiki.impl.QWikiPackageImpl#getL10nText()
 	 * @generated
 	 */
-	int L1_0N_VALUE = 6;
+	int L1_0N_TEXT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Language</b></em>' attribute.
@@ -2549,7 +2576,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_VALUE__LANGUAGE = 0;
+	int L1_0N_TEXT__LANGUAGE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' attribute.
@@ -2558,25 +2585,25 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_VALUE__BODY = 1;
+	int L1_0N_TEXT__BODY = 1;
 
 	/**
-	 * The number of structural features of the '<em>L1 0n Value</em>' class.
+	 * The number of structural features of the '<em>L1 0n Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_VALUE_FEATURE_COUNT = 2;
+	int L1_0N_TEXT_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>L1 0n Value</em>' class.
+	 * The number of operations of the '<em>L1 0n Text</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_VALUE_OPERATION_COUNT = 0;
+	int L1_0N_TEXT_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link QWiki.impl.QWikiEncryptionKeyImpl <em>Encryption Key</em>}' class.
@@ -2704,6 +2731,15 @@ public interface QWikiPackage extends EPackage {
 	 * @ordered
 	 */
 	int QWIKI_ENCRYPTION_KEY__TAG = QWIKI_NAMED_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_ENCRYPTION_KEY__QWIKI_NAMESPACE = QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE;
 
 	/**
 	 * The number of structural features of the '<em>Encryption Key</em>' class.
@@ -3208,7 +3244,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getQWikiNamespace()
 	 * @generated
 	 */
-	int QWIKI_NAMESPACE = 10;
+	int QWIKI_NAMESPACE = 8;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -3382,13 +3418,31 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_NAMESPACE__TAG = UMLPackage.NAMESPACE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_NAMESPACE__DISPLAY_NAME = UMLPackage.NAMESPACE_FEATURE_COUNT + 3;
+	int QWIKI_NAMESPACE__QWIKI_NAMESPACE = UMLPackage.NAMESPACE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__DISPLAY_NAME = UMLPackage.NAMESPACE_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_NAMESPACE__QWIKI_ELEMENT = UMLPackage.NAMESPACE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Namespace</em>' class.
@@ -3397,7 +3451,7 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_NAMESPACE_FEATURE_COUNT = UMLPackage.NAMESPACE_FEATURE_COUNT + 4;
+	int QWIKI_NAMESPACE_FEATURE_COUNT = UMLPackage.NAMESPACE_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -4010,7 +4064,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getQWikiContainer()
 	 * @generated
 	 */
-	int QWIKI_CONTAINER = 9;
+	int QWIKI_CONTAINER = 10;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -4184,7 +4238,16 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_CONTAINER__TAG = QWIKI_NAMESPACE__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__QWIKI_NAMESPACE = QWIKI_NAMESPACE__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4193,7 +4256,16 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_CONTAINER__DISPLAY_NAME = QWIKI_NAMESPACE__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_CONTAINER__QWIKI_ELEMENT = QWIKI_NAMESPACE__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4202,7 +4274,7 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_CONTAINER__PURPOSE = QWIKI_NAMESPACE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4830,7 +4902,7 @@ public interface QWikiPackage extends EPackage {
 	 * @see QWiki.impl.QWikiPackageImpl#getQWikiModel()
 	 * @generated
 	 */
-	int QWIKI_MODEL = 8;
+	int QWIKI_MODEL = 9;
 
 	/**
 	 * The feature id for the '<em><b>EAnnotations</b></em>' containment reference list.
@@ -5004,7 +5076,16 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL__TAG = QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_MODEL__QWIKI_NAMESPACE = QWIKI_CONTAINER__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5013,7 +5094,16 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL__DISPLAY_NAME = QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_MODEL__QWIKI_ELEMENT = QWIKI_CONTAINER__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5022,7 +5112,7 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL__PURPOSE = QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5031,22 +5121,13 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_MODEL__CONTENT = QWIKI_CONTAINER__CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Owned Qwiki Element</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int QWIKI_MODEL__OWNED_QWIKI_ELEMENT = QWIKI_CONTAINER_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int QWIKI_MODEL_FEATURE_COUNT = QWIKI_CONTAINER_FEATURE_COUNT + 1;
+	int QWIKI_MODEL_FEATURE_COUNT = QWIKI_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -5662,13 +5743,13 @@ public interface QWikiPackage extends EPackage {
 	int L1_0N_STRING = 11;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Text</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int L1_0N_STRING__VALUE = L1_0N_BASE_STRING__VALUE;
+	int L1_0N_STRING__TEXT = L1_0N_BASE_STRING__TEXT;
 
 	/**
 	 * The feature id for the '<em><b>Encryption Key</b></em>' reference.
@@ -6312,6 +6393,15 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_RELATIONSHIP_TYPE__TAG = QWIKI_NAMED_ELEMENT__TAG;
 
 	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int QWIKI_RELATIONSHIP_TYPE__QWIKI_NAMESPACE = QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
 	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6907,7 +6997,7 @@ public interface QWikiPackage extends EPackage {
 	int QWIKI_COMMENT__BODY = QWIKI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -7287,10 +7377,10 @@ public interface QWikiPackage extends EPackage {
 	EClass getL10nDescriptiveElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.L10nDescriptiveElement#getPurpose <em>Purpose</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.L10nDescriptiveElement#getPurpose <em>Purpose</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Purpose</em>'.
+	 * @return the meta object for the containment reference '<em>Purpose</em>'.
 	 * @see QWiki.L10nDescriptiveElement#getPurpose()
 	 * @see #getL10nDescriptiveElement()
 	 * @generated
@@ -7298,10 +7388,10 @@ public interface QWikiPackage extends EPackage {
 	EReference getL10nDescriptiveElement_Purpose();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.L10nDescriptiveElement#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.L10nDescriptiveElement#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see QWiki.L10nDescriptiveElement#getContent()
 	 * @see #getL10nDescriptiveElement()
 	 * @generated
@@ -7319,10 +7409,10 @@ public interface QWikiPackage extends EPackage {
 	EClass getL10nNamedElement();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.L10nNamedElement#getDisplayName <em>Display Name</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.L10nNamedElement#getDisplayName <em>Display Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Display Name</em>'.
+	 * @return the meta object for the containment reference '<em>Display Name</em>'.
 	 * @see QWiki.L10nNamedElement#getDisplayName()
 	 * @see #getL10nNamedElement()
 	 * @generated
@@ -7338,6 +7428,17 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getQWikiNamedElement();
+
+	/**
+	 * Returns the meta object for the container reference '{@link QWiki.QWikiNamedElement#getQwikiNamespace <em>Qwiki Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Qwiki Namespace</em>'.
+	 * @see QWiki.QWikiNamedElement#getQwikiNamespace()
+	 * @see #getQWikiNamedElement()
+	 * @generated
+	 */
+	EReference getQWikiNamedElement_QwikiNamespace();
 
 	/**
 	 * Returns the meta object for the '{@link QWiki.QWikiNamedElement#qwikiModel() <em>Qwiki Model</em>}' operation.
@@ -7434,15 +7535,15 @@ public interface QWikiPackage extends EPackage {
 	EClass getL10nBaseString();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.L10nBaseString#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.L10nBaseString#getText <em>Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Value</em>'.
-	 * @see QWiki.L10nBaseString#getValue()
+	 * @return the meta object for the containment reference list '<em>Text</em>'.
+	 * @see QWiki.L10nBaseString#getText()
 	 * @see #getL10nBaseString()
 	 * @generated
 	 */
-	EReference getL10nBaseString_Value();
+	EReference getL10nBaseString_Text();
 
 	/**
 	 * Returns the meta object for the reference '{@link QWiki.L10nBaseString#getEncryptionKey <em>Encryption Key</em>}'.
@@ -7476,36 +7577,36 @@ public interface QWikiPackage extends EPackage {
 	EOperation getL10nBaseString__IsEncrypted();
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.L10nValue <em>L1 0n Value</em>}'.
+	 * Returns the meta object for class '{@link QWiki.L10nText <em>L1 0n Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>L1 0n Value</em>'.
-	 * @see QWiki.L10nValue
+	 * @return the meta object for class '<em>L1 0n Text</em>'.
+	 * @see QWiki.L10nText
 	 * @generated
 	 */
-	EClass getL10nValue();
+	EClass getL10nText();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.L10nValue#getLanguage <em>Language</em>}'.
+	 * Returns the meta object for the attribute '{@link QWiki.L10nText#getLanguage <em>Language</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Language</em>'.
-	 * @see QWiki.L10nValue#getLanguage()
-	 * @see #getL10nValue()
+	 * @see QWiki.L10nText#getLanguage()
+	 * @see #getL10nText()
 	 * @generated
 	 */
-	EAttribute getL10nValue_Language();
+	EAttribute getL10nText_Language();
 
 	/**
-	 * Returns the meta object for the attribute '{@link QWiki.L10nValue#getBody <em>Body</em>}'.
+	 * Returns the meta object for the attribute '{@link QWiki.L10nText#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Body</em>'.
-	 * @see QWiki.L10nValue#getBody()
-	 * @see #getL10nValue()
+	 * @see QWiki.L10nText#getBody()
+	 * @see #getL10nText()
 	 * @generated
 	 */
-	EAttribute getL10nValue_Body();
+	EAttribute getL10nText_Body();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.QWikiEncryptionKey <em>Encryption Key</em>}'.
@@ -7528,17 +7629,6 @@ public interface QWikiPackage extends EPackage {
 	EClass getQWikiModel();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.QWikiModel#getOwnedQwikiElement <em>Owned Qwiki Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Qwiki Element</em>'.
-	 * @see QWiki.QWikiModel#getOwnedQwikiElement()
-	 * @see #getQWikiModel()
-	 * @generated
-	 */
-	EReference getQWikiModel_OwnedQwikiElement();
-
-	/**
 	 * Returns the meta object for class '{@link QWiki.QWikiContainer <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -7557,6 +7647,17 @@ public interface QWikiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getQWikiNamespace();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link QWiki.QWikiNamespace#getQwikiElement <em>Qwiki Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Qwiki Element</em>'.
+	 * @see QWiki.QWikiNamespace#getQwikiElement()
+	 * @see #getQWikiNamespace()
+	 * @generated
+	 */
+	EReference getQWikiNamespace_QwikiElement();
 
 	/**
 	 * Returns the meta object for class '{@link QWiki.L10nString <em>L1 0n String</em>}'.
@@ -7621,10 +7722,10 @@ public interface QWikiPackage extends EPackage {
 	EClass getQWikiComment();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.QWikiComment#getContent <em>Content</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.QWikiComment#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @return the meta object for the containment reference '<em>Content</em>'.
 	 * @see QWiki.QWikiComment#getContent()
 	 * @see #getQWikiComment()
 	 * @generated
@@ -7665,7 +7766,7 @@ public interface QWikiPackage extends EPackage {
 		EClass L1_0N_DESCRIPTIVE_ELEMENT = eINSTANCE.getL10nDescriptiveElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Purpose</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Purpose</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -7673,7 +7774,7 @@ public interface QWikiPackage extends EPackage {
 		EReference L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE = eINSTANCE.getL10nDescriptiveElement_Purpose();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -7691,7 +7792,7 @@ public interface QWikiPackage extends EPackage {
 		EClass L1_0N_NAMED_ELEMENT = eINSTANCE.getL10nNamedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Display Name</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Display Name</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -7707,6 +7808,14 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass QWIKI_NAMED_ELEMENT = eINSTANCE.getQWikiNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Qwiki Namespace</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE = eINSTANCE.getQWikiNamedElement_QwikiNamespace();
 
 		/**
 		 * The meta object literal for the '<em><b>Qwiki Model</b></em>' operation.
@@ -7787,12 +7896,12 @@ public interface QWikiPackage extends EPackage {
 		EClass L1_0N_BASE_STRING = eINSTANCE.getL10nBaseString();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference L1_0N_BASE_STRING__VALUE = eINSTANCE.getL10nBaseString_Value();
+		EReference L1_0N_BASE_STRING__TEXT = eINSTANCE.getL10nBaseString_Text();
 
 		/**
 		 * The meta object literal for the '<em><b>Encryption Key</b></em>' reference feature.
@@ -7819,14 +7928,14 @@ public interface QWikiPackage extends EPackage {
 		EOperation L1_0N_BASE_STRING___IS_ENCRYPTED = eINSTANCE.getL10nBaseString__IsEncrypted();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.impl.L10nValueImpl <em>L1 0n Value</em>}' class.
+		 * The meta object literal for the '{@link QWiki.impl.L10nTextImpl <em>L1 0n Text</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see QWiki.impl.L10nValueImpl
-		 * @see QWiki.impl.QWikiPackageImpl#getL10nValue()
+		 * @see QWiki.impl.L10nTextImpl
+		 * @see QWiki.impl.QWikiPackageImpl#getL10nText()
 		 * @generated
 		 */
-		EClass L1_0N_VALUE = eINSTANCE.getL10nValue();
+		EClass L1_0N_TEXT = eINSTANCE.getL10nText();
 
 		/**
 		 * The meta object literal for the '<em><b>Language</b></em>' attribute feature.
@@ -7834,7 +7943,7 @@ public interface QWikiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute L1_0N_VALUE__LANGUAGE = eINSTANCE.getL10nValue_Language();
+		EAttribute L1_0N_TEXT__LANGUAGE = eINSTANCE.getL10nText_Language();
 
 		/**
 		 * The meta object literal for the '<em><b>Body</b></em>' attribute feature.
@@ -7842,7 +7951,7 @@ public interface QWikiPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute L1_0N_VALUE__BODY = eINSTANCE.getL10nValue_Body();
+		EAttribute L1_0N_TEXT__BODY = eINSTANCE.getL10nText_Body();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.QWikiEncryptionKeyImpl <em>Encryption Key</em>}' class.
@@ -7865,14 +7974,6 @@ public interface QWikiPackage extends EPackage {
 		EClass QWIKI_MODEL = eINSTANCE.getQWikiModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Qwiki Element</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference QWIKI_MODEL__OWNED_QWIKI_ELEMENT = eINSTANCE.getQWikiModel_OwnedQwikiElement();
-
-		/**
 		 * The meta object literal for the '{@link QWiki.impl.QWikiContainerImpl <em>Container</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7891,6 +7992,14 @@ public interface QWikiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass QWIKI_NAMESPACE = eINSTANCE.getQWikiNamespace();
+
+		/**
+		 * The meta object literal for the '<em><b>Qwiki Element</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference QWIKI_NAMESPACE__QWIKI_ELEMENT = eINSTANCE.getQWikiNamespace_QwikiElement();
 
 		/**
 		 * The meta object literal for the '{@link QWiki.impl.L10nStringImpl <em>L1 0n String</em>}' class.
@@ -7949,7 +8058,7 @@ public interface QWikiPackage extends EPackage {
 		EClass QWIKI_COMMENT = eINSTANCE.getQWikiComment();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

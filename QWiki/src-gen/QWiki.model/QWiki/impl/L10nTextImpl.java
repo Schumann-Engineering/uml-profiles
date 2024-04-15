@@ -2,7 +2,7 @@
  */
 package QWiki.impl;
 
-import QWiki.L10nValue;
+import QWiki.L10nText;
 import QWiki.QWikiPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>L1 0n Value</b></em>'.
+ * An implementation of the model object '<em><b>L1 0n Text</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link QWiki.impl.L10nValueImpl#getLanguage <em>Language</em>}</li>
- *   <li>{@link QWiki.impl.L10nValueImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link QWiki.impl.L10nTextImpl#getLanguage <em>Language</em>}</li>
+ *   <li>{@link QWiki.impl.L10nTextImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nValue {
+public class L10nTextImpl extends MinimalEObjectImpl.Container implements L10nText {
 	/**
 	 * The default value of the '{@link #getLanguage() <em>Language</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected L10nValueImpl() {
+	protected L10nTextImpl() {
 		super();
 	}
 
@@ -83,7 +83,7 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return QWikiPackage.Literals.L1_0N_VALUE;
+		return QWikiPackage.Literals.L1_0N_TEXT;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 		String oldLanguage = language;
 		language = newLanguage;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_VALUE__LANGUAGE, oldLanguage, language));
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_TEXT__LANGUAGE, oldLanguage, language));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 		String oldBody = body;
 		body = newBody;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_VALUE__BODY, oldBody, body));
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_TEXT__BODY, oldBody, body));
 	}
 
 	/**
@@ -140,9 +140,9 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_VALUE__LANGUAGE:
+			case QWikiPackage.L1_0N_TEXT__LANGUAGE:
 				return getLanguage();
-			case QWikiPackage.L1_0N_VALUE__BODY:
+			case QWikiPackage.L1_0N_TEXT__BODY:
 				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -156,10 +156,10 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_VALUE__LANGUAGE:
+			case QWikiPackage.L1_0N_TEXT__LANGUAGE:
 				setLanguage((String)newValue);
 				return;
-			case QWikiPackage.L1_0N_VALUE__BODY:
+			case QWikiPackage.L1_0N_TEXT__BODY:
 				setBody((String)newValue);
 				return;
 		}
@@ -174,10 +174,10 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_VALUE__LANGUAGE:
+			case QWikiPackage.L1_0N_TEXT__LANGUAGE:
 				setLanguage(LANGUAGE_EDEFAULT);
 				return;
-			case QWikiPackage.L1_0N_VALUE__BODY:
+			case QWikiPackage.L1_0N_TEXT__BODY:
 				setBody(BODY_EDEFAULT);
 				return;
 		}
@@ -192,9 +192,9 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case QWikiPackage.L1_0N_VALUE__LANGUAGE:
+			case QWikiPackage.L1_0N_TEXT__LANGUAGE:
 				return LANGUAGE_EDEFAULT == null ? language != null : !LANGUAGE_EDEFAULT.equals(language);
-			case QWikiPackage.L1_0N_VALUE__BODY:
+			case QWikiPackage.L1_0N_TEXT__BODY:
 				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 		}
 		return super.eIsSet(featureID);
@@ -218,4 +218,4 @@ public class L10nValueImpl extends MinimalEObjectImpl.Container implements L10nV
 		return result.toString();
 	}
 
-} //L10nValueImpl
+} //L10nTextImpl

@@ -32,6 +32,7 @@ public class QWikiTests extends TestSuite {
 	public static Test suite() {
 		TestSuite suite = new QWikiTests("QWiki Tests");
 		suite.addTestSuite(L10nKeyedStringTest.class);
+		suite.addTestSuite(L10nBaseStringTest.class);
 		suite.addTestSuite(QWikiEncryptionKeyTest.class);
 		suite.addTestSuite(QWikiModelTest.class);
 		suite.addTestSuite(QWikiContainerTest.class);

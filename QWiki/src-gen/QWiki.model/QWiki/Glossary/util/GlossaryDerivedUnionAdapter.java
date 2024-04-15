@@ -112,6 +112,10 @@ public class GlossaryDerivedUnionAdapter extends AdapterImpl {
 			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__NAMESPACE:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case GlossaryPackage.GLOSSARY_TERM_DEFINITION__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
 		}
 	}
 
@@ -132,6 +136,10 @@ public class GlossaryDerivedUnionAdapter extends AdapterImpl {
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case GlossaryPackage.GLOSSARY_TERM__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 			case GlossaryPackage.GLOSSARY_TERM__OWNED_TERM_DEFINITION:

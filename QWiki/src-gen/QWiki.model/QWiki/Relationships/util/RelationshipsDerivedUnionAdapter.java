@@ -112,6 +112,10 @@ public class RelationshipsDerivedUnionAdapter extends AdapterImpl {
 			case RelationshipsPackage.DO_NOT_USE_RELATIONSHIP_TYPE__NAMESPACE:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case RelationshipsPackage.DO_NOT_USE_RELATIONSHIP_TYPE__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
 		}
 	}
 

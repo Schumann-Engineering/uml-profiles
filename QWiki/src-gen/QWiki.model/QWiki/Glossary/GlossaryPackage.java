@@ -187,7 +187,16 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM_DEFINITION__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOSSARY_TERM_DEFINITION__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +205,7 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM_DEFINITION__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -205,7 +214,7 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM_DEFINITION__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -845,7 +854,16 @@ public interface GlossaryPackage extends EPackage {
 	int GLOSSARY_TERM__TAG = QWikiPackage.L1_0N_NAMED_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOSSARY_TERM__QWIKI_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

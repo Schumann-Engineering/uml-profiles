@@ -108,6 +108,10 @@ public class RasciDerivedUnionAdapter extends AdapterImpl {
 			case RasciPackage.ROLE__NAMESPACE:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
+			case RasciPackage.ROLE__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
 		}
 	}
 

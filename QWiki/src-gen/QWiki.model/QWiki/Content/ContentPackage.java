@@ -696,7 +696,7 @@ public interface ContentPackage extends EPackage {
 	int CONTENT_CONTAINER__OWNING_CONTENT = UMLPackage.NAMESPACE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Caption</b></em>' reference.
+	 * The feature id for the '<em><b>Caption</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1859,7 +1859,7 @@ public interface ContentPackage extends EPackage {
 	int TEXT__TEXT_TYPE = CONTENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2418,7 +2418,7 @@ public interface ContentPackage extends EPackage {
 	int BLOCK__OWNING_CONTENT = CONTENT_CONTAINER__OWNING_CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Caption</b></em>' reference.
+	 * The feature id for the '<em><b>Caption</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3238,7 +3238,7 @@ public interface ContentPackage extends EPackage {
 	int PANEL__OWNING_CONTENT = CONTENT_CONTAINER__OWNING_CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Caption</b></em>' reference.
+	 * The feature id for the '<em><b>Caption</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4058,7 +4058,7 @@ public interface ContentPackage extends EPackage {
 	int SECTION__OWNING_CONTENT = CONTENT_CONTAINER__OWNING_CONTENT;
 
 	/**
-	 * The feature id for the '<em><b>Caption</b></em>' reference.
+	 * The feature id for the '<em><b>Caption</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4814,10 +4814,10 @@ public interface ContentPackage extends EPackage {
 	EClass getContentContainer();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Content.ContentContainer#getCaption <em>Caption</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.Content.ContentContainer#getCaption <em>Caption</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Caption</em>'.
+	 * @return the meta object for the containment reference '<em>Caption</em>'.
 	 * @see QWiki.Content.ContentContainer#getCaption()
 	 * @see #getContentContainer()
 	 * @generated
@@ -4878,10 +4878,10 @@ public interface ContentPackage extends EPackage {
 	EAttribute getText_TextType();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Content.Text#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.Content.Text#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Body</em>'.
+	 * @return the meta object for the containment reference '<em>Body</em>'.
 	 * @see QWiki.Content.Text#getBody()
 	 * @see #getText()
 	 * @generated
@@ -5117,7 +5117,7 @@ public interface ContentPackage extends EPackage {
 		EClass CONTENT_CONTAINER = eINSTANCE.getContentContainer();
 
 		/**
-		 * The meta object literal for the '<em><b>Caption</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Caption</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -5169,7 +5169,7 @@ public interface ContentPackage extends EPackage {
 		EAttribute TEXT__TEXT_TYPE = eINSTANCE.getText_TextType();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

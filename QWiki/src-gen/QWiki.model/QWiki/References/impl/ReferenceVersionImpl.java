@@ -45,7 +45,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwningReference <em>Owning Reference</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getPublicationYear <em>Publication Year</em>}</li>
- *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getReferenceVersionType <em>Reference Version Type</em>}</li>
+ *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getVersionType <em>Version Type</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getEdition <em>Edition</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceVersionImpl#getOwnedContent <em>Owned Content</em>}</li>
  * </ul>
@@ -74,24 +74,24 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	protected String publicationYear = PUBLICATION_YEAR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getReferenceVersionType() <em>Reference Version Type</em>}' attribute.
+	 * The default value of the '{@link #getVersionType() <em>Version Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReferenceVersionType()
+	 * @see #getVersionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ReferenceVersionType REFERENCE_VERSION_TYPE_EDEFAULT = ReferenceVersionType.FIRST_EDITION;
+	protected static final ReferenceVersionType VERSION_TYPE_EDEFAULT = ReferenceVersionType.FIRST_EDITION;
 
 	/**
-	 * The cached value of the '{@link #getReferenceVersionType() <em>Reference Version Type</em>}' attribute.
+	 * The cached value of the '{@link #getVersionType() <em>Version Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReferenceVersionType()
+	 * @see #getVersionType()
 	 * @generated
 	 * @ordered
 	 */
-	protected ReferenceVersionType referenceVersionType = REFERENCE_VERSION_TYPE_EDEFAULT;
+	protected ReferenceVersionType versionType = VERSION_TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEdition() <em>Edition</em>}' attribute.
@@ -171,8 +171,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * @generated
 	 */
 	@Override
-	public ReferenceVersionType getReferenceVersionType() {
-		return referenceVersionType;
+	public ReferenceVersionType getVersionType() {
+		return versionType;
 	}
 
 	/**
@@ -181,11 +181,11 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 	 * @generated
 	 */
 	@Override
-	public void setReferenceVersionType(ReferenceVersionType newReferenceVersionType) {
-		ReferenceVersionType oldReferenceVersionType = referenceVersionType;
-		referenceVersionType = newReferenceVersionType == null ? REFERENCE_VERSION_TYPE_EDEFAULT : newReferenceVersionType;
+	public void setVersionType(ReferenceVersionType newVersionType) {
+		ReferenceVersionType oldVersionType = versionType;
+		versionType = newVersionType == null ? VERSION_TYPE_EDEFAULT : newVersionType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE, oldReferenceVersionType, referenceVersionType));
+			eNotify(new ENotificationImpl(this, Notification.SET, ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE, oldVersionType, versionType));
 	}
 
 	/**
@@ -375,8 +375,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 				return getOwningReference();
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				return getPublicationYear();
-			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
-				return getReferenceVersionType();
+			case ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE:
+				return getVersionType();
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				return getEdition();
 			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
@@ -400,8 +400,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				setPublicationYear((String)newValue);
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
-				setReferenceVersionType((ReferenceVersionType)newValue);
+			case ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE:
+				setVersionType((ReferenceVersionType)newValue);
 				return;
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				setEdition((String)newValue);
@@ -428,8 +428,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				setPublicationYear(PUBLICATION_YEAR_EDEFAULT);
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
-				setReferenceVersionType(REFERENCE_VERSION_TYPE_EDEFAULT);
+			case ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE:
+				setVersionType(VERSION_TYPE_EDEFAULT);
 				return;
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				setEdition(EDITION_EDEFAULT);
@@ -453,8 +453,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 				return getOwningReference() != null;
 			case ReferencesPackage.REFERENCE_VERSION__PUBLICATION_YEAR:
 				return PUBLICATION_YEAR_EDEFAULT == null ? publicationYear != null : !PUBLICATION_YEAR_EDEFAULT.equals(publicationYear);
-			case ReferencesPackage.REFERENCE_VERSION__REFERENCE_VERSION_TYPE:
-				return referenceVersionType != REFERENCE_VERSION_TYPE_EDEFAULT;
+			case ReferencesPackage.REFERENCE_VERSION__VERSION_TYPE:
+				return versionType != VERSION_TYPE_EDEFAULT;
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				return EDITION_EDEFAULT == null ? edition != null : !EDITION_EDEFAULT.equals(edition);
 			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
@@ -517,8 +517,8 @@ public class ReferenceVersionImpl extends QWikiNamespaceImpl implements Referenc
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (publicationYear: ");
 		result.append(publicationYear);
-		result.append(", referenceVersionType: ");
-		result.append(referenceVersionType);
+		result.append(", versionType: ");
+		result.append(versionType);
 		result.append(", edition: ");
 		result.append(edition);
 		result.append(')');

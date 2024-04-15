@@ -624,7 +624,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		initEReference(getContent_OwningContent(), this.getContentContainer(), this.getContentContainer_Item(), "owningContent", null, 0, 1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(contentContainerEClass, ContentContainer.class, "ContentContainer", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContentContainer_Caption(), theQWikiPackage.getL10nString(), null, "caption", null, 0, 1, ContentContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getContentContainer_Caption(), theQWikiPackage.getL10nString(), null, "caption", null, 0, 1, ContentContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getContentContainer_Item(), this.getContent(), this.getContent_OwningContent(), "item", null, 0, -1, ContentContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(layoutEClass, Layout.class, "Layout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -632,7 +632,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_TextType(), this.getTextType(), "textType", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getText_Body(), theQWikiPackage.getL10nString(), null, "body", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getText_Body(), theQWikiPackage.getL10nString(), null, "body", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBlock_BlockType(), this.getBlockType(), "blockType", null, 1, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -749,6 +749,12 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation
+		  (layoutEClass,
+		   source,
+		   new String[] {
+			   "kind", "empty"
+		   });
+		addAnnotation
 		  (getLayout_LayoutType(),
 		   source,
 		   new String[] {
@@ -782,7 +788,7 @@ public class ContentPackageImpl extends EPackageImpl implements ContentPackage {
 		  (getSection_Number(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
 		  (getSection_FacilitatingElement(),

@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getPublicationYear <em>Publication Year</em>}</li>
- *   <li>{@link QWiki.References.ReferenceVersion#getReferenceVersionType <em>Reference Version Type</em>}</li>
+ *   <li>{@link QWiki.References.ReferenceVersion#getVersionType <em>Version Type</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getEdition <em>Edition</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}</li>
  * </ul>
@@ -40,7 +40,7 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setPublicationYear(String)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_PublicationYear()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	String getPublicationYear();
@@ -56,35 +56,35 @@ public interface ReferenceVersion extends QWikiNamespace {
 	void setPublicationYear(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Reference Version Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Version Type</b></em>' attribute.
 	 * The default value is <code>"FirstEdition"</code>.
 	 * The literals are from the enumeration {@link QWiki.References.ReferenceVersionType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reference Version Type</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Version Type</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reference Version Type</em>' attribute.
+	 * @return the value of the '<em>Version Type</em>' attribute.
 	 * @see QWiki.References.ReferenceVersionType
-	 * @see #setReferenceVersionType(ReferenceVersionType)
-	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_ReferenceVersionType()
+	 * @see #setVersionType(ReferenceVersionType)
+	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_VersionType()
 	 * @model default="FirstEdition" required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
-	ReferenceVersionType getReferenceVersionType();
+	ReferenceVersionType getVersionType();
 
 	/**
-	 * Sets the value of the '{@link QWiki.References.ReferenceVersion#getReferenceVersionType <em>Reference Version Type</em>}' attribute.
+	 * Sets the value of the '{@link QWiki.References.ReferenceVersion#getVersionType <em>Version Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference Version Type</em>' attribute.
+	 * @param value the new value of the '<em>Version Type</em>' attribute.
 	 * @see QWiki.References.ReferenceVersionType
-	 * @see #getReferenceVersionType()
+	 * @see #getVersionType()
 	 * @generated
 	 */
-	void setReferenceVersionType(ReferenceVersionType value);
+	void setVersionType(ReferenceVersionType value);
 
 	/**
 	 * Returns the value of the '<em><b>Edition</b></em>' attribute.
@@ -98,7 +98,7 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @see #setEdition(String)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_Edition()
 	 * @model ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	String getEdition();

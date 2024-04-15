@@ -100,12 +100,16 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 				return createL10nBaseStringAdapter();
 			}
 			@Override
-			public Adapter caseL10nValue(L10nValue object) {
-				return createL10nValueAdapter();
+			public Adapter caseL10nText(L10nText object) {
+				return createL10nTextAdapter();
 			}
 			@Override
 			public Adapter caseQWikiEncryptionKey(QWikiEncryptionKey object) {
 				return createQWikiEncryptionKeyAdapter();
+			}
+			@Override
+			public Adapter caseQWikiNamespace(QWikiNamespace object) {
+				return createQWikiNamespaceAdapter();
 			}
 			@Override
 			public Adapter caseQWikiModel(QWikiModel object) {
@@ -114,10 +118,6 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseQWikiContainer(QWikiContainer object) {
 				return createQWikiContainerAdapter();
-			}
-			@Override
-			public Adapter caseQWikiNamespace(QWikiNamespace object) {
-				return createQWikiNamespaceAdapter();
 			}
 			@Override
 			public Adapter caseL10nString(L10nString object) {
@@ -268,16 +268,16 @@ public class QWikiAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link QWiki.L10nValue <em>L1 0n Value</em>}'.
+	 * Creates a new adapter for an object of class '{@link QWiki.L10nText <em>L1 0n Text</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see QWiki.L10nValue
+	 * @see QWiki.L10nText
 	 * @generated
 	 */
-	public Adapter createL10nValueAdapter() {
+	public Adapter createL10nTextAdapter() {
 		return null;
 	}
 

@@ -95,26 +95,49 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link QWiki.L10nValue} instances.
+	 * This keeps track of the one adapter used for all {@link QWiki.L10nBaseString} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected L10nValueItemProvider l10nValueItemProvider;
+	protected L10nBaseStringItemProvider l10nBaseStringItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link QWiki.L10nValue}.
+	 * This creates an adapter for a {@link QWiki.L10nBaseString}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createL10nValueAdapter() {
-		if (l10nValueItemProvider == null) {
-			l10nValueItemProvider = new L10nValueItemProvider(this);
+	public Adapter createL10nBaseStringAdapter() {
+		if (l10nBaseStringItemProvider == null) {
+			l10nBaseStringItemProvider = new L10nBaseStringItemProvider(this);
 		}
 
-		return l10nValueItemProvider;
+		return l10nBaseStringItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link QWiki.L10nText} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected L10nTextItemProvider l10nTextItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link QWiki.L10nText}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createL10nTextAdapter() {
+		if (l10nTextItemProvider == null) {
+			l10nTextItemProvider = new L10nTextItemProvider(this);
+		}
+
+		return l10nTextItemProvider;
 	}
 
 	/**
@@ -338,7 +361,8 @@ public class QWikiItemProviderAdapterFactory extends QWikiAdapterFactory impleme
 	@Override
 	public void dispose() {
 		if (l10nKeyedStringItemProvider != null) l10nKeyedStringItemProvider.dispose();
-		if (l10nValueItemProvider != null) l10nValueItemProvider.dispose();
+		if (l10nBaseStringItemProvider != null) l10nBaseStringItemProvider.dispose();
+		if (l10nTextItemProvider != null) l10nTextItemProvider.dispose();
 		if (qWikiEncryptionKeyItemProvider != null) qWikiEncryptionKeyItemProvider.dispose();
 		if (qWikiModelItemProvider != null) qWikiModelItemProvider.dispose();
 		if (qWikiContainerItemProvider != null) qWikiContainerItemProvider.dispose();

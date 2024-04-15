@@ -57,7 +57,8 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case QWikiPackage.L1_0N_KEYED_STRING: return createL10nKeyedString();
-			case QWikiPackage.L1_0N_VALUE: return createL10nValue();
+			case QWikiPackage.L1_0N_BASE_STRING: return createL10nBaseString();
+			case QWikiPackage.L1_0N_TEXT: return createL10nText();
 			case QWikiPackage.QWIKI_ENCRYPTION_KEY: return createQWikiEncryptionKey();
 			case QWikiPackage.QWIKI_MODEL: return createQWikiModel();
 			case QWikiPackage.QWIKI_CONTAINER: return createQWikiContainer();
@@ -85,9 +86,20 @@ public class QWikiFactoryImpl extends EFactoryImpl implements QWikiFactory {
 	 * @generated
 	 */
 	@Override
-	public L10nValue createL10nValue() {
-		L10nValueImpl l10nValue = new L10nValueImpl();
-		return l10nValue;
+	public L10nBaseString createL10nBaseString() {
+		L10nBaseStringImpl l10nBaseString = new L10nBaseStringImpl();
+		return l10nBaseString;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public L10nText createL10nText() {
+		L10nTextImpl l10nText = new L10nTextImpl();
+		return l10nText;
 	}
 
 	/**

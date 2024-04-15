@@ -581,6 +581,7 @@ number + '/' + owningProcessReferenceModel.objectId()</body>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_2YUyEOntEe6LY_dHFA6_Jw" name="AuthorType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Qej0IPtSEe6ICsboBRxz5w" name="UNSPECIFIED"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_3s5YUOntEe6LY_dHFA6_Jw" name="Person"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_43nfAOntEe6LY_dHFA6_Jw" name="Organization"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hyAHIOyGEe6arr42GsuYxg" name="StandardsDevelopmentOrganization"/>
@@ -625,6 +626,7 @@ endif</body>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_Ey7coOn9Ee6LY_dHFA6_Jw" name="ReferenceType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_N8h8QPtSEe6ICsboBRxz5w" name="UNSPECIFIED"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_G-ZOoOn9Ee6LY_dHFA6_Jw" name="Document"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_JxdMIOn9Ee6LY_dHFA6_Jw" name="Guideline"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FznoIOn-Ee6LY_dHFA6_Jw" name="Hyperlink"/>
@@ -638,7 +640,7 @@ endif</body>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_uhbcMOnKEe6pm5wa6vzbpQ" name="publicationYear">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BBVGAOnLEe6pm5wa6vzbpQ" name="referenceVersionType" type="_zW_c8OnKEe6pm5wa6vzbpQ" association="_BBT34OnLEe6pm5wa6vzbpQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_BBVGAOnLEe6pm5wa6vzbpQ" name="versionType" type="_zW_c8OnKEe6pm5wa6vzbpQ" association="_BBT34OnLEe6pm5wa6vzbpQ">
           <defaultValue xmi:type="uml:InstanceValue" xmi:id="_aAn1UOnwEe6LY_dHFA6_Jw" name="defaultValue" type="_zW_c8OnKEe6pm5wa6vzbpQ" instance="_Ux-mMOnwEe6LY_dHFA6_Jw"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_KIFEkOnKEe6pm5wa6vzbpQ" name="edition">
@@ -665,6 +667,7 @@ endif</body>
         </ownedOperation>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_zW_c8OnKEe6pm5wa6vzbpQ" name="ReferenceVersionType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_MKTJoPtSEe6ICsboBRxz5w" name="UNSPECIFIED"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_4FP70OnKEe6pm5wa6vzbpQ" name="Addendum"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_0esE0OnKEe6pm5wa6vzbpQ" name="Amendment"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_7vgnEOnKEe6pm5wa6vzbpQ" name="Corrigendum"/>
@@ -819,15 +822,12 @@ endif</body>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QebIoPmOEe6OB-l9_N8zXQ" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_QebIofmOEe6OB-l9_N8zXQ" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_Qec90PmOEe6OB-l9_N8zXQ" name="qwikiModel" type="_eGSh8PmNEe6OB-l9_N8zXQ" isReadOnly="true" isDerived="true" association="_QeZ6gPmOEe6OB-l9_N8zXQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YaUoMPmOEe6OB-l9_N8zXQ"/>
-      </ownedEnd>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_iPliAOnIEe6pm5wa6vzbpQ" memberEnd="_iPmJEunIEe6pm5wa6vzbpQ _iPmJFenIEe6pm5wa6vzbpQ">
       <ownedEnd xmi:type="uml:Property" xmi:id="_iPmJFenIEe6pm5wa6vzbpQ" name="owningElement" type="_jLvkQOn0Ee6LY_dHFA6_Jw" association="_iPliAOnIEe6pm5wa6vzbpQ"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_jLvkQOn0Ee6LY_dHFA6_Jw" name="L10nBaseString" isAbstract="true">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iPmJEunIEe6pm5wa6vzbpQ" name="value" type="_aJYP4OnIEe6pm5wa6vzbpQ" aggregation="composite" association="_iPliAOnIEe6pm5wa6vzbpQ">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_jLvkQOn0Ee6LY_dHFA6_Jw" name="L10nBaseString" isAbstract="true">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iPmJEunIEe6pm5wa6vzbpQ" name="text" type="_aJYP4OnIEe6pm5wa6vzbpQ" aggregation="composite" association="_iPliAOnIEe6pm5wa6vzbpQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iPmJE-nIEe6pm5wa6vzbpQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iPmJFOnIEe6pm5wa6vzbpQ" value="*"/>
       </ownedAttribute>
@@ -864,7 +864,7 @@ endif</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wfdMIOnrEe6LY_dHFA6_Jw"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_FmZdwOn5Ee6LY_dHFA6_Jw" name="L10nKeyedString">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_FmZdwOn5Ee6LY_dHFA6_Jw" name="L10nKeyedString">
       <generalization xmi:type="uml:Generalization" xmi:id="_H95goOn5Ee6LY_dHFA6_Jw" general="_jLvkQOn0Ee6LY_dHFA6_Jw"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_I5j3oOn5Ee6LY_dHFA6_Jw" name="key">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
@@ -876,10 +876,10 @@ endif</body>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZS8HkOn-Ee6LY_dHFA6_Jw"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_gx5JQOn6Ee6LY_dHFA6_Jw" name="L10nString">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_gx5JQOn6Ee6LY_dHFA6_Jw" name="L10nString">
       <generalization xmi:type="uml:Generalization" xmi:id="_lOZw0On6Ee6LY_dHFA6_Jw" general="_jLvkQOn0Ee6LY_dHFA6_Jw"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_aJYP4OnIEe6pm5wa6vzbpQ" name="L10nValue">
+    <packagedElement xmi:type="uml:DataType" xmi:id="_aJYP4OnIEe6pm5wa6vzbpQ" name="L10nText">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_d_e-wOnIEe6pm5wa6vzbpQ" name="language">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
@@ -930,17 +930,16 @@ endif</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_eGSh8PmNEe6OB-l9_N8zXQ" name="QWikiModel">
       <generalization xmi:type="uml:Generalization" xmi:id="_v32fEPmNEe6OB-l9_N8zXQ" general="_QCzlEO9FEe6MqtNwAzLkvA"/>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_QecWwPmOEe6OB-l9_N8zXQ" name="ownedQwikiElement" type="_U4z8oO9DEe6MqtNwAzLkvA" aggregation="composite" association="_QeZ6gPmOEe6OB-l9_N8zXQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QecWwfmOEe6OB-l9_N8zXQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QecWwvmOEe6OB-l9_N8zXQ" value="*"/>
-        <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace-member"/>
-      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_U4z8oO9DEe6MqtNwAzLkvA" name="QWikiNamedElement" isAbstract="true">
       <generalization xmi:type="uml:Generalization" xmi:id="_N7AlEPpcEe6Gy5UW20a7qg" general="ee6ef34f-78d7-4083-b4e3-f2e78195a649"/>
       <generalization xmi:type="uml:Generalization" xmi:id="_PXDsUPpcEe6Gy5UW20a7qg">
         <general xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement"/>
       </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Qec90PmOEe6OB-l9_N8zXQ" name="qwikiNamespace" type="_emVVYO9EEe6MqtNwAzLkvA" association="_QeZ6gPmOEe6OB-l9_N8zXQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_YaUoMPmOEe6OB-l9_N8zXQ"/>
+        <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement-namespace"/>
+      </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_NUl_APmQEe6OB-l9_N8zXQ" name="qwikiModel" bodyCondition="_WLCbQPmQEe6OB-l9_N8zXQ" isQuery="true">
         <ownedRule xmi:type="uml:Constraint" xmi:id="_WLCbQPmQEe6OB-l9_N8zXQ" name="spec" constrainedElement="_NUl_APmQEe6OB-l9_N8zXQ">
           <specification xmi:type="uml:OpaqueExpression" xmi:id="_aN_TUPmQEe6OB-l9_N8zXQ">
@@ -964,6 +963,11 @@ endif</body>
       <generalization xmi:type="uml:Generalization" xmi:id="_md3SUO9EEe6MqtNwAzLkvA">
         <general xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace"/>
       </generalization>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_QecWwPmOEe6OB-l9_N8zXQ" name="qwikiElement" type="_U4z8oO9DEe6MqtNwAzLkvA" aggregation="composite" association="_QeZ6gPmOEe6OB-l9_N8zXQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_QecWwfmOEe6OB-l9_N8zXQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_QecWwvmOEe6OB-l9_N8zXQ" value="*"/>
+        <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Namespace-ownedMember"/>
+      </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_Cb3_APKrEe6TpdN_RktbHQ" name="QWikiRelationship" isAbstract="true">
       <generalization xmi:type="uml:Generalization" xmi:id="_UredMPplEe6Gy5UW20a7qg" general="ee6ef34f-78d7-4083-b4e3-f2e78195a649"/>
@@ -1283,18 +1287,18 @@ endif</body>
   <Ecore:EReference xmi:id="_h-jBkPm8Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_QecWwPmOEe6OB-l9_N8zXQ" isResolveProxies="false"/>
   <Ecore:EAttribute xmi:id="_Oa204Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_a-0SwOzsEe6arr42GsuYxg"/>
   <Ecore:EAttribute xmi:id="_Rqn8gPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_7IOPsuntEe6LY_dHFA6_Jw"/>
-  <Ecore:EAttribute xmi:id="_ToleAPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_Tza98OnJEe6pm5wa6vzbpQ"/>
-  <Ecore:EAttribute xmi:id="_VCvu4Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_aNW94On9Ee6LY_dHFA6_Jw"/>
-  <Ecore:EAttribute xmi:id="_XWNmUPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_KIFEkOnKEe6pm5wa6vzbpQ"/>
-  <Ecore:EAttribute xmi:id="_Yrwc8Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_uhbcMOnKEe6pm5wa6vzbpQ"/>
-  <Ecore:EAttribute xmi:id="_bAGeIPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_BBVGAOnLEe6pm5wa6vzbpQ"/>
-  <Ecore:EAttribute xmi:id="_ct0kMPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_Hsi2QOnKEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_ToleAPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_Tza98OnJEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_VCvu4Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_aNW94On9Ee6LY_dHFA6_Jw"/>
+  <Ecore:EAttribute xmi:id="_XWNmUPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_KIFEkOnKEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_Yrwc8Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_uhbcMOnKEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_bAGeIPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_BBVGAOnLEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_ct0kMPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_Hsi2QOnKEe6pm5wa6vzbpQ"/>
   <Ecore:EAttribute xmi:id="_g0znsPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_KFt2oOnWEe6pm5wa6vzbpQ"/>
   <Ecore:EAttribute xmi:id="_jkgIIPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_d4JC0OnXEe6pm5wa6vzbpQ"/>
   <Ecore:EAttribute xmi:id="_nGCVMPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_iPmJEunIEe6pm5wa6vzbpQ"/>
   <Ecore:EAttribute xmi:id="_rYpZ4Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_I5j3oOn5Ee6LY_dHFA6_Jw"/>
-  <Ecore:EAttribute xmi:id="_uDWFkPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_fjcE0OnIEe6pm5wa6vzbpQ"/>
-  <Ecore:EAttribute xmi:id="_vLSlEPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_d_e-wOnIEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_uDWFkPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Simple" base_Property="_fjcE0OnIEe6pm5wa6vzbpQ"/>
+  <Ecore:EAttribute xmi:id="_vLSlEPp_Ee6W7c6YvVpLAA" xmlFeatureKind="Attribute" base_Property="_d_e-wOnIEe6pm5wa6vzbpQ"/>
   <Ecore:EAttribute xmi:id="_xmJd8Pp_Ee6W7c6YvVpLAA" xmlFeatureKind="Element" base_Property="_Gb48IOnJEe6pm5wa6vzbpQ"/>
   <Ecore:EPackage xmi:id="_waVXkPsuEe6ICsboBRxz5w" base_Package="_vAl9cPsuEe6ICsboBRxz5w" packageName="Content" nsURI="http://schumann.engineering/qwiki/1.0/content"/>
   <Ecore:EReference xmi:id="_STp7EPsyEe6ICsboBRxz5w" isTransient="true" base_Property="_EbFeNfsxEe6ICsboBRxz5w" isResolveProxies="false"/>
@@ -1303,5 +1307,8 @@ endif</body>
   <Ecore:EAttribute xmi:id="_YUv60PsyEe6ICsboBRxz5w" xmlFeatureKind="Attribute" base_Property="_wX5cs_swEe6ICsboBRxz5w"/>
   <Ecore:EAttribute xmi:id="_Zzw2gPsyEe6ICsboBRxz5w" xmlFeatureKind="Attribute" base_Property="_9-wT8fswEe6ICsboBRxz5w"/>
   <Ecore:EAttribute xmi:id="_caF_kPsyEe6ICsboBRxz5w" xmlFeatureKind="Attribute" base_Property="_rmEscvswEe6ICsboBRxz5w"/>
-  <Ecore:EReference xmi:id="_ui6sgPs6Ee6ICsboBRxz5w" xmlFeatureKind="Element" base_Property="_ibsRcvs5Ee6ICsboBRxz5w" isResolveProxies="false"/>
+  <Ecore:EReference xmi:id="_ui6sgPs6Ee6ICsboBRxz5w" xmlFeatureKind="Attribute" base_Property="_ibsRcvs5Ee6ICsboBRxz5w" isResolveProxies="false"/>
+  <Ecore:EReference xmi:id="_YXmjEPtJEe6ICsboBRxz5w" isTransient="true" base_Property="_Qec90PmOEe6OB-l9_N8zXQ" isResolveProxies="false"/>
+  <Ecore:EClass xmi:id="_2TmOAPtPEe6ICsboBRxz5w" xmlContentKind="Simple" base_DataType="_aJYP4OnIEe6pm5wa6vzbpQ"/>
+  <Ecore:EClass xmi:id="_GSqSwPtQEe6ICsboBRxz5w" base_Class="_C6uJkPsvEe6ICsboBRxz5w" xmlContentKind="Empty"/>
 </xmi:XMI>

@@ -141,7 +141,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_RULE, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_RULE, SpicePackage.PROCESS_REFERENCE_MODEL__QWIKI_ELEMENT, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
 
 	/**
 	 * <!-- begin-user-doc -->

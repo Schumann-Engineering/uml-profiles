@@ -89,7 +89,7 @@ public interface Section extends ContentContainer {
 	 * @see #setNumber(String)
 	 * @see QWiki.Content.ContentPackage#getSection_Number()
 	 * @model required="true" ordered="false"
-	 *        extendedMetaData="kind='element'"
+	 *        extendedMetaData="kind='attribute'"
 	 * @generated
 	 */
 	String getNumber();

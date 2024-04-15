@@ -187,7 +187,16 @@ public interface RasciPackage extends EPackage {
 	int ROLE__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -196,7 +205,7 @@ public interface RasciPackage extends EPackage {
 	int ROLE__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -205,7 +214,7 @@ public interface RasciPackage extends EPackage {
 	int ROLE__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -890,7 +899,16 @@ public interface RasciPackage extends EPackage {
 	int RASCI_ELEMENT__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -899,7 +917,7 @@ public interface RasciPackage extends EPackage {
 	int RASCI_ELEMENT__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -908,7 +926,7 @@ public interface RasciPackage extends EPackage {
 	int RASCI_ELEMENT__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

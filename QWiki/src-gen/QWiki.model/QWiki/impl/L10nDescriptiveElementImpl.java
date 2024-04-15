@@ -7,7 +7,9 @@ import QWiki.L10nString;
 import QWiki.QWikiPackage;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -26,7 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public abstract class L10nDescriptiveElementImpl extends L10nNamedElementImpl implements L10nDescriptiveElement {
 	/**
-	 * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' reference.
+	 * The cached value of the '{@link #getPurpose() <em>Purpose</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPurpose()
@@ -36,7 +38,7 @@ public abstract class L10nDescriptiveElementImpl extends L10nNamedElementImpl im
 	protected L10nString purpose;
 
 	/**
-	 * The cached value of the '{@link #getContent() <em>Content</em>}' reference.
+	 * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getContent()
@@ -79,12 +81,34 @@ public abstract class L10nDescriptiveElementImpl extends L10nNamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setPurpose(L10nString newPurpose) {
+	public NotificationChain basicSetPurpose(L10nString newPurpose, NotificationChain msgs) {
 		L10nString oldPurpose = purpose;
 		purpose = newPurpose;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE, oldPurpose, purpose));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE, oldPurpose, newPurpose);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setPurpose(L10nString newPurpose) {
+		if (newPurpose != purpose) {
+			NotificationChain msgs = null;
+			if (purpose != null)
+				msgs = ((InternalEObject)purpose).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE, null, msgs);
+			if (newPurpose != null)
+				msgs = ((InternalEObject)newPurpose).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE, null, msgs);
+			msgs = basicSetPurpose(newPurpose, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE, newPurpose, newPurpose));
 	}
 
 	/**
@@ -102,12 +126,50 @@ public abstract class L10nDescriptiveElementImpl extends L10nNamedElementImpl im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setContent(L10nString newContent) {
+	public NotificationChain basicSetContent(L10nString newContent, NotificationChain msgs) {
 		L10nString oldContent = content;
 		content = newContent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT, oldContent, content));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT, oldContent, newContent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContent(L10nString newContent) {
+		if (newContent != content) {
+			NotificationChain msgs = null;
+			if (content != null)
+				msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT, null, msgs);
+			if (newContent != null)
+				msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT, null, msgs);
+			msgs = basicSetContent(newContent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT, newContent, newContent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE:
+				return basicSetPurpose(null, msgs);
+			case QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT:
+				return basicSetContent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

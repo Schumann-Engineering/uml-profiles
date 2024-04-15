@@ -243,7 +243,16 @@ public interface SpicePackage extends EPackage {
 	int SPICE_ELEMENT__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT__QWIKI_NAMESPACE = QWikiPackage.QWIKI_CONTAINER__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -252,7 +261,16 @@ public interface SpicePackage extends EPackage {
 	int SPICE_ELEMENT__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPICE_ELEMENT__QWIKI_ELEMENT = QWikiPackage.QWIKI_CONTAINER__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -261,7 +279,7 @@ public interface SpicePackage extends EPackage {
 	int SPICE_ELEMENT__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1171,7 +1189,16 @@ public interface SpicePackage extends EPackage {
 	int BASE_PRACTISE__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE__QWIKI_NAMESPACE = SPICE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1180,7 +1207,16 @@ public interface SpicePackage extends EPackage {
 	int BASE_PRACTISE__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BASE_PRACTISE__QWIKI_ELEMENT = SPICE_ELEMENT__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1189,7 +1225,7 @@ public interface SpicePackage extends EPackage {
 	int BASE_PRACTISE__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2126,7 +2162,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL__TAG = QWikiPackage.QWIKI_CONTAINER__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL__QWIKI_NAMESPACE = QWikiPackage.QWIKI_CONTAINER__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2135,7 +2180,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL__DISPLAY_NAME = QWikiPackage.QWIKI_CONTAINER__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_REFERENCE_MODEL__QWIKI_ELEMENT = QWikiPackage.QWIKI_CONTAINER__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2144,7 +2198,7 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_REFERENCE_MODEL__PURPOSE = QWikiPackage.QWIKI_CONTAINER__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2982,7 +3036,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__QWIKI_NAMESPACE = SPICE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2991,7 +3054,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__QWIKI_ELEMENT = SPICE_ELEMENT__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3000,7 +3072,7 @@ public interface SpicePackage extends EPackage {
 	int PROCESS__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3955,7 +4027,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_GROUP__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP__QWIKI_NAMESPACE = SPICE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3964,7 +4045,16 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_GROUP__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_GROUP__QWIKI_ELEMENT = SPICE_ELEMENT__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -3973,7 +4063,7 @@ public interface SpicePackage extends EPackage {
 	int PROCESS_GROUP__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -4838,7 +4928,16 @@ public interface SpicePackage extends EPackage {
 	int OUTCOME__TAG = QWikiPackage.L1_0N_NAMED_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTCOME__QWIKI_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5559,7 +5658,16 @@ public interface SpicePackage extends EPackage {
 	int WORK_PRODUCT__TAG = SPICE_ELEMENT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT__QWIKI_NAMESPACE = SPICE_ELEMENT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5568,7 +5676,16 @@ public interface SpicePackage extends EPackage {
 	int WORK_PRODUCT__DISPLAY_NAME = SPICE_ELEMENT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT__QWIKI_ELEMENT = SPICE_ELEMENT__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5577,7 +5694,7 @@ public interface SpicePackage extends EPackage {
 	int WORK_PRODUCT__PURPOSE = SPICE_ELEMENT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -5703,7 +5820,7 @@ public interface SpicePackage extends EPackage {
 	int WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = SPICE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' reference.
+	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6586,7 +6703,16 @@ public interface SpicePackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__TAG = WORK_PRODUCT__TAG;
 
 	/**
-	 * The feature id for the '<em><b>Display Name</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT__QWIKI_NAMESPACE = WORK_PRODUCT__QWIKI_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6595,7 +6721,16 @@ public interface SpicePackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__DISPLAY_NAME = WORK_PRODUCT__DISPLAY_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Purpose</b></em>' reference.
+	 * The feature id for the '<em><b>Qwiki Element</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GENERIC_WORK_PRODUCT__QWIKI_ELEMENT = WORK_PRODUCT__QWIKI_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6604,7 +6739,7 @@ public interface SpicePackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__PURPOSE = WORK_PRODUCT__PURPOSE;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * The feature id for the '<em><b>Content</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -6730,7 +6865,7 @@ public interface SpicePackage extends EPackage {
 	int GENERIC_WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP;
 
 	/**
-	 * The feature id for the '<em><b>Characteristic</b></em>' reference.
+	 * The feature id for the '<em><b>Characteristic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -8064,6 +8199,15 @@ public interface SpicePackage extends EPackage {
 	int WORK_PRODUCT_RELATIONSHIP_TYPE__TAG = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__TAG;
 
 	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WORK_PRODUCT_RELATIONSHIP_TYPE__QWIKI_NAMESPACE = QWikiPackage.QWIKI_RELATIONSHIP_TYPE__QWIKI_NAMESPACE;
+
+	/**
 	 * The feature id for the '<em><b>Relationship</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -8992,10 +9136,10 @@ public interface SpicePackage extends EPackage {
 	EReference getWorkProduct_OwningWorkProductGroup();
 
 	/**
-	 * Returns the meta object for the reference '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}'.
+	 * Returns the meta object for the containment reference '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Characteristic</em>'.
+	 * @return the meta object for the containment reference '<em>Characteristic</em>'.
 	 * @see QWiki.Spice.WorkProduct#getCharacteristic()
 	 * @see #getWorkProduct()
 	 * @generated
@@ -9550,7 +9694,7 @@ public interface SpicePackage extends EPackage {
 		EReference WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP = eINSTANCE.getWorkProduct_OwningWorkProductGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Characteristic</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Characteristic</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

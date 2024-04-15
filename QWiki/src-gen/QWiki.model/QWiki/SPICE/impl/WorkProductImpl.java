@@ -65,7 +65,7 @@ import org.eclipse.uml2.uml.Namespace;
  */
 public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	/**
-	 * The cached value of the '{@link #getCharacteristic() <em>Characteristic</em>}' reference.
+	 * The cached value of the '{@link #getCharacteristic() <em>Characteristic</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCharacteristic()
@@ -303,14 +303,6 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 */
 	@Override
 	public L10nString getCharacteristic() {
-		if (characteristic != null && characteristic.eIsProxy()) {
-			InternalEObject oldCharacteristic = (InternalEObject)characteristic;
-			characteristic = (L10nString)eResolveProxy(oldCharacteristic);
-			if (characteristic != oldCharacteristic) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpicePackage.WORK_PRODUCT__CHARACTERISTIC, oldCharacteristic, characteristic));
-			}
-		}
 		return characteristic;
 	}
 
@@ -319,8 +311,14 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public L10nString basicGetCharacteristic() {
-		return characteristic;
+	public NotificationChain basicSetCharacteristic(L10nString newCharacteristic, NotificationChain msgs) {
+		L10nString oldCharacteristic = characteristic;
+		characteristic = newCharacteristic;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT__CHARACTERISTIC, oldCharacteristic, newCharacteristic);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -330,10 +328,17 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 	 */
 	@Override
 	public void setCharacteristic(L10nString newCharacteristic) {
-		L10nString oldCharacteristic = characteristic;
-		characteristic = newCharacteristic;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT__CHARACTERISTIC, oldCharacteristic, characteristic));
+		if (newCharacteristic != characteristic) {
+			NotificationChain msgs = null;
+			if (characteristic != null)
+				msgs = ((InternalEObject)characteristic).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpicePackage.WORK_PRODUCT__CHARACTERISTIC, null, msgs);
+			if (newCharacteristic != null)
+				msgs = ((InternalEObject)newCharacteristic).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpicePackage.WORK_PRODUCT__CHARACTERISTIC, null, msgs);
+			msgs = basicSetCharacteristic(newCharacteristic, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT__CHARACTERISTIC, newCharacteristic, newCharacteristic));
 	}
 
 	/**
@@ -666,6 +671,8 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 		switch (featureID) {
 			case SpicePackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return basicSetOwningWorkProductGroup(null, msgs);
+			case SpicePackage.WORK_PRODUCT__CHARACTERISTIC:
+				return basicSetCharacteristic(null, msgs);
 			case SpicePackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				return ((InternalEList<?>)getFacilitatingOutcome()).basicRemove(otherEnd, msgs);
 			case SpicePackage.WORK_PRODUCT__FACILITATED_PROCESS:
@@ -711,8 +718,7 @@ public class WorkProductImpl extends SpiceElementImpl implements WorkProduct {
 			case SpicePackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP:
 				return getOwningWorkProductGroup();
 			case SpicePackage.WORK_PRODUCT__CHARACTERISTIC:
-				if (resolve) return getCharacteristic();
-				return basicGetCharacteristic();
+				return getCharacteristic();
 			case SpicePackage.WORK_PRODUCT__FACILITATING_OUTCOME:
 				return getFacilitatingOutcome();
 			case SpicePackage.WORK_PRODUCT__FACILITATED_PROCESS:

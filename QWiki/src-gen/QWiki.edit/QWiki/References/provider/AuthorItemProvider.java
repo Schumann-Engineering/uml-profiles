@@ -120,7 +120,7 @@ public class AuthorItemProvider extends QWikiNamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Author)object).getName();
+		String label = ((Author)object).getQualifiedName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Author_type") :
 			getString("_UI_Author_type") + " " + label;

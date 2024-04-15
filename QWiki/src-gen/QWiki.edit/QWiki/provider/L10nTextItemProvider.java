@@ -5,7 +5,7 @@ package QWiki.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.L10nValue;
+import QWiki.L10nText;
 import QWiki.QWikiPackage;
 
 import java.util.Collection;
@@ -28,12 +28,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link QWiki.L10nValue} object.
+ * This is the item provider adapter for a {@link QWiki.L10nText} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class L10nValueItemProvider 
+public class L10nTextItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +47,7 @@ public class L10nValueItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public L10nValueItemProvider(AdapterFactory adapterFactory) {
+	public L10nTextItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,9 +79,9 @@ public class L10nValueItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_L10nValue_language_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_L10nValue_language_feature", "_UI_L10nValue_type"),
-				 QWikiPackage.Literals.L1_0N_VALUE__LANGUAGE,
+				 getString("_UI_L10nText_language_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_L10nText_language_feature", "_UI_L10nText_type"),
+				 QWikiPackage.Literals.L1_0N_TEXT__LANGUAGE,
 				 true,
 				 false,
 				 false,
@@ -101,9 +101,9 @@ public class L10nValueItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_L10nValue_body_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_L10nValue_body_feature", "_UI_L10nValue_type"),
-				 QWikiPackage.Literals.L1_0N_VALUE__BODY,
+				 getString("_UI_L10nText_body_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_L10nText_body_feature", "_UI_L10nText_type"),
+				 QWikiPackage.Literals.L1_0N_TEXT__BODY,
 				 true,
 				 false,
 				 false,
@@ -113,14 +113,14 @@ public class L10nValueItemProvider
 	}
 
 	/**
-	 * This returns L10nValue.gif.
+	 * This returns L10nText.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/L10nValue"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/L10nText"));
 	}
 
 	/**
@@ -131,10 +131,10 @@ public class L10nValueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((L10nValue)object).getLanguage();
+		String label = ((L10nText)object).getBody();
 		return label == null || label.length() == 0 ?
-			getString("_UI_L10nValue_type") :
-			getString("_UI_L10nValue_type") + " " + label;
+			getString("_UI_L10nText_type") :
+			getString("_UI_L10nText_type") + " " + label;
 	}
 
 
@@ -149,9 +149,9 @@ public class L10nValueItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(L10nValue.class)) {
-			case QWikiPackage.L1_0N_VALUE__LANGUAGE:
-			case QWikiPackage.L1_0N_VALUE__BODY:
+		switch (notification.getFeatureID(L10nText.class)) {
+			case QWikiPackage.L1_0N_TEXT__LANGUAGE:
+			case QWikiPackage.L1_0N_TEXT__BODY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

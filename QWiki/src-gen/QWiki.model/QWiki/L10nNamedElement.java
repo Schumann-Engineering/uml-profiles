@@ -21,27 +21,27 @@ package QWiki;
  */
 public interface L10nNamedElement extends QWikiNamedElement {
 	/**
-	 * Returns the value of the '<em><b>Display Name</b></em>' reference.
+	 * Returns the value of the '<em><b>Display Name</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Display Name</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Display Name</em>' reference.
+	 * @return the value of the '<em>Display Name</em>' containment reference.
 	 * @see #setDisplayName(L10nString)
 	 * @see QWiki.QWikiPackage#getL10nNamedElement_DisplayName()
-	 * @model resolveProxies="false" ordered="false"
+	 * @model containment="true" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	L10nString getDisplayName();
 
 	/**
-	 * Sets the value of the '{@link QWiki.L10nNamedElement#getDisplayName <em>Display Name</em>}' reference.
+	 * Sets the value of the '{@link QWiki.L10nNamedElement#getDisplayName <em>Display Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Name</em>' reference.
+	 * @param value the new value of the '<em>Display Name</em>' containment reference.
 	 * @see #getDisplayName()
 	 * @generated
 	 */

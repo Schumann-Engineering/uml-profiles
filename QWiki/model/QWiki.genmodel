@@ -46,6 +46,8 @@
           createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//L10nNamedElement/displayName"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//QWikiNamedElement">
+      <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
+          ecoreFeature="ecore:EReference QWiki.ecore#//QWikiNamedElement/qwikiNamespace"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//QWikiNamedElement/qwikiModel"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//QWikiElement">
@@ -60,7 +62,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//L10nBaseString">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//L10nBaseString/value.1"/>
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//L10nBaseString/text"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false" createChild="false"
           ecoreFeature="ecore:EReference QWiki.ecore#//L10nBaseString/encryptionKey"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//L10nBaseString/value">
@@ -68,17 +70,17 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//L10nBaseString/isEncrypted"/>
     </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//L10nValue">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//L10nValue/language"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//L10nValue/body"/>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//L10nText" labelFeature="#//QWiki/L10nText/body">
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//L10nText/language"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//L10nText/body"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//QWikiEncryptionKey"/>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//QWikiModel">
+    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//QWikiNamespace">
       <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//QWikiModel/ownedQwikiElement"/>
+          createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//QWikiNamespace/qwikiElement"/>
     </genClasses>
+    <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//QWikiModel"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//QWikiContainer"/>
-    <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//QWikiNamespace"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//L10nString"/>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="QWiki.ecore#//QWikiRelationship">
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
@@ -336,11 +338,13 @@
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="References" basePackage="QWiki"
         disposableProviderFactory="true" generateModelWizard="false" ecorePackage="QWiki.ecore#//References">
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="QWiki.ecore#//References/AuthorType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/AuthorType/UNSPECIFIED"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/AuthorType/Person"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/AuthorType/Organization"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/AuthorType/StandardsDevelopmentOrganization"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="QWiki.ecore#//References/ReferenceType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceType/UNSPECIFIED"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceType/Document"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceType/Guideline"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceType/Hyperlink"/>
@@ -350,17 +354,20 @@
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceType/TechnicalReport"/>
       </genEnums>
       <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="QWiki.ecore#//References/ReferenceVersionType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceVersionType/UNSPECIFIED"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceVersionType/Addendum"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceVersionType/Amendment"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceVersionType/Corrigendum"/>
         <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="QWiki.ecore#//References/ReferenceVersionType/FirstEdition"/>
       </genEnums>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//References/Author">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//References/Author"
+          labelFeature="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/Author/authorType"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/Author/abbreviation"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//References/Author/objectId"/>
       </genClasses>
-      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//References/Reference">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="QWiki.ecore#//References/Reference"
+          labelFeature="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/Reference/number"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/Reference/ownedVersion"/>
@@ -373,7 +380,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" property="None" notify="false"
             createChild="false" ecoreFeature="ecore:EReference QWiki.ecore#//References/ReferenceVersion/owningReference"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/publicationYear"/>
-        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/referenceVersionType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/versionType"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/edition"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/ReferenceVersion/ownedContent"/>

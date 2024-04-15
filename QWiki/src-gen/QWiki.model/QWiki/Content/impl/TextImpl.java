@@ -9,6 +9,7 @@ import QWiki.Content.TextType;
 import QWiki.L10nString;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -50,7 +51,7 @@ public class TextImpl extends ContentImpl implements Text {
 	protected TextType textType = TEXT_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' reference.
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBody()
@@ -108,14 +109,6 @@ public class TextImpl extends ContentImpl implements Text {
 	 */
 	@Override
 	public L10nString getBody() {
-		if (body != null && body.eIsProxy()) {
-			InternalEObject oldBody = (InternalEObject)body;
-			body = (L10nString)eResolveProxy(oldBody);
-			if (body != oldBody) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.TEXT__BODY, oldBody, body));
-			}
-		}
 		return body;
 	}
 
@@ -124,8 +117,14 @@ public class TextImpl extends ContentImpl implements Text {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public L10nString basicGetBody() {
-		return body;
+	public NotificationChain basicSetBody(L10nString newBody, NotificationChain msgs) {
+		L10nString oldBody = body;
+		body = newBody;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContentPackage.TEXT__BODY, oldBody, newBody);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -135,10 +134,31 @@ public class TextImpl extends ContentImpl implements Text {
 	 */
 	@Override
 	public void setBody(L10nString newBody) {
-		L10nString oldBody = body;
-		body = newBody;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.TEXT__BODY, oldBody, body));
+		if (newBody != body) {
+			NotificationChain msgs = null;
+			if (body != null)
+				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContentPackage.TEXT__BODY, null, msgs);
+			if (newBody != null)
+				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContentPackage.TEXT__BODY, null, msgs);
+			msgs = basicSetBody(newBody, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.TEXT__BODY, newBody, newBody));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ContentPackage.TEXT__BODY:
+				return basicSetBody(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,8 +172,7 @@ public class TextImpl extends ContentImpl implements Text {
 			case ContentPackage.TEXT__TEXT_TYPE:
 				return getTextType();
 			case ContentPackage.TEXT__BODY:
-				if (resolve) return getBody();
-				return basicGetBody();
+				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

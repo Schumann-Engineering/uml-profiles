@@ -92,7 +92,7 @@ public class ProcessGroupImpl extends SpiceElementImpl implements ProcessGroup {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_GROUP__OWNED_RULE, SpicePackage.PROCESS_GROUP__OWNED_PROCESS};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_GROUP__OWNED_RULE, SpicePackage.PROCESS_GROUP__QWIKI_ELEMENT, SpicePackage.PROCESS_GROUP__OWNED_PROCESS};
 
 	/**
 	 * <!-- begin-user-doc -->

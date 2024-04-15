@@ -16,7 +16,7 @@ import QWiki.L10nDescriptiveElement;
 import QWiki.L10nKeyedString;
 import QWiki.L10nNamedElement;
 import QWiki.L10nString;
-import QWiki.L10nValue;
+import QWiki.L10nText;
 import QWiki.QWikiComment;
 import QWiki.QWikiContainer;
 import QWiki.QWikiElement;
@@ -114,7 +114,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass l10nValueEClass = null;
+	private EClass l10nTextEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -333,6 +333,16 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getQWikiNamedElement_QwikiNamespace() {
+		return (EReference)qWikiNamedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getQWikiNamedElement__QwikiModel() {
 		return qWikiNamedElementEClass.getEOperations().get(0);
 	}
@@ -423,7 +433,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getL10nBaseString_Value() {
+	public EReference getL10nBaseString_Text() {
 		return (EReference)l10nBaseStringEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -463,8 +473,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getL10nValue() {
-		return l10nValueEClass;
+	public EClass getL10nText() {
+		return l10nTextEClass;
 	}
 
 	/**
@@ -473,8 +483,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getL10nValue_Language() {
-		return (EAttribute)l10nValueEClass.getEStructuralFeatures().get(0);
+	public EAttribute getL10nText_Language() {
+		return (EAttribute)l10nTextEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -483,8 +493,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getL10nValue_Body() {
-		return (EAttribute)l10nValueEClass.getEStructuralFeatures().get(1);
+	public EAttribute getL10nText_Body() {
+		return (EAttribute)l10nTextEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -513,16 +523,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getQWikiModel_OwnedQwikiElement() {
-		return (EReference)qWikiModelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getQWikiContainer() {
 		return qWikiContainerEClass;
 	}
@@ -535,6 +535,16 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	@Override
 	public EClass getQWikiNamespace() {
 		return qWikiNamespaceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getQWikiNamespace_QwikiElement() {
+		return (EReference)qWikiNamespaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -644,6 +654,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		createEReference(l10nNamedElementEClass, L1_0N_NAMED_ELEMENT__DISPLAY_NAME);
 
 		qWikiNamedElementEClass = createEClass(QWIKI_NAMED_ELEMENT);
+		createEReference(qWikiNamedElementEClass, QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE);
 		createEOperation(qWikiNamedElementEClass, QWIKI_NAMED_ELEMENT___QWIKI_MODEL);
 
 		qWikiElementEClass = createEClass(QWIKI_ELEMENT);
@@ -656,23 +667,23 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		createEAttribute(l10nKeyedStringEClass, L1_0N_KEYED_STRING__KEY);
 
 		l10nBaseStringEClass = createEClass(L1_0N_BASE_STRING);
-		createEReference(l10nBaseStringEClass, L1_0N_BASE_STRING__VALUE);
+		createEReference(l10nBaseStringEClass, L1_0N_BASE_STRING__TEXT);
 		createEReference(l10nBaseStringEClass, L1_0N_BASE_STRING__ENCRYPTION_KEY);
 		createEOperation(l10nBaseStringEClass, L1_0N_BASE_STRING___VALUE__STRING);
 		createEOperation(l10nBaseStringEClass, L1_0N_BASE_STRING___IS_ENCRYPTED);
 
-		l10nValueEClass = createEClass(L1_0N_VALUE);
-		createEAttribute(l10nValueEClass, L1_0N_VALUE__LANGUAGE);
-		createEAttribute(l10nValueEClass, L1_0N_VALUE__BODY);
+		l10nTextEClass = createEClass(L1_0N_TEXT);
+		createEAttribute(l10nTextEClass, L1_0N_TEXT__LANGUAGE);
+		createEAttribute(l10nTextEClass, L1_0N_TEXT__BODY);
 
 		qWikiEncryptionKeyEClass = createEClass(QWIKI_ENCRYPTION_KEY);
 
+		qWikiNamespaceEClass = createEClass(QWIKI_NAMESPACE);
+		createEReference(qWikiNamespaceEClass, QWIKI_NAMESPACE__QWIKI_ELEMENT);
+
 		qWikiModelEClass = createEClass(QWIKI_MODEL);
-		createEReference(qWikiModelEClass, QWIKI_MODEL__OWNED_QWIKI_ELEMENT);
 
 		qWikiContainerEClass = createEClass(QWIKI_CONTAINER);
-
-		qWikiNamespaceEClass = createEClass(QWIKI_NAMESPACE);
 
 		l10nStringEClass = createEClass(L1_0N_STRING);
 
@@ -740,12 +751,12 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		qWikiElementEClass.getESuperTypes().add(theUMLPackage.getElement());
 		l10nKeyedStringEClass.getESuperTypes().add(this.getL10nBaseString());
 		qWikiEncryptionKeyEClass.getESuperTypes().add(this.getQWikiNamedElement());
-		qWikiModelEClass.getESuperTypes().add(this.getQWikiContainer());
-		qWikiContainerEClass.getESuperTypes().add(this.getQWikiNamespace());
-		qWikiContainerEClass.getESuperTypes().add(this.getL10nDescriptiveElement());
 		qWikiNamespaceEClass.getESuperTypes().add(theUMLPackage.getNamespace());
 		qWikiNamespaceEClass.getESuperTypes().add(this.getL10nNamedElement());
 		qWikiNamespaceEClass.getESuperTypes().add(this.getQWikiElement());
+		qWikiModelEClass.getESuperTypes().add(this.getQWikiContainer());
+		qWikiContainerEClass.getESuperTypes().add(this.getQWikiNamespace());
+		qWikiContainerEClass.getESuperTypes().add(this.getL10nDescriptiveElement());
 		l10nStringEClass.getESuperTypes().add(this.getL10nBaseString());
 		qWikiRelationshipEClass.getESuperTypes().add(theUMLPackage.getDirectedRelationship());
 		qWikiRelationshipEClass.getESuperTypes().add(this.getQWikiElement());
@@ -755,13 +766,14 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(l10nDescriptiveElementEClass, L10nDescriptiveElement.class, "L10nDescriptiveElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getL10nDescriptiveElement_Purpose(), this.getL10nString(), null, "purpose", null, 0, 1, L10nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getL10nDescriptiveElement_Content(), this.getL10nString(), null, "content", null, 0, 1, L10nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getL10nDescriptiveElement_Purpose(), this.getL10nString(), null, "purpose", null, 0, 1, L10nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getL10nDescriptiveElement_Content(), this.getL10nString(), null, "content", null, 0, 1, L10nDescriptiveElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(l10nNamedElementEClass, L10nNamedElement.class, "L10nNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getL10nNamedElement_DisplayName(), this.getL10nString(), null, "displayName", null, 0, 1, L10nNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getL10nNamedElement_DisplayName(), this.getL10nString(), null, "displayName", null, 0, 1, L10nNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(qWikiNamedElementEClass, QWikiNamedElement.class, "QWikiNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQWikiNamedElement_QwikiNamespace(), this.getQWikiNamespace(), this.getQWikiNamespace_QwikiElement(), "qwikiNamespace", null, 0, 1, QWikiNamedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getQWikiNamedElement__QwikiModel(), this.getQWikiModel(), "qwikiModel", 0, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -775,8 +787,8 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEClass(l10nKeyedStringEClass, L10nKeyedString.class, "L10nKeyedString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getL10nKeyedString_Key(), ecorePackage.getEString(), "key", null, 1, 1, L10nKeyedString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(l10nBaseStringEClass, L10nBaseString.class, "L10nBaseString", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getL10nBaseString_Value(), this.getL10nValue(), null, "value", null, 0, -1, L10nBaseString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(l10nBaseStringEClass, L10nBaseString.class, "L10nBaseString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getL10nBaseString_Text(), this.getL10nText(), null, "text", null, 0, -1, L10nBaseString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getL10nBaseString_EncryptionKey(), this.getQWikiEncryptionKey(), null, "encryptionKey", null, 0, 1, L10nBaseString.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getL10nBaseString__Value__String(), ecorePackage.getEString(), "value", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -784,18 +796,18 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 
 		initEOperation(getL10nBaseString__IsEncrypted(), ecorePackage.getEBoolean(), "isEncrypted", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(l10nValueEClass, L10nValue.class, "L10nValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getL10nValue_Language(), ecorePackage.getEString(), "language", null, 1, 1, L10nValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getL10nValue_Body(), ecorePackage.getEString(), "body", null, 1, 1, L10nValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(l10nTextEClass, L10nText.class, "L10nText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getL10nText_Language(), ecorePackage.getEString(), "language", null, 1, 1, L10nText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getL10nText_Body(), ecorePackage.getEString(), "body", null, 1, 1, L10nText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(qWikiEncryptionKeyEClass, QWikiEncryptionKey.class, "QWikiEncryptionKey", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(qWikiNamespaceEClass, QWikiNamespace.class, "QWikiNamespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getQWikiNamespace_QwikiElement(), this.getQWikiNamedElement(), this.getQWikiNamedElement_QwikiNamespace(), "qwikiElement", null, 0, -1, QWikiNamespace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
 		initEClass(qWikiModelEClass, QWikiModel.class, "QWikiModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQWikiModel_OwnedQwikiElement(), this.getQWikiNamedElement(), null, "ownedQwikiElement", null, 0, -1, QWikiModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(qWikiContainerEClass, QWikiContainer.class, "QWikiContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(qWikiNamespaceEClass, QWikiNamespace.class, "QWikiNamespace", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(l10nStringEClass, L10nString.class, "L10nString", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -806,7 +818,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		initEReference(getQWikiRelationshipType_Relationship(), this.getQWikiRelationship(), this.getQWikiRelationship_RelationshipType(), "relationship", null, 0, -1, QWikiRelationshipType.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(qWikiCommentEClass, QWikiComment.class, "QWikiComment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getQWikiComment_Content(), this.getL10nString(), null, "content", null, 0, 1, QWikiComment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getQWikiComment_Content(), this.getL10nString(), null, "content", null, 0, 1, QWikiComment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -818,10 +830,10 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		createExtendedMetaDataAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL
 		createOCLAnnotations();
-		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
-		createEmofAnnotations();
 		// subsets
 		createSubsetsAnnotations();
+		// http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName
+		createEmofAnnotations();
 		// union
 		createUnionAnnotations();
 	}
@@ -896,22 +908,28 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		  (getL10nBaseString_EncryptionKey(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
-		  (getL10nValue_Language(),
+		  (l10nTextEClass,
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "simple"
 		   });
 		addAnnotation
-		  (getL10nValue_Body(),
+		  (getL10nText_Language(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
-		  (getQWikiModel_OwnedQwikiElement(),
+		  (getL10nText_Body(),
+		   source,
+		   new String[] {
+			   "kind", "simple"
+		   });
+		addAnnotation
+		  (getQWikiNamespace_QwikiElement(),
 		   source,
 		   new String[] {
 			   "kind", "element"
@@ -979,7 +997,7 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 			   "body", "owningElement"
 		   });
 		addAnnotation
-		  (getL10nBaseString_Value(),
+		  (getL10nBaseString_Text(),
 		   source,
 		   new String[] {
 			   "body", "owningElement"
@@ -989,12 +1007,6 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 		   source,
 		   new String[] {
 			   "body", "l10nbasestring"
-		   });
-		addAnnotation
-		  (getQWikiModel_OwnedQwikiElement(),
-		   source,
-		   new String[] {
-			   "body", "qwikiModel"
 		   });
 	}
 
@@ -1007,12 +1019,20 @@ public class QWikiPackageImpl extends EPackageImpl implements QWikiPackage {
 	protected void createSubsetsAnnotations() {
 		String source = "subsets";
 		addAnnotation
-		  (getQWikiModel_OwnedQwikiElement(),
+		  (getQWikiNamedElement_QwikiNamespace(),
 		   source,
 		   new String[] {
 		   },
 		   new URI[] {
-			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/member")
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//NamedElement/namespace")
+		   });
+		addAnnotation
+		  (getQWikiNamespace_QwikiElement(),
+		   source,
+		   new String[] {
+		   },
+		   new URI[] {
+			 URI.createURI(UMLPackage.eNS_URI).appendFragment("//Namespace/ownedMember")
 		   });
 	}
 

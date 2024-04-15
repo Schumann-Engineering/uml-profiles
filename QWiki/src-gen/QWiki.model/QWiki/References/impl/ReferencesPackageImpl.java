@@ -322,7 +322,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EAttribute getReferenceVersion_ReferenceVersionType() {
+	public EAttribute getReferenceVersion_VersionType() {
 		return (EAttribute)referenceVersionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -440,7 +440,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		referenceVersionEClass = createEClass(REFERENCE_VERSION);
 		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNING_REFERENCE);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__PUBLICATION_YEAR);
-		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__REFERENCE_VERSION_TYPE);
+		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__VERSION_TYPE);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__EDITION);
 		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNED_CONTENT);
 		createEOperation(referenceVersionEClass, REFERENCE_VERSION___OBJECT_ID);
@@ -505,7 +505,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		initEClass(referenceVersionEClass, ReferenceVersion.class, "ReferenceVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_OwnedVersion(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_PublicationYear(), ecorePackage.getEString(), "publicationYear", null, 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getReferenceVersion_ReferenceVersionType(), this.getReferenceVersionType(), "referenceVersionType", "FirstEdition", 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getReferenceVersion_VersionType(), this.getReferenceVersionType(), "versionType", "FirstEdition", 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_Edition(), ecorePackage.getEString(), "edition", null, 0, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReferenceVersion_OwnedContent(), theContentPackage.getSection(), theContentPackage.getSection_OwningReferenceVersion(), "ownedContent", null, 0, -1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -513,11 +513,13 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 
 		// Initialize enums and add enum literals
 		initEEnum(authorTypeEEnum, AuthorType.class, "AuthorType");
+		addEEnumLiteral(authorTypeEEnum, AuthorType.UNSPECIFIED);
 		addEEnumLiteral(authorTypeEEnum, AuthorType.PERSON);
 		addEEnumLiteral(authorTypeEEnum, AuthorType.ORGANIZATION);
 		addEEnumLiteral(authorTypeEEnum, AuthorType.STANDARDS_DEVELOPMENT_ORGANIZATION);
 
 		initEEnum(referenceTypeEEnum, ReferenceType.class, "ReferenceType");
+		addEEnumLiteral(referenceTypeEEnum, ReferenceType.UNSPECIFIED);
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.DOCUMENT);
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.GUIDELINE);
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.HYPERLINK);
@@ -527,6 +529,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		addEEnumLiteral(referenceTypeEEnum, ReferenceType.TECHNICAL_REPORT);
 
 		initEEnum(referenceVersionTypeEEnum, ReferenceVersionType.class, "ReferenceVersionType");
+		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.UNSPECIFIED);
 		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.ADDENDUM);
 		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.AMENDMENT);
 		addEEnumLiteral(referenceVersionTypeEEnum, ReferenceVersionType.CORRIGENDUM);
@@ -647,7 +650,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		  (getReference_Number(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
 		  (getReference_OwnedVersion(),
@@ -659,7 +662,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		  (getReference_ReferenceType(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
 		  (getReference_Author(),
@@ -677,19 +680,19 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		  (getReferenceVersion_PublicationYear(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
-		  (getReferenceVersion_ReferenceVersionType(),
+		  (getReferenceVersion_VersionType(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
 		  (getReferenceVersion_Edition(),
 		   source,
 		   new String[] {
-			   "kind", "element"
+			   "kind", "attribute"
 		   });
 		addAnnotation
 		  (getReferenceVersion_OwnedContent(),

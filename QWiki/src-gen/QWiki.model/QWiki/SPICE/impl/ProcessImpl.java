@@ -161,7 +161,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS__OWNED_RULE, SpicePackage.PROCESS__OWNED_OUTCOME, SpicePackage.PROCESS__OWNED_BASE_PRACTISE};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS__OWNED_RULE, SpicePackage.PROCESS__QWIKI_ELEMENT, SpicePackage.PROCESS__OWNED_OUTCOME, SpicePackage.PROCESS__OWNED_BASE_PRACTISE};
 
 	/**
 	 * <!-- begin-user-doc -->

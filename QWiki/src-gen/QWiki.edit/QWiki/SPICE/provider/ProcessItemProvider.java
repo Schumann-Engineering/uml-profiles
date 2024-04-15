@@ -211,7 +211,10 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 		boolean qualify =
 			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.PROCESS__OWNED_BASE_PRACTISE ||
+			childFeature == SpicePackage.Literals.PROCESS__OWNED_OUTCOME;
 
 		if (qualify) {
 			return getString

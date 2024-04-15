@@ -71,26 +71,26 @@ public interface WorkProduct extends SpiceElement {
 	void setOwningWorkProductGroup(GenericWorkProduct value);
 
 	/**
-	 * Returns the value of the '<em><b>Characteristic</b></em>' reference.
+	 * Returns the value of the '<em><b>Characteristic</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Characteristic</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Characteristic</em>' reference.
+	 * @return the value of the '<em>Characteristic</em>' containment reference.
 	 * @see #setCharacteristic(L10nString)
 	 * @see QWiki.Spice.SpicePackage#getWorkProduct_Characteristic()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	L10nString getCharacteristic();
 
 	/**
-	 * Sets the value of the '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}' reference.
+	 * Sets the value of the '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Characteristic</em>' reference.
+	 * @param value the new value of the '<em>Characteristic</em>' containment reference.
 	 * @see #getCharacteristic()
 	 * @generated
 	 */

@@ -98,7 +98,7 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 	protected EList<String> tag;
 
 	/**
-	 * The cached value of the '{@link #getCaption() <em>Caption</em>}' reference.
+	 * The cached value of the '{@link #getCaption() <em>Caption</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getCaption()
@@ -263,14 +263,6 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 	 */
 	@Override
 	public L10nString getCaption() {
-		if (caption != null && caption.eIsProxy()) {
-			InternalEObject oldCaption = (InternalEObject)caption;
-			caption = (L10nString)eResolveProxy(oldCaption);
-			if (caption != oldCaption) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ContentPackage.CONTENT_CONTAINER__CAPTION, oldCaption, caption));
-			}
-		}
 		return caption;
 	}
 
@@ -279,8 +271,14 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public L10nString basicGetCaption() {
-		return caption;
+	public NotificationChain basicSetCaption(L10nString newCaption, NotificationChain msgs) {
+		L10nString oldCaption = caption;
+		caption = newCaption;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_CONTAINER__CAPTION, oldCaption, newCaption);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -290,10 +288,17 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 	 */
 	@Override
 	public void setCaption(L10nString newCaption) {
-		L10nString oldCaption = caption;
-		caption = newCaption;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_CONTAINER__CAPTION, oldCaption, caption));
+		if (newCaption != caption) {
+			NotificationChain msgs = null;
+			if (caption != null)
+				msgs = ((InternalEObject)caption).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ContentPackage.CONTENT_CONTAINER__CAPTION, null, msgs);
+			if (newCaption != null)
+				msgs = ((InternalEObject)newCaption).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ContentPackage.CONTENT_CONTAINER__CAPTION, null, msgs);
+			msgs = basicSetCaption(newCaption, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ContentPackage.CONTENT_CONTAINER__CAPTION, newCaption, newCaption));
 	}
 
 	/**
@@ -364,6 +369,8 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 				return ((InternalEList<?>)getCustomProperty()).basicRemove(otherEnd, msgs);
 			case ContentPackage.CONTENT_CONTAINER__OWNING_CONTENT:
 				return basicSetOwningContent(null, msgs);
+			case ContentPackage.CONTENT_CONTAINER__CAPTION:
+				return basicSetCaption(null, msgs);
 			case ContentPackage.CONTENT_CONTAINER__ITEM:
 				return ((InternalEList<?>)getItem()).basicRemove(otherEnd, msgs);
 		}
@@ -401,8 +408,7 @@ public abstract class ContentContainerImpl extends NamespaceImpl implements Cont
 			case ContentPackage.CONTENT_CONTAINER__OWNING_CONTENT:
 				return getOwningContent();
 			case ContentPackage.CONTENT_CONTAINER__CAPTION:
-				if (resolve) return getCaption();
-				return basicGetCaption();
+				return getCaption();
 			case ContentPackage.CONTENT_CONTAINER__ITEM:
 				return getItem();
 		}

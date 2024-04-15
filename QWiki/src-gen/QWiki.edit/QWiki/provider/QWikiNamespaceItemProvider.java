@@ -5,10 +5,15 @@ package QWiki.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
+import QWiki.Glossary.GlossaryFactory;
 import QWiki.QWikiFactory;
 import QWiki.QWikiNamespace;
 import QWiki.QWikiPackage;
 
+import QWiki.Rasci.RasciFactory;
+import QWiki.References.ReferencesFactory;
+import QWiki.Relationships.RelationshipsFactory;
+import QWiki.Spice.SpiceFactory;
 import java.util.Collection;
 import java.util.List;
 
@@ -120,6 +125,7 @@ public class QWikiNamespaceItemProvider extends NamespaceItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(QWikiPackage.Literals.QWIKI_ELEMENT__CUSTOM_PROPERTY);
 			childrenFeatures.add(QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME);
+			childrenFeatures.add(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT);
 		}
 		return childrenFeatures;
 	}
@@ -170,6 +176,7 @@ public class QWikiNamespaceItemProvider extends NamespaceItemProvider {
 				return;
 			case QWikiPackage.QWIKI_NAMESPACE__CUSTOM_PROPERTY:
 			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -201,6 +208,96 @@ public class QWikiNamespaceItemProvider extends NamespaceItemProvider {
 			(createChildParameter
 				(QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME,
 				 QWikiFactory.eINSTANCE.createL10nString()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 QWikiFactory.eINSTANCE.createQWikiEncryptionKey()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 QWikiFactory.eINSTANCE.createQWikiContainer()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 QWikiFactory.eINSTANCE.createQWikiModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createBasePractise()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createProcessReferenceModel()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createProcess()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createProcessGroup()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createOutcome()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createWorkProduct()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createGenericWorkProduct()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 SpiceFactory.eINSTANCE.createWorkProductRelationshipType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 RasciFactory.eINSTANCE.createRole()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 GlossaryFactory.eINSTANCE.createGlossaryTermDefinition()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 GlossaryFactory.eINSTANCE.createGlossaryTerm()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 ReferencesFactory.eINSTANCE.createAuthor()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 ReferencesFactory.eINSTANCE.createReference()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 ReferencesFactory.eINSTANCE.createReferenceVersion()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT,
+				 RelationshipsFactory.eINSTANCE.createDO_NOT_USE_RelationshipType()));
 	}
 
 	/**

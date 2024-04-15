@@ -164,7 +164,9 @@ public class GenericWorkProductItemProvider extends WorkProductItemProvider {
 			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
-			childFeature == SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC;
+			childFeature == SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT;
 
 		if (qualify) {
 			return getString

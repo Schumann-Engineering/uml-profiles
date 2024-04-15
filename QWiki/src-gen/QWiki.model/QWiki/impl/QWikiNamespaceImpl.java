@@ -29,8 +29,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
+import org.eclipse.uml2.uml.NamedElement;
+import org.eclipse.uml2.uml.Namespace;
 import org.eclipse.uml2.uml.internal.impl.NamespaceImpl;
 
 /**
@@ -44,7 +49,11 @@ import org.eclipse.uml2.uml.internal.impl.NamespaceImpl;
  *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getUuid <em>Uuid</em>}</li>
  *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getCustomProperty <em>Custom Property</em>}</li>
  *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getTag <em>Tag</em>}</li>
+ *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getQwikiNamespace <em>Qwiki Namespace</em>}</li>
  *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getDisplayName <em>Display Name</em>}</li>
+ *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getOwnedMembers <em>Owned Member</em>}</li>
+ *   <li>{@link QWiki.impl.QWikiNamespaceImpl#getQwikiElement <em>Qwiki Element</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,7 +100,7 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 	protected EList<String> tag;
 
 	/**
-	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' reference.
+	 * The cached value of the '{@link #getDisplayName() <em>Display Name</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDisplayName()
@@ -99,6 +108,16 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 	 * @ordered
 	 */
 	protected L10nString displayName;
+
+	/**
+	 * The cached value of the '{@link #getQwikiElement() <em>Qwiki Element</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getQwikiElement()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<QWikiNamedElement> qwikiElement;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +196,74 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 	 * @generated
 	 */
 	@Override
+	public Namespace getNamespace() {
+		Namespace namespace = basicGetNamespace();
+		return namespace != null && namespace.eIsProxy() ? (Namespace)eResolveProxy((InternalEObject)namespace) : namespace;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Namespace basicGetNamespace() {
+		QWikiNamespace qwikiNamespace = getQwikiNamespace();			
+		if (qwikiNamespace != null) {
+			return qwikiNamespace;
+		}
+		return super.basicGetNamespace();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public QWikiNamespace getQwikiNamespace() {
+		if (eContainerFeatureID() != QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE) return null;
+		return (QWikiNamespace)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetQwikiNamespace(QWikiNamespace newQwikiNamespace, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newQwikiNamespace, QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setQwikiNamespace(QWikiNamespace newQwikiNamespace) {
+		if (newQwikiNamespace != eInternalContainer() || (eContainerFeatureID() != QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE && newQwikiNamespace != null)) {
+			if (EcoreUtil.isAncestor(this, newQwikiNamespace))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newQwikiNamespace != null)
+				msgs = ((InternalEObject)newQwikiNamespace).eInverseAdd(this, QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT, QWikiNamespace.class, msgs);
+			msgs = basicSetQwikiNamespace(newQwikiNamespace, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE, newQwikiNamespace, newQwikiNamespace));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public L10nString getDisplayName() {
 		return displayName;
 	}
@@ -186,12 +273,92 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setDisplayName(L10nString newDisplayName) {
+	public NotificationChain basicSetDisplayName(L10nString newDisplayName, NotificationChain msgs) {
 		L10nString oldDisplayName = displayName;
 		displayName = newDisplayName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME, oldDisplayName, displayName));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME, oldDisplayName, newDisplayName);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDisplayName(L10nString newDisplayName) {
+		if (newDisplayName != displayName) {
+			NotificationChain msgs = null;
+			if (displayName != null)
+				msgs = ((InternalEObject)displayName).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME, null, msgs);
+			if (newDisplayName != null)
+				msgs = ((InternalEObject)newDisplayName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME, null, msgs);
+			msgs = basicSetDisplayName(newDisplayName, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME, newDisplayName, newDisplayName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<NamedElement> getOwnedMembers() {
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, QWikiPackage.QWIKI_NAMESPACE__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
+	}
+
+	/**
+	 * The array of subset feature identifiers for the '{@link #getOwnedMembers() <em>Owned Member</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedMembers()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {QWikiPackage.QWIKI_NAMESPACE__OWNED_RULE, QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT};
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<QWikiNamedElement> getQwikiElement() {
+		if (qwikiElement == null) {
+			qwikiElement = new EObjectContainmentWithInverseEList<QWikiNamedElement>(QWikiNamedElement.class, this, QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT, QWikiPackage.QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE);
+		}
+		return qwikiElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QWikiNamedElement getQwikiElement(String name) {
+		return getQwikiElement(name, false, null);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public QWikiNamedElement getQwikiElement(String name, boolean ignoreCase, EClass eClass) {
+		qwikiElementLoop: for (QWikiNamedElement qwikiElement : getQwikiElement()) {
+			if (eClass != null && !eClass.isInstance(qwikiElement))
+				continue qwikiElementLoop;
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(qwikiElement.getName()) : name.equals(qwikiElement.getName())))
+				continue qwikiElementLoop;
+			return qwikiElement;
+		}
+		return null;
 	}
 
 	/**
@@ -247,13 +414,52 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetQwikiNamespace((QWikiNamespace)otherEnd, msgs);
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getQwikiElement()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case QWikiPackage.QWIKI_NAMESPACE__CUSTOM_PROPERTY:
 				return ((InternalEList<?>)getCustomProperty()).basicRemove(otherEnd, msgs);
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				return basicSetQwikiNamespace(null, msgs);
+			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
+				return basicSetDisplayName(null, msgs);
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				return ((InternalEList<?>)getQwikiElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				return eInternalContainer().eInverseRemove(this, QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT, QWikiNamespace.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
 
 	/**
@@ -270,8 +476,12 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 				return getCustomProperty();
 			case QWikiPackage.QWIKI_NAMESPACE__TAG:
 				return getTag();
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				return getQwikiNamespace();
 			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
 				return getDisplayName();
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				return getQwikiElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -296,8 +506,15 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 				getTag().clear();
 				getTag().addAll((Collection<? extends String>)newValue);
 				return;
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				setQwikiNamespace((QWikiNamespace)newValue);
+				return;
 			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
 				setDisplayName((L10nString)newValue);
+				return;
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				getQwikiElement().clear();
+				getQwikiElement().addAll((Collection<? extends QWikiNamedElement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -320,8 +537,14 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 			case QWikiPackage.QWIKI_NAMESPACE__TAG:
 				getTag().clear();
 				return;
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				setQwikiNamespace((QWikiNamespace)null);
+				return;
 			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
 				setDisplayName((L10nString)null);
+				return;
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				getQwikiElement().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -341,8 +564,16 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 				return customProperty != null && !customProperty.isEmpty();
 			case QWikiPackage.QWIKI_NAMESPACE__TAG:
 				return tag != null && !tag.isEmpty();
+			case QWikiPackage.QWIKI_NAMESPACE__NAMESPACE:
+				return isSetNamespace();
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE:
+				return getQwikiNamespace() != null;
 			case QWikiPackage.QWIKI_NAMESPACE__DISPLAY_NAME:
 				return displayName != null;
+			case QWikiPackage.QWIKI_NAMESPACE__OWNED_MEMBER:
+				return isSetOwnedMembers();
+			case QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT:
+				return qwikiElement != null && !qwikiElement.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -364,6 +595,7 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 		}
 		if (baseClass == QWikiNamedElement.class) {
 			switch (derivedFeatureID) {
+				case QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE: return QWikiPackage.QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE;
 				default: return -1;
 			}
 		}
@@ -393,6 +625,7 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 		}
 		if (baseClass == QWikiNamedElement.class) {
 			switch (baseFeatureID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT__QWIKI_NAMESPACE: return QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE;
 				default: return -1;
 			}
 		}
@@ -464,6 +697,28 @@ public abstract class QWikiNamespaceImpl extends NamespaceImpl implements QWikiN
 		result.append(tag);
 		result.append(')');
 		return result.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetNamespace() {
+		return super.isSetNamespace()
+			|| eIsSet(QWikiPackage.QWIKI_NAMESPACE__QWIKI_NAMESPACE);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean isSetOwnedMembers() {
+		return super.isSetOwnedMembers()
+			|| eIsSet(QWikiPackage.QWIKI_NAMESPACE__QWIKI_ELEMENT);
 	}
 
 } //QWikiNamespaceImpl

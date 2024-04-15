@@ -79,7 +79,7 @@ public class L10nBaseStringItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(QWikiPackage.Literals.L1_0N_BASE_STRING__VALUE);
+			childrenFeatures.add(QWikiPackage.Literals.L1_0N_BASE_STRING__TEXT);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +132,7 @@ public class L10nBaseStringItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(L10nBaseString.class)) {
-			case QWikiPackage.L1_0N_BASE_STRING__VALUE:
+			case QWikiPackage.L1_0N_BASE_STRING__TEXT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,8 +152,8 @@ public class L10nBaseStringItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(QWikiPackage.Literals.L1_0N_BASE_STRING__VALUE,
-				 QWikiFactory.eINSTANCE.createL10nValue()));
+				(QWikiPackage.Literals.L1_0N_BASE_STRING__TEXT,
+				 QWikiFactory.eINSTANCE.createL10nText()));
 	}
 
 	/**

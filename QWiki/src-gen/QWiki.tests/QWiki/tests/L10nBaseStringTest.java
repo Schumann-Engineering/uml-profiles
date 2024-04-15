@@ -3,7 +3,9 @@
 package QWiki.tests;
 
 import QWiki.L10nBaseString;
+import QWiki.QWikiFactory;
 import junit.framework.TestCase;
+import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +20,7 @@ import junit.framework.TestCase;
  * </p>
  * @generated
  */
-public abstract class L10nBaseStringTest extends TestCase {
+public class L10nBaseStringTest extends TestCase {
 
 	/**
 	 * The fixture for this L1 0n Base String test case.
@@ -27,6 +29,15 @@ public abstract class L10nBaseStringTest extends TestCase {
 	 * @generated
 	 */
 	protected L10nBaseString fixture = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static void main(String[] args) {
+		TestRunner.run(L10nBaseStringTest.class);
+	}
 
 	/**
 	 * Constructs a new L1 0n Base String test case with the given name.
@@ -56,6 +67,28 @@ public abstract class L10nBaseStringTest extends TestCase {
 	 */
 	protected L10nBaseString getFixture() {
 		return fixture;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#setUp()
+	 * @generated
+	 */
+	@Override
+	protected void setUp() throws Exception {
+		setFixture(QWikiFactory.eINSTANCE.createL10nBaseString());
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see junit.framework.TestCase#tearDown()
+	 * @generated
+	 */
+	@Override
+	protected void tearDown() throws Exception {
+		setFixture(null);
 	}
 
 	/**

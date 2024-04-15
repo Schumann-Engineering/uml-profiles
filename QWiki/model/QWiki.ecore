@@ -7,13 +7,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="L10nDescriptiveElement" abstract="true"
       eSuperTypes="#//L10nNamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="purpose" ordered="false"
-        eType="#//L10nString" resolveProxies="false">
+        eType="#//L10nString" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
-        eType="#//L10nString" resolveProxies="false">
+        eType="#//L10nString" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
       </eAnnotations>
@@ -21,7 +21,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="L10nNamedElement" abstract="true" eSuperTypes="#//QWikiNamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="displayName" ordered="false"
-        eType="#//L10nString" resolveProxies="false">
+        eType="#//L10nString" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
       </eAnnotations>
@@ -33,6 +33,10 @@
         <details key="body" value="let namespaces : OrderedSet(UML::Namespace) = self.allNamespaces()->select(oclIsKindOf(QWiki::QWikiModel)) in&#xD;&#xA;if (namespaces->notEmpty()) then&#xD;&#xA;  namespaces->first().oclAsType(QWiki::QWikiModel)&#xD;&#xA;else&#xD;&#xA;  null&#xD;&#xA;endif"/>
       </eAnnotations>
     </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qwikiNamespace" ordered="false"
+        eType="#//QWikiNamespace" transient="true" resolveProxies="false" eOpposite="#//QWikiNamespace/qwikiElement">
+      <eAnnotations source="subsets" references="../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/namespace"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QWikiElement" abstract="true" eSuperTypes="../../org.eclipse.uml2.uml/model/UML.ecore#//Element">
     <eOperations name="objectId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -70,7 +74,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="L10nBaseString" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="L10nBaseString">
     <eOperations name="value" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="language" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
@@ -79,8 +83,8 @@
         <details key="body" value="encryptionKey &lt;> null"/>
       </eAnnotations>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" ordered="false"
-        upperBound="-1" eType="#//L10nValue" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" ordered="false" upperBound="-1"
+        eType="#//L10nText" containment="true">
       <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
         <details key="body" value="owningElement"/>
       </eAnnotations>
@@ -91,39 +95,40 @@
         <details key="body" value="l10nbasestring"/>
       </eAnnotations>
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
+        <details key="kind" value="attribute"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="L10nValue">
+  <eClassifiers xsi:type="ecore:EClass" name="L10nText">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="simple"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
+        <details key="kind" value="attribute"/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="kind" value="element"/>
+        <details key="kind" value="simple"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QWikiEncryptionKey" eSuperTypes="#//QWikiNamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QWikiModel" eSuperTypes="#//QWikiContainer">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedQwikiElement" ordered="false"
-        upperBound="-1" eType="#//QWikiNamedElement" containment="true" resolveProxies="false">
-      <eAnnotations source="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName">
-        <details key="body" value="qwikiModel"/>
-      </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="QWikiNamespace" abstract="true" eSuperTypes="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace #//L10nNamedElement #//QWikiElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="qwikiElement" ordered="false"
+        upperBound="-1" eType="#//QWikiNamedElement" containment="true" resolveProxies="false"
+        eOpposite="#//QWikiNamedElement/qwikiNamespace">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
       </eAnnotations>
-      <eAnnotations source="subsets" references="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace/member"/>
+      <eAnnotations source="subsets" references="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace/ownedMember"/>
     </eStructuralFeatures>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QWikiModel" eSuperTypes="#//QWikiContainer"/>
   <eClassifiers xsi:type="ecore:EClass" name="QWikiContainer" eSuperTypes="#//QWikiNamespace #//L10nDescriptiveElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="QWikiNamespace" abstract="true" eSuperTypes="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace #//L10nNamedElement #//QWikiElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="L10nString" eSuperTypes="#//L10nBaseString"/>
   <eClassifiers xsi:type="ecore:EClass" name="QWikiRelationship" abstract="true" eSuperTypes="../../org.eclipse.uml2.uml/model/UML.ecore#//DirectedRelationship #//QWikiElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationshipType" ordered="false"
@@ -148,7 +153,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QWikiComment" eSuperTypes="#//QWikiElement ../../org.eclipse.uml2.uml/model/UML.ecore#//Comment">
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" ordered="false"
-        eType="#//L10nString" resolveProxies="false">
+        eType="#//L10nString" containment="true" resolveProxies="false">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="kind" value="element"/>
       </eAnnotations>
@@ -405,7 +410,7 @@
         <eAnnotations source="subsets" references="../../org.eclipse.uml2.uml/model/UML.ecore#//NamedElement/namespace"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="characteristic" ordered="false"
-          eType="#//L10nString"/>
+          eType="#//L10nString" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingOutcome"
           ordered="false" upperBound="-1" eType="#//Spice/Outcome" resolveProxies="false"
           eOpposite="#//Spice/Outcome/resultingWorkproduct">
@@ -625,11 +630,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="ContentContainer" abstract="true"
         eSuperTypes="../../org.eclipse.uml2.uml/model/UML.ecore#//Namespace #//Content/Content">
       <eStructuralFeatures xsi:type="ecore:EReference" name="caption" ordered="false"
-          eType="#//L10nString"/>
+          eType="#//L10nString" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="item" ordered="false"
           upperBound="-1" eType="#//Content/Content" containment="true" eOpposite="#//Content/Content/owningContent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Layout" eSuperTypes="#//Content/Content">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="empty"/>
+      </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutType" ordered="false"
           eType="#//Content/LayoutType">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -651,7 +659,7 @@
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false"
-          eType="#//L10nString"/>
+          eType="#//L10nString" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TextType">
       <eLiterals name="Paragraph"/>
@@ -717,7 +725,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="facilitatingElement"
@@ -827,9 +835,10 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="AuthorType">
-      <eLiterals name="Person"/>
-      <eLiterals name="Organization" value="1"/>
-      <eLiterals name="StandardsDevelopmentOrganization" value="2"/>
+      <eLiterals name="UNSPECIFIED"/>
+      <eLiterals name="Person" value="1"/>
+      <eLiterals name="Organization" value="2"/>
+      <eLiterals name="StandardsDevelopmentOrganization" value="3"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//QWikiContainer">
       <eOperations name="objectId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -841,7 +850,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVersion" ordered="false"
@@ -854,7 +863,7 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceType" ordered="false"
           lowerBound="1" eType="#//References/ReferenceType">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="author" ordered="false"
@@ -868,19 +877,21 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ReferenceType">
-      <eLiterals name="Document"/>
-      <eLiterals name="Guideline" value="1"/>
-      <eLiterals name="Hyperlink" value="2"/>
-      <eLiterals name="Legislation" value="3"/>
-      <eLiterals name="Process" value="4"/>
-      <eLiterals name="Standard" value="5"/>
-      <eLiterals name="TechnicalReport" value="6"/>
+      <eLiterals name="UNSPECIFIED"/>
+      <eLiterals name="Document" value="1"/>
+      <eLiterals name="Guideline" value="2"/>
+      <eLiterals name="Hyperlink" value="3"/>
+      <eLiterals name="Legislation" value="4"/>
+      <eLiterals name="Process" value="5"/>
+      <eLiterals name="Standard" value="6"/>
+      <eLiterals name="TechnicalReport" value="7"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ReferenceVersionType">
-      <eLiterals name="Addendum"/>
-      <eLiterals name="Amendment" value="1"/>
-      <eLiterals name="Corrigendum" value="2"/>
-      <eLiterals name="FirstEdition" value="3"/>
+      <eLiterals name="UNSPECIFIED"/>
+      <eLiterals name="Addendum" value="1"/>
+      <eLiterals name="Amendment" value="2"/>
+      <eLiterals name="Corrigendum" value="3"/>
+      <eLiterals name="FirstEdition" value="4"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReferenceVersion" eSuperTypes="#//QWikiNamespace">
       <eOperations name="objectId" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
@@ -899,20 +910,19 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="publicationYear" ordered="false"
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="referenceVersionType"
-          ordered="false" lowerBound="1" eType="#//References/ReferenceVersionType"
-          defaultValueLiteral="FirstEdition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="versionType" ordered="false"
+          lowerBound="1" eType="#//References/ReferenceVersionType" defaultValueLiteral="FirstEdition">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="edition" ordered="false"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-          <details key="kind" value="element"/>
+          <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedContent" ordered="false"
