@@ -341,9 +341,6 @@ public class Main2html extends AbstractAcceleoGenerator {
     @Override
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
-        if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
-            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
-        }
         if (!isInWorkspace(org.eclipse.gmf.runtime.notation.NotationPackage.class)) {
             resourceSet.getPackageRegistry().put(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getNsURI(), org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE);
         }
