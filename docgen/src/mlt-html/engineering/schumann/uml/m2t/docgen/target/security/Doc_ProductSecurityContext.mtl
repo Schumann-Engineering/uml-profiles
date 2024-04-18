@@ -63,6 +63,8 @@
 [import engineering::schumann::uml::m2t::docgen::target::security::Chapter_BasicInformation /]
 [import engineering::schumann::uml::m2t::docgen::target::security::Chapter_CoverPage /]
 
+[import engineering::schumann::uml::m2t::uml::common::Element /]
+
 
 [template public generateDocument_INT_ProductSecurityCharacteristics(
 	this : Model
@@ -421,7 +423,7 @@
 													->select(csmn_isInScope())
 													->sortedBy(name)]
 [let interfaces 	: Set(Port) 				= systemElements
-													.ownedElement
+													._ownedElementsIncludingInherited()
 													->filter(Port)
 													->select(csmn_hasInterfaceCharacteristic())
 													->oclAsSet()
