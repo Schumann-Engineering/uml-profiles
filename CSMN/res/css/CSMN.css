@@ -709,7 +709,7 @@ Dependency[appliedStereotypes~="CSMN::Connection"][connectionType="Energy"] {
 
 /* === AssetType.Connection === */
 *[appliedStereotypes~="CSMN::Asset"][assetType="Connection"] {
-	svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/transit-connection-variant.svg';
+	/*svgFile:					'platform:/plugin/engineering.schumann.uml.profile.csmn/res/assets/transit-connection-variant.svg';*/
 } 
 
 /* === AssetType.Energy === */
