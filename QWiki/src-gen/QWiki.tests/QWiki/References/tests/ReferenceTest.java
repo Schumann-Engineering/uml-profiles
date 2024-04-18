@@ -2,10 +2,10 @@
  */
 package QWiki.References.tests;
 
-import QWiki.Kernel.tests.QWikiContainerTest;
-
 import QWiki.References.Reference;
 import QWiki.References.ReferencesFactory;
+
+import QWiki.tests.QWikiContainerTest;
 
 import junit.textui.TestRunner;
 
@@ -16,7 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.References.Reference#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.References.Reference#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -76,13 +76,13 @@ public class ReferenceTest extends QWikiContainerTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.References.Reference#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.References.Reference#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.References.Reference#oid()
+	 * @see QWiki.References.Reference#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

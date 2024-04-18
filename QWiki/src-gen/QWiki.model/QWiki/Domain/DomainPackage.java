@@ -2,7 +2,7 @@
  */
 package QWiki.Domain;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -75,7 +75,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__EANNOTATIONS = KernelPackage.QWIKI_ELEMENT__EANNOTATIONS;
+	int DOMAIN__EANNOTATIONS = QWikiPackage.QWIKI_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -84,7 +84,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__OWNED_COMMENT = KernelPackage.QWIKI_ELEMENT__OWNED_COMMENT;
+	int DOMAIN__OWNED_COMMENT = QWikiPackage.QWIKI_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -93,7 +93,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__OWNED_ELEMENT = KernelPackage.QWIKI_ELEMENT__OWNED_ELEMENT;
+	int DOMAIN__OWNED_ELEMENT = QWikiPackage.QWIKI_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -102,7 +102,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__OWNER = KernelPackage.QWIKI_ELEMENT__OWNER;
+	int DOMAIN__OWNER = QWikiPackage.QWIKI_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -111,7 +111,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__UUID = KernelPackage.QWIKI_ELEMENT__UUID;
+	int DOMAIN__UUID = QWikiPackage.QWIKI_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -120,7 +120,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__CUSTOM_PROPERTY = KernelPackage.QWIKI_ELEMENT__CUSTOM_PROPERTY;
+	int DOMAIN__CUSTOM_PROPERTY = QWikiPackage.QWIKI_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -129,7 +129,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__TAG = KernelPackage.QWIKI_ELEMENT__TAG;
+	int DOMAIN__TAG = QWikiPackage.QWIKI_ELEMENT__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Domain Element</b></em>' reference list.
@@ -138,7 +138,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN__DOMAIN_ELEMENT = KernelPackage.QWIKI_ELEMENT_FEATURE_COUNT + 0;
+	int DOMAIN__DOMAIN_ELEMENT = QWikiPackage.QWIKI_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Domain</em>' class.
@@ -147,7 +147,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_FEATURE_COUNT = KernelPackage.QWIKI_ELEMENT_FEATURE_COUNT + 1;
+	int DOMAIN_FEATURE_COUNT = QWikiPackage.QWIKI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -156,7 +156,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_EANNOTATION__STRING = KernelPackage.QWIKI_ELEMENT___GET_EANNOTATION__STRING;
+	int DOMAIN___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -165,7 +165,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int DOMAIN___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -174,7 +174,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int DOMAIN___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -183,7 +183,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___ADD_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___ADD_KEYWORD__STRING;
+	int DOMAIN___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -192,7 +192,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int DOMAIN___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -201,7 +201,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_ELEMENT___CREATE_EANNOTATION__STRING;
+	int DOMAIN___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -210,7 +210,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___DESTROY = KernelPackage.QWIKI_ELEMENT___DESTROY;
+	int DOMAIN___DESTROY = QWikiPackage.QWIKI_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -219,7 +219,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_KEYWORDS = KernelPackage.QWIKI_ELEMENT___GET_KEYWORDS;
+	int DOMAIN___GET_KEYWORDS = QWikiPackage.QWIKI_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -228,7 +228,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int DOMAIN___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -237,7 +237,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int DOMAIN___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -246,7 +246,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int DOMAIN___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -255,7 +255,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int DOMAIN___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -264,7 +264,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int DOMAIN___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -273,7 +273,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int DOMAIN___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -282,7 +282,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_MODEL = KernelPackage.QWIKI_ELEMENT___GET_MODEL;
+	int DOMAIN___GET_MODEL = QWikiPackage.QWIKI_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -291,7 +291,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_ELEMENT___GET_NEAREST_PACKAGE;
+	int DOMAIN___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -300,7 +300,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS;
+	int DOMAIN___GET_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -309,7 +309,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int DOMAIN___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -318,7 +318,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int DOMAIN___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -327,7 +327,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int DOMAIN___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -336,7 +336,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int DOMAIN___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -345,7 +345,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int DOMAIN___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -354,7 +354,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int DOMAIN___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -363,7 +363,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int DOMAIN___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -372,7 +372,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int DOMAIN___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -381,7 +381,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int DOMAIN___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -390,7 +390,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int DOMAIN___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -399,7 +399,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___HAS_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___HAS_KEYWORD__STRING;
+	int DOMAIN___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -408,7 +408,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int DOMAIN___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -417,7 +417,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int DOMAIN___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -426,7 +426,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int DOMAIN___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -435,7 +435,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int DOMAIN___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -444,7 +444,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___REMOVE_KEYWORD__STRING;
+	int DOMAIN___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -453,7 +453,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int DOMAIN___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -462,7 +462,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int DOMAIN___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -471,7 +471,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_ELEMENT___ALL_OWNED_ELEMENTS;
+	int DOMAIN___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -480,16 +480,16 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___MUST_BE_OWNED = KernelPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
+	int DOMAIN___MUST_BE_OWNED = QWikiPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___OID_BASIC = KernelPackage.QWIKI_ELEMENT___OID_BASIC;
+	int DOMAIN___OBJECT_ID = QWikiPackage.QWIKI_ELEMENT___OBJECT_ID;
 
 	/**
 	 * The operation id for the '<em>All Domain Element</em>' operation.
@@ -498,7 +498,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN___ALL_DOMAIN_ELEMENT = KernelPackage.QWIKI_ELEMENT_OPERATION_COUNT + 0;
+	int DOMAIN___ALL_DOMAIN_ELEMENT = QWikiPackage.QWIKI_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Domain</em>' class.
@@ -507,7 +507,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_OPERATION_COUNT = KernelPackage.QWIKI_ELEMENT_OPERATION_COUNT + 1;
+	int DOMAIN_OPERATION_COUNT = QWikiPackage.QWIKI_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Domain.impl.DomainElementImpl <em>Element</em>}' class.
@@ -526,7 +526,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__EANNOTATIONS = KernelPackage.QWIKI_ELEMENT__EANNOTATIONS;
+	int DOMAIN_ELEMENT__EANNOTATIONS = QWikiPackage.QWIKI_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -535,7 +535,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__OWNED_COMMENT = KernelPackage.QWIKI_ELEMENT__OWNED_COMMENT;
+	int DOMAIN_ELEMENT__OWNED_COMMENT = QWikiPackage.QWIKI_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -544,7 +544,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__OWNED_ELEMENT = KernelPackage.QWIKI_ELEMENT__OWNED_ELEMENT;
+	int DOMAIN_ELEMENT__OWNED_ELEMENT = QWikiPackage.QWIKI_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -553,7 +553,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__OWNER = KernelPackage.QWIKI_ELEMENT__OWNER;
+	int DOMAIN_ELEMENT__OWNER = QWikiPackage.QWIKI_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -562,7 +562,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__UUID = KernelPackage.QWIKI_ELEMENT__UUID;
+	int DOMAIN_ELEMENT__UUID = QWikiPackage.QWIKI_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -571,7 +571,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__CUSTOM_PROPERTY = KernelPackage.QWIKI_ELEMENT__CUSTOM_PROPERTY;
+	int DOMAIN_ELEMENT__CUSTOM_PROPERTY = QWikiPackage.QWIKI_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -580,7 +580,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__TAG = KernelPackage.QWIKI_ELEMENT__TAG;
+	int DOMAIN_ELEMENT__TAG = QWikiPackage.QWIKI_ELEMENT__TAG;
 
 	/**
 	 * The feature id for the '<em><b>Domain</b></em>' reference.
@@ -589,7 +589,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__DOMAIN = KernelPackage.QWIKI_ELEMENT_FEATURE_COUNT + 0;
+	int DOMAIN_ELEMENT__DOMAIN = QWikiPackage.QWIKI_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Assigned Domain</b></em>' reference.
@@ -598,7 +598,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT__ASSIGNED_DOMAIN = KernelPackage.QWIKI_ELEMENT_FEATURE_COUNT + 1;
+	int DOMAIN_ELEMENT__ASSIGNED_DOMAIN = QWikiPackage.QWIKI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Element</em>' class.
@@ -607,7 +607,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT_FEATURE_COUNT = KernelPackage.QWIKI_ELEMENT_FEATURE_COUNT + 2;
+	int DOMAIN_ELEMENT_FEATURE_COUNT = QWikiPackage.QWIKI_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -616,7 +616,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_EANNOTATION__STRING = KernelPackage.QWIKI_ELEMENT___GET_EANNOTATION__STRING;
+	int DOMAIN_ELEMENT___GET_EANNOTATION__STRING = QWikiPackage.QWIKI_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -625,7 +625,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int DOMAIN_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -634,7 +634,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int DOMAIN_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.QWIKI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -643,7 +643,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___ADD_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___ADD_KEYWORD__STRING;
+	int DOMAIN_ELEMENT___ADD_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -652,7 +652,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int DOMAIN_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -661,7 +661,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___CREATE_EANNOTATION__STRING = KernelPackage.QWIKI_ELEMENT___CREATE_EANNOTATION__STRING;
+	int DOMAIN_ELEMENT___CREATE_EANNOTATION__STRING = QWikiPackage.QWIKI_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -670,7 +670,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___DESTROY = KernelPackage.QWIKI_ELEMENT___DESTROY;
+	int DOMAIN_ELEMENT___DESTROY = QWikiPackage.QWIKI_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -679,7 +679,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_KEYWORDS = KernelPackage.QWIKI_ELEMENT___GET_KEYWORDS;
+	int DOMAIN_ELEMENT___GET_KEYWORDS = QWikiPackage.QWIKI_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -688,7 +688,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int DOMAIN_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -697,7 +697,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLICABLE_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int DOMAIN_ELEMENT___GET_APPLICABLE_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -706,7 +706,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int DOMAIN_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -715,7 +715,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLIED_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int DOMAIN_ELEMENT___GET_APPLIED_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -724,7 +724,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int DOMAIN_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -733,7 +733,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int DOMAIN_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -742,7 +742,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_MODEL = KernelPackage.QWIKI_ELEMENT___GET_MODEL;
+	int DOMAIN_ELEMENT___GET_MODEL = QWikiPackage.QWIKI_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -751,7 +751,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_NEAREST_PACKAGE = KernelPackage.QWIKI_ELEMENT___GET_NEAREST_PACKAGE;
+	int DOMAIN_ELEMENT___GET_NEAREST_PACKAGE = QWikiPackage.QWIKI_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -760,7 +760,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS;
+	int DOMAIN_ELEMENT___GET_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -769,7 +769,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int DOMAIN_ELEMENT___GET_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -778,7 +778,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int DOMAIN_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -787,7 +787,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_REQUIRED_STEREOTYPES = KernelPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int DOMAIN_ELEMENT___GET_REQUIRED_STEREOTYPES = QWikiPackage.QWIKI_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -796,7 +796,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int DOMAIN_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -805,7 +805,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int DOMAIN_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -814,7 +814,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int DOMAIN_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -823,7 +823,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_STEREOTYPE_APPLICATIONS = KernelPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int DOMAIN_ELEMENT___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.QWIKI_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -832,7 +832,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int DOMAIN_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -841,7 +841,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int DOMAIN_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.QWIKI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -850,7 +850,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___GET_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int DOMAIN_ELEMENT___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -859,7 +859,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___HAS_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___HAS_KEYWORD__STRING;
+	int DOMAIN_ELEMENT___HAS_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -868,7 +868,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int DOMAIN_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.QWIKI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -877,7 +877,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int DOMAIN_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -886,7 +886,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int DOMAIN_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -895,7 +895,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int DOMAIN_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -904,7 +904,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___REMOVE_KEYWORD__STRING = KernelPackage.QWIKI_ELEMENT___REMOVE_KEYWORD__STRING;
+	int DOMAIN_ELEMENT___REMOVE_KEYWORD__STRING = QWikiPackage.QWIKI_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -913,7 +913,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int DOMAIN_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.QWIKI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -922,7 +922,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int DOMAIN_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.QWIKI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -931,7 +931,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___ALL_OWNED_ELEMENTS = KernelPackage.QWIKI_ELEMENT___ALL_OWNED_ELEMENTS;
+	int DOMAIN_ELEMENT___ALL_OWNED_ELEMENTS = QWikiPackage.QWIKI_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -940,16 +940,16 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___MUST_BE_OWNED = KernelPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
+	int DOMAIN_ELEMENT___MUST_BE_OWNED = QWikiPackage.QWIKI_ELEMENT___MUST_BE_OWNED;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT___OID_BASIC = KernelPackage.QWIKI_ELEMENT___OID_BASIC;
+	int DOMAIN_ELEMENT___OBJECT_ID = QWikiPackage.QWIKI_ELEMENT___OBJECT_ID;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class.
@@ -958,7 +958,7 @@ public interface DomainPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DOMAIN_ELEMENT_OPERATION_COUNT = KernelPackage.QWIKI_ELEMENT_OPERATION_COUNT + 0;
+	int DOMAIN_ELEMENT_OPERATION_COUNT = QWikiPackage.QWIKI_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**

@@ -5,14 +5,12 @@ package QWiki.Rasci.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.KernelFactory;
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiFactory;
+import QWiki.QWikiPackage;
 
-import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
-
-import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciPackage;
 import QWiki.Rasci.Role;
-
+import QWiki.provider.L10nDescriptiveElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -33,7 +31,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
+public class RoleItemProvider extends L10nDescriptiveElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -77,7 +75,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Role_responsibleElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_responsibleElement_feature", "_UI_Role_type"),
-				 RASCIPackage.Literals.ROLE__RESPONSIBLE_ELEMENT,
+				 RasciPackage.Literals.ROLE__RESPONSIBLE_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -99,7 +97,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Role_accountableElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_accountableElement_feature", "_UI_Role_type"),
-				 RASCIPackage.Literals.ROLE__ACCOUNTABLE_ELEMENT,
+				 RasciPackage.Literals.ROLE__ACCOUNTABLE_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -121,7 +119,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Role_supportingElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_supportingElement_feature", "_UI_Role_type"),
-				 RASCIPackage.Literals.ROLE__SUPPORTING_ELEMENT,
+				 RasciPackage.Literals.ROLE__SUPPORTING_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -143,7 +141,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Role_consultingElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_consultingElement_feature", "_UI_Role_type"),
-				 RASCIPackage.Literals.ROLE__CONSULTING_ELEMENT,
+				 RasciPackage.Literals.ROLE__CONSULTING_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -165,7 +163,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Role_informedElement_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Role_informedElement_feature", "_UI_Role_type"),
-				 RASCIPackage.Literals.ROLE__INFORMED_ELEMENT,
+				 RasciPackage.Literals.ROLE__INFORMED_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -186,7 +184,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(RASCIPackage.Literals.ROLE__SKILLS);
+			childrenFeatures.add(RasciPackage.Literals.ROLE__SKILLS);
 		}
 		return childrenFeatures;
 	}
@@ -242,7 +240,7 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Role.class)) {
-			case RASCIPackage.ROLE__SKILLS:
+			case RasciPackage.ROLE__SKILLS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -262,8 +260,8 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(RASCIPackage.Literals.ROLE__SKILLS,
-				 KernelFactory.eINSTANCE.createI18nString()));
+				(RasciPackage.Literals.ROLE__SKILLS,
+				 QWikiFactory.eINSTANCE.createL10nString()));
 	}
 
 	/**
@@ -278,10 +276,10 @@ public class RoleItemProvider extends I18nDescriptiveElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT ||
-			childFeature == RASCIPackage.Literals.ROLE__SKILLS;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == RasciPackage.Literals.ROLE__SKILLS;
 
 		if (qualify) {
 			return getString

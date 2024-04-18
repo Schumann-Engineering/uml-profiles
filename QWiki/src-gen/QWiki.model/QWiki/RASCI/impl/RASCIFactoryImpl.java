@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RASCIFactoryImpl extends EFactoryImpl implements RASCIFactory {
+public class RasciFactoryImpl extends EFactoryImpl implements RasciFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static RASCIFactory init() {
+	public static RasciFactory init() {
 		try {
-			RASCIFactory theRASCIFactory = (RASCIFactory)EPackage.Registry.INSTANCE.getEFactory(RASCIPackage.eNS_URI);
-			if (theRASCIFactory != null) {
-				return theRASCIFactory;
+			RasciFactory theRasciFactory = (RasciFactory)EPackage.Registry.INSTANCE.getEFactory(RasciPackage.eNS_URI);
+			if (theRasciFactory != null) {
+				return theRasciFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new RASCIFactoryImpl();
+		return new RasciFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class RASCIFactoryImpl extends EFactoryImpl implements RASCIFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCIFactoryImpl() {
+	public RasciFactoryImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class RASCIFactoryImpl extends EFactoryImpl implements RASCIFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RASCIPackage.ROLE: return createRole();
+			case RasciPackage.ROLE: return createRole();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,8 +79,8 @@ public class RASCIFactoryImpl extends EFactoryImpl implements RASCIFactory {
 	 * @generated
 	 */
 	@Override
-	public RASCIPackage getRASCIPackage() {
-		return (RASCIPackage)getEPackage();
+	public RasciPackage getRasciPackage() {
+		return (RasciPackage)getEPackage();
 	}
 
 	/**
@@ -90,8 +90,8 @@ public class RASCIFactoryImpl extends EFactoryImpl implements RASCIFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static RASCIPackage getPackage() {
-		return RASCIPackage.eINSTANCE;
+	public static RasciPackage getPackage() {
+		return RasciPackage.eINSTANCE;
 	}
 
-} //RASCIFactoryImpl
+} //RasciFactoryImpl

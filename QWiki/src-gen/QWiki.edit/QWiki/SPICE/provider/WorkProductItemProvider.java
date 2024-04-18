@@ -3,10 +3,10 @@
 package QWiki.Spice.provider;
 
 
-import QWiki.Kernel.KernelFactory;
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiFactory;
+import QWiki.QWikiPackage;
 
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
 
 import java.util.Collection;
@@ -76,7 +76,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_facilitatingOutcome_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_facilitatingOutcome_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__FACILITATING_OUTCOME,
+				 SpicePackage.Literals.WORK_PRODUCT__FACILITATING_OUTCOME,
 				 true,
 				 false,
 				 true,
@@ -98,7 +98,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_facilitatedProcess_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_facilitatedProcess_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__FACILITATED_PROCESS,
+				 SpicePackage.Literals.WORK_PRODUCT__FACILITATED_PROCESS,
 				 true,
 				 false,
 				 true,
@@ -120,7 +120,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_facilitatingProcess_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_facilitatingProcess_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__FACILITATING_PROCESS,
+				 SpicePackage.Literals.WORK_PRODUCT__FACILITATING_PROCESS,
 				 true,
 				 false,
 				 true,
@@ -142,7 +142,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_workProductType_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_workProductType_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__WORK_PRODUCT_TYPE,
+				 SpicePackage.Literals.WORK_PRODUCT__WORK_PRODUCT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -164,7 +164,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_containedWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_containedWorkProduct_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__CONTAINED_WORK_PRODUCT,
+				 SpicePackage.Literals.WORK_PRODUCT__CONTAINED_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -186,7 +186,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_containingWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_containingWorkProduct_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__CONTAINING_WORK_PRODUCT,
+				 SpicePackage.Literals.WORK_PRODUCT__CONTAINING_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -208,7 +208,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_linkedWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_linkedWorkProduct_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT,
+				 SpicePackage.Literals.WORK_PRODUCT__LINKED_WORK_PRODUCT,
 				 false,
 				 false,
 				 false,
@@ -230,7 +230,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_link_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_link_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__LINK,
+				 SpicePackage.Literals.WORK_PRODUCT__LINK,
 				 true,
 				 false,
 				 true,
@@ -252,7 +252,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_WorkProduct_facilitatedOutcome_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProduct_facilitatedOutcome_feature", "_UI_WorkProduct_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT__FACILITATED_OUTCOME,
+				 SpicePackage.Literals.WORK_PRODUCT__FACILITATED_OUTCOME,
 				 true,
 				 false,
 				 true,
@@ -273,7 +273,7 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC);
+			childrenFeatures.add(SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC);
 		}
 		return childrenFeatures;
 	}
@@ -329,10 +329,10 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(WorkProduct.class)) {
-			case SPICEPackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
+			case SpicePackage.WORK_PRODUCT__WORK_PRODUCT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case SPICEPackage.WORK_PRODUCT__CHARACTERISTIC:
+			case SpicePackage.WORK_PRODUCT__CHARACTERISTIC:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -352,8 +352,8 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC,
-				 KernelFactory.eINSTANCE.createI18nString()));
+				(SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC,
+				 QWikiFactory.eINSTANCE.createL10nString()));
 	}
 
 	/**
@@ -368,10 +368,10 @@ public class WorkProductItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT ||
-			childFeature == SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC;
 
 		if (qualify) {
 			return getString

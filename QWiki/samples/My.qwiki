@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<QWiki:QWikiModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QWiki="http://schumann.engineering/qwiki/1.0">
-  <ownedModelElement xsi:type="QWiki:Document" uuid="8278ae2d-f529-4089-b75d-ef3987c62d0b" name="IEC 62304" number="62304" documentType="Standard"/>
-  <ownedModelElement xsi:type="QWiki:Author" uuid="98f45956-00f7-4242-8f53-00a1056f2168" name="IEC" authorType="StandardsDevelopmentOrganization"/>
-  <ownedModelElement xsi:type="QWiki:Domain" uuid="1ea4b576-cde6-4f0e-979a-e61691c204f4" name="Software Engineering"/>
+<QWiki:QWikiModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:QWiki="http://schumann.engineering/qwiki/1.0" xmlns:QWiki.References="http://schumann.engineering/qwiki/1.0/references" xmlns:QWiki.Spice="http://schumann.engineering/qwiki/1.0/spice" xsi:schemaLocation="http://schumann.engineering/qwiki/1.0/references http://schumann.engineering/qwiki/1.0#//References http://schumann.engineering/qwiki/1.0/spice http://schumann.engineering/qwiki/1.0#//Spice" uuid="9e9319b6-990e-47b6-a27b-62b22aec0df0">
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Encryption Keys" uuid="aa33e819-beb4-43a7-a37c-f5f4eb4a7078">
+    <qwikiElement xsi:type="QWiki:QWikiEncryptionKey" uuid="b26894e0-8375-4c86-b958-38c633319800"/>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki:QWikiContainer" name="Work Products" uuid="31d3a2a1-2001-44e6-b13a-ba8539be6431">
+    <qwikiElement xsi:type="QWiki.Spice:WorkProduct" uuid="14cbdb71-237a-493a-8d86-bc06b2c9e4d3">
+      <tag>Test Tag</tag>
+      <purpose>
+        <value language="en">test</value>
+      </purpose>
+    </qwikiElement>
+  </qwikiElement>
+  <qwikiElement xsi:type="QWiki.References:Reference" uuid="6bea3406-a868-42f1-a353-b3dc22908c19"/>
 </QWiki:QWikiModel>

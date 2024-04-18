@@ -2,9 +2,8 @@
  */
 package QWiki.Rasci;
 
-import QWiki.Kernel.I18nDescriptiveElement;
-import QWiki.Kernel.I18nString;
-
+import QWiki.L10nDescriptiveElement;
+import QWiki.L10nString;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,11 +25,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Rasci.Role#getInformedElement <em>Informed Element</em>}</li>
  * </ul>
  *
- * @see QWiki.Rasci.RASCIPackage#getRole()
+ * @see QWiki.Rasci.RasciPackage#getRole()
  * @model
  * @generated
  */
-public interface Role extends I18nDescriptiveElement {
+public interface Role extends L10nDescriptiveElement {
 	/**
 	 * Returns the value of the '<em><b>Skills</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -40,12 +39,13 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Skills</em>' containment reference.
-	 * @see #setSkills(I18nString)
-	 * @see QWiki.Rasci.RASCIPackage#getRole_Skills()
-	 * @model containment="true" transient="true" ordered="false"
+	 * @see #setSkills(L10nString)
+	 * @see QWiki.Rasci.RasciPackage#getRole_Skills()
+	 * @model containment="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
-	I18nString getSkills();
+	L10nString getSkills();
 
 	/**
 	 * Sets the value of the '{@link QWiki.Rasci.Role#getSkills <em>Skills</em>}' containment reference.
@@ -55,7 +55,7 @@ public interface Role extends I18nDescriptiveElement {
 	 * @see #getSkills()
 	 * @generated
 	 */
-	void setSkills(I18nString value);
+	void setSkills(L10nString value);
 
 	/**
 	 * Returns the value of the '<em><b>Responsible Element</b></em>' reference list.
@@ -68,9 +68,10 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Responsible Element</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRole_ResponsibleElement()
+	 * @see QWiki.Rasci.RasciPackage#getRole_ResponsibleElement()
 	 * @see QWiki.Rasci.RasciElement#getResponsibleRole
-	 * @model opposite="responsibleRole" transient="true" ordered="false"
+	 * @model opposite="responsibleRole" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<RasciElement> getResponsibleElement();
@@ -110,9 +111,10 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Accountable Element</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRole_AccountableElement()
+	 * @see QWiki.Rasci.RasciPackage#getRole_AccountableElement()
 	 * @see QWiki.Rasci.RasciElement#getAccountableRole
-	 * @model opposite="accountableRole" transient="true" ordered="false"
+	 * @model opposite="accountableRole" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<RasciElement> getAccountableElement();
@@ -152,9 +154,10 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Supporting Element</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRole_SupportingElement()
+	 * @see QWiki.Rasci.RasciPackage#getRole_SupportingElement()
 	 * @see QWiki.Rasci.RasciElement#getSupportRole
-	 * @model opposite="supportRole" transient="true" ordered="false"
+	 * @model opposite="supportRole" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<RasciElement> getSupportingElement();
@@ -194,9 +197,10 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Consulting Element</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRole_ConsultingElement()
+	 * @see QWiki.Rasci.RasciPackage#getRole_ConsultingElement()
 	 * @see QWiki.Rasci.RasciElement#getConsultedRole
-	 * @model opposite="consultedRole" transient="true" ordered="false"
+	 * @model opposite="consultedRole" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<RasciElement> getConsultingElement();
@@ -236,9 +240,10 @@ public interface Role extends I18nDescriptiveElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Informed Element</em>' reference list.
-	 * @see QWiki.Rasci.RASCIPackage#getRole_InformedElement()
+	 * @see QWiki.Rasci.RasciPackage#getRole_InformedElement()
 	 * @see QWiki.Rasci.RasciElement#getInformedRole
-	 * @model opposite="informedRole" transient="true" ordered="false"
+	 * @model opposite="informedRole" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<RasciElement> getInformedElement();
@@ -268,12 +273,19 @@ public interface Role extends I18nDescriptiveElement {
 	RasciElement getInformedElement(String name, boolean ignoreCase, EClass eClass);
 
 	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
+	 *        annotation="redefines"
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'r/\' + name'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // Role

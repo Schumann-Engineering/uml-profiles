@@ -2,7 +2,7 @@
  */
 package QWiki.Glossary;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -76,7 +76,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__EANNOTATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
+	int GLOSSARY_TERM_DEFINITION__EANNOTATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -85,7 +85,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__OWNED_COMMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
+	int GLOSSARY_TERM_DEFINITION__OWNED_COMMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -94,7 +94,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__OWNED_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
+	int GLOSSARY_TERM_DEFINITION__OWNED_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -103,7 +103,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__OWNER = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNER;
+	int GLOSSARY_TERM_DEFINITION__OWNER = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -112,7 +112,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__CLIENT_DEPENDENCY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
+	int GLOSSARY_TERM_DEFINITION__CLIENT_DEPENDENCY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -121,7 +121,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME;
+	int GLOSSARY_TERM_DEFINITION__NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -130,7 +130,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__NAME_EXPRESSION = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
+	int GLOSSARY_TERM_DEFINITION__NAME_EXPRESSION = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -139,7 +139,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+	int GLOSSARY_TERM_DEFINITION__NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -148,7 +148,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
+	int GLOSSARY_TERM_DEFINITION__QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -157,7 +157,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__VISIBILITY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__VISIBILITY;
+	int GLOSSARY_TERM_DEFINITION__VISIBILITY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -166,7 +166,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__UUID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__UUID;
+	int GLOSSARY_TERM_DEFINITION__UUID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -175,7 +175,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__CUSTOM_PROPERTY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
+	int GLOSSARY_TERM_DEFINITION__CUSTOM_PROPERTY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -184,7 +184,16 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__TAG = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__TAG;
+	int GLOSSARY_TERM_DEFINITION__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOSSARY_TERM_DEFINITION__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -193,7 +202,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__DISPLAY_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
+	int GLOSSARY_TERM_DEFINITION__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
@@ -202,7 +211,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__PURPOSE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE;
+	int GLOSSARY_TERM_DEFINITION__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -211,7 +220,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__CONTENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+	int GLOSSARY_TERM_DEFINITION__CONTENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Owning Term</b></em>' container reference.
@@ -220,7 +229,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION__OWNING_TERM = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
+	int GLOSSARY_TERM_DEFINITION__OWNING_TERM = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Term Definition</em>' class.
@@ -229,7 +238,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION_FEATURE_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
+	int GLOSSARY_TERM_DEFINITION_FEATURE_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -238,7 +247,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -247,7 +256,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -256,7 +265,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM_DEFINITION___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -265,7 +274,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___ADD_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
+	int GLOSSARY_TERM_DEFINITION___ADD_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -274,7 +283,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -283,7 +292,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___CREATE_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
+	int GLOSSARY_TERM_DEFINITION___CREATE_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -292,7 +301,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___DESTROY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___DESTROY;
+	int GLOSSARY_TERM_DEFINITION___DESTROY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -301,7 +310,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_KEYWORDS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
+	int GLOSSARY_TERM_DEFINITION___GET_KEYWORDS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -310,7 +319,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -319,7 +328,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLICABLE_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLICABLE_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -328,7 +337,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -337,7 +346,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -346,7 +355,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -355,7 +364,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -364,7 +373,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_MODEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_MODEL;
+	int GLOSSARY_TERM_DEFINITION___GET_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -373,7 +382,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_NEAREST_PACKAGE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
+	int GLOSSARY_TERM_DEFINITION___GET_NEAREST_PACKAGE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -382,7 +391,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
+	int GLOSSARY_TERM_DEFINITION___GET_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -391,7 +400,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM_DEFINITION___GET_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -400,7 +409,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -409,7 +418,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_REQUIRED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int GLOSSARY_TERM_DEFINITION___GET_REQUIRED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -418,7 +427,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int GLOSSARY_TERM_DEFINITION___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -427,7 +436,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM_DEFINITION___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -436,7 +445,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -445,7 +454,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_STEREOTYPE_APPLICATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int GLOSSARY_TERM_DEFINITION___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -454,7 +463,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int GLOSSARY_TERM_DEFINITION___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -463,7 +472,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM_DEFINITION___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -472,7 +481,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM_DEFINITION___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -481,7 +490,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___HAS_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
+	int GLOSSARY_TERM_DEFINITION___HAS_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -490,7 +499,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM_DEFINITION___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -499,7 +508,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -508,7 +517,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -517,7 +526,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -526,7 +535,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___REMOVE_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
+	int GLOSSARY_TERM_DEFINITION___REMOVE_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -535,7 +544,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int GLOSSARY_TERM_DEFINITION___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -544,7 +553,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int GLOSSARY_TERM_DEFINITION___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -553,7 +562,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___ALL_OWNED_ELEMENTS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
+	int GLOSSARY_TERM_DEFINITION___ALL_OWNED_ELEMENTS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -562,7 +571,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___MUST_BE_OWNED = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
+	int GLOSSARY_TERM_DEFINITION___MUST_BE_OWNED = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -571,7 +580,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM_DEFINITION___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -580,7 +589,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -589,7 +598,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM_DEFINITION___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -598,7 +607,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int GLOSSARY_TERM_DEFINITION___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -607,7 +616,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___CREATE_USAGE__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int GLOSSARY_TERM_DEFINITION___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -616,7 +625,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_LABEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL;
+	int GLOSSARY_TERM_DEFINITION___GET_LABEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -625,7 +634,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_LABEL__BOOLEAN = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
+	int GLOSSARY_TERM_DEFINITION___GET_LABEL__BOOLEAN = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -634,7 +643,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
+	int GLOSSARY_TERM_DEFINITION___GET_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -643,7 +652,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___ALL_NAMESPACES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+	int GLOSSARY_TERM_DEFINITION___ALL_NAMESPACES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -652,7 +661,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___ALL_OWNING_PACKAGES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
+	int GLOSSARY_TERM_DEFINITION___ALL_OWNING_PACKAGES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -661,7 +670,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int GLOSSARY_TERM_DEFINITION___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -670,7 +679,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
+	int GLOSSARY_TERM_DEFINITION___GET_QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -679,7 +688,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___SEPARATOR = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+	int GLOSSARY_TERM_DEFINITION___SEPARATOR = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -688,16 +697,25 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int GLOSSARY_TERM_DEFINITION___GET_CLIENT_DEPENDENCIES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION___OID_BASIC = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___OID_BASIC;
+	int GLOSSARY_TERM_DEFINITION___OBJECT_ID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___OBJECT_ID;
+
+	/**
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOSSARY_TERM_DEFINITION___QWIKI_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___QWIKI_MODEL;
 
 	/**
 	 * The number of operations of the '<em>Term Definition</em>' class.
@@ -706,7 +724,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_DEFINITION_OPERATION_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+	int GLOSSARY_TERM_DEFINITION_OPERATION_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link QWiki.Glossary.impl.GlossaryTermImpl <em>Term</em>}' class.
@@ -725,7 +743,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__EANNOTATIONS = KernelPackage.I1_8N_NAMED_ELEMENT__EANNOTATIONS;
+	int GLOSSARY_TERM__EANNOTATIONS = QWikiPackage.L1_0N_NAMED_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -734,7 +752,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__OWNED_COMMENT = KernelPackage.I1_8N_NAMED_ELEMENT__OWNED_COMMENT;
+	int GLOSSARY_TERM__OWNED_COMMENT = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -743,7 +761,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__OWNED_ELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT__OWNED_ELEMENT;
+	int GLOSSARY_TERM__OWNED_ELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -752,7 +770,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__OWNER = KernelPackage.I1_8N_NAMED_ELEMENT__OWNER;
+	int GLOSSARY_TERM__OWNER = QWikiPackage.L1_0N_NAMED_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -761,7 +779,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__CLIENT_DEPENDENCY = KernelPackage.I1_8N_NAMED_ELEMENT__CLIENT_DEPENDENCY;
+	int GLOSSARY_TERM__CLIENT_DEPENDENCY = QWikiPackage.L1_0N_NAMED_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -770,7 +788,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__NAME = KernelPackage.I1_8N_NAMED_ELEMENT__NAME;
+	int GLOSSARY_TERM__NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -779,7 +797,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__NAME_EXPRESSION = KernelPackage.I1_8N_NAMED_ELEMENT__NAME_EXPRESSION;
+	int GLOSSARY_TERM__NAME_EXPRESSION = QWikiPackage.L1_0N_NAMED_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -788,7 +806,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT__NAMESPACE;
+	int GLOSSARY_TERM__NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -797,7 +815,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__QUALIFIED_NAME = KernelPackage.I1_8N_NAMED_ELEMENT__QUALIFIED_NAME;
+	int GLOSSARY_TERM__QUALIFIED_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -806,7 +824,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__VISIBILITY = KernelPackage.I1_8N_NAMED_ELEMENT__VISIBILITY;
+	int GLOSSARY_TERM__VISIBILITY = QWikiPackage.L1_0N_NAMED_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -815,7 +833,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__UUID = KernelPackage.I1_8N_NAMED_ELEMENT__UUID;
+	int GLOSSARY_TERM__UUID = QWikiPackage.L1_0N_NAMED_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -824,7 +842,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__CUSTOM_PROPERTY = KernelPackage.I1_8N_NAMED_ELEMENT__CUSTOM_PROPERTY;
+	int GLOSSARY_TERM__CUSTOM_PROPERTY = QWikiPackage.L1_0N_NAMED_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -833,7 +851,16 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__TAG = KernelPackage.I1_8N_NAMED_ELEMENT__TAG;
+	int GLOSSARY_TERM__TAG = QWikiPackage.L1_0N_NAMED_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOSSARY_TERM__QWIKI_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT__QWIKI_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -842,7 +869,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__DISPLAY_NAME = KernelPackage.I1_8N_NAMED_ELEMENT__DISPLAY_NAME;
+	int GLOSSARY_TERM__DISPLAY_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Owned Term Definition</b></em>' containment reference list.
@@ -851,7 +878,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__OWNED_TERM_DEFINITION = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int GLOSSARY_TERM__OWNED_TERM_DEFINITION = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Acronym</b></em>' containment reference.
@@ -860,7 +887,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__ACRONYM = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int GLOSSARY_TERM__ACRONYM = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Synonym</b></em>' containment reference.
@@ -869,7 +896,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__SYNONYM = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int GLOSSARY_TERM__SYNONYM = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Term Definition</b></em>' reference list.
@@ -878,7 +905,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__TERM_DEFINITION = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int GLOSSARY_TERM__TERM_DEFINITION = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>External Term Definition</b></em>' reference list.
@@ -887,7 +914,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Term</em>' class.
@@ -896,7 +923,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_FEATURE_COUNT = KernelPackage.I1_8N_NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int GLOSSARY_TERM_FEATURE_COUNT = QWikiPackage.L1_0N_NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -905,7 +932,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_EANNOTATION__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_EANNOTATION__STRING;
+	int GLOSSARY_TERM___GET_EANNOTATION__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -914,7 +941,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -923,7 +950,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -932,7 +959,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___ADD_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___ADD_KEYWORD__STRING;
+	int GLOSSARY_TERM___ADD_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -941,7 +968,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int GLOSSARY_TERM___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -950,7 +977,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___CREATE_EANNOTATION__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
+	int GLOSSARY_TERM___CREATE_EANNOTATION__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -959,7 +986,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___DESTROY = KernelPackage.I1_8N_NAMED_ELEMENT___DESTROY;
+	int GLOSSARY_TERM___DESTROY = QWikiPackage.L1_0N_NAMED_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -968,7 +995,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_KEYWORDS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_KEYWORDS;
+	int GLOSSARY_TERM___GET_KEYWORDS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -977,7 +1004,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int GLOSSARY_TERM___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -986,7 +1013,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLICABLE_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int GLOSSARY_TERM___GET_APPLICABLE_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -995,7 +1022,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int GLOSSARY_TERM___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -1004,7 +1031,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLIED_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int GLOSSARY_TERM___GET_APPLIED_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -1013,7 +1040,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -1022,7 +1049,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int GLOSSARY_TERM___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -1031,7 +1058,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_MODEL = KernelPackage.I1_8N_NAMED_ELEMENT___GET_MODEL;
+	int GLOSSARY_TERM___GET_MODEL = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -1040,7 +1067,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_NEAREST_PACKAGE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
+	int GLOSSARY_TERM___GET_NEAREST_PACKAGE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1049,7 +1076,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS;
+	int GLOSSARY_TERM___GET_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1058,7 +1085,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM___GET_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -1067,7 +1094,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int GLOSSARY_TERM___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -1076,7 +1103,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_REQUIRED_STEREOTYPES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int GLOSSARY_TERM___GET_REQUIRED_STEREOTYPES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1085,7 +1112,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int GLOSSARY_TERM___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1094,7 +1121,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -1103,7 +1130,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int GLOSSARY_TERM___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -1112,7 +1139,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_STEREOTYPE_APPLICATIONS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int GLOSSARY_TERM___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1121,7 +1148,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int GLOSSARY_TERM___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1130,7 +1157,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int GLOSSARY_TERM___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -1139,7 +1166,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -1148,7 +1175,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___HAS_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___HAS_KEYWORD__STRING;
+	int GLOSSARY_TERM___HAS_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -1157,7 +1184,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int GLOSSARY_TERM___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -1166,7 +1193,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int GLOSSARY_TERM___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -1175,7 +1202,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int GLOSSARY_TERM___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -1184,7 +1211,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int GLOSSARY_TERM___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -1193,7 +1220,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___REMOVE_KEYWORD__STRING = KernelPackage.I1_8N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
+	int GLOSSARY_TERM___REMOVE_KEYWORD__STRING = QWikiPackage.L1_0N_NAMED_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -1202,7 +1229,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.I1_8N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int GLOSSARY_TERM___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.L1_0N_NAMED_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -1211,7 +1238,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int GLOSSARY_TERM___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_NAMED_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1220,7 +1247,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___ALL_OWNED_ELEMENTS = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
+	int GLOSSARY_TERM___ALL_OWNED_ELEMENTS = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1229,7 +1256,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___MUST_BE_OWNED = KernelPackage.I1_8N_NAMED_ELEMENT___MUST_BE_OWNED;
+	int GLOSSARY_TERM___MUST_BE_OWNED = QWikiPackage.L1_0N_NAMED_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -1238,7 +1265,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -1247,7 +1274,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -1256,7 +1283,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int GLOSSARY_TERM___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_NAMED_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -1265,7 +1292,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int GLOSSARY_TERM___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -1274,7 +1301,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___CREATE_USAGE__NAMEDELEMENT = KernelPackage.I1_8N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int GLOSSARY_TERM___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.L1_0N_NAMED_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1283,7 +1310,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_LABEL = KernelPackage.I1_8N_NAMED_ELEMENT___GET_LABEL;
+	int GLOSSARY_TERM___GET_LABEL = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1292,7 +1319,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_LABEL__BOOLEAN = KernelPackage.I1_8N_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
+	int GLOSSARY_TERM___GET_LABEL__BOOLEAN = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -1301,7 +1328,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT___GET_NAMESPACE;
+	int GLOSSARY_TERM___GET_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1310,7 +1337,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___ALL_NAMESPACES = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_NAMESPACES;
+	int GLOSSARY_TERM___ALL_NAMESPACES = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -1319,7 +1346,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___ALL_OWNING_PACKAGES = KernelPackage.I1_8N_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
+	int GLOSSARY_TERM___ALL_OWNING_PACKAGES = QWikiPackage.L1_0N_NAMED_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -1328,7 +1355,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.I1_8N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int GLOSSARY_TERM___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.L1_0N_NAMED_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -1337,7 +1364,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_QUALIFIED_NAME = KernelPackage.I1_8N_NAMED_ELEMENT___GET_QUALIFIED_NAME;
+	int GLOSSARY_TERM___GET_QUALIFIED_NAME = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -1346,7 +1373,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___SEPARATOR = KernelPackage.I1_8N_NAMED_ELEMENT___SEPARATOR;
+	int GLOSSARY_TERM___SEPARATOR = QWikiPackage.L1_0N_NAMED_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -1355,25 +1382,25 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int GLOSSARY_TERM___GET_CLIENT_DEPENDENCIES = QWikiPackage.L1_0N_NAMED_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___OID_BASIC = KernelPackage.I1_8N_NAMED_ELEMENT___OID_BASIC;
+	int GLOSSARY_TERM___QWIKI_MODEL = QWikiPackage.L1_0N_NAMED_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM___OID = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int GLOSSARY_TERM___OBJECT_ID = QWikiPackage.L1_0N_NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Term</em>' class.
@@ -1382,7 +1409,7 @@ public interface GlossaryPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GLOSSARY_TERM_OPERATION_COUNT = KernelPackage.I1_8N_NAMED_ELEMENT_OPERATION_COUNT + 1;
+	int GLOSSARY_TERM_OPERATION_COUNT = QWikiPackage.L1_0N_NAMED_ELEMENT_OPERATION_COUNT + 1;
 
 
 	/**
@@ -1472,14 +1499,14 @@ public interface GlossaryPackage extends EPackage {
 	EReference getGlossaryTerm_ExternalTermDefinition();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Glossary.GlossaryTerm#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Glossary.GlossaryTerm#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Glossary.GlossaryTerm#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Glossary.GlossaryTerm#objectId()
 	 * @generated
 	 */
-	EOperation getGlossaryTerm__Oid();
+	EOperation getGlossaryTerm__ObjectId();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1573,12 +1600,12 @@ public interface GlossaryPackage extends EPackage {
 		EReference GLOSSARY_TERM__EXTERNAL_TERM_DEFINITION = eINSTANCE.getGlossaryTerm_ExternalTermDefinition();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation GLOSSARY_TERM___OID = eINSTANCE.getGlossaryTerm__Oid();
+		EOperation GLOSSARY_TERM___OBJECT_ID = eINSTANCE.getGlossaryTerm__ObjectId();
 
 	}
 

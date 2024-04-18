@@ -2,20 +2,20 @@
  */
 package QWiki.Spice.tests;
 
-import QWiki.Kernel.tests.QWikiContainerTest;
-
 import QWiki.Spice.SpiceElement;
+
+import QWiki.tests.QWikiContainerTest;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Spice Element</b></em>'.
+ * A test case for the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
 public abstract class SpiceElementTest extends QWikiContainerTest {
 
 	/**
-	 * Constructs a new Spice Element test case with the given name.
+	 * Constructs a new Element test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -25,7 +25,7 @@ public abstract class SpiceElementTest extends QWikiContainerTest {
 	}
 
 	/**
-	 * Returns the fixture for this Spice Element test case.
+	 * Returns the fixture for this Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

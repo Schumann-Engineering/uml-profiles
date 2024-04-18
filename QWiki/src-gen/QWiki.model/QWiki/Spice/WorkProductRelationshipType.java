@@ -2,7 +2,7 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.QWikiRelationshipType;
+import QWiki.QWikiRelationshipType;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Spice.WorkProductRelationshipType#getWorkProductRelationship <em>Work Product Relationship</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getWorkProductRelationshipType()
+ * @see QWiki.Spice.SpicePackage#getWorkProductRelationshipType()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface WorkProductRelationshipType extends QWikiRelationshipType {
 	 * This feature subsets the following features:
 	 * </p>
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiRelationshipType#getRelationship() <em>Relationship</em>}'</li>
+	 *   <li>'{@link QWiki.QWikiRelationshipType#getRelationship() <em>Relationship</em>}'</li>
 	 * </ul>
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -40,9 +40,10 @@ public interface WorkProductRelationshipType extends QWikiRelationshipType {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Work Product Relationship</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProductRelationshipType_WorkProductRelationship()
+	 * @see QWiki.Spice.SpicePackage#getWorkProductRelationshipType_WorkProductRelationship()
 	 * @see QWiki.Spice.WorkProductRelationship#getWorkProductRelationshipType
-	 * @model opposite="workProductRelationshipType" ordered="false"
+	 * @model opposite="workProductRelationshipType" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */

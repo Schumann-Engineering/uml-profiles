@@ -2,12 +2,12 @@
  */
 package QWiki.References.util;
 
-import QWiki.Kernel.I18nDescriptiveElement;
-import QWiki.Kernel.I18nNamedElement;
-import QWiki.Kernel.QWikiContainer;
-import QWiki.Kernel.QWikiElement;
-import QWiki.Kernel.QWikiNamedElement;
-import QWiki.Kernel.QWikiNamespace;
+import QWiki.L10nDescriptiveElement;
+import QWiki.L10nNamedElement;
+import QWiki.QWikiContainer;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
 
 import QWiki.References.*;
 
@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Namespace;
@@ -93,9 +94,9 @@ public class ReferencesSwitch<T> extends Switch<T> {
 				T result = caseReference(reference);
 				if (result == null) result = caseQWikiContainer(reference);
 				if (result == null) result = caseQWikiNamespace(reference);
-				if (result == null) result = caseI18nDescriptiveElement(reference);
+				if (result == null) result = caseL10nDescriptiveElement(reference);
 				if (result == null) result = caseNamespace(reference);
-				if (result == null) result = caseI18nNamedElement(reference);
+				if (result == null) result = caseL10nNamedElement(reference);
 				if (result == null) result = caseQWikiNamedElement(reference);
 				if (result == null) result = caseNamedElement(reference);
 				if (result == null) result = caseQWikiElement(reference);
@@ -109,26 +110,12 @@ public class ReferencesSwitch<T> extends Switch<T> {
 				T result = caseReferenceVersion(referenceVersion);
 				if (result == null) result = caseQWikiNamespace(referenceVersion);
 				if (result == null) result = caseNamespace(referenceVersion);
-				if (result == null) result = caseI18nNamedElement(referenceVersion);
+				if (result == null) result = caseL10nNamedElement(referenceVersion);
 				if (result == null) result = caseQWikiNamedElement(referenceVersion);
 				if (result == null) result = caseNamedElement(referenceVersion);
 				if (result == null) result = caseQWikiElement(referenceVersion);
 				if (result == null) result = caseElement(referenceVersion);
 				if (result == null) result = caseEModelElement(referenceVersion);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ReferencesPackage.SECTION: {
-				Section section = (Section)theEObject;
-				T result = caseSection(section);
-				if (result == null) result = caseQWikiNamespace(section);
-				if (result == null) result = caseNamespace(section);
-				if (result == null) result = caseI18nNamedElement(section);
-				if (result == null) result = caseQWikiNamedElement(section);
-				if (result == null) result = caseNamedElement(section);
-				if (result == null) result = caseQWikiElement(section);
-				if (result == null) result = caseElement(section);
-				if (result == null) result = caseEModelElement(section);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -182,21 +169,6 @@ public class ReferencesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Section</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Section</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSection(Section object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EModel Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -242,13 +214,13 @@ public class ReferencesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -257,13 +229,13 @@ public class ReferencesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -287,28 +259,28 @@ public class ReferencesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>I1 8n Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>L1 0n Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseI18nNamedElement(I18nNamedElement object) {
+	public T caseL10nNamedElement(L10nNamedElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Namespace</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Namespace</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Namespace</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
@@ -317,28 +289,28 @@ public class ReferencesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>I1 8n Descriptive Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>L1 0n Descriptive Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>I1 8n Descriptive Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>L1 0n Descriptive Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseI18nDescriptiveElement(I18nDescriptiveElement object) {
+	public T caseL10nDescriptiveElement(L10nDescriptiveElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>QWiki Container</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */

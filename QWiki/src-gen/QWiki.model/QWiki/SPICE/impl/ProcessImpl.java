@@ -2,10 +2,15 @@
  */
 package QWiki.Spice.impl;
 
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiPackage;
+
 import QWiki.Spice.BasePractise;
 import QWiki.Spice.Outcome;
 import QWiki.Spice.ProcessGroup;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
 
 import java.lang.reflect.InvocationTargetException;
@@ -25,7 +30,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -110,7 +115,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.PROCESS;
+		return SpicePackage.Literals.PROCESS;
 	}
 
 	/**
@@ -145,7 +150,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 */
 	@Override
 	public EList<NamedElement> getOwnedMembers() {
-		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SpicePackage.PROCESS__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
@@ -156,7 +161,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS__OWNED_RULE, SPICEPackage.PROCESS__OWNED_OUTCOME, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS__OWNED_RULE, SpicePackage.PROCESS__QWIKI_ELEMENT, SpicePackage.PROCESS__OWNED_OUTCOME, SpicePackage.PROCESS__OWNED_BASE_PRACTISE};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -165,7 +170,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 */
 	@Override
 	public ProcessGroup getOwningProcessGroup() {
-		if (eContainerFeatureID() != SPICEPackage.PROCESS__OWNING_PROCESS_GROUP) return null;
+		if (eContainerFeatureID() != SpicePackage.PROCESS__OWNING_PROCESS_GROUP) return null;
 		return (ProcessGroup)eInternalContainer();
 	}
 
@@ -175,7 +180,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 * @generated
 	 */
 	public NotificationChain basicSetOwningProcessGroup(ProcessGroup newOwningProcessGroup, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwningProcessGroup, SPICEPackage.PROCESS__OWNING_PROCESS_GROUP, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newOwningProcessGroup, SpicePackage.PROCESS__OWNING_PROCESS_GROUP, msgs);
 		return msgs;
 	}
 
@@ -186,19 +191,19 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 */
 	@Override
 	public void setOwningProcessGroup(ProcessGroup newOwningProcessGroup) {
-		if (newOwningProcessGroup != eInternalContainer() || (eContainerFeatureID() != SPICEPackage.PROCESS__OWNING_PROCESS_GROUP && newOwningProcessGroup != null)) {
+		if (newOwningProcessGroup != eInternalContainer() || (eContainerFeatureID() != SpicePackage.PROCESS__OWNING_PROCESS_GROUP && newOwningProcessGroup != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningProcessGroup))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningProcessGroup != null)
-				msgs = ((InternalEObject)newOwningProcessGroup).eInverseAdd(this, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
+				msgs = ((InternalEObject)newOwningProcessGroup).eInverseAdd(this, SpicePackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
 			msgs = basicSetOwningProcessGroup(newOwningProcessGroup, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.PROCESS__OWNING_PROCESS_GROUP, newOwningProcessGroup, newOwningProcessGroup));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.PROCESS__OWNING_PROCESS_GROUP, newOwningProcessGroup, newOwningProcessGroup));
 	}
 
 	/**
@@ -209,7 +214,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public EList<Outcome> getOwnedOutcome() {
 		if (ownedOutcome == null) {
-			ownedOutcome = new EObjectContainmentWithInverseEList<Outcome>(Outcome.class, this, SPICEPackage.PROCESS__OWNED_OUTCOME, SPICEPackage.OUTCOME__OWNING_PROCESS);
+			ownedOutcome = new EObjectContainmentWithInverseEList<Outcome>(Outcome.class, this, SpicePackage.PROCESS__OWNED_OUTCOME, SpicePackage.OUTCOME__OWNING_PROCESS);
 		}
 		return ownedOutcome;
 	}
@@ -245,7 +250,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public EList<WorkProduct> getFacilitatingWorkProduct() {
 		if (facilitatingWorkProduct == null) {
-			facilitatingWorkProduct = new EObjectWithInverseResolvingEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__FACILITATED_PROCESS);
+			facilitatingWorkProduct = new EObjectWithInverseEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT, SpicePackage.WORK_PRODUCT__FACILITATED_PROCESS);
 		}
 		return facilitatingWorkProduct;
 	}
@@ -283,7 +288,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public EList<WorkProduct> getFacilitatedWorkProduct() {
 		if (facilitatedWorkProduct == null) {
-			facilitatedWorkProduct = new EObjectWithInverseResolvingEList<WorkProduct>(WorkProduct.class, this, SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__FACILITATING_PROCESS);
+			facilitatedWorkProduct = new EObjectWithInverseEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT, SpicePackage.WORK_PRODUCT__FACILITATING_PROCESS);
 		}
 		return facilitatedWorkProduct;
 	}
@@ -321,7 +326,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public EList<BasePractise> getOwnedBasePractise() {
 		if (ownedBasePractise == null) {
-			ownedBasePractise = new EObjectContainmentWithInverseEList<BasePractise>(BasePractise.class, this, SPICEPackage.PROCESS__OWNED_BASE_PRACTISE, SPICEPackage.BASE_PRACTISE__OWNING_PROCESS);
+			ownedBasePractise = new EObjectContainmentWithInverseEList<BasePractise>(BasePractise.class, this, SpicePackage.PROCESS__OWNED_BASE_PRACTISE, SpicePackage.BASE_PRACTISE__OWNING_PROCESS);
 		}
 		return ownedBasePractise;
 	}
@@ -350,23 +355,23 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)SpicePackage.Literals.PROCESS___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -382,17 +387,17 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningProcessGroup((ProcessGroup)otherEnd, msgs);
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedOutcome()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatingWorkProduct()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFacilitatedWorkProduct()).basicAdd(otherEnd, msgs);
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedBasePractise()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -406,15 +411,15 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				return basicSetOwningProcessGroup(null, msgs);
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				return ((InternalEList<?>)getOwnedOutcome()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return ((InternalEList<?>)getFacilitatingWorkProduct()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				return ((InternalEList<?>)getFacilitatedWorkProduct()).basicRemove(otherEnd, msgs);
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ((InternalEList<?>)getOwnedBasePractise()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -428,8 +433,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
-				return eInternalContainer().eInverseRemove(this, SPICEPackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
+				return eInternalContainer().eInverseRemove(this, SpicePackage.PROCESS_GROUP__OWNED_PROCESS, ProcessGroup.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -442,15 +447,15 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				return getOwningProcessGroup();
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				return getOwnedOutcome();
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return getFacilitatingWorkProduct();
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				return getFacilitatedWorkProduct();
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				return getOwnedBasePractise();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -465,22 +470,22 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				setOwningProcessGroup((ProcessGroup)newValue);
 				return;
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				getOwnedOutcome().clear();
 				getOwnedOutcome().addAll((Collection<? extends Outcome>)newValue);
 				return;
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				getFacilitatingWorkProduct().clear();
 				getFacilitatingWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				getFacilitatedWorkProduct().clear();
 				getFacilitatedWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				getOwnedBasePractise().clear();
 				getOwnedBasePractise().addAll((Collection<? extends BasePractise>)newValue);
 				return;
@@ -496,19 +501,19 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				setOwningProcessGroup((ProcessGroup)null);
 				return;
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				getOwnedOutcome().clear();
 				return;
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				getFacilitatingWorkProduct().clear();
 				return;
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				getFacilitatedWorkProduct().clear();
 				return;
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				getOwnedBasePractise().clear();
 				return;
 		}
@@ -523,19 +528,19 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS__NAMESPACE:
+			case SpicePackage.PROCESS__NAMESPACE:
 				return isSetNamespace();
-			case SPICEPackage.PROCESS__OWNED_MEMBER:
+			case SpicePackage.PROCESS__OWNED_MEMBER:
 				return isSetOwnedMembers();
-			case SPICEPackage.PROCESS__OWNING_PROCESS_GROUP:
+			case SpicePackage.PROCESS__OWNING_PROCESS_GROUP:
 				return getOwningProcessGroup() != null;
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
 				return ownedOutcome != null && !ownedOutcome.isEmpty();
-			case SPICEPackage.PROCESS__FACILITATING_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATING_WORK_PRODUCT:
 				return facilitatingWorkProduct != null && !facilitatingWorkProduct.isEmpty();
-			case SPICEPackage.PROCESS__FACILITATED_WORK_PRODUCT:
+			case SpicePackage.PROCESS__FACILITATED_WORK_PRODUCT:
 				return facilitatedWorkProduct != null && !facilitatedWorkProduct.isEmpty();
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				return ownedBasePractise != null && !ownedBasePractise.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -547,10 +552,38 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamespace.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMESPACE___OBJECT_ID: return SpicePackage.PROCESS___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case SPICEPackage.PROCESS___OID:
-				return oid();
+			case SpicePackage.PROCESS___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -563,7 +596,7 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public boolean isSetNamespace() {
 		return super.isSetNamespace()
-			|| eIsSet(SPICEPackage.PROCESS__OWNING_PROCESS_GROUP);
+			|| eIsSet(SpicePackage.PROCESS__OWNING_PROCESS_GROUP);
 	}
 
 	/**
@@ -574,18 +607,8 @@ public class ProcessImpl extends SpiceElementImpl implements QWiki.Spice.Process
 	@Override
 	public boolean isSetOwnedMembers() {
 		return super.isSetOwnedMembers()
-			|| eIsSet(SPICEPackage.PROCESS__OWNED_OUTCOME)
-			|| eIsSet(SPICEPackage.PROCESS__OWNED_BASE_PRACTISE);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String oidBasic() {
-		return oid();
+			|| eIsSet(SpicePackage.PROCESS__OWNED_OUTCOME)
+			|| eIsSet(SpicePackage.PROCESS__OWNED_BASE_PRACTISE);
 	}
 
 } //ProcessImpl

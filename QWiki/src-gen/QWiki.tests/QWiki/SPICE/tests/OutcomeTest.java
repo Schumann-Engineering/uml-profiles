@@ -2,11 +2,9 @@
  */
 package QWiki.Spice.tests;
 
-import QWiki.Kernel.tests.I18nNamedElementTest;
-
 import QWiki.Spice.Outcome;
-import QWiki.Spice.SPICEFactory;
-
+import QWiki.Spice.SpiceFactory;
+import QWiki.tests.L10nNamedElementTest;
 import junit.textui.TestRunner;
 
 /**
@@ -16,12 +14,12 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Spice.Outcome#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.Outcome#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
  */
-public class OutcomeTest extends I18nNamedElementTest {
+public class OutcomeTest extends L10nNamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +59,7 @@ public class OutcomeTest extends I18nNamedElementTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createOutcome());
+		setFixture(SpiceFactory.eINSTANCE.createOutcome());
 	}
 
 	/**
@@ -76,13 +74,13 @@ public class OutcomeTest extends I18nNamedElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Spice.Outcome#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.Outcome#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Spice.Outcome#oid()
+	 * @see QWiki.Spice.Outcome#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

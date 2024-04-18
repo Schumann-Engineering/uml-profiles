@@ -2,7 +2,7 @@
  */
 package QWiki.Rasci.util;
 
-import QWiki.Rasci.RASCIPackage;
+import QWiki.Rasci.RasciPackage;
 import QWiki.Rasci.Role;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -19,17 +19,17 @@ import org.eclipse.uml2.uml.UMLPackage;
  * <!-- begin-user-doc -->
  * An adapter that propagates notifications for derived unions.
  * <!-- end-user-doc -->
- * @see QWiki.Rasci.RASCIPackage
+ * @see QWiki.Rasci.RasciPackage
  * @generated
  */
-public class RASCIDerivedUnionAdapter extends AdapterImpl {
+public class RasciDerivedUnionAdapter extends AdapterImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static RASCIPackage modelPackage;
+	protected static RasciPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter.
@@ -37,9 +37,9 @@ public class RASCIDerivedUnionAdapter extends AdapterImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCIDerivedUnionAdapter() {
+	public RasciDerivedUnionAdapter() {
 		if (modelPackage == null) {
-			modelPackage = RASCIPackage.eINSTANCE;
+			modelPackage = RasciPackage.eINSTANCE;
 		}
 	}
 
@@ -70,7 +70,7 @@ public class RASCIDerivedUnionAdapter extends AdapterImpl {
 	 */
 	protected void notifyChanged(Notification notification, EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case RASCIPackage.ROLE:
+			case RasciPackage.ROLE:
 				notifyRoleChanged(notification, eClass);
 				break;
 		}
@@ -99,16 +99,20 @@ public class RASCIDerivedUnionAdapter extends AdapterImpl {
 	 */
 	protected void notifyRoleChanged(Notification notification, EClass eClass) {
 		switch (notification.getFeatureID(Role.class)) {
-			case RASCIPackage.ROLE__OWNED_COMMENT:
+			case RasciPackage.ROLE__OWNED_COMMENT:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case RASCIPackage.ROLE__NAME_EXPRESSION:
+			case RasciPackage.ROLE__NAME_EXPRESSION:
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
-			case RASCIPackage.ROLE__NAMESPACE:
+			case RasciPackage.ROLE__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case RasciPackage.ROLE__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
 	}
 
-} //RASCIDerivedUnionAdapter
+} //RasciDerivedUnionAdapter

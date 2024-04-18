@@ -34,7 +34,6 @@ public class ReferencesTests extends TestSuite {
 		suite.addTestSuite(AuthorTest.class);
 		suite.addTestSuite(ReferenceTest.class);
 		suite.addTestSuite(ReferenceVersionTest.class);
-		suite.addTestSuite(SectionTest.class);
 		return suite;
 	}
 

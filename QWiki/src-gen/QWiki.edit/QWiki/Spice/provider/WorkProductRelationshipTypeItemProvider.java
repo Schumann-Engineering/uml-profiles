@@ -5,10 +5,10 @@ package QWiki.Spice.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiRelationshipTypeItemProvider;
-
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProductRelationshipType;
+
+import QWiki.provider.QWikiRelationshipTypeItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -67,7 +67,7 @@ public class WorkProductRelationshipTypeItemProvider extends QWikiRelationshipTy
 				 getResourceLocator(),
 				 getString("_UI_WorkProductRelationshipType_workProductRelationship_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_WorkProductRelationshipType_workProductRelationship_feature", "_UI_WorkProductRelationshipType_type"),
-				 SPICEPackage.Literals.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP,
+				 SpicePackage.Literals.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP,
 				 true,
 				 false,
 				 true,

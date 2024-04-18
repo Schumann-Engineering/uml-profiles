@@ -3,7 +3,7 @@
 package QWiki.Spice.tests;
 
 import QWiki.Spice.ProcessGroup;
-import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SpiceFactory;
 
 import junit.textui.TestRunner;
 
@@ -14,7 +14,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Spice.ProcessGroup#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.ProcessGroup#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -59,7 +59,7 @@ public class ProcessGroupTest extends SpiceElementTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createProcessGroup());
+		setFixture(SpiceFactory.eINSTANCE.createProcessGroup());
 	}
 
 	/**
@@ -74,13 +74,13 @@ public class ProcessGroupTest extends SpiceElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Spice.ProcessGroup#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.ProcessGroup#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Spice.ProcessGroup#oid()
+	 * @see QWiki.Spice.ProcessGroup#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

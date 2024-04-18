@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Spice.ProcessGroup#getOwnedProcess <em>Owned Process</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getProcessGroup()
+ * @see QWiki.Spice.SpicePackage#getProcessGroup()
  * @model
  * @generated
  */
@@ -38,9 +38,10 @@ public interface ProcessGroup extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Process</em>' containment reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcessGroup_OwnedProcess()
+	 * @see QWiki.Spice.SpicePackage#getProcessGroup_OwnedProcess()
 	 * @see QWiki.Spice.Process#getOwningProcessGroup
-	 * @model opposite="owningProcessGroup" containment="true" transient="true"
+	 * @model opposite="owningProcessGroup" containment="true"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -73,7 +74,7 @@ public interface ProcessGroup extends SpiceElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
@@ -83,6 +84,6 @@ public interface ProcessGroup extends SpiceElement {
 	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'p/\' + number'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // ProcessGroup

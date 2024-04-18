@@ -19,6 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ReferenceVersionType implements Enumerator {
 	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNSPECIFIED(0, "UNSPECIFIED", "UNSPECIFIED"), /**
 	 * The '<em><b>Addendum</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26,7 +34,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ADDENDUM(0, "Addendum", "Addendum"),
+	ADDENDUM(1, "Addendum", "Addendum"),
 
 	/**
 	 * The '<em><b>Amendment</b></em>' literal object.
@@ -36,7 +44,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	AMENDMENT(1, "Amendment", "Amendment"),
+	AMENDMENT(2, "Amendment", "Amendment"),
 
 	/**
 	 * The '<em><b>Corrigendum</b></em>' literal object.
@@ -46,7 +54,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CORRIGENDUM(2, "Corrigendum", "Corrigendum"),
+	CORRIGENDUM(3, "Corrigendum", "Corrigendum"),
 
 	/**
 	 * The '<em><b>First Edition</b></em>' literal object.
@@ -56,7 +64,18 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FIRST_EDITION(3, "FirstEdition", "FirstEdition");
+	FIRST_EDITION(4, "FirstEdition", "FirstEdition");
+
+	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSPECIFIED_VALUE = 0;
 
 	/**
 	 * The '<em><b>Addendum</b></em>' literal value.
@@ -67,7 +86,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ADDENDUM_VALUE = 0;
+	public static final int ADDENDUM_VALUE = 1;
 
 	/**
 	 * The '<em><b>Amendment</b></em>' literal value.
@@ -78,7 +97,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int AMENDMENT_VALUE = 1;
+	public static final int AMENDMENT_VALUE = 2;
 
 	/**
 	 * The '<em><b>Corrigendum</b></em>' literal value.
@@ -89,7 +108,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CORRIGENDUM_VALUE = 2;
+	public static final int CORRIGENDUM_VALUE = 3;
 
 	/**
 	 * The '<em><b>First Edition</b></em>' literal value.
@@ -100,7 +119,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int FIRST_EDITION_VALUE = 3;
+	public static final int FIRST_EDITION_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Reference Version Type</b></em>' enumerators.
@@ -110,6 +129,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 */
 	private static final ReferenceVersionType[] VALUES_ARRAY =
 		new ReferenceVersionType[] {
+			UNSPECIFIED,
 			ADDENDUM,
 			AMENDMENT,
 			CORRIGENDUM,
@@ -170,6 +190,7 @@ public enum ReferenceVersionType implements Enumerator {
 	 */
 	public static ReferenceVersionType get(int value) {
 		switch (value) {
+			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case ADDENDUM_VALUE: return ADDENDUM;
 			case AMENDMENT_VALUE: return AMENDMENT;
 			case CORRIGENDUM_VALUE: return CORRIGENDUM;

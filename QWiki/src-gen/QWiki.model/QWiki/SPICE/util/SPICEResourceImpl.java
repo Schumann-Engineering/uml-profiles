@@ -10,10 +10,10 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceImpl;
  * <!-- begin-user-doc -->
  * The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * @see QWiki.Spice.util.SPICEResourceFactoryImpl
+ * @see QWiki.Spice.util.SpiceResourceFactoryImpl
  * @generated
  */
-public class SPICEResourceImpl extends XMLResourceImpl {
+public class SpiceResourceImpl extends XMLResourceImpl {
 	/**
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
@@ -21,8 +21,8 @@ public class SPICEResourceImpl extends XMLResourceImpl {
 	 * @param uri the URI of the new resource.
 	 * @generated
 	 */
-	public SPICEResourceImpl(URI uri) {
+	public SpiceResourceImpl(URI uri) {
 		super(uri);
 	}
 
-} //SPICEResourceImpl
+} //SpiceResourceImpl

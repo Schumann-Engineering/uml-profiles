@@ -2,12 +2,12 @@
  */
 package QWiki.Spice.impl;
 
-import QWiki.Kernel.impl.QWikiRelationshipImpl;
-
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
 import QWiki.Spice.WorkProductRelationship;
 import QWiki.Spice.WorkProductRelationshipType;
+
+import QWiki.impl.QWikiRelationshipImpl;
 
 import java.util.Collection;
 
@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.eclipse.uml2.common.util.DerivedUnionEObjectEList;
@@ -92,7 +92,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.WORK_PRODUCT_RELATIONSHIP;
+		return SpicePackage.Literals.WORK_PRODUCT_RELATIONSHIP;
 	}
 
 	/**
@@ -102,7 +102,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 */
 	@Override
 	public EList<Element> getSources() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__SOURCE, SOURCE_ESUBSETS);
+		return new DerivedUnionEObjectEList<Element>(Element.class, this, SpicePackage.WORK_PRODUCT_RELATIONSHIP__SOURCE, SOURCE_ESUBSETS);
 	}
 
 	/**
@@ -113,7 +113,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] SOURCE_ESUBSETS = new int[] {SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT};
+	protected static final int[] SOURCE_ESUBSETS = new int[] {SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -122,7 +122,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 */
 	@Override
 	public EList<Element> getTargets() {
-		return new DerivedUnionEObjectEList<Element>(Element.class, this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__TARGET, TARGET_ESUBSETS);
+		return new DerivedUnionEObjectEList<Element>(Element.class, this, SpicePackage.WORK_PRODUCT_RELATIONSHIP__TARGET, TARGET_ESUBSETS);
 	}
 
 	/**
@@ -133,7 +133,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] TARGET_ESUBSETS = new int[] {SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT};
+	protected static final int[] TARGET_ESUBSETS = new int[] {SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -142,23 +142,6 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 */
 	@Override
 	public WorkProduct getLinkingWorkProduct() {
-		if (linkingWorkProduct != null && linkingWorkProduct.eIsProxy()) {
-			InternalEObject oldLinkingWorkProduct = (InternalEObject)linkingWorkProduct;
-			linkingWorkProduct = (WorkProduct)eResolveProxy(oldLinkingWorkProduct);
-			if (linkingWorkProduct != oldLinkingWorkProduct) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT, oldLinkingWorkProduct, linkingWorkProduct));
-			}
-		}
-		return linkingWorkProduct;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkProduct basicGetLinkingWorkProduct() {
 		return linkingWorkProduct;
 	}
 
@@ -172,7 +155,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 		WorkProduct oldLinkingWorkProduct = linkingWorkProduct;
 		linkingWorkProduct = newLinkingWorkProduct;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT, oldLinkingWorkProduct, linkingWorkProduct));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT, oldLinkingWorkProduct, linkingWorkProduct));
 	}
 
 	/**
@@ -182,23 +165,6 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	 */
 	@Override
 	public WorkProductRelationshipType getWorkProductRelationshipType() {
-		if (workProductRelationshipType != null && workProductRelationshipType.eIsProxy()) {
-			InternalEObject oldWorkProductRelationshipType = (InternalEObject)workProductRelationshipType;
-			workProductRelationshipType = (WorkProductRelationshipType)eResolveProxy(oldWorkProductRelationshipType);
-			if (workProductRelationshipType != oldWorkProductRelationshipType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE, oldWorkProductRelationshipType, workProductRelationshipType));
-			}
-		}
-		return workProductRelationshipType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public WorkProductRelationshipType basicGetWorkProductRelationshipType() {
 		return workProductRelationshipType;
 	}
 
@@ -211,7 +177,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 		WorkProductRelationshipType oldWorkProductRelationshipType = workProductRelationshipType;
 		workProductRelationshipType = newWorkProductRelationshipType;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE, oldWorkProductRelationshipType, newWorkProductRelationshipType);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE, oldWorkProductRelationshipType, newWorkProductRelationshipType);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -227,14 +193,14 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 		if (newWorkProductRelationshipType != workProductRelationshipType) {
 			NotificationChain msgs = null;
 			if (workProductRelationshipType != null)
-				msgs = ((InternalEObject)workProductRelationshipType).eInverseRemove(this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
+				msgs = ((InternalEObject)workProductRelationshipType).eInverseRemove(this, SpicePackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
 			if (newWorkProductRelationshipType != null)
-				msgs = ((InternalEObject)newWorkProductRelationshipType).eInverseAdd(this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
+				msgs = ((InternalEObject)newWorkProductRelationshipType).eInverseAdd(this, SpicePackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
 			msgs = basicSetWorkProductRelationshipType(newWorkProductRelationshipType, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE, newWorkProductRelationshipType, newWorkProductRelationshipType));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE, newWorkProductRelationshipType, newWorkProductRelationshipType));
 	}
 
 	/**
@@ -245,7 +211,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public EList<WorkProduct> getLinkedWorkProduct() {
 		if (linkedWorkProduct == null) {
-			linkedWorkProduct = new EObjectWithInverseResolvingEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__LINK);
+			linkedWorkProduct = new EObjectWithInverseEList.ManyInverse<WorkProduct>(WorkProduct.class, this, SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT, SpicePackage.WORK_PRODUCT__LINK);
 		}
 		return linkedWorkProduct;
 	}
@@ -284,11 +250,11 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
 				if (workProductRelationshipType != null)
-					msgs = ((InternalEObject)workProductRelationshipType).eInverseRemove(this, SPICEPackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
+					msgs = ((InternalEObject)workProductRelationshipType).eInverseRemove(this, SpicePackage.WORK_PRODUCT_RELATIONSHIP_TYPE__WORK_PRODUCT_RELATIONSHIP, WorkProductRelationshipType.class, msgs);
 				return basicSetWorkProductRelationshipType((WorkProductRelationshipType)otherEnd, msgs);
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getLinkedWorkProduct()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -302,9 +268,9 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
 				return basicSetWorkProductRelationshipType(null, msgs);
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				return ((InternalEList<?>)getLinkedWorkProduct()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -318,13 +284,11 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
-				if (resolve) return getLinkingWorkProduct();
-				return basicGetLinkingWorkProduct();
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
-				if (resolve) return getWorkProductRelationshipType();
-				return basicGetWorkProductRelationshipType();
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
+				return getLinkingWorkProduct();
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+				return getWorkProductRelationshipType();
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				return getLinkedWorkProduct();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -339,13 +303,13 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
 				setLinkingWorkProduct((WorkProduct)newValue);
 				return;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
 				setWorkProductRelationshipType((WorkProductRelationshipType)newValue);
 				return;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				getLinkedWorkProduct().clear();
 				getLinkedWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
@@ -361,13 +325,13 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
 				setLinkingWorkProduct((WorkProduct)null);
 				return;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
 				setWorkProductRelationshipType((WorkProductRelationshipType)null);
 				return;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				getLinkedWorkProduct().clear();
 				return;
 		}
@@ -382,15 +346,15 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__SOURCE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__SOURCE:
 				return isSetSources();
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__TARGET:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__TARGET:
 				return isSetTargets();
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT:
 				return linkingWorkProduct != null;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__WORK_PRODUCT_RELATIONSHIP_TYPE:
 				return workProductRelationshipType != null;
-			case SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
+			case SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT:
 				return linkedWorkProduct != null && !linkedWorkProduct.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -404,7 +368,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public boolean isSetSources() {
 		return super.isSetSources()
-			|| eIsSet(SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT);
+			|| eIsSet(SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKING_WORK_PRODUCT);
 	}
 
 	/**
@@ -415,7 +379,7 @@ public class WorkProductRelationshipImpl extends QWikiRelationshipImpl implement
 	@Override
 	public boolean isSetTargets() {
 		return super.isSetTargets()
-			|| eIsSet(SPICEPackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT);
+			|| eIsSet(SpicePackage.WORK_PRODUCT_RELATIONSHIP__LINKED_WORK_PRODUCT);
 	}
 
 } //WorkProductRelationshipImpl

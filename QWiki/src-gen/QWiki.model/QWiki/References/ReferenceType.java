@@ -19,6 +19,14 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum ReferenceType implements Enumerator {
 	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	UNSPECIFIED(0, "UNSPECIFIED", "UNSPECIFIED"), /**
 	 * The '<em><b>Document</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -26,7 +34,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DOCUMENT(0, "Document", "Document"),
+	DOCUMENT(1, "Document", "Document"),
 
 	/**
 	 * The '<em><b>Guideline</b></em>' literal object.
@@ -36,7 +44,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	GUIDELINE(1, "Guideline", "Guideline"),
+	GUIDELINE(2, "Guideline", "Guideline"),
 
 	/**
 	 * The '<em><b>Hyperlink</b></em>' literal object.
@@ -46,7 +54,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	HYPERLINK(2, "Hyperlink", "Hyperlink"),
+	HYPERLINK(3, "Hyperlink", "Hyperlink"),
 
 	/**
 	 * The '<em><b>Legislation</b></em>' literal object.
@@ -56,7 +64,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LEGISLATION(3, "Legislation", "Legislation"),
+	LEGISLATION(4, "Legislation", "Legislation"),
 
 	/**
 	 * The '<em><b>Process</b></em>' literal object.
@@ -66,7 +74,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PROCESS(4, "Process", "Process"),
+	PROCESS(5, "Process", "Process"),
 
 	/**
 	 * The '<em><b>Standard</b></em>' literal object.
@@ -76,7 +84,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	STANDARD(5, "Standard", "Standard"),
+	STANDARD(6, "Standard", "Standard"),
 
 	/**
 	 * The '<em><b>Technical Report</b></em>' literal object.
@@ -86,7 +94,18 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	TECHNICAL_REPORT(6, "TechnicalReport", "TechnicalReport");
+	TECHNICAL_REPORT(7, "TechnicalReport", "TechnicalReport");
+
+	/**
+	 * The '<em><b>UNSPECIFIED</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #UNSPECIFIED
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int UNSPECIFIED_VALUE = 0;
 
 	/**
 	 * The '<em><b>Document</b></em>' literal value.
@@ -97,7 +116,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int DOCUMENT_VALUE = 0;
+	public static final int DOCUMENT_VALUE = 1;
 
 	/**
 	 * The '<em><b>Guideline</b></em>' literal value.
@@ -108,7 +127,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int GUIDELINE_VALUE = 1;
+	public static final int GUIDELINE_VALUE = 2;
 
 	/**
 	 * The '<em><b>Hyperlink</b></em>' literal value.
@@ -119,7 +138,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int HYPERLINK_VALUE = 2;
+	public static final int HYPERLINK_VALUE = 3;
 
 	/**
 	 * The '<em><b>Legislation</b></em>' literal value.
@@ -130,7 +149,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LEGISLATION_VALUE = 3;
+	public static final int LEGISLATION_VALUE = 4;
 
 	/**
 	 * The '<em><b>Process</b></em>' literal value.
@@ -141,7 +160,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PROCESS_VALUE = 4;
+	public static final int PROCESS_VALUE = 5;
 
 	/**
 	 * The '<em><b>Standard</b></em>' literal value.
@@ -152,7 +171,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int STANDARD_VALUE = 5;
+	public static final int STANDARD_VALUE = 6;
 
 	/**
 	 * The '<em><b>Technical Report</b></em>' literal value.
@@ -163,7 +182,7 @@ public enum ReferenceType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TECHNICAL_REPORT_VALUE = 6;
+	public static final int TECHNICAL_REPORT_VALUE = 7;
 
 	/**
 	 * An array of all the '<em><b>Reference Type</b></em>' enumerators.
@@ -173,6 +192,7 @@ public enum ReferenceType implements Enumerator {
 	 */
 	private static final ReferenceType[] VALUES_ARRAY =
 		new ReferenceType[] {
+			UNSPECIFIED,
 			DOCUMENT,
 			GUIDELINE,
 			HYPERLINK,
@@ -236,6 +256,7 @@ public enum ReferenceType implements Enumerator {
 	 */
 	public static ReferenceType get(int value) {
 		switch (value) {
+			case UNSPECIFIED_VALUE: return UNSPECIFIED;
 			case DOCUMENT_VALUE: return DOCUMENT;
 			case GUIDELINE_VALUE: return GUIDELINE;
 			case HYPERLINK_VALUE: return HYPERLINK;

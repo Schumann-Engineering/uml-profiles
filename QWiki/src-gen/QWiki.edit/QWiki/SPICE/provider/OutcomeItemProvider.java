@@ -5,11 +5,9 @@ package QWiki.Spice.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.I18nNamedElementItemProvider;
-
 import QWiki.Spice.Outcome;
-import QWiki.Spice.SPICEPackage;
-
+import QWiki.Spice.SpicePackage;
+import QWiki.provider.L10nNamedElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -27,7 +25,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class OutcomeItemProvider extends I18nNamedElementItemProvider {
+public class OutcomeItemProvider extends L10nNamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -69,7 +67,7 @@ public class OutcomeItemProvider extends I18nNamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Outcome_facilitatingBasePractise_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Outcome_facilitatingBasePractise_feature", "_UI_Outcome_type"),
-				 SPICEPackage.Literals.OUTCOME__FACILITATING_BASE_PRACTISE,
+				 SpicePackage.Literals.OUTCOME__FACILITATING_BASE_PRACTISE,
 				 true,
 				 false,
 				 true,
@@ -91,7 +89,7 @@ public class OutcomeItemProvider extends I18nNamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Outcome_requiredWorkproduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Outcome_requiredWorkproduct_feature", "_UI_Outcome_type"),
-				 SPICEPackage.Literals.OUTCOME__REQUIRED_WORKPRODUCT,
+				 SpicePackage.Literals.OUTCOME__REQUIRED_WORKPRODUCT,
 				 true,
 				 false,
 				 true,
@@ -113,7 +111,7 @@ public class OutcomeItemProvider extends I18nNamedElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Outcome_resultingWorkproduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Outcome_resultingWorkproduct_feature", "_UI_Outcome_type"),
-				 SPICEPackage.Literals.OUTCOME__RESULTING_WORKPRODUCT,
+				 SpicePackage.Literals.OUTCOME__RESULTING_WORKPRODUCT,
 				 true,
 				 false,
 				 true,

@@ -6,7 +6,7 @@ import QWiki.Domain.Domain;
 import QWiki.Domain.DomainElement;
 import QWiki.Domain.DomainPackage;
 
-import QWiki.Kernel.impl.QWikiElementImpl;
+import QWiki.impl.QWikiElementImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -19,7 +19,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -73,7 +73,7 @@ public class DomainImpl extends QWikiElementImpl implements Domain {
 	@Override
 	public EList<DomainElement> getDomainElement() {
 		if (domainElement == null) {
-			domainElement = new EObjectWithInverseResolvingEList<DomainElement>(DomainElement.class, this, DomainPackage.DOMAIN__DOMAIN_ELEMENT, DomainPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
+			domainElement = new EObjectWithInverseEList<DomainElement>(DomainElement.class, this, DomainPackage.DOMAIN__DOMAIN_ELEMENT, DomainPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN);
 		}
 		return domainElement;
 	}

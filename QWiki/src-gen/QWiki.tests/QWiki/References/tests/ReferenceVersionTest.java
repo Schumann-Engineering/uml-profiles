@@ -2,10 +2,10 @@
  */
 package QWiki.References.tests;
 
-import QWiki.Kernel.tests.QWikiNamespaceTest;
-
 import QWiki.References.ReferenceVersion;
 import QWiki.References.ReferencesFactory;
+
+import QWiki.tests.QWikiNamespaceTest;
 
 import junit.textui.TestRunner;
 
@@ -16,7 +16,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.References.ReferenceVersion#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.References.ReferenceVersion#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -76,13 +76,13 @@ public class ReferenceVersionTest extends QWikiNamespaceTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.References.ReferenceVersion#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.References.ReferenceVersion#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.References.ReferenceVersion#oid()
+	 * @see QWiki.References.ReferenceVersion#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

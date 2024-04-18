@@ -2,7 +2,7 @@
  */
 package QWiki.Spice.tests;
 
-import QWiki.Spice.SPICEFactory;
+import QWiki.Spice.SpiceFactory;
 import QWiki.Spice.WorkProduct;
 
 import junit.textui.TestRunner;
@@ -14,7 +14,7 @@ import junit.textui.TestRunner;
  * <p>
  * The following operations are tested:
  * <ul>
- *   <li>{@link QWiki.Spice.WorkProduct#oid() <em>Oid</em>}</li>
+ *   <li>{@link QWiki.Spice.WorkProduct#objectId() <em>Object Id</em>}</li>
  * </ul>
  * </p>
  * @generated
@@ -59,7 +59,7 @@ public class WorkProductTest extends SpiceElementTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(SPICEFactory.eINSTANCE.createWorkProduct());
+		setFixture(SpiceFactory.eINSTANCE.createWorkProduct());
 	}
 
 	/**
@@ -74,13 +74,13 @@ public class WorkProductTest extends SpiceElementTest {
 	}
 
 	/**
-	 * Tests the '{@link QWiki.Spice.WorkProduct#oid() <em>Oid</em>}' operation.
+	 * Tests the '{@link QWiki.Spice.WorkProduct#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see QWiki.Spice.WorkProduct#oid()
+	 * @see QWiki.Spice.WorkProduct#objectId()
 	 * @generated
 	 */
-	public void testOid_1() {
+	public void testObjectId() {
 		// TODO: implement this operation test method
 		// Ensure that you remove @generated or mark it @generated NOT
 		fail();

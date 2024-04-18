@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.GenericWorkProduct#getOwnedWorkProduct <em>Owned Work Product</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getGenericWorkProduct()
+ * @see QWiki.Spice.SpicePackage#getGenericWorkProduct()
  * @model
  * @generated
  */
@@ -40,9 +40,10 @@ public interface GenericWorkProduct extends WorkProduct {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Work Product</em>' containment reference list.
-	 * @see QWiki.Spice.SPICEPackage#getGenericWorkProduct_OwnedWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getGenericWorkProduct_OwnedWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getOwningWorkProductGroup
-	 * @model opposite="owningWorkProductGroup" containment="true" transient="true" ordered="false"
+	 * @model opposite="owningWorkProductGroup" containment="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */

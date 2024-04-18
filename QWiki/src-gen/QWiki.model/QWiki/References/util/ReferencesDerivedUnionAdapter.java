@@ -6,8 +6,6 @@ import QWiki.References.Author;
 import QWiki.References.Reference;
 import QWiki.References.ReferenceVersion;
 import QWiki.References.ReferencesPackage;
-import QWiki.References.Section;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
@@ -82,9 +80,6 @@ public class ReferencesDerivedUnionAdapter extends AdapterImpl {
 			case ReferencesPackage.REFERENCE_VERSION:
 				notifyReferenceVersionChanged(notification, eClass);
 				break;
-			case ReferencesPackage.SECTION:
-				notifySectionChanged(notification, eClass);
-				break;
 		}
 	}
 
@@ -118,6 +113,10 @@ public class ReferencesDerivedUnionAdapter extends AdapterImpl {
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				break;
 			case ReferencesPackage.AUTHOR__NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case ReferencesPackage.AUTHOR__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
 		}
@@ -160,6 +159,15 @@ public class ReferencesDerivedUnionAdapter extends AdapterImpl {
 			case ReferencesPackage.REFERENCE__IMPORTED_MEMBER:
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
+			case ReferencesPackage.REFERENCE__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
+				break;
+			case ReferencesPackage.REFERENCE__QWIKI_ELEMENT:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
+				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
+				break;
 		}
 	}
 
@@ -200,48 +208,14 @@ public class ReferencesDerivedUnionAdapter extends AdapterImpl {
 			case ReferencesPackage.REFERENCE_VERSION__IMPORTED_MEMBER:
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
 				break;
-		}
-	}
-
-	/**
-	 * Calls <code>notifyChanged</code> for each affected derived union.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param notification a description of the change.
-	 * @param eClass the Ecore class of the notifier.
-	 * @generated
-	 */
-	protected void notifySectionChanged(Notification notification, EClass eClass) {
-		switch (notification.getFeatureID(Section.class)) {
-			case ReferencesPackage.SECTION__OWNED_COMMENT:
-				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
-				break;
-			case ReferencesPackage.SECTION__NAME_EXPRESSION:
-				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
-				break;
-			case ReferencesPackage.SECTION__NAMESPACE:
+			case ReferencesPackage.REFERENCE_VERSION__QWIKI_NAMESPACE:
+				notifyChanged(notification, eClass, UMLPackage.Literals.NAMED_ELEMENT__NAMESPACE);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNER);
 				break;
-			case ReferencesPackage.SECTION__OWNED_RULE:
+			case ReferencesPackage.REFERENCE_VERSION__QWIKI_ELEMENT:
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__OWNED_MEMBER);
 				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
 				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
-				break;
-			case ReferencesPackage.SECTION__ELEMENT_IMPORT:
-				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
-				break;
-			case ReferencesPackage.SECTION__PACKAGE_IMPORT:
-				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
-				break;
-			case ReferencesPackage.SECTION__OWNED_MEMBER:
-				notifyChanged(notification, eClass, UMLPackage.Literals.ELEMENT__OWNED_ELEMENT);
-				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
-				break;
-			case ReferencesPackage.SECTION__IMPORTED_MEMBER:
-				notifyChanged(notification, eClass, UMLPackage.Literals.NAMESPACE__MEMBER);
-				break;
-			case ReferencesPackage.SECTION__FACILITATING_SPICE_ELEMENT:
-				notifyChanged(notification, eClass, ReferencesPackage.Literals.SECTION__FACILITATING_ELEMENT);
 				break;
 		}
 	}

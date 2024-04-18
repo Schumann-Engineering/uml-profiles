@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see QWiki.Rasci.RASCIPackage
+ * @see QWiki.Rasci.RasciPackage
  * @generated
  */
-public interface RASCIFactory extends EFactory {
+public interface RasciFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	RASCIFactory eINSTANCE = QWiki.Rasci.impl.RASCIFactoryImpl.init();
+	RasciFactory eINSTANCE = QWiki.Rasci.impl.RasciFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Role</em>'.
@@ -37,6 +37,6 @@ public interface RASCIFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	RASCIPackage getRASCIPackage();
+	RasciPackage getRasciPackage();
 
-} //RASCIFactory
+} //RasciFactory

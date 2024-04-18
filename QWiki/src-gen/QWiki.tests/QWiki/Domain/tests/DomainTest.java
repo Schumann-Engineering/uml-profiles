@@ -5,7 +5,7 @@ package QWiki.Domain.tests;
 import QWiki.Domain.Domain;
 import QWiki.Domain.DomainFactory;
 
-import QWiki.Kernel.tests.QWikiElementTest;
+import QWiki.tests.QWikiElementTest;
 
 import junit.textui.TestRunner;
 

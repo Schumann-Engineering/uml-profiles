@@ -3,7 +3,7 @@
 package QWiki.Spice.impl;
 
 import QWiki.Spice.GenericWorkProduct;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpicePackage;
 import QWiki.Spice.WorkProduct;
 
 import java.util.Collection;
@@ -63,7 +63,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.GENERIC_WORK_PRODUCT;
+		return SpicePackage.Literals.GENERIC_WORK_PRODUCT;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 */
 	@Override
 	public EList<NamedElement> getOwnedMembers() {
-		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SpicePackage.GENERIC_WORK_PRODUCT__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_RULE, SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.GENERIC_WORK_PRODUCT__OWNED_RULE, SpicePackage.GENERIC_WORK_PRODUCT__QWIKI_ELEMENT, SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -94,7 +94,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public EList<WorkProduct> getOwnedWorkProduct() {
 		if (ownedWorkProduct == null) {
-			ownedWorkProduct = new EObjectContainmentWithInverseEList<WorkProduct>(WorkProduct.class, this, SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT, SPICEPackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
+			ownedWorkProduct = new EObjectContainmentWithInverseEList<WorkProduct>(WorkProduct.class, this, SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT, SpicePackage.WORK_PRODUCT__OWNING_WORK_PRODUCT_GROUP);
 		}
 		return ownedWorkProduct;
 	}
@@ -133,7 +133,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedWorkProduct()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -147,7 +147,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				return ((InternalEList<?>)getOwnedWorkProduct()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -161,7 +161,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				return getOwnedWorkProduct();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -176,7 +176,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				getOwnedWorkProduct().clear();
 				getOwnedWorkProduct().addAll((Collection<? extends WorkProduct>)newValue);
 				return;
@@ -192,7 +192,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				getOwnedWorkProduct().clear();
 				return;
 		}
@@ -207,9 +207,9 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_MEMBER:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_MEMBER:
 				return isSetOwnedMembers();
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				return ownedWorkProduct != null && !ownedWorkProduct.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -223,7 +223,7 @@ public class GenericWorkProductImpl extends WorkProductImpl implements GenericWo
 	@Override
 	public boolean isSetOwnedMembers() {
 		return super.isSetOwnedMembers()
-			|| eIsSet(SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
+			|| eIsSet(SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
 	}
 
 } //GenericWorkProductImpl

@@ -2,13 +2,18 @@
  */
 package QWiki.References.impl;
 
-import QWiki.Kernel.impl.QWikiContainerImpl;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiPackage;
 
 import QWiki.References.Author;
 import QWiki.References.Reference;
 import QWiki.References.ReferenceType;
 import QWiki.References.ReferenceVersion;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.impl.QWikiContainerImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -27,7 +32,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -85,7 +90,7 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final ReferenceType REFERENCE_TYPE_EDEFAULT = ReferenceType.DOCUMENT;
+	protected static final ReferenceType REFERENCE_TYPE_EDEFAULT = ReferenceType.UNSPECIFIED;
 
 	/**
 	 * The cached value of the '{@link #getReferenceType() <em>Reference Type</em>}' attribute.
@@ -216,7 +221,7 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	@Override
 	public EList<Author> getAuthor() {
 		if (author == null) {
-			author = new EObjectResolvingEList<Author>(Author.class, this, ReferencesPackage.REFERENCE__AUTHOR);
+			author = new EObjectEList<Author>(Author.class, this, ReferencesPackage.REFERENCE__AUTHOR);
 		}
 		return author;
 	}
@@ -245,23 +250,23 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.REFERENCE___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)ReferencesPackage.Literals.REFERENCE___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -394,10 +399,38 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return ReferencesPackage.REFERENCE___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return ReferencesPackage.REFERENCE___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamespace.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMESPACE___OBJECT_ID: return ReferencesPackage.REFERENCE___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ReferencesPackage.REFERENCE___OID:
-				return oid();
+			case ReferencesPackage.REFERENCE___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}

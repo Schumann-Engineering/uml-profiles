@@ -5,13 +5,11 @@ package QWiki.Rasci.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
-import QWiki.Kernel.provider.I18nDescriptiveElementItemProvider;
-
-import QWiki.Rasci.RASCIPackage;
 import QWiki.Rasci.RasciElement;
-
+import QWiki.Rasci.RasciPackage;
+import QWiki.provider.L10nDescriptiveElementItemProvider;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,7 +27,7 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider {
+public class RasciElementItemProvider extends L10nDescriptiveElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -73,7 +71,7 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_responsibleRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_responsibleRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__RESPONSIBLE_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__RESPONSIBLE_ROLE,
 				 true,
 				 false,
 				 true,
@@ -95,7 +93,7 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_accountableRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_accountableRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__ACCOUNTABLE_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__ACCOUNTABLE_ROLE,
 				 true,
 				 false,
 				 true,
@@ -117,7 +115,7 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_supportRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_supportRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__SUPPORT_ROLE,
 				 true,
 				 false,
 				 true,
@@ -139,7 +137,7 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_consultedRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_consultedRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__CONSULTED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -161,7 +159,7 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 				 getResourceLocator(),
 				 getString("_UI_RasciElement_informedRole_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_RasciElement_informedRole_feature", "_UI_RasciElement_type"),
-				 RASCIPackage.Literals.RASCI_ELEMENT__INFORMED_ROLE,
+				 RasciPackage.Literals.RASCI_ELEMENT__INFORMED_ROLE,
 				 true,
 				 false,
 				 true,
@@ -222,9 +220,9 @@ public class RasciElementItemProvider extends I18nDescriptiveElementItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 		if (qualify) {
 			return getString

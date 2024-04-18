@@ -2,20 +2,19 @@
  */
 package QWiki.Rasci.tests;
 
-import QWiki.Kernel.tests.I18nDescriptiveElementTest;
-
 import QWiki.Rasci.RasciElement;
+import QWiki.tests.L10nDescriptiveElementTest;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Rasci Element</b></em>'.
+ * A test case for the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class RasciElementTest extends I18nDescriptiveElementTest {
+public abstract class RasciElementTest extends L10nDescriptiveElementTest {
 
 	/**
-	 * Constructs a new Rasci Element test case with the given name.
+	 * Constructs a new Element test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -25,7 +24,7 @@ public abstract class RasciElementTest extends I18nDescriptiveElementTest {
 	}
 
 	/**
-	 * Returns the fixture for this Rasci Element test case.
+	 * Returns the fixture for this Element test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

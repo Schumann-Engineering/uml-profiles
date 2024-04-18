@@ -13,7 +13,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Process Reference Model Domain</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see QWiki.Spice.SPICEPackage#getProcessReferenceModelDomain()
+ * @see QWiki.Spice.SpicePackage#getProcessReferenceModelDomain()
  * @model
  * @generated
  */

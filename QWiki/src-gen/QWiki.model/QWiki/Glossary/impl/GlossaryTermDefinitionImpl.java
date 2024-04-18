@@ -5,10 +5,10 @@ package QWiki.Glossary.impl;
 import QWiki.Glossary.GlossaryPackage;
 import QWiki.Glossary.GlossaryTerm;
 import QWiki.Glossary.GlossaryTermDefinition;
-
-import QWiki.Kernel.impl.I18nDescriptiveElementImpl;
+import QWiki.impl.L10nDescriptiveElementImpl;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *
  * @generated
  */
-public class GlossaryTermDefinitionImpl extends I18nDescriptiveElementImpl implements GlossaryTermDefinition {
+public class GlossaryTermDefinitionImpl extends L10nDescriptiveElementImpl implements GlossaryTermDefinition {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

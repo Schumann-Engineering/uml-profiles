@@ -42,12 +42,12 @@ import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.PartInitException;
 
 /**
- * This is the action bar contributor for the RASCI model editor.
+ * This is the action bar contributor for the Rasci model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RASCIActionBarContributor
+public class RasciActionBarContributor
 	extends EditingDomainActionBarContributor
 	implements ISelectionChangedListener {
 	/**
@@ -150,7 +150,7 @@ public class RASCIActionBarContributor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCIActionBarContributor() {
+	public RasciActionBarContributor() {
 		super(ADDITIONS_LAST_STYLE);
 		loadResourceAction = new LoadResourceAction();
 		validateAction = new ValidateAction();
@@ -181,7 +181,7 @@ public class RASCIActionBarContributor
 	public void contributeToMenu(IMenuManager menuManager) {
 		super.contributeToMenu(menuManager);
 
-		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_RASCIEditor_menu"), "QWiki.RasciMenuID");
+		IMenuManager submenuManager = new MenuManager(QWikiEditPlugin.INSTANCE.getString("_UI_RasciEditor_menu"), "QWiki.RasciMenuID");
 		menuManager.insertAfter("additions", submenuManager);
 		submenuManager.add(new Separator("settings"));
 		submenuManager.add(new Separator("actions"));

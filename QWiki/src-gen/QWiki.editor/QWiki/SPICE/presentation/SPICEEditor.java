@@ -155,21 +155,22 @@ import org.eclipse.emf.edit.ui.util.EditUIUtil;
 
 import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
-import QWiki.Spice.provider.SPICEItemProviderAdapterFactory;
+import QWiki.Spice.provider.SpiceItemProviderAdapterFactory;
 
+import QWiki.Content.provider.ContentItemProviderAdapterFactory;
 import QWiki.Domain.provider.DomainItemProviderAdapterFactory;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
 import QWiki.Glossary.provider.GlossaryItemProviderAdapterFactory;
 
-import QWiki.Kernel.Relationships.provider.RelationshipsItemProviderAdapterFactory;
-
-import QWiki.Kernel.provider.KernelItemProviderAdapterFactory;
-
-import QWiki.Rasci.provider.RASCIItemProviderAdapterFactory;
+import QWiki.Rasci.provider.RasciItemProviderAdapterFactory;
 
 import QWiki.References.provider.ReferencesItemProviderAdapterFactory;
+
+import QWiki.Relationships.provider.RelationshipsItemProviderAdapterFactory;
+
+import QWiki.provider.QWikiItemProviderAdapterFactory;
 
 import org.eclipse.emf.ecore.provider.EcoreItemProviderAdapterFactory;
 
@@ -179,12 +180,12 @@ import org.eclipse.uml2.uml.edit.providers.UMLItemProviderAdapterFactory;
 
 
 /**
- * This is an example of a SPICE model editor.
+ * This is an example of a Spice model editor.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class SPICEEditor
+public class SpiceEditor
 	extends MultiPageEditorPart
 	implements IEditingDomainProvider, ISelectionProvider, IMenuListener, IViewerProvider, IGotoMarker {
 	/**
@@ -347,18 +348,18 @@ public class SPICEEditor
 			public void partActivated(IWorkbenchPart p) {
 				if (p instanceof ContentOutline) {
 					if (((ContentOutline)p).getCurrentPage() == contentOutlinePage) {
-						getActionBarContributor().setActiveEditor(SPICEEditor.this);
+						getActionBarContributor().setActiveEditor(SpiceEditor.this);
 
 						setCurrentViewer(contentOutlineViewer);
 					}
 				}
 				else if (p instanceof PropertySheet) {
 					if (propertySheetPages.contains(((PropertySheet)p).getCurrentPage())) {
-						getActionBarContributor().setActiveEditor(SPICEEditor.this);
+						getActionBarContributor().setActiveEditor(SpiceEditor.this);
 						handleActivate();
 					}
 				}
-				else if (p == SPICEEditor.this) {
+				else if (p == SpiceEditor.this) {
 					handleActivate();
 				}
 			}
@@ -539,7 +540,7 @@ public class SPICEEditor
 								 public void run() {
 									 removedResources.addAll(visitor.getRemovedResources());
 									 if (!isDirty()) {
-										 getSite().getPage().closeEditor(SPICEEditor.this, false);
+										 getSite().getPage().closeEditor(SpiceEditor.this, false);
 									 }
 								 }
 							 });
@@ -551,7 +552,7 @@ public class SPICEEditor
 								 @Override
 								 public void run() {
 									 changedResources.addAll(visitor.getChangedResources());
-									 if (getSite().getPage().getActiveEditor() == SPICEEditor.this) {
+									 if (getSite().getPage().getActiveEditor() == SpiceEditor.this) {
 										 handleActivate();
 									 }
 								 }
@@ -583,7 +584,7 @@ public class SPICEEditor
 
 		if (!removedResources.isEmpty()) {
 			if (handleDirtyConflict()) {
-				getSite().getPage().closeEditor(SPICEEditor.this, false);
+				getSite().getPage().closeEditor(SpiceEditor.this, false);
 			}
 			else {
 				removedResources.clear();
@@ -711,7 +712,7 @@ public class SPICEEditor
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICEEditor() {
+	public SpiceEditor() {
 		super();
 		initializeEditingDomain();
 	}
@@ -728,13 +729,14 @@ public class SPICEEditor
 		adapterFactory = new ComposedAdapterFactory(ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new KernelItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new RelationshipsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new SPICEItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new RASCIItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new ReferencesItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new QWikiItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SpiceItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RasciItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ContentItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new GlossaryItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ReferencesItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DomainItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new RelationshipsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UMLItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
@@ -1063,7 +1065,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1098,7 +1100,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							Tree tree = new Tree(composite, SWT.MULTI);
@@ -1127,7 +1129,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new ListViewer(composite);
@@ -1152,7 +1154,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1179,7 +1181,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TableViewer(composite);
@@ -1222,7 +1224,7 @@ public class SPICEEditor
 			//
 			{
 				ViewerPane viewerPane =
-					new ViewerPane(getSite().getPage(), SPICEEditor.this) {
+					new ViewerPane(getSite().getPage(), SpiceEditor.this) {
 						@Override
 						public Viewer createViewer(Composite composite) {
 							return new TreeViewer(composite);
@@ -1447,8 +1449,8 @@ public class SPICEEditor
 			new ExtendedPropertySheetPage(editingDomain, ExtendedPropertySheetPage.Decoration.NONE, null, 0, false) {
 				@Override
 				public void setSelectionToViewer(List<?> selection) {
-					SPICEEditor.this.setSelectionToViewer(selection);
-					SPICEEditor.this.setFocus();
+					SpiceEditor.this.setSelectionToViewer(selection);
+					SpiceEditor.this.setFocus();
 				}
 
 				@Override

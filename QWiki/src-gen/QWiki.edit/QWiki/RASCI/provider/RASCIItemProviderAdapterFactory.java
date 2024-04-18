@@ -2,7 +2,7 @@
  */
 package QWiki.Rasci.provider;
 
-import QWiki.Rasci.util.RASCIAdapterFactory;
+import QWiki.Rasci.util.RasciAdapterFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -32,7 +32,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RASCIItemProviderAdapterFactory extends RASCIAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+public class RasciItemProviderAdapterFactory extends RasciAdapterFactory implements ComposeableAdapterFactory, IChangeNotifier, IDisposable {
 	/**
 	 * This keeps track of the root adapter factory that delegates to this adapter factory.
 	 * <!-- begin-user-doc -->
@@ -63,7 +63,7 @@ public class RASCIItemProviderAdapterFactory extends RASCIAdapterFactory impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCIItemProviderAdapterFactory() {
+	public RasciItemProviderAdapterFactory() {
 		supportedTypes.add(IEditingDomainItemProvider.class);
 		supportedTypes.add(IStructuredItemContentProvider.class);
 		supportedTypes.add(ITreeItemContentProvider.class);

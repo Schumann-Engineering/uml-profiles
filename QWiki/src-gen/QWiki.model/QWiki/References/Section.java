@@ -4,8 +4,8 @@ package QWiki.References;
 
 import QWiki.Glossary.GlossaryTerm;
 
-import QWiki.Kernel.QWikiElement;
-import QWiki.Kernel.QWikiNamespace;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamespace;
 
 import QWiki.Spice.SpiceElement;
 
@@ -49,7 +49,8 @@ public interface Section extends QWikiNamespace {
 	 * @see #setOwningReferenceVersion(ReferenceVersion)
 	 * @see QWiki.References.ReferencesPackage#getSection_OwningReferenceVersion()
 	 * @see QWiki.References.ReferenceVersion#getOwnedSection
-	 * @model opposite="ownedSection" ordered="false"
+	 * @model opposite="ownedSection" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	ReferenceVersion getOwningReferenceVersion();
@@ -77,7 +78,8 @@ public interface Section extends QWikiNamespace {
 	 * @return the value of the '<em>Owned Section</em>' containment reference list.
 	 * @see QWiki.References.ReferencesPackage#getSection_OwnedSection()
 	 * @see QWiki.References.Section#getOwningSection
-	 * @model opposite="owningSection" containment="true" transient="true" ordered="false"
+	 * @model opposite="owningSection" containment="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Section> getOwnedSection();
@@ -118,7 +120,8 @@ public interface Section extends QWikiNamespace {
 	 * @see #setOwningSection(Section)
 	 * @see QWiki.References.ReferencesPackage#getSection_OwningSection()
 	 * @see QWiki.References.Section#getOwnedSection
-	 * @model opposite="ownedSection" ordered="false"
+	 * @model opposite="ownedSection" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	Section getOwningSection();
@@ -145,6 +148,7 @@ public interface Section extends QWikiNamespace {
 	 * @see #setNumber(String)
 	 * @see QWiki.References.ReferencesPackage#getSection_Number()
 	 * @model required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	String getNumber();
@@ -161,7 +165,7 @@ public interface Section extends QWikiNamespace {
 
 	/**
 	 * Returns the value of the '<em><b>Facilitating Element</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.Kernel.QWikiElement}.
+	 * The list contents are of type {@link QWiki.QWikiElement}.
 	 * This feature is a derived union.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -171,9 +175,10 @@ public interface Section extends QWikiNamespace {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitating Element</em>' reference list.
 	 * @see QWiki.References.ReferencesPackage#getSection_FacilitatingElement()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @model resolveProxies="false" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='facilitatedSection'"
 	 *        annotation="union"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<QWikiElement> getFacilitatingElement();
@@ -191,7 +196,8 @@ public interface Section extends QWikiNamespace {
 	 * @return the value of the '<em>Term</em>' reference list.
 	 * @see QWiki.References.ReferencesPackage#getSection_Term()
 	 * @see QWiki.Glossary.GlossaryTerm#getExternalTermDefinition
-	 * @model opposite="externalTermDefinition" transient="true" ordered="false"
+	 * @model opposite="externalTermDefinition" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<GlossaryTerm> getTerm();
@@ -238,7 +244,8 @@ public interface Section extends QWikiNamespace {
 	 * @return the value of the '<em>Facilitating Spice Element</em>' reference list.
 	 * @see QWiki.References.ReferencesPackage#getSection_FacilitatingSpiceElement()
 	 * @see QWiki.Spice.SpiceElement#getFacilitatedSection
-	 * @model opposite="facilitatedSection" transient="true" ordered="false"
+	 * @model opposite="facilitatedSection" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -272,19 +279,26 @@ public interface Section extends QWikiNamespace {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (owningDocument-&gt;notEmpty()) then owningDocument else owningSection.documentVersion() endif'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='if (owningReferenceVersion-&gt;notEmpty()) then owningReferenceVersion else owningSection.referenceVersion() endif'"
 	 * @generated
 	 */
-	ReferenceVersion documentVersion();
+	ReferenceVersion referenceVersion();
 
 	/**
+	 * <p>
+	 * This operation redefines the following operations:
+	 * <ul>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
+	 * </ul>
+	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='qualifiedNumber() + \'@\' + documentVersion().oid()'"
+	 *        annotation="redefines"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='qualifiedNumber() + \'@\' + referenceVersion().objectId()'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 	/**
 	 * <!-- begin-user-doc -->

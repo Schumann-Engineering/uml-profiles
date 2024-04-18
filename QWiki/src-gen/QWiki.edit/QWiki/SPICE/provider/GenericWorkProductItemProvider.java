@@ -3,11 +3,11 @@
 package QWiki.Spice.provider;
 
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.GenericWorkProduct;
-import QWiki.Spice.SPICEFactory;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceFactory;
+import QWiki.Spice.SpicePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -64,7 +64,7 @@ public class GenericWorkProductItemProvider extends WorkProductItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SPICEPackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
+			childrenFeatures.add(SpicePackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT);
 		}
 		return childrenFeatures;
 	}
@@ -120,7 +120,7 @@ public class GenericWorkProductItemProvider extends WorkProductItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GenericWorkProduct.class)) {
-			case SPICEPackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
+			case SpicePackage.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -140,13 +140,13 @@ public class GenericWorkProductItemProvider extends WorkProductItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT,
-				 SPICEFactory.eINSTANCE.createWorkProduct()));
+				(SpicePackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT,
+				 SpiceFactory.eINSTANCE.createWorkProduct()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT,
-				 SPICEFactory.eINSTANCE.createGenericWorkProduct()));
+				(SpicePackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT,
+				 SpiceFactory.eINSTANCE.createGenericWorkProduct()));
 	}
 
 	/**
@@ -161,10 +161,12 @@ public class GenericWorkProductItemProvider extends WorkProductItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT ||
-			childFeature == SPICEPackage.Literals.WORK_PRODUCT__CHARACTERISTIC;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == SpicePackage.Literals.WORK_PRODUCT__CHARACTERISTIC ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.GENERIC_WORK_PRODUCT__OWNED_WORK_PRODUCT;
 
 		if (qualify) {
 			return getString

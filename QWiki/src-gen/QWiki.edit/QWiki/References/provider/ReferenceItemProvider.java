@@ -5,13 +5,13 @@ package QWiki.References.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.KernelPackage;
-
-import QWiki.Kernel.provider.QWikiContainerItemProvider;
+import QWiki.QWikiPackage;
 
 import QWiki.References.Reference;
 import QWiki.References.ReferencesFactory;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.provider.QWikiContainerItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -178,7 +178,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Reference)object).getName();
+		String label = ((Reference)object).getQualifiedName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Reference_type") :
 			getString("_UI_Reference_type") + " " + label;
@@ -237,9 +237,11 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == ReferencesPackage.Literals.REFERENCE__OWNED_VERSION;
 
 		if (qualify) {
 			return getString

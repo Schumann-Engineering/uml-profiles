@@ -2,8 +2,7 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.I18nNamedElement;
-
+import QWiki.L10nNamedElement;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,11 +22,11 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.Outcome#getOwningProcess <em>Owning Process</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getOutcome()
+ * @see QWiki.Spice.SpicePackage#getOutcome()
  * @model
  * @generated
  */
-public interface Outcome extends I18nNamedElement {
+public interface Outcome extends L10nNamedElement {
 	/**
 	 * Returns the value of the '<em><b>Facilitating Base Practise</b></em>' reference list.
 	 * The list contents are of type {@link QWiki.Spice.BasePractise}.
@@ -39,9 +38,10 @@ public interface Outcome extends I18nNamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitating Base Practise</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getOutcome_FacilitatingBasePractise()
+	 * @see QWiki.Spice.SpicePackage#getOutcome_FacilitatingBasePractise()
 	 * @see QWiki.Spice.BasePractise#getFacilitatedOutcome
-	 * @model opposite="facilitatedOutcome" required="true" transient="true" ordered="false"
+	 * @model opposite="facilitatedOutcome" resolveProxies="false" required="true" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<BasePractise> getFacilitatingBasePractise();
@@ -80,9 +80,10 @@ public interface Outcome extends I18nNamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Required Workproduct</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getOutcome_RequiredWorkproduct()
+	 * @see QWiki.Spice.SpicePackage#getOutcome_RequiredWorkproduct()
 	 * @see QWiki.Spice.WorkProduct#getFacilitatedOutcome
-	 * @model opposite="facilitatedOutcome" transient="true" ordered="false"
+	 * @model opposite="facilitatedOutcome" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProduct> getRequiredWorkproduct();
@@ -122,9 +123,10 @@ public interface Outcome extends I18nNamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Resulting Workproduct</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getOutcome_ResultingWorkproduct()
+	 * @see QWiki.Spice.SpicePackage#getOutcome_ResultingWorkproduct()
 	 * @see QWiki.Spice.WorkProduct#getFacilitatingOutcome
-	 * @model opposite="facilitatingOutcome" transient="true" ordered="false"
+	 * @model opposite="facilitatingOutcome" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProduct> getResultingWorkproduct();
@@ -170,9 +172,10 @@ public interface Outcome extends I18nNamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owning Process</em>' container reference.
 	 * @see #setOwningProcess(QWiki.Spice.Process)
-	 * @see QWiki.Spice.SPICEPackage#getOutcome_OwningProcess()
+	 * @see QWiki.Spice.SpicePackage#getOutcome_OwningProcess()
 	 * @see QWiki.Spice.Process#getOwnedOutcome
-	 * @model opposite="ownedOutcome" ordered="false"
+	 * @model opposite="ownedOutcome" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -192,16 +195,16 @@ public interface Outcome extends I18nNamedElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 *        annotation="redefines"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'oc/\' + uuid + \'@\' + owningProcess.oid()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'oc/\' + self.uuid + \'@\' + self.owningProcess.objectId()'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // Outcome

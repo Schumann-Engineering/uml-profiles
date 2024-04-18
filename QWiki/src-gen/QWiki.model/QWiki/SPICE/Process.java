@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.Process#getOwnedBasePractise <em>Owned Base Practise</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getProcess()
+ * @see QWiki.Spice.SpicePackage#getProcess()
  * @model
  * @generated
  */
@@ -44,9 +44,10 @@ public interface Process extends SpiceElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owning Process Group</em>' container reference.
 	 * @see #setOwningProcessGroup(ProcessGroup)
-	 * @see QWiki.Spice.SPICEPackage#getProcess_OwningProcessGroup()
+	 * @see QWiki.Spice.SpicePackage#getProcess_OwningProcessGroup()
 	 * @see QWiki.Spice.ProcessGroup#getOwnedProcess
-	 * @model opposite="ownedProcess" ordered="false"
+	 * @model opposite="ownedProcess" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -79,9 +80,10 @@ public interface Process extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Outcome</em>' containment reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcess_OwnedOutcome()
+	 * @see QWiki.Spice.SpicePackage#getProcess_OwnedOutcome()
 	 * @see QWiki.Spice.Outcome#getOwningProcess
-	 * @model opposite="owningProcess" containment="true" transient="true"
+	 * @model opposite="owningProcess" containment="true"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -121,9 +123,10 @@ public interface Process extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitating Work Product</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcess_FacilitatingWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getProcess_FacilitatingWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getFacilitatedProcess
-	 * @model opposite="facilitatedProcess" transient="true" ordered="false"
+	 * @model opposite="facilitatedProcess" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProduct> getFacilitatingWorkProduct();
@@ -163,9 +166,10 @@ public interface Process extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitated Work Product</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcess_FacilitatedWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getProcess_FacilitatedWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getFacilitatingProcess
-	 * @model opposite="facilitatingProcess" transient="true" ordered="false"
+	 * @model opposite="facilitatingProcess" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProduct> getFacilitatedWorkProduct();
@@ -211,9 +215,10 @@ public interface Process extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Base Practise</em>' containment reference list.
-	 * @see QWiki.Spice.SPICEPackage#getProcess_OwnedBasePractise()
+	 * @see QWiki.Spice.SpicePackage#getProcess_OwnedBasePractise()
 	 * @see QWiki.Spice.BasePractise#getOwningProcess
-	 * @model opposite="owningProcess" containment="true" transient="true"
+	 * @model opposite="owningProcess" containment="true"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -246,16 +251,16 @@ public interface Process extends SpiceElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 *        annotation="redefines"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='owningProcessGroup.oid() +  \'.\' + number'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='owningProcessGroup.objectId() +  \'.\' + number'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // Process

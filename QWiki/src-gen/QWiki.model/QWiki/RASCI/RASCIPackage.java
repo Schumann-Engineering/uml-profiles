@@ -2,7 +2,7 @@
  */
 package QWiki.Rasci;
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
@@ -21,13 +21,12 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see QWiki.Rasci.RASCIFactory
+ * @see QWiki.Rasci.RasciFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='RASCI'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
-public interface RASCIPackage extends EPackage {
+public interface RasciPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -50,7 +49,7 @@ public interface RASCIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "QWiki.RASCI";
+	String eNS_PREFIX = "QWiki.Rasci";
 
 	/**
 	 * The singleton instance of the package.
@@ -58,14 +57,14 @@ public interface RASCIPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	RASCIPackage eINSTANCE = QWiki.Rasci.impl.RASCIPackageImpl.init();
+	RasciPackage eINSTANCE = QWiki.Rasci.impl.RasciPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link QWiki.Rasci.impl.RoleImpl <em>Role</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Rasci.impl.RoleImpl
-	 * @see QWiki.Rasci.impl.RASCIPackageImpl#getRole()
+	 * @see QWiki.Rasci.impl.RasciPackageImpl#getRole()
 	 * @generated
 	 */
 	int ROLE = 0;
@@ -77,7 +76,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__EANNOTATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
+	int ROLE__EANNOTATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -86,7 +85,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OWNED_COMMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
+	int ROLE__OWNED_COMMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -95,7 +94,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OWNED_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
+	int ROLE__OWNED_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -104,7 +103,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__OWNER = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNER;
+	int ROLE__OWNER = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -113,7 +112,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CLIENT_DEPENDENCY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
+	int ROLE__CLIENT_DEPENDENCY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -122,7 +121,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME;
+	int ROLE__NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -131,7 +130,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAME_EXPRESSION = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
+	int ROLE__NAME_EXPRESSION = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -140,7 +139,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+	int ROLE__NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -149,7 +148,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
+	int ROLE__QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -158,7 +157,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__VISIBILITY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__VISIBILITY;
+	int ROLE__VISIBILITY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -167,7 +166,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__UUID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__UUID;
+	int ROLE__UUID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -176,7 +175,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CUSTOM_PROPERTY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
+	int ROLE__CUSTOM_PROPERTY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -185,7 +184,16 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__TAG = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__TAG;
+	int ROLE__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROLE__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -194,7 +202,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__DISPLAY_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
+	int ROLE__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
@@ -203,7 +211,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__PURPOSE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE;
+	int ROLE__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -212,7 +220,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CONTENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+	int ROLE__CONTENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Skills</b></em>' containment reference.
@@ -221,7 +229,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SKILLS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
+	int ROLE__SKILLS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Element</b></em>' reference list.
@@ -230,7 +238,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__RESPONSIBLE_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
+	int ROLE__RESPONSIBLE_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Accountable Element</b></em>' reference list.
@@ -239,7 +247,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__ACCOUNTABLE_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 2;
+	int ROLE__ACCOUNTABLE_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Supporting Element</b></em>' reference list.
@@ -248,7 +256,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__SUPPORTING_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 3;
+	int ROLE__SUPPORTING_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Consulting Element</b></em>' reference list.
@@ -257,7 +265,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__CONSULTING_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 4;
+	int ROLE__CONSULTING_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Informed Element</b></em>' reference list.
@@ -266,7 +274,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE__INFORMED_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 5;
+	int ROLE__INFORMED_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Role</em>' class.
@@ -275,7 +283,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_FEATURE_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 6;
+	int ROLE_FEATURE_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -284,7 +292,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
+	int ROLE___GET_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -293,7 +301,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int ROLE___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -302,7 +310,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int ROLE___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -311,7 +319,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___ADD_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
+	int ROLE___ADD_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -320,7 +328,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int ROLE___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -329,7 +337,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___CREATE_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
+	int ROLE___CREATE_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -338,7 +346,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___DESTROY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___DESTROY;
+	int ROLE___DESTROY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -347,7 +355,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_KEYWORDS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
+	int ROLE___GET_KEYWORDS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -356,7 +364,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int ROLE___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -365,7 +373,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLICABLE_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int ROLE___GET_APPLICABLE_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -374,7 +382,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int ROLE___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -383,7 +391,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLIED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int ROLE___GET_APPLIED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -392,7 +400,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int ROLE___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -401,7 +409,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int ROLE___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -410,7 +418,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_MODEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_MODEL;
+	int ROLE___GET_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -419,7 +427,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_NEAREST_PACKAGE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
+	int ROLE___GET_NEAREST_PACKAGE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -428,7 +436,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
+	int ROLE___GET_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -437,7 +445,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int ROLE___GET_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -446,7 +454,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int ROLE___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -455,7 +463,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_REQUIRED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int ROLE___GET_REQUIRED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -464,7 +472,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int ROLE___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -473,7 +481,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int ROLE___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -482,7 +490,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int ROLE___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -491,7 +499,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_STEREOTYPE_APPLICATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int ROLE___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -500,7 +508,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int ROLE___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -509,7 +517,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int ROLE___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -518,7 +526,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int ROLE___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -527,7 +535,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___HAS_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
+	int ROLE___HAS_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -536,7 +544,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int ROLE___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -545,7 +553,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int ROLE___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -554,7 +562,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int ROLE___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -563,7 +571,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int ROLE___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -572,7 +580,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___REMOVE_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
+	int ROLE___REMOVE_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -581,7 +589,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int ROLE___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -590,7 +598,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int ROLE___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -599,7 +607,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___ALL_OWNED_ELEMENTS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
+	int ROLE___ALL_OWNED_ELEMENTS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -608,7 +616,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___MUST_BE_OWNED = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
+	int ROLE___MUST_BE_OWNED = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -617,7 +625,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int ROLE___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -626,7 +634,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int ROLE___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -635,7 +643,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int ROLE___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -644,7 +652,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int ROLE___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -653,7 +661,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___CREATE_USAGE__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int ROLE___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -662,7 +670,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_LABEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL;
+	int ROLE___GET_LABEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -671,7 +679,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_LABEL__BOOLEAN = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
+	int ROLE___GET_LABEL__BOOLEAN = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -680,7 +688,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
+	int ROLE___GET_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -689,7 +697,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___ALL_NAMESPACES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+	int ROLE___ALL_NAMESPACES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -698,7 +706,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___ALL_OWNING_PACKAGES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
+	int ROLE___ALL_OWNING_PACKAGES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -707,7 +715,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int ROLE___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -716,7 +724,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
+	int ROLE___GET_QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -725,7 +733,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___SEPARATOR = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+	int ROLE___SEPARATOR = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -734,286 +742,25 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int ROLE___GET_CLIENT_DEPENDENCIES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___OID_BASIC = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___OID_BASIC;
+	int ROLE___QWIKI_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___QWIKI_MODEL;
 
 	/**
-	 * The operation id for the '<em>Oid</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Oid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROLE___OID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+	int ROLE___OBJECT_ID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Role</em>' class.
@@ -1022,14 +769,14 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROLE_OPERATION_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 1;
+	int ROLE_OPERATION_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link QWiki.Rasci.impl.RasciElementImpl <em>Rasci Element</em>}' class.
+	 * The meta object id for the '{@link QWiki.Rasci.impl.RasciElementImpl <em>Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see QWiki.Rasci.impl.RasciElementImpl
-	 * @see QWiki.Rasci.impl.RASCIPackageImpl#getRasciElement()
+	 * @see QWiki.Rasci.impl.RasciPackageImpl#getRasciElement()
 	 * @generated
 	 */
 	int RASCI_ELEMENT = 1;
@@ -1041,7 +788,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__EANNOTATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
+	int RASCI_ELEMENT__EANNOTATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__EANNOTATIONS;
 
 	/**
 	 * The feature id for the '<em><b>Owned Comment</b></em>' containment reference list.
@@ -1050,7 +797,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__OWNED_COMMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
+	int RASCI_ELEMENT__OWNED_COMMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_COMMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owned Element</b></em>' reference list.
@@ -1059,7 +806,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__OWNED_ELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
+	int RASCI_ELEMENT__OWNED_ELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNED_ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Owner</b></em>' reference.
@@ -1068,7 +815,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__OWNER = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__OWNER;
+	int RASCI_ELEMENT__OWNER = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__OWNER;
 
 	/**
 	 * The feature id for the '<em><b>Client Dependency</b></em>' reference list.
@@ -1077,7 +824,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__CLIENT_DEPENDENCY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
+	int RASCI_ELEMENT__CLIENT_DEPENDENCY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CLIENT_DEPENDENCY;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1086,7 +833,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME;
+	int RASCI_ELEMENT__NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Name Expression</b></em>' containment reference.
@@ -1095,7 +842,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__NAME_EXPRESSION = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
+	int RASCI_ELEMENT__NAME_EXPRESSION = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAME_EXPRESSION;
 
 	/**
 	 * The feature id for the '<em><b>Namespace</b></em>' reference.
@@ -1104,7 +851,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__NAMESPACE;
+	int RASCI_ELEMENT__NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Qualified Name</b></em>' attribute.
@@ -1113,7 +860,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
+	int RASCI_ELEMENT__QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QUALIFIED_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Visibility</b></em>' attribute.
@@ -1122,7 +869,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__VISIBILITY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__VISIBILITY;
+	int RASCI_ELEMENT__VISIBILITY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__VISIBILITY;
 
 	/**
 	 * The feature id for the '<em><b>Uuid</b></em>' attribute.
@@ -1131,7 +878,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__UUID = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__UUID;
+	int RASCI_ELEMENT__UUID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__UUID;
 
 	/**
 	 * The feature id for the '<em><b>Custom Property</b></em>' containment reference list.
@@ -1140,7 +887,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__CUSTOM_PROPERTY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
+	int RASCI_ELEMENT__CUSTOM_PROPERTY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CUSTOM_PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' attribute list.
@@ -1149,7 +896,16 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__TAG = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__TAG;
+	int RASCI_ELEMENT__TAG = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__TAG;
+
+	/**
+	 * The feature id for the '<em><b>Qwiki Namespace</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT__QWIKI_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__QWIKI_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Display Name</b></em>' containment reference.
@@ -1158,7 +914,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__DISPLAY_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
+	int RASCI_ELEMENT__DISPLAY_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__DISPLAY_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Purpose</b></em>' containment reference.
@@ -1167,7 +923,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__PURPOSE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE;
+	int RASCI_ELEMENT__PURPOSE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -1176,7 +932,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__CONTENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+	int RASCI_ELEMENT__CONTENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Responsible Role</b></em>' reference list.
@@ -1185,7 +941,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__RESPONSIBLE_ROLE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
+	int RASCI_ELEMENT__RESPONSIBLE_ROLE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Accountable Role</b></em>' reference.
@@ -1194,7 +950,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__ACCOUNTABLE_ROLE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
+	int RASCI_ELEMENT__ACCOUNTABLE_ROLE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Support Role</b></em>' reference list.
@@ -1203,7 +959,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__SUPPORT_ROLE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 2;
+	int RASCI_ELEMENT__SUPPORT_ROLE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Consulted Role</b></em>' reference list.
@@ -1212,7 +968,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__CONSULTED_ROLE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 3;
+	int RASCI_ELEMENT__CONSULTED_ROLE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Informed Role</b></em>' reference list.
@@ -1221,16 +977,16 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT__INFORMED_ROLE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 4;
+	int RASCI_ELEMENT__INFORMED_ROLE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Rasci Element</em>' class.
+	 * The number of structural features of the '<em>Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT_FEATURE_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 5;
+	int RASCI_ELEMENT_FEATURE_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get EAnnotation</em>' operation.
@@ -1239,7 +995,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
+	int RASCI_ELEMENT___GET_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Validate Has Owner</em>' operation.
@@ -1248,7 +1004,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
+	int RASCI_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_OWNER__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Not Own Self</em>' operation.
@@ -1257,7 +1013,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
+	int RASCI_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_NOT_OWN_SELF__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Add Keyword</em>' operation.
@@ -1266,7 +1022,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___ADD_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
+	int RASCI_ELEMENT___ADD_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ADD_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Apply Stereotype</em>' operation.
@@ -1275,7 +1031,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
+	int RASCI_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___APPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Create EAnnotation</em>' operation.
@@ -1284,7 +1040,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___CREATE_EANNOTATION__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
+	int RASCI_ELEMENT___CREATE_EANNOTATION__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_EANNOTATION__STRING;
 
 	/**
 	 * The operation id for the '<em>Destroy</em>' operation.
@@ -1293,7 +1049,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___DESTROY = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___DESTROY;
+	int RASCI_ELEMENT___DESTROY = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___DESTROY;
 
 	/**
 	 * The operation id for the '<em>Get Keywords</em>' operation.
@@ -1302,7 +1058,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_KEYWORDS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
+	int RASCI_ELEMENT___GET_KEYWORDS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_KEYWORDS;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotype</em>' operation.
@@ -1311,7 +1067,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
+	int RASCI_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applicable Stereotypes</em>' operation.
@@ -1320,7 +1076,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLICABLE_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
+	int RASCI_ELEMENT___GET_APPLICABLE_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLICABLE_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotype</em>' operation.
@@ -1329,7 +1085,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
+	int RASCI_ELEMENT___GET_APPLIED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Stereotypes</em>' operation.
@@ -1338,7 +1094,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLIED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
+	int RASCI_ELEMENT___GET_APPLIED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotype</em>' operation.
@@ -1347,7 +1103,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
+	int RASCI_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Get Applied Substereotypes</em>' operation.
@@ -1356,7 +1112,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
+	int RASCI_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_APPLIED_SUBSTEREOTYPES__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Model</em>' operation.
@@ -1365,7 +1121,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_MODEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_MODEL;
+	int RASCI_ELEMENT___GET_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_MODEL;
 
 	/**
 	 * The operation id for the '<em>Get Nearest Package</em>' operation.
@@ -1374,7 +1130,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_NEAREST_PACKAGE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
+	int RASCI_ELEMENT___GET_NEAREST_PACKAGE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NEAREST_PACKAGE;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1383,7 +1139,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
+	int RASCI_ELEMENT___GET_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Relationships</em>' operation.
@@ -1392,7 +1148,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
+	int RASCI_ELEMENT___GET_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotype</em>' operation.
@@ -1401,7 +1157,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
+	int RASCI_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPE__STRING;
 
 	/**
 	 * The operation id for the '<em>Get Required Stereotypes</em>' operation.
@@ -1410,7 +1166,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_REQUIRED_STEREOTYPES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
+	int RASCI_ELEMENT___GET_REQUIRED_STEREOTYPES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_REQUIRED_STEREOTYPES;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1419,7 +1175,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
+	int RASCI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Source Directed Relationships</em>' operation.
@@ -1428,7 +1184,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
+	int RASCI_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_SOURCE_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Application</em>' operation.
@@ -1437,7 +1193,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
+	int RASCI_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATION__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Get Stereotype Applications</em>' operation.
@@ -1446,7 +1202,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_STEREOTYPE_APPLICATIONS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
+	int RASCI_ELEMENT___GET_STEREOTYPE_APPLICATIONS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_STEREOTYPE_APPLICATIONS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1455,7 +1211,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
+	int RASCI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS;
 
 	/**
 	 * The operation id for the '<em>Get Target Directed Relationships</em>' operation.
@@ -1464,7 +1220,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
+	int RASCI_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_TARGET_DIRECTED_RELATIONSHIPS__ECLASS;
 
 	/**
 	 * The operation id for the '<em>Get Value</em>' operation.
@@ -1473,7 +1229,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
+	int RASCI_ELEMENT___GET_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Has Keyword</em>' operation.
@@ -1482,7 +1238,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___HAS_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
+	int RASCI_ELEMENT___HAS_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Has Value</em>' operation.
@@ -1491,7 +1247,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
+	int RASCI_ELEMENT___HAS_VALUE__STEREOTYPE_STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___HAS_VALUE__STEREOTYPE_STRING;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applicable</em>' operation.
@@ -1500,7 +1256,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
+	int RASCI_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLICABLE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Applied</em>' operation.
@@ -1509,7 +1265,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
+	int RASCI_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_APPLIED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Is Stereotype Required</em>' operation.
@@ -1518,7 +1274,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
+	int RASCI_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_STEREOTYPE_REQUIRED__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>Remove Keyword</em>' operation.
@@ -1527,7 +1283,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___REMOVE_KEYWORD__STRING = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
+	int RASCI_ELEMENT___REMOVE_KEYWORD__STRING = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___REMOVE_KEYWORD__STRING;
 
 	/**
 	 * The operation id for the '<em>Set Value</em>' operation.
@@ -1536,7 +1292,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
+	int RASCI_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SET_VALUE__STEREOTYPE_STRING_OBJECT;
 
 	/**
 	 * The operation id for the '<em>Unapply Stereotype</em>' operation.
@@ -1545,7 +1301,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
+	int RASCI_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___UNAPPLY_STEREOTYPE__STEREOTYPE;
 
 	/**
 	 * The operation id for the '<em>All Owned Elements</em>' operation.
@@ -1554,7 +1310,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___ALL_OWNED_ELEMENTS = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
+	int RASCI_ELEMENT___ALL_OWNED_ELEMENTS = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNED_ELEMENTS;
 
 	/**
 	 * The operation id for the '<em>Must Be Owned</em>' operation.
@@ -1563,7 +1319,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___MUST_BE_OWNED = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
+	int RASCI_ELEMENT___MUST_BE_OWNED = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___MUST_BE_OWNED;
 
 	/**
 	 * The operation id for the '<em>Validate Visibility Needs Ownership</em>' operation.
@@ -1572,7 +1328,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
+	int RASCI_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_VISIBILITY_NEEDS_OWNERSHIP__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has Qualified Name</em>' operation.
@@ -1581,7 +1337,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int RASCI_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Validate Has No Qualified Name</em>' operation.
@@ -1590,7 +1346,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
+	int RASCI_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___VALIDATE_HAS_NO_QUALIFIED_NAME__DIAGNOSTICCHAIN_MAP;
 
 	/**
 	 * The operation id for the '<em>Create Dependency</em>' operation.
@@ -1599,7 +1355,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
+	int RASCI_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_DEPENDENCY__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Create Usage</em>' operation.
@@ -1608,7 +1364,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___CREATE_USAGE__NAMEDELEMENT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
+	int RASCI_ELEMENT___CREATE_USAGE__NAMEDELEMENT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___CREATE_USAGE__NAMEDELEMENT;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1617,7 +1373,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_LABEL = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL;
+	int RASCI_ELEMENT___GET_LABEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL;
 
 	/**
 	 * The operation id for the '<em>Get Label</em>' operation.
@@ -1626,7 +1382,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_LABEL__BOOLEAN = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
+	int RASCI_ELEMENT___GET_LABEL__BOOLEAN = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_LABEL__BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Get Namespace</em>' operation.
@@ -1635,7 +1391,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
+	int RASCI_ELEMENT___GET_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>All Namespaces</em>' operation.
@@ -1644,7 +1400,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___ALL_NAMESPACES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
+	int RASCI_ELEMENT___ALL_NAMESPACES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_NAMESPACES;
 
 	/**
 	 * The operation id for the '<em>All Owning Packages</em>' operation.
@@ -1653,7 +1409,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___ALL_OWNING_PACKAGES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
+	int RASCI_ELEMENT___ALL_OWNING_PACKAGES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___ALL_OWNING_PACKAGES;
 
 	/**
 	 * The operation id for the '<em>Is Distinguishable From</em>' operation.
@@ -1662,7 +1418,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
+	int RASCI_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___IS_DISTINGUISHABLE_FROM__NAMEDELEMENT_NAMESPACE;
 
 	/**
 	 * The operation id for the '<em>Get Qualified Name</em>' operation.
@@ -1671,7 +1427,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_QUALIFIED_NAME = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
+	int RASCI_ELEMENT___GET_QUALIFIED_NAME = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_QUALIFIED_NAME;
 
 	/**
 	 * The operation id for the '<em>Separator</em>' operation.
@@ -1680,7 +1436,7 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___SEPARATOR = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___SEPARATOR;
+	int RASCI_ELEMENT___SEPARATOR = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___SEPARATOR;
 
 	/**
 	 * The operation id for the '<em>Get Client Dependencies</em>' operation.
@@ -1689,25 +1445,34 @@ public interface RASCIPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___GET_CLIENT_DEPENDENCIES = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
+	int RASCI_ELEMENT___GET_CLIENT_DEPENDENCIES = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___GET_CLIENT_DEPENDENCIES;
 
 	/**
-	 * The operation id for the '<em>Oid Basic</em>' operation.
+	 * The operation id for the '<em>Object Id</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT___OID_BASIC = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT___OID_BASIC;
+	int RASCI_ELEMENT___OBJECT_ID = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___OBJECT_ID;
 
 	/**
-	 * The number of operations of the '<em>Rasci Element</em>' class.
+	 * The operation id for the '<em>Qwiki Model</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RASCI_ELEMENT_OPERATION_COUNT = KernelPackage.I1_8N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
+	int RASCI_ELEMENT___QWIKI_MODEL = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT___QWIKI_MODEL;
+
+	/**
+	 * The number of operations of the '<em>Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RASCI_ELEMENT_OPERATION_COUNT = QWikiPackage.L1_0N_DESCRIPTIVE_ELEMENT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1787,20 +1552,20 @@ public interface RASCIPackage extends EPackage {
 	EReference getRole_InformedElement();
 
 	/**
-	 * Returns the meta object for the '{@link QWiki.Rasci.Role#oid() <em>Oid</em>}' operation.
+	 * Returns the meta object for the '{@link QWiki.Rasci.Role#objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Oid</em>' operation.
-	 * @see QWiki.Rasci.Role#oid()
+	 * @return the meta object for the '<em>Object Id</em>' operation.
+	 * @see QWiki.Rasci.Role#objectId()
 	 * @generated
 	 */
-	EOperation getRole__Oid();
+	EOperation getRole__ObjectId();
 
 	/**
-	 * Returns the meta object for class '{@link QWiki.Rasci.RasciElement <em>Rasci Element</em>}'.
+	 * Returns the meta object for class '{@link QWiki.Rasci.RasciElement <em>Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rasci Element</em>'.
+	 * @return the meta object for class '<em>Element</em>'.
 	 * @see QWiki.Rasci.RasciElement
 	 * @generated
 	 */
@@ -1868,7 +1633,7 @@ public interface RASCIPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	RASCIFactory getRASCIFactory();
+	RasciFactory getRasciFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1889,7 +1654,7 @@ public interface RASCIPackage extends EPackage {
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Rasci.impl.RoleImpl
-		 * @see QWiki.Rasci.impl.RASCIPackageImpl#getRole()
+		 * @see QWiki.Rasci.impl.RasciPackageImpl#getRole()
 		 * @generated
 		 */
 		EClass ROLE = eINSTANCE.getRole();
@@ -1943,19 +1708,19 @@ public interface RASCIPackage extends EPackage {
 		EReference ROLE__INFORMED_ELEMENT = eINSTANCE.getRole_InformedElement();
 
 		/**
-		 * The meta object literal for the '<em><b>Oid</b></em>' operation.
+		 * The meta object literal for the '<em><b>Object Id</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation ROLE___OID = eINSTANCE.getRole__Oid();
+		EOperation ROLE___OBJECT_ID = eINSTANCE.getRole__ObjectId();
 
 		/**
-		 * The meta object literal for the '{@link QWiki.Rasci.impl.RasciElementImpl <em>Rasci Element</em>}' class.
+		 * The meta object literal for the '{@link QWiki.Rasci.impl.RasciElementImpl <em>Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @see QWiki.Rasci.impl.RasciElementImpl
-		 * @see QWiki.Rasci.impl.RASCIPackageImpl#getRasciElement()
+		 * @see QWiki.Rasci.impl.RasciPackageImpl#getRasciElement()
 		 * @generated
 		 */
 		EClass RASCI_ELEMENT = eINSTANCE.getRasciElement();
@@ -2002,4 +1767,4 @@ public interface RASCIPackage extends EPackage {
 
 	}
 
-} //RASCIPackage
+} //RasciPackage

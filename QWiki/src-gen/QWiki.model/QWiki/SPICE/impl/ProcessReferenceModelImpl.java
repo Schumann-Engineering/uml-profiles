@@ -2,12 +2,17 @@
  */
 package QWiki.Spice.impl;
 
-import QWiki.Kernel.impl.QWikiContainerImpl;
+import QWiki.QWikiElement;
+import QWiki.QWikiNamedElement;
+import QWiki.QWikiNamespace;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.ProcessReferenceModel;
 import QWiki.Spice.ProcessReferenceModelDomain;
-import QWiki.Spice.SPICEPackage;
 import QWiki.Spice.SpiceElement;
+import QWiki.Spice.SpicePackage;
+
+import QWiki.impl.QWikiContainerImpl;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -115,7 +120,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return SPICEPackage.Literals.PROCESS_REFERENCE_MODEL;
+		return SpicePackage.Literals.PROCESS_REFERENCE_MODEL;
 	}
 
 	/**
@@ -125,7 +130,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 */
 	@Override
 	public EList<NamedElement> getOwnedMembers() {
-		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
+		return new DerivedUnionEObjectEList<NamedElement>(NamedElement.class, this, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER, OWNED_MEMBER_ESUBSETS);
 	}
 
 	/**
@@ -136,7 +141,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_RULE, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
+	protected static final int[] OWNED_MEMBER_ESUBSETS = new int[] {SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_RULE, SpicePackage.PROCESS_REFERENCE_MODEL__QWIKI_ELEMENT, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT};
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -158,7 +163,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 		boolean oldIsNonStandard = isNonStandard;
 		isNonStandard = newIsNonStandard;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD, oldIsNonStandard, isNonStandard));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD, oldIsNonStandard, isNonStandard));
 	}
 
 	/**
@@ -181,7 +186,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 		ProcessReferenceModelDomain oldPrmDomain = prmDomain;
 		prmDomain = newPrmDomain == null ? PRM_DOMAIN_EDEFAULT : newPrmDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN, oldPrmDomain, prmDomain));
+			eNotify(new ENotificationImpl(this, Notification.SET, SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN, oldPrmDomain, prmDomain));
 	}
 
 	/**
@@ -192,7 +197,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public EList<SpiceElement> getOwnedSpiceElement() {
 		if (ownedSpiceElement == null) {
-			ownedSpiceElement = new EObjectContainmentWithInverseEList<SpiceElement>(SpiceElement.class, this, SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, SPICEPackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL);
+			ownedSpiceElement = new EObjectContainmentWithInverseEList<SpiceElement>(SpiceElement.class, this, SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT, SpicePackage.SPICE_ELEMENT__OWNING_PROCESS_REFERENCE_MODEL);
 		}
 		return ownedSpiceElement;
 	}
@@ -223,23 +228,23 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oidForDomain() <em>Oid For Domain</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectIdForDomain() <em>Object Id For Domain</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oidForDomain()
+	 * @see #objectIdForDomain()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID_FOR_DOMAIN__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID_FOR_DOMAIN__EINVOCATION_DELEGATE = ((EOperation.Internal)SpicePackage.Literals.PROCESS_REFERENCE_MODEL___OBJECT_ID_FOR_DOMAIN).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oidForDomain() {
+	public String objectIdForDomain() {
 		try {
-			return (String)OID_FOR_DOMAIN__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID_FOR_DOMAIN__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -247,23 +252,23 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	}
 
 	/**
-	 * The cached invocation delegate for the '{@link #oid() <em>Oid</em>}' operation.
+	 * The cached invocation delegate for the '{@link #objectId() <em>Object Id</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #oid()
+	 * @see #objectId()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final EOperation.Internal.InvocationDelegate OID__EINVOCATION_DELEGATE = ((EOperation.Internal)SPICEPackage.Literals.PROCESS_REFERENCE_MODEL___OID).getInvocationDelegate();
+	protected static final EOperation.Internal.InvocationDelegate OBJECT_ID__EINVOCATION_DELEGATE = ((EOperation.Internal)SpicePackage.Literals.PROCESS_REFERENCE_MODEL___OBJECT_ID).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String oid() {
+	public String objectId() {
 		try {
-			return (String)OID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+			return (String)OBJECT_ID__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
 		catch (InvocationTargetException ite) {
 			throw new WrappedException(ite);
@@ -279,7 +284,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedSpiceElement()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -293,7 +298,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				return ((InternalEList<?>)getOwnedSpiceElement()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -307,11 +312,11 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
 				return isNonStandard();
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
 				return getPrmDomain();
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				return getOwnedSpiceElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -326,13 +331,13 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
 				setIsNonStandard((Boolean)newValue);
 				return;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
 				setPrmDomain((ProcessReferenceModelDomain)newValue);
 				return;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				getOwnedSpiceElement().clear();
 				getOwnedSpiceElement().addAll((Collection<? extends SpiceElement>)newValue);
 				return;
@@ -348,13 +353,13 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
 				setIsNonStandard(IS_NON_STANDARD_EDEFAULT);
 				return;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
 				setPrmDomain(PRM_DOMAIN_EDEFAULT);
 				return;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				getOwnedSpiceElement().clear();
 				return;
 		}
@@ -369,13 +374,13 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_MEMBER:
 				return isSetOwnedMembers();
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__IS_NON_STANDARD:
 				return isNonStandard != IS_NON_STANDARD_EDEFAULT;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__PRM_DOMAIN:
 				return prmDomain != PRM_DOMAIN_EDEFAULT;
-			case SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
+			case SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT:
 				return ownedSpiceElement != null && !ownedSpiceElement.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -387,12 +392,40 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	 * @generated
 	 */
 	@Override
+	public int eDerivedOperationID(int baseOperationID, Class<?> baseClass) {
+		if (baseClass == QWikiElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS_REFERENCE_MODEL___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamedElement.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMED_ELEMENT___OBJECT_ID: return SpicePackage.PROCESS_REFERENCE_MODEL___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		if (baseClass == QWikiNamespace.class) {
+			switch (baseOperationID) {
+				case QWikiPackage.QWIKI_NAMESPACE___OBJECT_ID: return SpicePackage.PROCESS_REFERENCE_MODEL___OBJECT_ID;
+				default: return super.eDerivedOperationID(baseOperationID, baseClass);
+			}
+		}
+		return super.eDerivedOperationID(baseOperationID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case SPICEPackage.PROCESS_REFERENCE_MODEL___OID_FOR_DOMAIN:
-				return oidForDomain();
-			case SPICEPackage.PROCESS_REFERENCE_MODEL___OID:
-				return oid();
+			case SpicePackage.PROCESS_REFERENCE_MODEL___OBJECT_ID_FOR_DOMAIN:
+				return objectIdForDomain();
+			case SpicePackage.PROCESS_REFERENCE_MODEL___OBJECT_ID:
+				return objectId();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -423,7 +456,7 @@ public class ProcessReferenceModelImpl extends QWikiContainerImpl implements Pro
 	@Override
 	public boolean isSetOwnedMembers() {
 		return super.isSetOwnedMembers()
-			|| eIsSet(SPICEPackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
+			|| eIsSet(SpicePackage.PROCESS_REFERENCE_MODEL__OWNED_SPICE_ELEMENT);
 	}
 
 } //ProcessReferenceModelImpl

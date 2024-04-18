@@ -2,9 +2,9 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.I18nString;
-
+import QWiki.L10nString;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 
 /**
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.EClass;
  *   <li>{@link QWiki.Spice.WorkProduct#getFacilitatedOutcome <em>Facilitated Outcome</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getWorkProduct()
+ * @see QWiki.Spice.SpicePackage#getWorkProduct()
  * @model
  * @generated
  */
@@ -51,10 +51,10 @@ public interface WorkProduct extends SpiceElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owning Work Product Group</em>' container reference.
 	 * @see #setOwningWorkProductGroup(GenericWorkProduct)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_OwningWorkProductGroup()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_OwningWorkProductGroup()
 	 * @see QWiki.Spice.GenericWorkProduct#getOwnedWorkProduct
-	 * @model opposite="ownedWorkProduct" ordered="false"
-	 *        extendedMetaData="kind='attribute'"
+	 * @model opposite="ownedWorkProduct" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -79,12 +79,12 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Characteristic</em>' containment reference.
-	 * @see #setCharacteristic(I18nString)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_Characteristic()
+	 * @see #setCharacteristic(L10nString)
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_Characteristic()
 	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
-	I18nString getCharacteristic();
+	L10nString getCharacteristic();
 
 	/**
 	 * Sets the value of the '{@link QWiki.Spice.WorkProduct#getCharacteristic <em>Characteristic</em>}' containment reference.
@@ -94,7 +94,7 @@ public interface WorkProduct extends SpiceElement {
 	 * @see #getCharacteristic()
 	 * @generated
 	 */
-	void setCharacteristic(I18nString value);
+	void setCharacteristic(L10nString value);
 
 	/**
 	 * Returns the value of the '<em><b>Facilitating Outcome</b></em>' reference list.
@@ -107,9 +107,9 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitating Outcome</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_FacilitatingOutcome()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_FacilitatingOutcome()
 	 * @see QWiki.Spice.Outcome#getResultingWorkproduct
-	 * @model opposite="resultingWorkproduct" transient="true" ordered="false"
+	 * @model opposite="resultingWorkproduct" resolveProxies="false" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
@@ -149,9 +149,9 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitated Process</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_FacilitatedProcess()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_FacilitatedProcess()
 	 * @see QWiki.Spice.Process#getFacilitatingWorkProduct
-	 * @model opposite="facilitatingWorkProduct" transient="true" ordered="false"
+	 * @model opposite="facilitatingWorkProduct" resolveProxies="false" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
@@ -181,33 +181,46 @@ public interface WorkProduct extends SpiceElement {
 	QWiki.Spice.Process getFacilitatedProcess(String name, boolean ignoreCase);
 
 	/**
-	 * Returns the value of the '<em><b>Facilitating Process</b></em>' reference.
+	 * Returns the value of the '<em><b>Facilitating Process</b></em>' reference list.
+	 * The list contents are of type {@link QWiki.Spice.Process}.
 	 * It is bidirectional and its opposite is '{@link QWiki.Spice.Process#getFacilitatedWorkProduct <em>Facilitated Work Product</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Facilitating Process</em>' reference isn't clear,
+	 * If the meaning of the '<em>Facilitating Process</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Facilitating Process</em>' reference.
-	 * @see #setFacilitatingProcess(QWiki.Spice.Process)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_FacilitatingProcess()
+	 * @return the value of the '<em>Facilitating Process</em>' reference list.
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_FacilitatingProcess()
 	 * @see QWiki.Spice.Process#getFacilitatedWorkProduct
-	 * @model opposite="facilitatedWorkProduct" transient="true" ordered="false"
-	 *        extendedMetaData="kind='attribute'"
+	 * @model opposite="facilitatedWorkProduct" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
-	QWiki.Spice.Process getFacilitatingProcess();
+	EList<QWiki.Spice.Process> getFacilitatingProcess();
 
 	/**
-	 * Sets the value of the '{@link QWiki.Spice.WorkProduct#getFacilitatingProcess <em>Facilitating Process</em>}' reference.
+	 * Retrieves the first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitating Process</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Facilitating Process</em>' reference.
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.Process} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getFacilitatingProcess()
 	 * @generated
 	 */
-	void setFacilitatingProcess(QWiki.Spice.Process value);
+	QWiki.Spice.Process getFacilitatingProcess(String name);
+
+	/**
+	 * Retrieves the first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitating Process</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Spice.Process} to retrieve, or <code>null</code>.
+	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
+	 * @return The first {@link QWiki.Spice.Process} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @see #getFacilitatingProcess()
+	 * @generated
+	 */
+	QWiki.Spice.Process getFacilitatingProcess(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Work Product Type</b></em>' attribute.
@@ -221,7 +234,7 @@ public interface WorkProduct extends SpiceElement {
 	 * @return the value of the '<em>Work Product Type</em>' attribute.
 	 * @see QWiki.Spice.WorkProductType
 	 * @see #setWorkProductType(WorkProductType)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_WorkProductType()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_WorkProductType()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
@@ -255,9 +268,10 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contained Work Product</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_ContainedWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_ContainedWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getContainingWorkProduct
-	 * @model opposite="containingWorkProduct" ordered="false"
+	 * @model opposite="containingWorkProduct" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -304,9 +318,10 @@ public interface WorkProduct extends SpiceElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Containing Work Product</em>' reference.
 	 * @see #setContainingWorkProduct(WorkProduct)
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_ContainingWorkProduct()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_ContainingWorkProduct()
 	 * @see QWiki.Spice.WorkProduct#getContainedWorkProduct
-	 * @model opposite="containedWorkProduct" ordered="false"
+	 * @model opposite="containedWorkProduct" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -333,10 +348,11 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Linked Work Product</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_LinkedWorkProduct()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_LinkedWorkProduct()
+	 * @model resolveProxies="false" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='workproduct'"
 	 *        annotation="union"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProduct> getLinkedWorkProduct();
@@ -376,9 +392,10 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Link</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_Link()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_Link()
 	 * @see QWiki.Spice.WorkProductRelationship#getLinkedWorkProduct
-	 * @model opposite="linkedWorkProduct" ordered="false"
+	 * @model opposite="linkedWorkProduct" resolveProxies="false" transient="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<WorkProductRelationship> getLink();
@@ -394,9 +411,9 @@ public interface WorkProduct extends SpiceElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitated Outcome</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getWorkProduct_FacilitatedOutcome()
+	 * @see QWiki.Spice.SpicePackage#getWorkProduct_FacilitatedOutcome()
 	 * @see QWiki.Spice.Outcome#getRequiredWorkproduct
-	 * @model opposite="requiredWorkproduct" transient="true" ordered="false"
+	 * @model opposite="requiredWorkproduct" resolveProxies="false" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
@@ -429,16 +446,16 @@ public interface WorkProduct extends SpiceElement {
 	 * <p>
 	 * This operation redefines the following operations:
 	 * <ul>
-	 *   <li>'{@link QWiki.Kernel.QWikiElement#oidBasic() <em>Oid Basic</em>}' </li>
+	 *   <li>'{@link QWiki.QWikiElement#objectId() <em>Object Id</em>}' </li>
 	 * </ul>
 	 * </p>
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false"
 	 *        annotation="redefines"
-	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'wp/\' + if (owningWorkProductGroup-&gt;notEmpty()) then owningWorkProductGroup.number + \'-\' else \'\' endif + number + \'/\' + owningProcessReferenceModel.oid()'"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL body='\'wp/\'\r\n+\r\nif (owningWorkProductGroup-&gt;notEmpty()) then\r\n  owningWorkProductGroup.number + \'-\'\r\nelse\r\n  \'\'\r\nendif\r\n+\r\nnumber + \'/\' + owningProcessReferenceModel.objectId()'"
 	 * @generated
 	 */
-	String oid();
+	String objectId();
 
 } // WorkProduct

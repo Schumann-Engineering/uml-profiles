@@ -5,10 +5,10 @@ package QWiki.References.provider;
 
 import QWiki.EMF.provider.QWikiEditPlugin;
 
-import QWiki.Kernel.provider.QWikiNamedElementItemProvider;
-
 import QWiki.References.Author;
 import QWiki.References.ReferencesPackage;
+
+import QWiki.provider.QWikiNamedElementItemProvider;
 
 import java.util.Collection;
 import java.util.List;
@@ -120,7 +120,7 @@ public class AuthorItemProvider extends QWikiNamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Author)object).getName();
+		String label = ((Author)object).getQualifiedName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Author_type") :
 			getString("_UI_Author_type") + " " + label;

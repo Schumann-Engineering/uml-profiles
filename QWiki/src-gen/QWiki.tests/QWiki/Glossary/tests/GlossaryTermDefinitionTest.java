@@ -4,9 +4,7 @@ package QWiki.Glossary.tests;
 
 import QWiki.Glossary.GlossaryFactory;
 import QWiki.Glossary.GlossaryTermDefinition;
-
-import QWiki.Kernel.tests.I18nDescriptiveElementTest;
-
+import QWiki.tests.L10nDescriptiveElementTest;
 import junit.textui.TestRunner;
 
 /**
@@ -15,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GlossaryTermDefinitionTest extends I18nDescriptiveElementTest {
+public class GlossaryTermDefinitionTest extends L10nDescriptiveElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->

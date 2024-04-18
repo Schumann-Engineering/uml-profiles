@@ -2,7 +2,7 @@
  */
 package QWiki.Domain;
 
-import QWiki.Kernel.QWikiElement;
+import QWiki.QWikiElement;
 
 /**
  * <!-- begin-user-doc -->
@@ -59,7 +59,8 @@ public interface DomainElement extends QWikiElement {
 	 * @see #setAssignedDomain(Domain)
 	 * @see QWiki.Domain.DomainPackage#getDomainElement_AssignedDomain()
 	 * @see QWiki.Domain.Domain#getDomainElement
-	 * @model opposite="domainElement" ordered="false"
+	 * @model opposite="domainElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */

@@ -14,17 +14,17 @@ import org.eclipse.emf.ecore.xmi.XMLResource;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
- * @see QWiki.Spice.util.SPICEResourceImpl
+ * @see QWiki.Spice.util.SpiceResourceImpl
  * @generated
  */
-public class SPICEResourceFactoryImpl extends ResourceFactoryImpl {
+public class SpiceResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SPICEResourceFactoryImpl() {
+	public SpiceResourceFactoryImpl() {
 		super();
 	}
 
@@ -36,7 +36,7 @@ public class SPICEResourceFactoryImpl extends ResourceFactoryImpl {
 	 */
 	@Override
 	public Resource createResource(URI uri) {
-		XMLResource result = new SPICEResourceImpl(uri);
+		XMLResource result = new SpiceResourceImpl(uri);
 		result.getDefaultSaveOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 		result.getDefaultLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
 
@@ -49,4 +49,4 @@ public class SPICEResourceFactoryImpl extends ResourceFactoryImpl {
 		return result;
 	}
 
-} //SPICEResourceFactoryImpl
+} //SpiceResourceFactoryImpl

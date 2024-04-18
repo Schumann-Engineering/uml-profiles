@@ -3,10 +3,10 @@
 package QWiki.Spice.provider;
 
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
-import QWiki.Spice.SPICEFactory;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceFactory;
+import QWiki.Spice.SpicePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -67,7 +67,7 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Process_facilitatingWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Process_facilitatingWorkProduct_feature", "_UI_Process_type"),
-				 SPICEPackage.Literals.PROCESS__FACILITATING_WORK_PRODUCT,
+				 SpicePackage.Literals.PROCESS__FACILITATING_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -89,7 +89,7 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 				 getResourceLocator(),
 				 getString("_UI_Process_facilitatedWorkProduct_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Process_facilitatedWorkProduct_feature", "_UI_Process_type"),
-				 SPICEPackage.Literals.PROCESS__FACILITATED_WORK_PRODUCT,
+				 SpicePackage.Literals.PROCESS__FACILITATED_WORK_PRODUCT,
 				 true,
 				 false,
 				 true,
@@ -110,8 +110,8 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SPICEPackage.Literals.PROCESS__OWNED_OUTCOME);
-			childrenFeatures.add(SPICEPackage.Literals.PROCESS__OWNED_BASE_PRACTISE);
+			childrenFeatures.add(SpicePackage.Literals.PROCESS__OWNED_OUTCOME);
+			childrenFeatures.add(SpicePackage.Literals.PROCESS__OWNED_BASE_PRACTISE);
 		}
 		return childrenFeatures;
 	}
@@ -167,8 +167,8 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(QWiki.Spice.Process.class)) {
-			case SPICEPackage.PROCESS__OWNED_OUTCOME:
-			case SPICEPackage.PROCESS__OWNED_BASE_PRACTISE:
+			case SpicePackage.PROCESS__OWNED_OUTCOME:
+			case SpicePackage.PROCESS__OWNED_BASE_PRACTISE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -188,13 +188,13 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS__OWNED_OUTCOME,
-				 SPICEFactory.eINSTANCE.createOutcome()));
+				(SpicePackage.Literals.PROCESS__OWNED_OUTCOME,
+				 SpiceFactory.eINSTANCE.createOutcome()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS__OWNED_BASE_PRACTISE,
-				 SPICEFactory.eINSTANCE.createBasePractise()));
+				(SpicePackage.Literals.PROCESS__OWNED_BASE_PRACTISE,
+				 SpiceFactory.eINSTANCE.createBasePractise()));
 	}
 
 	/**
@@ -209,9 +209,12 @@ public class ProcessItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.PROCESS__OWNED_BASE_PRACTISE ||
+			childFeature == SpicePackage.Literals.PROCESS__OWNED_OUTCOME;
 
 		if (qualify) {
 			return getString

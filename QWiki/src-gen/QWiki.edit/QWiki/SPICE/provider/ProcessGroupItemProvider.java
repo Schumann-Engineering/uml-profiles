@@ -3,11 +3,11 @@
 package QWiki.Spice.provider;
 
 
-import QWiki.Kernel.KernelPackage;
+import QWiki.QWikiPackage;
 
 import QWiki.Spice.ProcessGroup;
-import QWiki.Spice.SPICEFactory;
-import QWiki.Spice.SPICEPackage;
+import QWiki.Spice.SpiceFactory;
+import QWiki.Spice.SpicePackage;
 
 import java.util.Collection;
 import java.util.List;
@@ -64,7 +64,7 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(SPICEPackage.Literals.PROCESS_GROUP__OWNED_PROCESS);
+			childrenFeatures.add(SpicePackage.Literals.PROCESS_GROUP__OWNED_PROCESS);
 		}
 		return childrenFeatures;
 	}
@@ -120,7 +120,7 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ProcessGroup.class)) {
-			case SPICEPackage.PROCESS_GROUP__OWNED_PROCESS:
+			case SpicePackage.PROCESS_GROUP__OWNED_PROCESS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -140,8 +140,8 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(SPICEPackage.Literals.PROCESS_GROUP__OWNED_PROCESS,
-				 SPICEFactory.eINSTANCE.createProcess()));
+				(SpicePackage.Literals.PROCESS_GROUP__OWNED_PROCESS,
+				 SpiceFactory.eINSTANCE.createProcess()));
 	}
 
 	/**
@@ -156,9 +156,11 @@ public class ProcessGroupItemProvider extends SpiceElementItemProvider {
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == KernelPackage.Literals.I1_8N_NAMED_ELEMENT__DISPLAY_NAME ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__PURPOSE ||
-			childFeature == KernelPackage.Literals.I1_8N_DESCRIPTIVE_ELEMENT__CONTENT;
+			childFeature == QWikiPackage.Literals.L1_0N_NAMED_ELEMENT__DISPLAY_NAME ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
+			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
+			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
+			childFeature == SpicePackage.Literals.PROCESS_GROUP__OWNED_PROCESS;
 
 		if (qualify) {
 			return getString

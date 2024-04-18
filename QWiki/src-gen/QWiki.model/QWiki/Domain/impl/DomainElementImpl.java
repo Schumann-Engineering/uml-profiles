@@ -6,7 +6,7 @@ import QWiki.Domain.Domain;
 import QWiki.Domain.DomainElement;
 import QWiki.Domain.DomainPackage;
 
-import QWiki.Kernel.impl.QWikiElementImpl;
+import QWiki.impl.QWikiElementImpl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -78,7 +78,7 @@ public abstract class DomainElementImpl extends QWikiElementImpl implements Doma
 	 */
 	public Domain basicGetDomain() {
 		if (eIsSet(DomainPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN)) {
-			return basicGetAssignedDomain();
+			return getAssignedDomain();
 		}
 		return null;
 	}
@@ -90,23 +90,6 @@ public abstract class DomainElementImpl extends QWikiElementImpl implements Doma
 	 */
 	@Override
 	public Domain getAssignedDomain() {
-		if (assignedDomain != null && assignedDomain.eIsProxy()) {
-			InternalEObject oldAssignedDomain = (InternalEObject)assignedDomain;
-			assignedDomain = (Domain)eResolveProxy(oldAssignedDomain);
-			if (assignedDomain != oldAssignedDomain) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN, oldAssignedDomain, assignedDomain));
-			}
-		}
-		return assignedDomain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Domain basicGetAssignedDomain() {
 		return assignedDomain;
 	}
 
@@ -187,8 +170,7 @@ public abstract class DomainElementImpl extends QWikiElementImpl implements Doma
 				if (resolve) return getDomain();
 				return basicGetDomain();
 			case DomainPackage.DOMAIN_ELEMENT__ASSIGNED_DOMAIN:
-				if (resolve) return getAssignedDomain();
-				return basicGetAssignedDomain();
+				return getAssignedDomain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

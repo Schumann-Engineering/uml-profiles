@@ -13,7 +13,7 @@ import junit.textui.TestRunner;
  * <!-- end-user-doc -->
  * @generated
  */
-public class RASCITests extends TestSuite {
+public class RasciTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,7 +30,7 @@ public class RASCITests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new RASCITests("Rasci Tests");
+		TestSuite suite = new RasciTests("Rasci Tests");
 		suite.addTestSuite(RoleTest.class);
 		return suite;
 	}
@@ -40,8 +40,8 @@ public class RASCITests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RASCITests(String name) {
+	public RasciTests(String name) {
 		super(name);
 	}
 
-} //RASCITests
+} //RasciTests

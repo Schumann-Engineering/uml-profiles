@@ -2,18 +2,16 @@
  */
 package QWiki.Spice;
 
-import QWiki.Kernel.QWikiContainer;
+import QWiki.Content.Section;
+import QWiki.QWikiContainer;
 
 import QWiki.Rasci.RasciElement;
 import QWiki.Rasci.Role;
-
-import QWiki.References.Section;
-
 import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Spice Element</b></em>'.
+ * A representation of the model object '<em><b>Element</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -29,7 +27,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.Spice.SpiceElement#getRole <em>Role</em>}</li>
  * </ul>
  *
- * @see QWiki.Spice.SPICEPackage#getSpiceElement()
+ * @see QWiki.Spice.SpicePackage#getSpiceElement()
  * @model abstract="true"
  * @generated
  */
@@ -51,9 +49,10 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owning Process Reference Model</em>' container reference.
 	 * @see #setOwningProcessReferenceModel(ProcessReferenceModel)
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_OwningProcessReferenceModel()
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_OwningProcessReferenceModel()
 	 * @see QWiki.Spice.ProcessReferenceModel#getOwnedSpiceElement
-	 * @model opposite="ownedSpiceElement" ordered="false"
+	 * @model opposite="ownedSpiceElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -79,8 +78,9 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Number</em>' attribute.
 	 * @see #setNumber(String)
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_Number()
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_Number()
 	 * @model required="true" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	String getNumber();
@@ -97,8 +97,8 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 
 	/**
 	 * Returns the value of the '<em><b>Facilitated Section</b></em>' reference list.
-	 * The list contents are of type {@link QWiki.References.Section}.
-	 * It is bidirectional and its opposite is '{@link QWiki.References.Section#getFacilitatingSpiceElement <em>Facilitating Spice Element</em>}'.
+	 * The list contents are of type {@link QWiki.Content.Section}.
+	 * It is bidirectional and its opposite is '{@link QWiki.Content.Section#getFacilitatingSpiceElement <em>Facilitating Spice Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Facilitated Section</em>' reference list isn't clear,
@@ -106,31 +106,32 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Facilitated Section</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_FacilitatedSection()
-	 * @see QWiki.References.Section#getFacilitatingSpiceElement
-	 * @model opposite="facilitatingSpiceElement" transient="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_FacilitatedSection()
+	 * @see QWiki.Content.Section#getFacilitatingSpiceElement
+	 * @model opposite="facilitatingSpiceElement" resolveProxies="false" ordered="false"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Section> getFacilitatedSection();
 
 	/**
-	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitated Section</b></em>' reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitated Section</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
-	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
+	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getFacilitatedSection()
 	 * @generated
 	 */
 	Section getFacilitatedSection(String name);
 
 	/**
-	 * Retrieves the first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitated Section</b></em>' reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Facilitated Section</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.Section} to retrieve, or <code>null</code>.
+	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
 	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
-	 * @return The first {@link QWiki.References.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
+	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
 	 * @see #getFacilitatedSection()
 	 * @generated
 	 */
@@ -152,9 +153,10 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owner Role</em>' reference.
 	 * @see #setOwnerRole(Role)
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_OwnerRole()
-	 * @model transient="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_OwnerRole()
+	 * @model resolveProxies="false" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -186,9 +188,10 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Manager Role</em>' reference.
 	 * @see #setManagerRole(Role)
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_ManagerRole()
-	 * @model transient="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_ManagerRole()
+	 * @model resolveProxies="false" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -220,9 +223,10 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Participant Role</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_ParticipantRole()
-	 * @model transient="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_ParticipantRole()
+	 * @model resolveProxies="false" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
+	 *        extendedMetaData="kind='element'"
 	 *        annotation="subsets"
 	 * @generated
 	 */
@@ -262,10 +266,11 @@ public interface SpiceElement extends QWikiContainer, RasciElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role</em>' reference list.
-	 * @see QWiki.Spice.SPICEPackage#getSpiceElement_Role()
-	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @see QWiki.Spice.SpicePackage#getSpiceElement_Role()
+	 * @model resolveProxies="false" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 *        annotation="http://schema.omg.org/spec/MOF/2.0/emof.xml#Property.oppositeRoleName body='spiceelement'"
 	 *        annotation="union"
+	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
 	EList<Role> getRole();
