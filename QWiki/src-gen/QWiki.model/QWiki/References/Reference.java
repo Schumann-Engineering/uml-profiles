@@ -16,7 +16,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link QWiki.References.Reference#getNumber <em>Number</em>}</li>
- *   <li>{@link QWiki.References.Reference#getOwnedVersion <em>Owned Version</em>}</li>
+ *   <li>{@link QWiki.References.Reference#getVersion <em>Version</em>}</li>
  *   <li>{@link QWiki.References.Reference#getReferenceType <em>Reference Type</em>}</li>
  *   <li>{@link QWiki.References.Reference#getAuthor <em>Author</em>}</li>
  * </ul>
@@ -54,46 +54,46 @@ public interface Reference extends QWikiContainer {
 	void setNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Version</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Version</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.References.ReferenceVersion}.
 	 * It is bidirectional and its opposite is '{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Version</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Version</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Version</em>' containment reference list.
-	 * @see QWiki.References.ReferencesPackage#getReference_OwnedVersion()
+	 * @return the value of the '<em>Version</em>' containment reference list.
+	 * @see QWiki.References.ReferencesPackage#getReference_Version()
 	 * @see QWiki.References.ReferenceVersion#getOwningReference
 	 * @model opposite="owningReference" containment="true" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
-	EList<ReferenceVersion> getOwnedVersion();
+	EList<ReferenceVersion> getVersion();
 
 	/**
-	 * Retrieves the first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Version</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>' from the '<em><b>Version</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.ReferenceVersion} to retrieve, or <code>null</code>.
 	 * @return The first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedVersion()
+	 * @see #getVersion()
 	 * @generated
 	 */
-	ReferenceVersion getOwnedVersion(String name);
+	ReferenceVersion getVersion(String name);
 
 	/**
-	 * Retrieves the first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Version</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>' from the '<em><b>Version</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.References.ReferenceVersion} to retrieve, or <code>null</code>.
 	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @return The first {@link QWiki.References.ReferenceVersion} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedVersion()
+	 * @see #getVersion()
 	 * @generated
 	 */
-	ReferenceVersion getOwnedVersion(String name, boolean ignoreCase);
+	ReferenceVersion getVersion(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Reference Type</b></em>' attribute.

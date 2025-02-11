@@ -370,7 +370,7 @@
           labelFeature="../../org.eclipse.uml2.uml/model/UML.genmodel#//uml/NamedElement/qualifiedName">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/Reference/number"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/Reference/ownedVersion"/>
+            createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/Reference/version"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/Reference/referenceType"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/Reference/author"/>
@@ -383,7 +383,7 @@
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/versionType"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute QWiki.ecore#//References/ReferenceVersion/edition"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-            createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/ReferenceVersion/ownedContent"/>
+            createChild="true" ecoreFeature="ecore:EReference QWiki.ecore#//References/ReferenceVersion/item"/>
         <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="QWiki.ecore#//References/ReferenceVersion/objectId"/>
       </genClasses>
     </nestedGenPackages>

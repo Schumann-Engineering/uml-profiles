@@ -12,8 +12,8 @@
   </qwikiElement>
   <qwikiElement xsi:type="QWiki:QWikiContainer" name="References" uuid="088c5384-c8e3-4a40-b1fb-db97857cd8ea">
     <qwikiElement xsi:type="QWiki.References:Reference" name="Medical device software – Software life-cycle processes" uuid="2867c193-edcc-4422-9ecd-79b6d47003ef" number="62304" referenceType="Standard">
-      <ownedVersion uuid="643e2dc0-f7e0-4848-bde2-884de49e37f1" publicationYear="2006" versionType="Amendment" edition="2015">
-        <ownedContent name="General Requirements" uuid="86984fb7-bc1e-41dd-bc93-fc20545820be" number="4">
+      <version uuid="643e2dc0-f7e0-4848-bde2-884de49e37f1" publicationYear="2006" versionType="Amendment" edition="2015">
+        <item name="General Requirements" uuid="86984fb7-bc1e-41dd-bc93-fc20545820be" number="4">
           <item xsi:type="QWiki.Content:Section" name="Quality Management System" uuid="5ec553e9-fd5f-43b3-bc06-5d7663111fb6" number="4.1">
             <item xsi:type="QWiki.Content:Text" uuid="0708c83a-9a99-492b-9b74-ee989665769e">
               <body>
@@ -52,13 +52,17 @@
               </item>
             </item>
           </item>
-        </ownedContent>
-      </ownedVersion>
+        </item>
+      </version>
       <author>8be4d82b-fa35-4094-9607-1bc33532338d</author>
     </qwikiElement>
   </qwikiElement>
   <qwikiElement xsi:type="QWiki:QWikiContainer" name="Work Products" uuid="7950fd2e-d7e1-417b-8872-c3d6fdb31bcd">
     <qwikiElement xsi:type="QWiki.Spice:WorkProduct" uuid="161bc329-cca1-43c1-bb3b-556e49e7a2ed">
+      <customProperty>
+        <text>section</text>
+        <key>tag</key>
+      </customProperty>
       <tag>Test Tag</tag>
       <displayName encryptionKey="b26894e0-8375-4c86-b958-38c633319800">
         <text language="test">test</text>

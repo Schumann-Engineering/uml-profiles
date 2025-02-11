@@ -946,13 +946,13 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE__NUMBER = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Owned Version</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Version</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE__OWNED_VERSION = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
+	int REFERENCE__VERSION = QWikiPackage.QWIKI_CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Reference Type</b></em>' attribute.
@@ -1829,13 +1829,13 @@ public interface ReferencesPackage extends EPackage {
 	int REFERENCE_VERSION__EDITION = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Owned Content</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Item</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENCE_VERSION__OWNED_CONTENT = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 4;
+	int REFERENCE_VERSION__ITEM = QWikiPackage.QWIKI_NAMESPACE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Reference Version</em>' class.
@@ -2544,15 +2544,15 @@ public interface ReferencesPackage extends EPackage {
 	EAttribute getReference_Number();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.References.Reference#getOwnedVersion <em>Owned Version</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.References.Reference#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Version</em>'.
-	 * @see QWiki.References.Reference#getOwnedVersion()
+	 * @return the meta object for the containment reference list '<em>Version</em>'.
+	 * @see QWiki.References.Reference#getVersion()
 	 * @see #getReference()
 	 * @generated
 	 */
-	EReference getReference_OwnedVersion();
+	EReference getReference_Version();
 
 	/**
 	 * Returns the meta object for the attribute '{@link QWiki.References.Reference#getReferenceType <em>Reference Type</em>}'.
@@ -2630,15 +2630,15 @@ public interface ReferencesPackage extends EPackage {
 	EAttribute getReferenceVersion_Edition();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}'.
+	 * Returns the meta object for the containment reference list '{@link QWiki.References.ReferenceVersion#getItem <em>Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Owned Content</em>'.
-	 * @see QWiki.References.ReferenceVersion#getOwnedContent()
+	 * @return the meta object for the containment reference list '<em>Item</em>'.
+	 * @see QWiki.References.ReferenceVersion#getItem()
 	 * @see #getReferenceVersion()
 	 * @generated
 	 */
-	EReference getReferenceVersion_OwnedContent();
+	EReference getReferenceVersion_Item();
 
 	/**
 	 * Returns the meta object for the container reference '{@link QWiki.References.ReferenceVersion#getOwningReference <em>Owning Reference</em>}'.
@@ -2767,12 +2767,12 @@ public interface ReferencesPackage extends EPackage {
 		EAttribute REFERENCE__NUMBER = eINSTANCE.getReference_Number();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Version</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Version</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFERENCE__OWNED_VERSION = eINSTANCE.getReference_OwnedVersion();
+		EReference REFERENCE__VERSION = eINSTANCE.getReference_Version();
 
 		/**
 		 * The meta object literal for the '<em><b>Reference Type</b></em>' attribute feature.
@@ -2833,12 +2833,12 @@ public interface ReferencesPackage extends EPackage {
 		EAttribute REFERENCE_VERSION__EDITION = eINSTANCE.getReferenceVersion_Edition();
 
 		/**
-		 * The meta object literal for the '<em><b>Owned Content</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Item</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFERENCE_VERSION__OWNED_CONTENT = eINSTANCE.getReferenceVersion_OwnedContent();
+		EReference REFERENCE_VERSION__ITEM = eINSTANCE.getReferenceVersion_Item();
 
 		/**
 		 * The meta object literal for the '<em><b>Owning Reference</b></em>' container reference feature.

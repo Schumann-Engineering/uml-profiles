@@ -231,7 +231,7 @@ public class SectionImpl extends ContentContainerImpl implements Section {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningReferenceVersion != null)
-				msgs = ((InternalEObject)newOwningReferenceVersion).eInverseAdd(this, ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT, ReferenceVersion.class, msgs);
+				msgs = ((InternalEObject)newOwningReferenceVersion).eInverseAdd(this, ReferencesPackage.REFERENCE_VERSION__ITEM, ReferenceVersion.class, msgs);
 			msgs = basicSetOwningReferenceVersion(newOwningReferenceVersion, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -397,7 +397,7 @@ public class SectionImpl extends ContentContainerImpl implements Section {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case ContentPackage.SECTION__OWNING_REFERENCE_VERSION:
-				return eInternalContainer().eInverseRemove(this, ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT, ReferenceVersion.class, msgs);
+				return eInternalContainer().eInverseRemove(this, ReferencesPackage.REFERENCE_VERSION__ITEM, ReferenceVersion.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

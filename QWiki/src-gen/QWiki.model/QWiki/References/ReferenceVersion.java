@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link QWiki.References.ReferenceVersion#getPublicationYear <em>Publication Year</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getVersionType <em>Version Type</em>}</li>
  *   <li>{@link QWiki.References.ReferenceVersion#getEdition <em>Edition</em>}</li>
- *   <li>{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}</li>
+ *   <li>{@link QWiki.References.ReferenceVersion#getItem <em>Item</em>}</li>
  * </ul>
  *
  * @see QWiki.References.ReferencesPackage#getReferenceVersion()
@@ -114,50 +114,50 @@ public interface ReferenceVersion extends QWikiNamespace {
 	void setEdition(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Owned Content</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Item</b></em>' containment reference list.
 	 * The list contents are of type {@link QWiki.Content.Section}.
 	 * It is bidirectional and its opposite is '{@link QWiki.Content.Section#getOwningReferenceVersion <em>Owning Reference Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Owned Content</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Item</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Owned Content</em>' containment reference list.
-	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_OwnedContent()
+	 * @return the value of the '<em>Item</em>' containment reference list.
+	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_Item()
 	 * @see QWiki.Content.Section#getOwningReferenceVersion
 	 * @model opposite="owningReferenceVersion" containment="true" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */
-	EList<Section> getOwnedContent();
+	EList<Section> getItem();
 
 	/**
-	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Content</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Item</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
 	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedContent()
+	 * @see #getItem()
 	 * @generated
 	 */
-	Section getOwnedContent(String name);
+	Section getItem(String name);
 
 	/**
-	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Owned Content</b></em>' containment reference list.
+	 * Retrieves the first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>' from the '<em><b>Item</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name The '<em><b>Name</b></em>' of the {@link QWiki.Content.Section} to retrieve, or <code>null</code>.
 	 * @param ignoreCase Whether to ignore case in {@link java.lang.String} comparisons.
 	 * @return The first {@link QWiki.Content.Section} with the specified '<em><b>Name</b></em>', or <code>null</code>.
-	 * @see #getOwnedContent()
+	 * @see #getItem()
 	 * @generated
 	 */
-	Section getOwnedContent(String name, boolean ignoreCase);
+	Section getItem(String name, boolean ignoreCase);
 
 	/**
 	 * Returns the value of the '<em><b>Owning Reference</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link QWiki.References.Reference#getOwnedVersion <em>Owned Version</em>}'.
+	 * It is bidirectional and its opposite is '{@link QWiki.References.Reference#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owning Reference</em>' container reference isn't clear,
@@ -167,8 +167,8 @@ public interface ReferenceVersion extends QWikiNamespace {
 	 * @return the value of the '<em>Owning Reference</em>' container reference.
 	 * @see #setOwningReference(Reference)
 	 * @see QWiki.References.ReferencesPackage#getReferenceVersion_OwningReference()
-	 * @see QWiki.References.Reference#getOwnedVersion
-	 * @model opposite="ownedVersion" resolveProxies="false" ordered="false"
+	 * @see QWiki.References.Reference#getVersion
+	 * @model opposite="version" resolveProxies="false" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */

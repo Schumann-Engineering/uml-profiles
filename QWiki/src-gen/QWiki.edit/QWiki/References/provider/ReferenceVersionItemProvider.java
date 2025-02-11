@@ -139,7 +139,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_CONTENT);
+			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE_VERSION__ITEM);
 		}
 		return childrenFeatures;
 	}
@@ -200,7 +200,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 			case ReferencesPackage.REFERENCE_VERSION__EDITION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReferencesPackage.REFERENCE_VERSION__OWNED_CONTENT:
+			case ReferencesPackage.REFERENCE_VERSION__ITEM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -220,7 +220,7 @@ public class ReferenceVersionItemProvider extends QWikiNamespaceItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReferencesPackage.Literals.REFERENCE_VERSION__OWNED_CONTENT,
+				(ReferencesPackage.Literals.REFERENCE_VERSION__ITEM,
 				 ContentFactory.eINSTANCE.createSection()));
 	}
 

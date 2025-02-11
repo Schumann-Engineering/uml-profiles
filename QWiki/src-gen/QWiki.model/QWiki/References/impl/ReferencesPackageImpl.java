@@ -262,7 +262,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getReference_OwnedVersion() {
+	public EReference getReference_Version() {
 		return (EReference)referenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -342,7 +342,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 	 * @generated
 	 */
 	@Override
-	public EReference getReferenceVersion_OwnedContent() {
+	public EReference getReferenceVersion_Item() {
 		return (EReference)referenceVersionEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -432,7 +432,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 
 		referenceEClass = createEClass(REFERENCE);
 		createEAttribute(referenceEClass, REFERENCE__NUMBER);
-		createEReference(referenceEClass, REFERENCE__OWNED_VERSION);
+		createEReference(referenceEClass, REFERENCE__VERSION);
 		createEAttribute(referenceEClass, REFERENCE__REFERENCE_TYPE);
 		createEReference(referenceEClass, REFERENCE__AUTHOR);
 		createEOperation(referenceEClass, REFERENCE___OBJECT_ID);
@@ -442,7 +442,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__PUBLICATION_YEAR);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__VERSION_TYPE);
 		createEAttribute(referenceVersionEClass, REFERENCE_VERSION__EDITION);
-		createEReference(referenceVersionEClass, REFERENCE_VERSION__OWNED_CONTENT);
+		createEReference(referenceVersionEClass, REFERENCE_VERSION__ITEM);
 		createEOperation(referenceVersionEClass, REFERENCE_VERSION___OBJECT_ID);
 
 		// Create enums
@@ -496,18 +496,18 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 
 		initEClass(referenceEClass, Reference.class, "Reference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getReference_Number(), ecorePackage.getEString(), "number", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReference_OwnedVersion(), this.getReferenceVersion(), this.getReferenceVersion_OwningReference(), "ownedVersion", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReference_Version(), this.getReferenceVersion(), this.getReferenceVersion_OwningReference(), "version", null, 0, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReference_ReferenceType(), this.getReferenceType(), "referenceType", null, 1, 1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getReference_Author(), this.getAuthor(), null, "author", null, 1, -1, Reference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getReference__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(referenceVersionEClass, ReferenceVersion.class, "ReferenceVersion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_OwnedVersion(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReferenceVersion_OwningReference(), this.getReference(), this.getReference_Version(), "owningReference", null, 0, 1, ReferenceVersion.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_PublicationYear(), ecorePackage.getEString(), "publicationYear", null, 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_VersionType(), this.getReferenceVersionType(), "versionType", "FirstEdition", 1, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getReferenceVersion_Edition(), ecorePackage.getEString(), "edition", null, 0, 1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getReferenceVersion_OwnedContent(), theContentPackage.getSection(), theContentPackage.getSection_OwningReferenceVersion(), "ownedContent", null, 0, -1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getReferenceVersion_Item(), theContentPackage.getSection(), theContentPackage.getSection_OwningReferenceVersion(), "item", null, 0, -1, ReferenceVersion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getReferenceVersion__ObjectId(), ecorePackage.getEString(), "objectId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
@@ -653,7 +653,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 			   "kind", "attribute"
 		   });
 		addAnnotation
-		  (getReference_OwnedVersion(),
+		  (getReference_Version(),
 		   source,
 		   new String[] {
 			   "kind", "element"
@@ -695,7 +695,7 @@ public class ReferencesPackageImpl extends EPackageImpl implements ReferencesPac
 			   "kind", "attribute"
 		   });
 		addAnnotation
-		  (getReferenceVersion_OwnedContent(),
+		  (getReferenceVersion_Item(),
 		   source,
 		   new String[] {
 			   "kind", "element"

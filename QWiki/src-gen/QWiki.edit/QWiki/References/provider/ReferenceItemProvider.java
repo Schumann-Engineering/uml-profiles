@@ -141,7 +141,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE__OWNED_VERSION);
+			childrenFeatures.add(ReferencesPackage.Literals.REFERENCE__VERSION);
 		}
 		return childrenFeatures;
 	}
@@ -201,7 +201,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 			case ReferencesPackage.REFERENCE__REFERENCE_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
+			case ReferencesPackage.REFERENCE__VERSION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -221,7 +221,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
-				(ReferencesPackage.Literals.REFERENCE__OWNED_VERSION,
+				(ReferencesPackage.Literals.REFERENCE__VERSION,
 				 ReferencesFactory.eINSTANCE.createReferenceVersion()));
 	}
 
@@ -241,7 +241,7 @@ public class ReferenceItemProvider extends QWikiContainerItemProvider {
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__PURPOSE ||
 			childFeature == QWikiPackage.Literals.L1_0N_DESCRIPTIVE_ELEMENT__CONTENT ||
 			childFeature == QWikiPackage.Literals.QWIKI_NAMESPACE__QWIKI_ELEMENT ||
-			childFeature == ReferencesPackage.Literals.REFERENCE__OWNED_VERSION;
+			childFeature == ReferencesPackage.Literals.REFERENCE__VERSION;
 
 		if (qualify) {
 			return getString

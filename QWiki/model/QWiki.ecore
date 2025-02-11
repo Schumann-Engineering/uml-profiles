@@ -741,7 +741,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningReferenceVersion"
           ordered="false" eType="#//References/ReferenceVersion" transient="true"
-          resolveProxies="false" eOpposite="#//References/ReferenceVersion/ownedContent">
+          resolveProxies="false" eOpposite="#//References/ReferenceVersion/item">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
         </eAnnotations>
@@ -853,7 +853,7 @@
           <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedVersion" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="version" ordered="false"
           upperBound="-1" eType="#//References/ReferenceVersion" containment="true"
           resolveProxies="false" eOpposite="#//References/ReferenceVersion/owningReference">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -902,7 +902,7 @@
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="owningReference" ordered="false"
           eType="#//References/Reference" transient="true" resolveProxies="false"
-          eOpposite="#//References/Reference/ownedVersion">
+          eOpposite="#//References/Reference/version">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
           <details key="kind" value="element"/>
         </eAnnotations>
@@ -925,7 +925,7 @@
           <details key="kind" value="attribute"/>
         </eAnnotations>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ownedContent" ordered="false"
+      <eStructuralFeatures xsi:type="ecore:EReference" name="item" ordered="false"
           upperBound="-1" eType="#//Content/Section" containment="true" resolveProxies="false"
           eOpposite="#//Content/Section/owningReferenceVersion">
         <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">

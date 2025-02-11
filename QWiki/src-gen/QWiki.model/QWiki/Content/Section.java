@@ -126,7 +126,7 @@ public interface Section extends ContentContainer {
 
 	/**
 	 * Returns the value of the '<em><b>Owning Reference Version</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link QWiki.References.ReferenceVersion#getOwnedContent <em>Owned Content</em>}'.
+	 * It is bidirectional and its opposite is '{@link QWiki.References.ReferenceVersion#getItem <em>Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owning Reference Version</em>' container reference isn't clear,
@@ -136,8 +136,8 @@ public interface Section extends ContentContainer {
 	 * @return the value of the '<em>Owning Reference Version</em>' container reference.
 	 * @see #setOwningReferenceVersion(ReferenceVersion)
 	 * @see QWiki.Content.ContentPackage#getSection_OwningReferenceVersion()
-	 * @see QWiki.References.ReferenceVersion#getOwnedContent
-	 * @model opposite="ownedContent" resolveProxies="false" ordered="false"
+	 * @see QWiki.References.ReferenceVersion#getItem
+	 * @model opposite="item" resolveProxies="false" ordered="false"
 	 *        extendedMetaData="kind='element'"
 	 * @generated
 	 */

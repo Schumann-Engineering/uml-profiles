@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link QWiki.References.impl.ReferenceImpl#getNumber <em>Number</em>}</li>
- *   <li>{@link QWiki.References.impl.ReferenceImpl#getOwnedVersion <em>Owned Version</em>}</li>
+ *   <li>{@link QWiki.References.impl.ReferenceImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceImpl#getReferenceType <em>Reference Type</em>}</li>
  *   <li>{@link QWiki.References.impl.ReferenceImpl#getAuthor <em>Author</em>}</li>
  * </ul>
@@ -73,14 +73,14 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	protected String number = NUMBER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOwnedVersion() <em>Owned Version</em>}' containment reference list.
+	 * The cached value of the '{@link #getVersion() <em>Version</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOwnedVersion()
+	 * @see #getVersion()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ReferenceVersion> ownedVersion;
+	protected EList<ReferenceVersion> version;
 
 	/**
 	 * The default value of the '{@link #getReferenceType() <em>Reference Type</em>}' attribute.
@@ -160,11 +160,11 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * @generated
 	 */
 	@Override
-	public EList<ReferenceVersion> getOwnedVersion() {
-		if (ownedVersion == null) {
-			ownedVersion = new EObjectContainmentWithInverseEList<ReferenceVersion>(ReferenceVersion.class, this, ReferencesPackage.REFERENCE__OWNED_VERSION, ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE);
+	public EList<ReferenceVersion> getVersion() {
+		if (version == null) {
+			version = new EObjectContainmentWithInverseEList<ReferenceVersion>(ReferenceVersion.class, this, ReferencesPackage.REFERENCE__VERSION, ReferencesPackage.REFERENCE_VERSION__OWNING_REFERENCE);
 		}
-		return ownedVersion;
+		return version;
 	}
 
 	/**
@@ -172,8 +172,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferenceVersion getOwnedVersion(String name) {
-		return getOwnedVersion(name, false);
+	public ReferenceVersion getVersion(String name) {
+		return getVersion(name, false);
 	}
 
 	/**
@@ -181,11 +181,11 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ReferenceVersion getOwnedVersion(String name, boolean ignoreCase) {
-		ownedVersionLoop: for (ReferenceVersion ownedVersion : getOwnedVersion()) {
-			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(ownedVersion.getName()) : name.equals(ownedVersion.getName())))
-				continue ownedVersionLoop;
-			return ownedVersion;
+	public ReferenceVersion getVersion(String name, boolean ignoreCase) {
+		versionLoop: for (ReferenceVersion version : getVersion()) {
+			if (name != null && !(ignoreCase ? name.equalsIgnoreCase(version.getName()) : name.equals(version.getName())))
+				continue versionLoop;
+			return version;
 		}
 		return null;
 	}
@@ -282,8 +282,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedVersion()).basicAdd(otherEnd, msgs);
+			case ReferencesPackage.REFERENCE__VERSION:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getVersion()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -296,8 +296,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				return ((InternalEList<?>)getOwnedVersion()).basicRemove(otherEnd, msgs);
+			case ReferencesPackage.REFERENCE__VERSION:
+				return ((InternalEList<?>)getVersion()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -312,8 +312,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 		switch (featureID) {
 			case ReferencesPackage.REFERENCE__NUMBER:
 				return getNumber();
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				return getOwnedVersion();
+			case ReferencesPackage.REFERENCE__VERSION:
+				return getVersion();
 			case ReferencesPackage.REFERENCE__REFERENCE_TYPE:
 				return getReferenceType();
 			case ReferencesPackage.REFERENCE__AUTHOR:
@@ -334,9 +334,9 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 			case ReferencesPackage.REFERENCE__NUMBER:
 				setNumber((String)newValue);
 				return;
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				getOwnedVersion().clear();
-				getOwnedVersion().addAll((Collection<? extends ReferenceVersion>)newValue);
+			case ReferencesPackage.REFERENCE__VERSION:
+				getVersion().clear();
+				getVersion().addAll((Collection<? extends ReferenceVersion>)newValue);
 				return;
 			case ReferencesPackage.REFERENCE__REFERENCE_TYPE:
 				setReferenceType((ReferenceType)newValue);
@@ -360,8 +360,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 			case ReferencesPackage.REFERENCE__NUMBER:
 				setNumber(NUMBER_EDEFAULT);
 				return;
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				getOwnedVersion().clear();
+			case ReferencesPackage.REFERENCE__VERSION:
+				getVersion().clear();
 				return;
 			case ReferencesPackage.REFERENCE__REFERENCE_TYPE:
 				setReferenceType(REFERENCE_TYPE_EDEFAULT);
@@ -383,8 +383,8 @@ public class ReferenceImpl extends QWikiContainerImpl implements Reference {
 		switch (featureID) {
 			case ReferencesPackage.REFERENCE__NUMBER:
 				return NUMBER_EDEFAULT == null ? number != null : !NUMBER_EDEFAULT.equals(number);
-			case ReferencesPackage.REFERENCE__OWNED_VERSION:
-				return ownedVersion != null && !ownedVersion.isEmpty();
+			case ReferencesPackage.REFERENCE__VERSION:
+				return version != null && !version.isEmpty();
 			case ReferencesPackage.REFERENCE__REFERENCE_TYPE:
 				return referenceType != REFERENCE_TYPE_EDEFAULT;
 			case ReferencesPackage.REFERENCE__AUTHOR:

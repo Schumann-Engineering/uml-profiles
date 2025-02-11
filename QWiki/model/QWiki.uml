@@ -172,7 +172,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Q_KasOnWEe6pm5wa6vzbpQ" name="default"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_XLbvsunWEe6pm5wa6vzbpQ" name="prmDomain" type="_GtvngOnREe6pm5wa6vzbpQ" association="_XLbIoOnWEe6pm5wa6vzbpQ"/>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_o_xUAunWEe6pm5wa6vzbpQ" name="ownedSpiceElement" type="_klm10OnWEe6pm5wa6vzbpQ" aggregation="composite" association="_o_wF4OnWEe6pm5wa6vzbpQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-GDxQOnWEe6pm5wa6vzbpQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-GVeEOnWEe6pm5wa6vzbpQ" value="*"/>
@@ -221,7 +220,7 @@ endif</body>
           </ownedParameter>
         </ownedOperation>
       </packagedElement>
-      <packagedElement xmi:type="uml:Enumeration" xmi:id="_GtvngOnREe6pm5wa6vzbpQ" name="ProcessReferenceModelDomain">
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="_GtvngOnREe6pm5wa6vzbpQ" name="KnownProcessReferenceModelDomain">
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qBMuEOnREe6pm5wa6vzbpQ" name="Agile"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Nz_4gOnREe6pm5wa6vzbpQ" name="Automotive"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Ta4ogOnREe6pm5wa6vzbpQ" name="Cybersecurity"/>
@@ -239,7 +238,10 @@ endif</body>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_7PmsEOnXEe6pm5wa6vzbpQ"/>
           <subsettedProperty xmi:type="uml:Property" href="pathmap://UML_METAMODELS/UML.metamodel.uml#NamedElement-namespace"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_CdcLwOnYEe6pm5wa6vzbpQ" name="characteristic" type="_gx5JQOn6Ee6LY_dHFA6_Jw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_YJvxsH55Ee-ZBJPEgZFkLw" name="content" type="_3CohQPsuEe6ICsboBRxz5w">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_g69vsH55Ee-ZBJPEgZFkLw"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_CdcLwOnYEe6pm5wa6vzbpQ" name="characteristic" type="_3CohQPsuEe6ICsboBRxz5w">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_FgZmcOnYEe6pm5wa6vzbpQ"/>
         </ownedAttribute>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_TWsycunZEe6pm5wa6vzbpQ" name="facilitatingOutcome" type="_fLAvAOnOEe6pm5wa6vzbpQ" association="_TWsLYOnZEe6pm5wa6vzbpQ">
@@ -298,6 +300,7 @@ number + '/' + owningProcessReferenceModel.objectId()</body>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_yuEZwOngEe6pm5wa6vzbpQ" name="Artefact"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_q6Dq4OngEe6pm5wa6vzbpQ" name="Document"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_qFyVUOngEe6pm5wa6vzbpQ" name="Generic"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_xxkpsH13Ee-ZBJPEgZFkLw" name="Record"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_r2CK8OngEe6pm5wa6vzbpQ" name="Shippable"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_5td00OngEe6pm5wa6vzbpQ" memberEnd="_5teb4ungEe6pm5wa6vzbpQ _5tfC8ungEe6pm5wa6vzbpQ">
@@ -307,15 +310,6 @@ number + '/' + owningProcessReferenceModel.objectId()</body>
         <ownedEnd xmi:type="uml:Property" xmi:id="_5tfC8ungEe6pm5wa6vzbpQ" name="workproduct" type="_cGDTwOnPEe6pm5wa6vzbpQ" association="_5td00OngEe6pm5wa6vzbpQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_70Wo0OngEe6pm5wa6vzbpQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_70iPAOngEe6pm5wa6vzbpQ" value="*"/>
-        </ownedEnd>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Association" xmi:id="_XLbIoOnWEe6pm5wa6vzbpQ" memberEnd="_XLbvsunWEe6pm5wa6vzbpQ _XLcWwunWEe6pm5wa6vzbpQ">
-        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XLbvsOnWEe6pm5wa6vzbpQ" source="org.eclipse.papyrus">
-          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XLbvsenWEe6pm5wa6vzbpQ" key="nature" value="UML_Nature"/>
-        </eAnnotations>
-        <ownedEnd xmi:type="uml:Property" xmi:id="_XLcWwunWEe6pm5wa6vzbpQ" name="processreferencemodel" type="_IHiSsOnWEe6pm5wa6vzbpQ" association="_XLbIoOnWEe6pm5wa6vzbpQ">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_b73Y0OnWEe6pm5wa6vzbpQ"/>
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_b8CX8OnWEe6pm5wa6vzbpQ" value="*"/>
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="_lGVu4OnXEe6pm5wa6vzbpQ" memberEnd="_lGW9AOnXEe6pm5wa6vzbpQ _lGW9A-nXEe6pm5wa6vzbpQ">
@@ -472,6 +466,25 @@ number + '/' + owningProcessReferenceModel.objectId()</body>
           <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_WK_1AfKrEe6TpdN_RktbHQ" key="nature" value="UML_Nature"/>
         </eAnnotations>
       </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_7ni3AH18Ee-ZBJPEgZFkLw" name="SpiceProcessReferenceModelMappingAnnotation">
+        <generalization xmi:type="uml:Generalization" xmi:id="__wQ_4H18Ee-ZBJPEgZFkLw" general="_7ZlFwH13Ee-ZBJPEgZFkLw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_xioVIH1_Ee-ZBJPEgZFkLw" name="numberEquivalent">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_-_cfkn1_Ee-ZBJPEgZFkLw" name="processReferenceModel" type="_IHiSsOnWEe6pm5wa6vzbpQ" association="_-_b4gH1_Ee-ZBJPEgZFkLw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-_dGoH1_Ee-ZBJPEgZFkLw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-_dGoX1_Ee-ZBJPEgZFkLw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_-_b4gH1_Ee-ZBJPEgZFkLw" memberEnd="_-_cfkn1_Ee-ZBJPEgZFkLw _-_dGon1_Ee-ZBJPEgZFkLw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_-_cfkH1_Ee-ZBJPEgZFkLw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-_cfkX1_Ee-ZBJPEgZFkLw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_-_dGon1_Ee-ZBJPEgZFkLw" name="spiceAnnotation" type="_7ni3AH18Ee-ZBJPEgZFkLw" association="_-_b4gH1_Ee-ZBJPEgZFkLw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CDPnwH2AEe-ZBJPEgZFkLw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CD0PgH2AEe-ZBJPEgZFkLw" value="*"/>
+        </ownedEnd>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_sntfMO20Ee6p4qQ9OedHIg" name="Rasci">
       <packagedElement xmi:type="uml:Class" xmi:id="_SGvBkOnoEe6LY_dHFA6_Jw" name="RasciElement" isAbstract="true">
@@ -591,7 +604,7 @@ number + '/' + owningProcessReferenceModel.objectId()</body>
         <ownedAttribute xmi:type="uml:Property" xmi:id="_Tza98OnJEe6pm5wa6vzbpQ" name="number">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_rPg_senvEe6LY_dHFA6_Jw" name="ownedVersion" type="_cesPgOnKEe6pm5wa6vzbpQ" aggregation="composite" association="_rPgYoOnvEe6LY_dHFA6_Jw">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_rPg_senvEe6LY_dHFA6_Jw" name="version" type="_cesPgOnKEe6pm5wa6vzbpQ" aggregation="composite" association="_rPgYoOnvEe6LY_dHFA6_Jw">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rPg_sunvEe6LY_dHFA6_Jw"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rPg_s-nvEe6LY_dHFA6_Jw" value="*"/>
         </ownedAttribute>
@@ -647,7 +660,7 @@ endif</body>
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M0H0EOnKEe6pm5wa6vzbpQ"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_6ZPUgunGEe6pm5wa6vzbpQ" name="ownedContent" type="_eYCF0OnBEe6pm5wa6vzbpQ" aggregation="composite" association="_6ZOtcOnGEe6pm5wa6vzbpQ">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_6ZPUgunGEe6pm5wa6vzbpQ" name="item" type="_eYCF0OnBEe6pm5wa6vzbpQ" aggregation="composite" association="_6ZOtcOnGEe6pm5wa6vzbpQ">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6ZPUg-nGEe6pm5wa6vzbpQ"/>
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6ZPUhOnGEe6pm5wa6vzbpQ" value="*"/>
         </ownedAttribute>
@@ -814,9 +827,7 @@ endif</body>
       <packagedElement xmi:type="uml:Association" xmi:id="_SDlBBu37Ee6p4qQ9OedHIg" memberEnd="_SDlA_O37Ee6p4qQ9OedHIg _SDlA8-37Ee6p4qQ9OedHIg"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_KgP-EOn4Ee6LY_dHFA6_Jw" memberEnd="_KgQlIun4Ee6LY_dHFA6_Jw _KgWEsOn4Ee6LY_dHFA6_Jw">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_KgWEsOn4Ee6LY_dHFA6_Jw" name="owningElement" type="ee6ef34f-78d7-4083-b4e3-f2e78195a649" association="_KgP-EOn4Ee6LY_dHFA6_Jw">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_39RDkO3zEe6p4qQ9OedHIg"/>
-      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_KgWEsOn4Ee6LY_dHFA6_Jw" name="owningElement" type="ee6ef34f-78d7-4083-b4e3-f2e78195a649" association="_KgP-EOn4Ee6LY_dHFA6_Jw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_QeZ6gPmOEe6OB-l9_N8zXQ" memberEnd="_QecWwPmOEe6OB-l9_N8zXQ _Qec90PmOEe6OB-l9_N8zXQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_QebIoPmOEe6OB-l9_N8zXQ" source="org.eclipse.papyrus">
@@ -824,36 +835,7 @@ endif</body>
       </eAnnotations>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_iPliAOnIEe6pm5wa6vzbpQ" memberEnd="_iPmJEunIEe6pm5wa6vzbpQ _iPmJFenIEe6pm5wa6vzbpQ">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_iPmJFenIEe6pm5wa6vzbpQ" name="owningElement" type="_jLvkQOn0Ee6LY_dHFA6_Jw" association="_iPliAOnIEe6pm5wa6vzbpQ"/>
-    </packagedElement>
-    <packagedElement xmi:type="uml:DataType" xmi:id="_jLvkQOn0Ee6LY_dHFA6_Jw" name="L10nBaseString" isAbstract="true">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_iPmJEunIEe6pm5wa6vzbpQ" name="text" type="_aJYP4OnIEe6pm5wa6vzbpQ" aggregation="composite" association="_iPliAOnIEe6pm5wa6vzbpQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iPmJE-nIEe6pm5wa6vzbpQ"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iPmJFOnIEe6pm5wa6vzbpQ" value="*"/>
-      </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_ibsRcvs5Ee6ICsboBRxz5w" name="encryptionKey" type="_W66n0Ps3Ee6ICsboBRxz5w" association="_ibrqYPs5Ee6ICsboBRxz5w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ibtfkPs5Ee6ICsboBRxz5w"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ibutsPs5Ee6ICsboBRxz5w" value="1"/>
-      </ownedAttribute>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_PNLOwOnNEe6pm5wa6vzbpQ" name="value">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Si2xIOnNEe6pm5wa6vzbpQ" name="return" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UCv2kOnNEe6pm5wa6vzbpQ" name="language" effect="read">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-      </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_dbMd8Ps3Ee6ICsboBRxz5w" name="isEncrypted" bodyCondition="_g6IqAPs3Ee6ICsboBRxz5w" isQuery="true">
-        <ownedRule xmi:type="uml:Constraint" xmi:id="_g6IqAPs3Ee6ICsboBRxz5w" name="spec" constrainedElement="_dbMd8Ps3Ee6ICsboBRxz5w">
-          <specification xmi:type="uml:OpaqueExpression" xmi:id="_lu29QPs3Ee6ICsboBRxz5w">
-            <language>OCL</language>
-            <body>encryptionKey &lt;> null</body>
-          </specification>
-        </ownedRule>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gLy9UPs3Ee6ICsboBRxz5w" name="result" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-        </ownedParameter>
-      </ownedOperation>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iPmJFenIEe6pm5wa6vzbpQ" name="owningElement" type="_gx5JQOn6Ee6LY_dHFA6_Jw" association="_iPliAOnIEe6pm5wa6vzbpQ"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_oo9J8OnrEe6LY_dHFA6_Jw" name="L10nDescriptiveElement" isAbstract="true">
       <generalization xmi:type="uml:Generalization" xmi:id="_r7iVAOnrEe6LY_dHFA6_Jw" general="_Usz5gOnIEe6pm5wa6vzbpQ"/>
@@ -865,7 +847,7 @@ endif</body>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:DataType" xmi:id="_FmZdwOn5Ee6LY_dHFA6_Jw" name="L10nKeyedString">
-      <generalization xmi:type="uml:Generalization" xmi:id="_H95goOn5Ee6LY_dHFA6_Jw" general="_jLvkQOn0Ee6LY_dHFA6_Jw"/>
+      <generalization xmi:type="uml:Generalization" xmi:id="_H95goOn5Ee6LY_dHFA6_Jw" general="_gx5JQOn6Ee6LY_dHFA6_Jw"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_I5j3oOn5Ee6LY_dHFA6_Jw" name="key">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
@@ -877,7 +859,33 @@ endif</body>
       </ownedAttribute>
     </packagedElement>
     <packagedElement xmi:type="uml:DataType" xmi:id="_gx5JQOn6Ee6LY_dHFA6_Jw" name="L10nString">
-      <generalization xmi:type="uml:Generalization" xmi:id="_lOZw0On6Ee6LY_dHFA6_Jw" general="_jLvkQOn0Ee6LY_dHFA6_Jw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_iPmJEunIEe6pm5wa6vzbpQ" name="text" type="_aJYP4OnIEe6pm5wa6vzbpQ" aggregation="composite" association="_iPliAOnIEe6pm5wa6vzbpQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_iPmJE-nIEe6pm5wa6vzbpQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_iPmJFOnIEe6pm5wa6vzbpQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_ibsRcvs5Ee6ICsboBRxz5w" name="encryptionKey" type="_W66n0Ps3Ee6ICsboBRxz5w" association="_ibrqYPs5Ee6ICsboBRxz5w">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ibtfkPs5Ee6ICsboBRxz5w"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ibutsPs5Ee6ICsboBRxz5w" value="1"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_dbMd8Ps3Ee6ICsboBRxz5w" name="isEncrypted" bodyCondition="_g6IqAPs3Ee6ICsboBRxz5w" isQuery="true">
+        <ownedRule xmi:type="uml:Constraint" xmi:id="_g6IqAPs3Ee6ICsboBRxz5w" name="spec" constrainedElement="_dbMd8Ps3Ee6ICsboBRxz5w">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="_lu29QPs3Ee6ICsboBRxz5w">
+            <language>OCL</language>
+            <body>encryptionKey &lt;> null</body>
+          </specification>
+        </ownedRule>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_gLy9UPs3Ee6ICsboBRxz5w" name="result" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_PNLOwOnNEe6pm5wa6vzbpQ" name="value">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Si2xIOnNEe6pm5wa6vzbpQ" name="return" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_UCv2kOnNEe6pm5wa6vzbpQ" name="language" effect="read">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:DataType" xmi:id="_aJYP4OnIEe6pm5wa6vzbpQ" name="L10nText">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_d_e-wOnIEe6pm5wa6vzbpQ" name="language">
@@ -915,6 +923,10 @@ endif</body>
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IaFuMOnJEe6pm5wa6vzbpQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IaQGQOnJEe6pm5wa6vzbpQ" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_Kus1on14Ee-ZBJPEgZFkLw" name="customAnnotation" type="_7ZlFwH13Ee-ZBJPEgZFkLw" aggregation="composite" association="_KurngH14Ee-ZBJPEgZFkLw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_KutcsH14Ee-ZBJPEgZFkLw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_KutcsX14Ee-ZBJPEgZFkLw" value="*"/>
       </ownedAttribute>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_f2racPW8Ee6fF7LGXo4-ow" name="objectId" bodyCondition="_Sji7APW9Ee6fF7LGXo4-ow" isQuery="true">
         <ownedRule xmi:type="uml:Constraint" xmi:id="_Sji7APW9Ee6fF7LGXo4-ow" name="spec" constrainedElement="_f2racPW8Ee6fF7LGXo4-ow">
@@ -1075,6 +1087,7 @@ contains&#xD;
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_roI-cPsvEe6ICsboBRxz5w" name="Page"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_eviUUPsvEe6ICsboBRxz5w" name="Quote"/>
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g4fk4PsvEe6ICsboBRxz5w" name="UnorderedList"/>
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_mURhQH56Ee-ZBJPEgZFkLw" name="ListItem"/>
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="_iGK48PsvEe6ICsboBRxz5w" name="LayoutType">
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_kQSAEPsvEe6ICsboBRxz5w" name="UNSPECIFIED"/>
@@ -1198,7 +1211,62 @@ endif</body>
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ibsRcPs5Ee6ICsboBRxz5w" source="org.eclipse.papyrus">
         <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ibsRcfs5Ee6ICsboBRxz5w" key="nature" value="UML_Nature"/>
       </eAnnotations>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_ibvUwPs5Ee6ICsboBRxz5w" name="l10nbasestring" type="_jLvkQOn0Ee6LY_dHFA6_Jw" association="_ibrqYPs5Ee6ICsboBRxz5w"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_ibvUwPs5Ee6ICsboBRxz5w" name="l10nbasestring" type="_gx5JQOn6Ee6LY_dHFA6_Jw" association="_ibrqYPs5Ee6ICsboBRxz5w"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_TCnCAH13Ee-ZBJPEgZFkLw" name="Iso13485">
+      <packagedElement xmi:type="uml:Class" xmi:id="_i3R_MH14Ee-ZBJPEgZFkLw" name="DesignControlPhaseAnnotation">
+        <generalization xmi:type="uml:Generalization" xmi:id="_9DaU4H14Ee-ZBJPEgZFkLw" general="_7ZlFwH13Ee-ZBJPEgZFkLw"/>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_99QuAn14Ee-ZBJPEgZFkLw" name="phase" type="_ZY17kH2IEe-ZBJPEgZFkLw" association="_99QG8H14Ee-ZBJPEgZFkLw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_99QuA314Ee-ZBJPEgZFkLw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_99QuBH14Ee-ZBJPEgZFkLw" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_JKrosn15Ee-ZBJPEgZFkLw" name="status" type="_nZ40cH2IEe-ZBJPEgZFkLw" association="_JKrBoH15Ee-ZBJPEgZFkLw">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_JKros315Ee-ZBJPEgZFkLw"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_JKrotH15Ee-ZBJPEgZFkLw" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_99QG8H14Ee-ZBJPEgZFkLw" memberEnd="_99QuAn14Ee-ZBJPEgZFkLw _99RVEH14Ee-ZBJPEgZFkLw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_99QuAH14Ee-ZBJPEgZFkLw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_99QuAX14Ee-ZBJPEgZFkLw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_99RVEH14Ee-ZBJPEgZFkLw" name="annotation" type="_i3R_MH14Ee-ZBJPEgZFkLw" association="_99QG8H14Ee-ZBJPEgZFkLw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_JKrBoH15Ee-ZBJPEgZFkLw" memberEnd="_JKrosn15Ee-ZBJPEgZFkLw _JKrotX15Ee-ZBJPEgZFkLw">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_JKrosH15Ee-ZBJPEgZFkLw" source="org.eclipse.papyrus">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_JKrosX15Ee-ZBJPEgZFkLw" key="nature" value="UML_Nature"/>
+        </eAnnotations>
+        <ownedEnd xmi:type="uml:Property" xmi:id="_JKrotX15Ee-ZBJPEgZFkLw" name="annotation" type="_i3R_MH14Ee-ZBJPEgZFkLw" association="_JKrBoH15Ee-ZBJPEgZFkLw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_ZY17kH2IEe-ZBJPEgZFkLw" name="DesignControlPhase">
+        <generalization xmi:type="uml:Generalization" xmi:id="_g-2qsH2IEe-ZBJPEgZFkLw" general="_oo9J8OnrEe6LY_dHFA6_Jw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_nZ40cH2IEe-ZBJPEgZFkLw" name="DesignControlStatus">
+        <generalization xmi:type="uml:Generalization" xmi:id="_sL05cH2IEe-ZBJPEgZFkLw" general="_oo9J8OnrEe6LY_dHFA6_Jw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_yxmTkH2IEe-ZBJPEgZFkLw" name="ReleaseCycle">
+        <generalization xmi:type="uml:Generalization" xmi:id="_33LtUH2IEe-ZBJPEgZFkLw" general="_7ZlFwH13Ee-ZBJPEgZFkLw"/>
+        <generalization xmi:type="uml:Generalization" xmi:id="_5bCFsH2IEe-ZBJPEgZFkLw" general="_oo9J8OnrEe6LY_dHFA6_Jw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_7ZlFwH13Ee-ZBJPEgZFkLw" name="CustomAnnotation" isAbstract="true"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_KurngH14Ee-ZBJPEgZFkLw" memberEnd="_Kus1on14Ee-ZBJPEgZFkLw _Kutcsn14Ee-ZBJPEgZFkLw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_Kus1oH14Ee-ZBJPEgZFkLw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_Kus1oX14Ee-ZBJPEgZFkLw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_Kutcsn14Ee-ZBJPEgZFkLw" name="owningElement" type="ee6ef34f-78d7-4083-b4e3-f2e78195a649" association="_KurngH14Ee-ZBJPEgZFkLw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_DspV4H19Ee-ZBJPEgZFkLw" name="GenericAnnotation">
+      <generalization xmi:type="uml:Generalization" xmi:id="_HU85UH19Ee-ZBJPEgZFkLw" general="_7ZlFwH13Ee-ZBJPEgZFkLw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_IHXNsn19Ee-ZBJPEgZFkLw" name="property" type="_FmZdwOn5Ee6LY_dHFA6_Jw" aggregation="composite" association="_IHWmoH19Ee-ZBJPEgZFkLw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IHXNs319Ee-ZBJPEgZFkLw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IHXNtH19Ee-ZBJPEgZFkLw" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_IHWmoH19Ee-ZBJPEgZFkLw" memberEnd="_IHXNsn19Ee-ZBJPEgZFkLw _IHX0wH19Ee-ZBJPEgZFkLw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_IHXNsH19Ee-ZBJPEgZFkLw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_IHXNsX19Ee-ZBJPEgZFkLw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_IHX0wH19Ee-ZBJPEgZFkLw" name="owningElement" type="_DspV4H19Ee-ZBJPEgZFkLw" association="_IHWmoH19Ee-ZBJPEgZFkLw"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GB2L0OnGEe6pm5wa6vzbpQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GB52MOnGEe6pm5wa6vzbpQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
@@ -1279,7 +1347,6 @@ endif</body>
   <Ecore:EReference xmi:id="_x_tNgPm7Ee6OB-l9_N8zXQ" isTransient="true" xmlFeatureKind="Element" base_Property="_87EbIPKlEe6TpdN_RktbHQ" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_zlFP4Pm7Ee6OB-l9_N8zXQ" isTransient="true" xmlFeatureKind="Element" base_Property="_mpkyMPKpEe6TpdN_RktbHQ" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_2LGP4Pm7Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_5teb4ungEe6pm5wa6vzbpQ" isResolveProxies="false"/>
-  <Ecore:EReference xmi:id="_6Ze74Pm7Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_XLbvsunWEe6pm5wa6vzbpQ" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_Y8vp4Pm8Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_us5CUOnrEe6LY_dHFA6_Jw" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_aO0VwPm8Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_ty44MOnrEe6LY_dHFA6_Jw" isResolveProxies="false"/>
   <Ecore:EReference xmi:id="_cV7MMPm8Ee6OB-l9_N8zXQ" xmlFeatureKind="Element" base_Property="_W5ztAOn-Ee6LY_dHFA6_Jw" isResolveProxies="false"/>
@@ -1311,4 +1378,7 @@ endif</body>
   <Ecore:EReference xmi:id="_YXmjEPtJEe6ICsboBRxz5w" isTransient="true" base_Property="_Qec90PmOEe6OB-l9_N8zXQ" isResolveProxies="false"/>
   <Ecore:EClass xmi:id="_2TmOAPtPEe6ICsboBRxz5w" xmlContentKind="Simple" base_DataType="_aJYP4OnIEe6pm5wa6vzbpQ"/>
   <Ecore:EClass xmi:id="_GSqSwPtQEe6ICsboBRxz5w" base_Class="_C6uJkPsvEe6ICsboBRxz5w" xmlContentKind="Empty"/>
+  <Ecore:EPackage xmi:id="_WW_j4H13Ee-ZBJPEgZFkLw" base_Package="_TCnCAH13Ee-ZBJPEgZFkLw" packageName="Iso13485" nsURI="http://schumann.engineering/qwiki/1.0/iso13485"/>
+  <Ecore:EAttribute xmi:id="_yiM7wH1_Ee-ZBJPEgZFkLw" xmlFeatureKind="Attribute" base_Property="_xioVIH1_Ee-ZBJPEgZFkLw"/>
+  <Ecore:EAttribute xmi:id="_dI5zUH55Ee-ZBJPEgZFkLw" xmlFeatureKind="Element" base_Property="_YJvxsH55Ee-ZBJPEgZFkLw"/>
 </xmi:XMI>
