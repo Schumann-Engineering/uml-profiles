@@ -91,7 +91,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_energyPort()
 /]
@@ -111,7 +111,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_materialPort()
 /]
@@ -131,7 +131,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_networkPort()
 /]
@@ -151,7 +151,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_nonNetworkPort()
 /]
@@ -171,7 +171,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_otherPort()
 /]
@@ -191,7 +191,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_storagePort()
 /]
@@ -211,7 +211,7 @@
 	component : Component
 ) : Set(Port) =
 	component
-	.ownedElement
+	._ownedElementsIncludingInherited()
 	->filter(Port)
 	->csmn_wirelessPort()
 /]

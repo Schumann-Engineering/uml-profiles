@@ -30,6 +30,12 @@
 [query public isNullOrEmpty(arg0 : String) : Boolean
 	= isNull(arg0) or isEmpty(arg0) /]
 
+[query public join(elements : Bag(String), separator : String) : String
+	= elements->asSet()->join(separator) /]
+
+[query public join(elements : Set(String), separator : String) : String
+	= '' + elements->sortedBy(toString())->sep(separator) /]
+
 [comment pads a string to the left /]
 [query public padLeft(str : String, length : Integer) : String
 	= str.padLeft(length, ' ') /]

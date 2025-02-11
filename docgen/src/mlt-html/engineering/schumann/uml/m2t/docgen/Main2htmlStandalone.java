@@ -144,6 +144,16 @@ public class Main2htmlStandalone extends Main2html { // extends AbstractAcceleoG
     public void registerPackages(ResourceSet resourceSet) {
         super.registerPackages(resourceSet);
 
+        /* ====================
+         * Manual fix for inconsistent auto-generation in Acceleo code
+         * ==================== */
+        if (!isInWorkspace(org.eclipse.uml2.uml.UMLPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.uml2.uml.UMLPackage.eINSTANCE.getNsURI(), org.eclipse.uml2.uml.UMLPackage.eINSTANCE);
+        }
+        if (!isInWorkspace(org.eclipse.gmf.runtime.notation.NotationPackage.class)) {
+            resourceSet.getPackageRegistry().put(org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE.getNsURI(), org.eclipse.gmf.runtime.notation.NotationPackage.eINSTANCE);
+        }        
+        
         
         /* ====================
          * Papyrus

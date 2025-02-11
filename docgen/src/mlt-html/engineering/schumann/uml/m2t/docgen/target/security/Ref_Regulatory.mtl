@@ -22,6 +22,15 @@ It covers section 3.05.05.11 "Cybersecurity" of IMDRF/RPS WG/N9 FINAL:2019 "Non-
 	devNull	: OclAny
 )]
 [html_INFO_start() /]
-	<b>China:</b> This document covers the requirements of "Medical device cybersecurity registration review guiding principles (2022 revised edition)" (医疗器械网络安全注册审查指导原则 2022年修订版)
+	<b>China:</b> This document covers some requirements of "Medical device cybersecurity registration review guiding principles (2022 revised edition)" (医疗器械网络安全注册审查指导原则 2022年修订版)
+[html_INFO_end() /]
+[/template]
+
+
+[template public LegalRef_Japan_Cybersec(
+	devNull	: OclAny
+)]
+[html_INFO_start() /]
+	<b>Japan:</b> This document covers some requirements of "Summary report on cyber security, Compliant standards and related notices JIS T 81001-5-1:2023" according to MHLW guideline "Regarding the application of Article 12, Paragraph 3 of the Basic Requirements Standards for Medical Devices - question and answer collection (Q&A)" ("医療機器の基本要件基準第12 条第３項の適用について")
 [html_INFO_end() /]
 [/template]

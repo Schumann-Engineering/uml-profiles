@@ -93,3 +93,18 @@
 	endif
 	endif
 /]
+
+
+[query public _getSuper(element : Element) : Set(Classifier) =
+	let parents : Set(Classifier) = element.ownedElement->filter(Generalization).general->asSet() in
+	Set(Classifier) {}
+	->union(parents)
+	->union(parents._getSuper()->asSet())
+/]
+
+
+[query public _ownedElementsIncludingInherited(element : Element) : Set(Element) =
+	Set(Element) {}
+	->union(element.ownedElement)
+	->union(element._getSuper().ownedElement->asSet())
+/]
